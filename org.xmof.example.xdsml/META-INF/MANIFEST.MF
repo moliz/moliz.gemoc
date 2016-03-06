@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xdsml
+Bundle-SymbolicName: org.xmof.example.xdsml;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.xmof.example.xdsml.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.xmof.execution.xdsml.api,
+ org.gemoc.execution.sequential.javaxdsml.api,
+ org.gemoc.xdsmlframework.api,
+ org.eclipse.emf.ecore
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
