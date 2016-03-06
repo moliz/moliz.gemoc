@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ui
-Bundle-SymbolicName: org.xmof.execution.engine.ui;singleton:=true
+Bundle-SymbolicName: org.xmof.execution.engine;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.xmof.execution.engine.ui.Activator
 Require-Bundle: org.eclipse.ui,
