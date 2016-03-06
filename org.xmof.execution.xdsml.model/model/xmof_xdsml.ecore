@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="xmofxdsml" nsURI="http://www.modelexecution.org/xmof_xdsml" nsPrefix="xmofxdsml">
+  <eClassifiers xsi:type="ecore:EClass" name="XMOFLanguageDefiniton">
+    <eSuperTypes href="../../org.gemoc.xdsmlframework.xdsml.model/model/xdsml_base.ecore#//LanguageDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xmofFileName" eType="//XMFFile" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XMFFile">
+    <eSuperTypes href="../../org.gemoc.xdsmlframework.xdsml.model/model/xdsml_base.ecore#//ProjectResource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xmofFileName">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>
