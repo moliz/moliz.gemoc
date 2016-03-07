@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<sequential_xdsml:SequentialLanguageDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sequential_xdsml="http://www.gemoc.org/sequential_xdsml" name="petrinet2">
-  <domainModelProject projectName="org.modelexecution.xmof.examples.petrinet2" defaultRootEObjectQualifiedName="petrinet2::Net" genmodeluri="platform:/resource/org.modelexecution.xmof.examples.petrinet2/model/petrinet2.genmodel"/>
-</sequential_xdsml:SequentialLanguageDefinition>

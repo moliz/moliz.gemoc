@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<petrinetConf:TokenDistribution xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:petrinetConf="http://petrinet/1.0/configuration">
+  <initialTokens/>
+</petrinetConf:TokenDistribution>
