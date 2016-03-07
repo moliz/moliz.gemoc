@@ -33,6 +33,7 @@ import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.gemoc.executionframework.engine.mse.MseFactory;
 import org.gemoc.executionframework.xdsml_base.LanguageDefinition;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
+import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
@@ -57,9 +58,9 @@ import org.xmof.execution.xdsml.api.extensions.languages.XMOFLanguageDefinitionE
 
 import xmofxdsml.XMOFLanguageDefiniton;
 
-public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine implements ExecutionEventListener{
+public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
+		implements ExecutionEventListener {
 
-	
 	private Runnable entryPoint;
 	private ResourceSet resourceSet;
 	private ConfigurationObjectMap configurationMap;
@@ -68,31 +69,31 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 	private XMOFBasedModel model;
 
 	private List<Event> rawEvents;
-	
+
 	private LogicalStep ls = null;
-	
+
 	private IEditorPart xMOFEditor = null;
 
 	public XMOFExecutionEngine() {
 		super();
 		this._instance = this;
 	}
-	
+
 	@Override
 	public void initialize(final IExecutionContext executionContext) {
 		super.initialize(executionContext);
 		resourceSet = new ResourceSetImpl();
-		
-				
-		//openXMOF(filename);
+
+		// openXMOF(filename);
 
 		model = getXMOFBasedModel(executionContext);
 		vm = new XMOFVirtualMachine(model);
 		vm.addRawExecutionEventListener(this);
-		//vm.addVirtualMachineListener(this);
+		// vm.addVirtualMachineListener(this);
 		try {
-
-			createBreakpoints(model);
+			if (!executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
+				createBreakpoints(model);
+			}
 
 		} catch (CoreException ex) {
 			System.out.println(ex.getMessage());
@@ -101,26 +102,35 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 		entryPoint = new Runnable() {
 			@Override
 			public void run() {
-//				StepManagerRegistry.getInstance().registerManager(
-//						XMOFExecutionEngine.this);
+				// StepManagerRegistry.getInstance().registerManager(
+				// XMOFExecutionEngine.this);
 				try {
 					// run vm
 					_instance.setEngineStatus(RunStatus.Running);
 					_instance.notifyEngineAboutToStart();
 					rawEvents = new ArrayList<Event>();
-					vm.debug();
+					//Check Executionmode whether to run or debug VM
+					if(executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
+						
+						vm.run();
+					}else {
+						vm.debug();
+					}
+					while (vm.isRunning() && vm.isSuspended()) {
+						vm.resume();
+					}
 
 				} catch (Exception e) {
 					throw new RuntimeException(e);
 				} finally {
-//					StepManagerRegistry.getInstance().unregisterManager(
-//							XMOFExecutionEngine.this);
+					// StepManagerRegistry.getInstance().unregisterManager(
+					// XMOFExecutionEngine.this);
 
 				}
 			}
 		};
 	}
-	
+
 	private void createBreakpoints(XMOFBasedModel model) throws CoreException {
 		Activity activity = null;
 		EObject mainClassObject = model.getMainEClassObjects().get(0);
@@ -129,15 +139,15 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 			for (ActivityNode node : activity.getNode()) {
 				if (node instanceof ActivityNode) {
 					vm.addBreakpoint(node);
-					//TODO
-					//new GemocBreakpoint(Launcher.MODEL_ID, node, true);
+					// TODO
+					// new GemocBreakpoint(Launcher.MODEL_ID, node, true);
 
 					// notifyAboutToExecuteLogicalStep(Gemoc_execution_traceFactory.eINSTANCE.createLogicalStep());
 				}
 			}
 		}
 	}
-	
+
 	private Activity getMainActivity(EObject mainClassObject) {
 		EClass eClass = mainClassObject.eClass();
 		BehavioredEOperation mainOperation = getMainOperation(eClass);
@@ -185,9 +195,11 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 		inputElements.addAll(inputModelElements);
 		inputElements.addAll(inputParameterValueObjects);
 
-		LanguageDefinition ld = ((XMOFLanguageDefinitionExtension)executionContext.getLanguageDefinitionExtension()).getLanguageDefinition();
-		String confMetamodelPath = ((XMOFLanguageDefiniton)ld).getXmofFileName().getXmofFileName();
-		
+		LanguageDefinition ld = ((XMOFLanguageDefinitionExtension) executionContext
+				.getLanguageDefinitionExtension()).getLanguageDefinition();
+		String confMetamodelPath = ((XMOFLanguageDefiniton) ld)
+				.getXmofFileName().getXmofFileName();
+
 		Collection<EPackage> configurationPackages = loadConfigurationMetamodel(confMetamodelPath);
 		configurationMap = new ConfigurationObjectMap(inputElements,
 				configurationPackages);
@@ -280,8 +292,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 
 	private List<ParameterValue> loadInputParameterValueElements(
 			IExecutionContext executionContext) {
-		String modelPath = ((RunConfiguration) executionContext.getRunConfiguration()).getModelInitializationModel();
-				
+		String modelPath = ((RunConfiguration) executionContext
+				.getRunConfiguration()).getModelInitializationModel();
+
 		List<ParameterValue> parameterValues = getParameterValues(modelPath);
 		return parameterValues;
 	}
@@ -305,8 +318,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 
 	private Collection<EObject> loadInputModelElements(
 			IExecutionContext executionContext) {
-		String modelPath = executionContext.getRunConfiguration().getExecutedModelURI().path();
-		
+		String modelPath = executionContext.getRunConfiguration()
+				.getExecutedModelURI().path();
+
 		modelPath = modelPath.substring(9, modelPath.length());
 		Collection<EObject> inputModelElements = getInputModelElements(modelPath);
 		return inputModelElements;
@@ -321,7 +335,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 		return resourceSet.getResource(
 				URI.createPlatformResourceURI(path, true), true);
 	}
-	
+
 	@Override
 	public Runnable getEntryPoint() {
 		return entryPoint;
@@ -339,15 +353,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 		return null;
 	}
 
-	
-//	@Override
-//	public void notify(XMOFVirtualMachineEvent event) {
-//		if (event.getType() == Type.SUSPEND) {
-//			resume();
-//		}
-//		
-//	}
-	
+	// @Override
+	// public void notify(XMOFVirtualMachineEvent event) {
+	// if (event.getType() == Type.SUSPEND) {
+	// resume();
+	// }
+	//
+	// }
+
 	public void resume() {
 		vm.resume();
 	}
@@ -356,14 +369,11 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 		vm.addRawExecutionEventListener(eventListener);
 	}
 
-
 	private Map<EObject, LogMSETrans> logMSETrans = new HashMap<EObject, LogMSETrans>();
 	private DiagramEditor diagramEditor;
 	private DiagramEditor oldEditor;
 	private ActivityNode oldNode;
-	
-	
-	
+
 	@Override
 	public void notify(Event event) {
 		rawEvents.add(event);
@@ -376,9 +386,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 		} else if (event instanceof ActivityNodeExitEvent) {
 			processActivityNodeExit((ActivityNodeExitEvent) event);
 		}
-		
+
 	}
-	
+
 	private void processActivityExit(ActivityExitEvent event) {
 		// System.out.println("RECV: ActivityExitEvent"+event.getTimestamp());
 
@@ -442,7 +452,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 
 	}
 
-
 	private void processActivityNodeEntry(ActivityNodeEntryEvent event) {
 
 		LogicalStep templs = MseFactory.eINSTANCE.createLogicalStep();
@@ -461,9 +470,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 			// refreshDecoration(editor,o);
 
 			logMSETrans.put((EObject) o, l);
-			
-			//TODO
-			//MSEEvent.setCaller((EObject) o);
+
+			// TODO
+			// MSEEvent.setCaller((EObject) o);
 
 			if (o instanceof ENamedElement) {
 				MSEEvent.setName(((ENamedElement) o).getName());
@@ -474,27 +483,26 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 
 		mse.setMse(MSEEvent);
 		mse.setLogicalStep(templs);
-		
-		//TODO
-//		Display.getDefault().syncExec(new Runnable() {
-//			public void run() {
-//				if (diagramEditor != null) {
-//					if (oldEditor != null && oldNode != null) {
-//
-//						refreshDecoration(oldEditor, oldNode, false);
-//						System.out.println("Refresh - for Activitynode "
-//								+ oldNode);
-//					}
-//					refreshDecoration(diagramEditor, (ActivityNode) o, true);
-//					System.out.println("Refresh + for Activitynode " + o);
-//				}
-//			}
-//		});
+
+		// TODO
+		// Display.getDefault().syncExec(new Runnable() {
+		// public void run() {
+		// if (diagramEditor != null) {
+		// if (oldEditor != null && oldNode != null) {
+		//
+		// refreshDecoration(oldEditor, oldNode, false);
+		// System.out.println("Refresh - for Activitynode "
+		// + oldNode);
+		// }
+		// refreshDecoration(diagramEditor, (ActivityNode) o, true);
+		// System.out.println("Refresh + for Activitynode " + o);
+		// }
+		// }
+		// });
 
 		notifyAboutToExecuteLogicalStep(templs);
 		notifyMSEOccurrenceAboutToStart(mse);
 
-		
 		RecordingCommand rc = new RecordingCommand(editingDomain) {
 			@Override
 			protected void doExecute() {
@@ -513,7 +521,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 
 	}
 
-
 	private void processActivityEntry(ActivityEntryEvent event) {
 
 		LogicalStep templs = MseFactory.eINSTANCE.createLogicalStep();
@@ -529,29 +536,28 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 		Object o = vm.getxMOFConversionResult().getInputObject(
 				event.getActivity());
 
-		
-		//TODO
-//		Display.getDefault().syncExec(new Runnable() {
-//			public void run() {
-//				if (xMOFEditor != null) {
-//					if (xMOFEditor instanceof KernelEditor) {
-//						KernelEditor editor = (KernelEditor) xMOFEditor;
-//						editor.showDiagramTap(o);
-//						if (o instanceof Activity) {
-//							Object selectedPage = editor.getSelectedPage();
-//							if (selectedPage instanceof DiagramEditor) {
-//								diagramEditor = (DiagramEditor) selectedPage;
-//							}
-//						}
-//					}
-//				}
-//			}
-//		});
+		// TODO
+		// Display.getDefault().syncExec(new Runnable() {
+		// public void run() {
+		// if (xMOFEditor != null) {
+		// if (xMOFEditor instanceof KernelEditor) {
+		// KernelEditor editor = (KernelEditor) xMOFEditor;
+		// editor.showDiagramTap(o);
+		// if (o instanceof Activity) {
+		// Object selectedPage = editor.getSelectedPage();
+		// if (selectedPage instanceof DiagramEditor) {
+		// diagramEditor = (DiagramEditor) selectedPage;
+		// }
+		// }
+		// }
+		// }
+		// }
+		// });
 
 		if (o instanceof EObject) {
 			logMSETrans.put((EObject) o, l);
-			//TODO
-			//MSEEvent.setCaller((EObject) o);
+			// TODO
+			// MSEEvent.setCaller((EObject) o);
 			if (o instanceof ENamedElement) {
 				MSEEvent.setName(((ENamedElement) o).getName());
 			} else

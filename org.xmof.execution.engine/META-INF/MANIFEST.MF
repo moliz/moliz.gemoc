@@ -30,7 +30,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.graphiti.ui,
  org.gemoc.xdsmlframework.xdsml.model,
  org.xmof.execution.xdsml.api,
- org.xmof.execution.xdsml.model
+ org.xmof.execution.xdsml.model,
+ org.gemoc.execution.sequential.javaengine.ui,
+ fr.inria.diverse.trace.gemoc;bundle-version="1.0.0",
+ fr.inria.diverse.trace.api;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.xmof.execution.engine,

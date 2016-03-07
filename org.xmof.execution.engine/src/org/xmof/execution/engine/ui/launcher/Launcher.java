@@ -20,6 +20,8 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 import org.gemoc.commons.eclipse.ui.ViewHelper;
+import org.gemoc.execution.sequential.javaengine.ui.debug.GenericSequentialModelDebugger;
+import org.gemoc.execution.sequential.javaengine.ui.debug.OmniscientGenericSequentialModelDebugger;
 import org.gemoc.executionframework.engine.commons.ModelExecutionContext;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.gemoc.executionframework.engine.ui.debug.AbstractGemocDebugger;
@@ -71,6 +73,7 @@ public class Launcher extends AbstractGemocLauncher {
 			ExecutionMode executionMode = null;
 			if (ILaunchManager.DEBUG_MODE.equals(mode)) {
 				executionMode = ExecutionMode.Animation;
+				
 			} else {
 				executionMode = ExecutionMode.Run;
 			}
@@ -221,7 +224,36 @@ public class Launcher extends AbstractGemocLauncher {
 	@Override
 	protected IDSLDebugger getDebugger(ILaunchConfiguration configuration, DSLDebugEventDispatcher dispatcher,
 			EObject firstInstruction, IProgressMonitor monitor) {
-
+//		AbstractGemocDebugger res;
+//		Set<IMultiDimensionalTraceAddon> traceAddons = executionEngine
+//				.getAddonsTypedBy(IMultiDimensionalTraceAddon.class);
+//		// At The Moment disable Trace Support
+//		//if (traceAddons.isEmpty()) {
+//			res = new GenericSequentialModelDebugger(dispatcher, (ISequentialExecutionEngine) executionEngine);
+////		} else {
+////			res = new OmniscientGenericSequentialModelDebugger(dispatcher,
+////					(ISequentialExecutionEngine) _executionEngine, traceAddons.iterator().next());
+////		}
+//
+//		// If in the launch configuration it is asked to pause at the start,
+//		// we add this dummy break
+//		try {
+//			if (configuration.getAttribute(RunConfiguration.LAUNCH_BREAK_START, false)) {
+//				res.addPredicateBreak(new BiPredicate<IBasicExecutionEngine, MSEOccurrence>() {
+//					@Override
+//					public boolean test(IBasicExecutionEngine t, MSEOccurrence u) {
+//						return true; 
+//					}
+//				});
+//			}
+//		} catch (CoreException e) {
+//			Activator.error(e.getMessage(), e);
+//		}
+//
+//		executionEngine.getExecutionContext().getExecutionPlatform().addEngineAddon(res);
+//		return res;
+		
+		// OLd Stuff
 		AbstractGemocDebugger res;
 		Set<IMultiDimensionalTraceAddon> traceAddons = executionEngine
 				.getAddonsTypedBy(IMultiDimensionalTraceAddon.class);
