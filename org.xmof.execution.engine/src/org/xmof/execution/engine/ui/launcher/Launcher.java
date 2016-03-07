@@ -87,8 +87,7 @@ public class Launcher extends AbstractGemocLauncher {
 			executionEngine.initialize(executioncontext);
 
 			// And we start it within a dedicated job
-			Job job = new Job(getDebugJobName(configuration,
-					getFirstInstruction(configuration))) {
+			Job job = new Job(getDebugJobName(configuration, getFirstInstruction(configuration))) {
 				@Override
 				protected IStatus run(IProgressMonitor monitor) {
 					// If we are debugging, we add the animator and we start
@@ -196,6 +195,11 @@ public class Launcher extends AbstractGemocLauncher {
 
 	@Override
 	protected EObject getFirstInstruction(IEditorPart editor) {
+		return EcorePackage.eINSTANCE;
+	}
+	
+	@Override
+	protected EObject getFirstInstruction(ILaunchConfiguration configuration) {
 		return EcorePackage.eINSTANCE;
 	}
 

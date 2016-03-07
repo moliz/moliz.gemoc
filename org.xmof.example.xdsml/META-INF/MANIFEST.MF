@@ -9,5 +9,6 @@ Require-Bundle: org.eclipse.ui,
  org.xmof.execution.xdsml.api,
  org.gemoc.execution.sequential.javaxdsml.api,
  org.gemoc.xdsmlframework.api,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore,
+ org.gemoc.executionframework.extensions.sirius
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

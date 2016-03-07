@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="petrinet2integ" version="9.0.0">
+  <ownedViewpoints name="petrinet2 viewpoint" modelFileExtension="petrinet2">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="petrinet" initialisation="true" domainClass="petrinet2.Net">
+      <metamodel href="../../org.modelexecution.xmof.examples.petrinet2/model/petrinet2.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="TranistionNode" domainClass="petrinet2.Transition">
+          <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="PlaceNode" domainClass="petrinet2.Place">
+          <style xsi:type="style:EllipseNodeDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="OutputEdge" sourceMapping="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='TranistionNode']" targetMapping="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='PlaceNode']" targetFinderExpression="[self.output/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="OUTPUT">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="InputEdge" sourceMapping="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='TranistionNode']" targetMapping="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='PlaceNode']" targetFinderExpression="[self.input/]">
+          <style sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="INPUT">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+      <additionalLayers name="Debug" activeByDefault="true">
+        <toolSections name="Debug">
+          <ownedTools xsi:type="tool:PopupMenu" name="Gemoc">
+            <menuItemDescription xsi:type="tool:OperationAction" name="Toggle Breackpoint">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Toggle Gemoc Breackpoint" icon="/org.gemoc.gemoc_modeling_workbench.ui/icons/breakpoint.gif" id="org.gemoc.gemoc_modeling_workbench.ui.debug.sirius.action.gemocToggleBreakpoint"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool:OperationAction" name="Debug">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Debug" id="org.gemoc.gemoc_modeling_workbench.ui.debug.sirius.action.gemocDebugAs"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet/>
+      </additionalLayers>
+      <additionalLayers name="Animation" reusedMappings="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@edgeMappings[name='InputEdge'] //@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@edgeMappings[name='OutputEdge']">
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style" referenceName="color"/>
+          </vsmElementCustomizations>
+        </customization>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.examples.petrinet2integ.design.services.Petrinet2DebugService"/>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.examples.petrinet2integ.design.services.Petrinet2AnimationService"/>
+  </ownedViewpoints>
+</description:Group>

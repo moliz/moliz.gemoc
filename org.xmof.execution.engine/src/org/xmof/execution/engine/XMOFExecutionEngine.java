@@ -80,10 +80,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 	
 	@Override
 	public void initialize(final IExecutionContext executionContext) {
-		//super.initialize(executionContext);
-
-		resourceSet = new ResourceSetImpl();
 		super.initialize(executionContext);
+		resourceSet = new ResourceSetImpl();
+		
 				
 		//openXMOF(filename);
 
