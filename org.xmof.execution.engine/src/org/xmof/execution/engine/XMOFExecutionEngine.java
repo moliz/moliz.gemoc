@@ -27,6 +27,7 @@ import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
 import org.eclipse.graphiti.ui.editor.DiagramEditor;
 import org.eclipse.ui.IEditorPart;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
+import org.gemoc.executionframework.engine.mse.GenericMSE;
 import org.gemoc.executionframework.engine.mse.LogicalStep;
 import org.gemoc.executionframework.engine.mse.MSE;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
@@ -51,15 +52,17 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEClass;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
+import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.vm.XMOFVirtualMachine;
+import org.modelexecution.xmof.vm.XMOFVirtualMachineEvent;
 import org.xmof.execution.engine.ui.commons.RunConfiguration;
 import org.xmof.execution.xdsml.api.extensions.languages.XMOFLanguageDefinitionExtension;
 
 import xmofxdsml.XMOFLanguageDefiniton;
 
 public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
-		implements ExecutionEventListener {
+		implements ExecutionEventListener, IXMOFVirtualMachineListener {
 
 	private Runnable entryPoint;
 	private ResourceSet resourceSet;
@@ -89,7 +92,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		model = getXMOFBasedModel(executionContext);
 		vm = new XMOFVirtualMachine(model);
 		vm.addRawExecutionEventListener(this);
-		// vm.addVirtualMachineListener(this);
+		vm.addVirtualMachineListener(this);
 		try {
 			if (!executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
 				createBreakpoints(model);
@@ -109,18 +112,20 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 					_instance.setEngineStatus(RunStatus.Running);
 					_instance.notifyEngineAboutToStart();
 					rawEvents = new ArrayList<Event>();
-					//Check Executionmode whether to run or debug VM
-					if(executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
-						
+					// Check Executionmode whether to run or debug VM
+					if (executionContext.getExecutionMode().equals(
+							ExecutionMode.Run)) {
+
 						vm.run();
-					}else {
+					} else {
 						vm.debug();
 					}
-					while (vm.isRunning() && vm.isSuspended()) {
-						vm.resume();
-					}
+					// while (vm.isRunning() && vm.isSuspended()) {
+					// vm.resume();
+					// }
 
 				} catch (Exception e) {
+					System.out.println(e);
 					throw new RuntimeException(e);
 				} finally {
 					// StepManagerRegistry.getInstance().unregisterManager(
@@ -362,7 +367,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	// }
 
 	public void resume() {
-		vm.resume();
+		resume = true;
 	}
 
 	public void subscribeToVMEvents(ExecutionEventListener eventListener) {
@@ -456,7 +461,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 		LogicalStep templs = MseFactory.eINSTANCE.createLogicalStep();
 
-		MSE MSEEvent = MseFactory.eINSTANCE.createGenericMSE();
+		GenericMSE MSEEvent = MseFactory.eINSTANCE.createGenericMSE();
 		MSEOccurrence mse = MseFactory.eINSTANCE.createMSEOccurrence();
 
 		LogMSETrans l = new LogMSETrans();
@@ -472,7 +477,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			logMSETrans.put((EObject) o, l);
 
 			// TODO
-			// MSEEvent.setCaller((EObject) o);
+			MSEEvent.setCallerReference((EObject) o);
 
 			if (o instanceof ENamedElement) {
 				MSEEvent.setName(((ENamedElement) o).getName());
@@ -525,7 +530,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 		LogicalStep templs = MseFactory.eINSTANCE.createLogicalStep();
 
-		MSE MSEEvent = MseFactory.eINSTANCE.createGenericMSE();
+		GenericMSE MSEEvent = MseFactory.eINSTANCE.createGenericMSE();
 
 		LogMSETrans l = new LogMSETrans();
 		l.setLogicalStep(templs);
@@ -564,9 +569,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				MSEEvent.setName("TEST");
 			// MSEEvent.setName(((EObject)o)..);
 			// MSEEvent.setName("-");
+			MSEEvent.setCallerReference((EObject) o);
 		}
-
 		mse.setMse(MSEEvent);
+
 		mse.setLogicalStep(templs);
 
 		// logicalSteps.put(entry.getActivity(), templs);
@@ -613,6 +619,20 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				.getEngineAddons()) {
 			addon.aboutToExecuteMSEOccurrence(this, occurrence);
 		}
+	}
+
+	private boolean resume = false;
+
+	@Override
+	public void notify(XMOFVirtualMachineEvent event) {
+		if (event.getType().equals(XMOFVirtualMachineEvent.Type.SUSPEND)) {
+			if (resume) {
+				resume = false;
+				vm.resume();
+
+			}
+		}
+
 	}
 
 }

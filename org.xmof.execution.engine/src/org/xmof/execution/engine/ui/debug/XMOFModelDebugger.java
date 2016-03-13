@@ -1,28 +1,33 @@
 package org.xmof.execution.engine.ui.debug;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.gemoc.execution.sequential.javaengine.ui.debug.GenericSequentialModelDebugger;
+import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
+import org.eclipse.xtext.naming.QualifiedName;
+import org.gemoc.executionframework.engine.core.EngineStoppedException;
 import org.gemoc.executionframework.engine.mse.LogicalStep;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.gemoc.executionframework.engine.ui.debug.AbstractGemocDebugger;
-import org.gemoc.executionframework.engine.ui.debug.IGemocDebugger;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.core.ISequentialExecutionEngine;
-import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
 import org.modelexecution.fumldebug.core.event.ActivityNodeEntryEvent;
 import org.modelexecution.fumldebug.core.event.Event;
 import org.xmof.execution.engine.XMOFExecutionEngine;
 
 import fr.obeo.dsl.debug.ide.event.IDSLDebugEventProcessor;
+import fr.obeo.dsl.debug.ide.event.debugger.StepIntoResumingReply;
 
 public class XMOFModelDebugger extends AbstractGemocDebugger implements
 		ExecutionEventListener {
 	private XMOFExecutionEngine engine;
 
+	protected final String threadName = "Model debugging";
 	public XMOFModelDebugger(IDSLDebugEventProcessor target,
 			ISequentialExecutionEngine engine) {
 		super(target, engine);
@@ -36,9 +41,8 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 
 	// private boolean shouldBreak = false;
 	//
-	private boolean initFakeStackFrame = false;
-	private String threadName = "a6tIIuOOz8Ir1ppWaAxAtKKoH";
-	private List<ToPushPop> toPushPop = new ArrayList<>();
+
+	// private List<ToPushPop> toPushPop = new ArrayList<>();
 
 	// @Override
 	// public void engineStarted(IBasicExecutionEngine executionEngine) {
@@ -115,15 +119,15 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 
 	@Override
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
-		spawnRunningThread(Thread.currentThread().getName(), engine
+		spawnRunningThread(threadName, engine
 				.getExecutionContext().getResourceModel().getContents().get(0));
 
 	}
 
 	@Override
 	public void engineStopped(IBasicExecutionEngine engine) {
-		if (!isTerminated(Thread.currentThread().getName())) {
-			terminated(Thread.currentThread().getName());
+		if (!isTerminated(threadName)) {
+			terminated(threadName);
 		}
 
 	}
@@ -131,11 +135,13 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 	@Override
 	public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine,
 			LogicalStep logicalStepToExecute) {
-		// if (!control(Thread.currentThread().getName(), logicalStepToApply)) {
+		// if (!control(threadName, logicalStepToApply)) {
 		// throw new RuntimeException("Debug thread has stopped.");
 		// }
 
 	}
+
+	List<ToPushPop> toPushPop = new ArrayList<>();
 
 	@Override
 	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
@@ -143,10 +149,21 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 		ToPushPop aaa = new ToPushPop(mseOccurrence, true);
 		toPushPop.add(aaa);
 
-		if (!control(Thread.currentThread().getName(), mseOccurrence)) {
-			throw new RuntimeException("Debug thread has stopped.");
+//		if (!control(threadName, mseOccurrence)) {
+//			throw new RuntimeException("Debug thread has stopped.");
+//		}
+		if (!control(threadName, mseOccurrence)) {
+			throw new EngineStoppedException("Debug thread has stopped.");
 		}
 
+	}
+	@Override
+	public boolean control(String threadName, EObject instruction) {
+		if (!isTerminated() && instruction instanceof LogicalStep) {
+			return true;
+		} else {
+			return super.control(threadName, instruction);
+		}
 	}
 
 	@Override
@@ -166,50 +183,121 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 		engine.start();
 
 	}
+	@Override
+	public void steppingInto(String threadName) {
+		super.steppingInto(threadName);
+		engine.resume();
+	}
 
 	@Override
 	protected void updateStack(String threadName, EObject instruction) {
-		// This initial frame will in ANY case display the root element of the
-		// model, because the first context is the one of the Thread, which is
-		// the root
-		if (!initFakeStackFrame) {
-			pushStackFrame(threadName, "Root frame", instruction, instruction);
-			initFakeStackFrame = true;
-			this.threadName = threadName;
-		}
 
+		Deque<MSEOccurrence> virtualStack = new ArrayDeque<>();
 		for (ToPushPop m : toPushPop) {
 			if (m.push) {
-				pushStackFrame(threadName, m.mseOccurrence.getMse().getName(),
-						m.mseOccurrence, m.mseOccurrence);
+				// We push the mse onto the virtual stack.
+				virtualStack.push(m.mseOccurrence);
 			} else {
-				popStackFrame(threadName);
+				if (virtualStack.isEmpty()) {
+					// The virtual stack is empty, we pop the top stackframe off
+					// of the real stack.
+					popStackFrame(threadName);
+				} else {
+					// The virtual stack is not empty, we pop the top stackframe
+					// off of it.
+					virtualStack.pop();
+				}
 			}
+			Iterator iterator = virtualStack.descendingIterator();
+			while (iterator.hasNext()) {
+				
+				MSEOccurrence mseOccurrence = (MSEOccurrence) iterator.next();
+				EObject caller = mseOccurrence.getMse().getCaller();
+//				String name = caller.eClass().getName() + " ("
+//						+ mseOccurrence.getMse().getName() + ") ["
+//						+ caller.toString() + "]";
+
+				DefaultDeclarativeQualifiedNameProvider nameprovider = new DefaultDeclarativeQualifiedNameProvider();
+				QualifiedName qname = nameprovider
+						.getFullyQualifiedName(caller);
+				String objectName = "";
+				if (qname != null)
+					objectName = qname.toString();
+				else
+				if(caller != null)
+					objectName = caller.toString();
+				String opName = mseOccurrence.getMse().getName();
+				String callerType = caller.eClass().getName();
+				String prettyName = "(" + callerType + ") " + objectName
+						+ " -> " + opName + "()";
+				pushStackFrame(threadName, prettyName, caller, caller);
+			}
+
+			setCurrentInstruction(threadName, instruction);
+
+			
 		}
-
 		toPushPop.clear();
+	}
 
+	// // This initial frame will in ANY case display the root element of the
+	// // model, because the first context is the one of the Thread, which is
+	// // the root
+	// if (!initFakeStackFrame) {
+	// pushStackFrame(threadName, "Root frame", instruction, instruction);
+	// initFakeStackFrame = true;
+	// this.threadName = threadName;
+	// }
+	//
+	// for (ToPushPop m : toPushPop) {
+	// if (m.push) {
+	// pushStackFrame(threadName, m.mseOccurrence.getMse().getName(),
+	// m.mseOccurrence, m.mseOccurrence);
+	// } else {
+	// popStackFrame(threadName);
+	// }
+	// }
+	//
+	// toPushPop.clear();
+
+	protected int nbStackFrames = 0;
+
+	Deque<String> stackFrameNames = new ArrayDeque<>();
+
+	@Override
+	public void pushStackFrame(String threadName, String frameName,
+			EObject context, EObject instruction) {
+		super.pushStackFrame(threadName, frameName, context, instruction);
+		stackFrameNames.push(frameName);
+		nbStackFrames++;
+	}
+
+	@Override
+	public void popStackFrame(String threadName) {
+		super.popStackFrame(threadName);
+		stackFrameNames.pop();
+		nbStackFrames--;
 	}
 
 	@Override
 	public void notify(Event rawExecutionEvent) {
 		if (rawExecutionEvent instanceof ActivityNodeEntryEvent) {
-			//shouldBreak = true;
+			// shouldBreak = true;
 		}
 
 	}
-	
+
 	@Override
 	public boolean shouldBreak(EObject instruction) {
-//		if (instruction instanceof MSEOccurrence) {
-//			return shouldBreakMSEOccurence((MSEOccurrence) instruction);
-//		} else if (instruction == FAKE_INSTRUCTION) {
-//			// Part of the breakpoint simulation to suspend the execution once the end has been reached. 
-//			return true;
-//		}
+		// if (instruction instanceof MSEOccurrence) {
+		// return shouldBreakMSEOccurence((MSEOccurrence) instruction);
+		// } else if (instruction == FAKE_INSTRUCTION) {
+		// // Part of the breakpoint simulation to suspend the execution once
+		// the end has been reached.
+		// return true;
+		// }
 		System.out.println("Shouldbreak");
 		return true;
 	}
-
 
 }
