@@ -23,5 +23,6 @@ Require-Bundle: org.xmof.execution.xdsml.model.edit;bundle-version="1.0.0",
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.gemoc.executionframework.ui;bundle-version="0.1.0",
  org.gemoc.xdsmlframework.ui.utils,
- org.eclipse.core.databinding.property;bundle-version="1.4.200"
+ org.eclipse.core.databinding.property;bundle-version="1.4.200",
+ fr.inria.diverse.melange.metamodel;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
