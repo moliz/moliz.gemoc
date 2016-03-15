@@ -47,6 +47,7 @@ import org.modelexecution.xmof.Semantics.Classes.Kernel.ObjectValue;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValueDefinition;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.CallOperationAction;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEClass;
@@ -64,16 +65,29 @@ import xmofxdsml.XMOFLanguageDefiniton;
 public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		implements ExecutionEventListener, IXMOFVirtualMachineListener {
 
-	private Runnable entryPoint;
-	private ResourceSet resourceSet;
-	private ConfigurationObjectMap configurationMap;
-	private XMOFVirtualMachine vm;
 	private XMOFExecutionEngine _instance;
+	private EObject actualActivity = null;
+	private EOperation actualEOperation;
+	private LogicalStep actualLogicalStep;
+	private MSEOccurrence actualMSEOccurence;
+	private ConfigurationObjectMap configurationMap;
+	private DiagramEditor diagramEditor;
+
+	private Runnable entryPoint;
+
 	private XMOFBasedModel model;
+
+	private DiagramEditor oldEditor;
+
+	private ActivityNode oldNode;
 
 	private List<Event> rawEvents;
 
-	private LogicalStep ls = null;
+	private ResourceSet resourceSet;
+
+	private boolean resume = false;
+
+	private XMOFVirtualMachine vm;
 
 	private IEditorPart xMOFEditor = null;
 
@@ -82,60 +96,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		this._instance = this;
 	}
 
-	@Override
-	public void initialize(final IExecutionContext executionContext) {
-		super.initialize(executionContext);
-		resourceSet = new ResourceSetImpl();
-
-		// openXMOF(filename);
-
-		model = getXMOFBasedModel(executionContext);
-		vm = new XMOFVirtualMachine(model);
-		vm.addRawExecutionEventListener(this);
-		vm.addVirtualMachineListener(this);
-		try {
-			if (!executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
-				createBreakpoints(model);
-			}
-
-		} catch (CoreException ex) {
-			System.out.println(ex.getMessage());
-		}
-
-		entryPoint = new Runnable() {
-			@Override
-			public void run() {
-				// StepManagerRegistry.getInstance().registerManager(
-				// XMOFExecutionEngine.this);
-				try {
-					// run vm
-					_instance.setEngineStatus(RunStatus.Running);
-					_instance.notifyEngineAboutToStart();
-					rawEvents = new ArrayList<Event>();
-					// Check Executionmode whether to run or debug VM
-					if (executionContext.getExecutionMode().equals(
-							ExecutionMode.Run)) {
-
-						vm.run();
-					} else {
-						vm.debug();
-					}
-					// while (vm.isRunning() && vm.isSuspended()) {
-					// vm.resume();
-					// }
-
-				} catch (Exception e) {
-					System.out.println(e);
-					throw new RuntimeException(e);
-				} finally {
-					// StepManagerRegistry.getInstance().unregisterManager(
-					// XMOFExecutionEngine.this);
-
-				}
-			}
-		};
-	}
-
+	// TODO check if this is necessary
 	private void createBreakpoints(XMOFBasedModel model) throws CoreException {
 		Activity activity = null;
 		EObject mainClassObject = model.getMainEClassObjects().get(0);
@@ -153,11 +114,94 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		}
 	}
 
+	/**
+	 * 
+	 * @param caller
+	 *            The calling EObject
+	 * @param operation
+	 *            The operation called from caller
+	 * @param logicalstep
+	 *            The logical step from this operation
+	 */
+	private MSEOccurrence createMSEOccurence(EObject caller,
+			EOperation operation, LogicalStep logicalstep) {
+		if (actualMSEOccurence != null) {
+			finishMSEOccurence();
+		}
+
+		GenericMSE genericMSE = MseFactory.eINSTANCE.createGenericMSE();
+		MSEOccurrence occurence = MseFactory.eINSTANCE.createMSEOccurrence();
+		genericMSE.setCallerReference(caller);
+		// TODO Setting the ActionREferences causes gemoc to error
+		// if (operation != null) {
+		// genericMSE.setActionReference(operation);
+		// }
+		if (caller instanceof ENamedElement) {
+			genericMSE.setName(((ENamedElement) caller).getName());
+		} else {
+			genericMSE.setName("TEST");
+		}
+		occurence.setMse(genericMSE);
+
+		occurence.setLogicalStep(logicalstep);
+
+		// TODO save mseoccurence somewhere
+		notifyMSEOccurrenceAboutToStart(occurence);
+		actualMSEOccurence = occurence;
+		return occurence;
+	}
+
+	@Override
+	public String engineKindName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private void finishLogicalStep(LogicalStep logicalStep) {
+		notifyLogicalStepExecuted(logicalStep);
+		// TODO log logicalstep to be executed in Hashmap
+		// TODO check how many mse's have been in the logical step
+		actualLogicalStep = null;
+	}
+
+	private void finishMSEOccurence() {
+		notifyMSEOccurenceExecuted(actualMSEOccurence);
+		actualMSEOccurence = null;
+
+	}
+
+	@Override
+	public Runnable getEntryPoint() {
+		return entryPoint;
+	}
+
+	@Override
+	public Runnable getInitializeModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Collection<EObject> getInputModelElements(String modelPath) {
+		Resource resource = loadResource(modelPath);
+		return resource.getContents();
+	}
+
 	private Activity getMainActivity(EObject mainClassObject) {
 		EClass eClass = mainClassObject.eClass();
 		BehavioredEOperation mainOperation = getMainOperation(eClass);
 		Activity mainActivity = getMethod(eClass, mainOperation);
 		return mainActivity;
+	}
+
+	private BehavioredEOperation getMainOperation(EClass eClass) {
+		for (EOperation eOperation : eClass.getEAllOperations()) {
+			if (eOperation instanceof BehavioredEOperation
+					&& eOperation.getName().equals("main")) {
+				// actualEOperation = (BehavioredEOperation) eOperation;
+				return (BehavioredEOperation) eOperation;
+			}
+		}
+		return null;
 	}
 
 	private Activity getMethod(EClass eClass, BehavioredEOperation mainOperation) {
@@ -178,43 +222,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				return method;
 		}
 		return null;
-	}
-
-	private BehavioredEOperation getMainOperation(EClass eClass) {
-		for (EOperation eOperation : eClass.getEAllOperations()) {
-			if (eOperation instanceof BehavioredEOperation
-					&& eOperation.getName().equals("main")) {
-				return (BehavioredEOperation) eOperation;
-			}
-		}
-		return null;
-	}
-
-	private XMOFBasedModel getXMOFBasedModel(IExecutionContext executionContext) {
-
-		Collection<EObject> inputModelElements = loadInputModelElements(executionContext);
-		List<ParameterValue> inputParameterValues = loadInputParameterValueElements(executionContext);
-		Collection<EObject> inputParameterValueObjects = getParameterValueObjects(inputParameterValues);
-
-		Collection<EObject> inputElements = new ArrayList<EObject>();
-		inputElements.addAll(inputModelElements);
-		inputElements.addAll(inputParameterValueObjects);
-
-		LanguageDefinition ld = ((XMOFLanguageDefinitionExtension) executionContext
-				.getLanguageDefinitionExtension()).getLanguageDefinition();
-		String confMetamodelPath = ((XMOFLanguageDefiniton) ld)
-				.getXmofFileName().getXmofFileName();
-
-		Collection<EPackage> configurationPackages = loadConfigurationMetamodel(confMetamodelPath);
-		configurationMap = new ConfigurationObjectMap(inputElements,
-				configurationPackages);
-		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
-				getParameterValueConfiguration(inputParameterValues));
-		// } else {
-		// return new XMOFBasedModel(inputModelElements, inputParameterValues);
-		// }
-		//
-		// return null;
 	}
 
 	private List<ParameterValue> getParameterValueConfiguration(
@@ -247,6 +254,119 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		return parameterValueConfiguration;
 	}
 
+	private Collection<EObject> getParameterValueObjects(
+			Collection<ParameterValue> inputParameterValues) {
+		Collection<EObject> parameterValueObjects = new BasicEList<EObject>();
+		for (ParameterValue parameterValue : inputParameterValues) {
+			for (Value value : parameterValue.getValues()) {
+				if (value instanceof ObjectValue) {
+					ObjectValue objectValue = (ObjectValue) value;
+					EObject referencedEObject = objectValue.getEObject();
+					if (referencedEObject != null) {
+						parameterValueObjects.add(referencedEObject);
+					}
+				}
+			}
+		}
+		return parameterValueObjects;
+	}
+
+	private List<ParameterValue> getParameterValues(String modelPath) {
+		EList<ParameterValue> parameterValues = new BasicEList<ParameterValue>();
+
+		if (!(modelPath == null || modelPath == "")) {
+			Resource resource = loadResource(modelPath);
+			EList<EObject> parameterValueDefinitions = resource.getContents();
+			for (EObject eObject : parameterValueDefinitions) {
+				if (eObject instanceof ParameterValueDefinition) {
+					ParameterValueDefinition parameterValueDefinition = (ParameterValueDefinition) eObject;
+					parameterValues.addAll(parameterValueDefinition
+							.getParameterValues());
+				}
+			}
+		}
+		return parameterValues;
+	}
+
+	private XMOFBasedModel getXMOFBasedModel(IExecutionContext executionContext) {
+
+		Collection<EObject> inputModelElements = loadInputModelElements(executionContext);
+		List<ParameterValue> inputParameterValues = loadInputParameterValueElements(executionContext);
+		Collection<EObject> inputParameterValueObjects = getParameterValueObjects(inputParameterValues);
+
+		Collection<EObject> inputElements = new ArrayList<EObject>();
+		inputElements.addAll(inputModelElements);
+		inputElements.addAll(inputParameterValueObjects);
+
+		LanguageDefinition ld = ((XMOFLanguageDefinitionExtension) executionContext
+				.getLanguageDefinitionExtension()).getLanguageDefinition();
+		String confMetamodelPath = ((XMOFLanguageDefiniton) ld)
+				.getXmofFileName().getXmofFileName();
+
+		Collection<EPackage> configurationPackages = loadConfigurationMetamodel(confMetamodelPath);
+		configurationMap = new ConfigurationObjectMap(inputElements,
+				configurationPackages);
+		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
+				getParameterValueConfiguration(inputParameterValues));
+		// } else {
+		// return new XMOFBasedModel(inputModelElements, inputParameterValues);
+		// }
+		//
+		// return null;
+	}
+
+	@Override
+	public void initialize(final IExecutionContext executionContext) {
+		super.initialize(executionContext);
+		resourceSet = new ResourceSetImpl();
+
+		// openXMOF(filename);
+
+		model = getXMOFBasedModel(executionContext);
+		vm = new XMOFVirtualMachine(model);
+		vm.addRawExecutionEventListener(this);
+		vm.addVirtualMachineListener(this);
+		try {
+			if (!executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
+				createBreakpoints(model);
+			}
+
+		} catch (CoreException ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		entryPoint = new Runnable() {
+			@Override
+			public void run() {
+				// TODO check what the Stepmanager is for in GEMOC
+				// StepManagerRegistry.getInstance().registerManager(
+				// XMOFExecutionEngine.this);
+				try {
+					// run vm
+					_instance.setEngineStatus(RunStatus.Running);
+					_instance.notifyEngineAboutToStart();
+					rawEvents = new ArrayList<Event>();
+					// Check Executionmode whether to run or debug VM
+					if (executionContext.getExecutionMode().equals(
+							ExecutionMode.Run)) {
+
+						vm.run();
+					} else {
+						vm.debug();
+					}
+
+				} catch (Exception e) {
+					System.out.println(e);
+					throw new RuntimeException(e);
+				} finally {
+					// StepManagerRegistry.getInstance().unregisterManager(
+					// XMOFExecutionEngine.this);
+
+				}
+			}
+		};
+	}
+
 	private Collection<EPackage> loadConfigurationMetamodel(
 			String confMetamodelPath) {
 		Resource resource = loadResource(confMetamodelPath);
@@ -268,31 +388,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		return confMMPackages;
 	}
 
-	private void reloadPackage(EPackage registeredPackage) {
-		try {
-			registeredPackage.eResource().unload();
-			registeredPackage.eResource().load(null);
-		} catch (IOException e) {
-			// do not reload if IO exception
-		}
+	private Collection<EObject> loadInputModelElements(
+			IExecutionContext executionContext) {
+		String modelPath = executionContext.getRunConfiguration()
+				.getExecutedModelURI().path();
 
-	}
-
-	private Collection<EObject> getParameterValueObjects(
-			Collection<ParameterValue> inputParameterValues) {
-		Collection<EObject> parameterValueObjects = new BasicEList<EObject>();
-		for (ParameterValue parameterValue : inputParameterValues) {
-			for (Value value : parameterValue.getValues()) {
-				if (value instanceof ObjectValue) {
-					ObjectValue objectValue = (ObjectValue) value;
-					EObject referencedEObject = objectValue.getEObject();
-					if (referencedEObject != null) {
-						parameterValueObjects.add(referencedEObject);
-					}
-				}
-			}
-		}
-		return parameterValueObjects;
+		modelPath = modelPath.substring(9, modelPath.length());
+		Collection<EObject> inputModelElements = getInputModelElements(modelPath);
+		return inputModelElements;
 	}
 
 	private List<ParameterValue> loadInputParameterValueElements(
@@ -304,80 +407,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		return parameterValues;
 	}
 
-	private List<ParameterValue> getParameterValues(String modelPath) {
-		EList<ParameterValue> parameterValues = new BasicEList<ParameterValue>();
-
-		if (!(modelPath == null || modelPath == "")) {
-			Resource resource = loadResource(modelPath);
-			EList<EObject> parameterValueDefinitions = resource.getContents();
-			for (EObject eObject : parameterValueDefinitions) {
-				if (eObject instanceof ParameterValueDefinition) {
-					ParameterValueDefinition parameterValueDefinition = (ParameterValueDefinition) eObject;
-					parameterValues.addAll(parameterValueDefinition
-							.getParameterValues());
-				}
-			}
-		}
-		return parameterValues;
-	}
-
-	private Collection<EObject> loadInputModelElements(
-			IExecutionContext executionContext) {
-		String modelPath = executionContext.getRunConfiguration()
-				.getExecutedModelURI().path();
-
-		modelPath = modelPath.substring(9, modelPath.length());
-		Collection<EObject> inputModelElements = getInputModelElements(modelPath);
-		return inputModelElements;
-	}
-
-	private Collection<EObject> getInputModelElements(String modelPath) {
-		Resource resource = loadResource(modelPath);
-		return resource.getContents();
-	}
-
 	private Resource loadResource(String path) {
 		return resourceSet.getResource(
 				URI.createPlatformResourceURI(path, true), true);
 	}
-
-	@Override
-	public Runnable getEntryPoint() {
-		return entryPoint;
-	}
-
-	@Override
-	public Runnable getInitializeModel() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String engineKindName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	// @Override
-	// public void notify(XMOFVirtualMachineEvent event) {
-	// if (event.getType() == Type.SUSPEND) {
-	// resume();
-	// }
-	//
-	// }
-
-	public void resume() {
-		resume = true;
-	}
-
-	public void subscribeToVMEvents(ExecutionEventListener eventListener) {
-		vm.addRawExecutionEventListener(eventListener);
-	}
-
-	private Map<EObject, LogMSETrans> logMSETrans = new HashMap<EObject, LogMSETrans>();
-	private DiagramEditor diagramEditor;
-	private DiagramEditor oldEditor;
-	private ActivityNode oldNode;
 
 	@Override
 	public void notify(Event event) {
@@ -394,217 +427,16 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	}
 
-	private void processActivityExit(ActivityExitEvent event) {
-		// System.out.println("RECV: ActivityExitEvent"+event.getTimestamp());
+	@Override
+	public void notify(XMOFVirtualMachineEvent event) {
+		if (event.getType().equals(XMOFVirtualMachineEvent.Type.SUSPEND)) {
+			if (resume) {
+				resume = false;
+				vm.resume();
 
-		// logMSETrans.get(key)
-		try {
-			Object o = vm.getxMOFConversionResult().getInputObject(
-					event.getActivity());
-			if (o instanceof EObject) {
-				LogMSETrans l = logMSETrans.get((EObject) o);
-				if (l != null) {
-					if (l.getTransaction() != null) {
-						l.getTransaction().commit();
-						l.setTransaction(null);
-					}
-					if ((l.getMseOccurence() != null)) {
-						notifyMSEOccurenceExecuted(l.getMseOccurence());
-						l.setMseOccurence(null);
-					}
-					if (l.getLogicalStep() != null) {
-						notifyLogicalStepExecuted(l.getLogicalStep());
-						l.setLogicalStep(null);
-					}
-				}
 			}
-		} catch (Exception ex) {
-			// DO Nothing
-		}
-	}
-
-	private void processActivityNodeExit(ActivityNodeExitEvent event) {
-
-		try {
-			Object o = vm.getxMOFConversionResult().getInputObject(
-					event.getNode());
-			if (o instanceof EObject) {
-				LogMSETrans l = logMSETrans.get((EObject) o);
-				if (l != null) {
-					if (l.getTransaction() != null) {
-						l.getTransaction().commit();
-						l.setTransaction(null);
-					}
-					if ((l.getMseOccurence() != null)) {
-						notifyMSEOccurenceExecuted(l.getMseOccurence());
-						l.setMseOccurence(null);
-					}
-					if (l.getLogicalStep() != null) {
-						notifyLogicalStepExecuted(l.getLogicalStep());
-						l.setLogicalStep(null);
-					}
-				}
-
-				if (diagramEditor != null) {
-					oldEditor = (DiagramEditor) diagramEditor;
-					oldNode = (ActivityNode) o;
-
-				}
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
 		}
 
-	}
-
-	private void processActivityNodeEntry(ActivityNodeEntryEvent event) {
-
-		LogicalStep templs = MseFactory.eINSTANCE.createLogicalStep();
-
-		GenericMSE MSEEvent = MseFactory.eINSTANCE.createGenericMSE();
-		MSEOccurrence mse = MseFactory.eINSTANCE.createMSEOccurrence();
-
-		LogMSETrans l = new LogMSETrans();
-		l.setLogicalStep(templs);
-		l.setMseOccurence(mse);
-
-		Object o = vm.getxMOFConversionResult().getInputObject(event.getNode());
-		if (o instanceof EObject) {
-
-			// org.modelexecution.xmof.diagram.decorator.service.DecoratorService.addDecoratedElement(o);
-			// refreshDecoration(editor,o);
-
-			logMSETrans.put((EObject) o, l);
-
-			// TODO
-			MSEEvent.setCallerReference((EObject) o);
-
-			if (o instanceof ENamedElement) {
-				MSEEvent.setName(((ENamedElement) o).getName());
-			}
-			// MSEEvent.setName(((EObject)o)..);
-			// MSEEvent.setName("-");
-		}
-
-		mse.setMse(MSEEvent);
-		mse.setLogicalStep(templs);
-
-		// TODO
-		// Display.getDefault().syncExec(new Runnable() {
-		// public void run() {
-		// if (diagramEditor != null) {
-		// if (oldEditor != null && oldNode != null) {
-		//
-		// refreshDecoration(oldEditor, oldNode, false);
-		// System.out.println("Refresh - for Activitynode "
-		// + oldNode);
-		// }
-		// refreshDecoration(diagramEditor, (ActivityNode) o, true);
-		// System.out.println("Refresh + for Activitynode " + o);
-		// }
-		// }
-		// });
-
-		notifyAboutToExecuteLogicalStep(templs);
-		notifyMSEOccurrenceAboutToStart(mse);
-
-		RecordingCommand rc = new RecordingCommand(editingDomain) {
-			@Override
-			protected void doExecute() {
-				// Do Nothing yet
-			}
-		};
-
-		try {
-			l.setTransaction(startNewTransaction(editingDomain, rc));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		System.out.println("About to Execute Node: " + event.getNode());
-
-	}
-
-	private void processActivityEntry(ActivityEntryEvent event) {
-
-		LogicalStep templs = MseFactory.eINSTANCE.createLogicalStep();
-
-		GenericMSE MSEEvent = MseFactory.eINSTANCE.createGenericMSE();
-
-		LogMSETrans l = new LogMSETrans();
-		l.setLogicalStep(templs);
-
-		MSEOccurrence mse = MseFactory.eINSTANCE.createMSEOccurrence();
-		l.setMseOccurence(mse);
-
-		Object o = vm.getxMOFConversionResult().getInputObject(
-				event.getActivity());
-
-		// TODO
-		// Display.getDefault().syncExec(new Runnable() {
-		// public void run() {
-		// if (xMOFEditor != null) {
-		// if (xMOFEditor instanceof KernelEditor) {
-		// KernelEditor editor = (KernelEditor) xMOFEditor;
-		// editor.showDiagramTap(o);
-		// if (o instanceof Activity) {
-		// Object selectedPage = editor.getSelectedPage();
-		// if (selectedPage instanceof DiagramEditor) {
-		// diagramEditor = (DiagramEditor) selectedPage;
-		// }
-		// }
-		// }
-		// }
-		// }
-		// });
-
-		if (o instanceof EObject) {
-			logMSETrans.put((EObject) o, l);
-			// TODO
-			// MSEEvent.setCaller((EObject) o);
-			if (o instanceof ENamedElement) {
-				MSEEvent.setName(((ENamedElement) o).getName());
-			} else
-				MSEEvent.setName("TEST");
-			// MSEEvent.setName(((EObject)o)..);
-			// MSEEvent.setName("-");
-			MSEEvent.setCallerReference((EObject) o);
-		}
-		mse.setMse(MSEEvent);
-
-		mse.setLogicalStep(templs);
-
-		// logicalSteps.put(entry.getActivity(), templs);
-		notifyAboutToExecuteLogicalStep(templs);
-		notifyMSEOccurrenceAboutToStart(mse);
-
-		RecordingCommand rc = new RecordingCommand(editingDomain) {
-			@Override
-			protected void doExecute() {
-				// Do Nothing yet
-			}
-		};
-
-		try {
-			l.setTransaction(startNewTransaction(editingDomain, rc));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		// System.out.println("RECV: ActivityEntryEvent"+event.getTimestamp());
-
-		// TODO Transaction starten
-	}
-
-	private EMFCommandTransaction startNewTransaction(
-			InternalTransactionalEditingDomain editingDomain,
-			RecordingCommand command) throws InterruptedException {
-		EMFCommandTransaction currentTransaction = new EMFCommandTransaction(
-				command, editingDomain, null);
-		currentTransaction.start();
-		return currentTransaction;
 	}
 
 	private void notifyMSEOccurenceExecuted(MSEOccurrence occurrence) {
@@ -621,18 +453,88 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		}
 	}
 
-	private boolean resume = false;
+	private void processActivityEntry(ActivityEntryEvent event) {
 
-	@Override
-	public void notify(XMOFVirtualMachineEvent event) {
-		if (event.getType().equals(XMOFVirtualMachineEvent.Type.SUSPEND)) {
-			if (resume) {
-				resume = false;
-				vm.resume();
+		LogicalStep templs = startLogicalStep();
 
-			}
+		Object o = vm.getxMOFConversionResult().getInputObject(
+				event.getActivity());
+		if (o instanceof EObject) {
+			actualActivity = (Activity) o;
+			// TODO Maybe not correct to start an MSE Event for Activities
+			MSEOccurrence ms = createMSEOccurence((EObject) o,
+					actualEOperation, templs);
+		} else {
+			// TODO Throw Error or handle non EObjects (not possible?)
+		}
+	}
+
+	private void processActivityExit(ActivityExitEvent event) {
+		finishLogicalStep(actualLogicalStep);
+		// TODO Logical Step cleanup
+	}
+
+	private void processActivityNodeEntry(ActivityNodeEntryEvent event) {
+
+		Object o = vm.getxMOFConversionResult().getInputObject(event.getNode());
+		if (o instanceof EObject) {
+
+			EObject activityNode = (EObject) o;
+
+			// ActivityNode node = (ActivityNode) o;
+			createMSEOccurence(activityNode, null, actualLogicalStep);
+			// if (o instanceof CallOperationAction) {
+			// actualEOperation = ((CallOperationAction) o).getOperation();
+			// }
 		}
 
+	}
+
+	private void processActivityNodeExit(ActivityNodeExitEvent event) {
+		// TODO maybe more cleanup necessary
+		// Object o = vm.getxMOFConversionResult().getInputObject(
+		// event.getNode());
+		finishMSEOccurence();
+	}
+
+	private void reloadPackage(EPackage registeredPackage) {
+		try {
+			registeredPackage.eResource().unload();
+			registeredPackage.eResource().load(null);
+		} catch (IOException e) {
+			// do not reload if IO exception
+		}
+
+	}
+
+	public void resume() {
+		resume = true;
+	}
+
+	private LogicalStep startLogicalStep() {
+		if (actualLogicalStep != null) {
+			finishLogicalStep(actualLogicalStep);
+		} else {
+			LogicalStep ls = MseFactory.eINSTANCE.createLogicalStep();
+			notifyAboutToExecuteLogicalStep(ls);
+			actualLogicalStep = ls;
+		}
+		return actualLogicalStep;
+
+	}
+
+	//TODO reorg
+	private EMFCommandTransaction startNewTransaction(
+			InternalTransactionalEditingDomain editingDomain,
+			RecordingCommand command) throws InterruptedException {
+		EMFCommandTransaction currentTransaction = new EMFCommandTransaction(
+				command, editingDomain, null);
+		currentTransaction.start();
+		return currentTransaction;
+	}
+
+	public void subscribeToVMEvents(ExecutionEventListener eventListener) {
+		vm.addRawExecutionEventListener(eventListener);
 	}
 
 }

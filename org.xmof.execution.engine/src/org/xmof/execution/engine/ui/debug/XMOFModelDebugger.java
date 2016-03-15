@@ -27,78 +27,17 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 		ExecutionEventListener {
 	private XMOFExecutionEngine engine;
 
+	private boolean breakOnActivityNodes = true;
+
 	protected final String threadName = "Model debugging";
+
 	public XMOFModelDebugger(IDSLDebugEventProcessor target,
 			ISequentialExecutionEngine engine) {
 		super(target, engine);
 		if (engine instanceof XMOFExecutionEngine) {
 			this.engine = (XMOFExecutionEngine) engine;
 		}
-		// TODO Auto-generated constructor stub
 	}
-
-	// XmofExecutionEngine
-
-	// private boolean shouldBreak = false;
-	//
-
-	// private List<ToPushPop> toPushPop = new ArrayList<>();
-
-	// @Override
-	// public void engineStarted(IBasicExecutionEngine executionEngine) {
-	// // TODO Auto-generated method stub
-	// System.out.println("enginestarted");
-	//
-	// }
-	//
-	// @Override
-	// public void engineStopped(IBasicExecutionEngine engine) {
-	// // TODO Auto-generated method stub
-	// System.out.println("enginestopped");
-	// }
-	//
-	// @Override
-	// public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine,
-	// LogicalStep logicalStepToExecute) {
-	// // TODO Auto-generated method stub
-	// System.out.println("abouttoexecutelogicalstep");
-	// }
-	//
-	// @Override
-	// public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
-	// MSEOccurrence mseOccurrence) {
-	// // TODO Auto-generated method stub
-	// System.out.println("abouttoexecutemseoccurence");
-	// }
-	//
-	// @Override
-	// public boolean canStepInto(String arg0, EObject arg1) {
-	// // TODO Auto-generated method stub
-	// System.out.println("canstepinto");
-	// return true;
-	// }
-	//
-	// @Override
-	// public void disconnect() {
-	// // TODO Auto-generated method stub
-	// System.out.println("disconnect");
-	//
-	// }
-	//
-	// @Override
-	// public void start() {
-	// // TODO Auto-generated method stub
-	// System.out.println("start");
-	// engine.start();
-	//
-	// }
-	//
-	// @Override
-	// protected void updateStack(String threadName, EObject instruction) {
-	// // TODO Auto-generated method stub
-	// System.out.println("updatestack");
-	//
-	// }
 
 	private static class ToPushPop {
 		public MSEOccurrence mseOccurrence;
@@ -119,8 +58,8 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 
 	@Override
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
-		spawnRunningThread(threadName, engine
-				.getExecutionContext().getResourceModel().getContents().get(0));
+		spawnRunningThread(threadName, engine.getExecutionContext()
+				.getResourceModel().getContents().get(0));
 
 	}
 
@@ -135,7 +74,8 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 	@Override
 	public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine,
 			LogicalStep logicalStepToExecute) {
-		// if (!control(threadName, logicalStepToApply)) {
+
+		// if (!control(threadName, logicalStepToExecute)) {
 		// throw new RuntimeException("Debug thread has stopped.");
 		// }
 
@@ -144,19 +84,31 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 	List<ToPushPop> toPushPop = new ArrayList<>();
 
 	@Override
+	public void mseOccurrenceExecuted(IBasicExecutionEngine engine,
+			MSEOccurrence mseOccurrence) {
+		// TODO check if super call is necessary
+		super.mseOccurrenceExecuted(engine, mseOccurrence);
+		ToPushPop aaa = new ToPushPop(mseOccurrence, false);
+		toPushPop.add(aaa);
+	}
+
+	@Override
 	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
 		ToPushPop aaa = new ToPushPop(mseOccurrence, true);
 		toPushPop.add(aaa);
 
-//		if (!control(threadName, mseOccurrence)) {
-//			throw new RuntimeException("Debug thread has stopped.");
-//		}
-		if (!control(threadName, mseOccurrence)) {
-			throw new EngineStoppedException("Debug thread has stopped.");
+		// if (!control(threadName, mseOccurrence)) {
+		// throw new RuntimeException("Debug thread has stopped.");
+		// }
+		if (breakOnActivityNodes) {
+			if (!control(threadName, mseOccurrence)) {
+				throw new EngineStoppedException("Debug thread has stopped.");
+			}
 		}
 
 	}
+
 	@Override
 	public boolean control(String threadName, EObject instruction) {
 		if (!isTerminated() && instruction instanceof LogicalStep) {
@@ -183,6 +135,7 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 		engine.start();
 
 	}
+
 	@Override
 	public void steppingInto(String threadName) {
 		super.steppingInto(threadName);
@@ -210,12 +163,12 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 			}
 			Iterator iterator = virtualStack.descendingIterator();
 			while (iterator.hasNext()) {
-				
+
 				MSEOccurrence mseOccurrence = (MSEOccurrence) iterator.next();
 				EObject caller = mseOccurrence.getMse().getCaller();
-//				String name = caller.eClass().getName() + " ("
-//						+ mseOccurrence.getMse().getName() + ") ["
-//						+ caller.toString() + "]";
+				// String name = caller.eClass().getName() + " ("
+				// + mseOccurrence.getMse().getName() + ") ["
+				// + caller.toString() + "]";
 
 				DefaultDeclarativeQualifiedNameProvider nameprovider = new DefaultDeclarativeQualifiedNameProvider();
 				QualifiedName qname = nameprovider
@@ -223,19 +176,22 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 				String objectName = "";
 				if (qname != null)
 					objectName = qname.toString();
-				else
-				if(caller != null)
+				else if (caller != null)
 					objectName = caller.toString();
 				String opName = mseOccurrence.getMse().getName();
 				String callerType = caller.eClass().getName();
 				String prettyName = "(" + callerType + ") " + objectName
 						+ " -> " + opName + "()";
-				pushStackFrame(threadName, prettyName, caller, caller);
+
+				if (mseOccurrence.getMse().getAction() != null)
+					pushStackFrame(threadName, prettyName, caller,
+							mseOccurrence.getMse().getAction());
+				else
+					pushStackFrame(threadName, prettyName, caller, caller);
 			}
 
-			setCurrentInstruction(threadName, instruction);
+			// setCurrentInstruction(threadName, instruction);
 
-			
 		}
 		toPushPop.clear();
 	}
@@ -289,14 +245,7 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 
 	@Override
 	public boolean shouldBreak(EObject instruction) {
-		// if (instruction instanceof MSEOccurrence) {
-		// return shouldBreakMSEOccurence((MSEOccurrence) instruction);
-		// } else if (instruction == FAKE_INSTRUCTION) {
-		// // Part of the breakpoint simulation to suspend the execution once
-		// the end has been reached.
-		// return true;
-		// }
-		System.out.println("Shouldbreak");
+		// TODO Breakpoint logic
 		return true;
 	}
 
