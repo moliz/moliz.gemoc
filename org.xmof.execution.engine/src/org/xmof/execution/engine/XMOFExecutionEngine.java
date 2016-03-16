@@ -50,6 +50,7 @@ import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.Paramete
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.CallOperationAction;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.impl.ActivityImpl;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEClass;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
@@ -461,12 +462,32 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				event.getActivity());
 		if (o instanceof EObject) {
 			actualActivity = (Activity) o;
+			//model.getModelElements().get(0).eClass()
+			
+			EObject petrinetObject = getOriginalObject(actualActivity.eContainer());
+			EObject caller = configurationMap.getOriginalObject(petrinetObject);
+			
+			EOperation operation = null;
+			if(actualActivity instanceof ActivityImpl){
+				operation = ((ActivityImpl)actualActivity).getSpecification();
+			}
+
 			// TODO Maybe not correct to start an MSE Event for Activities
-			MSEOccurrence ms = createMSEOccurence((EObject) o,
-					actualEOperation, templs);
+			MSEOccurrence ms = createMSEOccurence(petrinetObject,
+					operation, templs);
 		} else {
 			// TODO Throw Error or handle non EObjects (not possible?)
 		}
+	}
+	
+
+	private EObject getOriginalObject(EObject eContainer) {
+		for(EObject e : model.getModelElements()){
+			if(e.eClass().equals(eContainer)){
+				return e;
+			}
+		}
+		return null;
 	}
 
 	private void processActivityExit(ActivityExitEvent event) {

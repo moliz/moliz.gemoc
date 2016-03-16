@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="petrinet2integ" version="9.0.0">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="petrinet2integ" version="9.0.0">
   <ownedViewpoints name="petrinet2 viewpoint" modelFileExtension="petrinet2">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="petrinet" initialisation="true" domainClass="petrinet2.Net">
       <metamodel href="../../org.xmof.examples.petrinet2/model/petrinet2.ecore#/"/>
@@ -35,32 +35,20 @@
           </style>
         </edgeMappings>
       </defaultLayer>
-      <additionalLayers name="Debug" activeByDefault="true">
-        <toolSections name="Debug">
-          <ownedTools xsi:type="tool:PopupMenu" name="Gemoc">
-            <menuItemDescription xsi:type="tool:OperationAction" name="Toggle Breackpoint">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Toggle Gemoc Breackpoint" icon="/org.gemoc.gemoc_modeling_workbench.ui/icons/breakpoint.gif" id="org.gemoc.gemoc_modeling_workbench.ui.debug.sirius.action.gemocToggleBreakpoint"/>
-              </initialOperation>
-            </menuItemDescription>
-            <menuItemDescription xsi:type="tool:OperationAction" name="Debug">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Debug" id="org.gemoc.gemoc_modeling_workbench.ui.debug.sirius.action.gemocDebugAs"/>
-              </initialOperation>
-            </menuItemDescription>
-          </ownedTools>
-        </toolSections>
-        <decorationDescriptionsSet/>
-      </additionalLayers>
       <additionalLayers name="Animation" reusedMappings="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@edgeMappings[name='InputEdge'] //@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@edgeMappings[name='OutputEdge']">
         <customization>
-          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
-            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style" referenceName="color"/>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.eGet('input')->forAll(p | p.eGet('heldTokens').toString().toInteger() > 0) /]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='TranistionNode']/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style" attributeName="labelExpression" value="feature:heldTokens"/>
           </vsmElementCustomizations>
         </customization>
       </additionalLayers>
     </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.xmof.example.design.services.Petrinet2AnimationServices"/>
   </ownedViewpoints>
 </description:Group>
