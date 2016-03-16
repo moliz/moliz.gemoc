@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="petrinet2integ" version="9.0.0">
   <ownedViewpoints name="petrinet2 viewpoint" modelFileExtension="petrinet2">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="petrinet" initialisation="true" domainClass="petrinet2.Net">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="petrinet" titleExpression="[self.oclAsType(NamedElement).name +' Activity Diagram'/]" initialisation="true" showOnStartup="true" domainClass="petrinet2.Net">
       <metamodel href="../../org.xmof.examples.petrinet2/model/petrinet2.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="TranistionNode" domainClass="petrinet2.Transition">
@@ -35,9 +35,9 @@
           </style>
         </edgeMappings>
       </defaultLayer>
-      <additionalLayers name="Animation" reusedMappings="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@edgeMappings[name='InputEdge'] //@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@edgeMappings[name='OutputEdge']">
+      <additionalLayers name="Animation" label="Animation" reusedMappings="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@edgeMappings[name='InputEdge'] //@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@edgeMappings[name='OutputEdge']" activeByDefault="true">
         <customization>
-          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.eGet('input')->forAll(p | p.eGet('heldTokens').toString().toInteger() > 0) /]">
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:self.hasBeenActivated">
             <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='TranistionNode']/@style" referenceName="color">
               <value href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             </featureCustomizations>
@@ -48,7 +48,20 @@
           </vsmElementCustomizations>
         </customization>
       </additionalLayers>
+      <additionalLayers name="Debug" label="Debug">
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:self.isCurrentInstruction">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style //@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='TranistionNode']/@style" referenceName="labelColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style //@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='petrinet']/@defaultLayer/@nodeMappings[name='TranistionNode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </additionalLayers>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.xmof.example.design.services.Petrinet2AnimationServices"/>
+    <ownedJavaExtensions qualifiedClassName="org.xmof.example.design.services.Petrinet2DebugServices"/>
   </ownedViewpoints>
 </description:Group>

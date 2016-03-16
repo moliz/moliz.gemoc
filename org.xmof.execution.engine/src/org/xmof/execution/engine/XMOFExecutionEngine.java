@@ -144,7 +144,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		}
 		occurence.setMse(genericMSE);
 
-		occurence.setLogicalStep(logicalstep);
+		if (logicalstep != null) {
+			occurence.setLogicalStep(logicalstep);
+		}
 
 		// TODO save mseoccurence somewhere
 		notifyMSEOccurrenceAboutToStart(occurence);
@@ -456,34 +458,49 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private void processActivityEntry(ActivityEntryEvent event) {
 
-		LogicalStep templs = startLogicalStep();
+		LogicalStep templs = createLogicalStep();
 
 		Object o = vm.getxMOFConversionResult().getInputObject(
 				event.getActivity());
 		if (o instanceof EObject) {
 			actualActivity = (Activity) o;
-			//model.getModelElements().get(0).eClass()
-			
-			EObject petrinetObject = getOriginalObject(actualActivity.eContainer());
+			// model.getModelElements().get(0).eClass()
+
+			EObject petrinetObject = getOriginalObject(actualActivity
+					.eContainer());
 			EObject caller = configurationMap.getOriginalObject(petrinetObject);
-			
+
 			EOperation operation = null;
-			if(actualActivity instanceof ActivityImpl){
-				operation = ((ActivityImpl)actualActivity).getSpecification();
+			if (actualActivity instanceof ActivityImpl) {
+				operation = ((ActivityImpl) actualActivity).getSpecification();
 			}
 
 			// TODO Maybe not correct to start an MSE Event for Activities
-			MSEOccurrence ms = createMSEOccurence(petrinetObject,
-					operation, templs);
+			MSEOccurrence ms = createMSEOccurence(caller, operation, templs);
+			startLogicalStep(templs);
 		} else {
 			// TODO Throw Error or handle non EObjects (not possible?)
 		}
 	}
-	
+
+	private LogicalStep createLogicalStep() {
+		LogicalStep ls = MseFactory.eINSTANCE.createLogicalStep();
+		actualLogicalStep = ls;
+
+		return actualLogicalStep;
+	}
+
+	private void startLogicalStep(LogicalStep logicalStep) {
+		if (actualLogicalStep != null) {
+			finishLogicalStep(actualLogicalStep);
+		}
+		notifyAboutToExecuteLogicalStep(logicalStep);
+		actualLogicalStep = logicalStep;
+	}
 
 	private EObject getOriginalObject(EObject eContainer) {
-		for(EObject e : model.getModelElements()){
-			if(e.eClass().equals(eContainer)){
+		for (EObject e : model.getModelElements()) {
+			if (e.eClass().equals(eContainer)) {
 				return e;
 			}
 		}
@@ -503,7 +520,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			EObject activityNode = (EObject) o;
 
 			// ActivityNode node = (ActivityNode) o;
-			createMSEOccurence(activityNode, null, actualLogicalStep);
+			createMSEOccurence(activityNode, null, null);
 			// if (o instanceof CallOperationAction) {
 			// actualEOperation = ((CallOperationAction) o).getOperation();
 			// }
@@ -537,14 +554,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			finishLogicalStep(actualLogicalStep);
 		} else {
 			LogicalStep ls = MseFactory.eINSTANCE.createLogicalStep();
-			notifyAboutToExecuteLogicalStep(ls);
+
 			actualLogicalStep = ls;
 		}
 		return actualLogicalStep;
 
 	}
 
-	//TODO reorg
+	// TODO reorg
 	private EMFCommandTransaction startNewTransaction(
 			InternalTransactionalEditingDomain editingDomain,
 			RecordingCommand command) throws InterruptedException {
