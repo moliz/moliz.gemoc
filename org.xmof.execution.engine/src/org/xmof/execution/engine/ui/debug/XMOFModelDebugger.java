@@ -72,12 +72,24 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 	}
 
 	@Override
+	public void logicalStepExecuted(IBasicExecutionEngine engine,
+			LogicalStep logicalStepExecuted) {
+		ToPushPop aaa = new ToPushPop(logicalStepExecuted.getMseOccurrences()
+				.get(0), false);
+		toPushPop.add(aaa);
+	}
+
+	@Override
 	public void aboutToExecuteLogicalStep(IBasicExecutionEngine engine,
 			LogicalStep logicalStepToExecute) {
 
-		// if (!control(threadName, logicalStepToExecute)) {
-		// throw new RuntimeException("Debug thread has stopped.");
-		// }
+		ToPushPop aaa = new ToPushPop(logicalStepToExecute.getMseOccurrences()
+				.get(0), true);
+		toPushPop.add(aaa);
+
+		if (!control(threadName, logicalStepToExecute)) {
+			throw new RuntimeException("Debug thread has stopped.");
+		}
 
 	}
 
@@ -88,23 +100,15 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 			MSEOccurrence mseOccurrence) {
 		// TODO check if super call is necessary
 		super.mseOccurrenceExecuted(engine, mseOccurrence);
-		ToPushPop aaa = new ToPushPop(mseOccurrence, false);
-		toPushPop.add(aaa);
+
 	}
 
 	@Override
 	public void aboutToExecuteMSEOccurrence(IBasicExecutionEngine engine,
 			MSEOccurrence mseOccurrence) {
-		ToPushPop aaa = new ToPushPop(mseOccurrence, true);
-		toPushPop.add(aaa);
 
-		// if (!control(threadName, mseOccurrence)) {
-		// throw new RuntimeException("Debug thread has stopped.");
-		// }
-		if (breakOnActivityNodes) {
-			if (!control(threadName, mseOccurrence)) {
-				throw new EngineStoppedException("Debug thread has stopped.");
-			}
+		if (!control(threadName, mseOccurrence)) {
+			throw new EngineStoppedException("Debug thread has stopped.");
 		}
 
 	}
@@ -112,9 +116,9 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 	@Override
 	public boolean control(String threadName, EObject instruction) {
 		if (!isTerminated() && instruction instanceof LogicalStep) {
-			return true;
-		} else {
 			return super.control(threadName, instruction);
+		} else {
+			return true;
 		}
 	}
 

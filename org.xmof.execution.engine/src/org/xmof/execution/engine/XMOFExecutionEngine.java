@@ -67,9 +67,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		implements ExecutionEventListener, IXMOFVirtualMachineListener {
 
 	private XMOFExecutionEngine _instance;
-	private EObject actualActivity = null;
-	private EOperation actualEOperation;
-	private LogicalStep actualLogicalStep;
 	private MSEOccurrence actualMSEOccurence;
 	private ConfigurationObjectMap configurationMap;
 	private DiagramEditor diagramEditor;
@@ -92,8 +89,11 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private IEditorPart xMOFEditor = null;
 
+	private Map<Activity, LogicalStep> activity2LogicalSteps;
+
 	public XMOFExecutionEngine() {
 		super();
+		activity2LogicalSteps = new HashMap<Activity, LogicalStep>();
 		this._instance = this;
 	}
 
@@ -161,15 +161,21 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	private void finishLogicalStep(LogicalStep logicalStep) {
-		notifyLogicalStepExecuted(logicalStep);
+		if (logicalStep != null) {
+			notifyLogicalStepExecuted(logicalStep);
+		} else {
+			// TODO throw error
+			System.out.println("Error");
+		}
+
 		// TODO log logicalstep to be executed in Hashmap
 		// TODO check how many mse's have been in the logical step
-		actualLogicalStep = null;
 	}
 
 	private void finishMSEOccurence() {
 		notifyMSEOccurenceExecuted(actualMSEOccurence);
 		actualMSEOccurence = null;
+		resume();
 
 	}
 
@@ -463,16 +469,15 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		Object o = vm.getxMOFConversionResult().getInputObject(
 				event.getActivity());
 		if (o instanceof EObject) {
-			actualActivity = (Activity) o;
-			// model.getModelElements().get(0).eClass()
+			Activity activity = (Activity) o;
+			activity2LogicalSteps.put(activity, templs);
 
-			EObject petrinetObject = getOriginalObject(actualActivity
-					.eContainer());
+			EObject petrinetObject = getOriginalObject(activity.eContainer());
 			EObject caller = configurationMap.getOriginalObject(petrinetObject);
 
 			EOperation operation = null;
-			if (actualActivity instanceof ActivityImpl) {
-				operation = ((ActivityImpl) actualActivity).getSpecification();
+			if (activity instanceof ActivityImpl) {
+				operation = ((ActivityImpl) activity).getSpecification();
 			}
 
 			// TODO Maybe not correct to start an MSE Event for Activities
@@ -484,18 +489,13 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	private LogicalStep createLogicalStep() {
-		LogicalStep ls = MseFactory.eINSTANCE.createLogicalStep();
-		actualLogicalStep = ls;
-
-		return actualLogicalStep;
+		return MseFactory.eINSTANCE.createLogicalStep();
 	}
 
 	private void startLogicalStep(LogicalStep logicalStep) {
-		if (actualLogicalStep != null) {
-			finishLogicalStep(actualLogicalStep);
-		}
+
 		notifyAboutToExecuteLogicalStep(logicalStep);
-		actualLogicalStep = logicalStep;
+
 	}
 
 	private EObject getOriginalObject(EObject eContainer) {
@@ -508,7 +508,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	private void processActivityExit(ActivityExitEvent event) {
-		finishLogicalStep(actualLogicalStep);
+
+		Object o = vm.getxMOFConversionResult().getInputObject(
+				event.getActivity());
+		if (o instanceof Activity) {
+			Activity activity = (Activity) o;
+			finishLogicalStep(activity2LogicalSteps.get(activity));
+		}
+
 		// TODO Logical Step cleanup
 	}
 
@@ -516,14 +523,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 		Object o = vm.getxMOFConversionResult().getInputObject(event.getNode());
 		if (o instanceof EObject) {
-
 			EObject activityNode = (EObject) o;
 
 			// ActivityNode node = (ActivityNode) o;
 			createMSEOccurence(activityNode, null, null);
-			// if (o instanceof CallOperationAction) {
-			// actualEOperation = ((CallOperationAction) o).getOperation();
-			// }
 		}
 
 	}
@@ -549,17 +552,17 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		resume = true;
 	}
 
-	private LogicalStep startLogicalStep() {
-		if (actualLogicalStep != null) {
-			finishLogicalStep(actualLogicalStep);
-		} else {
-			LogicalStep ls = MseFactory.eINSTANCE.createLogicalStep();
-
-			actualLogicalStep = ls;
-		}
-		return actualLogicalStep;
-
-	}
+//	private LogicalStep startLogicalStep() {
+//		if (actualLogicalStep != null) {
+//			finishLogicalStep(actualLogicalStep);
+//		} else {
+//			LogicalStep ls = MseFactory.eINSTANCE.createLogicalStep();
+//
+//			actualLogicalStep = ls;
+//		}
+//		return actualLogicalStep;
+//
+//	}
 
 	// TODO reorg
 	private EMFCommandTransaction startNewTransaction(
