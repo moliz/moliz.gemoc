@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmofxdsml:XMOFLanguageDefiniton xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xdsml_base="http://www.gemoc.org/xdsml_base" xmlns:xmofxdsml="http://www.modelexecution.org/xmof_xdsml" name="petrinet1">
+  <domainModelProject projectName="org.xmof.example.petrinet1" defaultRootEObjectQualifiedName="petrinet::Net" genmodeluri="platform:/resource/org.xmof.example.petrinet1/model/petrinet.genmodel"/>
+  <editorProjects xsi:type="xdsml_base:SiriusEditorProject" projectName="org.xmof.example.petrinet1.design"/>
+  <animatorProjects xsi:type="xdsml_base:SiriusAnimatorProject" projectName="org.xmof.example.petrinet1.design"/>
+  <xmofFileName xmofFileName="/org.xmof.example.petrinet1/petrinet/petrinet.xmof"/>
+</xmofxdsml:XMOFLanguageDefiniton>
