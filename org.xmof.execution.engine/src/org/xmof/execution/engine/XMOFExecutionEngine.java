@@ -67,7 +67,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		implements ExecutionEventListener, IXMOFVirtualMachineListener {
 
 	private XMOFExecutionEngine _instance;
-	private MSEOccurrence actualMSEOccurence;
+	
 	private ConfigurationObjectMap configurationMap;
 	private DiagramEditor diagramEditor;
 
@@ -90,10 +90,12 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private IEditorPart xMOFEditor = null;
 
 	private Map<Activity, LogicalStep> activity2LogicalSteps;
+	private Map<ActivityNode, MSEOccurrence> activityNode2MSEOccurrence;
 
 	public XMOFExecutionEngine() {
 		super();
 		activity2LogicalSteps = new HashMap<Activity, LogicalStep>();
+		activityNode2MSEOccurrence = new HashMap<ActivityNode, MSEOccurrence>();
 		this._instance = this;
 	}
 
@@ -126,9 +128,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	 */
 	private MSEOccurrence createMSEOccurence(EObject caller,
 			EOperation operation, LogicalStep logicalstep) {
-		if (actualMSEOccurence != null) {
-			finishMSEOccurence();
-		}
+	
 
 		GenericMSE genericMSE = MseFactory.eINSTANCE.createGenericMSE();
 		MSEOccurrence occurence = MseFactory.eINSTANCE.createMSEOccurrence();
@@ -150,7 +150,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 		// TODO save mseoccurence somewhere
 		notifyMSEOccurrenceAboutToStart(occurence);
-		actualMSEOccurence = occurence;
 		return occurence;
 	}
 
@@ -172,9 +171,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		// TODO check how many mse's have been in the logical step
 	}
 
-	private void finishMSEOccurence() {
-		notifyMSEOccurenceExecuted(actualMSEOccurence);
-		actualMSEOccurence = null;
+	private void finishMSEOccurence(ActivityNode an) {
+		notifyMSEOccurenceExecuted(activityNode2MSEOccurrence.get(an));
+		activityNode2MSEOccurrence.remove(an);
 		resume();
 
 	}
@@ -526,16 +525,20 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			EObject activityNode = (EObject) o;
 
 			// ActivityNode node = (ActivityNode) o;
-			createMSEOccurence(activityNode, null, null);
+			activityNode2MSEOccurrence.put((ActivityNode)activityNode, createMSEOccurence(activityNode, null, null));
 		}
 
 	}
 
 	private void processActivityNodeExit(ActivityNodeExitEvent event) {
 		// TODO maybe more cleanup necessary
-		// Object o = vm.getxMOFConversionResult().getInputObject(
-		// event.getNode());
-		finishMSEOccurence();
+		Object o = vm.getxMOFConversionResult().getInputObject(
+		 event.getNode());
+		if (o instanceof ActivityNode) {
+			ActivityNode activityNode = (ActivityNode) o;
+			finishMSEOccurence(activityNode);
+		}
+		
 	}
 
 	private void reloadPackage(EPackage registeredPackage) {
