@@ -134,13 +134,13 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		MSEOccurrence occurence = MseFactory.eINSTANCE.createMSEOccurrence();
 		genericMSE.setCallerReference(caller);
 		// TODO Setting the ActionREferences causes gemoc to error
-		// if (operation != null) {
-		// genericMSE.setActionReference(operation);
-		// }
+		if (operation != null) {
+		 genericMSE.setActionReference(operation);
+		 }
 		if (caller instanceof ENamedElement) {
 			genericMSE.setName(((ENamedElement) caller).getName());
 		} else {
-			genericMSE.setName("TEST");
+			
 		}
 		occurence.setMse(genericMSE);
 

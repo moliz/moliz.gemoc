@@ -182,7 +182,11 @@ public class XMOFModelDebugger extends AbstractGemocDebugger implements
 					objectName = qname.toString();
 				else if (caller != null)
 					objectName = caller.toString();
-				String opName = mseOccurrence.getMse().getName();
+				String opName;
+				if (mseOccurrence.getMse().getAction() != null)
+					opName = mseOccurrence.getMse().getAction().getName();
+				else
+					opName = "NO Operation";
 				String callerType = caller.eClass().getName();
 				String prettyName = "(" + callerType + ") " + objectName
 						+ " -> " + opName + "()";
