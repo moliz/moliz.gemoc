@@ -43,6 +43,7 @@ import org.modelexecution.fumldebug.core.event.ActivityExitEvent;
 import org.modelexecution.fumldebug.core.event.ActivityNodeEntryEvent;
 import org.modelexecution.fumldebug.core.event.ActivityNodeExitEvent;
 import org.modelexecution.fumldebug.core.event.Event;
+import org.modelexecution.fumldebug.core.trace.tracemodel.ActivityExecution;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.ObjectValue;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
@@ -58,16 +59,19 @@ import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.vm.XMOFVirtualMachine;
 import org.modelexecution.xmof.vm.XMOFVirtualMachineEvent;
+import org.modelexecution.xmof.vm.util.XMOFUtil;
 import org.xmof.execution.engine.ui.commons.RunConfiguration;
 import org.xmof.execution.xdsml.api.extensions.languages.XMOFLanguageDefinitionExtension;
 
+import fUML.Semantics.Classes.Kernel.ExtensionalValue;
+import fUML.Semantics.Classes.Kernel.Object_;
 import xmofxdsml.XMOFLanguageDefiniton;
 
 public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		implements ExecutionEventListener, IXMOFVirtualMachineListener {
 
 	private XMOFExecutionEngine _instance;
-	
+
 	private ConfigurationObjectMap configurationMap;
 	private DiagramEditor diagramEditor;
 
@@ -128,19 +132,18 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	 */
 	private MSEOccurrence createMSEOccurence(EObject caller,
 			EOperation operation, LogicalStep logicalstep) {
-	
 
 		GenericMSE genericMSE = MseFactory.eINSTANCE.createGenericMSE();
 		MSEOccurrence occurence = MseFactory.eINSTANCE.createMSEOccurrence();
 		genericMSE.setCallerReference(caller);
 		// TODO Setting the ActionREferences causes gemoc to error
 		if (operation != null) {
-		 genericMSE.setActionReference(operation);
-		 }
+			genericMSE.setActionReference(operation);
+		}
 		if (caller instanceof ENamedElement) {
 			genericMSE.setName(((ENamedElement) caller).getName());
 		} else {
-			
+
 		}
 		occurence.setMse(genericMSE);
 
@@ -314,6 +317,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		Collection<EPackage> configurationPackages = loadConfigurationMetamodel(confMetamodelPath);
 		configurationMap = new ConfigurationObjectMap(inputElements,
 				configurationPackages);
+
 		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
 				getParameterValueConfiguration(inputParameterValues));
 		// } else {
@@ -461,30 +465,62 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		}
 	}
 
+	private boolean first = true;
+
 	private void processActivityEntry(ActivityEntryEvent event) {
 
 		LogicalStep templs = createLogicalStep();
 
 		Object o = vm.getxMOFConversionResult().getInputObject(
 				event.getActivity());
-		if (o instanceof EObject) {
-			Activity activity = (Activity) o;
-			activity2LogicalSteps.put(activity, templs);
+		if (!first) {
+			if (o instanceof EObject) {
+				Activity activity = (Activity) o;
+				activity2LogicalSteps.put(activity, templs);
 
-			EObject petrinetObject = getOriginalObject(activity.eContainer());
-			EObject caller = configurationMap.getOriginalObject(petrinetObject);
+				fUML.Semantics.Classes.Kernel.Value v = vm
+						.getExecutionTrace()
+						.getActivityExecutionByID(
+								event.getActivityExecutionID())
+						.getContextValueSnapshot().getRuntimeValue();
+				EObject caller = null;
+				if (v instanceof Object_) {
+					caller = vm.getInstanceMap().getEObject(((Object_) v));
 
-			EOperation operation = null;
-			if (activity instanceof ActivityImpl) {
-				operation = ((ActivityImpl) activity).getSpecification();
+				}
+				caller = configurationMap.getOriginalObject(caller);
+
+				System.out.println(caller);
+
+				EOperation operation = null;
+				if (activity instanceof ActivityImpl) {
+					operation = ((ActivityImpl) activity).getSpecification();
+				}
+
+				// TODO Maybe not correct to start an MSE Event for Activities
+				MSEOccurrence ms = createMSEOccurence(caller, operation, templs);
+				startLogicalStep(templs);
+			} else {
+				// TODO Throw Error or handle non EObjects (not possible?)
 			}
+		}else 
+		{
+			first = false;
+			if (o instanceof EObject) {
+				Activity activity = (Activity) o;
+			
 
-			// TODO Maybe not correct to start an MSE Event for Activities
-			MSEOccurrence ms = createMSEOccurence(caller, operation, templs);
-			startLogicalStep(templs);
-		} else {
-			// TODO Throw Error or handle non EObjects (not possible?)
+				EOperation operation = null;
+				if (activity instanceof ActivityImpl) {
+					operation = ((ActivityImpl) activity).getSpecification();
+				}
+
+				// TODO Maybe not correct to start an MSE Event for Activities
+				MSEOccurrence ms = createMSEOccurence(activity, operation, templs);
+				startLogicalStep(templs);
+			}
 		}
+
 	}
 
 	private LogicalStep createLogicalStep() {
@@ -498,8 +534,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	private EObject getOriginalObject(EObject eContainer) {
+
 		for (EObject e : model.getModelElements()) {
 			if (e.eClass().equals(eContainer)) {
+				System.out.println(e.eClass());
 				return e;
 			}
 		}
@@ -510,12 +548,24 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 		Object o = vm.getxMOFConversionResult().getInputObject(
 				event.getActivity());
+
 		if (o instanceof Activity) {
 			Activity activity = (Activity) o;
 			finishLogicalStep(activity2LogicalSteps.get(activity));
 		}
 
 		// TODO Logical Step cleanup
+	}
+
+	private EObject getModelInstanceFromName(String string) {
+		for (EObject e : model.getModelElements()) {
+			if (e instanceof ENamedElement) {
+				if (((ENamedElement) e).getName().equals(string)) {
+					return e;
+				}
+			}
+		}
+		return null;
 	}
 
 	private void processActivityNodeEntry(ActivityNodeEntryEvent event) {
@@ -525,20 +575,20 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			EObject activityNode = (EObject) o;
 
 			// ActivityNode node = (ActivityNode) o;
-			activityNode2MSEOccurrence.put((ActivityNode)activityNode, createMSEOccurence(activityNode, null, null));
+			activityNode2MSEOccurrence.put((ActivityNode) activityNode,
+					createMSEOccurence(activityNode, null, null));
 		}
 
 	}
 
 	private void processActivityNodeExit(ActivityNodeExitEvent event) {
 		// TODO maybe more cleanup necessary
-		Object o = vm.getxMOFConversionResult().getInputObject(
-		 event.getNode());
+		Object o = vm.getxMOFConversionResult().getInputObject(event.getNode());
 		if (o instanceof ActivityNode) {
 			ActivityNode activityNode = (ActivityNode) o;
 			finishMSEOccurence(activityNode);
 		}
-		
+
 	}
 
 	private void reloadPackage(EPackage registeredPackage) {
@@ -555,17 +605,17 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		resume = true;
 	}
 
-//	private LogicalStep startLogicalStep() {
-//		if (actualLogicalStep != null) {
-//			finishLogicalStep(actualLogicalStep);
-//		} else {
-//			LogicalStep ls = MseFactory.eINSTANCE.createLogicalStep();
-//
-//			actualLogicalStep = ls;
-//		}
-//		return actualLogicalStep;
-//
-//	}
+	// private LogicalStep startLogicalStep() {
+	// if (actualLogicalStep != null) {
+	// finishLogicalStep(actualLogicalStep);
+	// } else {
+	// LogicalStep ls = MseFactory.eINSTANCE.createLogicalStep();
+	//
+	// actualLogicalStep = ls;
+	// }
+	// return actualLogicalStep;
+	//
+	// }
 
 	// TODO reorg
 	private EMFCommandTransaction startNewTransaction(
