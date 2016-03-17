@@ -32,6 +32,7 @@ import org.gemoc.xdsmlframework.api.extensions.languages.LanguageDefinitionExten
 import org.gemoc.xdsmlframework.ui.utils.dialogs.SelectAIRDIFileDialog;
 import org.xmof.execution.engine.ui.Activator;
 import org.xmof.execution.engine.ui.commons.RunConfiguration;
+import org.xmof.execution.xdsml.api.extensions.languages.XMOFLanguageDefinitionExtenstionPoint;
 
 import fr.obeo.dsl.debug.ide.launch.AbstractDSLLaunchConfigurationDelegate;
 import fr.obeo.dsl.debug.ide.sirius.ui.launch.AbstractDSLLaunchConfigurationDelegateUI;
@@ -296,14 +297,12 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab{
 
 		ArrayList<String> xdsmlNames = new ArrayList<String>();
 		
-		//TODO Test if xdsml is found 
-		
-		IConfigurationElement[] confElements = Platform.getExtensionRegistry().getConfigurationElementsFor(
-				LanguageDefinitionExtensionPoint.GEMOC_LANGUAGE_EXTENSION_POINT_XDSML_DEF);
-		for (int i = 0; i < confElements.length; i++) {
-			xdsmlNames.add(confElements[i].getAttribute("name"));
+		IConfigurationElement[] confElements1 = Platform.getExtensionRegistry().getConfigurationElementsFor(XMOFLanguageDefinitionExtenstionPoint.GEMOC_XMOF_LANGUAGE_EXTENSION_POINT);
+		for (int i = 0; i < confElements1.length; i++) {
+			xdsmlNames.add(confElements1[i].getAttribute("name"));
 		}
-		if (confElements.length == 0) {
+		
+		if (confElements1.length == 0) {
 			xdsmlNames.add("<No xdsml available>");
 		}
 		String[] empty = {};
