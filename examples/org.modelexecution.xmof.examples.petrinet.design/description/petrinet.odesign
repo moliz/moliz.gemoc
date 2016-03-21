@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="petrinet" version="8.1.0">
+  <ownedViewpoints name="PetrinetViewpoint" label="petrinet" modelFileExtension="petrinet">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="PetrinetDiagram" label="petrinet" initialisation="true" showOnStartup="true" domainClass="petrinet.Net">
+      <defaultLayer name="Default">
+        <nodeMappings name="PlaceNode" domainClass="petrinet.Place">
+          <style xsi:type="style:EllipseNodeDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="TransitionNode" domainClass="petrinet.Transition">
+          <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="IncomingEdge" sourceMapping="//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='TransitionNode']" targetMapping="//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']" targetFinderExpression="[self.input/]">
+          <style sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OutgoingEdge" sourceMapping="//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='TransitionNode']" targetMapping="//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']" targetFinderExpression="[self.output/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

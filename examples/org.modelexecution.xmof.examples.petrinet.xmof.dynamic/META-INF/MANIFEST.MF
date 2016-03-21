@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Examples
+Bundle-SymbolicName: org.modelexecution.xmof.examples.petrinet.xmof.dynamic
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.junit,
+ org.modelexecution.xmof.vm;bundle-version="1.0.0",
+ org.eclipse.emf.edit,
+ org.modelexecution.xmof.configuration,
+ org.modelexecution.fumldebug
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.eclipse.emf.transaction
