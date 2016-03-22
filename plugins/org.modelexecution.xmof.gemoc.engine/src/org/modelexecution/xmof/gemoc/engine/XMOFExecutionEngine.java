@@ -1,12 +1,8 @@
 package org.modelexecution.xmof.gemoc.engine;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Deque;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -17,20 +13,13 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.RollbackException;
-import org.eclipse.emf.transaction.impl.EMFCommandTransaction;
-import org.eclipse.emf.transaction.impl.InternalTransactionalEditingDomain;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
-import org.gemoc.executionframework.engine.mse.LogicalStep;
-import org.gemoc.executionframework.engine.mse.MSE;
-import org.gemoc.executionframework.engine.mse.MSEOccurrence;
-import org.gemoc.executionframework.engine.mse.MseFactory;
+import org.gemoc.executionframework.engine.core.EngineStoppedException;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
-import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
+import org.modelexecution.fumldebug.core.event.ActivityEntryEvent;
 import org.modelexecution.fumldebug.core.event.ActivityExitEvent;
 import org.modelexecution.fumldebug.core.event.Event;
 import org.modelexecution.fumldebug.core.event.SuspendEvent;
@@ -61,16 +50,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private Runnable entryPoint;
 
 	private ResourceSet resourceSet;
+	
+	private static final boolean STEP_INTO_ACTIVITY = true;
+
+	private boolean debugging = false;
 
 	private boolean resume = false;
 
 	private XMOFVirtualMachine vm;
-
-	private Deque<MSEOccurrence> _mseOccurences = new ArrayDeque<MSEOccurrence>();
-
-	private EMFCommandTransaction currentTransaction;
-
-	private Map<Integer, LogicalStep> logicalSteps = new HashMap<Integer, LogicalStep>();
 
 	public XMOFExecutionEngine() {
 		super();
@@ -100,21 +87,21 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		vm = new XMOFVirtualMachine(model);
 		vm.addRawExecutionEventListener(this);
 		vm.addVirtualMachineListener(this);
-		vm.shouldSuspendAfterStep(true);
+		this.debugging = executionContext.getExecutionMode().equals(
+				ExecutionMode.Animation);
+
+		if (debugging && STEP_INTO_ACTIVITY)
+			vm.shouldSuspendAfterStep(true);
 
 		entryPoint = new Runnable() {
 			@Override
 			public void run() {
 				// run vm
 				XMOFExecutionEngine.this.setEngineStatus(RunStatus.Running);
-				XMOFExecutionEngine.this.notifyEngineAboutToStart(); 
-
-				startTransaction();
+				XMOFExecutionEngine.this.notifyEngineAboutToStart();
 
 				// check execution mode whether to run or debug VM
-				if (executionContext.getExecutionMode().equals(
-						ExecutionMode.Run)) {
-
+				if (!debugging) {
 					vm.run();
 				} else {
 					vm.debug();
@@ -267,13 +254,17 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	public void notify(Event event) {
-		if (event instanceof SuspendEvent) {
+		if (event instanceof SuspendEvent && STEP_INTO_ACTIVITY) {
 			SuspendEvent suspendEvent = (SuspendEvent) event;
 			if (suspendEvent.getLocation() instanceof fUML.Syntax.Activities.IntermediateActivities.Activity) {
 				resume = false;
 				processActivityEntry(suspendEvent);
 			}
-		} else if (event instanceof ActivityExitEvent) {
+		} else if (event instanceof ActivityEntryEvent && !STEP_INTO_ACTIVITY) {
+			processActivityEntry((ActivityEntryEvent) event);
+		}
+
+		else if (event instanceof ActivityExitEvent) {
 			processActivityExit((ActivityExitEvent) event);
 		}
 
@@ -284,30 +275,59 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	private void processActivityEntry(SuspendEvent event) {
-		// commit running transaction
-		commitTransaction();
-		
-		
 		ActivityExecution activityExecution = vm.getExecutionTrace()
 				.getActivityExecutionByID(event.getActivityExecutionID());
-		EObject caller = getActivityContextObject(activityExecution);
-		String className = caller.eClass().getName();
 		Activity activity = (Activity) vm.getxMOFConversionResult()
 				.getInputObject(event.getLocation());
+		processActivityEntry(activityExecution, activity);
+	}
+
+	private void processActivityEntry(ActivityEntryEvent event) {
+		ActivityExecution activityExecution = vm.getExecutionTrace()
+				.getActivityExecutionByID(event.getActivityExecutionID());
+		Activity activity = (Activity) vm.getxMOFConversionResult()
+				.getInputObject(event.getActivity());
+		processActivityEntry(activityExecution, activity);
+	}
+
+	private void processActivityEntry(ActivityExecution activityExecution,
+			Activity activity) {
+
+		EObject caller = getActivityContextObject(activityExecution);
+		String className = caller.eClass().getName();
 		String methodName = activity.getSpecification().getName();
 
-		// create new step and mse occurence
-		LogicalStep logicalStep = createLogicalStep(caller, className,
-				methodName);
-		logicalSteps.put(event.getActivityExecutionID(), logicalStep);
+		try {
+			beforeExecutionStep(caller, className, methodName);
 
-		// notify addons
-		notifyAboutToExecuteLogicalStep(logicalStep);
-		notifyMSEOccurrenceAboutToStart(logicalStep.getMseOccurrences().get(0));
-		
-		startTransaction();
+		} catch (EngineStoppedException stopExeception) {
 
+			throw new EngineStoppedException(stopExeception.getMessage(),
+					stopExeception);
+		} catch (Exception e) {
 
+			// TODO this was required in K3, but now we can manage real
+			// exceptions ?
+			throw new RuntimeException(e);
+		}
+
+	}
+
+	private void processActivityExit(ActivityExitEvent event) {
+
+		try {
+			afterExecutionStep();
+
+		} catch (EngineStoppedException stopExeception) {
+
+			throw new EngineStoppedException(stopExeception.getMessage(),
+					stopExeception);
+		} catch (Exception e) {
+
+			// TODO this was required in K3, but now we can manage real
+			// exceptions ?
+			throw new RuntimeException(e);
+		}
 	}
 
 	private EObject getActivityContextObject(ActivityExecution activityExecution) {
@@ -324,116 +344,13 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		return activityContextObject;
 	}
 
-	private void processActivityExit(ActivityExitEvent event) {
-		
-		commitTransaction();
-		
-		// notify addons about end of mse occurence and logical step
-		LogicalStep logicalStep = logicalSteps.remove(event
-				.getActivityExecutionID());
-		notifyMSEOccurenceExecuted(logicalStep.getMseOccurrences().get(0));
-		notifyLogicalStepExecuted(logicalStep);
-
-		if (!vm.isRunning()) {
-			commitTransaction();
-		}
-	}
-
 	public void resume() {
-		resume = true;
+		if (debugging && STEP_INTO_ACTIVITY) {
+			resume = true;
 
-		
-		while (resume && vm.isRunning()) {
-			vm.step();
-		}
-	}
-
-	// TODO should be made protected in AbstractSequentialExecutionEngine
-	private LogicalStep createLogicalStep(EObject caller, String className,
-			String methodName) {
-		LogicalStep logicalStep = MseFactory.eINSTANCE.createLogicalStep();
-		MSE mse = findOrCreateMSE(caller, className, methodName);
-		MSEOccurrence occurrence = null;
-		occurrence = MseFactory.eINSTANCE.createMSEOccurrence();
-		occurrence.setLogicalStep(logicalStep);
-		occurrence.setMse(mse);
-		_mseOccurences.push(occurrence);
-		return logicalStep;
-	}
-
-	// TODO should be made protected in AbstractSequentialExecutionEngine
-	private void notifyMSEOccurrenceAboutToStart(MSEOccurrence occurrence) {
-		for (IEngineAddon addon : getExecutionContext().getExecutionPlatform()
-				.getEngineAddons()) {
-			try {
-				addon.aboutToExecuteMSEOccurrence(this, occurrence);
-			} catch (Exception e) {
-				e.printStackTrace();
+			while (resume && vm.isRunning()) {
+				vm.step();
 			}
-		}
-	}
-
-	// TODO should be made protected in AbstractSequentialExecutionEngine
-	private void notifyMSEOccurenceExecuted(MSEOccurrence occurrence) {
-		for (IEngineAddon addon : getExecutionContext().getExecutionPlatform()
-				.getEngineAddons()) {
-			addon.mseOccurrenceExecuted(this, occurrence);
-		}
-	}
-
-	private void startTransaction() {
-		RecordingCommand rc = new RecordingCommand(editingDomain) {
-			@Override
-			protected void doExecute() {
-			}
-		};
-		try {
-			startNewTransaction(editingDomain, rc);
-		} catch (InterruptedException e) {
-			rc.dispose();
-			throw new RuntimeException(e);
-		}
-
-	}
-
-	// TODO should be made protected in AbstractSequentialExecutionEngine
-	private void startNewTransaction(
-			InternalTransactionalEditingDomain editingDomain,
-			RecordingCommand command) throws InterruptedException {
-		currentTransaction = createTransaction(editingDomain, command);
-		currentTransaction.start();
-		command.execute();
-	}
-
-	// TODO should be made protected in AbstractSequentialExecutionEngine
-	private EMFCommandTransaction createTransaction(
-			InternalTransactionalEditingDomain editingDomain,
-			RecordingCommand command) {
-
-		return new EMFCommandTransaction(command, editingDomain, null);
-	}
-
-	private void commitTransaction() {
-		try {
-			commitCurrentTransaction();
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	// TODO should be made protected in AbstractSequentialExecutionEngine
-	private void commitCurrentTransaction() throws Exception {
-		if (currentTransaction != null) {
-			try {
-				currentTransaction.commit();
-			} catch (RollbackException t) {
-
-				// Throwing the real error
-				Throwable realT = t.getStatus().getException();
-				if (realT instanceof Exception)
-					throw (Exception) realT;
-			}
-			currentTransaction = null;
 		}
 	}
 
