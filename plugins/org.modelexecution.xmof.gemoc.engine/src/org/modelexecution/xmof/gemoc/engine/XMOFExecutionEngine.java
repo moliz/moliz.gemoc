@@ -56,8 +56,6 @@ import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		implements ExecutionEventListener, IXMOFVirtualMachineListener {
 
-	private XMOFExecutionEngine _instance;
-
 	private ConfigurationObjectMap configurationMap;
 
 	private Runnable entryPoint;
@@ -76,7 +74,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	public XMOFExecutionEngine() {
 		super();
-		this._instance = this;
 	}
 
 	@Override
@@ -109,8 +106,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			@Override
 			public void run() {
 				// run vm
-				_instance.setEngineStatus(RunStatus.Running);
-				_instance.notifyEngineAboutToStart();
+				XMOFExecutionEngine.this.setEngineStatus(RunStatus.Running);
+				XMOFExecutionEngine.this.notifyEngineAboutToStart(); 
 
 				startTransaction();
 
@@ -289,7 +286,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private void processActivityEntry(SuspendEvent event) {
 		// commit running transaction
 		commitTransaction();
-
+		
+		
 		ActivityExecution activityExecution = vm.getExecutionTrace()
 				.getActivityExecutionByID(event.getActivityExecutionID());
 		EObject caller = getActivityContextObject(activityExecution);
@@ -306,13 +304,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		// notify addons
 		notifyAboutToExecuteLogicalStep(logicalStep);
 		notifyMSEOccurrenceAboutToStart(logicalStep.getMseOccurrences().get(0));
+		
+		startTransaction();
 
-		RecordingCommand rc = new RecordingCommand(editingDomain) {
-			@Override
-			protected void doExecute() {
-			}
-		};
-		rc.execute();
+
 	}
 
 	private EObject getActivityContextObject(ActivityExecution activityExecution) {
@@ -330,6 +325,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	private void processActivityExit(ActivityExitEvent event) {
+		
+		commitTransaction();
+		
 		// notify addons about end of mse occurence and logical step
 		LogicalStep logicalStep = logicalSteps.remove(event
 				.getActivityExecutionID());
@@ -343,7 +341,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	public void resume() {
 		resume = true;
-		startTransaction();
+
+		
 		while (resume && vm.isRunning()) {
 			vm.step();
 		}
@@ -403,6 +402,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			RecordingCommand command) throws InterruptedException {
 		currentTransaction = createTransaction(editingDomain, command);
 		currentTransaction.start();
+		command.execute();
 	}
 
 	// TODO should be made protected in AbstractSequentialExecutionEngine
