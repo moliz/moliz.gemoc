@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
 import org.gemoc.executionframework.engine.core.EngineStoppedException;
+import org.gemoc.executionframework.engine.core.SequentialExecutionException;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
@@ -50,7 +51,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private Runnable entryPoint;
 
 	private ResourceSet resourceSet;
-	
+
 	private static final boolean STEP_INTO_ACTIVITY = true;
 
 	private boolean debugging = false;
@@ -292,42 +293,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private void processActivityEntry(ActivityExecution activityExecution,
 			Activity activity) {
-
 		EObject caller = getActivityContextObject(activityExecution);
 		String className = caller.eClass().getName();
 		String methodName = activity.getSpecification().getName();
-
-		try {
-			beforeExecutionStep(caller, className, methodName);
-
-		} catch (EngineStoppedException stopExeception) {
-
-			throw new EngineStoppedException(stopExeception.getMessage(),
-					stopExeception);
-		} catch (Exception e) {
-
-			// TODO this was required in K3, but now we can manage real
-			// exceptions ?
-			throw new RuntimeException(e);
-		}
-
+		beforeExecutionStep(caller, className, methodName);
 	}
 
 	private void processActivityExit(ActivityExitEvent event) {
-
-		try {
-			afterExecutionStep();
-
-		} catch (EngineStoppedException stopExeception) {
-
-			throw new EngineStoppedException(stopExeception.getMessage(),
-					stopExeception);
-		} catch (Exception e) {
-
-			// TODO this was required in K3, but now we can manage real
-			// exceptions ?
-			throw new RuntimeException(e);
-		}
+		afterExecutionStep();
 	}
 
 	private EObject getActivityContextObject(ActivityExecution activityExecution) {
@@ -347,7 +320,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	public void resume() {
 		if (debugging && STEP_INTO_ACTIVITY) {
 			resume = true;
-
 			while (resume && vm.isRunning()) {
 				vm.step();
 			}
