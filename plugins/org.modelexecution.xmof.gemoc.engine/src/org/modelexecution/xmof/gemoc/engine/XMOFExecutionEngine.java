@@ -255,13 +255,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	public void notify(Event event) {
-		if (event instanceof SuspendEvent && STEP_INTO_ACTIVITY) {
+		if (event instanceof SuspendEvent && debugging && STEP_INTO_ACTIVITY) {
 			SuspendEvent suspendEvent = (SuspendEvent) event;
 			if (suspendEvent.getLocation() instanceof fUML.Syntax.Activities.IntermediateActivities.Activity) {
 				resume = false;
 				processActivityEntry(suspendEvent);
 			}
-		} else if (event instanceof ActivityEntryEvent && !STEP_INTO_ACTIVITY) {
+		} else if (event instanceof ActivityEntryEvent
+				&& !(debugging && STEP_INTO_ACTIVITY)) {
 			processActivityEntry((ActivityEntryEvent) event);
 		}
 
