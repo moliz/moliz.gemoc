@@ -80,10 +80,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	public void initialize(final IExecutionContext executionContext) {
-		
-		//TODO remove and make it work normally
-		AbstractGemocAnimatorServices.ANIMATOR.addRepresentationToRefresh("PetrinetDiagram");
-		
+				
 		super.initialize(executionContext);
 		resourceSet = executionContext.getResourceModel().getResourceSet();
 
