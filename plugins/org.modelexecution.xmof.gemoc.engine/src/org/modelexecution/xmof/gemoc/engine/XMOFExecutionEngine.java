@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
-import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
@@ -51,16 +50,21 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private ResourceSet resourceSet;
 
-	private static final boolean STEP_INTO_ACTIVITY = false;
-
 	private boolean debugging = false;
 
 	private boolean resume = false;
 
 	private XMOFVirtualMachine vm;
 
-	public XMOFExecutionEngine() {
+	/**
+	 * If true, enables the stepping into activities (ie. to reach activity nodes).
+	 * Makes possible the debugging of the XMOF operational semantics.
+	 */
+	private boolean stepIntoActivities;
+
+	public XMOFExecutionEngine(boolean stepIntoActivities) {
 		super();
+		this.stepIntoActivities = stepIntoActivities;
 	}
 
 	@Override
@@ -93,7 +97,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		this.debugging = executionContext.getExecutionMode().equals(
 				ExecutionMode.Animation);
 		
-		if (debugging && STEP_INTO_ACTIVITY)
+		if (debugging && stepIntoActivities)
 			vm.shouldSuspendAfterStep(true);
 
 		entryPoint = new Runnable() {
@@ -259,14 +263,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	public void notify(Event event) {
-		if (event instanceof SuspendEvent && debugging && STEP_INTO_ACTIVITY) {
+		if (event instanceof SuspendEvent && debugging && stepIntoActivities) {
 			SuspendEvent suspendEvent = (SuspendEvent) event;
 			if (suspendEvent.getLocation() instanceof fUML.Syntax.Activities.IntermediateActivities.Activity) {
 				resume = false;
 				processActivityEntry(suspendEvent);
 			}
 		} else if (event instanceof ActivityEntryEvent
-				&& !(debugging && STEP_INTO_ACTIVITY)) {
+				&& !(debugging && stepIntoActivities)) {
 			processActivityEntry((ActivityEntryEvent) event);
 		}
 
@@ -324,7 +328,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	public void resume() {
-		if (debugging && STEP_INTO_ACTIVITY) {
+		if (debugging && stepIntoActivities) {
 			resume = true;
 			while (resume && vm.isRunning()) {
 				vm.step();
