@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
+import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
@@ -50,7 +51,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private ResourceSet resourceSet;
 
-	private static final boolean STEP_INTO_ACTIVITY = true;
+	private static final boolean STEP_INTO_ACTIVITY = false;
 
 	private boolean debugging = false;
 
@@ -79,16 +80,22 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	public void initialize(final IExecutionContext executionContext) {
+		
+		//TODO remove and make it work normally
+		AbstractGemocAnimatorServices.ANIMATOR.addRepresentationToRefresh("PetrinetDiagram");
+		
 		super.initialize(executionContext);
 		resourceSet = executionContext.getResourceModel().getResourceSet();
 
 		XMOFBasedModel model = getXMOFBasedModel(executionContext);
+		
 		vm = new XMOFVirtualMachine(model);
+		vm.setSynchronizeModel(true);
 		vm.addRawExecutionEventListener(this);
 		vm.addVirtualMachineListener(this);
 		this.debugging = executionContext.getExecutionMode().equals(
 				ExecutionMode.Animation);
-
+		
 		if (debugging && STEP_INTO_ACTIVITY)
 			vm.shouldSuspendAfterStep(true);
 
@@ -121,7 +128,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		Collection<EPackage> configurationPackages = loadConfigurationMetamodel(executionContext);
 		configurationMap = new ConfigurationObjectMap(inputElements,
 				configurationPackages);
-
+		
+		GenericXMOFAnimationServices.setConfigurationObjectMap(configurationMap);
+		
 		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
 				getParameterValueConfiguration(inputParameterValues));
 	}
@@ -293,9 +302,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private void processActivityEntry(ActivityExecution activityExecution,
 			Activity activity) {
 		EObject caller = getActivityContextObject(activityExecution);
-		String className = caller.eClass().getName();
+		EObject caller_static = configurationMap.getOriginalObject(caller);
+		String className = caller_static.eClass().getName();
 		String methodName = activity.getSpecification().getName();
-		beforeExecutionStep(caller, className, methodName);
+		beforeExecutionStep(caller_static, className, methodName);
 	}
 
 	private void processActivityExit(ActivityExitEvent event) {
