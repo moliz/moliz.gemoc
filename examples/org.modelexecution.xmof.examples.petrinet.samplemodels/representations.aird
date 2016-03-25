@@ -73,10 +73,10 @@
           </edges>
         </data>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_WQ7_Ye9SEeWQio0NoAerxQ" name="p1" incomingEdges="_WQ7_cO9SEeWQio0NoAerxQ" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_WQ7_Ye9SEeWQio0NoAerxQ" name="p1&#xA;-1" incomingEdges="_WQ7_cO9SEeWQio0NoAerxQ" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="petrinet:Place" href="net1.petrinet#//@places.0"/>
         <semanticElements xmi:type="petrinet:Place" href="net1.petrinet#//@places.0"/>
-        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_WQ7_Yu9SEeWQio0NoAerxQ">
+        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_WQ7_Yu9SEeWQio0NoAerxQ" showIcon="false">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_WQ7_Y-9SEeWQio0NoAerxQ"/>
           <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_WQ7_ZO9SEeWQio0NoAerxQ"/>
@@ -84,10 +84,10 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_WQ7_Zu9SEeWQio0NoAerxQ" name="p2" incomingEdges="_WQ7_de9SEeWQio0NoAerxQ" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_WQ7_Zu9SEeWQio0NoAerxQ" name="p2&#xA;-1" incomingEdges="_WQ7_de9SEeWQio0NoAerxQ" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="petrinet:Place" href="net1.petrinet#//@places.1"/>
         <semanticElements xmi:type="petrinet:Place" href="net1.petrinet#//@places.1"/>
-        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_WQ7_Z-9SEeWQio0NoAerxQ">
+        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_WQ7_Z-9SEeWQio0NoAerxQ" showIcon="false">
           <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_WQ7_aO9SEeWQio0NoAerxQ"/>
           <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style"/>
           <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_WQ7_ae9SEeWQio0NoAerxQ"/>
