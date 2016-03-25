@@ -20,6 +20,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 import org.gemoc.commons.eclipse.ui.ViewHelper;
+import org.gemoc.execution.sequential.javaengine.ui.debug.GenericSequentialModelDebugger;
 import org.gemoc.executionframework.engine.commons.ModelExecutionContext;
 import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.gemoc.executionframework.engine.ui.debug.AbstractGemocDebugger;
@@ -36,7 +37,6 @@ import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionModelContext;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
-import org.modelexecution.xmof.gemoc.engine.ui.debug.XMOFModelDebugger;
 
 import fr.inria.diverse.commons.messagingsystem.api.MessagingSystem;
 import fr.inria.diverse.trace.gemoc.api.IMultiDimensionalTraceAddon;
@@ -230,7 +230,7 @@ public class Launcher extends AbstractGemocLauncher {
 		Set<IMultiDimensionalTraceAddon> traceAddons = executionEngine
 				.getAddonsTypedBy(IMultiDimensionalTraceAddon.class);
 		if (traceAddons.isEmpty()) {
-			res = new XMOFModelDebugger(dispatcher,
+			res = new GenericSequentialModelDebugger(dispatcher,
 					(ISequentialExecutionEngine) executionEngine);
 		} else {
 			res = null;

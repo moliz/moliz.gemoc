@@ -5,14 +5,13 @@ import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngin
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
+import org.modelexecution.fumldebug.core.event.ActivityEntryEvent;
 import org.modelexecution.fumldebug.core.event.ActivityExitEvent;
 import org.modelexecution.fumldebug.core.event.Event;
-import org.modelexecution.fumldebug.core.event.SuspendEvent;
 import org.modelexecution.fumldebug.core.trace.tracemodel.ActivityExecution;
 import org.modelexecution.fumldebug.core.trace.tracemodel.ValueSnapshot;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
-import org.modelexecution.xmof.gemoc.engine.internal.ExecutionStep;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
 import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
@@ -26,13 +25,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private boolean debugging = false;
 
-	private boolean resume = false;
-
 	private ConfigurationObjectMap configurationMap;
-	
-	private XMOFVirtualMachine vm;
 
-	private ExecutionStep currentExecutionStep = null;
+	private XMOFVirtualMachine vm;
 
 	public XMOFExecutionEngine() {
 		super();
@@ -45,21 +40,19 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	public void initialize(final IExecutionContext executionContext) {
-
 		super.initialize(executionContext);
-		
+
 		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
 		XMOFBasedModel model = loader.loadXMOFBasedModel();
 		configurationMap = loader.getConfigurationMap();
-		
 
 		vm = new XMOFVirtualMachine(model);
 		vm.setSynchronizeModel(true);
 		vm.addRawExecutionEventListener(this);
 		vm.addVirtualMachineListener(this);
+
 		this.debugging = executionContext.getExecutionMode().equals(
 				ExecutionMode.Animation);
-
 		if (debugging) {
 			vm.shouldSuspendAfterStep(true);
 		}
@@ -67,12 +60,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	public void notify(Event event) {
-		if (event instanceof SuspendEvent && debugging) {
-			SuspendEvent suspendEvent = (SuspendEvent) event;
-			if (suspendEvent.getLocation() instanceof fUML.Syntax.Activities.IntermediateActivities.Activity) {
-				resume = false;
-				processActivityEntry(suspendEvent);
-			}
+		if (event instanceof ActivityEntryEvent) {
+			ActivityEntryEvent activityEntryEvent = (ActivityEntryEvent) event;
+			processActivityEntry(activityEntryEvent);
 		} else if (event instanceof ActivityExitEvent) {
 			processActivityExit((ActivityExitEvent) event);
 		}
@@ -82,20 +72,16 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	public void notify(XMOFVirtualMachineEvent event) {
 	}
 
-	private void processActivityEntry(SuspendEvent event) {
+	private void processActivityEntry(ActivityEntryEvent event) {
 		ActivityExecution activityExecution = vm.getExecutionTrace()
 				.getActivityExecutionByID(event.getActivityExecutionID());
 		Activity activity = (Activity) vm.getxMOFConversionResult()
-				.getInputObject(event.getLocation());
+				.getInputObject(event.getActivity());
 		EObject context = getActivityContextObject(activityExecution);
 		EObject caller = configurationMap.getOriginalObject(context);
 		String className = caller.eClass().getName();
 		String methodName = activity.getSpecification().getName();
-		currentExecutionStep = new ExecutionStep(caller, className, methodName);
-	}
-
-	private void processActivityExit(ActivityExitEvent event) {
-		afterExecutionStep();
+		beforeExecutionStep(caller, className, methodName);
 	}
 
 	private EObject getActivityContextObject(ActivityExecution activityExecution) {
@@ -112,45 +98,13 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		return activityContextObject;
 	}
 
-	public void resume() {
-		resume = true;
-		resumeUntilSupsension();
-	}
-
-	private void resumeUntilSupsension() {
-		while (resume && vm.isRunning()) {
-			vm.step();
-		}
-		handleExecutionStep();
+	private void processActivityExit(ActivityExitEvent event) {
+		afterExecutionStep();
 	}
 
 	@Override
 	protected void executeEntryPoint() {
-		// check execution mode whether to run or debug VM
-		if (!debugging) {
-			run();
-		} else {
-			debug();
-		}
-	}
-
-	private void run() {
 		vm.run();
-	}
-
-	private void debug() {
-		vm.debug();
-		handleExecutionStep();
-	}
-
-	private void handleExecutionStep() {
-		if (currentExecutionStep != null) {
-			Object caller = currentExecutionStep.getCaller();
-			String className = currentExecutionStep.getClassName();
-			String methodName = currentExecutionStep.getMethodName();
-			currentExecutionStep = null;
-			beforeExecutionStep(caller, className, methodName);
-		}
 	}
 
 	@Override
