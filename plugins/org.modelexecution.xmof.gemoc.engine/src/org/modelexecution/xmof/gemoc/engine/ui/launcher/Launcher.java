@@ -81,7 +81,7 @@ public class Launcher extends AbstractGemocLauncher {
 				return;
 			}
 			// create and initialize engine
-			executionEngine = new XMOFExecutionEngine(false);
+			executionEngine = new XMOFExecutionEngine();
 			ModelExecutionContext executioncontext = new XMOFExecutionModelContext(
 					runConfiguration, executionMode);
 			executioncontext.initializeResourceModel();
