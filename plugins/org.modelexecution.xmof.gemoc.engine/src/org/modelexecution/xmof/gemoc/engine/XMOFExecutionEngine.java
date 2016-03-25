@@ -2,7 +2,6 @@ package org.modelexecution.xmof.gemoc.engine;
 
 import org.eclipse.emf.ecore.EObject;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
-import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
 import org.modelexecution.fumldebug.core.event.ActivityEntryEvent;
@@ -22,8 +21,6 @@ import fUML.Semantics.Classes.Kernel.Object_;
 
 public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		implements ExecutionEventListener, IXMOFVirtualMachineListener {
-
-	private boolean debugging = false;
 
 	private ConfigurationObjectMap configurationMap;
 
@@ -50,12 +47,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		vm.setSynchronizeModel(true);
 		vm.addRawExecutionEventListener(this);
 		vm.addVirtualMachineListener(this);
-
-		this.debugging = executionContext.getExecutionMode().equals(
-				ExecutionMode.Animation);
-		if (debugging) {
-			vm.shouldSuspendAfterStep(true);
-		}
 	}
 
 	@Override
