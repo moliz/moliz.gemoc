@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Dynamic
+Bundle-SymbolicName: org.modelexecution.xmof.examples.petrinet2.xmof.dynamic
+Bundle-Version: 1.0.0.qualifier

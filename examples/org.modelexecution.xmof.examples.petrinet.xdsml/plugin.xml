@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.modelexecution.examples.petrinet.Petrinet" xdsmlFilePath="/org.modelexecution.xmof.examples.petrinet.xdsml/src/org/modelexecution/xmof/examples/petrinet/petrinet.melange" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.modelexecution.examples.petrinet.PetrinetMT" uri="http://petrinetmt/" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="org.modelexecution.examples.petrinet.PetrinetMT" id="org.modelexecution.examples.petrinet.Petrinet" uri="http://petrinet/1.0">
+      <adapter class="org.modelexecution.examples.petrinet.petrinet.adapters.petrinetmt.PetrinetAdapter" modeltypeId="org.modelexecution.examples.petrinet.PetrinetMT" />
+    </language>
+  </extension>
+</plugin>

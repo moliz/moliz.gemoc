@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:petrinet="http://petrinet/1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmi:id="_j88HgOxAEeWUdfwQ943KZw" version="8.1.1">
-  <models xmi:type="petrinet:Net" href="petrinet/petrinet2.petrinet#/"/>
-</viewpoint:DAnalysis>
