@@ -19,8 +19,8 @@ import org.modelexecution.xmof.vm.XMOFVirtualMachineEvent;
 
 import fUML.Semantics.Classes.Kernel.Object_;
 
-public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
-		implements ExecutionEventListener, IXMOFVirtualMachineListener {
+public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine implements ExecutionEventListener,
+		IXMOFVirtualMachineListener {
 
 	private ConfigurationObjectMap configurationMap;
 
@@ -36,9 +36,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	@Override
-	public void initialize(final IExecutionContext executionContext) {
-		super.initialize(executionContext);
-
+	protected void prepareEntryPoint(IExecutionContext executionContext) {
 		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
 		XMOFBasedModel model = loader.loadXMOFBasedModel();
 		configurationMap = loader.getConfigurationMap();
@@ -47,6 +45,11 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		vm.setSynchronizeModel(true);
 		vm.addRawExecutionEventListener(this);
 		vm.addVirtualMachineListener(this);
+	}
+
+	@Override
+	protected void prepareInitializeModel(IExecutionContext executionContext) {
+
 	}
 
 	@Override
@@ -64,10 +67,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	private void processActivityEntry(ActivityEntryEvent event) {
-		ActivityExecution activityExecution = vm.getExecutionTrace()
-				.getActivityExecutionByID(event.getActivityExecutionID());
-		Activity activity = (Activity) vm.getxMOFConversionResult()
-				.getInputObject(event.getActivity());
+		ActivityExecution activityExecution = vm.getExecutionTrace().getActivityExecutionByID(
+				event.getActivityExecutionID());
+		Activity activity = (Activity) vm.getxMOFConversionResult().getInputObject(event.getActivity());
 		EObject context = getActivityContextObject(activityExecution);
 		EObject caller = configurationMap.getOriginalObject(context);
 		String className = caller.eClass().getName();
@@ -79,11 +81,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		EObject activityContextObject = null;
 		ValueSnapshot context = activityExecution.getContextValueSnapshot();
 		if (context != null) {
-			fUML.Semantics.Classes.Kernel.Value contextRuntimeValue = context
-					.getRuntimeValue();
+			fUML.Semantics.Classes.Kernel.Value contextRuntimeValue = context.getRuntimeValue();
 			if (contextRuntimeValue instanceof Object_) {
-				activityContextObject = vm.getInstanceMap().getEObject(
-						(Object_) contextRuntimeValue);
+				activityContextObject = vm.getInstanceMap().getEObject((Object_) contextRuntimeValue);
 			}
 		}
 		return activityContextObject;
