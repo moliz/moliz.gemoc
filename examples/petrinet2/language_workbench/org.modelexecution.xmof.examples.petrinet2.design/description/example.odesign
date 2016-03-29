@@ -21,14 +21,14 @@
           </style>
         </edgeMappings>
         <containerMappings name="NetContainer" semanticCandidatesExpression="var:self" domainClass="petrinet2.Net">
-          <subNodeMappings name="PlaceNode" domainClass="petrinet2.Place">
+          <subNodeMappings name="PlaceNode" semanticCandidatesExpression="feature:places" domainClass="petrinet2.Place">
             <style xsi:type="style:EllipseNodeDescription" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </style>
           </subNodeMappings>
-          <subNodeMappings name="TranistionNode" domainClass="petrinet2.Transition">
+          <subNodeMappings name="TranistionNode" semanticCandidatesExpression="feature:transitions" domainClass="petrinet2.Transition">
             <style xsi:type="style:SquareDescription" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
