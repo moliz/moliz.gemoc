@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -13,6 +15,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
+import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.ObjectValue;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
@@ -29,24 +34,12 @@ import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 
 public class XMOFBasedModelLoader {
 
-	private ResourceSet resourceSet;
-	private Resource modelResource;
-	private String initializationModelURI;
-	private String xdsmlModelURI;
+	private IExecutionContext executionContext;
 
 	private ConfigurationObjectMap configurationMap;
 
 	public XMOFBasedModelLoader(IExecutionContext executionContext) {
-		initialize(executionContext);
-	}
-
-	private void initialize(IExecutionContext executionContext) {
-		resourceSet = executionContext.getResourceModel().getResourceSet();
-		modelResource = executionContext.getResourceModel();
-		initializationModelURI = ((RunConfiguration) executionContext
-				.getRunConfiguration()).getModelInitializationModel();
-		xdsmlModelURI = executionContext.getLanguageDefinitionExtension()
-				.getXDSMLFilePath();
+		this.executionContext = executionContext;
 	}
 
 	public XMOFBasedModel loadXMOFBasedModel() {
@@ -61,22 +54,18 @@ public class XMOFBasedModelLoader {
 		Collection<EPackage> configurationPackages = loadConfigurationMetamodel();
 		configurationMap = new ConfigurationObjectMap(inputElements,
 				configurationPackages);
+		createConfigurationModelResource();
 
 		GenericXMOFAnimationServices
-				.setConfigurationObjectMap(getConfigurationMap());
+				.setConfigurationObjectMap(configurationMap);
 
-		return new XMOFBasedModel(getConfigurationMap()
+		return new XMOFBasedModel(configurationMap
 				.getConfigurationObjects(),
-				getParameterValueConfiguration(inputParameterValues));
+				getParameterValueConfiguration(inputParameterValues),getEditingDomain());
 	}
 
 	private Collection<EObject> loadInputModelElements() {
-		return modelResource.getContents();
-	}
-
-	private List<ParameterValue> loadInputParameterValueElements() {
-		List<ParameterValue> parameterValues = getParameterValues(initializationModelURI);
-		return parameterValues;
+		return getModelResource().getContents();
 	}
 
 	private Collection<EObject> getParameterValueObjects(
@@ -126,11 +115,11 @@ public class XMOFBasedModelLoader {
 		return parameterValueConfiguration;
 	}
 
-	private List<ParameterValue> getParameterValues(String modelPath) {
+	private List<ParameterValue> loadInputParameterValueElements() {
 		EList<ParameterValue> parameterValues = new BasicEList<ParameterValue>();
-
-		if (!(modelPath == null || modelPath == "")) {
-			Resource resource = loadPlatformResource(modelPath);
+		String initializationModelPath = getInitializationModelPath();
+		if (!(initializationModelPath == null || initializationModelPath == "")) {
+			Resource resource = loadPlatformResource(initializationModelPath);
 			EList<EObject> parameterValueDefinitions = resource.getContents();
 			for (EObject eObject : parameterValueDefinitions) {
 				if (eObject instanceof ParameterValueDefinition) {
@@ -145,7 +134,7 @@ public class XMOFBasedModelLoader {
 
 	private String getXMOFModelFilePath() {
 		String xmofModelFilePath = "";
-		Resource xdsmlFileResource = loadPluginResource(xdsmlModelURI);
+		Resource xdsmlFileResource = loadPluginResource(getXDSMLModelPat());
 		ModelTypingSpace modelTypingSpace = (ModelTypingSpace) xdsmlFileResource
 				.getContents().get(0);
 		for (Element element : modelTypingSpace.getElements()) {
@@ -176,14 +165,35 @@ public class XMOFBasedModelLoader {
 		}
 		return confMMPackages;
 	}
+	
+	private void createConfigurationModelResource() {
+		URI configurationModelURI = computeConfigurationModelURI();
+		Resource configurationResource = getResourceSet().createResource(configurationModelURI);
+		for (EObject configurationObject : configurationMap.getConfigurationObjects()) {
+			if (configurationObject.eContainer() == null) {
+				Command cmd = new AddCommand(getEditingDomain(), configurationResource.getContents(), configurationObject);
+				getEditingDomain().getCommandStack().execute(cmd);
+			}
+		}
+	}
+	
+	private URI computeConfigurationModelURI() {
+		IPath executionPath = getExecutionPath();
+		String modelFileName = getModelResource().getURI().lastSegment();
+		String modelFileExtension = getModelResource().getURI().fileExtension();
+		String configurationModelFileName = modelFileName.replace("." + modelFileExtension, "-configuration.xmi");
+		IPath configurationModelPath = executionPath.append(configurationModelFileName);
+		URI uri = URI.createPlatformResourceURI(configurationModelPath.toString(), true);
+		return uri;
+	}
 
 	private Resource loadPlatformResource(String path) {
-		return resourceSet.getResource(
+		return getResourceSet().getResource(
 				URI.createPlatformResourceURI(path, true), true);
 	}
 
 	private Resource loadPluginResource(String path) {
-		return resourceSet.getResource(URI.createPlatformPluginURI(path, true),
+		return getResourceSet().getResource(URI.createPlatformPluginURI(path, true),
 				true);
 	}
 
@@ -191,4 +201,30 @@ public class XMOFBasedModelLoader {
 		return configurationMap;
 	}
 
+	private ResourceSet getResourceSet() {
+		return executionContext.getResourceModel().getResourceSet();
+	}
+	
+	private Resource getModelResource() {
+		return executionContext.getResourceModel();
+	}
+	
+	private String getInitializationModelPath() {
+		return ((RunConfiguration) executionContext
+			.getRunConfiguration()).getModelInitializationModel();
+	}
+	
+	private String getXDSMLModelPat() {
+		return executionContext.getLanguageDefinitionExtension()
+		.getXDSMLFilePath();
+	}
+	
+	private IPath getExecutionPath() {
+		return executionContext.getWorkspace().getExecutionPath();
+	}
+	
+	private EditingDomain getEditingDomain() {
+		ResourceSet resourceSet = getResourceSet();
+		return TransactionUtil.getEditingDomain(resourceSet);
+	}
 }
