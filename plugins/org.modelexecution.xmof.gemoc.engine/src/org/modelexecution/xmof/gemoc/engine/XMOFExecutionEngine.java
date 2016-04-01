@@ -11,16 +11,18 @@ import org.modelexecution.fumldebug.core.trace.tracemodel.ActivityExecution;
 import org.modelexecution.fumldebug.core.trace.tracemodel.ValueSnapshot;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
+import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
 import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
+import org.modelexecution.xmof.vm.XMOFBasedModelSynchronizer;
 import org.modelexecution.xmof.vm.XMOFVirtualMachine;
 import org.modelexecution.xmof.vm.XMOFVirtualMachineEvent;
 
 import fUML.Semantics.Classes.Kernel.Object_;
 
-public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine implements ExecutionEventListener,
-		IXMOFVirtualMachineListener {
+public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
+		implements ExecutionEventListener, IXMOFVirtualMachineListener {
 
 	private ConfigurationObjectMap configurationMap;
 
@@ -42,9 +44,18 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 		configurationMap = loader.getConfigurationMap();
 
 		vm = new XMOFVirtualMachine(model);
-		vm.setSynchronizeModel(true);
+		XMOFBasedModelSynchronizer modelSynchronizer = createModelSynchronizer(model);
+		vm.setSynchronizeModel(modelSynchronizer);
 		vm.addRawExecutionEventListener(this);
 		vm.addVirtualMachineListener(this);
+	}
+
+	private XMOFBasedModelSynchronizer createModelSynchronizer(
+			XMOFBasedModel model) {
+		XMOFBasedModelSynchronizer modelSynchronizer = new GemocModelSynchronizer(
+				vm.getInstanceMap(), model.getEditingDomain());
+		modelSynchronizer.setModelResource(model.getModelResource());
+		return modelSynchronizer;
 	}
 
 	@Override
@@ -67,9 +78,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 	}
 
 	private void processActivityEntry(ActivityEntryEvent event) {
-		ActivityExecution activityExecution = vm.getExecutionTrace().getActivityExecutionByID(
-				event.getActivityExecutionID());
-		Activity activity = (Activity) vm.getxMOFConversionResult().getInputObject(event.getActivity());
+		ActivityExecution activityExecution = vm.getExecutionTrace()
+				.getActivityExecutionByID(event.getActivityExecutionID());
+		Activity activity = (Activity) vm.getxMOFConversionResult()
+				.getInputObject(event.getActivity());
 		EObject context = getActivityContextObject(activityExecution);
 		EObject caller = configurationMap.getOriginalObject(context);
 		String className = caller.eClass().getName();
@@ -81,9 +93,11 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine imple
 		EObject activityContextObject = null;
 		ValueSnapshot context = activityExecution.getContextValueSnapshot();
 		if (context != null) {
-			fUML.Semantics.Classes.Kernel.Value contextRuntimeValue = context.getRuntimeValue();
+			fUML.Semantics.Classes.Kernel.Value contextRuntimeValue = context
+					.getRuntimeValue();
 			if (contextRuntimeValue instanceof Object_) {
-				activityContextObject = vm.getInstanceMap().getEObject((Object_) contextRuntimeValue);
+				activityContextObject = vm.getInstanceMap().getEObject(
+						(Object_) contextRuntimeValue);
 			}
 		}
 		return activityContextObject;

@@ -59,9 +59,9 @@ public class XMOFBasedModelLoader {
 		GenericXMOFAnimationServices
 				.setConfigurationObjectMap(configurationMap);
 
-		return new XMOFBasedModel(configurationMap
-				.getConfigurationObjects(),
-				getParameterValueConfiguration(inputParameterValues),getEditingDomain());
+		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
+				getParameterValueConfiguration(inputParameterValues),
+				getEditingDomain());
 	}
 
 	private Collection<EObject> loadInputModelElements() {
@@ -165,25 +165,32 @@ public class XMOFBasedModelLoader {
 		}
 		return confMMPackages;
 	}
-	
+
 	private void createConfigurationModelResource() {
 		URI configurationModelURI = computeConfigurationModelURI();
-		Resource configurationResource = getResourceSet().createResource(configurationModelURI);
-		for (EObject configurationObject : configurationMap.getConfigurationObjects()) {
+		Resource configurationResource = getResourceSet().createResource(
+				configurationModelURI);
+		for (EObject configurationObject : configurationMap
+				.getConfigurationObjects()) {
 			if (configurationObject.eContainer() == null) {
-				Command cmd = new AddCommand(getEditingDomain(), configurationResource.getContents(), configurationObject);
+				Command cmd = new AddCommand(getEditingDomain(),
+						configurationResource.getContents(),
+						configurationObject);
 				getEditingDomain().getCommandStack().execute(cmd);
 			}
 		}
 	}
-	
+
 	private URI computeConfigurationModelURI() {
 		IPath executionPath = getExecutionPath();
 		String modelFileName = getModelResource().getURI().lastSegment();
 		String modelFileExtension = getModelResource().getURI().fileExtension();
-		String configurationModelFileName = modelFileName.replace("." + modelFileExtension, "-configuration.xmi");
-		IPath configurationModelPath = executionPath.append(configurationModelFileName);
-		URI uri = URI.createPlatformResourceURI(configurationModelPath.toString(), true);
+		String configurationModelFileName = modelFileName.replace("."
+				+ modelFileExtension, "-configuration.xmi");
+		IPath configurationModelPath = executionPath
+				.append(configurationModelFileName);
+		URI uri = URI.createPlatformResourceURI(
+				configurationModelPath.toString(), true);
 		return uri;
 	}
 
@@ -193,8 +200,8 @@ public class XMOFBasedModelLoader {
 	}
 
 	private Resource loadPluginResource(String path) {
-		return getResourceSet().getResource(URI.createPlatformPluginURI(path, true),
-				true);
+		return getResourceSet().getResource(
+				URI.createPlatformPluginURI(path, true), true);
 	}
 
 	public ConfigurationObjectMap getConfigurationMap() {
@@ -204,25 +211,25 @@ public class XMOFBasedModelLoader {
 	private ResourceSet getResourceSet() {
 		return executionContext.getResourceModel().getResourceSet();
 	}
-	
+
 	private Resource getModelResource() {
 		return executionContext.getResourceModel();
 	}
-	
+
 	private String getInitializationModelPath() {
-		return ((RunConfiguration) executionContext
-			.getRunConfiguration()).getModelInitializationModel();
+		return ((RunConfiguration) executionContext.getRunConfiguration())
+				.getModelInitializationModel();
 	}
-	
+
 	private String getXDSMLModelPat() {
 		return executionContext.getLanguageDefinitionExtension()
-		.getXDSMLFilePath();
+				.getXDSMLFilePath();
 	}
-	
+
 	private IPath getExecutionPath() {
 		return executionContext.getWorkspace().getExecutionPath();
 	}
-	
+
 	private EditingDomain getEditingDomain() {
 		ResourceSet resourceSet = getResourceSet();
 		return TransactionUtil.getEditingDomain(resourceSet);
