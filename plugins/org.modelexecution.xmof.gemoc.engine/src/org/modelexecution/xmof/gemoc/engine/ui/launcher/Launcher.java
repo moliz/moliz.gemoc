@@ -1,5 +1,6 @@
 package org.modelexecution.xmof.gemoc.engine.ui.launcher;
 
+import java.util.Arrays;
 import java.util.Set;
 import java.util.function.BiPredicate;
 
@@ -19,10 +20,12 @@ import org.gemoc.executionframework.ui.views.engine.EnginesStatusView;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.core.ISequentialExecutionEngine;
+import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionModelContext;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
+import org.modelexecution.xmof.gemoc.engine.ui.debug.XMOFMutableFieldExtractor;
 
 import fr.inria.diverse.commons.messagingsystem.api.MessagingSystem;
 import fr.inria.diverse.trace.gemoc.api.IMultiDimensionalTraceAddon;
@@ -47,23 +50,26 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 	@Override
 	protected IDSLDebugger getDebugger(ILaunchConfiguration configuration, DSLDebugEventDispatcher dispatcher,
 			EObject firstInstruction, IProgressMonitor monitor) {
-		AbstractGemocDebugger res;
+		AbstractGemocDebugger debugger;
 		Set<IMultiDimensionalTraceAddon> traceAddons = _executionEngine
 				.getAddonsTypedBy(IMultiDimensionalTraceAddon.class);
 		if (traceAddons.isEmpty()) {
-			res = new GenericSequentialModelDebugger(dispatcher, (ISequentialExecutionEngine) _executionEngine);
+			debugger = new GenericSequentialModelDebugger(dispatcher, (ISequentialExecutionEngine) _executionEngine);
 		} else {
-			res = null;
+			debugger = null;
 			// res = new OmniscientGenericSequentialModelDebugger(dispatcher,
 			// (ISequentialExecutionEngine) executionEngine,
 			// traceAddons.iterator().next());
 		}
 
+		ConfigurationObjectMap configurationMap = ((XMOFExecutionEngine)_executionEngine).getConfigurationMap();
+		debugger.setMutableFieldExtractors(Arrays.asList(new XMOFMutableFieldExtractor(configurationMap)));
+		
 		// If in the launch configuration it is asked to pause at the start,
 		// we add this dummy break
 		try {
 			if (configuration.getAttribute(RunConfiguration.LAUNCH_BREAK_START, false)) {
-				res.addPredicateBreak(new BiPredicate<IBasicExecutionEngine, MSEOccurrence>() {
+				debugger.addPredicateBreak(new BiPredicate<IBasicExecutionEngine, MSEOccurrence>() {
 					@Override
 					public boolean test(IBasicExecutionEngine t, MSEOccurrence u) {
 						return true;
@@ -74,8 +80,8 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 			Activator.error(e.getMessage(), e);
 		}
 
-		_executionEngine.getExecutionContext().getExecutionPlatform().addEngineAddon(res);
-		return res;
+		_executionEngine.getExecutionContext().getExecutionPlatform().addEngineAddon(debugger);
+		return debugger;
 	}
 	
 	@Override

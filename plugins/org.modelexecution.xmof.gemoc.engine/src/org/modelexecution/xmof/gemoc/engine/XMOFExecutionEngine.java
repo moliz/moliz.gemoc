@@ -116,5 +116,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	protected void initializeModel() {
 		// there is nothing to do for xMOF
 	}
+	
+	public ConfigurationObjectMap getConfigurationMap() {
+		return configurationMap;
+	}
 
 }
