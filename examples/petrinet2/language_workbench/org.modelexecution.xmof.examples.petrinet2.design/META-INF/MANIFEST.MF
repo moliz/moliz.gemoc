@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.modelexecution.xmof.examples.petrinet2.design
 Bundle-SymbolicName: org.modelexecution.xmof.examples.petrinet2.design;singleton:=true
 Bundle-Version: 1.0.0
-Bundle-Activator: org.xmof.example.design.Activator
+Bundle-Activator: org.modelexecution.xmof.examples.petrinet2.design.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
@@ -11,6 +11,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.common.acceleo.mtl,
  org.gemoc.executionframework.extensions.sirius,
  org.gemoc.xdsmlframework.api,
- org.gemoc.executionframework.engine.mse.model
+ org.gemoc.executionframework.engine.mse.model,
+ org.modelexecution.xmof.examples.petrinet2;bundle-version="1.0.0",
+ org.modelexecution.xmof.gemoc.engine;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

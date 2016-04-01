@@ -2,9 +2,9 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="org.xmof.example.design.Activator"
+    <component class="org.modelexecution.xmof.examples.petrinet2.design.Activator"
                id="org.modelexecution.xmof.examples.petrinet2.design"
-	       name="example">
+	       name="petrinet2">
     </component>
   </extension>
 </plugin>
