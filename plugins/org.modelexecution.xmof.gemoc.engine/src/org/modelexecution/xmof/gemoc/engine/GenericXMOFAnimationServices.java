@@ -1,5 +1,7 @@
 package org.modelexecution.xmof.gemoc.engine;
 
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
@@ -14,24 +16,39 @@ public class GenericXMOFAnimationServices {
 	}
 
 	private static Object getByString(EObject o, String prop) {
-		EStructuralFeature f = o.eClass().getEStructuralFeature(prop);
-		Object value = o.eGet(f);
+		Object value = null;
+		if (o != null) {
+			EStructuralFeature f = o.eClass().getEStructuralFeature(prop);
+			value = o.eGet(f);
+		}
 		return value;
 	}
 
-	public static EObject getConfObject(EObject o) {
-		if (configurationMap != null)
-			return configurationMap.getConfigurationObject(o);
-		else
-			return null;
-	}
-
 	public static Integer getConfObjectInteger(EObject o, String property) {
-		if (configurationMap != null) {
-			EObject confObject = configurationMap.getConfigurationObject(o);
-			if (confObject != null)
-				return (Integer) getByString(confObject, property);
+		Integer value = -1;
+		EObject confObject = getConfObject(o);
+		Object propertyValue = getByString(confObject, property);
+		if (propertyValue != null) {
+			value = (Integer) propertyValue ;
 		}
-		return -1;
+		return value;
+	}
+	
+	public static EList<?> getConfObjectReferencedObjects(EObject o, String property) {
+		EList<?> referencedObjects = null;
+		EObject confObject = getConfObject(o);
+		Object value = getByString(confObject, property);
+		if (value instanceof EList) {
+			referencedObjects = ECollections.unmodifiableEList((EList<?>)value);
+		}
+		return referencedObjects;
+	}
+	
+	public static EObject getConfObject(EObject o) {
+		EObject confObject = null;
+		if (configurationMap != null) {
+			confObject = configurationMap.getConfigurationObject(o);
+		}
+		return confObject;
 	}
 }
