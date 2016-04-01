@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:petrinet2="http://petrinet2/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_rWMZMPgWEeWKl48CccOz2g" selectedViews="_rWeGAPgWEeWKl48CccOz2g" version="8.1.1">
+  <models xmi:type="petrinet2:Net" href="net1.petrinet2#/"/>
+  <models xmi:type="petrinet2:Net" href="net2.petrinet2#/"/>
+  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_121754/net1.petrinet2#/"/>
+  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163736/net1.petrinet2#/"/>
+  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163804/net1.petrinet2#/"/>
+  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163820/net2.petrinet2#/"/>
+  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163846/net2.petrinet2#/"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_rWeGAPgWEeWKl48CccOz2g" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_ICnhMPfyEeW17J_I5G3Vcg" name="petrinet2 net1">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_ICpWYPfyEeW17J_I5G3Vcg" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_ICpWYffyEeW17J_I5G3Vcg" type="Sirius" element="_ICnhMPfyEeW17J_I5G3Vcg" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_ICpWY_fyEeW17J_I5G3Vcg" type="2002" element="_ICnhMffyEeW17J_I5G3Vcg">
+            <children xmi:type="notation:Node" xmi:id="_ICp9cPfyEeW17J_I5G3Vcg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_ICp9cffyEeW17J_I5G3Vcg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_ICqkgPfyEeW17J_I5G3Vcg" type="3007" element="_ICnhN_fyEeW17J_I5G3Vcg">
+                <children xmi:type="notation:Node" xmi:id="_ICqkg_fyEeW17J_I5G3Vcg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ICqkhPfyEeW17J_I5G3Vcg" x="31"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_ICx5QPfyEeW17J_I5G3Vcg" type="3016" element="_ICnhOPfyEeW17J_I5G3Vcg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_ICx5QffyEeW17J_I5G3Vcg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ICx5QvfyEeW17J_I5G3Vcg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ICqkgffyEeW17J_I5G3Vcg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ICqkgvfyEeW17J_I5G3Vcg" x="30" y="30" width="30" height="30"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_ICwEEPfyEeW17J_I5G3Vcg" type="3007" element="_ICnhPPfyEeW17J_I5G3Vcg">
+                <children xmi:type="notation:Node" xmi:id="_ICwEE_fyEeW17J_I5G3Vcg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ICwEFPfyEeW17J_I5G3Vcg" x="31"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_ICzHYPfyEeW17J_I5G3Vcg" type="3016" element="_ICnhPffyEeW17J_I5G3Vcg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_ICzHYffyEeW17J_I5G3Vcg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ICzHYvfyEeW17J_I5G3Vcg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ICwEEffyEeW17J_I5G3Vcg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ICwEEvfyEeW17J_I5G3Vcg" x="90" y="30" width="30" height="30"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_ICwrIPfyEeW17J_I5G3Vcg" type="3007" element="_ICnhQffyEeW17J_I5G3Vcg">
+                <children xmi:type="notation:Node" xmi:id="_ICxSMPfyEeW17J_I5G3Vcg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ICxSMffyEeW17J_I5G3Vcg" x="31"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_ICzHY_fyEeW17J_I5G3Vcg" type="3003" element="_ICnhQvfyEeW17J_I5G3Vcg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_ICzHZPfyEeW17J_I5G3Vcg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ICzHZffyEeW17J_I5G3Vcg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ICwrIffyEeW17J_I5G3Vcg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ICwrIvfyEeW17J_I5G3Vcg" x="45" y="89" width="30" height="30"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_ICp9cvfyEeW17J_I5G3Vcg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_ICp9c_fyEeW17J_I5G3Vcg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ICpWZPfyEeW17J_I5G3Vcg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ICpWZffyEeW17J_I5G3Vcg"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_ICpWYvfyEeW17J_I5G3Vcg"/>
+          <edges xmi:type="notation:Edge" xmi:id="_ICzucPfyEeW17J_I5G3Vcg" type="4001" element="_ICnhRvfyEeW17J_I5G3Vcg" source="_ICwrIPfyEeW17J_I5G3Vcg" target="_ICwEEPfyEeW17J_I5G3Vcg">
+            <children xmi:type="notation:Node" xmi:id="_IC0VgPfyEeW17J_I5G3Vcg" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IC0VgffyEeW17J_I5G3Vcg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IC0VgvfyEeW17J_I5G3Vcg" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IC0Vg_fyEeW17J_I5G3Vcg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IC0VhPfyEeW17J_I5G3Vcg" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IC0VhffyEeW17J_I5G3Vcg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_ICzucffyEeW17J_I5G3Vcg"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_ICzucvfyEeW17J_I5G3Vcg" fontName="Segoe UI"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ICzuc_fyEeW17J_I5G3Vcg" points="[0, 0, -45, 60]$[45, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IC08kPfyEeW17J_I5G3Vcg" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IC08kffyEeW17J_I5G3Vcg" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_IC1joPfyEeW17J_I5G3Vcg" type="4001" element="_ICnhSffyEeW17J_I5G3Vcg" source="_ICwrIPfyEeW17J_I5G3Vcg" target="_ICqkgPfyEeW17J_I5G3Vcg">
+            <children xmi:type="notation:Node" xmi:id="_IC1jpPfyEeW17J_I5G3Vcg" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IC1jpffyEeW17J_I5G3Vcg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IC1jpvfyEeW17J_I5G3Vcg" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IC1jp_fyEeW17J_I5G3Vcg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IC2KsPfyEeW17J_I5G3Vcg" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IC2KsffyEeW17J_I5G3Vcg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_IC1joffyEeW17J_I5G3Vcg"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_IC1jovfyEeW17J_I5G3Vcg" fontName="Segoe UI"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IC1jo_fyEeW17J_I5G3Vcg" points="[0, 0, 45, 60]$[-45, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IC2KsvfyEeW17J_I5G3Vcg" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IC2Ks_fyEeW17J_I5G3Vcg" id="(0.5,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_ICnhMffyEeW17J_I5G3Vcg" name="Net1">
+        <target xmi:type="petrinet2:Net" href="net1.petrinet2#/"/>
+        <semanticElements xmi:type="petrinet2:Net" href="net1.petrinet2#/"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_ICnhMvfyEeW17J_I5G3Vcg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhM_fyEeW17J_I5G3Vcg"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhNPfyEeW17J_I5G3Vcg"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhNffyEeW17J_I5G3Vcg" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhNvfyEeW17J_I5G3Vcg" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ICnhN_fyEeW17J_I5G3Vcg" name="p1" incomingEdges="_ICnhSffyEeW17J_I5G3Vcg" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="petrinet2:Place" href="net1.petrinet2#//@places.0"/>
+          <semanticElements xmi:type="petrinet2:Place" href="net1.petrinet2#//@places.0"/>
+          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_ICnhOPfyEeW17J_I5G3Vcg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhOffyEeW17J_I5G3Vcg"/>
+            <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhOvfyEeW17J_I5G3Vcg"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_ICnhO_fyEeW17J_I5G3Vcg" red="39" green="76" blue="114"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ICnhPPfyEeW17J_I5G3Vcg" name="p2" incomingEdges="_ICnhRvfyEeW17J_I5G3Vcg" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="petrinet2:Place" href="net1.petrinet2#//@places.1"/>
+          <semanticElements xmi:type="petrinet2:Place" href="net1.petrinet2#//@places.1"/>
+          <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_ICnhPffyEeW17J_I5G3Vcg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhPvfyEeW17J_I5G3Vcg"/>
+            <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhP_fyEeW17J_I5G3Vcg"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_ICnhQPfyEeW17J_I5G3Vcg" red="39" green="76" blue="114"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='PlaceNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_ICnhQffyEeW17J_I5G3Vcg" name="t" outgoingEdges="_ICnhRvfyEeW17J_I5G3Vcg _ICnhSffyEeW17J_I5G3Vcg" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="petrinet2:Transition" href="net1.petrinet2#//@transitions.0"/>
+          <semanticElements xmi:type="petrinet2:Transition" href="net1.petrinet2#//@transitions.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_ICnhQvfyEeW17J_I5G3Vcg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhQ_fyEeW17J_I5G3Vcg"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='TranistionNode']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhRPfyEeW17J_I5G3Vcg"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_ICnhRffyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@containerMappings[name='NetContainer']/@subNodeMappings[name='TranistionNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ICnhRvfyEeW17J_I5G3Vcg" sourceNode="_ICnhQffyEeW17J_I5G3Vcg" targetNode="_ICnhPPfyEeW17J_I5G3Vcg">
+        <target xmi:type="petrinet2:Transition" href="net1.petrinet2#//@transitions.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ICnhR_fyEeW17J_I5G3Vcg" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='OutputEdge']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhSPfyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='OutputEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ICnhSffyEeW17J_I5G3Vcg" sourceNode="_ICnhQffyEeW17J_I5G3Vcg" targetNode="_ICnhN_fyEeW17J_I5G3Vcg">
+        <target xmi:type="petrinet2:Transition" href="net1.petrinet2#//@transitions.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ICnhSvfyEeW17J_I5G3Vcg" sourceArrow="InputArrow" targetArrow="NoDecoration" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='InputEdge']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_ICnhS_fyEeW17J_I5G3Vcg" red="136" green="136" blue="136"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer/@edgeMappings[name='InputEdge']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_ICnhTPfyEeW17J_I5G3Vcg"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']/@ownedRepresentations[name='Petrinet2Diagram']/@defaultLayer"/>
+      <target xmi:type="petrinet2:Net" href="net1.petrinet2#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet2.design/description/example.odesign#//@ownedViewpoints[name='petrinet2%20viewpoint']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

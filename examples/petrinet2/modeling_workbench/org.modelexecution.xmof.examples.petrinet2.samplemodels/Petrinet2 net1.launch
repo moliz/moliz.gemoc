@@ -9,5 +9,5 @@
 <booleanAttribute key="MultiBranch Reflective Trace" value="false"/>
 <stringAttribute key="Resource" value="/org.modelexecution.xmof.examples.petrinet2.samplemodels/net1.petrinet2"/>
 <booleanAttribute key="VCD visualization" value="false"/>
-<stringAttribute key="airdResource" value="/org.modelexecution.xmof.examples.petrinet2.samplemodels/representations.aird"/>
+<stringAttribute key="airdResource" value="/org.modelexecution.xmof.examples.petrinet2.samplemodels/net1.aird"/>
 </launchConfiguration>
