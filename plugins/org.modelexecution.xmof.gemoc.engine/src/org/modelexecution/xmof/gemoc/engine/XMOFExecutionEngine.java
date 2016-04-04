@@ -18,6 +18,7 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.vm.XMOFBasedModelSynchronizer;
 import org.modelexecution.xmof.vm.XMOFVirtualMachine;
 import org.modelexecution.xmof.vm.XMOFVirtualMachineEvent;
+import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 
 import fUML.Semantics.Classes.Kernel.Object_;
 
@@ -27,6 +28,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private ConfigurationObjectMap configurationMap;
 
 	private XMOFVirtualMachine vm;
+
+	private boolean NODEWISESTEPS = false;
 
 	public XMOFExecutionEngine() {
 		super();
@@ -39,6 +42,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	protected void prepareEntryPoint(IExecutionContext executionContext) {
+		NODEWISESTEPS = ((RunConfiguration) executionContext
+				.getRunConfiguration()).getNodewiseStepping();
+
 		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
 		XMOFBasedModel model = loader.loadXMOFBasedModel();
 		configurationMap = loader.getConfigurationMap();
@@ -116,7 +122,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	protected void initializeModel() {
 		// there is nothing to do for xMOF
 	}
-	
+
 	public ConfigurationObjectMap getConfigurationMap() {
 		return configurationMap;
 	}
