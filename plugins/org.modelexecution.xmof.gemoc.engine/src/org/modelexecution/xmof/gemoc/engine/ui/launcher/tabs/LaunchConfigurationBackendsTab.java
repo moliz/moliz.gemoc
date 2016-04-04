@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.swt.SWT;
@@ -103,7 +104,16 @@ public class LaunchConfigurationBackendsTab extends LaunchConfigurationTab {
 
 	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
-		// TODO Auto-generated method stub
+		for (String extension : extensionControls.keySet())
+		{
+			try {
+				boolean value = configuration.getAttribute(extension, true);
+				Button checkbox = extensionControls.get(extension);
+				checkbox.setSelection(value);
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+		}
 
 	}
 
