@@ -8,6 +8,7 @@ public class RunConfiguration extends
 
 	// main launch parameters
 	public static final String LAUNCH_INITIALIZATION_MODEL = "GEMOC_LAUNCH_INITIALIZATION_MODEL";
+	public static final String LAUNCH_NODEWISE_STEP = "GEMOC_LAUNCH_NODEWISE_STEP";
 
 	public RunConfiguration(ILaunchConfiguration launchConfiguration)
 			throws CoreException {
@@ -20,6 +21,7 @@ public class RunConfiguration extends
 		super.extractInformation();
 
 		modelInitializationModel = getAttribute(LAUNCH_INITIALIZATION_MODEL, "");
+		nodewiseStepping = getAttribute(LAUNCH_NODEWISE_STEP, false);
 
 	}
 
@@ -27,6 +29,12 @@ public class RunConfiguration extends
 
 	public String getModelInitializationModel() {
 		return modelInitializationModel;
+	}
+	
+	private boolean nodewiseStepping;
+	
+	public boolean getNodewiseStepping(){
+		return nodewiseStepping;
 	}
 
 }
