@@ -6,10 +6,13 @@ import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
 import org.modelexecution.fumldebug.core.event.ActivityEntryEvent;
 import org.modelexecution.fumldebug.core.event.ActivityExitEvent;
+import org.modelexecution.fumldebug.core.event.ActivityNodeEntryEvent;
+import org.modelexecution.fumldebug.core.event.ActivityNodeExitEvent;
 import org.modelexecution.fumldebug.core.event.Event;
 import org.modelexecution.fumldebug.core.trace.tracemodel.ActivityExecution;
 import org.modelexecution.fumldebug.core.trace.tracemodel.ValueSnapshot;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
@@ -77,6 +80,13 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		} else if (event instanceof ActivityExitEvent) {
 			processActivityExit((ActivityExitEvent) event);
 		}
+		if (NODEWISESTEPS) {
+			if (event instanceof ActivityNodeEntryEvent) {
+				processActivityNodeEntry((ActivityNodeEntryEvent) event);
+			} else if (event instanceof ActivityNodeExitEvent) {
+				processActivityNodeExit((ActivityNodeExitEvent) event);
+			}
+		}
 	}
 
 	@Override
@@ -95,6 +105,19 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		beforeExecutionStep(caller, className, methodName);
 	}
 
+	private void processActivityNodeEntry(ActivityNodeEntryEvent event) {
+		ActivityExecution activityExecution = vm.getExecutionTrace()
+				.getActivityExecutionByID(event.getActivityExecutionID());
+		ActivityNode activityNode = (ActivityNode) vm.getxMOFConversionResult()
+				.getInputObject(event.getNode());
+		EObject context = getActivityContextObject(activityExecution);
+		EObject caller = configurationMap.getOriginalObject(context);
+		String className = caller.eClass().getName();
+		String methodName = activityNode.getName();
+		beforeExecutionStep(caller, className, methodName);
+
+	}
+
 	private EObject getActivityContextObject(ActivityExecution activityExecution) {
 		EObject activityContextObject = null;
 		ValueSnapshot context = activityExecution.getContextValueSnapshot();
@@ -111,6 +134,11 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private void processActivityExit(ActivityExitEvent event) {
 		afterExecutionStep();
+	}
+
+	private void processActivityNodeExit(ActivityNodeExitEvent event) {
+		afterExecutionStep();
+
 	}
 
 	@Override
