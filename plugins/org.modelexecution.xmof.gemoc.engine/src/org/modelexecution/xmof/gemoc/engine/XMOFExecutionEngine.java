@@ -32,7 +32,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private XMOFVirtualMachine vm;
 
-	private boolean NODEWISESTEPS = false;
+	private boolean suspendForNodes = false;
 
 	public XMOFExecutionEngine() {
 		super();
@@ -45,7 +45,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	protected void prepareEntryPoint(IExecutionContext executionContext) {
-		NODEWISESTEPS = ((RunConfiguration) executionContext
+		suspendForNodes = ((RunConfiguration) executionContext
 				.getRunConfiguration()).getNodewiseStepping();
 
 		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
@@ -79,8 +79,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			processActivityEntry(activityEntryEvent);
 		} else if (event instanceof ActivityExitEvent) {
 			processActivityExit((ActivityExitEvent) event);
-		}
-		if (NODEWISESTEPS) {
+		} else if (suspendForNodes) {
 			if (event instanceof ActivityNodeEntryEvent) {
 				processActivityNodeEntry((ActivityNodeEntryEvent) event);
 			} else if (event instanceof ActivityNodeExitEvent) {
@@ -115,7 +114,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		String className = caller.eClass().getName();
 		String methodName = activityNode.getName();
 		beforeExecutionStep(caller, className, methodName);
-
 	}
 
 	private EObject getActivityContextObject(ActivityExecution activityExecution) {
@@ -138,7 +136,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private void processActivityNodeExit(ActivityNodeExitEvent event) {
 		afterExecutionStep();
-
 	}
 
 	@Override
