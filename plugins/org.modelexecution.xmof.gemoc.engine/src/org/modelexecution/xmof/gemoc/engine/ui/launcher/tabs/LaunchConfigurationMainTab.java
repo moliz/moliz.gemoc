@@ -42,7 +42,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 	protected Button animateButton;
 	protected Text delayText;
 	protected Button animationFirstBreak;
-	
+
 	protected Button nodewiseStepping;
 
 	protected Combo languageCombo;
@@ -106,8 +106,9 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 			delayText.setText(Integer.toString(runConfiguration
 					.getAnimationDelay()));
 			animationFirstBreak.setSelection(runConfiguration.getBreakStart());
-			
-			nodewiseStepping.setSelection(runConfiguration.getNodewiseStepping());
+
+			nodewiseStepping.setSelection(runConfiguration
+					.getNodewiseStepping());
 
 			languageCombo.setText(runConfiguration.getLanguageName());
 
@@ -138,9 +139,9 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 
 		configuration.setAttribute(RunConfiguration.LAUNCH_BREAK_START,
 				animationFirstBreak.getSelection());
-		
-		configuration.setAttribute(RunConfiguration.LAUNCH_NODEWISE_STEP, nodewiseStepping.getSelection());
 
+		configuration.setAttribute(RunConfiguration.LAUNCH_NODEWISE_STEP,
+				nodewiseStepping.getSelection());
 	}
 
 	@Override
@@ -207,7 +208,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 		createTextLabelLayout(parent, "");
 
 		nodewiseStepping = new Button(parent, SWT.CHECK);
-		nodewiseStepping.setText("Node-wise Steps");
+		nodewiseStepping.setText("Node-wise execution steps");
 		nodewiseStepping.addSelectionListener(new SelectionAdapter() {
 
 			@Override
@@ -217,7 +218,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 		}
 
 		);
-		
+
 		return parent;
 	}
 
