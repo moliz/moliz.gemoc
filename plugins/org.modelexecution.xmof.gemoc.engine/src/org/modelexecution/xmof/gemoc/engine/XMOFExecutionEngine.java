@@ -112,7 +112,12 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		EObject context = getActivityContextObject(activityExecution);
 		EObject caller = configurationMap.getOriginalObject(context);
 		String className = caller.eClass().getName();
-		String methodName = activityNode.getName();
+		String methodName = "";
+		if (activityNode.getName() != null) {
+			methodName = activityNode.getName() + ":"+ activityNode.eClass().getName();
+		} else {
+			methodName = ":" + activityNode.eClass().getName();
+		}
 		beforeExecutionStep(caller, className, methodName);
 	}
 
