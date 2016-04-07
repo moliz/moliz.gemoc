@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.petrinet.xmof.dynamic/src"
+    modelPluginID="org.modelexecution.xmof.examples.petrinet.xmof.dynamic" modelName="Petrinet"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../org.modelexecution.xmof.examples.petrinet/model/petrinet.genmodel#//petrinet"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>petrinet.xmof.ecore</foreignModel>
+  <genPackages prefix="PetrinetConfiguration" disposableProviderFactory="true" ecorePackage="petrinet.xmof.ecore#/">
+    <genClasses ecoreClass="petrinet.xmof.ecore#//NetConfiguration">
+      <genOperations ecoreOperation="petrinet.xmof.ecore#//NetConfiguration/main"/>
+      <genOperations ecoreOperation="petrinet.xmof.ecore#//NetConfiguration/run"/>
+    </genClasses>
+    <genClasses ecoreClass="petrinet.xmof.ecore#//PlaceConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute petrinet.xmof.ecore#//PlaceConfiguration/tokens"/>
+      <genOperations ecoreOperation="petrinet.xmof.ecore#//PlaceConfiguration/removeToken"/>
+      <genOperations ecoreOperation="petrinet.xmof.ecore#//PlaceConfiguration/addToken"/>
+    </genClasses>
+    <genClasses ecoreClass="petrinet.xmof.ecore#//TransitionConfiguration">
+      <genOperations ecoreOperation="petrinet.xmof.ecore#//TransitionConfiguration/isEnabled"/>
+      <genOperations ecoreOperation="petrinet.xmof.ecore#//TransitionConfiguration/fire"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

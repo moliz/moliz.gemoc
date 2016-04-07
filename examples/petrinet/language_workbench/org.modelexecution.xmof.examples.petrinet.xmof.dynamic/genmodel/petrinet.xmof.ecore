@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:kernel="http://www.modelexecution.org/xmof/syntax/classes/mykernel"
+    name="petrinetConfiguration" nsURI="http://petrinet/1.0/configuration"
+    nsPrefix="petrinetConf">
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="NetConfiguration" eSuperTypes="../../org.modelexecution.xmof.examples.petrinet/model/petrinet.ecore#//Net">
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="main"/>
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="run"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PlaceConfiguration" eSuperTypes="../../org.modelexecution.xmof.examples.petrinet/model/petrinet.ecore#//Place">
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="removeToken"/>
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="addToken"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tokens" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TransitionConfiguration"
+      eSuperTypes="../../org.modelexecution.xmof.examples.petrinet/model/petrinet.ecore#//Transition">
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="isEnabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="fire"/>
+  </eClassifiers>
+</ecore:EPackage>

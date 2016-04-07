@@ -1,12 +1,22 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Examples
-Bundle-SymbolicName: org.modelexecution.xmof.examples.petrinet.xmof.dynamic
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.modelexecution.xmof.examples.petrinet.xmof.dynamic;singleton:=true
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Require-Bundle: org.junit,
  org.modelexecution.xmof.vm;bundle-version="1.0.0",
  org.eclipse.emf.edit,
  org.modelexecution.xmof.configuration,
- org.modelexecution.fumldebug
+ org.modelexecution.fumldebug,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.modelexecution.xmof.examples.petrinet;visibility:=reexport
+Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: petrinetConfiguration,
+ petrinetConfiguration.impl,
+ petrinetConfiguration.util
 Import-Package: org.eclipse.emf.transaction
