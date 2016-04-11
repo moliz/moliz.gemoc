@@ -148,7 +148,7 @@ public class XMOFBasedModelLoader {
 				xmofModelFilePath = language.getXmof();
 			}
 		}
-		return xmofModelFilePath.replace("platform:/resource//", "");
+		return xmofModelFilePath.replace("platform:/resource/", "");
 	}
 
 	private Collection<EPackage> loadConfigurationMetamodel() {

@@ -1,7 +1,12 @@
 package org.modelexecution.xmof.gemoc.engine;
 
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
+import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
 import org.modelexecution.fumldebug.core.event.ActivityEntryEvent;
@@ -51,7 +56,27 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				.getRunConfiguration()).getNodewiseStepping();
 
 		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
-		GemocXMOFBasedModel model = (GemocXMOFBasedModel)loader.loadXMOFBasedModel();
+		GemocXMOFBasedModel model = (GemocXMOFBasedModel) loader
+				.loadXMOFBasedModel();
+
+		// If we are in basic run mode, we replace the static objects of the
+		// context model by dynamic configuration objects.
+		// This works because we don't need an aird in this case.
+		// Thereby, execution addons (e.g. trace addon) are correctly notified.
+		if (executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
+			TransactionalEditingDomain editingDomain = TransactionUtil
+					.getEditingDomain(executionContext.getResourceModel());
+			Command cmd = new RecordingCommand(editingDomain) {
+				@Override
+				protected void doExecute() {
+					executionContext.getResourceModel().getContents().clear();
+					executionContext.getResourceModel().getContents()
+							.addAll(model.getModelResource().getContents());
+				}
+			};
+			editingDomain.getCommandStack().execute(cmd);
+		}
+
 		configurationMap = loader.getConfigurationMap();
 
 		vm = new GemocXMOFVirtualMachine(model);
@@ -116,7 +141,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		String className = caller.eClass().getName();
 		String methodName = "";
 		if (activityNode.getName() != null) {
-			methodName = activityNode.getName() + " :"+ activityNode.eClass().getName();
+			methodName = activityNode.getName() + " :"
+					+ activityNode.eClass().getName();
 		} else {
 			methodName = ":" + activityNode.eClass().getName();
 		}
