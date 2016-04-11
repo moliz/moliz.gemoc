@@ -305,6 +305,8 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 		createResource(eNS_URI);
 	}
 
+	//TODO: for now added manually
+	@Override
 	protected EClass createEClass(int id) {
 		BehavioredEClassImpl c = (BehavioredEClassImpl)xmofKernelFactory.createBehavioredEClass();
 		c.setClassifierID(id);
@@ -312,6 +314,7 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 		return c;
 	}
 	
+	//TODO: for now added manually
 	@Override
 	protected void createEOperation(EClass owner, int id) {
 		BehavioredEOperationImpl o = (BehavioredEOperationImpl) xmofKernelFactory
