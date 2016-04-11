@@ -15,13 +15,15 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
+import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFBasedModel;
+import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFVirtualMachine;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
+import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.vm.XMOFBasedModelSynchronizer;
 import org.modelexecution.xmof.vm.XMOFVirtualMachine;
 import org.modelexecution.xmof.vm.XMOFVirtualMachineEvent;
-import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 
 import fUML.Semantics.Classes.Kernel.Object_;
 
@@ -49,10 +51,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				.getRunConfiguration()).getNodewiseStepping();
 
 		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
-		XMOFBasedModel model = loader.loadXMOFBasedModel();
+		GemocXMOFBasedModel model = (GemocXMOFBasedModel)loader.loadXMOFBasedModel();
 		configurationMap = loader.getConfigurationMap();
 
-		vm = new XMOFVirtualMachine(model);
+		vm = new GemocXMOFVirtualMachine(model);
 		XMOFBasedModelSynchronizer modelSynchronizer = createModelSynchronizer(model);
 		vm.setSynchronizeModel(modelSynchronizer);
 		vm.addRawExecutionEventListener(this);

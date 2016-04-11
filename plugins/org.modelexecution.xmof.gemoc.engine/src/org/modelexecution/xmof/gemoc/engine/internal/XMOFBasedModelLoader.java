@@ -2,7 +2,9 @@ package org.modelexecution.xmof.gemoc.engine.internal;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.command.Command;
@@ -38,6 +40,8 @@ public class XMOFBasedModelLoader {
 
 	private ConfigurationObjectMap configurationMap;
 
+	private Set<EPackage> xmofConfigurationMetamodelPackages = new HashSet<EPackage>();
+
 	public XMOFBasedModelLoader(IExecutionContext executionContext) {
 		this.executionContext = executionContext;
 	}
@@ -59,9 +63,10 @@ public class XMOFBasedModelLoader {
 		GenericXMOFAnimationServices
 				.setConfigurationObjectMap(configurationMap);
 
-		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
+		return new GemocXMOFBasedModel(
+				configurationMap.getConfigurationObjects(),
 				getParameterValueConfiguration(inputParameterValues),
-				getEditingDomain());
+				getEditingDomain(), xmofConfigurationMetamodelPackages);
 	}
 
 	private Collection<EObject> loadInputModelElements() {
@@ -148,10 +153,10 @@ public class XMOFBasedModelLoader {
 
 	private Collection<EPackage> loadConfigurationMetamodel() {
 		String confMetamodelPath = getXMOFModelFilePath();
-		Resource resource = loadPluginResource(confMetamodelPath);
+		Resource confMetamodelResource = loadPluginResource(confMetamodelPath);
 
-		Collection<EPackage> confMMPackages = new ArrayList<EPackage>();
-		for (EObject eObject : resource.getContents()) {
+		Collection<EPackage> confMMPackages = new HashSet<EPackage>();
+		for (EObject eObject : confMetamodelResource.getContents()) {
 			if (eObject instanceof EPackage) {
 				EPackage ePackage = (EPackage) eObject;
 				if (EPackage.Registry.INSTANCE.containsKey(ePackage.getNsURI())) {
@@ -161,6 +166,7 @@ public class XMOFBasedModelLoader {
 				} else {
 					confMMPackages.add(ePackage);
 				}
+				xmofConfigurationMetamodelPackages.add(ePackage);
 			}
 		}
 		return confMMPackages;
@@ -234,4 +240,5 @@ public class XMOFBasedModelLoader {
 		ResourceSet resourceSet = getResourceSet();
 		return TransactionUtil.getEditingDomain(resourceSet);
 	}
+
 }
