@@ -1,3 +1,4 @@
 **/bin
 **/gemoc-gen
 *.class
+**/xtend-gen
