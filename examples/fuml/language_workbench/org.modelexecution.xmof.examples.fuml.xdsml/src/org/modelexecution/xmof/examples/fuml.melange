@@ -1,0 +1,9 @@
+package org.modelexecution.examples
+
+language Fuml {
+		
+	syntax "platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"
+	xmof "platform:/resource/org.modelexecution.xmof.examples.fuml.semantics/xmof/fuml.xmof"
+
+	exactType FumlMT
+}

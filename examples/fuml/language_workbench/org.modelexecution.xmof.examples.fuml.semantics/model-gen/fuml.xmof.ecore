@@ -1,0 +1,1670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fumlConfiguration" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration" nsPrefix="fumlConf">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Model"/>
+    <eSuperTypes href="#//PackageConfiguration"/>
+    <eOperations name="main">
+      <eParameters name="executionEnvironment" lowerBound="1" eType="//Loci/ExecutionEnvironment"/>
+      <eParameters name="behavior" lowerBound="1">
+        <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
+      </eParameters>
+      <eParameters name="context" eType="//Classes/Kernel/Object"/>
+      <eParameters name="inputs" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+      <eParameters name="outputs" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Element"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticVisitor" upperBound="-1" eType="//Loci/SemanticVisitor" eOpposite="//Loci/SemanticVisitor/runtimeModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityContentConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityContent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Activity"/>
+    <eSuperTypes href="#//BehaviorConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
+    <eSuperTypes href="#//ClassConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+    <eSuperTypes href="#//EncapsulatedClassifierConfiguration"/>
+    <eSuperTypes href="#//BehavioredClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehavioredClassifierConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//BehavioredClassifier"/>
+    <eSuperTypes href="#//ClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Classifier"/>
+    <eSuperTypes href="#//NamespaceConfiguration"/>
+    <eSuperTypes href="#//RedefinableElementConfiguration"/>
+    <eSuperTypes href="#//TypeConfiguration"/>
+    <eSuperTypes href="#//TemplateableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamespaceConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Namespace"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElementConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommentConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Stereotype"/>
+    <eSuperTypes href="#//ClassConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Image"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProfileConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Profile"/>
+    <eSuperTypes href="#//PackageConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eSuperTypes href="#//NamespaceConfiguration"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+    <eSuperTypes href="#//TemplateableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageableElementConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//PackageableElement"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+    <eSuperTypes href="#//ParameterableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterableElementConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ParameterableElement"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateParameterConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TemplateParameter"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateSignatureConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TemplateSignature"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateableElementConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TemplateableElement"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateBindingConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TemplateBinding"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationshipConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DirectedRelationship"/>
+    <eSuperTypes href="#//RelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateParameterSubstitutionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TemplateParameterSubstitution"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Type"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
+    <eSuperTypes href="#//ClassifierConfiguration"/>
+    <eSuperTypes href="#//RelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+    <eSuperTypes href="#//StructuralFeatureConfiguration"/>
+    <eSuperTypes href="#//ConnectableElementConfiguration"/>
+    <eSuperTypes href="#//DeploymentTargetConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectableElementConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ConnectableElement"/>
+    <eSuperTypes href="#//TypedElementConfiguration"/>
+    <eSuperTypes href="#//ParameterableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedElementConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TypedElement"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ConnectorEnd"/>
+    <eSuperTypes href="#//MultiplicityElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiplicityElementConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//MultiplicityElement"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ValueSpecification"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+    <eSuperTypes href="#//TypedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectableElementTemplateParameterConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ConnectableElementTemplateParameter"/>
+    <eSuperTypes href="#//TemplateParameterConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentTargetConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DeploymentTarget"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Deployment"/>
+    <eSuperTypes href="#//DependencyConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependencyConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Dependency"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DeploymentSpecification"/>
+    <eSuperTypes href="#//ArtifactConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArtifactConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Artifact"/>
+    <eSuperTypes href="#//ClassifierConfiguration"/>
+    <eSuperTypes href="#//DeployedArtifactConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeployedArtifactConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DeployedArtifact"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ManifestationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Manifestation"/>
+    <eSuperTypes href="#//AbstractionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Abstraction"/>
+    <eSuperTypes href="#//DependencyConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpaqueExpressionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression"/>
+    <eSuperTypes href="#//ValueSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Parameter"/>
+    <eSuperTypes href="#//ConnectableElementConfiguration"/>
+    <eSuperTypes href="#//MultiplicityElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+    <eSuperTypes href="#//BehavioralFeatureConfiguration"/>
+    <eSuperTypes href="#//ParameterableElementConfiguration"/>
+    <eSuperTypes href="#//TemplateableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehavioralFeatureConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//BehavioralFeature"/>
+    <eSuperTypes href="#//NamespaceConfiguration"/>
+    <eSuperTypes href="#//FeatureConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Feature"/>
+    <eSuperTypes href="#//RedefinableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RedefinableElementConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//RedefinableElement"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterSetConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ParameterSet"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTypeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
+    <eSuperTypes href="#//ClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Interface"/>
+    <eSuperTypes href="#//ClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReceptionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Reception"/>
+    <eSuperTypes href="#//BehavioralFeatureConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SignalConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Signal"/>
+    <eSuperTypes href="#//ClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtocolStateMachineConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ProtocolStateMachine"/>
+    <eSuperTypes href="#//StateMachineConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateMachineConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//StateMachine"/>
+    <eSuperTypes href="#//BehaviorConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PseudostateConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Pseudostate"/>
+    <eSuperTypes href="#//VertexConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VertexConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Vertex"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RegionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Region"/>
+    <eSuperTypes href="#//NamespaceConfiguration"/>
+    <eSuperTypes href="#//RedefinableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//State"/>
+    <eSuperTypes href="#//NamespaceConfiguration"/>
+    <eSuperTypes href="#//RedefinableElementConfiguration"/>
+    <eSuperTypes href="#//VertexConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionPointReferenceConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ConnectionPointReference"/>
+    <eSuperTypes href="#//VertexConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Trigger"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Event"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+    <eSuperTypes href="#//PropertyConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Transition"/>
+    <eSuperTypes href="#//NamespaceConfiguration"/>
+    <eSuperTypes href="#//RedefinableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtocolConformanceConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ProtocolConformance"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationTemplateParameterConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//OperationTemplateParameter"/>
+    <eSuperTypes href="#//TemplateParameterConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuralFeatureConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//StructuralFeature"/>
+    <eSuperTypes href="#//FeatureConfiguration"/>
+    <eSuperTypes href="#//TypedElementConfiguration"/>
+    <eSuperTypes href="#//MultiplicityElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageMergeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//PackageMerge"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProfileApplicationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ProfileApplication"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Enumeration"/>
+    <eSuperTypes href="#//DataTypeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteralConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//EnumerationLiteral"/>
+    <eSuperTypes href="#//InstanceSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InstanceSpecification"/>
+    <eSuperTypes href="#//DeploymentTargetConfiguration"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+    <eSuperTypes href="#//DeployedArtifactConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SlotConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Slot"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//PrimitiveType"/>
+    <eSuperTypes href="#//DataTypeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementImportConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ElementImport"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageImportConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//PackageImport"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtensionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Extension"/>
+    <eSuperTypes href="#//AssociationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtensionEndConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ExtensionEnd"/>
+    <eSuperTypes href="#//PropertyConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringExpressionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//StringExpression"/>
+    <eSuperTypes href="#//ExpressionConfiguration"/>
+    <eSuperTypes href="#//TemplateableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Expression"/>
+    <eSuperTypes href="#//ValueSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Usage"/>
+    <eSuperTypes href="#//DependencyConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CollaborationUseConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CollaborationUse"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CollaborationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Collaboration"/>
+    <eSuperTypes href="#//StructuredClassifierConfiguration"/>
+    <eSuperTypes href="#//BehavioredClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuredClassifierConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//StructuredClassifier"/>
+    <eSuperTypes href="#//ClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectorConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Connector"/>
+    <eSuperTypes href="#//FeatureConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralizationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Generalization"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralizationSetConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//GeneralizationSet"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RedefinableTemplateSignatureConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//RedefinableTemplateSignature"/>
+    <eSuperTypes href="#//RedefinableElementConfiguration"/>
+    <eSuperTypes href="#//TemplateSignatureConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCaseConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//UseCase"/>
+    <eSuperTypes href="#//BehavioredClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Extend"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtensionPointConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ExtensionPoint"/>
+    <eSuperTypes href="#//RedefinableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncludeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Include"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubstitutionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Substitution"/>
+    <eSuperTypes href="#//RealizationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealizationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Realization"/>
+    <eSuperTypes href="#//AbstractionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierTemplateParameterConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ClassifierTemplateParameter"/>
+    <eSuperTypes href="#//TemplateParameterConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceRealizationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InterfaceRealization"/>
+    <eSuperTypes href="#//RealizationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EncapsulatedClassifierConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//EncapsulatedClassifier"/>
+    <eSuperTypes href="#//StructuredClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityGroupConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityGroup"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+    <eSuperTypes href="#//ActivityContentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityEdgeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityEdge"/>
+    <eSuperTypes href="#//RedefinableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityPartitionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityPartition"/>
+    <eSuperTypes href="#//ActivityGroupConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityNode"/>
+    <eSuperTypes href="#//RedefinableElementConfiguration"/>
+    <eSuperTypes href="#//ActivityContentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterruptibleActivityRegionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InterruptibleActivityRegion"/>
+    <eSuperTypes href="#//ActivityGroupConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuredActivityNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+    <eSuperTypes href="#//NamespaceConfiguration"/>
+    <eSuperTypes href="#//ActivityGroupConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Action"/>
+    <eSuperTypes href="#//ExecutableNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutableNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ExecutableNode"/>
+    <eSuperTypes href="#//ActivityNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExceptionHandlerConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ExceptionHandler"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ObjectNode"/>
+    <eSuperTypes href="#//ActivityNodeConfiguration"/>
+    <eSuperTypes href="#//TypedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputPinConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InputPin"/>
+    <eSuperTypes href="#//PinConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PinConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Pin"/>
+    <eSuperTypes href="#//ObjectNodeConfiguration"/>
+    <eSuperTypes href="#//MultiplicityElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputPinConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//OutputPin"/>
+    <eSuperTypes href="#//PinConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Variable"/>
+    <eSuperTypes href="#//ConnectableElementConfiguration"/>
+    <eSuperTypes href="#//MultiplicityElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSpecificationActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ValueSpecificationAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//VariableAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WriteLinkActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//WriteLinkAction"/>
+    <eSuperTypes href="#//LinkActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LinkAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkEndDataConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LinkEndData"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualifierValueConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//QualifierValue"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WriteStructuralFeatureActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//WriteStructuralFeatureAction"/>
+    <eSuperTypes href="#//StructuralFeatureActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuralFeatureActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//StructuralFeatureAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WriteVariableActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//WriteVariableAction"/>
+    <eSuperTypes href="#//VariableActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AcceptCallActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//AcceptCallAction"/>
+    <eSuperTypes href="#//AcceptEventActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AcceptEventActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//AcceptEventAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionInputPinConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActionInputPin"/>
+    <eSuperTypes href="#//InputPinConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddStructuralFeatureValueActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//AddStructuralFeatureValueAction"/>
+    <eSuperTypes href="#//WriteStructuralFeatureActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddVariableValueActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//AddVariableValueAction"/>
+    <eSuperTypes href="#//WriteVariableActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BroadcastSignalActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//BroadcastSignalAction"/>
+    <eSuperTypes href="#//InvocationActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InvocationActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InvocationAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CallAction"/>
+    <eSuperTypes href="#//InvocationActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallBehaviorActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CallBehaviorAction"/>
+    <eSuperTypes href="#//CallActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallOperationActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CallOperationAction"/>
+    <eSuperTypes href="#//CallActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClauseConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Clause"/>
+    <eSuperTypes href="#//ElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClearAssociationActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ClearAssociationAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClearStructuralFeatureActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ClearStructuralFeatureAction"/>
+    <eSuperTypes href="#//StructuralFeatureActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClearVariableActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ClearVariableAction"/>
+    <eSuperTypes href="#//VariableActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ConditionalNode"/>
+    <eSuperTypes href="#//StructuredActivityNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateLinkActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CreateLinkAction"/>
+    <eSuperTypes href="#//WriteLinkActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkEndCreationDataConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LinkEndCreationData"/>
+    <eSuperTypes href="#//LinkEndDataConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateLinkObjectActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CreateLinkObjectAction"/>
+    <eSuperTypes href="#//CreateLinkActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateObjectActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CreateObjectAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DestroyLinkActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DestroyLinkAction"/>
+    <eSuperTypes href="#//WriteLinkActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkEndDestructionDataConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LinkEndDestructionData"/>
+    <eSuperTypes href="#//LinkEndDataConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DestroyObjectActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DestroyObjectAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpansionNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ExpansionNode"/>
+    <eSuperTypes href="#//ObjectNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpansionRegionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ExpansionRegion"/>
+    <eSuperTypes href="#//StructuredActivityNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoopNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LoopNode"/>
+    <eSuperTypes href="#//StructuredActivityNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpaqueActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//OpaqueAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RaiseExceptionActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//RaiseExceptionAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadExtentActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReadExtentAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadIsClassifiedObjectActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReadIsClassifiedObjectAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadLinkActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReadLinkAction"/>
+    <eSuperTypes href="#//LinkActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadLinkObjectEndActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReadLinkObjectEndAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadLinkObjectEndQualifierActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReadLinkObjectEndQualifierAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadSelfActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReadSelfAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadStructuralFeatureActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReadStructuralFeatureAction"/>
+    <eSuperTypes href="#//StructuralFeatureActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadVariableActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReadVariableAction"/>
+    <eSuperTypes href="#//VariableActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReclassifyObjectActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReclassifyObjectAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReduceActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReduceAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveStructuralFeatureValueActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//RemoveStructuralFeatureValueAction"/>
+    <eSuperTypes href="#//WriteStructuralFeatureActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveVariableValueActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//RemoveVariableValueAction"/>
+    <eSuperTypes href="#//WriteVariableActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplyActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ReplyAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SendObjectActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//SendObjectAction"/>
+    <eSuperTypes href="#//InvocationActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SendSignalActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//SendSignalAction"/>
+    <eSuperTypes href="#//InvocationActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//SequenceNode"/>
+    <eSuperTypes href="#//StructuredActivityNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartClassifierBehaviorActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//StartClassifierBehaviorAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartObjectBehaviorActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//StartObjectBehaviorAction"/>
+    <eSuperTypes href="#//CallActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestIdentityActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TestIdentityAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnmarshallActionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//UnmarshallAction"/>
+    <eSuperTypes href="#//ActionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValuePinConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ValuePin"/>
+    <eSuperTypes href="#//InputPinConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityFinalNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityFinalNode"/>
+    <eSuperTypes href="#//FinalNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//FinalNode"/>
+    <eSuperTypes href="#//ControlNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ControlNode"/>
+    <eSuperTypes href="#//ActivityNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityParameterNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityParameterNode"/>
+    <eSuperTypes href="#//ObjectNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CentralBufferNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CentralBufferNode"/>
+    <eSuperTypes href="#//ObjectNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlowConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ControlFlow"/>
+    <eSuperTypes href="#//ActivityEdgeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataStoreNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DataStoreNode"/>
+    <eSuperTypes href="#//CentralBufferNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecisionNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DecisionNode"/>
+    <eSuperTypes href="#//ControlNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectFlowConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ObjectFlow"/>
+    <eSuperTypes href="#//ActivityEdgeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowFinalNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//FlowFinalNode"/>
+    <eSuperTypes href="#//FinalNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForkNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ForkNode"/>
+    <eSuperTypes href="#//ControlNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InitialNode"/>
+    <eSuperTypes href="#//ControlNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JoinNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//JoinNode"/>
+    <eSuperTypes href="#//ControlNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MergeNodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//MergeNode"/>
+    <eSuperTypes href="#//ControlNodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceValueConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InstanceValue"/>
+    <eSuperTypes href="#//ValueSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnyReceiveEventConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//AnyReceiveEvent"/>
+    <eSuperTypes href="#//MessageEventConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageEventConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//MessageEvent"/>
+    <eSuperTypes href="#//EventConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallEventConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CallEvent"/>
+    <eSuperTypes href="#//MessageEventConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeEventConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ChangeEvent"/>
+    <eSuperTypes href="#//EventConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionBehaviorConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//FunctionBehavior"/>
+    <eSuperTypes href="#//OpaqueBehaviorConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpaqueBehaviorConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//OpaqueBehavior"/>
+    <eSuperTypes href="#//BehaviorConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SignalEventConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//SignalEvent"/>
+    <eSuperTypes href="#//MessageEventConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeEventConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TimeEvent"/>
+    <eSuperTypes href="#//EventConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeExpressionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TimeExpression"/>
+    <eSuperTypes href="#//ValueSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObservationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Observation"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationPathConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CommunicationPath"/>
+    <eSuperTypes href="#//AssociationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Device"/>
+    <eSuperTypes href="#//NodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Node"/>
+    <eSuperTypes href="#//ClassConfiguration"/>
+    <eSuperTypes href="#//DeploymentTargetConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionEnvironmentConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ExecutionEnvironment"/>
+    <eSuperTypes href="#//NodeConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InformationFlowConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InformationFlow"/>
+    <eSuperTypes href="#//PackageableElementConfiguration"/>
+    <eSuperTypes href="#//DirectedRelationshipConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Message"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Interaction"/>
+    <eSuperTypes href="#//BehaviorConfiguration"/>
+    <eSuperTypes href="#//InteractionFragmentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionFragmentConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InteractionFragment"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LifelineConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Lifeline"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartDecompositionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//PartDecomposition"/>
+    <eSuperTypes href="#//InteractionUseConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionUseConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InteractionUse"/>
+    <eSuperTypes href="#//InteractionFragmentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GateConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Gate"/>
+    <eSuperTypes href="#//MessageEndConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageEndConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//MessageEnd"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionOperandConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InteractionOperand"/>
+    <eSuperTypes href="#//NamespaceConfiguration"/>
+    <eSuperTypes href="#//InteractionFragmentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionConstraintConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InteractionConstraint"/>
+    <eSuperTypes href="#//ConstraintConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralOrderingConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//GeneralOrdering"/>
+    <eSuperTypes href="#//NamedElementConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OccurrenceSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//OccurrenceSpecification"/>
+    <eSuperTypes href="#//InteractionFragmentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InformationItemConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//InformationItem"/>
+    <eSuperTypes href="#//ClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionExecutionSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActionExecutionSpecification"/>
+    <eSuperTypes href="#//ExecutionSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ExecutionSpecification"/>
+    <eSuperTypes href="#//InteractionFragmentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorExecutionSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//BehaviorExecutionSpecification"/>
+    <eSuperTypes href="#//ExecutionSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CombinedFragmentConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//CombinedFragment"/>
+    <eSuperTypes href="#//InteractionFragmentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConsiderIgnoreFragmentConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ConsiderIgnoreFragment"/>
+    <eSuperTypes href="#//CombinedFragmentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContinuationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Continuation"/>
+    <eSuperTypes href="#//InteractionFragmentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DestructionOccurrenceSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DestructionOccurrenceSpecification"/>
+    <eSuperTypes href="#//MessageOccurrenceSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageOccurrenceSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//MessageOccurrenceSpecification"/>
+    <eSuperTypes href="#//OccurrenceSpecificationConfiguration"/>
+    <eSuperTypes href="#//MessageEndConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionOccurrenceSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ExecutionOccurrenceSpecification"/>
+    <eSuperTypes href="#//OccurrenceSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateInvariantConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//StateInvariant"/>
+    <eSuperTypes href="#//InteractionFragmentConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalStateConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//FinalState"/>
+    <eSuperTypes href="#//StateConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtocolTransitionConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ProtocolTransition"/>
+    <eSuperTypes href="#//TransitionConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationClassConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//AssociationClass"/>
+    <eSuperTypes href="#//ClassConfiguration"/>
+    <eSuperTypes href="#//AssociationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
+    <eSuperTypes href="#//ClassConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentRealizationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//ComponentRealization"/>
+    <eSuperTypes href="#//RealizationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActorConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Actor"/>
+    <eSuperTypes href="#//BehavioredClassifierConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DurationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Duration"/>
+    <eSuperTypes href="#//ValueSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DurationConstraintConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DurationConstraint"/>
+    <eSuperTypes href="#//IntervalConstraintConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntervalConstraintConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//IntervalConstraint"/>
+    <eSuperTypes href="#//ConstraintConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntervalConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//Interval"/>
+    <eSuperTypes href="#//ValueSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DurationIntervalConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DurationInterval"/>
+    <eSuperTypes href="#//IntervalConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DurationObservationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//DurationObservation"/>
+    <eSuperTypes href="#//ObservationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralBooleanConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LiteralBoolean"/>
+    <eSuperTypes href="#//LiteralSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralSpecificationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LiteralSpecification"/>
+    <eSuperTypes href="#//ValueSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralIntegerConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LiteralInteger"/>
+    <eSuperTypes href="#//LiteralSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralNullConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LiteralNull"/>
+    <eSuperTypes href="#//LiteralSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralRealConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LiteralReal"/>
+    <eSuperTypes href="#//LiteralSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralStringConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LiteralString"/>
+    <eSuperTypes href="#//LiteralSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralUnlimitedNaturalConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//LiteralUnlimitedNatural"/>
+    <eSuperTypes href="#//LiteralSpecificationConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeConstraintConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TimeConstraint"/>
+    <eSuperTypes href="#//IntervalConstraintConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeIntervalConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TimeInterval"/>
+    <eSuperTypes href="#//IntervalConfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeObservationConfiguration">
+    <eSuperTypes href="../../org.eclipse.uml2.uml/model/UML.ecore#//TimeObservation"/>
+    <eSuperTypes href="#//ObservationConfiguration"/>
+  </eClassifiers>
+  <eSubpackages name="Loci" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/loci" nsPrefix="LociConf">
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionEnvironment">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutionEnvironment" lowerBound="1" eType="//Loci/Locus" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Locus">
+      <eOperations name="remove">
+        <eParameters name="value" lowerBound="1" eType="//Classes/Kernel/ExtensionalValue"/>
+      </eOperations>
+      <eOperations name="add">
+        <eParameters name="value" lowerBound="1" eType="//Classes/Kernel/ExtensionalValue"/>
+      </eOperations>
+      <eOperations name="instantiate">
+        <eParameters name="type" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+        </eParameters>
+        <eParameters name="object" lowerBound="1" eType="//Classes/Kernel/Object"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="factory" eType="//Loci/ExecutionFactory" containment="true" eOpposite="//Loci/ExecutionFactory/locus_ExecutionFactory"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executor" eType="//Loci/Executor" containment="true" eOpposite="//Loci/Executor/locus_Executor"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extensionalValues" upperBound="-1" eType="//Classes/Kernel/ExtensionalValue" containment="true" eOpposite="//Classes/Kernel/ExtensionalValue/locus_ExtensionalValue"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Executor">
+      <eOperations name="execute">
+        <eParameters name="behavior" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
+        </eParameters>
+        <eParameters name="context" eType="//Classes/Kernel/Object"/>
+        <eParameters name="inputs" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+        <eParameters name="outputs" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+      </eOperations>
+      <eOperations name="evaluate">
+        <eParameters name="specification" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ValueSpecification"/>
+        </eParameters>
+        <eParameters name="value" lowerBound="1" eType="//Classes/Kernel/Value"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_Executor" eType="//Loci/Locus" eOpposite="//Loci/Locus/executor"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionFactory">
+      <eOperations name="createExecution">
+        <eParameters name="behavior" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
+        </eParameters>
+        <eParameters name="context" eType="//Classes/Kernel/Object"/>
+        <eParameters name="execution" eType="//CommonBehaviors/BasicBehaviors/Execution"/>
+      </eOperations>
+      <eOperations name="instantiateVisitor">
+        <eParameters name="element" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Element"/>
+        </eParameters>
+        <eParameters name="visitor" eType="//Loci/SemanticVisitor"/>
+      </eOperations>
+      <eOperations name="createEvaluation">
+        <eParameters name="evaluation" lowerBound="1" eType="//Classes/Kernel/Evaluation"/>
+        <eParameters name="specification" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ValueSpecification"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getBuiltInType">
+        <eParameters name="name" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eParameters>
+        <eParameters name="type" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//PrimitiveType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="instantiateOpaqueBehaviorExecution">
+        <eParameters name="behavior" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//OpaqueBehavior"/>
+        </eParameters>
+        <eParameters name="execution" eType="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutionFactory" eType="//Loci/Locus" eOpposite="//Loci/Locus/factory"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="primitiveBehaviorPrototypes" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="builtInTypes" upperBound="-1">
+        <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//PrimitiveType"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SemanticVisitor">
+      <eOperations name="initialize"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeModelElement" eType="//ElementConfiguration" eOpposite="//ElementConfiguration/semanticVisitor"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="Classes" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/classes" nsPrefix="ClassesConf">
+    <eSubpackages name="Kernel" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/classes/kernel" nsPrefix="KernelConf">
+      <eClassifiers xsi:type="ecore:EClass" name="ExtensionalValue" abstract="true" eSuperTypes="//Classes/Kernel/CompoundValue">
+        <eOperations name="destroy"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExtensionalValue" eType="//Loci/Locus" eOpposite="//Loci/Locus/extensionalValues"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Object" eSuperTypes="//Classes/Kernel/ExtensionalValue">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="StructuredValue" abstract="true" eSuperTypes="//Classes/Kernel/Value">
+        <eOperations name="createFeatureValues"/>
+        <eOperations name="getFeatureValue">
+          <eParameters name="feature" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//StructuralFeature"/>
+          </eParameters>
+          <eParameters name="featureValue" eType="//Classes/Kernel/FeatureValue"/>
+        </eOperations>
+        <eOperations name="setFeatureValue">
+          <eParameters name="feature" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//StructuralFeature"/>
+          </eParameters>
+          <eParameters name="values" upperBound="-1" eType="//Classes/Kernel/Value"/>
+          <eParameters name="position" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eParameters>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="CompoundValue" abstract="true" eSuperTypes="//Classes/Kernel/StructuredValue">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="featureValues" upperBound="-1" eType="//Classes/Kernel/FeatureValue" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Value" abstract="true" eSuperTypes="//Loci/SemanticVisitor">
+        <eOperations name="getTypes">
+          <eParameters name="types" upperBound="-1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Classifier"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="copy">
+          <eParameters name="value" lowerBound="1" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eOperations name="new">
+          <eParameters name="value" lowerBound="1" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eOperations name="equals">
+          <eParameters name="otherValue" lowerBound="1" eType="//Classes/Kernel/Value"/>
+          <eParameters name="return" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="hasType">
+          <eParameters name="type" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Classifier"/>
+          </eParameters>
+          <eParameters name="hasType" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Evaluation" abstract="true" eSuperTypes="//Loci/SemanticVisitor">
+        <eOperations name="evaluate">
+          <eParameters name="value" lowerBound="1" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="specification_Evaluation" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ValueSpecification"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="locus_Evaluation" lowerBound="1" eType="//Loci/Locus"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LiteralIntegerEvaluation" eSuperTypes="//Classes/Kernel/LiteralEvaluation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="LiteralEvaluation" abstract="true" eSuperTypes="//Classes/Kernel/Evaluation">
+        <eOperations name="getType">
+          <eParameters name="builtInTypeName" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          </eParameters>
+          <eParameters name="type" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//PrimitiveType"/>
+          </eParameters>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PrimitiveValue" abstract="true" eSuperTypes="//Classes/Kernel/Value">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//PrimitiveType"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerValue" eSuperTypes="//Classes/Kernel/PrimitiveValue">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value_IntegerValue" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="FeatureValue" abstract="true">
+        <eOperations name="copy">
+          <eParameters name="value" lowerBound="1" eType="//Classes/Kernel/FeatureValue"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//StructuralFeature"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="values_FeatureValue" upperBound="-1" eType="//Classes/Kernel/Value" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="position">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" eSuperTypes="//Classes/Kernel/PrimitiveValue">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value_BooleanValue" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LiteralBooleanEvaluation" eSuperTypes="//Classes/Kernel/LiteralEvaluation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="//Classes/Kernel/StructuredValue">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="referent" lowerBound="1" eType="//Classes/Kernel/Object"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="CommonBehaviors" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/commonbehaviors" nsPrefix="CommonBehaviorsConf">
+    <eSubpackages name="BasicBehaviors" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/commonbehaviors/basicbehaviors" nsPrefix="BasicBehaviorsConf">
+      <eClassifiers xsi:type="ecore:EClass" name="Execution" abstract="true" eSuperTypes="//Classes/Kernel/Object">
+        <eOperations name="setParameterValue">
+          <eParameters name="parameterValue" lowerBound="1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+        </eOperations>
+        <eOperations name="execute"/>
+        <eOperations name="getOutputParameterValues">
+          <eParameters name="outputParameterValues" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+        </eOperations>
+        <eOperations name="getParameterValue">
+          <eParameters name="parameter" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Parameter"/>
+          </eParameters>
+          <eParameters name="parameterValue" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+        </eOperations>
+        <eOperations name="terminate"/>
+        <eOperations name="getBehavior">
+          <eParameters name="behavior" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
+          </eParameters>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1" eType="//Classes/Kernel/Object"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValues" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="OpaqueBehaviorExecution" abstract="true" eSuperTypes="//CommonBehaviors/BasicBehaviors/Execution">
+        <eOperations name="doBody">
+          <eParameters name="inputParameters" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+          <eParameters name="outputParameters" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ParameterValue">
+        <eOperations name="copy">
+          <eParameters name="value" lowerBound="1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameter_ParameterValue" lowerBound="1">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Parameter"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="values_ParameterValue" upperBound="-1" eType="//Classes/Kernel/Value" containment="true"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="PrimitiveBehaviors" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors" nsPrefix="PrimitiveBehaviorsConf">
+    <eSubpackages name="IntegerFunctions" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors/integerfunctions" nsPrefix="IntegerFunctionsConf">
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerPlusFunctionBehaviorExecution" eSuperTypes="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution"/>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerGreaterFunctionBehaviorExecution" eSuperTypes="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution"/>
+      <eClassifiers xsi:type="ecore:EClass" name="IntegerLessFunctionBehaviorExecution" eSuperTypes="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="Activities" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/activities" nsPrefix="ActivitiesConf">
+    <eSubpackages name="IntermediateActivities" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/activities/intermediateactivities" nsPrefix="IntermediateActivitiesConf">
+      <eClassifiers xsi:type="ecore:EClass" name="ActivityExecution" eSuperTypes="//CommonBehaviors/BasicBehaviors/Execution">
+        <eOperations name="collectOutputParameterValues"/>
+        <eOperations name="setParameterValueValues">
+          <eParameters name="parameterValue" lowerBound="1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+          <eParameters name="outputActivation" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityParameterNodeActivation"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="activationGroup" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityNodeActivationGroup" containment="true" eOpposite="//Activities/IntermediateActivities/ActivityNodeActivationGroup/activityExecution"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivationGroup">
+        <eOperations name="activate">
+          <eParameters name="nodes" upperBound="-1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityNode"/>
+          </eParameters>
+          <eParameters name="edges" upperBound="-1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityEdge"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="getOutputParameterNodeActivations">
+          <eParameters name="outputParameterNodeActivations" upperBound="-1">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="createNodeActivations">
+          <eParameters name="nodes" upperBound="-1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityNode"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="createEdgeInstances">
+          <eParameters name="edges" upperBound="-1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityEdge"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="run">
+          <eParameters name="activations" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+        </eOperations>
+        <eOperations name="createNodeActivation">
+          <eParameters name="node" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityNode"/>
+          </eParameters>
+          <eParameters name="activation" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+        </eOperations>
+        <eOperations name="getActivityExecution">
+          <eParameters name="activityExecution" eType="//Activities/IntermediateActivities/ActivityExecution"/>
+        </eOperations>
+        <eOperations name="getNodeActivation">
+          <eParameters name="node" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityNode"/>
+          </eParameters>
+          <eParameters name="activation" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+        </eOperations>
+        <eOperations name="runNodes">
+          <eParameters name="activations" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+        </eOperations>
+        <eOperations name="getInitiallyEnabledNodeActivations">
+          <eParameters name="activations" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+          <eParameters name="enabledActivations" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+        </eOperations>
+        <eOperations name="checkIncomingEdges">
+          <eParameters name="activation" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+          <eParameters name="activations" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+          <eParameters name="return" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="getSourceActivations">
+          <eParameters name="activations" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+          <eParameters name="incomingEdge" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityEdgeInstance"/>
+          <eParameters name="sourceActivations" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+        </eOperations>
+        <eOperations name="terminateAll"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="activityExecution" eType="//Activities/IntermediateActivities/ActivityExecution" eOpposite="//Activities/IntermediateActivities/ActivityExecution/activationGroup"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="edgeInstances" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityEdgeInstance" containment="true" eOpposite="//Activities/IntermediateActivities/ActivityEdgeInstance/group_ActivityEdgeInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="nodeActivations" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityNodeActivation" containment="true" eOpposite="//Activities/IntermediateActivities/ActivityNodeActivation/group_ActivityNodeActivation"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ActivityParameterNodeActivation" eSuperTypes="//Activities/IntermediateActivities/ObjectNodeActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivation" eSuperTypes="//Loci/SemanticVisitor">
+        <eOperations name="getTokens">
+          <eParameters name="tokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="createNodeActivations"/>
+        <eOperations name="createEdgeInstances"/>
+        <eOperations name="run"/>
+        <eOperations name="receiveOffer"/>
+        <eOperations name="isReady">
+          <eParameters name="isReady" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="takeOfferedTokens">
+          <eParameters name="tokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="fire">
+          <eParameters name="incomingTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="isRunning">
+          <eParameters name="isRunning" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="hasOffers">
+          <eParameters name="hasOffers" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="removeToken">
+          <eParameters name="token" lowerBound="1" eType="//Activities/IntermediateActivities/Token"/>
+          <eParameters name="position" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="addTokens">
+          <eParameters name="tokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="sendOffers">
+          <eParameters name="tokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="addToken">
+          <eParameters name="token" lowerBound="1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="isSourceFor">
+          <eParameters name="isSourceFor" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+          <eParameters name="edgeInstance" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityEdgeInstance"/>
+        </eOperations>
+        <eOperations name="getNodeActivation">
+          <eParameters name="node" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityNode"/>
+          </eParameters>
+          <eParameters name="activation" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+        </eOperations>
+        <eOperations name="terminate"/>
+        <eOperations name="clearTokens"/>
+        <eOperations name="getExecutionLocus">
+          <eParameters name="locus" lowerBound="1" eType="//Loci/Locus"/>
+        </eOperations>
+        <eOperations name="getActivityExecution">
+          <eParameters name="activityExecution" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityExecution"/>
+        </eOperations>
+        <eOperations name="getExecutionContext">
+          <eParameters name="context" eType="//Classes/Kernel/Object"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityNodeActivation" eType="//Activities/IntermediateActivities/ActivityNodeActivationGroup" eOpposite="//Activities/IntermediateActivities/ActivityNodeActivationGroup/nodeActivations"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="node_ActivityNodeActivation">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityNode"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="running" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="incomingEdges" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityEdgeInstance" eOpposite="//Activities/IntermediateActivities/ActivityEdgeInstance/target"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingEdges" upperBound="-1" eType="//Activities/IntermediateActivities/ActivityEdgeInstance" eOpposite="//Activities/IntermediateActivities/ActivityEdgeInstance/source"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRunning" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="heldTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token" containment="true" eOpposite="//Activities/IntermediateActivities/Token/holder"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Token">
+        <eOperations name="withdraw"/>
+        <eOperations name="isWithdrawn">
+          <eParameters name="isWithdrawn" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="transfer">
+          <eParameters name="holder" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+          <eParameters name="token" lowerBound="1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="getValue">
+          <eParameters name="value" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eOperations name="isControl">
+          <eParameters name="isControl" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="holder" eType="//Activities/IntermediateActivities/ActivityNodeActivation" eOpposite="//Activities/IntermediateActivities/ActivityNodeActivation/heldTokens"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ActivityEdgeInstance">
+        <eOperations name="hasOffer">
+          <eParameters name="hasOffer" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="takeOfferedTokens">
+          <eParameters name="offeredTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="countOfferedValues">
+          <eParameters name="count" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="takeOfferedTokens">
+          <eParameters name="offeredTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+          <eParameters name="maxCount" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="sendOffer">
+          <eParameters name="tokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityEdgeInstance" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityNodeActivationGroup" eOpposite="//Activities/IntermediateActivities/ActivityNodeActivationGroup/edgeInstances"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="edge_ActivityEdgeInstance">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ActivityEdge"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityNodeActivation" eOpposite="//Activities/IntermediateActivities/ActivityNodeActivation/outgoingEdges"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityNodeActivation" eOpposite="//Activities/IntermediateActivities/ActivityNodeActivation/incomingEdges"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="offers" upperBound="-1" eType="//Activities/IntermediateActivities/Offer"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ControlNodeActivation" abstract="true" eSuperTypes="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ObjectNodeActivation" abstract="true" eSuperTypes="//Activities/IntermediateActivities/ActivityNodeActivation">
+        <eOperations name="countUnofferedTokens">
+          <eParameters name="count" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="sendUnofferedTokens"/>
+        <eOperations name="getUnofferedTokens">
+          <eParameters name="unofferedTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="countOfferedValues">
+          <eParameters name="count" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="takeUnofferedTokens">
+          <eParameters name="tokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="offeredTokenCount" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Offer">
+        <eOperations name="hasTokens">
+          <eParameters name="hasTokens" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="getOfferedTokens">
+          <eParameters name="offeredTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="countOfferedValues">
+          <eParameters name="count" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="removeWithdrawnTokens"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="offeredTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="DecisionNodeActivation" eSuperTypes="//Activities/IntermediateActivities/ControlNodeActivation">
+        <eOperations name="removeJoinedControlTokens">
+          <eParameters name="incomingTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+          <eParameters name="removedControlTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+          <eParameters name="incomingTokens_joinedControlTokensRemoved" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+        </eOperations>
+        <eOperations name="getDecisionValues">
+          <eParameters name="incomingTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+          <eParameters name="decisionValues" upperBound="-1" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eOperations name="determineOfferedTokens">
+          <eParameters name="incomingTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+          <eParameters name="decisionValues" upperBound="-1" eType="//Classes/Kernel/Value"/>
+          <eParameters name="edgeInstance" lowerBound="1" eType="//Activities/IntermediateActivities/ActivityEdgeInstance"/>
+          <eParameters name="offeredTokens" upperBound="-1" eType="//Activities/IntermediateActivities/Token"/>
+          <eParameters name="receivesOffer" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="test">
+          <eParameters name="guard" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//ValueSpecification"/>
+          </eParameters>
+          <eParameters name="value" lowerBound="1" eType="//Classes/Kernel/Value"/>
+          <eParameters name="result" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="hasObjectFlowInput">
+          <eParameters name="return" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="getDecisionInputFlowValue">
+          <eParameters name="value" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eOperations name="executeDecisionInputBehavior">
+          <eParameters name="inputValue" lowerBound="1" eType="//Classes/Kernel/Value"/>
+          <eParameters name="decisionInputValue" eType="//Classes/Kernel/Value"/>
+          <eParameters name="decisionInputResult" lowerBound="1" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eOperations name="getDecisionInputFlowInstance">
+          <eParameters name="edgeInstance" eType="//Activities/IntermediateActivities/ActivityEdgeInstance"/>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ControlToken" eSuperTypes="//Activities/IntermediateActivities/Token"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ObjectToken" eSuperTypes="//Activities/IntermediateActivities/Token">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="//Classes/Kernel/Value" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ForkedToken" eSuperTypes="//Activities/IntermediateActivities/Token">
+        <eOperations name="initialize"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="baseToken" lowerBound="1" eType="//Activities/IntermediateActivities/Token"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="remainingOffersCount" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseTokenIsWithdrawn" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InitialNodeActivation" eSuperTypes="//Activities/IntermediateActivities/ControlNodeActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="MergeNodeActivation" eSuperTypes="//Activities/IntermediateActivities/ControlNodeActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="JoinNodeActivation" eSuperTypes="//Activities/IntermediateActivities/ControlNodeActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ForkNodeActivation" eSuperTypes="//Activities/IntermediateActivities/ControlNodeActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ActivityFinalNodeActivation" eSuperTypes="//Activities/IntermediateActivities/ControlNodeActivation"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="Actions" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/actions" nsPrefix="ActionsConf">
+    <eSubpackages name="BasicActions" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/basicactions" nsPrefix="BasicActionsConf">
+      <eClassifiers xsi:type="ecore:EClass" name="ActionActivation" abstract="true" eSuperTypes="//Activities/IntermediateActivities/ActivityNodeActivation">
+        <eOperations name="getPinActivation">
+          <eParameters name="pin" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Pin"/>
+          </eParameters>
+          <eParameters name="return" eType="//Actions/BasicActions/PinActivation"/>
+        </eOperations>
+        <eOperations name="sendOffers"/>
+        <eOperations name="doAction"/>
+        <eOperations name="shouldFireAgain">
+          <eParameters name="fireAgain" lowerBound="1">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eParameters>
+        </eOperations>
+        <eOperations name="putToken">
+          <eParameters name="pin" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//OutputPin"/>
+          </eParameters>
+          <eParameters name="value" lowerBound="1" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eOperations name="takeTokens">
+          <eParameters name="pin" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//InputPin"/>
+          </eParameters>
+          <eParameters name="values" upperBound="-1" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eOperations name="putTokens">
+          <eParameters name="pin" lowerBound="1">
+            <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//OutputPin"/>
+          </eParameters>
+          <eParameters name="values" lowerBound="1" upperBound="-1" eType="//Classes/Kernel/Value"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="pinActivations" upperBound="-1" eType="//Actions/BasicActions/PinActivation" eOpposite="//Actions/BasicActions/PinActivation/actionActivation"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="firing" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PinActivation" abstract="true" eSuperTypes="//Activities/IntermediateActivities/ObjectNodeActivation">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="actionActivation" eType="//Actions/BasicActions/ActionActivation" eOpposite="//Actions/BasicActions/ActionActivation/pinActivations"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="count_temp">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InputPinActivation" eSuperTypes="//Actions/BasicActions/PinActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="OpaqueActionActivation" eSuperTypes="//Actions/BasicActions/ActionActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="OutputPinActivation" eSuperTypes="//Actions/BasicActions/PinActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="CallActionActivation" abstract="true" eSuperTypes="//Actions/BasicActions/InvocationActionActivation">
+        <eOperations name="getCallExecution">
+          <eParameters name="execution" lowerBound="1" eType="//CommonBehaviors/BasicBehaviors/Execution"/>
+        </eOperations>
+        <eOperations name="removeCallExecution">
+          <eParameters name="execution" lowerBound="1" eType="//CommonBehaviors/BasicBehaviors/Execution"/>
+        </eOperations>
+        <eOperations name="initializeInputParameterValues">
+          <eParameters name="callExecution" lowerBound="1" eType="//CommonBehaviors/BasicBehaviors/Execution"/>
+        </eOperations>
+        <eOperations name="collectOutputParameterValues">
+          <eParameters name="callExecution" lowerBound="1" eType="//CommonBehaviors/BasicBehaviors/Execution"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="callExecutions" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/Execution" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InvocationActionActivation" abstract="true" eSuperTypes="//Actions/BasicActions/ActionActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="CallBehaviorActionActivation" eSuperTypes="//Actions/BasicActions/CallActionActivation"/>
+    </eSubpackages>
+    <eSubpackages name="IntermediateActions" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/intermediateactions" nsPrefix="IntermediateActionsConf">
+      <eClassifiers xsi:type="ecore:EClass" name="ValueSpecificationActionActivation" eSuperTypes="//Actions/BasicActions/ActionActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="CreateObjectActionActivation" eSuperTypes="//Actions/BasicActions/ActionActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="StructuralFeatureActionActivation" abstract="true" eSuperTypes="//Actions/BasicActions/ActionActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ReadStructuralFeatureActionActivation" eSuperTypes="//Actions/IntermediateActions/StructuralFeatureActionActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="WriteStructuralFeatureActionActivation" abstract="true" eSuperTypes="//Actions/IntermediateActions/StructuralFeatureActionActivation"/>
+      <eClassifiers xsi:type="ecore:EClass" name="AddStructuralFeatureValueActionActivation" eSuperTypes="//Actions/IntermediateActions/WriteStructuralFeatureActionActivation"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="Input" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/input" nsPrefix="InputConf">
+    <eClassifiers xsi:type="ecore:EClass" name="InputParameterValues">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValues" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
