@@ -3,38 +3,22 @@
 package fumlConfiguration.Input.impl;
 
 import fumlConfiguration.Actions.BasicActions.BasicActionsPackage;
-
 import fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
-
 import fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
-
 import fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
-
 import fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
-
 import fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
-
 import fumlConfiguration.Classes.Kernel.KernelPackage;
-
 import fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl;
-
 import fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage;
-
 import fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.BasicBehaviorsPackageImpl;
-
 import fumlConfiguration.FumlConfigurationPackage;
-
 import fumlConfiguration.Input.InputFactory;
 import fumlConfiguration.Input.InputPackage;
-
 import fumlConfiguration.Loci.LociPackage;
-
 import fumlConfiguration.Loci.impl.LociPackageImpl;
-
 import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
-
 import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
-
 import fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -42,9 +26,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -213,5 +195,26 @@ public class InputPackageImpl extends EPackageImpl implements InputPackage {
 			setGeneratedClassName(eClassifier);
 		}
 	}
+
+
+	//TODO: for now added manually
+	// TODO: for now added manually
+		@Override
+		protected EClass createEClass(int id) {
+			org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl c = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
+					.createBehavioredEClass();
+			c.setClassifierID(id);
+			getEClassifiers().add(c);
+			return c;
+		}
+
+		// TODO: for now added manually
+		@Override
+		protected void createEOperation(EClass owner, int id) {
+			org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl o = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
+					.createBehavioredEOperation();
+			o.setOperationID(id);
+			owner.getEOperations().add(o);
+		}
 
 } //InputPackageImpl

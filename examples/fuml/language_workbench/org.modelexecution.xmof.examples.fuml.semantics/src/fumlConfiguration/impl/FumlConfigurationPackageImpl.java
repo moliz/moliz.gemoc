@@ -3,59 +3,37 @@
 package fumlConfiguration.impl;
 
 import fumlConfiguration.Actions.BasicActions.BasicActionsPackage;
-
 import fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
-
 import fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
-
 import fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
-
 import fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
-
 import fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
-
 import fumlConfiguration.Classes.Kernel.KernelPackage;
-
 import fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl;
-
 import fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage;
-
 import fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.BasicBehaviorsPackageImpl;
-
 import fumlConfiguration.FumlConfigurationFactory;
 import fumlConfiguration.FumlConfigurationPackage;
-
 import fumlConfiguration.Input.InputPackage;
-
 import fumlConfiguration.Input.impl.InputPackageImpl;
-
 import fumlConfiguration.Loci.LociPackage;
-
 import fumlConfiguration.Loci.impl.LociPackageImpl;
-
 import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
-
 import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
 
 import java.io.IOException;
-
 import java.net.URL;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
-
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -4863,4 +4841,23 @@ public class FumlConfigurationPackageImpl extends EPackageImpl implements FumlCo
 		}
 	}
 
+
+	// TODO: for now added manually
+		@Override
+		protected EClass createEClass(int id) {
+			org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl c = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
+					.createBehavioredEClass();
+			c.setClassifierID(id);
+			getEClassifiers().add(c);
+			return c;
+		}
+
+		// TODO: for now added manually
+		@Override
+		protected void createEOperation(EClass owner, int id) {
+			org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl o = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
+					.createBehavioredEOperation();
+			o.setOperationID(id);
+			owner.getEOperations().add(o);
+		}
 } //FumlConfigurationPackageImpl

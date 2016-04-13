@@ -473,5 +473,24 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 			setGeneratedClassName(eClassifier);
 		}
 	}
+	
+	// TODO: for now added manually
+			@Override
+			protected EClass createEClass(int id) {
+				org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl c = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
+						.createBehavioredEClass();
+				c.setClassifierID(id);
+				getEClassifiers().add(c);
+				return c;
+			}
+
+			// TODO: for now added manually
+			@Override
+			protected void createEOperation(EClass owner, int id) {
+				org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl o = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
+						.createBehavioredEOperation();
+				o.setOperationID(id);
+				owner.getEOperations().add(o);
+			}
 
 } //BasicActionsPackageImpl
