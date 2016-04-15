@@ -18,9 +18,6 @@ class GenericSuperTypeTransformer extends Copier {
 	private val Set<EPackage> targetSuperMetamodel
 	private val Set<EClass> targetSuperMetamodelEClasses = new HashSet
 
-	/*
-	 * We check that the provided map is valid, ie. that each target type is a super type of its source.
-	 */
 	new(Set<EPackage> targetSuperMetamodel) {
 		this.targetSuperMetamodel = targetSuperMetamodel
 		targetSuperMetamodelEClasses.addAll(
@@ -28,15 +25,12 @@ class GenericSuperTypeTransformer extends Copier {
 	}
 
 	private def EClass findTargetType(Set<EClass> classes) {
-
 		for (c : classes.filter[!abstract && !interface]) {
 			if (targetSuperMetamodelEClasses.contains(c)) {
 				return c
 			}
 		}
-
 		val Set<EClass> superTypes = classes.map[c|c.ESuperTypes].flatten.toSet
-
 		if (!superTypes.empty)
 			return findTargetType(superTypes)
 		else
@@ -44,7 +38,7 @@ class GenericSuperTypeTransformer extends Copier {
 	}
 
 	/*
-	 * This ensures that created eObjects are using one of the target super types, if any.
+	 * Makes created eObjects use of of the target super types, if any.
 	 */
 	override protected getTarget(EClass eClass) {
 		val candidateTarget = findTargetType(#{eClass})
