@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
   <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.modelexecution.examples.Fuml" xdsmlFilePath="/org.modelexecution.xmof.examples.fuml.xdsml/bin/org/modelexecution/xmof/examples/fuml.melange" />
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.modelexecution.examples.Fuml" xdsmlFilePath="/org.modelexecution.xmof.examples.fuml.xdsml/src/org/modelexecution/xmof/examples/fuml.melange" />
   </extension>
   <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="org.modelexecution.examples.FumlMT" uri="http://fumlmt/" />
