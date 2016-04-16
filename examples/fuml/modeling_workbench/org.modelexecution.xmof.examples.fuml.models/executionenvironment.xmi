@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<LociConf:ExecutionEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IntegerFunctionsConf="http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors/integerfunctions" xmlns:LociConf="http://www.modelexecution.org/xmof/example/fuml/configuration/loci" xsi:schemaLocation="http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors/integerfunctions ../../fuml/fuml.xmof#//PrimitiveBehaviors/IntegerFunctions http://www.modelexecution.org/xmof/example/fuml/configuration/loci ../../fuml/fuml.xmof#//Loci">
+<LociConf:ExecutionEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IntegerFunctionsConf="http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors/integerfunctions" xmlns:LociConf="http://www.modelexecution.org/xmof/example/fuml/configuration/loci">
   <locus_ExecutionEnvironment>
     <factory primitiveBehaviorPrototypes="//@locus_ExecutionEnvironment/@extensionalValues.0 //@locus_ExecutionEnvironment/@extensionalValues.1">
       <builtInTypes href="primitiveTypeLibrary.uml#_pDR7sJwFEeSTr_Y7bvreaQ"/>
