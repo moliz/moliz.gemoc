@@ -173,8 +173,8 @@ public class XMOFBasedModelLoader {
 			if (eObject instanceof EPackage) {
 				EPackage ePackage = (EPackage) eObject;
 				if (EPackage.Registry.INSTANCE.containsKey(ePackage.getNsURI())) {
-					EPackage registeredPackage = (EPackage) EPackage.Registry.INSTANCE
-							.get(ePackage.getNsURI());
+					EPackage registeredPackage = EPackage.Registry.INSTANCE
+							.getEPackage(ePackage.getNsURI());
 					confMMPackages.add(registeredPackage);
 				} else {
 					confMMPackages.add(ePackage);
