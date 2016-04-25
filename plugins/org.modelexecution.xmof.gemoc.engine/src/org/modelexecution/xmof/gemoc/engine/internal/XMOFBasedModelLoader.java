@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.gemoc.commons.eclipse.emf.EMFResource;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.ObjectValue;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
@@ -70,7 +71,19 @@ public class XMOFBasedModelLoader {
 	}
 
 	private Collection<EObject> loadInputModelElements() {
-		return getModelResource().getContents();
+		EList<EObject> inputModelElements = new BasicEList<EObject>();
+		for(Resource resource : getInputModelResources()) {
+			inputModelElements.addAll(resource.getContents());
+		}		
+		return inputModelElements;
+	}
+	
+	private Collection<Resource> getInputModelResources() {
+		Set<Resource> inputModelResources = new HashSet<Resource>();
+		Resource modelResource = getModelResource();
+		inputModelResources.add(modelResource);
+		inputModelResources.addAll(EMFResource.getRelatedResources(modelResource));
+		return inputModelResources;
 	}
 
 	private Collection<EObject> getParameterValueObjects(
