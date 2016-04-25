@@ -20,11 +20,20 @@ import fUML.Syntax.Classes.Kernel.Property;
 public class GemocXMOFInstanceMapBuilder extends XMOFInstanceMapBuilder {
 
 	private Map<EClass, EClass> registeredClass2XmofClass = new HashMap<EClass, EClass>();
+	private Map<String, EPackage> nsUri2XmofPackage = new HashMap<String, EPackage>();
 
 	public GemocXMOFInstanceMapBuilder(EPackage registeredEPackage,
 			EPackage xmofEPackage, XMOFInstanceMap map) {
 		super(map);
+		buildXMOFEPackageMap(xmofEPackage);
 		buildEClassMap(registeredEPackage, xmofEPackage);
+	}
+
+	private void buildXMOFEPackageMap(EPackage xmofEPackage) {
+		nsUri2XmofPackage.put(xmofEPackage.getNsURI(), xmofEPackage);
+		for(EPackage xmofSubpackage : xmofEPackage.getESubpackages()) {
+			buildXMOFEPackageMap(xmofSubpackage);
+		}
 	}
 
 	private void buildEClassMap(EPackage registeredEPackage,
@@ -40,20 +49,9 @@ public class GemocXMOFInstanceMapBuilder extends XMOFInstanceMapBuilder {
 		}
 		for (EPackage registeredESubpackage : registeredEPackage
 				.getESubpackages()) {
-			buildEClassMap(
-					registeredESubpackage,
-					getESubpackage(xmofEPackage,
-							registeredESubpackage.getName()));
+			EPackage xmofESubpackage = nsUri2XmofPackage.get(registeredESubpackage.getNsURI());
+			buildEClassMap(registeredESubpackage, xmofESubpackage);
 		}
-	}
-
-	private EPackage getESubpackage(EPackage ePackage, String name) {
-		for (EPackage eSubpackage : ePackage.getESubpackages()) {
-			if (eSubpackage.getName().equals(name)) {
-				return eSubpackage;
-			}
-		}
-		return null;
 	}
 
 	@Override
