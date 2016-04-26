@@ -126,9 +126,11 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				.getInputObject(event.getActivity());
 		EObject context = getActivityContextObject(activityExecution);
 		EObject caller = configurationMap.getOriginalObject(context);
-		String className = caller.eClass().getName();
+		String className = caller != null ? caller.eClass().getName() : context
+				.eClass().getName();
 		String methodName = activity.getSpecification().getName();
-		beforeExecutionStep(caller, className, methodName);
+		beforeExecutionStep(caller != null ? caller : context, className,
+				methodName);
 	}
 
 	private void processActivityNodeEntry(ActivityNodeEntryEvent event) {
@@ -138,7 +140,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				.getInputObject(event.getNode());
 		EObject context = getActivityContextObject(activityExecution);
 		EObject caller = configurationMap.getOriginalObject(context);
-		String className = caller.eClass().getName();
+		String className = caller != null ? caller.eClass().getName() : context
+				.eClass().getName();
 		String methodName = "";
 		if (activityNode.getName() != null) {
 			methodName = activityNode.getName() + " :"
