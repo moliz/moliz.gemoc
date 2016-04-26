@@ -152,7 +152,7 @@ public class XMOFBasedModelLoader {
 
 	private String getXMOFModelFilePath() {
 		String xmofModelFilePath = "";
-		Resource xdsmlFileResource = loadPluginResource(getXDSMLModelPat());
+		Resource xdsmlFileResource = loadPluginResource(getXDSMLModelPath());
 		ModelTypingSpace modelTypingSpace = (ModelTypingSpace) xdsmlFileResource
 				.getContents().get(0);
 		for (Element element : modelTypingSpace.getElements()) {
@@ -240,7 +240,7 @@ public class XMOFBasedModelLoader {
 				.getModelInitializationModel();
 	}
 
-	private String getXDSMLModelPat() {
+	private String getXDSMLModelPath() {
 		return executionContext.getLanguageDefinitionExtension()
 				.getXDSMLFilePath();
 	}
