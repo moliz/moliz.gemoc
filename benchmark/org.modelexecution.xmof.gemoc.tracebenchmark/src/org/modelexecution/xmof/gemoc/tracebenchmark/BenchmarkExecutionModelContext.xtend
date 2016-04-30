@@ -7,8 +7,8 @@ import org.gemoc.executionframework.engine.commons.EngineContextException
 
 class BenchmarkExecutionModelContext extends XMOFExecutionModelContext {
 	
-	new(IRunConfiguration runConfiguration, ExecutionMode executionMode) throws EngineContextException {
-		super(runConfiguration, executionMode)
+	new(IRunConfiguration runConfiguration) throws EngineContextException {
+		super(runConfiguration, ExecutionMode.Run)
 	}
 	
 }
