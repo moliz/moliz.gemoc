@@ -26,7 +26,6 @@ import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFVirtualMachine;
 import org.modelexecution.xmof.gemoc.engine.internal.SequentialNodeSelectionStrategy;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
-import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.vm.XMOFBasedModelSynchronizer;
@@ -140,13 +139,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				.getActivityExecutionByID(event.getActivityExecutionID());
 		Activity activity = (Activity) vm.getxMOFConversionResult()
 				.getInputObject(event.getActivity());
-		EObject context = getActivityContextObject(activityExecution);
-		EObject caller = context;
-		String className = caller != null ? caller.eClass().getName() : context
-				.eClass().getName();
+		EObject caller = getActivityContextObject(activityExecution);
+		String className = caller.eClass().getName();
 		String methodName = activity.getSpecification().getName();
-		beforeExecutionStep(caller != null ? caller : context, className,
-				methodName);
+		beforeExecutionStep(caller, className, methodName);
 	}
 
 	private void processActivityNodeEntry(ActivityNodeEntryEvent event) {
@@ -154,10 +150,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				.getActivityExecutionByID(event.getActivityExecutionID());
 		ActivityNode activityNode = (ActivityNode) vm.getxMOFConversionResult()
 				.getInputObject(event.getNode());
-		EObject context = getActivityContextObject(activityExecution);
-		EObject caller = configurationMap.getOriginalObject(context);
-		String className = caller != null ? caller.eClass().getName() : context
-				.eClass().getName();
+		EObject caller = getActivityContextObject(activityExecution);
+		String className = caller.eClass().getName();
 		String methodName = "";
 		if (activityNode.getName() != null) {
 			methodName = activityNode.getName() + " :"
