@@ -28,7 +28,7 @@ import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.Paramete
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValueDefinition;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.GenericXMOFAnimationServices;
-import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
+import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.melange.metamodel.melange.Element;
@@ -236,7 +236,7 @@ public class XMOFBasedModelLoader {
 	}
 
 	private String getInitializationModelPath() {
-		return ((RunConfiguration) executionContext.getRunConfiguration())
+		return ((IXMOFRunConfiguration) executionContext.getRunConfiguration())
 				.getModelInitializationModel();
 	}
 

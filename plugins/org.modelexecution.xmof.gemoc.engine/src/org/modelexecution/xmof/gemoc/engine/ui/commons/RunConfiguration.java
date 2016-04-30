@@ -4,7 +4,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 
 public class RunConfiguration extends
-		org.gemoc.executionframework.engine.ui.commons.RunConfiguration {
+		org.gemoc.executionframework.engine.ui.commons.RunConfiguration implements IXMOFRunConfiguration {
 
 	// main launch parameters
 	public static final String LAUNCH_INITIALIZATION_MODEL = "GEMOC_LAUNCH_INITIALIZATION_MODEL";
@@ -26,13 +26,15 @@ public class RunConfiguration extends
 	}
 
 	private String modelInitializationModel;
-
+	
+	@Override
 	public String getModelInitializationModel() {
 		return modelInitializationModel;
 	}
 	
 	private boolean nodewiseStepping;
 	
+	@Override
 	public boolean getNodewiseStepping(){
 		return nodewiseStepping;
 	}

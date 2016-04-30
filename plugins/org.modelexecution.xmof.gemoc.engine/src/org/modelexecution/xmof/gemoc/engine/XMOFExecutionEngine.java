@@ -23,6 +23,7 @@ import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFBasedModel;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFVirtualMachine;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
+import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
@@ -52,7 +53,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	protected void prepareEntryPoint(IExecutionContext executionContext) {
-		suspendForNodes = ((RunConfiguration) executionContext
+		suspendForNodes = ((IXMOFRunConfiguration) executionContext
 				.getRunConfiguration()).getNodewiseStepping();
 
 		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
