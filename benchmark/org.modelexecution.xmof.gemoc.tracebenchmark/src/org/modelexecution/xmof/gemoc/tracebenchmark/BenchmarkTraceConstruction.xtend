@@ -30,6 +30,8 @@ class BenchmarkTraceConstruction {
 		val job = new Job("Run benchmark...") {
 			override protected run(IProgressMonitor m) {
 
+				val modelFolder = new File(modelFolderName);
+
 				// Create output folder
 				val Calendar currentDate = Calendar.getInstance();
 				val SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YYYY_hh-mm-ss");
@@ -40,12 +42,17 @@ class BenchmarkTraceConstruction {
 
 				// Create eclipse project
 				val project = ResourcesPlugin.getWorkspace().getRoot().getProject("benchmark-project");
-
 				project.create(m)
 				project.open(m)
+				
+				// Prepare CSV file
+				// TODO
+				Result::getColumnNames
 
 				// For each language
 				for (language : languages) {
+
+					val languageModelFolder = new File(modelFolder, language.folderName)
 
 					// Create language output folder
 					val languageOutputFolder = new File(outputFolder, language.folderName)
@@ -68,25 +75,39 @@ class BenchmarkTraceConstruction {
 
 						// For each model
 						for (model : language.models) {
-							val modelFilePath = modelFolderName + "/" + language.folderName + "/" + model
-							val File modelFile = new File(modelFilePath)
-							val IFile modelFileInProject = project.getFile(modelFile.name)
+							
+							// Copy model file
+							val File modelFile = new File(languageModelFolder, model)
+							val modelFileInProject = project.getFile(modelFile.name)
 							modelFileInProject.create(new FileInputStream(modelFile), true, m);
+							val URI modelURI = URI.createPlatformResourceURI(modelFileInProject.fullPath.toString, true)
 
 							// For each input model
 							for (inputModel : language.getInputModelsFor(model)) {
-								// TODO copy input model
+								
+								
+								val result = new Result
+								result.inputName = inputModel
+								result.languageName = language.folderName
+								result.modelName = model
+								result.traceMetamodel = tracingCase.folderName
+								
+
+								// Copy input model file
+								var inputModelURIString = ""
+								if (inputModel != null && inputModel != "") {
+									val File inputModelFile = new File(languageModelFolder, inputModel)
+									val inputModelFileInProject = project.getFile(inputModelFile.name)
+									inputModelFileInProject.create(new FileInputStream(inputModelFile), true, m);
+									val URI inputModelURI = URI.createPlatformResourceURI(
+										inputModelFileInProject.fullPath.toString, true)
+									inputModelURIString = inputModelURI.toString
+								}
+								
+								//TODO analyse model
+
 								// Create engine parameterized with inputs
 								val XMOFExecutionEngine engine = new XMOFExecutionEngine();
-								val URI modelURI = URI.createPlatformResourceURI(modelFileInProject.fullPath.toString,
-									true)
-								val inputModelURIString = if (inputModel != null && inputModel != "") {
-										val inputModelPath = modelFolderName + "/" + language.folderName + "/" +
-											inputModel
-										URI.createPlatformResourceURI(inputModelPath, true).toString
-									} else {
-										""
-									}
 								val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI,
 									inputModelURIString)
 								val executioncontext = new BenchmarkExecutionModelContext(runConf);
@@ -94,15 +115,32 @@ class BenchmarkTraceConstruction {
 								engine.initialize(executioncontext);
 								tracingCase.configureEngineForTracing(engine)
 
-								// Execution
-								println("Starting...")
-								engine.start
-								println("Done...")
 
-								// This seems required to be sure that the execution.trace file is there and usable
+
+								// Execution
+								val timeStart = System.nanoTime
+								engine.start
+								engine.joinThread
+								val timeEnd = System.nanoTime
+								result.timeExe = timeEnd - timeStart
+								
+								//
+								//TODO analyse trace
+								// 
+								
+								//
+								// TODO compute memory
+								//
+								
+								//
+								// TODO store results in CSV
+								//
+								result.toString
+
+								// This seems required to be sure that the execution.trace file is there and usable (probably useless now)
 								EclipseTestUtil.waitUIThread(1000)
 
-								// We copy the trace file back into the benchmark project
+								// We copy the trace file back into the benchmark project (if any trace)
 								if (tracingCaseOutputFolder != null) {
 									val exeFolder = ResourcesPlugin.getWorkspace().getRoot().getFolder(
 										engine.executionContext.workspace.executionPath)
