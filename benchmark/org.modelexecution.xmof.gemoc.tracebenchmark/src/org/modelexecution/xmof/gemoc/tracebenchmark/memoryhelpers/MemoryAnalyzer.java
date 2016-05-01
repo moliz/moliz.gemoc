@@ -8,7 +8,7 @@
  * Contributors:
  *     Erwan Bousse - initial API and implementation
  ******************************************************************************/
-package org.modelexecution.xmof.gemoc.tracebenchmark;
+package org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers;
 
 import java.io.File;
 import java.lang.management.ManagementFactory;

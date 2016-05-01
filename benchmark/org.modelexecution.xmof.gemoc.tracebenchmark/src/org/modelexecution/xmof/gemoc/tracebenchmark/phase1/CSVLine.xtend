@@ -1,7 +1,7 @@
-package org.modelexecution.xmof.gemoc.tracebenchmark
+package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 
 //model_size,nbMut,timeStep,traceSize,traceMemoryFootprint,meanJumpTime,allJumpTimes
-class Result {
+class CSVLine {
 
 	public String languageName = ""
 	public String traceMetamodel = ""
@@ -14,12 +14,12 @@ class Result {
 	public Integer traceMemoryFootprint = 0
 
 	def static String getColumnNames() {
-		val allNames = Result.declaredFields.map[f|f.name]
+		val allNames = CSVLine.declaredFields.map[f|f.name]
 		return allNames.join(",")
 	}
 
 	override toString() {
-		return Result.declaredFields.map[f|
+		return CSVLine.declaredFields.map[f|
 			try {
 				f.get(this)
 			} catch(IllegalAccessException exc) {
