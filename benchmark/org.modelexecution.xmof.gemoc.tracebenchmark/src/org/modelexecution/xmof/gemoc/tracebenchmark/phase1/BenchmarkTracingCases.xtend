@@ -1,42 +1,50 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 
+import java.io.File
+import org.eclipse.emf.ecore.EObject
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
+import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 
 interface BenchmarkTracingCase {
 
-	def void configureEngineForTracing(XMOFExecutionEngine engine);
-	def int computeMemoryUsage()
+	def void configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context);
+
+	def int computeMemoryUsage(File dumpFile)
+
 	def void setLanguage(BenchmarkLanguage language)
+
 	def String getFolderName()
+
 }
 
 class NoTraceCase implements BenchmarkTracingCase {
 
-	override configureEngineForTracing(XMOFExecutionEngine engine) {
+	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
 		// Nothing to do, no trace addon
 	}
 
-	override computeMemoryUsage() {
+	override computeMemoryUsage(File dumpFile) {
 		return 0
 	}
 
 	override setLanguage(BenchmarkLanguage language) {
 		// Nothing to do
 	}
-	
+
 	override getFolderName() {
 		""
 	}
+
 
 }
 
 class GenericTraceCase implements BenchmarkTracingCase {
 
-	override configureEngineForTracing(XMOFExecutionEngine engine) {
+	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
 		// TODO Tanja, how to enable that?
 	}
 
-	override computeMemoryUsage() {
+	override computeMemoryUsage(File dumpFile) {
 		// TODO find which are the classes used 
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
@@ -44,44 +52,24 @@ class GenericTraceCase implements BenchmarkTracingCase {
 	override setLanguage(BenchmarkLanguage language) {
 		// Nothing to do
 	}
-	
+
 	override getFolderName() {
 		"generic_traces"
 	}
 
-}
-
-class DSTraceCase implements BenchmarkTracingCase {
-
-	protected var BenchmarkLanguage language
-
-	override configureEngineForTracing(XMOFExecutionEngine engine) {
-		engine.executionContext.executionPlatform.addEngineAddon(language.fullTraceAddon)
-	}
-
-	override computeMemoryUsage() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-
-	override setLanguage(BenchmarkLanguage language) {
-		this.language = language
-	}
-	
-	override getFolderName() {
-		"ds_traces"
-	}
 
 }
+
 
 /**
  * Must be constructed with a partial trace addon.
  */
 class PartialDSCase extends DSTraceCase {
 
-	override configureEngineForTracing(XMOFExecutionEngine engine) {
+	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
 		engine.executionContext.executionPlatform.addEngineAddon(language.partialTraceAddon)
 	}
-	
+
 	override getFolderName() {
 		"partial_ds_traces"
 	}

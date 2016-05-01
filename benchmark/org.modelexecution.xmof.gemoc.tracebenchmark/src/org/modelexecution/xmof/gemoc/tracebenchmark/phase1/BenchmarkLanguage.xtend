@@ -19,6 +19,11 @@ interface BenchmarkLanguage {
 	def Set<String> getModels()
 
 	def List<String> getInputModelsFor(String model)
+	
+	def String getJavaTraceRootName()
+	
+	def String getJavaTracePackageName()
+	
 // TODO other getters for the memory queries
 }
 
@@ -52,6 +57,14 @@ class PetriNetLanguage implements BenchmarkLanguage {
 
 	override getPartialTraceAddon() {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	override getJavaTraceRootName() {
+		"SpecificTraceImpl"
+	}
+	
+	override getJavaTracePackageName() {
+		"petrinetTrace"
 	}
 
 }

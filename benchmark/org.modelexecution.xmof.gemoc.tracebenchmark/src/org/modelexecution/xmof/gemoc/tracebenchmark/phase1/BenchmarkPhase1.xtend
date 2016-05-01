@@ -14,6 +14,10 @@ import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.runtime.Status
 import org.eclipse.core.runtime.jobs.Job
 import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.emf.transaction.RecordingCommand
+import org.eclipse.emf.transaction.util.TransactionUtil
+import org.gemoc.executionframework.engine.Activator
 import org.junit.AfterClass
 import org.junit.BeforeClass
 import org.junit.Test
@@ -26,9 +30,14 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkRunCon
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 
 import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1.*
+import org.junit.Rule
+import org.junit.rules.TemporaryFolder
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
+	
+	 @Rule
+ 	 public TemporaryFolder myfolder = new TemporaryFolder();
 
 	// Input data
 	static val tracingCases = #{new NoTraceCase, new DSTraceCase}
@@ -51,6 +60,7 @@ class BenchmarkPhase1 {
 	val BenchmarkTracingCase tracingCase
 	val String model
 	val String inputModel
+	val String testCaseName
 
 	// Test case constructor
 	new(String testCaseName, BenchmarkLanguage language, BenchmarkTracingCase tracingCase, String model,
@@ -59,12 +69,13 @@ class BenchmarkPhase1 {
 		this.tracingCase = tracingCase
 		this.model = model
 		this.inputModel = inputModel
+		this.testCaseName = testCaseName
 	}
 
 	@Test
 	def void test() {
 
-		val job = new Job("Running test case") {
+		val job = new Job(testCaseName) {
 			override protected run(IProgressMonitor m) {
 
 				try {
@@ -115,8 +126,9 @@ class BenchmarkPhase1 {
 					val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI, inputModelURIString)
 					val executioncontext = new BenchmarkExecutionModelContext(runConf);
 					executioncontext.initializeResourceModel();
+					tracingCase.configureEngineForTracing(engine,executioncontext)
 					engine.initialize(executioncontext);
-					tracingCase.configureEngineForTracing(engine)
+					
 
 					// Execution
 					val timeStart = System.nanoTime
@@ -124,32 +136,43 @@ class BenchmarkPhase1 {
 					engine.joinThread
 					val timeEnd = System.nanoTime
 					result.timeExe = timeEnd - timeStart
-
-					//
-					// TODO analyse trace (nb states)
-					//
-					// Dump memory
-					val heapFolder = new File("/home/zerwan/tmp/memorytests/")
-					heapFolder.mkdirs
-					val heap = new File(heapFolder, model)
-					MemoryAnalyzer.dumpHeap(heap)
-
-					//
-					// TODO compute memory
-					//
-					//
-					// TODO store results in CSV
-					//
-					result.toString
-
-					// This seems required to be sure that the execution.trace file is there and usable (probably useless now)
-					EclipseTestUtil.waitUIThread(1000)
-
-					// We copy the trace file back into the benchmark project (if any trace)
+					
+					// Clean command stack
+					val rs = executioncontext.resourceModel.resourceSet
+					val ed = TransactionUtil.getEditingDomain(rs)
+					ed.commandStack.flush
+					
+					
+					// Remove engine(s) from registry
+					val registry = Activator.^default.gemocRunningEngineRegistry
+					for (engineName : registry.runningEngines.keySet)
+						registry.unregisterEngine(engineName)
+					
+					// Clean resourceSet
+					clearResourceSet(rs)
+					
+					// If any trace created
 					if (tracingCaseOutputFolder != null) {
+
+						//
+						// TODO analyse trace (nb states)
+						//
+						// Dump memory
+						val heapFolder = new File("/home/zerwan/tmp/memorytests/")
+						heapFolder.mkdirs
+						val heap = new File(heapFolder, model + "_" + tracingCase.folderName)
+						MemoryAnalyzer.dumpHeap(heap)
+
+						result.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
+						//
+						//
+						// TODO delete memory dump
+						//
+						// Create trace folder
 						if (!tracingCaseOutputFolder.exists)
 							tracingCaseOutputFolder.mkdir
 
+						// Copy trace in trace folder
 						val exeFolder = ResourcesPlugin.getWorkspace().getRoot().getFolder(
 							engine.executionContext.workspace.executionPath)
 						val executionTraceFileInProject = exeFolder.getFile("execution.trace")
@@ -163,6 +186,16 @@ class BenchmarkPhase1 {
 							modelFile.name + inputSuffix + ".trace")
 						Files.copy(executionTraceFile.toPath, executionTraceTargetFile.toPath)
 					}
+					
+					
+					// Destroy engine
+					engine.dispose
+					
+					// TODO store results in CSV
+					//
+					result.toString
+
+					// Done 
 					return Status.OK_STATUS
 
 				} catch (Throwable t) {
@@ -218,7 +251,7 @@ class BenchmarkPhase1 {
 
 	@AfterClass
 	def static void closeCSV() {
-		// EclipseTestUtil.waitForJobsThenWindowClosed
+		EclipseTestUtil.waitForJobsThenWindowClosed
 		// TODO
 	}
 
@@ -258,4 +291,20 @@ class BenchmarkPhase1 {
 		return data
 
 	}
+
+	private static def void clearResourceSet(ResourceSet rs) {
+		val ed = TransactionUtil.getEditingDomain(rs)
+		// Clean resource
+		val command = new RecordingCommand(ed, "Clean resources") {
+			override protected doExecute() {
+				
+				for (c : rs.allContents.toSet)
+					c.eAdapters.clear
+				
+				rs.resources.clear
+			}
+		}
+		ed.commandStack.execute(command)
+	}
+
 }
