@@ -43,7 +43,6 @@ public class SequentialNodeSelectionStrategy implements NodeSelectionStrategy {
 			enabledNodes = activityExecutionStatus.getEnabledNodes();
 		}
 		if (enabledNodes != null && enabledNodes.size() > 0) {
-			// TODO the only thing that changes is the index of the chosen node:
 			nextNode = new ActivityNodeChoice(
 					executionID,
 					enabledNodes.get(chooseEnabledNodeIndex(enabledNodes.size())));
