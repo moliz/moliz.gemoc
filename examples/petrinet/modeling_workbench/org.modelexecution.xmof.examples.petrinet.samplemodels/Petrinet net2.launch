@@ -8,7 +8,7 @@
 <stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value=""/>
 <stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value=""/>
 <booleanAttribute key="MultiBranch Reflective Trace" value="false"/>
-<stringAttribute key="Resource" value="/org.modelexecution.xmof.examples.petrinet.samplemodels/net1.petrinet"/>
+<stringAttribute key="Resource" value="/org.modelexecution.xmof.examples.petrinet.samplemodels/net2.petrinet"/>
 <booleanAttribute key="VCD visualization" value="false"/>
-<stringAttribute key="airdResource" value="/org.modelexecution.xmof.examples.petrinet.samplemodels/net1.aird"/>
+<stringAttribute key="airdResource" value="/org.modelexecution.xmof.examples.petrinet.samplemodels/net2.aird"/>
 </launchConfiguration>
