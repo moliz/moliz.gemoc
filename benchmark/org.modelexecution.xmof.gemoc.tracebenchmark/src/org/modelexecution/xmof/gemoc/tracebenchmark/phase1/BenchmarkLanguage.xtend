@@ -4,6 +4,7 @@ import fr.inria.diverse.trace.gemoc.traceaddon.AbstractTraceAddon
 import org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetTraceEngineAddon
 import java.util.Map
 import java.util.Set
+import java.util.List
 
 interface BenchmarkLanguage {
 
@@ -17,11 +18,17 @@ interface BenchmarkLanguage {
 
 	def Set<String> getModels()
 
-	def Set<String> getInputModelsFor(String model)
+	def List<String> getInputModelsFor(String model)
 // TODO other getters for the memory queries
 }
 
 class PetriNetLanguage implements BenchmarkLanguage {
+	
+	val Map<String, List<String>> inputDataMap
+	
+	new (Map<String, List<String>> inputModels) {
+		inputDataMap = inputModels
+	}
 
 	override getFolderName() {
 		"petrinet"
@@ -36,11 +43,11 @@ class PetriNetLanguage implements BenchmarkLanguage {
 	}
 
 	override getModels() {
-		#{"net1.petrinet"}
+		return inputDataMap.keySet
 	}
 
 	override getInputModelsFor(String model) {
-		#{""}
+		return inputDataMap.get(model)
 	}
 
 	override getPartialTraceAddon() {
