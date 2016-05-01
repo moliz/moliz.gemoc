@@ -9,6 +9,7 @@ import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngin
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
+import org.modelexecution.fumldebug.core.NodeSelectionStrategy;
 import org.modelexecution.fumldebug.core.event.ActivityEntryEvent;
 import org.modelexecution.fumldebug.core.event.ActivityExitEvent;
 import org.modelexecution.fumldebug.core.event.ActivityNodeEntryEvent;
@@ -22,12 +23,13 @@ import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFBasedModel;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFVirtualMachine;
+import org.modelexecution.xmof.gemoc.engine.internal.SequentialNodeSelectionStrategy;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
-import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.vm.XMOFBasedModelSynchronizer;
+import org.modelexecution.xmof.vm.XMOFInstanceMap;
 import org.modelexecution.xmof.vm.XMOFVirtualMachine;
 import org.modelexecution.xmof.vm.XMOFVirtualMachineEvent;
 
@@ -80,17 +82,29 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 		configurationMap = loader.getConfigurationMap();
 
-		vm = new GemocXMOFVirtualMachine(model);
-		XMOFBasedModelSynchronizer modelSynchronizer = createModelSynchronizer(model);
+		vm = setupVirtualMachine(model);
+	}
+
+	private XMOFVirtualMachine setupVirtualMachine(GemocXMOFBasedModel model) {
+		XMOFVirtualMachine vm = new GemocXMOFVirtualMachine(model);
+
+		XMOFBasedModelSynchronizer modelSynchronizer = createModelSynchronizer(
+				vm.getInstanceMap(), model);
 		vm.setSynchronizeModel(modelSynchronizer);
+
+		NodeSelectionStrategy nodeSelectionStrategy = new SequentialNodeSelectionStrategy();
+		vm.getRawExecutionContext().setNextNodeStrategy(nodeSelectionStrategy);
+
 		vm.addRawExecutionEventListener(this);
 		vm.addVirtualMachineListener(this);
+
+		return vm;
 	}
 
 	private XMOFBasedModelSynchronizer createModelSynchronizer(
-			XMOFBasedModel model) {
+			XMOFInstanceMap instanceMap, XMOFBasedModel model) {
 		XMOFBasedModelSynchronizer modelSynchronizer = new GemocModelSynchronizer(
-				vm.getInstanceMap(), model.getEditingDomain());
+				instanceMap, model.getEditingDomain());
 		modelSynchronizer.setModelResource(model.getModelResource());
 		return modelSynchronizer;
 	}
@@ -125,13 +139,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				.getActivityExecutionByID(event.getActivityExecutionID());
 		Activity activity = (Activity) vm.getxMOFConversionResult()
 				.getInputObject(event.getActivity());
-		EObject context = getActivityContextObject(activityExecution);
-		EObject caller = context;
-		String className = caller != null ? caller.eClass().getName() : context
-				.eClass().getName();
+		EObject caller = getActivityContextObject(activityExecution);
+		String className = caller.eClass().getName();
 		String methodName = activity.getSpecification().getName();
-		beforeExecutionStep(caller != null ? caller : context, className,
-				methodName);
+		beforeExecutionStep(caller, className, methodName);
 	}
 
 	private void processActivityNodeEntry(ActivityNodeEntryEvent event) {
@@ -139,10 +150,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				.getActivityExecutionByID(event.getActivityExecutionID());
 		ActivityNode activityNode = (ActivityNode) vm.getxMOFConversionResult()
 				.getInputObject(event.getNode());
-		EObject context = getActivityContextObject(activityExecution);
-		EObject caller = configurationMap.getOriginalObject(context);
-		String className = caller != null ? caller.eClass().getName() : context
-				.eClass().getName();
+		EObject caller = getActivityContextObject(activityExecution);
+		String className = caller.eClass().getName();
 		String methodName = "";
 		if (activityNode.getName() != null) {
 			methodName = activityNode.getName() + " :"
