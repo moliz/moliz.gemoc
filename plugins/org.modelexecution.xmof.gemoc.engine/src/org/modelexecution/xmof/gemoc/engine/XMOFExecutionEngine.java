@@ -1,6 +1,7 @@
 package org.modelexecution.xmof.gemoc.engine;
 
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -11,14 +12,17 @@ import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
 import org.modelexecution.fumldebug.core.NodeSelectionStrategy;
 import org.modelexecution.fumldebug.core.event.ActivityEntryEvent;
+import org.modelexecution.fumldebug.core.event.ActivityEvent;
 import org.modelexecution.fumldebug.core.event.ActivityExitEvent;
 import org.modelexecution.fumldebug.core.event.ActivityNodeEntryEvent;
+import org.modelexecution.fumldebug.core.event.ActivityNodeEvent;
 import org.modelexecution.fumldebug.core.event.ActivityNodeExitEvent;
 import org.modelexecution.fumldebug.core.event.Event;
 import org.modelexecution.fumldebug.core.trace.tracemodel.ActivityExecution;
 import org.modelexecution.fumldebug.core.trace.tracemodel.ValueSnapshot;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
+import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFBasedModel;
@@ -38,11 +42,15 @@ import fUML.Semantics.Classes.Kernel.Object_;
 public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		implements ExecutionEventListener, IXMOFVirtualMachineListener {
 
+	private static String STEP_ANNOTATION_SOURCE = "http://www.modelexecution.org/xmof";
+	private static String STEP_ANNOTATION_KEY = "Step";
+
 	private ConfigurationObjectMap configurationMap;
 
 	private XMOFVirtualMachine vm;
 
 	private boolean suspendForNodes = false;
+	private boolean ignoreSteps = false;
 
 	public XMOFExecutionEngine() {
 		super();
@@ -57,6 +65,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	protected void prepareEntryPoint(IExecutionContext executionContext) {
 		suspendForNodes = ((IXMOFRunConfiguration) executionContext
 				.getRunConfiguration()).getNodewiseStepping();
+		ignoreSteps = ((IXMOFRunConfiguration) executionContext
+				.getRunConfiguration()).getIgnoreSteps() || suspendForNodes;
 
 		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
 		GemocXMOFBasedModel model = (GemocXMOFBasedModel) loader
@@ -116,22 +126,48 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	public void notify(Event event) {
-		if (event instanceof ActivityEntryEvent) {
-			ActivityEntryEvent activityEntryEvent = (ActivityEntryEvent) event;
-			processActivityEntry(activityEntryEvent);
-		} else if (event instanceof ActivityExitEvent) {
-			processActivityExit((ActivityExitEvent) event);
-		} else if (suspendForNodes) {
-			if (event instanceof ActivityNodeEntryEvent) {
-				processActivityNodeEntry((ActivityNodeEntryEvent) event);
-			} else if (event instanceof ActivityNodeExitEvent) {
-				processActivityNodeExit((ActivityNodeExitEvent) event);
-			}
+		if (event instanceof ActivityEvent) {
+			processActivityEvent((ActivityEvent) event);
+		} else if (event instanceof ActivityNodeEvent && suspendForNodes) {
+			processActivityNodeEvent((ActivityNodeEvent) event);
 		}
 	}
 
 	@Override
 	public void notify(XMOFVirtualMachineEvent event) {
+	}
+
+	private void processActivityEvent(ActivityEvent event) {
+		if (ignoreSteps || isStep(event.getActivity())) {
+			if (event instanceof ActivityEntryEvent) {
+				processActivityEntry((ActivityEntryEvent) event);
+			} else if (event instanceof ActivityExitEvent) {
+				processActivityExit((ActivityExitEvent) event);
+			}
+		}
+	}
+
+	private void processActivityNodeEvent(ActivityNodeEvent event) {
+		if (event instanceof ActivityNodeEntryEvent) {
+			processActivityNodeEntry((ActivityNodeEntryEvent) event);
+		} else if (event instanceof ActivityNodeExitEvent) {
+			processActivityNodeExit((ActivityNodeExitEvent) event);
+		}
+	}
+
+	private boolean isStep(
+			fUML.Syntax.Activities.IntermediateActivities.Activity activityFUML) {
+		boolean isStep = false;
+		Activity activity = (Activity) vm.getxMOFConversionResult()
+				.getInputObject(activityFUML);
+		BehavioredEOperation operation = activity.getSpecification();
+		EAnnotation stepAnnotation = operation
+				.getEAnnotation(STEP_ANNOTATION_SOURCE);
+		if (stepAnnotation != null) {
+			isStep = stepAnnotation.getDetails().containsKey(
+					STEP_ANNOTATION_KEY);
+		}
+		return isStep;
 	}
 
 	private void processActivityEntry(ActivityEntryEvent event) {

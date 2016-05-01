@@ -62,7 +62,7 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see petrinetConfiguration.PetrinetConfigurationPackage#eNS_URI
 	 * @see #init()
-	 * @generated
+	 * @generated not
 	 */
 	private PetrinetConfigurationPackageImpl() {
 		super(eNS_URI, PetrinetConfigurationFactory.eINSTANCE);
@@ -303,6 +303,32 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.modelexecution.org/xmof
+		createXmofAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.modelexecution.org/xmof</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createXmofAnnotations() {
+		String source = "http://www.modelexecution.org/xmof";	
+		addAnnotation
+		  (getNetConfiguration__Run(), 
+		   source, 
+		   new String[] {
+			 "Step", "true"
+		   });	
+		addAnnotation
+		  (getTransitionConfiguration__Fire(), 
+		   source, 
+		   new String[] {
+			 "Step", "true"
+		   });
 	}
 
 	//TODO: for now added manually

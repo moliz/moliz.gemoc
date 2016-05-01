@@ -44,6 +44,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 	protected Button animationFirstBreak;
 
 	protected Button nodewiseStepping;
+	protected Button ignoreSteps;
 
 	protected Combo languageCombo;
 
@@ -110,6 +111,8 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 			nodewiseStepping.setSelection(runConfiguration
 					.getNodewiseStepping());
 
+			ignoreSteps.setSelection(runConfiguration.getIgnoreSteps());
+
 			languageCombo.setText(runConfiguration.getLanguageName());
 
 			modelInitializationModelText.setText(runConfiguration
@@ -142,6 +145,9 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 
 		configuration.setAttribute(RunConfiguration.LAUNCH_NODEWISE_STEP,
 				nodewiseStepping.getSelection());
+
+		configuration.setAttribute(RunConfiguration.LAUNCH_IGNORE_STEPS,
+				ignoreSteps.getSelection());
 	}
 
 	@Override
@@ -210,6 +216,20 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 		nodewiseStepping = new Button(parent, SWT.CHECK);
 		nodewiseStepping.setText("Node-wise execution steps");
 		nodewiseStepping.addSelectionListener(new SelectionAdapter() {
+
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				updateLaunchConfigurationDialog();
+			}
+		}
+
+		);
+
+		createTextLabelLayout(parent, "");
+		createTextLabelLayout(parent, "");
+		ignoreSteps = new Button(parent, SWT.CHECK);
+		ignoreSteps.setText("Ignore step annotations");
+		ignoreSteps.addSelectionListener(new SelectionAdapter() {
 
 			@Override
 			public void widgetSelected(SelectionEvent event) {

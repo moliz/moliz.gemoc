@@ -3,7 +3,11 @@
   <eClassifiers xsi:type="kernel:BehavioredEClass" name="NetConfiguration">
     <eSuperTypes href="http://petrinet/1.0#//Net"/>
     <eOperations xsi:type="kernel:BehavioredEOperation" name="main" method="//NetConfiguration/main.1"/>
-    <eOperations xsi:type="kernel:BehavioredEOperation" name="run" method="//NetConfiguration/run.1"/>
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="run" method="//NetConfiguration/run.1">
+      <eAnnotations source="http://www.modelexecution.org/xmof">
+        <details key="Step" value="true"/>
+      </eAnnotations>
+    </eOperations>
     <ownedBehavior xsi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" name="main" specification="//NetConfiguration/main">
       <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:InitialNode" outgoing="//NetConfiguration/main.1/%.3"/>
       <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" name="Read self" incoming="//NetConfiguration/main.1/%.3">
@@ -180,7 +184,11 @@
     <eOperations xsi:type="kernel:BehavioredEOperation" name="isEnabled" method="//TransitionConfiguration/isEnabled.1">
       <eParameters xsi:type="kernel:DirectedParameter" name="return" direction="RETURN"/>
     </eOperations>
-    <eOperations xsi:type="kernel:BehavioredEOperation" name="fire" method="//TransitionConfiguration/fire.1"/>
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="fire" method="//TransitionConfiguration/fire.1">
+      <eAnnotations source="http://www.modelexecution.org/xmof">
+        <details key="Step" value="true"/>
+      </eAnnotations>
+    </eOperations>
     <ownedBehavior xsi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" name="isEnabled" specification="//TransitionConfiguration/isEnabled">
       <ownedParameter name="return" direction="RETURN"/>
       <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ActivityParameterNode" name="return" incoming="//TransitionConfiguration/isEnabled.1/%.9 //TransitionConfiguration/isEnabled.1/%.10" parameter="//TransitionConfiguration/isEnabled.1/return"/>

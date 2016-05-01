@@ -2,7 +2,11 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:fUML.Syntax.Actions.BasicActions="http://www.modelexecution.org/xmof/syntax/actions/basicactions" xmlns:fUML.Syntax.Actions.IntermediateActions="http://www.modelexecution.org/xmof/syntax/actions/intermediateactions" xmlns:fUML.Syntax.Activities.ExtraStructuredActivities="http://www.modelexecution.org/xmof/syntax/activities/extrastructuredactivities" xmlns:fUML.Syntax.Activities.IntermediateActivities="http://www.modelexecution.org/xmof/syntax/activities/intermediateactivities" xmlns:fUML.Syntax.CommonBehaviors.BasicBehaviors="http://www.modelexecution.org/xmof/syntax/commonbehaviors/basicbehaviors" xmlns:kernel="http://www.modelexecution.org/xmof/syntax/classes/mykernel" name="petrinet2Configuration" nsURI="http://petrinet2/1.0/configuration" nsPrefix="petrinetConf">
   <eClassifiers xsi:type="kernel:BehavioredEClass" name="NetConfiguration">
     <eSuperTypes href="http://petrinet2/1.0#//Net"/>
-    <eOperations xsi:type="kernel:BehavioredEOperation" name="run" method="//NetConfiguration/run.1"/>
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="run" method="//NetConfiguration/run.1">
+      <eAnnotations source="http://www.modelexecution.org/xmof">
+        <details key="Step" value="true"/>
+      </eAnnotations>
+    </eOperations>
     <eOperations xsi:type="kernel:BehavioredEOperation" name="main" method="//NetConfiguration/main.1">
       <eParameters xsi:type="kernel:DirectedParameter" name="initialTokens" upperBound="-1" eType="//Token"/>
     </eOperations>
@@ -184,7 +188,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="kernel:BehavioredEClass" name="TransitionConfiguration">
     <eSuperTypes href="http://petrinet2/1.0#//Transition"/>
-    <eOperations xsi:type="kernel:BehavioredEOperation" name="fire" method="//TransitionConfiguration/fire.1"/>
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="fire" method="//TransitionConfiguration/fire.1">
+      <eAnnotations source="http://www.modelexecution.org/xmof">
+        <details key="Step" value="true"/>
+      </eAnnotations>
+    </eOperations>
     <eOperations xsi:type="kernel:BehavioredEOperation" name="isEnabled" method="//TransitionConfiguration/isEnabled.1">
       <eParameters xsi:type="kernel:DirectedParameter" name="enabled" direction="OUT"/>
     </eOperations>
