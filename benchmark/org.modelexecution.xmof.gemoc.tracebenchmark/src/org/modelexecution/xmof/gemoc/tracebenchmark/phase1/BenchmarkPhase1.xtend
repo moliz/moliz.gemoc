@@ -125,31 +125,30 @@ class BenchmarkPhase1 {
 					val timeEnd = System.nanoTime
 					result.timeExe = timeEnd - timeStart
 
-					//
-					// TODO analyse trace (nb states)
-					//
-					// Dump memory
-					val heapFolder = new File("/home/zerwan/tmp/memorytests/")
-					heapFolder.mkdirs
-					val heap = new File(heapFolder, model)
-					MemoryAnalyzer.dumpHeap(heap)
-
-					//
-					// TODO compute memory
-					//
-					//
-					// TODO store results in CSV
-					//
-					result.toString
-
-					// This seems required to be sure that the execution.trace file is there and usable (probably useless now)
-					EclipseTestUtil.waitUIThread(1000)
-
-					// We copy the trace file back into the benchmark project (if any trace)
+					// If any trace to create
 					if (tracingCaseOutputFolder != null) {
+
+						//
+						// TODO analyse trace (nb states)
+						//
+						// Dump memory
+						val heapFolder = new File("/home/zerwan/tmp/memorytests/")
+						heapFolder.mkdirs
+						val heap = new File(heapFolder, model)
+						MemoryAnalyzer.dumpHeap(heap)
+
+						//
+						// TODO compute memory
+						//
+						//
+						// TODO delete memory dump
+						//
+						
+						// Create trace folder
 						if (!tracingCaseOutputFolder.exists)
 							tracingCaseOutputFolder.mkdir
 
+						// Copy trace in trace folder
 						val exeFolder = ResourcesPlugin.getWorkspace().getRoot().getFolder(
 							engine.executionContext.workspace.executionPath)
 						val executionTraceFileInProject = exeFolder.getFile("execution.trace")
@@ -163,6 +162,12 @@ class BenchmarkPhase1 {
 							modelFile.name + inputSuffix + ".trace")
 						Files.copy(executionTraceFile.toPath, executionTraceTargetFile.toPath)
 					}
+					
+					// TODO store results in CSV
+					//
+					result.toString
+					
+					
 					return Status.OK_STATUS
 
 				} catch (Throwable t) {
