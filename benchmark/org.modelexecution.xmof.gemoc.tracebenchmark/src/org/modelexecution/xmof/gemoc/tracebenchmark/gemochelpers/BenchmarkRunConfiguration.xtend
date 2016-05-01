@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.gemoc.tracebenchmark
+package org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers
 
 import org.eclipse.emf.common.util.URI
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration

@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.gemoc.tracebenchmark
+package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 
 import fr.inria.diverse.trace.gemoc.traceaddon.AbstractTraceAddon
 import org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetTraceEngineAddon

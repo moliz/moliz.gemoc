@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.gemoc.tracebenchmark
+package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 
 import fr.inria.diverse.trace.commons.testutil.EclipseTestUtil
 import java.io.File
@@ -15,9 +15,10 @@ import org.eclipse.emf.common.util.URI
 import org.junit.Test
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 
-import static org.modelexecution.xmof.gemoc.tracebenchmark.BenchmarkTraceConstruction.*
+import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkRunConfiguration
+import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 
-class BenchmarkTraceConstruction {
+class BenchmarkPhase1 {
 
 	static val String modelFolderName = "model"
 	static val String outputFolderName = "output"
@@ -47,7 +48,7 @@ class BenchmarkTraceConstruction {
 				
 				// Prepare CSV file
 				// TODO
-				Result::getColumnNames
+				CSVLine::getColumnNames
 
 				// For each language
 				for (language : languages) {
@@ -86,7 +87,7 @@ class BenchmarkTraceConstruction {
 							for (inputModel : language.getInputModelsFor(model)) {
 								
 								
-								val result = new Result
+								val result = new CSVLine
 								result.inputName = inputModel
 								result.languageName = language.folderName
 								result.modelName = model
@@ -104,8 +105,6 @@ class BenchmarkTraceConstruction {
 									inputModelURIString = inputModelURI.toString
 								}
 								
-								//TODO analyse model
-
 								// Create engine parameterized with inputs
 								val XMOFExecutionEngine engine = new XMOFExecutionEngine();
 								val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI,
@@ -125,7 +124,7 @@ class BenchmarkTraceConstruction {
 								result.timeExe = timeEnd - timeStart
 								
 								//
-								//TODO analyse trace
+								// TODO analyse trace (nb states)
 								// 
 								
 								//

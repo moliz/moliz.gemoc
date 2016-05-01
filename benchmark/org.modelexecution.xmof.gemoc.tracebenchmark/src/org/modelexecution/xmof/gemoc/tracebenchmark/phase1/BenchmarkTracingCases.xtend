@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.gemoc.tracebenchmark
+package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 

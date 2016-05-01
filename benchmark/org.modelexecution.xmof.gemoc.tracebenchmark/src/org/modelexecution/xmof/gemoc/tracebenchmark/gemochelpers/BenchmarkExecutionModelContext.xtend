@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.gemoc.tracebenchmark
+package org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers
 
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionModelContext
 import org.gemoc.xdsmlframework.api.core.IRunConfiguration
