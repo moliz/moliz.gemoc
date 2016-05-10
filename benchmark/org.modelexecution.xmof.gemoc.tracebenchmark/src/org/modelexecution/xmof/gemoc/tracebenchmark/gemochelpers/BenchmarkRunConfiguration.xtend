@@ -72,4 +72,8 @@ class BenchmarkRunConfiguration implements IXMOFRunConfiguration {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
+	override getIgnoreSteps() {
+		return false;
+	}
+	
 }
