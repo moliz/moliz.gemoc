@@ -71,6 +71,10 @@ class DSTraceCase implements BenchmarkTracingCase {
 	override getFolderName() {
 		"ds_traces"
 	}
+	
+	override getNumberOfStates() {
+		traceAddon.traceExplorer.statesTraceLength
+	}
 
 
 }

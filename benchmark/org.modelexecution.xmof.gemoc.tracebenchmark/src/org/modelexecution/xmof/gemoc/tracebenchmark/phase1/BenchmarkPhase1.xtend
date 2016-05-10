@@ -154,9 +154,9 @@ class BenchmarkPhase1 {
 					// If any trace created
 					if (tracingCaseOutputFolder != null) {
 
-						//
-						// TODO analyse trace (nb states)
-						//
+						// Read trace
+						csvLine.traceNbStates = tracingCase.numberOfStates						
+
 						// Dump memory and compute memory usage of the trace
 						val heapFolder = tmpFolderCreator.newFolder
 						val heap = new File(heapFolder, model + "_" + tracingCase.folderName)

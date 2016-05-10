@@ -14,6 +14,8 @@ interface BenchmarkTracingCase {
 	def void setLanguage(BenchmarkLanguage language)
 
 	def String getFolderName()
+	
+	def int getNumberOfStates()
 
 }
 
@@ -33,6 +35,10 @@ class NoTraceCase implements BenchmarkTracingCase {
 
 	override getFolderName() {
 		""
+	}
+	
+	override getNumberOfStates() {
+		0
 	}
 
 
@@ -56,6 +62,10 @@ class GenericTraceCase implements BenchmarkTracingCase {
 	override getFolderName() {
 		"generic_traces"
 	}
+	
+	override getNumberOfStates() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
 
 
 }
@@ -73,5 +83,6 @@ class PartialDSCase extends DSTraceCase {
 	override getFolderName() {
 		"partial_ds_traces"
 	}
+	
 
 }
