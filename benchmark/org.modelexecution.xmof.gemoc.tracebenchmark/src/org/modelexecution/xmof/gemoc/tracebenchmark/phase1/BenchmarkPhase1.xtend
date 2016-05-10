@@ -3,6 +3,7 @@ package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 import fr.inria.diverse.trace.commons.testutil.EclipseTestUtil
 import java.io.File
 import java.io.FileInputStream
+import java.io.PrintWriter
 import java.nio.file.Files
 import java.text.SimpleDateFormat
 import java.util.ArrayList
@@ -20,7 +21,9 @@ import org.eclipse.emf.transaction.util.TransactionUtil
 import org.gemoc.executionframework.engine.Activator
 import org.junit.AfterClass
 import org.junit.BeforeClass
+import org.junit.Rule
 import org.junit.Test
+import org.junit.rules.TemporaryFolder
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameters
@@ -28,14 +31,11 @@ import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkRunConfiguration
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
-
-import org.junit.Rule
-import org.junit.rules.TemporaryFolder
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.PetriNetLanguage
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
@@ -58,6 +58,8 @@ class BenchmarkPhase1 {
 	// Common to all tests
 	static var IProject eclipseProject
 	static var File outputFolder
+	static var File outputCSV
+	static var PrintWriter outputCSVWriter
 
 	// Specific to each test
 	val BenchmarkLanguage language
@@ -187,9 +189,8 @@ class BenchmarkPhase1 {
 					// Destroy engine
 					engine.dispose
 
-					// TODO store results in CSV
-					//
-					csvLine.toString
+					// Store result in CSV
+					outputCSVWriter.println(csvLine.toString)
 
 					// Done 
 					return Status.OK_STATUS
@@ -213,31 +214,33 @@ class BenchmarkPhase1 {
 	@BeforeClass
 	def static void prepareEclipseProject() {
 
-		val job = new Job("Preparation") {
+		val job = new Job("Preparation of the eclipse project") {
 			override protected run(IProgressMonitor m) {
 
 				// Create output folder
-				val Calendar currentDate = Calendar.getInstance();
+				val Calendar currentDate = Calendar::getInstance();
 				val SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YYYY_hh-mm-ss");
 				val String dateNow = formatter.format(currentDate.getTime());
 				outputFolder = new File(outputFolderName + "_" + dateNow)
 				if (!outputFolder.exists)
 					outputFolder.mkdir
 
+				// Prepare CSV file
+				outputCSV = new File(outputFolder, "results.csv")
+				outputCSVWriter = new PrintWriter(outputCSV)
+				outputCSVWriter.println(CSVLine::getColumnNames)
+
 				// Create eclipse project
-				eclipseProject = ResourcesPlugin.getWorkspace().getRoot().getProject("benchmark-project");
+				eclipseProject = ResourcesPlugin::getWorkspace().getRoot().getProject("benchmark-project");
 				eclipseProject.create(m)
 				eclipseProject.open(m)
 
-				// Prepare CSV file
-				// TODO
-				CSVLine::getColumnNames
 				return Status.OK_STATUS
 			}
 
 		}
 		job.schedule
-		EclipseTestUtil.waitForJobs
+		EclipseTestUtil::waitForJobs
 
 		if (job.result != Status.OK_STATUS) {
 			throw job.result.exception
@@ -247,8 +250,8 @@ class BenchmarkPhase1 {
 
 	@AfterClass
 	def static void closeCSV() {
+		outputCSVWriter.close
 		EclipseTestUtil.waitForJobsThenWindowClosed
-	// TODO
 	}
 
 	@Parameters(name="{0}")
