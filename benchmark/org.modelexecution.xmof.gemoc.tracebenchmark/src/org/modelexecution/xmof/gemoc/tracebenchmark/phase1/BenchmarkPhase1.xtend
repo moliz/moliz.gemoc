@@ -37,7 +37,7 @@ import org.junit.rules.TemporaryFolder
 class BenchmarkPhase1 {
 	
 	 @Rule
- 	 public TemporaryFolder myfolder = new TemporaryFolder();
+ 	 public TemporaryFolder tmpFolderCreator = new TemporaryFolder();
 
 	// Input data
 	static val tracingCases = #{new NoTraceCase, new DSTraceCase}
@@ -96,11 +96,11 @@ class BenchmarkPhase1 {
 							null
 						}
 
-					val result = new CSVLine
-					result.inputName = inputModel
-					result.languageName = language.folderName
-					result.modelName = model
-					result.traceMetamodel = tracingCase.folderName
+					val csvLine = new CSVLine
+					csvLine.inputName = inputModel
+					csvLine.languageName = language.folderName
+					csvLine.modelName = model
+					csvLine.traceMetamodel = tracingCase.folderName
 
 					// Copy model file
 					val File modelFile = new File(languageModelFolder, model)
@@ -135,7 +135,7 @@ class BenchmarkPhase1 {
 					engine.start
 					engine.joinThread
 					val timeEnd = System.nanoTime
-					result.timeExe = timeEnd - timeStart
+					csvLine.timeExe = timeEnd - timeStart
 					
 					// Clean command stack
 					val rs = executioncontext.resourceModel.resourceSet
@@ -157,17 +157,12 @@ class BenchmarkPhase1 {
 						//
 						// TODO analyse trace (nb states)
 						//
-						// Dump memory
-						val heapFolder = new File("/home/zerwan/tmp/memorytests/")
-						heapFolder.mkdirs
+						// Dump memory and compute memory usage of the trace
+						val heapFolder = tmpFolderCreator.newFolder
 						val heap = new File(heapFolder, model + "_" + tracingCase.folderName)
 						MemoryAnalyzer.dumpHeap(heap)
-
-						result.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
-						//
-						//
-						// TODO delete memory dump
-						//
+						csvLine.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
+				
 						// Create trace folder
 						if (!tracingCaseOutputFolder.exists)
 							tracingCaseOutputFolder.mkdir
@@ -193,7 +188,7 @@ class BenchmarkPhase1 {
 					
 					// TODO store results in CSV
 					//
-					result.toString
+					csvLine.toString
 
 					// Done 
 					return Status.OK_STATUS
