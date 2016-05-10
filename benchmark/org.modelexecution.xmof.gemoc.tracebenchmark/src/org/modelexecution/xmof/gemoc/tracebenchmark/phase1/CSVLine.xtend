@@ -7,8 +7,6 @@ class CSVLine {
 	public String traceMetamodel = ""
 	public String modelName = ""
 	public String inputName = ""
-	//public Integer modelNbElements = 0
-	//public Integer modelNbMutFields = 0
 	public Long timeExe = new Long(0)
 	public Integer traceNbStates = 0
 	public Integer traceMemoryFootprint = 0

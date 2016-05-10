@@ -29,15 +29,19 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecut
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkRunConfiguration
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 
-import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1.*
 import org.junit.Rule
 import org.junit.rules.TemporaryFolder
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.PetriNetLanguage
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
-	
-	 @Rule
- 	 public TemporaryFolder tmpFolderCreator = new TemporaryFolder();
+
+	@Rule
+	public TemporaryFolder tmpFolderCreator = new TemporaryFolder();
 
 	// Input data
 	static val tracingCases = #{new NoTraceCase, new DSTraceCase}
@@ -126,9 +130,8 @@ class BenchmarkPhase1 {
 					val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI, inputModelURIString)
 					val executioncontext = new BenchmarkExecutionModelContext(runConf);
 					executioncontext.initializeResourceModel();
-					tracingCase.configureEngineForTracing(engine,executioncontext)
+					tracingCase.configureEngineForTracing(engine, executioncontext)
 					engine.initialize(executioncontext);
-					
 
 					// Execution
 					val timeStart = System.nanoTime
@@ -136,33 +139,32 @@ class BenchmarkPhase1 {
 					engine.joinThread
 					val timeEnd = System.nanoTime
 					csvLine.timeExe = timeEnd - timeStart
-					
+
 					// Clean command stack
 					val rs = executioncontext.resourceModel.resourceSet
 					val ed = TransactionUtil.getEditingDomain(rs)
 					ed.commandStack.flush
-					
-					
+
 					// Remove engine(s) from registry
 					val registry = Activator.^default.gemocRunningEngineRegistry
 					for (engineName : registry.runningEngines.keySet)
 						registry.unregisterEngine(engineName)
-					
+
 					// Clean resourceSet
 					clearResourceSet(rs)
-					
+
 					// If any trace created
 					if (tracingCaseOutputFolder != null) {
 
 						// Read trace
-						csvLine.traceNbStates = tracingCase.numberOfStates						
+						csvLine.traceNbStates = tracingCase.numberOfStates
 
 						// Dump memory and compute memory usage of the trace
 						val heapFolder = tmpFolderCreator.newFolder
 						val heap = new File(heapFolder, model + "_" + tracingCase.folderName)
 						MemoryAnalyzer.dumpHeap(heap)
 						csvLine.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
-				
+
 						// Create trace folder
 						if (!tracingCaseOutputFolder.exists)
 							tracingCaseOutputFolder.mkdir
@@ -181,11 +183,10 @@ class BenchmarkPhase1 {
 							modelFile.name + inputSuffix + ".trace")
 						Files.copy(executionTraceFile.toPath, executionTraceTargetFile.toPath)
 					}
-					
-					
+
 					// Destroy engine
 					engine.dispose
-					
+
 					// TODO store results in CSV
 					//
 					csvLine.toString
@@ -247,7 +248,7 @@ class BenchmarkPhase1 {
 	@AfterClass
 	def static void closeCSV() {
 		EclipseTestUtil.waitForJobsThenWindowClosed
-		// TODO
+	// TODO
 	}
 
 	@Parameters(name="{0}")
@@ -292,10 +293,10 @@ class BenchmarkPhase1 {
 		// Clean resource
 		val command = new RecordingCommand(ed, "Clean resources") {
 			override protected doExecute() {
-				
+
 				for (c : rs.allContents.toSet)
 					c.eAdapters.clear
-				
+
 				rs.resources.clear
 			}
 		}

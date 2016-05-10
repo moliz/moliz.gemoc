@@ -1,10 +1,11 @@
-package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
+package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases
 
 import fr.inria.diverse.trace.gemoc.traceaddon.AbstractTraceAddon
 import java.io.File
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
 
 class DSTraceCase implements BenchmarkTracingCase {
 
@@ -19,7 +20,7 @@ class DSTraceCase implements BenchmarkTracingCase {
 	static val String queryStart = '''select a.@retainedHeapSize from ".*'''
 	static val String queryEndSimple = '''.*" a'''
 	static val String queryEndUtil = '''".*(PackageImpl|FactoryImpl|AdapterFactory|Switch)$" a'''
-	
+
 	static val String msePackageName = "org.gemoc.executionframework.engine.mse"
 
 	static def String createQuerySimple(String packageName) {
@@ -61,7 +62,8 @@ class DSTraceCase implements BenchmarkTracingCase {
 		println("Memory to remove specific: " + resquerySpecificRemove.memorySum)
 		println("Memory to remove generic: " + resqueryGenericRemove.memorySum)
 
-		return  resquerySpecific.memorySum + resqueryGeneric.memorySum - resquerySpecificRemove.memorySum - resqueryGenericRemove.memorySum
+		return resquerySpecific.memorySum + resqueryGeneric.memorySum - resquerySpecificRemove.memorySum -
+			resqueryGenericRemove.memorySum
 	}
 
 	override setLanguage(BenchmarkLanguage language) {
@@ -71,10 +73,9 @@ class DSTraceCase implements BenchmarkTracingCase {
 	override getFolderName() {
 		"ds_traces"
 	}
-	
+
 	override getNumberOfStates() {
 		traceAddon.traceExplorer.statesTraceLength
 	}
-
 
 }

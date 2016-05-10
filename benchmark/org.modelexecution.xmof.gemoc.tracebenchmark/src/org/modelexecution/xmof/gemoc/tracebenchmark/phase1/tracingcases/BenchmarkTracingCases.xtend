@@ -1,9 +1,9 @@
-package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
+package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases
 
 import java.io.File
-import org.eclipse.emf.ecore.EObject
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
 
 interface BenchmarkTracingCase {
 
@@ -14,7 +14,7 @@ interface BenchmarkTracingCase {
 	def void setLanguage(BenchmarkLanguage language)
 
 	def String getFolderName()
-	
+
 	def int getNumberOfStates()
 
 }
@@ -36,11 +36,10 @@ class NoTraceCase implements BenchmarkTracingCase {
 	override getFolderName() {
 		""
 	}
-	
+
 	override getNumberOfStates() {
 		0
 	}
-
 
 }
 
@@ -62,14 +61,12 @@ class GenericTraceCase implements BenchmarkTracingCase {
 	override getFolderName() {
 		"generic_traces"
 	}
-	
+
 	override getNumberOfStates() {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 
-
 }
-
 
 /**
  * Must be constructed with a partial trace addon.
@@ -83,6 +80,5 @@ class PartialDSCase extends DSTraceCase {
 	override getFolderName() {
 		"partial_ds_traces"
 	}
-	
 
 }

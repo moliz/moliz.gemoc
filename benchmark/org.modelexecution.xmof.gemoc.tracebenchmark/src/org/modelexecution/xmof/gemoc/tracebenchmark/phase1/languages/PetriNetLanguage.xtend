@@ -1,10 +1,8 @@
-package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
+package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages
 
-import fr.inria.diverse.trace.gemoc.traceaddon.AbstractTraceAddon
-import org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetTraceEngineAddon
-import java.util.Map
-import java.util.Set
 import java.util.List
+import java.util.Map
+import org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetTraceEngineAddon
 
 class PetriNetLanguage implements BenchmarkLanguage {
 
