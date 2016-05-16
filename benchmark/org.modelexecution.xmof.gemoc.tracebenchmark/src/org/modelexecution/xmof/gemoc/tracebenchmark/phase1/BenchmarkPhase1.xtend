@@ -43,7 +43,7 @@ class BenchmarkPhase1 {
 	@Rule
 	public TemporaryFolder tmpFolderCreator = new TemporaryFolder();
 
-	// Input data
+	// Input data for all tests
 	static val tracingCases = #{new NoTraceCase, new DSTraceCase}
 	static val languages = #{
 		new PetriNetLanguage(
@@ -54,19 +54,28 @@ class BenchmarkPhase1 {
 	// Constants
 	static val String modelFolderName = "model"
 	static val String outputFolderName = "output"
+	static val int WARMUPS = 3
+	static val int NBMEASURES = 3
 
-	// Common to all tests
+	// Common to all tests (used by @BeforeClass and @AfterClass)
 	static var IProject eclipseProject
 	static var File outputFolder
 	static var File outputCSV
 	static var PrintWriter outputCSVWriter
 
-	// Specific to each test
+	// Parameters specific to each test
 	val BenchmarkLanguage language
 	val BenchmarkTracingCase tracingCase
 	val String model
 	val String inputModel
 	val String testCaseName
+
+	// Transient data specific to each test
+	var URI modelURI
+	var String inputModelURIString
+	var CSVLine line
+	var File tracingCaseOutputFolder
+	var File modelFile
 
 	// Test case constructor
 	new(String testCaseName, BenchmarkLanguage language, BenchmarkTracingCase tracingCase, String model,
@@ -78,10 +87,79 @@ class BenchmarkPhase1 {
 		this.testCaseName = testCaseName
 	}
 
+	private def long execute(boolean wait) {
+
+		// Create engine parameterized with inputs
+		val XMOFExecutionEngine lastEngine = new XMOFExecutionEngine();
+		val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI, inputModelURIString)
+		val executioncontext = new BenchmarkExecutionModelContext(runConf);
+		executioncontext.initializeResourceModel();
+		tracingCase.configureEngineForTracing(lastEngine, executioncontext)
+		lastEngine.initialize(executioncontext);
+
+		// Execution
+		if (wait)
+			Thread.sleep(500)
+		val timeStart = System.nanoTime
+		lastEngine.start
+		lastEngine.joinThread
+		val timeEnd = System.nanoTime
+		val time = timeEnd - timeStart
+
+		// Clean command stack
+		val rs = lastEngine.executionContext.resourceModel.resourceSet
+		val ed = TransactionUtil.getEditingDomain(rs)
+		ed.commandStack.flush
+
+		// Remove engine(s) from registry
+		val registry = Activator.^default.gemocRunningEngineRegistry
+		for (engineName : registry.runningEngines.keySet)
+			registry.unregisterEngine(engineName)
+
+		// Clean resourceSet
+		clearResourceSet(rs)
+
+		// If any trace created and we must measure memory
+		if (tracingCaseOutputFolder != null && line.traceMemoryFootprint == 0) {
+
+			// Read trace
+			line.traceNbStates = tracingCase.numberOfStates
+
+			// Dump memory and compute memory usage of the trace
+			val heapFolder = tmpFolderCreator.newFolder
+			val heap = new File(heapFolder, model + "_" + tracingCase.simpleName)
+			MemoryAnalyzer.dumpHeap(heap)
+			line.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
+
+			// Create trace folder
+			if (!tracingCaseOutputFolder.exists)
+				tracingCaseOutputFolder.mkdir
+
+			// Copy trace in trace folder
+			val exeFolder = ResourcesPlugin.getWorkspace().getRoot().getFolder(
+				lastEngine.executionContext.workspace.executionPath)
+			val executionTraceFileInProject = exeFolder.getFile("execution.trace")
+			val executionTraceFile = executionTraceFileInProject.location.toFile
+			val inputSuffix = if (inputModel != null && inputModel != "") {
+					"_" + inputModel
+				} else {
+					""
+				}
+			val executionTraceTargetFile = new File(tracingCaseOutputFolder, modelFile.name + inputSuffix + ".trace")
+			Files.copy(executionTraceFile.toPath, executionTraceTargetFile.toPath)
+		}
+
+		// Destroy engine
+		lastEngine.dispose
+		return time
+
+	}
+
 	@Test
 	def void test() {
 
 		val job = new Job(testCaseName) {
+
 			override protected run(IProgressMonitor m) {
 
 				try {
@@ -96,27 +174,27 @@ class BenchmarkPhase1 {
 						languageOutputFolder.mkdir
 
 					// Create trace metamodel output folder (if any)
-					val tracingCaseOutputFolder = if (tracingCase.folderName != null && tracingCase.folderName != "") {
-							new File(languageOutputFolder, tracingCase.folderName)
-						} else {
-							null
-						}
+					tracingCaseOutputFolder = if (tracingCase.createsTrace) {
+						new File(languageOutputFolder, tracingCase.simpleName)
+					} else {
+						null
+					}
 
-					val csvLine = new CSVLine
-					csvLine.inputName = inputModel
-					csvLine.languageName = language.folderName
-					csvLine.modelName = model
-					csvLine.traceMetamodel = tracingCase.folderName
+					line = new CSVLine
+					line.inputName = inputModel
+					line.languageName = language.folderName
+					line.modelName = model
+					line.traceMetamodel = tracingCase.simpleName
 
-					// Copy model file
-					val File modelFile = new File(languageModelFolder, model)
+					// Copy model file in project and in output 
+					modelFile = new File(languageModelFolder, model)
 					val modelFileInProject = eclipseProject.getFile(modelFile.name)
 					if (!modelFileInProject.exists)
 						modelFileInProject.create(new FileInputStream(modelFile), true, m);
-					val URI modelURI = URI.createPlatformResourceURI(modelFileInProject.fullPath.toString, true)
+					modelURI = URI.createPlatformResourceURI(modelFileInProject.fullPath.toString, true)
 
-					// Copy input model file
-					var inputModelURIString = ""
+					// Copy input model file in project and in output
+					inputModelURIString = ""
 					if (inputModel != null && inputModel != "") {
 						val File inputModelFile = new File(languageModelFolder, inputModel)
 						val inputModelFileInProject = eclipseProject.getFile(inputModelFile.name)
@@ -126,71 +204,26 @@ class BenchmarkPhase1 {
 							true)
 						inputModelURIString = inputModelURI.toString
 					}
-
-					// Create engine parameterized with inputs
-					val XMOFExecutionEngine engine = new XMOFExecutionEngine();
-					val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI, inputModelURIString)
-					val executioncontext = new BenchmarkExecutionModelContext(runConf);
-					executioncontext.initializeResourceModel();
-					tracingCase.configureEngineForTracing(engine, executioncontext)
-					engine.initialize(executioncontext);
-
-					// Execution
-					val timeStart = System.nanoTime
-					engine.start
-					engine.joinThread
-					val timeEnd = System.nanoTime
-					csvLine.timeExe = timeEnd - timeStart
-
-					// Clean command stack
-					val rs = executioncontext.resourceModel.resourceSet
-					val ed = TransactionUtil.getEditingDomain(rs)
-					ed.commandStack.flush
-
-					// Remove engine(s) from registry
-					val registry = Activator.^default.gemocRunningEngineRegistry
-					for (engineName : registry.runningEngines.keySet)
-						registry.unregisterEngine(engineName)
-
-					// Clean resourceSet
-					clearResourceSet(rs)
-
-					// If any trace created
-					if (tracingCaseOutputFolder != null) {
-
-						// Read trace
-						csvLine.traceNbStates = tracingCase.numberOfStates
-
-						// Dump memory and compute memory usage of the trace
-						val heapFolder = tmpFolderCreator.newFolder
-						val heap = new File(heapFolder, model + "_" + tracingCase.folderName)
-						MemoryAnalyzer.dumpHeap(heap)
-						csvLine.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
-
-						// Create trace folder
-						if (!tracingCaseOutputFolder.exists)
-							tracingCaseOutputFolder.mkdir
-
-						// Copy trace in trace folder
-						val exeFolder = ResourcesPlugin.getWorkspace().getRoot().getFolder(
-							engine.executionContext.workspace.executionPath)
-						val executionTraceFileInProject = exeFolder.getFile("execution.trace")
-						val executionTraceFile = executionTraceFileInProject.location.toFile
-						val inputSuffix = if (inputModel != null && inputModel != "") {
-								"_" + inputModel
-							} else {
-								""
-							}
-						val executionTraceTargetFile = new File(tracingCaseOutputFolder,
-							modelFile.name + inputSuffix + ".trace")
-						Files.copy(executionTraceFile.toPath, executionTraceTargetFile.toPath)
+					// TODO copy output
+					// TODO copy other models referenced by them
+					
+										
+					// Warmups
+					for (i : 0 ..< WARMUPS) {
+						execute(false)
 					}
 
-					// Destroy engine
-					engine.dispose
+					// Real executions
+					var long sum = 0
+					for (i : 0 ..< NBMEASURES) {
+						val time = execute(true)
+						sum = sum + time
+					}
+
+					line.timeExe = sum / NBMEASURES
 
 					// Store result in CSV
-					outputCSVWriter.println(csvLine.toString)
+					outputCSVWriter.println(line.toString)
 
 					// Done 
 					return Status.OK_STATUS
@@ -251,7 +284,7 @@ class BenchmarkPhase1 {
 	@AfterClass
 	def static void closeCSV() {
 		outputCSVWriter.close
-		EclipseTestUtil.waitForJobsThenWindowClosed
+		EclipseTestUtil.waitForJobs
 	}
 
 	@Parameters(name="{0}")
@@ -280,7 +313,13 @@ class BenchmarkPhase1 {
 						val testCaseName = testCaseNameElements.join(",")
 
 						// Creating test case input data
-						val Object[] testCaseData = #[testCaseName, language, tracingCase, model, inputModel];
+						val Object[] testCaseData = #[
+							testCaseName,
+							language,
+							tracingCase,
+							model,
+							inputModel
+						];
 						data.add(testCaseData)
 
 					}

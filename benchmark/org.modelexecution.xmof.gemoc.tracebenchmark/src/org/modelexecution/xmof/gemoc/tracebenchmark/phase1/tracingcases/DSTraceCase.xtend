@@ -13,6 +13,11 @@ class DSTraceCase implements BenchmarkTracingCase {
 	protected var AbstractTraceAddon traceAddon
 
 	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
+		if (engine.executionContext != null && engine.executionContext.executionPlatform != null) {
+			for (addon : engine.executionContext.executionPlatform.engineAddons) {
+				engine.executionContext.executionPlatform.removeEngineAddon(addon)
+			}
+		}
 		this.traceAddon = language.fullTraceAddon
 		context.executionPlatform.addEngineAddon(traceAddon)
 	}
@@ -70,12 +75,17 @@ class DSTraceCase implements BenchmarkTracingCase {
 		this.language = language
 	}
 
-	override getFolderName() {
+	override getSimpleName() {
 		"ds_traces"
 	}
 
 	override getNumberOfStates() {
 		traceAddon.traceExplorer.statesTraceLength
+
+	}
+
+	override createsTrace() {
+		true
 	}
 
 }

@@ -13,9 +13,11 @@ interface BenchmarkTracingCase {
 
 	def void setLanguage(BenchmarkLanguage language)
 
-	def String getFolderName()
+	def String getSimpleName()
 
 	def int getNumberOfStates()
+
+	def boolean createsTrace()
 
 }
 
@@ -33,12 +35,16 @@ class NoTraceCase implements BenchmarkTracingCase {
 		// Nothing to do
 	}
 
-	override getFolderName() {
-		""
+	override getSimpleName() {
+		"no_trace"
 	}
 
 	override getNumberOfStates() {
 		0
+	}
+
+	override createsTrace() {
+		false
 	}
 
 }
@@ -58,12 +64,16 @@ class GenericTraceCase implements BenchmarkTracingCase {
 		// Nothing to do
 	}
 
-	override getFolderName() {
+	override getSimpleName() {
 		"generic_traces"
 	}
 
 	override getNumberOfStates() {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+
+	override createsTrace() {
+		true
 	}
 
 }
@@ -74,10 +84,15 @@ class GenericTraceCase implements BenchmarkTracingCase {
 class PartialDSCase extends DSTraceCase {
 
 	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
+		if (engine.executionContext != null && engine.executionContext.executionPlatform != null) {
+			for (addon : engine.executionContext.executionPlatform.engineAddons) {
+				engine.executionContext.executionPlatform.removeEngineAddon(addon)
+			}
+		}
 		engine.executionContext.executionPlatform.addEngineAddon(language.partialTraceAddon)
 	}
 
-	override getFolderName() {
+	override getSimpleName() {
 		"partial_ds_traces"
 	}
 
