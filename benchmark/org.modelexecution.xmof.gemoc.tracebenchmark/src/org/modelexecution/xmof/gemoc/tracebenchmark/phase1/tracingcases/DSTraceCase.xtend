@@ -24,7 +24,7 @@ class DSTraceCase implements BenchmarkTracingCase {
 
 	static val String queryStart = '''select a.@retainedHeapSize from ".*'''
 	static val String queryEndSimple = '''.*" a'''
-	static val String queryEndUtil = '''".*(PackageImpl|FactoryImpl|AdapterFactory|Switch)$" a'''
+	static val String queryEndUtil = '''.*(PackageImpl|FactoryImpl|AdapterFactory|Switch)$" a'''
 
 	static val String msePackageName = "org.gemoc.executionframework.engine.mse"
 
