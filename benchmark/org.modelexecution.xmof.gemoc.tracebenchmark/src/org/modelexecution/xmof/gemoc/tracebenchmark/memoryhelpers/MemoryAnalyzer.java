@@ -50,7 +50,7 @@ public class MemoryAnalyzer {
 		assert (snapshot != null);
 	}
 
-	public QueryResult computeRetainedSizeWithOQLQuery(String query, File dumpFile) {
+	public QueryResult computeRetainedSizeWithOQLQuery(String query, File dumpFile) throws Exception {
 		// We open the dump with Eclipse Memory Analyzer, and obtain a snapshot
 		// object
 		QueryResult res = new QueryResult();
@@ -58,8 +58,9 @@ public class MemoryAnalyzer {
 			IOQLQuery queryObj = SnapshotFactory.createQuery(query);
 			Object result = queryObj.execute(snapshot, new VoidProgressListener());
 
-			//System.out.println("OQL result: " + result);
-			//System.out.println("OQL class: " + result.getClass().getCanonicalName());
+			// System.out.println("OQL result: " + result);
+			// System.out.println("OQL class: " +
+			// result.getClass().getCanonicalName());
 
 			if (result instanceof IOQLQuery.Result) {
 				IResultTable castResult2 = (IResultTable) result;
@@ -75,12 +76,12 @@ public class MemoryAnalyzer {
 			}
 
 		} catch (OQLParseException e) {
-			System.out.println("Error: parsing of the OQL query failed. Line " + e.getLine() + ", Column "
-					+ e.getColumn() + ".");
-			e.printStackTrace();
+			String message = "Error: parsing of the OQL query failed. " + e.getMessage()
+					+ ".";
+			throw new Exception(message, e);
 		} catch (SnapshotException e) {
-			System.err.println("Error while computing memory consumption!");
-			e.printStackTrace();
+			String message = "Error while computing memory consumption! " + e.getMessage();
+			throw new Exception(message, e);
 		}
 		return res;
 	}
@@ -117,29 +118,23 @@ public class MemoryAnalyzer {
 		return sum;
 
 	}
-	
-	
+
 	public static void dumpHeap(File dumpFile) throws SnapshotException {
 
-			HeapDumpProviderRegistry registry = HeapDumpProviderRegistry.instance();
-			IHeapDumpProvider dumpProvider = registry.getHeapDumpProvider("jmapheapdumpprovider").getHeapDumpProvider();
-			List<? extends VmInfo> vms = dumpProvider.getAvailableVMs(progressListener);
-			VmInfo currentVm = null;
-			int pid = Integer.parseInt(ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
-			for (VmInfo vm : vms) {
-				if (vm.getPid() == pid) {
-					currentVm = vm;
-					break;
-				}
+		HeapDumpProviderRegistry registry = HeapDumpProviderRegistry.instance();
+		IHeapDumpProvider dumpProvider = registry.getHeapDumpProvider("jmapheapdumpprovider").getHeapDumpProvider();
+		List<? extends VmInfo> vms = dumpProvider.getAvailableVMs(progressListener);
+		VmInfo currentVm = null;
+		int pid = Integer.parseInt(ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
+		for (VmInfo vm : vms) {
+			if (vm.getPid() == pid) {
+				currentVm = vm;
+				break;
 			}
-						
-			dumpProvider.acquireDump(currentVm, dumpFile, progressListener);
-			
-			
-		
+		}
+
+		dumpProvider.acquireDump(currentVm, dumpFile, progressListener);
 
 	}
-
-
 
 }
