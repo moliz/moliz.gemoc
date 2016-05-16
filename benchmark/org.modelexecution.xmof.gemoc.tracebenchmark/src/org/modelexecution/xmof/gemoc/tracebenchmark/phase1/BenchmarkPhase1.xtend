@@ -87,6 +87,13 @@ class BenchmarkPhase1 {
 		this.testCaseName = testCaseName
 	}
 
+	private def File createTmpFolder() {
+		//return tmpFolderCreator.newFolder
+		//val file = File.createTempFile("yay","")
+		val file = new File("/home/zerwan/tmp/dumps")
+		return file		
+	}
+
 	private def long execute(boolean wait) {
 
 		// Create engine parameterized with inputs
@@ -126,7 +133,7 @@ class BenchmarkPhase1 {
 			line.traceNbStates = tracingCase.numberOfStates
 
 			// Dump memory and compute memory usage of the trace
-			val heapFolder = tmpFolderCreator.newFolder
+			val heapFolder = createTmpFolder
 			val heap = new File(heapFolder, model + "_" + tracingCase.simpleName)
 			MemoryAnalyzer.dumpHeap(heap)
 			line.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
@@ -252,7 +259,7 @@ class BenchmarkPhase1 {
 
 				// Create output folder
 				val Calendar currentDate = Calendar::getInstance();
-				val SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YYYY_hh-mm-ss");
+				val SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YYYY_HH-mm-ss");
 				val String dateNow = formatter.format(currentDate.getTime());
 				outputFolder = new File(outputFolderName + "_" + dateNow)
 				if (!outputFolder.exists)
