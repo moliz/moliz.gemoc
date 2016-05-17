@@ -5,7 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:InputConf="http://www.modelexecution.org/xmof/example/fuml/configuration/input"
     xmlns:KernelConf="http://www.modelexecution.org/xmof/example/fuml/configuration/classes/kernel"
-    xsi:schemaLocation="http://www.modelexecution.org/xmof/example/fuml/configuration/input ../../../../fuml/fuml.xmof#//Input http://www.modelexecution.org/xmof/example/fuml/configuration/classes/kernel ../../../../fuml/fuml.xmof#//Classes/Kernel">
+    xsi:schemaLocation="http://www.modelexecution.org/xmof/example/fuml/configuration/input http://www.modelexecution.org/xmof/example/fuml/configuration#//Input http://www.modelexecution.org/xmof/example/fuml/configuration/classes/kernel http://www.modelexecution.org/xmof/example/fuml/configuration#//Classes/Kernel">
   <parameterValues>
     <parameter_ParameterValue
         href="ExampleBV3.uml#_gs26ILwAEeSgE4xXIji-ww"/>
