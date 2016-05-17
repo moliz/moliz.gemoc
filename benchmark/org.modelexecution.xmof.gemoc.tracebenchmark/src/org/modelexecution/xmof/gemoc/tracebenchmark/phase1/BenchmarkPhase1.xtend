@@ -43,6 +43,7 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.PetriNetLan
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.Fuml
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
@@ -50,23 +51,20 @@ class BenchmarkPhase1 {
 	@Rule
 	public TemporaryFolder tmpFolderCreator = new TemporaryFolder();
 
-	// Input data for all tests
-	static val tracingCases = #{new NoTraceCase, new DSTraceCase}
-	static val languages = #{
-		new PetriNetLanguage(
-			#{"net1.petrinet" -> #[""], "net1bis.petrinet" -> #[""]}
-		)
-//		new Fuml(
-	// #{"testmodel.uml" -> #["test1parameter.xmi"]}
-	// )
-	}
-
 	// Constants
 	static val String modelFolderName = "model"
 	static val String outputFolderName = "output"
 	static val int WARMUPS = 3
 	static val int NBMEASURES = 3
 	static val String projectName = "benchmark-project"
+	static val petriNet = new PetriNetLanguage(
+		#{"net1.petrinet" -> #[""], "net1bis.petrinet" -> #[""]}
+	)
+	static val fuml = new Fuml(#{"testmodel.uml" -> #["test1parameter.xmi"]})
+
+	// Input data for all tests
+	static val tracingCases = #{new NoTraceCase, new DSTraceCase}
+	static val languages = #{fuml}
 
 	// Common to all tests (used by @BeforeClass and @AfterClass)
 	static var IProject eclipseProject
@@ -250,8 +248,7 @@ class BenchmarkPhase1 {
 					// Create model input URI
 					inputModelURIString = if (inputModel != null && inputModel != "") {
 						val inputFileInProject = modelFolderInWS.getFolder(language.folderName).getFile(inputModel)
-						val inputModelURI = URI.createPlatformResourceURI(inputFileInProject.fullPath.toString, true)
-						inputModelURI.toString
+						inputFileInProject.fullPath.toString
 					} else {
 						""
 					}
