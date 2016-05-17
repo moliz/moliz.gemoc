@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat
 import java.util.ArrayList
 import java.util.Calendar
 import java.util.Collection
+import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IProject
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.IProgressMonitor
@@ -36,6 +37,11 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.PetriNetLan
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.emf.transaction.TransactionalEditingDomain
+import org.eclipse.emf.common.command.Command
+import java.nio.file.FileAlreadyExistsException
+import java.nio.file.StandardCopyOption
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
@@ -76,6 +82,7 @@ class BenchmarkPhase1 {
 	var CSVLine line
 	var File tracingCaseOutputFolder
 	var File modelFile
+	var boolean confModelSaved
 
 	// Test case constructor
 	new(String testCaseName, BenchmarkLanguage language, BenchmarkTracingCase tracingCase, String model,
@@ -88,33 +95,64 @@ class BenchmarkPhase1 {
 	}
 
 	private def File createTmpFolder() {
-		//return tmpFolderCreator.newFolder
-		//val file = File.createTempFile("yay","")
-		val file = new File("/home/zerwan/tmp/dumps")
-		return file		
+		return tmpFolderCreator.newFolder
+	// val file = File.createTempFile("yay","")
+	// val file = new File("/home/zerwan/tmp/dumps")
+	// return file
+	}
+
+	private def void copyFromWS(IFile fileInWS, File destination) {
+		val executionTraceFile = fileInWS.location.toFile
+		Files.copy(executionTraceFile.toPath, destination.toPath, StandardCopyOption::REPLACE_EXISTING)
+	}
+
+	private def getExecutionFolder(XMOFExecutionEngine lastEngine) {
+		ResourcesPlugin.getWorkspace().getRoot().getFolder(lastEngine.executionContext.workspace.executionPath)
 	}
 
 	private def long execute(boolean wait) {
 
 		// Create engine parameterized with inputs
-		val XMOFExecutionEngine lastEngine = new XMOFExecutionEngine();
+		val XMOFExecutionEngine engine = new XMOFExecutionEngine();
 		val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI, inputModelURIString)
 		val executioncontext = new BenchmarkExecutionModelContext(runConf);
 		executioncontext.initializeResourceModel();
-		tracingCase.configureEngineForTracing(lastEngine, executioncontext)
-		lastEngine.initialize(executioncontext);
+		tracingCase.configureEngineForTracing(engine, executioncontext)
+		engine.initialize(executioncontext);
 
 		// Execution
 		if (wait)
 			Thread.sleep(500)
 		val timeStart = System.nanoTime
-		lastEngine.start
-		lastEngine.joinThread
+		engine.start
+		engine.joinThread
 		val timeEnd = System.nanoTime
 		val time = timeEnd - timeStart
 
+		// Xmof engine must have replaced the objects of the model resource by conf objects
+		// So if we are finished with the model, we can erase the input model with that
+		// But first we change the URI to keep the original model safe for further executions
+		if (!confModelSaved) {
+			val Resource confModel = executioncontext.resourceModel
+			val formerURI = confModel.URI
+			val newURI = formerURI.appendFileExtension("tmp")
+			val TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(confModel);
+			val Command cmd = new RecordingCommand(editingDomain) {
+				override doExecute() {
+					confModel.URI = newURI
+					confModel.save(null)
+					confModel.URI = formerURI
+				}
+			};
+			editingDomain.getCommandStack().execute(cmd);
+			val confModelFileInProject = eclipseProject.getFile(newURI.lastSegment)
+			val confModelFileInOutput = new File(outputFolder, confModelFileInProject.name.replace(".tmp", ""))
+			copyFromWS(confModelFileInProject, confModelFileInOutput)
+			confModelSaved = true
+		}
+
 		// Clean command stack
-		val rs = lastEngine.executionContext.resourceModel.resourceSet
+		val rs = engine.executionContext.resourceModel.resourceSet
 		val ed = TransactionUtil.getEditingDomain(rs)
 		ed.commandStack.flush
 
@@ -143,21 +181,19 @@ class BenchmarkPhase1 {
 				tracingCaseOutputFolder.mkdir
 
 			// Copy trace in trace folder
-			val exeFolder = ResourcesPlugin.getWorkspace().getRoot().getFolder(
-				lastEngine.executionContext.workspace.executionPath)
-			val executionTraceFileInProject = exeFolder.getFile("execution.trace")
-			val executionTraceFile = executionTraceFileInProject.location.toFile
+			// TODO this is specific to DS traces
+			val executionTraceFileInProject = getExecutionFolder(engine).getFile("execution.trace")
 			val inputSuffix = if (inputModel != null && inputModel != "") {
 					"_" + inputModel
 				} else {
 					""
 				}
 			val executionTraceTargetFile = new File(tracingCaseOutputFolder, modelFile.name + inputSuffix + ".trace")
-			Files.copy(executionTraceFile.toPath, executionTraceTargetFile.toPath)
+			copyFromWS(executionTraceFileInProject, executionTraceTargetFile)
 		}
 
 		// Destroy engine
-		lastEngine.dispose
+		engine.dispose
 		return time
 
 	}
@@ -187,20 +223,23 @@ class BenchmarkPhase1 {
 						null
 					}
 
+					// Prepare csv line
 					line = new CSVLine
 					line.inputName = inputModel
 					line.languageName = language.folderName
 					line.modelName = model
 					line.traceMetamodel = tracingCase.simpleName
+					line.nbWarmups = WARMUPS
+					line.nbMeasurements = NBMEASURES
 
-					// Copy model file in project and in output 
+					// Copy model file in project
 					modelFile = new File(languageModelFolder, model)
 					val modelFileInProject = eclipseProject.getFile(modelFile.name)
 					if (!modelFileInProject.exists)
 						modelFileInProject.create(new FileInputStream(modelFile), true, m);
 					modelURI = URI.createPlatformResourceURI(modelFileInProject.fullPath.toString, true)
 
-					// Copy input model file in project and in output
+					// Copy input model file in project
 					inputModelURIString = ""
 					if (inputModel != null && inputModel != "") {
 						val File inputModelFile = new File(languageModelFolder, inputModel)
@@ -211,10 +250,9 @@ class BenchmarkPhase1 {
 							true)
 						inputModelURIString = inputModelURI.toString
 					}
-					// TODO copy output
-					// TODO copy other models referenced by them
-					
-										
+					// TODO copy input model
+					// TODO serialize and copy the conf model 
+					// TODO copy other models referenced by all these models?
 					// Warmups
 					for (i : 0 ..< WARMUPS) {
 						execute(false)
@@ -222,7 +260,8 @@ class BenchmarkPhase1 {
 
 					// Real executions
 					var long sum = 0
-					for (i : 0 ..< NBMEASURES) {
+					val range = 0 ..< NBMEASURES
+					for (i : range) {
 						val time = execute(true)
 						sum = sum + time
 					}
