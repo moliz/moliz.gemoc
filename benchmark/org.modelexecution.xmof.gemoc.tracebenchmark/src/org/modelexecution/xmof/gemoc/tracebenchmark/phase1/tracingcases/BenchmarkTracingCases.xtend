@@ -18,6 +18,8 @@ interface BenchmarkTracingCase {
 	def int getNumberOfStates()
 
 	def boolean createsTrace()
+	
+	def void saveTrace(String string)
 
 }
 
@@ -45,6 +47,10 @@ class NoTraceCase implements BenchmarkTracingCase {
 
 	override createsTrace() {
 		false
+	}
+	
+	override saveTrace(String string) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 
 }
@@ -75,6 +81,10 @@ class GenericTraceCase implements BenchmarkTracingCase {
 	override createsTrace() {
 		true
 	}
+	
+	override saveTrace(String string) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
 
 }
 
@@ -95,5 +105,6 @@ class PartialDSCase extends DSTraceCase {
 	override getSimpleName() {
 		"partial_ds_traces"
 	}
+
 
 }

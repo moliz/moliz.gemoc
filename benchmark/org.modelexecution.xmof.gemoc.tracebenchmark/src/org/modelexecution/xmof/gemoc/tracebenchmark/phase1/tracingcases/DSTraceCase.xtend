@@ -6,6 +6,7 @@ import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
+import org.eclipse.emf.common.util.URI
 
 class DSTraceCase implements BenchmarkTracingCase {
 
@@ -86,6 +87,11 @@ class DSTraceCase implements BenchmarkTracingCase {
 
 	override createsTrace() {
 		true
+	}
+
+	override saveTrace(String pathInWS) {
+		val uri = URI.createPlatformResourceURI(pathInWS, true)
+		traceAddon.traceConstructor.save(uri)
 	}
 
 }
