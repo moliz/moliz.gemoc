@@ -10,6 +10,8 @@ class CSVLine {
 	public Long timeExe = new Long(0)
 	public Integer traceNbStates = 0
 	public Integer traceMemoryFootprint = 0
+	public Integer nbWarmups = 0
+	public Integer nbMeasurements = 0
 
 	def static String getColumnNames() {
 		val allNames = CSVLine.declaredFields.map[f|f.name]
