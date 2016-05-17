@@ -5,19 +5,25 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.PrintWriter
 import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 import java.text.SimpleDateFormat
 import java.util.ArrayList
 import java.util.Calendar
 import java.util.Collection
 import org.eclipse.core.resources.IFile
+import org.eclipse.core.resources.IFolder
 import org.eclipse.core.resources.IProject
+import org.eclipse.core.resources.IResource
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.runtime.Status
 import org.eclipse.core.runtime.jobs.Job
+import org.eclipse.emf.common.command.Command
 import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.transaction.RecordingCommand
+import org.eclipse.emf.transaction.TransactionalEditingDomain
 import org.eclipse.emf.transaction.util.TransactionUtil
 import org.gemoc.executionframework.engine.Activator
 import org.junit.AfterClass
@@ -37,11 +43,6 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.PetriNetLan
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.emf.transaction.TransactionalEditingDomain
-import org.eclipse.emf.common.command.Command
-import java.nio.file.FileAlreadyExistsException
-import java.nio.file.StandardCopyOption
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
@@ -55,6 +56,9 @@ class BenchmarkPhase1 {
 		new PetriNetLanguage(
 			#{"net1.petrinet" -> #[""], "net1bis.petrinet" -> #[""]}
 		)
+//		new Fuml(
+	// #{"testmodel.uml" -> #["test1parameter.xmi"]}
+	// )
 	}
 
 	// Constants
@@ -62,12 +66,14 @@ class BenchmarkPhase1 {
 	static val String outputFolderName = "output"
 	static val int WARMUPS = 3
 	static val int NBMEASURES = 3
+	static val String projectName = "benchmark-project"
 
 	// Common to all tests (used by @BeforeClass and @AfterClass)
 	static var IProject eclipseProject
 	static var File outputFolder
 	static var File outputCSV
 	static var PrintWriter outputCSVWriter
+	static var IFolder modelFolderInWS
 
 	// Parameters specific to each test
 	val BenchmarkLanguage language
@@ -81,7 +87,6 @@ class BenchmarkPhase1 {
 	var String inputModelURIString
 	var CSVLine line
 	var File tracingCaseOutputFolder
-	var File modelFile
 	var boolean confModelSaved
 
 	// Test case constructor
@@ -103,14 +108,11 @@ class BenchmarkPhase1 {
 
 	private def void copyFromWS(IFile fileInWS, File destination) {
 		val executionTraceFile = fileInWS.location.toFile
+		destination.parentFile.mkdirs
 		Files.copy(executionTraceFile.toPath, destination.toPath, StandardCopyOption::REPLACE_EXISTING)
 	}
 
-	private def getExecutionFolder(XMOFExecutionEngine lastEngine) {
-		ResourcesPlugin.getWorkspace().getRoot().getFolder(lastEngine.executionContext.workspace.executionPath)
-	}
-
-	private def long execute(boolean wait) {
+	private def long execute(boolean wait, IProgressMonitor m) {
 
 		// Create engine parameterized with inputs
 		val XMOFExecutionEngine engine = new XMOFExecutionEngine();
@@ -131,7 +133,7 @@ class BenchmarkPhase1 {
 
 		// Xmof engine must have replaced the objects of the model resource by conf objects
 		// So if we are finished with the model, we can erase the input model with that
-		// But first we change the URI to keep the original model safe for further executions
+		// But we save to a separate file to keep the original model safe for further executions
 		if (!confModelSaved) {
 			val Resource confModel = executioncontext.resourceModel
 			val formerURI = confModel.URI
@@ -145,8 +147,11 @@ class BenchmarkPhase1 {
 				}
 			};
 			editingDomain.getCommandStack().execute(cmd);
-			val confModelFileInProject = eclipseProject.getFile(newURI.lastSegment)
-			val confModelFileInOutput = new File(outputFolder, confModelFileInProject.name.replace(".tmp", ""))
+			val confModelFileInProject = eclipseProject.getFile(
+				newURI.segmentsList.subList(2, newURI.segmentsList.size).join("/"))
+			val modelFolderInOutput = new File(outputFolder, modelFolderName)
+			val languageFolderInOutput = new File(modelFolderInOutput, language.folderName)
+			val confModelFileInOutput = new File(languageFolderInOutput, model)
 			copyFromWS(confModelFileInProject, confModelFileInOutput)
 			confModelSaved = true
 		}
@@ -180,16 +185,26 @@ class BenchmarkPhase1 {
 			if (!tracingCaseOutputFolder.exists)
 				tracingCaseOutputFolder.mkdir
 
-			// Copy trace in trace folder
-			// TODO this is specific to DS traces
-			val executionTraceFileInProject = getExecutionFolder(engine).getFile("execution.trace")
-			val inputSuffix = if (inputModel != null && inputModel != "") {
+			// Serialize trace with same structure (output/language/tracemetamodel)
+			val languageFolderInProject = eclipseProject.getFolder(language.folderName)
+			if (!languageFolderInProject.exists)
+				languageFolderInProject.create(true, true, m)
+			val traceFolderInProject = languageFolderInProject.getFolder(tracingCase.simpleName)
+			if (!traceFolderInProject.exists)
+				traceFolderInProject.create(true, true, m)
+			val inputSuffix = if (inputModel != null && inputModel != "")
 					"_" + inputModel
-				} else {
+				else
 					""
-				}
-			val executionTraceTargetFile = new File(tracingCaseOutputFolder, modelFile.name + inputSuffix + ".trace")
-			copyFromWS(executionTraceFileInProject, executionTraceTargetFile)
+			val traceFileName = modelURI.lastSegment + inputSuffix + ".trace"
+			val traceFileInProject = traceFolderInProject.getFile(traceFileName)
+			val path = traceFileInProject.fullPath.toString
+			tracingCase.saveTrace(path)
+
+			// Copy trace in output folder
+			val executionTraceTargetFile = new File(tracingCaseOutputFolder,
+				modelURI.lastSegment + inputSuffix + ".trace")
+			copyFromWS(traceFileInProject, executionTraceTargetFile)
 		}
 
 		// Destroy engine
@@ -206,10 +221,6 @@ class BenchmarkPhase1 {
 			override protected run(IProgressMonitor m) {
 
 				try {
-
-					val modelFolder = new File(modelFolderName);
-
-					val languageModelFolder = new File(modelFolder, language.folderName)
 
 					// Create language output folder
 					val languageOutputFolder = new File(outputFolder, language.folderName)
@@ -232,37 +243,29 @@ class BenchmarkPhase1 {
 					line.nbWarmups = WARMUPS
 					line.nbMeasurements = NBMEASURES
 
-					// Copy model file in project
-					modelFile = new File(languageModelFolder, model)
-					val modelFileInProject = eclipseProject.getFile(modelFile.name)
-					if (!modelFileInProject.exists)
-						modelFileInProject.create(new FileInputStream(modelFile), true, m);
+					// Create model URI
+					val modelFileInProject = modelFolderInWS.getFolder(language.folderName).getFile(model)
 					modelURI = URI.createPlatformResourceURI(modelFileInProject.fullPath.toString, true)
 
-					// Copy input model file in project
-					inputModelURIString = ""
-					if (inputModel != null && inputModel != "") {
-						val File inputModelFile = new File(languageModelFolder, inputModel)
-						val inputModelFileInProject = eclipseProject.getFile(inputModelFile.name)
-						if (!inputModelFileInProject.exists)
-							inputModelFileInProject.create(new FileInputStream(inputModelFile), true, m);
-						val URI inputModelURI = URI.createPlatformResourceURI(inputModelFileInProject.fullPath.toString,
-							true)
-						inputModelURIString = inputModelURI.toString
+					// Create model input URI
+					inputModelURIString = if (inputModel != null && inputModel != "") {
+						val inputFileInProject = modelFolderInWS.getFolder(language.folderName).getFile(inputModel)
+						val inputModelURI = URI.createPlatformResourceURI(inputFileInProject.fullPath.toString, true)
+						inputModelURI.toString
+					} else {
+						""
 					}
-					// TODO copy input model
-					// TODO serialize and copy the conf model 
-					// TODO copy other models referenced by all these models?
+
 					// Warmups
 					for (i : 0 ..< WARMUPS) {
-						execute(false)
+						execute(false, m)
 					}
 
 					// Real executions
 					var long sum = 0
 					val range = 0 ..< NBMEASURES
 					for (i : range) {
-						val time = execute(true)
+						val time = execute(true, m)
 						sum = sum + time
 					}
 
@@ -290,13 +293,40 @@ class BenchmarkPhase1 {
 
 	}
 
+	private static def void copyFileInWS(File file, IFolder destination, IProgressMonitor m) {
+		val fileInProject = destination.getFile(file.name)
+		if (!fileInProject.exists)
+			fileInProject.create(new FileInputStream(file), true, m);
+	}
+
+	private static def IFolder copyFolderInWS(File folder, IResource destination, IProgressMonitor m) {
+		val folderCopy = if (destination instanceof IProject) {
+				destination.getFolder(folder.name)
+			} else if (destination instanceof IFolder) {
+				destination.getFolder(folder.name)
+			} else
+				null
+
+		if (!folderCopy.exists)
+			folderCopy.create(true, true, m)
+		for (File f : folder.listFiles) {
+			if (f.isFile) {
+				copyFileInWS(f, folderCopy, m)
+			} else if (f.isDirectory) {
+				copyFolderInWS(f, folderCopy, m)
+			}
+		}
+		return folderCopy
+	}
+
 	@BeforeClass
 	def static void prepareEclipseProject() {
 
 		val job = new Job("Preparation of the eclipse project") {
+
 			override protected run(IProgressMonitor m) {
 
-				// Create output folder
+				// Create output folder in test project
 				val Calendar currentDate = Calendar::getInstance();
 				val SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YYYY_HH-mm-ss");
 				val String dateNow = formatter.format(currentDate.getTime());
@@ -304,15 +334,19 @@ class BenchmarkPhase1 {
 				if (!outputFolder.exists)
 					outputFolder.mkdir
 
-				// Prepare CSV file
+				// Prepare CSV file in output folder
 				outputCSV = new File(outputFolder, "results.csv")
 				outputCSVWriter = new PrintWriter(outputCSV)
 				outputCSVWriter.println(CSVLine::getColumnNames)
 
-				// Create eclipse project
-				eclipseProject = ResourcesPlugin::getWorkspace().getRoot().getProject("benchmark-project");
+				// Create eclipse project in test WS
+				eclipseProject = ResourcesPlugin::getWorkspace().getRoot().getProject(projectName);
 				eclipseProject.create(m)
 				eclipseProject.open(m)
+
+				// Copy all the models in the test WS
+				val modelFolder = new File(modelFolderName);
+				modelFolderInWS = copyFolderInWS(modelFolder, eclipseProject, m)
 
 				return Status.OK_STATUS
 			}
