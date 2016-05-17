@@ -2,9 +2,27 @@ package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages
 
 import fr.inria.diverse.trace.gemoc.traceaddon.AbstractTraceAddon
 import java.util.List
-import java.util.Set
+import java.util.Map
 
-interface BenchmarkLanguage {
+abstract class BenchmarkLanguage {
+
+	val Map<String, List<String>> inputDataMap
+
+	new(Map<String, List<String>> inputModels) {
+		inputDataMap = inputModels
+	}
+
+	def getModels() {
+		return inputDataMap.keySet
+	}
+
+	def getInputModelsFor(String model) {
+		return inputDataMap.get(model)
+	}
+
+	def getJavaTraceRootName() {
+		"SpecificTraceImpl"
+	}
 
 	def String getFolderName()
 
@@ -14,13 +32,6 @@ interface BenchmarkLanguage {
 
 	def AbstractTraceAddon getPartialTraceAddon()
 
-	def Set<String> getModels()
-
-	def List<String> getInputModelsFor(String model)
-	
-	def String getJavaTraceRootName()
-	
 	def String getJavaTracePackageName()
-	
-} 
 
+}
