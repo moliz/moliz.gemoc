@@ -1,0 +1,1506 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.fuml.trace/src" modelPluginID="org.modelexecution.xmof.examples.fuml.trace" modelName="UmlTrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>file:/tmp/diverse328663879981401186tracemmgeneration/umlTrace.ecore</foreignModel>
+  <genPackages prefix="UmlTrace" disposableProviderFactory="true">
+    <ecorePackage href="umlTrace.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="umlTrace.ecore#//SpecificTrace"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/basicBehaviors_tracedParameterValues"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/fumlConfiguration_tracedElementConfigurations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/input_tracedInputParameterValuess"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityEdgeInstances"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityExecutions"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityNodeActivationGroups"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedForkedTokens"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedObjectTokens"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedOffers"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedTokens"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/kernel_tracedBooleanValues"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/kernel_tracedIntegerValues"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/kernel_tracedObjects"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/kernel_tracedReferences"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/loci_tracedExecutionEnvironments"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/loci_tracedExecutionFactorys"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/loci_tracedExecutors"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/loci_tracedLocuss"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/loci_tracedSemanticVisitors"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/statesTrace"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/uml_tracedClasss"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/uml_tracedParameters"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/uml_tracedPrimitiveTypes"/>
+      </genFeatures>
+    </genClasses>
+    <nestedGenPackages prefix="Steps" disposableProviderFactory="true">
+      <ecorePackage href="umlTrace.ecore#//Steps"/>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//Steps/RootImplicitStep"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="umlTrace.ecore#//Steps/SpecificStep"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//Steps/SpecificStep/endingState"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//Steps/SpecificStep/startingState"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="States" disposableProviderFactory="true">
+      <ecorePackage href="umlTrace.ecore#//States"/>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActionActivation_firing_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/ActionActivation_firing_Value/firing"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActionActivation_firing_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActionActivation_firing_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActionActivation_firing_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActionActivation_pinActivations_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActionActivation_pinActivations_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActionActivation_pinActivations_Value/pinActivations"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActionActivation_pinActivations_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActionActivation_pinActivations_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityEdgeInstance_edge_ActivityEdgeInstance_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_edge_ActivityEdgeInstance_Value/edge_ActivityEdgeInstance"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_edge_ActivityEdgeInstance_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_edge_ActivityEdgeInstance_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityEdgeInstance_edge_ActivityEdgeInstance_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityEdgeInstance_group_ActivityEdgeInstance_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_group_ActivityEdgeInstance_Value/group_ActivityEdgeInstance"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_group_ActivityEdgeInstance_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_group_ActivityEdgeInstance_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityEdgeInstance_group_ActivityEdgeInstance_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityEdgeInstance_offers_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_offers_Value/offers"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_offers_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_offers_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityEdgeInstance_offers_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityEdgeInstance_source_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_source_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_source_Value/source"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_source_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityEdgeInstance_source_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityEdgeInstance_target_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_target_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_target_Value/states"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityEdgeInstance_target_Value/target"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityEdgeInstance_target_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityExecution_activationGroup_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityExecution_activationGroup_Value/activationGroup"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityExecution_activationGroup_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityExecution_activationGroup_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityExecution_activationGroup_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivationGroup_activityExecution_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivationGroup_activityExecution_Value/activityExecution"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivationGroup_activityExecution_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivationGroup_activityExecution_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivationGroup_activityExecution_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivationGroup_edgeInstances_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivationGroup_edgeInstances_Value/edgeInstances"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivationGroup_edgeInstances_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivationGroup_edgeInstances_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivationGroup_edgeInstances_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivationGroup_nodeActivations_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivationGroup_nodeActivations_Value/nodeActivations"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivationGroup_nodeActivations_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivationGroup_nodeActivations_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivationGroup_nodeActivations_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivation_group_ActivityNodeActivation_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_group_ActivityNodeActivation_Value/group_ActivityNodeActivation"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_group_ActivityNodeActivation_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_group_ActivityNodeActivation_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivation_group_ActivityNodeActivation_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivation_heldTokens_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_heldTokens_Value/heldTokens"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_heldTokens_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_heldTokens_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivation_heldTokens_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivation_incomingEdges_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_incomingEdges_Value/incomingEdges"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_incomingEdges_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_incomingEdges_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivation_incomingEdges_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivation_isRunning_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/ActivityNodeActivation_isRunning_Value/isRunning"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_isRunning_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_isRunning_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivation_isRunning_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivation_node_ActivityNodeActivation_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_node_ActivityNodeActivation_Value/node_ActivityNodeActivation"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_node_ActivityNodeActivation_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_node_ActivityNodeActivation_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivation_node_ActivityNodeActivation_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivation_outgoingEdges_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_outgoingEdges_Value/outgoingEdges"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_outgoingEdges_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_outgoingEdges_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivation_outgoingEdges_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ActivityNodeActivation_running_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_running_Value/parent"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/ActivityNodeActivation_running_Value/running"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ActivityNodeActivation_running_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ActivityNodeActivation_running_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/BooleanValue_value_BooleanValue_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/BooleanValue_value_BooleanValue_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/BooleanValue_value_BooleanValue_Value/states"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/BooleanValue_value_BooleanValue_Value/value_BooleanValue"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/BooleanValue_value_BooleanValue_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/CallActionActivation_callExecutions_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/CallActionActivation_callExecutions_Value/callExecutions"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/CallActionActivation_callExecutions_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/CallActionActivation_callExecutions_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/CallActionActivation_callExecutions_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/CompoundValue_featureValues_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/CompoundValue_featureValues_Value/featureValues"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/CompoundValue_featureValues_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/CompoundValue_featureValues_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/CompoundValue_featureValues_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ElementConfiguration_semanticVisitor_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ElementConfiguration_semanticVisitor_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ElementConfiguration_semanticVisitor_Value/semanticVisitor"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ElementConfiguration_semanticVisitor_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ElementConfiguration_semanticVisitor_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Evaluation_locus_Evaluation_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Evaluation_locus_Evaluation_Value/locus_Evaluation"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Evaluation_locus_Evaluation_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Evaluation_locus_Evaluation_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Evaluation_locus_Evaluation_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Evaluation_specification_Evaluation_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Evaluation_specification_Evaluation_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Evaluation_specification_Evaluation_Value/specification_Evaluation"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Evaluation_specification_Evaluation_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Evaluation_specification_Evaluation_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ExecutionEnvironment_locus_ExecutionEnvironment_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionEnvironment_locus_ExecutionEnvironment_Value/locus_ExecutionEnvironment"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionEnvironment_locus_ExecutionEnvironment_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionEnvironment_locus_ExecutionEnvironment_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ExecutionEnvironment_locus_ExecutionEnvironment_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ExecutionFactory_builtInTypes_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionFactory_builtInTypes_Value/builtInTypes"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionFactory_builtInTypes_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionFactory_builtInTypes_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ExecutionFactory_builtInTypes_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ExecutionFactory_locus_ExecutionFactory_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionFactory_locus_ExecutionFactory_Value/locus_ExecutionFactory"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionFactory_locus_ExecutionFactory_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionFactory_locus_ExecutionFactory_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ExecutionFactory_locus_ExecutionFactory_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ExecutionFactory_primitiveBehaviorPrototypes_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionFactory_primitiveBehaviorPrototypes_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionFactory_primitiveBehaviorPrototypes_Value/primitiveBehaviorPrototypes"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExecutionFactory_primitiveBehaviorPrototypes_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ExecutionFactory_primitiveBehaviorPrototypes_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Execution_context_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Execution_context_Value/context"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Execution_context_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Execution_context_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Execution_context_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Execution_parameterValues_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Execution_parameterValues_Value/parameterValues"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Execution_parameterValues_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Execution_parameterValues_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Execution_parameterValues_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Executor_locus_Executor_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Executor_locus_Executor_Value/locus_Executor"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Executor_locus_Executor_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Executor_locus_Executor_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Executor_locus_Executor_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ExtensionalValue_locus_ExtensionalValue_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExtensionalValue_locus_ExtensionalValue_Value/locus_ExtensionalValue"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExtensionalValue_locus_ExtensionalValue_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ExtensionalValue_locus_ExtensionalValue_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ExtensionalValue_locus_ExtensionalValue_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/FeatureValue_feature_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/FeatureValue_feature_Value/feature"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/FeatureValue_feature_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/FeatureValue_feature_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/FeatureValue_feature_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/FeatureValue_position_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/FeatureValue_position_Value/parent"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/FeatureValue_position_Value/position"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/FeatureValue_position_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/FeatureValue_position_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/FeatureValue_values_FeatureValue_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/FeatureValue_values_FeatureValue_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/FeatureValue_values_FeatureValue_Value/states"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/FeatureValue_values_FeatureValue_Value/values_FeatureValue"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/FeatureValue_values_FeatureValue_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ForkedToken_baseTokenIsWithdrawn_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/ForkedToken_baseTokenIsWithdrawn_Value/baseTokenIsWithdrawn"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ForkedToken_baseTokenIsWithdrawn_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ForkedToken_baseTokenIsWithdrawn_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ForkedToken_baseTokenIsWithdrawn_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ForkedToken_baseToken_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ForkedToken_baseToken_Value/baseToken"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ForkedToken_baseToken_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ForkedToken_baseToken_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ForkedToken_baseToken_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ForkedToken_remainingOffersCount_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ForkedToken_remainingOffersCount_Value/parent"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/ForkedToken_remainingOffersCount_Value/remainingOffersCount"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ForkedToken_remainingOffersCount_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ForkedToken_remainingOffersCount_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/InputParameterValues_name_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/InputParameterValues_name_Value/name"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/InputParameterValues_name_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/InputParameterValues_name_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/InputParameterValues_name_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/InputParameterValues_parameterValues_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/InputParameterValues_parameterValues_Value/parameterValues"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/InputParameterValues_parameterValues_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/InputParameterValues_parameterValues_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/InputParameterValues_parameterValues_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/IntegerValue_value_IntegerValue_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/IntegerValue_value_IntegerValue_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/IntegerValue_value_IntegerValue_Value/states"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/IntegerValue_value_IntegerValue_Value/value_IntegerValue"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/IntegerValue_value_IntegerValue_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Locus_executor_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Locus_executor_Value/executor"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Locus_executor_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Locus_executor_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Locus_executor_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Locus_extensionalValues_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Locus_extensionalValues_Value/extensionalValues"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Locus_extensionalValues_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Locus_extensionalValues_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Locus_extensionalValues_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Locus_factory_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Locus_factory_Value/factory"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Locus_factory_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Locus_factory_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Locus_factory_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ObjectNodeActivation_offeredTokenCount_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/ObjectNodeActivation_offeredTokenCount_Value/offeredTokenCount"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ObjectNodeActivation_offeredTokenCount_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ObjectNodeActivation_offeredTokenCount_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ObjectNodeActivation_offeredTokenCount_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ObjectToken_value_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ObjectToken_value_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ObjectToken_value_Value/states"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ObjectToken_value_Value/value"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ObjectToken_value_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Object_types_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Object_types_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Object_types_Value/states"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Object_types_Value/types"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Object_types_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Offer_offeredTokens_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Offer_offeredTokens_Value/offeredTokens"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Offer_offeredTokens_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Offer_offeredTokens_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Offer_offeredTokens_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ParameterValue_parameter_ParameterValue_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ParameterValue_parameter_ParameterValue_Value/parameter_ParameterValue"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ParameterValue_parameter_ParameterValue_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ParameterValue_parameter_ParameterValue_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ParameterValue_parameter_ParameterValue_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/ParameterValue_values_ParameterValue_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ParameterValue_values_ParameterValue_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ParameterValue_values_ParameterValue_Value/states"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/ParameterValue_values_ParameterValue_Value/values_ParameterValue"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/ParameterValue_values_ParameterValue_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/PinActivation_actionActivation_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/PinActivation_actionActivation_Value/actionActivation"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/PinActivation_actionActivation_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/PinActivation_actionActivation_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/PinActivation_actionActivation_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/PinActivation_count_temp_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="umlTrace.ecore#//States/PinActivation_count_temp_Value/count_temp"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/PinActivation_count_temp_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/PinActivation_count_temp_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/PinActivation_count_temp_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/PrimitiveValue_type_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/PrimitiveValue_type_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/PrimitiveValue_type_Value/states"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/PrimitiveValue_type_Value/type"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/PrimitiveValue_type_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Reference_referent_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Reference_referent_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Reference_referent_Value/referent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Reference_referent_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Reference_referent_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value/runtimeModelElement"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/State"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/actionActivation_firing_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/actionActivation_pinActivations_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityEdgeInstance_edge_ActivityEdgeInstance_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityEdgeInstance_group_ActivityEdgeInstance_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityEdgeInstance_offers_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityEdgeInstance_source_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityEdgeInstance_target_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityExecution_activationGroup_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivationGroup_activityExecution_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivationGroup_edgeInstances_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivationGroup_nodeActivations_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivation_group_ActivityNodeActivation_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivation_heldTokens_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivation_incomingEdges_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivation_isRunning_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivation_node_ActivityNodeActivation_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivation_outgoingEdges_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/activityNodeActivation_running_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/booleanValue_value_BooleanValue_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/callActionActivation_callExecutions_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/compoundValue_featureValues_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/elementConfiguration_semanticVisitor_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/endedSteps"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/evaluation_locus_Evaluation_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/evaluation_specification_Evaluation_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/executionEnvironment_locus_ExecutionEnvironment_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/executionFactory_builtInTypes_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/executionFactory_locus_ExecutionFactory_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/executionFactory_primitiveBehaviorPrototypes_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/execution_context_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/execution_parameterValues_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/executor_locus_Executor_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/extensionalValue_locus_ExtensionalValue_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/featureValue_feature_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/featureValue_position_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/featureValue_values_FeatureValue_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/forkedToken_baseTokenIsWithdrawn_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/forkedToken_baseToken_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/forkedToken_remainingOffersCount_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/inputParameterValues_name_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/inputParameterValues_parameterValues_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/integerValue_value_IntegerValue_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/locus_executor_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/locus_extensionalValues_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/locus_factory_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/objectNodeActivation_offeredTokenCount_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/objectToken_value_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/object_types_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/offer_offeredTokens_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/parameterValue_parameter_ParameterValue_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/parameterValue_values_ParameterValue_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/pinActivation_actionActivation_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/pinActivation_count_temp_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/primitiveValue_type_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/reference_referent_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/semanticVisitor_runtimeModelElement_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/startedSteps"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/State/token_holder_Values"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="umlTrace.ecore#//States/Token_holder_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Token_holder_Value/holder"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Token_holder_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Token_holder_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="umlTrace.ecore#//States/Token_holder_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="umlTrace.ecore#//States/Value"/>
+        <genFeatures property="Readonly" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/Value/statesNoOpposite"/>
+        </genFeatures>
+      </genClasses>
+      <nestedGenPackages prefix="FumlConfiguration" disposableProviderFactory="true">
+        <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration"/>
+        <genClasses>
+          <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/TracedElementConfiguration"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/TracedElementConfiguration/originalObject"/>
+          </genFeatures>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/TracedElementConfiguration/semanticVisitorSequence"/>
+          </genFeatures>
+        </genClasses>
+        <nestedGenPackages prefix="Loci" disposableProviderFactory="true">
+          <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Loci"/>
+          <genClasses>
+            <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionEnvironment"/>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionEnvironment/locus_ExecutionEnvironmentSequence"/>
+            </genFeatures>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionEnvironment/originalObject"/>
+            </genFeatures>
+          </genClasses>
+          <genClasses>
+            <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionFactory"/>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionFactory/builtInTypesSequence"/>
+            </genFeatures>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionFactory/locus_ExecutionFactorySequence"/>
+            </genFeatures>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionFactory/originalObject"/>
+            </genFeatures>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionFactory/primitiveBehaviorPrototypesSequence"/>
+            </genFeatures>
+          </genClasses>
+          <genClasses>
+            <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutor"/>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutor/locus_ExecutorSequence"/>
+            </genFeatures>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutor/originalObject"/>
+            </genFeatures>
+          </genClasses>
+          <genClasses>
+            <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedLocus"/>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedLocus/executorSequence"/>
+            </genFeatures>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedLocus/extensionalValuesSequence"/>
+            </genFeatures>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedLocus/factorySequence"/>
+            </genFeatures>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedLocus/originalObject"/>
+            </genFeatures>
+          </genClasses>
+          <genClasses>
+            <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedSemanticVisitor"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedSemanticVisitor/originalObject_SemanticVisitor"/>
+            </genFeatures>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedSemanticVisitor/runtimeModelElementSequence"/>
+            </genFeatures>
+          </genClasses>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Activities" disposableProviderFactory="true">
+          <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Activities"/>
+          <nestedGenPackages prefix="IntermediateActivities" disposableProviderFactory="true">
+            <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities"/>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/edge_ActivityEdgeInstanceSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/group_ActivityEdgeInstanceSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/offersSequence"/>
+              </genFeatures>
+              <genFeatures notify="false" createChild="false" propertySortChoices="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/originalObject"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/sourceSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/targetSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityExecution"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityExecution/activationGroupSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/group_ActivityNodeActivationSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/heldTokensSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/incomingEdgesSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/isRunningSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/node_ActivityNodeActivationSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/outgoingEdgesSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/runningSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup/activityExecutionSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup/edgeInstancesSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup/nodeActivationsSequence"/>
+              </genFeatures>
+              <genFeatures notify="false" createChild="false" propertySortChoices="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup/originalObject"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken/baseTokenIsWithdrawnSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken/baseTokenSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken/remainingOffersCountSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectNodeActivation"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectNodeActivation/offeredTokenCountSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectToken"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectToken/valueSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedOffer"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedOffer/offeredTokensSequence"/>
+              </genFeatures>
+              <genFeatures notify="false" createChild="false" propertySortChoices="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedOffer/originalObject"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken/holderSequence"/>
+              </genFeatures>
+              <genFeatures notify="false" createChild="false" propertySortChoices="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken/originalObject_Token"/>
+              </genFeatures>
+            </genClasses>
+          </nestedGenPackages>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Classes" disposableProviderFactory="true">
+          <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Classes"/>
+          <nestedGenPackages prefix="Kernel" disposableProviderFactory="true">
+            <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel"/>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedBooleanValue"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedBooleanValue/value_BooleanValueSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedCompoundValue"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedCompoundValue/featureValuesSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedEvaluation"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedEvaluation/locus_EvaluationSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedEvaluation/specification_EvaluationSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedExtensionalValue"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedExtensionalValue/locus_ExtensionalValueSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue/featureSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue/positionSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue/values_FeatureValueSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedIntegerValue"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedIntegerValue/value_IntegerValueSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedObject"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedObject/typesSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedPrimitiveValue"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedPrimitiveValue/typeSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedReference"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedReference/referentSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedStructuredValue"/>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedValue"/>
+            </genClasses>
+          </nestedGenPackages>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="CommonBehaviors" disposableProviderFactory="true">
+          <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors"/>
+          <nestedGenPackages prefix="BasicBehaviors" disposableProviderFactory="true">
+            <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors"/>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution/contextSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution/parameterValuesSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedOpaqueBehaviorExecution"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue"/>
+              <genFeatures notify="false" createChild="false" propertySortChoices="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue/originalObject"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue/parameter_ParameterValueSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue/values_ParameterValueSequence"/>
+              </genFeatures>
+            </genClasses>
+          </nestedGenPackages>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Actions" disposableProviderFactory="true">
+          <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Actions"/>
+          <nestedGenPackages prefix="BasicActions" disposableProviderFactory="true">
+            <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions"/>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedActionActivation"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedActionActivation/firingSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedActionActivation/pinActivationsSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedCallActionActivation"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedCallActionActivation/callExecutionsSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedInvocationActionActivation"/>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedPinActivation"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedPinActivation/actionActivationSequence"/>
+              </genFeatures>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedPinActivation/count_tempSequence"/>
+              </genFeatures>
+            </genClasses>
+          </nestedGenPackages>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Input" disposableProviderFactory="true">
+          <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Input"/>
+          <genClasses>
+            <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Input/TracedInputParameterValues"/>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Input/TracedInputParameterValues/nameSequence"/>
+            </genFeatures>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Input/TracedInputParameterValues/originalObject"/>
+            </genFeatures>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Input/TracedInputParameterValues/parameterValuesSequence"/>
+            </genFeatures>
+          </genClasses>
+        </nestedGenPackages>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Uml" disposableProviderFactory="true">
+        <ecorePackage href="umlTrace.ecore#//States/uml"/>
+        <genClasses image="false">
+          <ecoreClass href="umlTrace.ecore#//States/uml/TracedActivityEdge"/>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="umlTrace.ecore#//States/uml/TracedActivityNode"/>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="umlTrace.ecore#//States/uml/TracedClass"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/uml/TracedClass/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="umlTrace.ecore#//States/uml/TracedParameter"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/uml/TracedParameter/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="umlTrace.ecore#//States/uml/TracedPrimitiveType"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/uml/TracedPrimitiveType/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="umlTrace.ecore#//States/uml/TracedStructuralFeature"/>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="umlTrace.ecore#//States/uml/TracedValueSpecification"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Ecore" disposableProviderFactory="true">
+        <ecorePackage href="umlTrace.ecore#//States/ecore"/>
+        <genClasses image="false">
+          <ecoreClass href="umlTrace.ecore#//States/ecore/TracedEModelElement"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+  <usedGenPackages href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.genmodel#//fumlConfiguration"/>
+  <usedGenPackages href="../../org.gemoc.executionframework.engine.mse.model/model/GemocExecutionEngineMSE.genmodel#//mse"/>
+  <usedGenPackages href="../../org.eclipse.uml2.types/model/Types.genmodel#//types"/>
+  <usedGenPackages href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"/>
+</genmodel:GenModel>

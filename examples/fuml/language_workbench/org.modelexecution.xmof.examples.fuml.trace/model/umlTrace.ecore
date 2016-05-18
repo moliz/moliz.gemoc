@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:kernel="http://www.modelexecution.org/xmof/syntax/classes/mykernel" name="umlTrace" nsURI="umlTrace" nsPrefix="umlTrace">
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificTrace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="basicBehaviors_tracedParameterValues" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fumlConfiguration_tracedElementConfigurations" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/TracedElementConfiguration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input_tracedInputParameterValuess" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Input/TracedInputParameterValues" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intermediateActivities_tracedActivityEdgeInstances" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intermediateActivities_tracedActivityExecutions" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityExecution" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intermediateActivities_tracedActivityNodeActivationGroups" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intermediateActivities_tracedActivityNodeActivations" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intermediateActivities_tracedForkedTokens" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intermediateActivities_tracedObjectTokens" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectToken" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intermediateActivities_tracedOffers" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedOffer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intermediateActivities_tracedTokens" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kernel_tracedBooleanValues" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Classes/Kernel/TracedBooleanValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kernel_tracedIntegerValues" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Classes/Kernel/TracedIntegerValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kernel_tracedObjects" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Classes/Kernel/TracedObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kernel_tracedReferences" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Classes/Kernel/TracedReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loci_tracedExecutionEnvironments" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Loci/TracedExecutionEnvironment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loci_tracedExecutionFactorys" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Loci/TracedExecutionFactory" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loci_tracedExecutors" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Loci/TracedExecutor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loci_tracedLocuss" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Loci/TracedLocus" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loci_tracedSemanticVisitors" ordered="false" upperBound="-1" eType="//States/fumlConfiguration/Loci/TracedSemanticVisitor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statesTrace" upperBound="-1" eType="//States/State" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uml_tracedClasss" ordered="false" upperBound="-1" eType="//States/uml/TracedClass" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uml_tracedParameters" ordered="false" upperBound="-1" eType="//States/uml/TracedParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uml_tracedPrimitiveTypes" ordered="false" upperBound="-1" eType="//States/uml/TracedPrimitiveType" containment="true"/>
+    <eGenericSuperTypes>
+      <eTypeArguments>
+        <eTypeArguments eClassifier="//Steps/SpecificStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.gemoc.executionframework.engine.mse.model/model/GemocExecutionEngineMSE.ecore#//SequentialStep"/>
+      </eTypeArguments>
+      <eClassifier xsi:type="ecore:EClass" href="../../org.gemoc.executionframework.engine.mse.model/model/GemocExecutionEngineMSE.ecore#//Trace"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eSubpackages name="Steps" nsURI="umlTrace_Steps" nsPrefix="events">
+    <eClassifiers xsi:type="ecore:EClass" name="RootImplicitStep">
+      <eSuperTypes href="../../org.gemoc.executionframework.engine.mse.model/model/GemocExecutionEngineMSE.ecore#//SmallStep"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SpecificStep" abstract="true" interface="true">
+      <eSuperTypes href="../../org.gemoc.executionframework.engine.mse.model/model/GemocExecutionEngineMSE.ecore#//Step"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="endingState" eType="//States/State" eOpposite="//States/State/endedSteps"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="startingState" lowerBound="1" eType="//States/State" eOpposite="//States/State/startedSteps"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="States" nsURI="umlTrace_States" nsPrefix="tracedclasses">
+    <eClassifiers xsi:type="ecore:EClass" name="ActionActivation_firing_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Actions/BasicActions/ActionActivation/firing"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="firing" lowerBound="1">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Actions/BasicActions/ActionActivation/firing"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Actions/BasicActions/TracedActionActivation" eOpposite="//States/fumlConfiguration/Actions/BasicActions/TracedActionActivation/firingSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/actionActivation_firing_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActionActivation_pinActivations_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Actions/BasicActions/ActionActivation/pinActivations"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Actions/BasicActions/TracedActionActivation" eOpposite="//States/fumlConfiguration/Actions/BasicActions/TracedActionActivation/pinActivationsSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pinActivations" upperBound="-1" eType="//States/fumlConfiguration/Actions/BasicActions/TracedPinActivation">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Actions/BasicActions/ActionActivation/pinActivations"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/actionActivation_pinActivations_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdgeInstance_edge_ActivityEdgeInstance_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/edge_ActivityEdgeInstance"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="edge_ActivityEdgeInstance" eType="//States/uml/TracedActivityEdge">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/edge_ActivityEdgeInstance"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/edge_ActivityEdgeInstanceSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityEdgeInstance_edge_ActivityEdgeInstance_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdgeInstance_group_ActivityEdgeInstance_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/group_ActivityEdgeInstance"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityEdgeInstance" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/group_ActivityEdgeInstance"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/group_ActivityEdgeInstanceSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityEdgeInstance_group_ActivityEdgeInstance_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdgeInstance_offers_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/offers"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="offers" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedOffer">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/offers"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/offersSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityEdgeInstance_offers_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdgeInstance_source_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/source"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/sourceSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/source"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityEdgeInstance_source_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdgeInstance_target_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/target"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/targetSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityEdgeInstance_target_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance/target"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityExecution_activationGroup_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityExecution/activationGroup"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activationGroup" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityExecution/activationGroup"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityExecution" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityExecution/activationGroupSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityExecution_activationGroup_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivationGroup_activityExecution_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivationGroup/activityExecution"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityExecution" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityExecution">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivationGroup/activityExecution"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup/activityExecutionSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivationGroup_activityExecution_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivationGroup_edgeInstances_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivationGroup/edgeInstances"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="edgeInstances" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivationGroup/edgeInstances"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup/edgeInstancesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivationGroup_edgeInstances_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivationGroup_nodeActivations_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivationGroup/nodeActivations"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodeActivations" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivationGroup/nodeActivations"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup/nodeActivationsSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivationGroup_nodeActivations_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivation_group_ActivityNodeActivation_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/group_ActivityNodeActivation"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityNodeActivation" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/group_ActivityNodeActivation"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/group_ActivityNodeActivationSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivation_group_ActivityNodeActivation_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivation_heldTokens_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/heldTokens"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="heldTokens" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/heldTokens"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/heldTokensSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivation_heldTokens_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivation_incomingEdges_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/incomingEdges"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="incomingEdges" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/incomingEdges"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/incomingEdgesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivation_incomingEdges_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivation_isRunning_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/isRunning.1"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRunning" lowerBound="1">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/isRunning.1"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/isRunningSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivation_isRunning_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivation_node_ActivityNodeActivation_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/node_ActivityNodeActivation"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="node_ActivityNodeActivation" eType="//States/uml/TracedActivityNode">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/node_ActivityNodeActivation"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/node_ActivityNodeActivationSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivation_node_ActivityNodeActivation_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivation_outgoingEdges_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/outgoingEdges"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingEdges" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/outgoingEdges"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/outgoingEdgesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivation_outgoingEdges_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNodeActivation_running_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/running"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation/runningSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="running" lowerBound="1">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation/running"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/activityNodeActivation_running_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanValue_value_BooleanValue_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/BooleanValue/value_BooleanValue"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedBooleanValue" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedBooleanValue/value_BooleanValueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/booleanValue_value_BooleanValue_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value_BooleanValue" lowerBound="1">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/BooleanValue/value_BooleanValue"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallActionActivation_callExecutions_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Actions/BasicActions/CallActionActivation/callExecutions"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callExecutions" upperBound="-1" eType="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Actions/BasicActions/CallActionActivation/callExecutions"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Actions/BasicActions/TracedCallActionActivation" eOpposite="//States/fumlConfiguration/Actions/BasicActions/TracedCallActionActivation/callExecutionsSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/callActionActivation_callExecutions_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CompoundValue_featureValues_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/CompoundValue/featureValues"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="featureValues" upperBound="-1" eType="//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/CompoundValue/featureValues"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedCompoundValue" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedCompoundValue/featureValuesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/compoundValue_featureValues_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ElementConfiguration_semanticVisitor_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//ElementConfiguration/semanticVisitor"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/TracedElementConfiguration" eOpposite="//States/fumlConfiguration/TracedElementConfiguration/semanticVisitorSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="semanticVisitor" upperBound="-1" eType="//States/fumlConfiguration/Loci/TracedSemanticVisitor">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//ElementConfiguration/semanticVisitor"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/elementConfiguration_semanticVisitor_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Evaluation_locus_Evaluation_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/Evaluation/locus_Evaluation"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_Evaluation" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedLocus">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/Evaluation/locus_Evaluation"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedEvaluation" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedEvaluation/locus_EvaluationSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/evaluation_locus_Evaluation_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Evaluation_specification_Evaluation_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/Evaluation/specification_Evaluation"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedEvaluation" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedEvaluation/specification_EvaluationSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="specification_Evaluation" lowerBound="1" eType="//States/uml/TracedValueSpecification">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/Evaluation/specification_Evaluation"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/evaluation_specification_Evaluation_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionEnvironment_locus_ExecutionEnvironment_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Loci/ExecutionEnvironment/locus_ExecutionEnvironment"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutionEnvironment" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedLocus">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Loci/ExecutionEnvironment/locus_ExecutionEnvironment"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedExecutionEnvironment" eOpposite="//States/fumlConfiguration/Loci/TracedExecutionEnvironment/locus_ExecutionEnvironmentSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/executionEnvironment_locus_ExecutionEnvironment_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionFactory_builtInTypes_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Loci/ExecutionFactory/builtInTypes"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="builtInTypes" upperBound="-1" eType="//States/uml/TracedPrimitiveType">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Loci/ExecutionFactory/builtInTypes"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedExecutionFactory" eOpposite="//States/fumlConfiguration/Loci/TracedExecutionFactory/builtInTypesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/executionFactory_builtInTypes_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionFactory_locus_ExecutionFactory_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Loci/ExecutionFactory/locus_ExecutionFactory"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutionFactory" eType="//States/fumlConfiguration/Loci/TracedLocus">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Loci/ExecutionFactory/locus_ExecutionFactory"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedExecutionFactory" eOpposite="//States/fumlConfiguration/Loci/TracedExecutionFactory/locus_ExecutionFactorySequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/executionFactory_locus_ExecutionFactory_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionFactory_primitiveBehaviorPrototypes_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Loci/ExecutionFactory/primitiveBehaviorPrototypes"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedExecutionFactory" eOpposite="//States/fumlConfiguration/Loci/TracedExecutionFactory/primitiveBehaviorPrototypesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="primitiveBehaviorPrototypes" upperBound="-1" eType="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedOpaqueBehaviorExecution">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Loci/ExecutionFactory/primitiveBehaviorPrototypes"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/executionFactory_primitiveBehaviorPrototypes_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Execution_context_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/Execution/context"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedObject">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/Execution/context"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution" eOpposite="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution/contextSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/execution_context_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Execution_parameterValues_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/Execution/parameterValues"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValues" upperBound="-1" eType="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/Execution/parameterValues"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution" eOpposite="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution/parameterValuesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/execution_parameterValues_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Executor_locus_Executor_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Loci/Executor/locus_Executor"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_Executor" eType="//States/fumlConfiguration/Loci/TracedLocus">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Loci/Executor/locus_Executor"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedExecutor" eOpposite="//States/fumlConfiguration/Loci/TracedExecutor/locus_ExecutorSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/executor_locus_Executor_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExtensionalValue_locus_ExtensionalValue_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/ExtensionalValue/locus_ExtensionalValue"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExtensionalValue" eType="//States/fumlConfiguration/Loci/TracedLocus">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/ExtensionalValue/locus_ExtensionalValue"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedExtensionalValue" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedExtensionalValue/locus_ExtensionalValueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/extensionalValue_locus_ExtensionalValue_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FeatureValue_feature_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/FeatureValue/feature"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1" eType="//States/uml/TracedStructuralFeature">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/FeatureValue/feature"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue/featureSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/featureValue_feature_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FeatureValue_position_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/FeatureValue/position"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue/positionSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="position">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/FeatureValue/position"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/featureValue_position_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FeatureValue_values_FeatureValue_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/FeatureValue/values_FeatureValue"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedFeatureValue/values_FeatureValueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/featureValue_values_FeatureValue_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="values_FeatureValue" upperBound="-1" eType="//States/fumlConfiguration/Classes/Kernel/TracedValue">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/FeatureValue/values_FeatureValue"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ForkedToken_baseTokenIsWithdrawn_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ForkedToken/baseTokenIsWithdrawn"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseTokenIsWithdrawn" lowerBound="1">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ForkedToken/baseTokenIsWithdrawn"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken/baseTokenIsWithdrawnSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/forkedToken_baseTokenIsWithdrawn_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ForkedToken_baseToken_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ForkedToken/baseToken"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="baseToken" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ForkedToken/baseToken"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken/baseTokenSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/forkedToken_baseToken_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ForkedToken_remainingOffersCount_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ForkedToken/remainingOffersCount"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken/remainingOffersCountSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="remainingOffersCount" lowerBound="1">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ForkedToken/remainingOffersCount"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/forkedToken_remainingOffersCount_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InputParameterValues_name_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Input/InputParameterValues/name"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Input/InputParameterValues/name"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Input/TracedInputParameterValues" eOpposite="//States/fumlConfiguration/Input/TracedInputParameterValues/nameSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/inputParameterValues_name_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InputParameterValues_parameterValues_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Input/InputParameterValues/parameterValues"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValues" upperBound="-1" eType="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Input/InputParameterValues/parameterValues"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Input/TracedInputParameterValues" eOpposite="//States/fumlConfiguration/Input/TracedInputParameterValues/parameterValuesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/inputParameterValues_parameterValues_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntegerValue_value_IntegerValue_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/IntegerValue/value_IntegerValue"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedIntegerValue" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedIntegerValue/value_IntegerValueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/integerValue_value_IntegerValue_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value_IntegerValue" lowerBound="1">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/IntegerValue/value_IntegerValue"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Locus_executor_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Loci/Locus/executor"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executor" eType="//States/fumlConfiguration/Loci/TracedExecutor">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Loci/Locus/executor"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedLocus" eOpposite="//States/fumlConfiguration/Loci/TracedLocus/executorSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/locus_executor_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Locus_extensionalValues_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Loci/Locus/extensionalValues"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extensionalValues" upperBound="-1" eType="//States/fumlConfiguration/Classes/Kernel/TracedExtensionalValue">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Loci/Locus/extensionalValues"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedLocus" eOpposite="//States/fumlConfiguration/Loci/TracedLocus/extensionalValuesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/locus_extensionalValues_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Locus_factory_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Loci/Locus/factory"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="factory" eType="//States/fumlConfiguration/Loci/TracedExecutionFactory">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Loci/Locus/factory"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedLocus" eOpposite="//States/fumlConfiguration/Loci/TracedLocus/factorySequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/locus_factory_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectNodeActivation_offeredTokenCount_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ObjectNodeActivation/offeredTokenCount"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="offeredTokenCount" lowerBound="1">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ObjectNodeActivation/offeredTokenCount"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectNodeActivation" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectNodeActivation/offeredTokenCountSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/objectNodeActivation_offeredTokenCount_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectToken_value_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ObjectToken/value"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectToken" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectToken/valueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/objectToken_value_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="//States/fumlConfiguration/Classes/Kernel/TracedValue">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ObjectToken/value"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Object_types_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/Object/types"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedObject" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedObject/typesSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/object_types_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1" eType="//States/uml/TracedClass">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/Object/types"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Offer_offeredTokens_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/Offer/offeredTokens"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="offeredTokens" upperBound="-1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/Offer/offeredTokens"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedOffer" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedOffer/offeredTokensSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/offer_offeredTokens_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterValue_parameter_ParameterValue_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/ParameterValue/parameter_ParameterValue"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter_ParameterValue" lowerBound="1" eType="//States/uml/TracedParameter">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/ParameterValue/parameter_ParameterValue"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue" eOpposite="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue/parameter_ParameterValueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/parameterValue_parameter_ParameterValue_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterValue_values_ParameterValue_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/ParameterValue/values_ParameterValue"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue" eOpposite="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue/values_ParameterValueSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/parameterValue_values_ParameterValue_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="values_ParameterValue" upperBound="-1" eType="//States/fumlConfiguration/Classes/Kernel/TracedValue">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/ParameterValue/values_ParameterValue"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PinActivation_actionActivation_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Actions/BasicActions/PinActivation/actionActivation"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actionActivation" eType="//States/fumlConfiguration/Actions/BasicActions/TracedActionActivation">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Actions/BasicActions/PinActivation/actionActivation"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Actions/BasicActions/TracedPinActivation" eOpposite="//States/fumlConfiguration/Actions/BasicActions/TracedPinActivation/actionActivationSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/pinActivation_actionActivation_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PinActivation_count_temp_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Actions/BasicActions/PinActivation/count_temp"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="count_temp">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Actions/BasicActions/PinActivation/count_temp"/>
+        </eAnnotations>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Actions/BasicActions/TracedPinActivation" eOpposite="//States/fumlConfiguration/Actions/BasicActions/TracedPinActivation/count_tempSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/pinActivation_count_temp_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveValue_type_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/PrimitiveValue/type"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedPrimitiveValue" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedPrimitiveValue/typeSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/primitiveValue_type_Values"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="//States/uml/TracedPrimitiveType">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/PrimitiveValue/type"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Reference_referent_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Classes/Kernel/Reference/referent"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedReference" eOpposite="//States/fumlConfiguration/Classes/Kernel/TracedReference/referentSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referent" lowerBound="1" eType="//States/fumlConfiguration/Classes/Kernel/TracedObject">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Classes/Kernel/Reference/referent"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/reference_referent_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SemanticVisitor_runtimeModelElement_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Loci/SemanticVisitor/runtimeModelElement"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Loci/TracedSemanticVisitor" eOpposite="//States/fumlConfiguration/Loci/TracedSemanticVisitor/runtimeModelElementSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeModelElement" eType="//States/fumlConfiguration/TracedElementConfiguration">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Loci/SemanticVisitor/runtimeModelElement"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/semanticVisitor_runtimeModelElement_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="State">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actionActivation_firing_Values" ordered="false" upperBound="-1" eType="//States/ActionActivation_firing_Value" eOpposite="//States/ActionActivation_firing_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actionActivation_pinActivations_Values" ordered="false" upperBound="-1" eType="//States/ActionActivation_pinActivations_Value" eOpposite="//States/ActionActivation_pinActivations_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityEdgeInstance_edge_ActivityEdgeInstance_Values" ordered="false" upperBound="-1" eType="//States/ActivityEdgeInstance_edge_ActivityEdgeInstance_Value" eOpposite="//States/ActivityEdgeInstance_edge_ActivityEdgeInstance_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityEdgeInstance_group_ActivityEdgeInstance_Values" ordered="false" upperBound="-1" eType="//States/ActivityEdgeInstance_group_ActivityEdgeInstance_Value" eOpposite="//States/ActivityEdgeInstance_group_ActivityEdgeInstance_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityEdgeInstance_offers_Values" ordered="false" upperBound="-1" eType="//States/ActivityEdgeInstance_offers_Value" eOpposite="//States/ActivityEdgeInstance_offers_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityEdgeInstance_source_Values" ordered="false" upperBound="-1" eType="//States/ActivityEdgeInstance_source_Value" eOpposite="//States/ActivityEdgeInstance_source_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityEdgeInstance_target_Values" ordered="false" upperBound="-1" eType="//States/ActivityEdgeInstance_target_Value" eOpposite="//States/ActivityEdgeInstance_target_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityExecution_activationGroup_Values" ordered="false" upperBound="-1" eType="//States/ActivityExecution_activationGroup_Value" eOpposite="//States/ActivityExecution_activationGroup_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivationGroup_activityExecution_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivationGroup_activityExecution_Value" eOpposite="//States/ActivityNodeActivationGroup_activityExecution_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivationGroup_edgeInstances_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivationGroup_edgeInstances_Value" eOpposite="//States/ActivityNodeActivationGroup_edgeInstances_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivationGroup_nodeActivations_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivationGroup_nodeActivations_Value" eOpposite="//States/ActivityNodeActivationGroup_nodeActivations_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivation_group_ActivityNodeActivation_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivation_group_ActivityNodeActivation_Value" eOpposite="//States/ActivityNodeActivation_group_ActivityNodeActivation_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivation_heldTokens_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivation_heldTokens_Value" eOpposite="//States/ActivityNodeActivation_heldTokens_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivation_incomingEdges_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivation_incomingEdges_Value" eOpposite="//States/ActivityNodeActivation_incomingEdges_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivation_isRunning_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivation_isRunning_Value" eOpposite="//States/ActivityNodeActivation_isRunning_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivation_node_ActivityNodeActivation_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivation_node_ActivityNodeActivation_Value" eOpposite="//States/ActivityNodeActivation_node_ActivityNodeActivation_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivation_outgoingEdges_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivation_outgoingEdges_Value" eOpposite="//States/ActivityNodeActivation_outgoingEdges_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodeActivation_running_Values" ordered="false" upperBound="-1" eType="//States/ActivityNodeActivation_running_Value" eOpposite="//States/ActivityNodeActivation_running_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="booleanValue_value_BooleanValue_Values" ordered="false" upperBound="-1" eType="//States/BooleanValue_value_BooleanValue_Value" eOpposite="//States/BooleanValue_value_BooleanValue_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callActionActivation_callExecutions_Values" ordered="false" upperBound="-1" eType="//States/CallActionActivation_callExecutions_Value" eOpposite="//States/CallActionActivation_callExecutions_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="compoundValue_featureValues_Values" ordered="false" upperBound="-1" eType="//States/CompoundValue_featureValues_Value" eOpposite="//States/CompoundValue_featureValues_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elementConfiguration_semanticVisitor_Values" ordered="false" upperBound="-1" eType="//States/ElementConfiguration_semanticVisitor_Value" eOpposite="//States/ElementConfiguration_semanticVisitor_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="endedSteps" upperBound="-1" eType="//Steps/SpecificStep" eOpposite="//Steps/SpecificStep/endingState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="evaluation_locus_Evaluation_Values" ordered="false" upperBound="-1" eType="//States/Evaluation_locus_Evaluation_Value" eOpposite="//States/Evaluation_locus_Evaluation_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="evaluation_specification_Evaluation_Values" ordered="false" upperBound="-1" eType="//States/Evaluation_specification_Evaluation_Value" eOpposite="//States/Evaluation_specification_Evaluation_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executionEnvironment_locus_ExecutionEnvironment_Values" ordered="false" upperBound="-1" eType="//States/ExecutionEnvironment_locus_ExecutionEnvironment_Value" eOpposite="//States/ExecutionEnvironment_locus_ExecutionEnvironment_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executionFactory_builtInTypes_Values" ordered="false" upperBound="-1" eType="//States/ExecutionFactory_builtInTypes_Value" eOpposite="//States/ExecutionFactory_builtInTypes_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executionFactory_locus_ExecutionFactory_Values" ordered="false" upperBound="-1" eType="//States/ExecutionFactory_locus_ExecutionFactory_Value" eOpposite="//States/ExecutionFactory_locus_ExecutionFactory_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executionFactory_primitiveBehaviorPrototypes_Values" ordered="false" upperBound="-1" eType="//States/ExecutionFactory_primitiveBehaviorPrototypes_Value" eOpposite="//States/ExecutionFactory_primitiveBehaviorPrototypes_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="execution_context_Values" ordered="false" upperBound="-1" eType="//States/Execution_context_Value" eOpposite="//States/Execution_context_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="execution_parameterValues_Values" ordered="false" upperBound="-1" eType="//States/Execution_parameterValues_Value" eOpposite="//States/Execution_parameterValues_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executor_locus_Executor_Values" ordered="false" upperBound="-1" eType="//States/Executor_locus_Executor_Value" eOpposite="//States/Executor_locus_Executor_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extensionalValue_locus_ExtensionalValue_Values" ordered="false" upperBound="-1" eType="//States/ExtensionalValue_locus_ExtensionalValue_Value" eOpposite="//States/ExtensionalValue_locus_ExtensionalValue_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="featureValue_feature_Values" ordered="false" upperBound="-1" eType="//States/FeatureValue_feature_Value" eOpposite="//States/FeatureValue_feature_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="featureValue_position_Values" ordered="false" upperBound="-1" eType="//States/FeatureValue_position_Value" eOpposite="//States/FeatureValue_position_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="featureValue_values_FeatureValue_Values" ordered="false" upperBound="-1" eType="//States/FeatureValue_values_FeatureValue_Value" eOpposite="//States/FeatureValue_values_FeatureValue_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="forkedToken_baseTokenIsWithdrawn_Values" ordered="false" upperBound="-1" eType="//States/ForkedToken_baseTokenIsWithdrawn_Value" eOpposite="//States/ForkedToken_baseTokenIsWithdrawn_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="forkedToken_baseToken_Values" ordered="false" upperBound="-1" eType="//States/ForkedToken_baseToken_Value" eOpposite="//States/ForkedToken_baseToken_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="forkedToken_remainingOffersCount_Values" ordered="false" upperBound="-1" eType="//States/ForkedToken_remainingOffersCount_Value" eOpposite="//States/ForkedToken_remainingOffersCount_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inputParameterValues_name_Values" ordered="false" upperBound="-1" eType="//States/InputParameterValues_name_Value" eOpposite="//States/InputParameterValues_name_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inputParameterValues_parameterValues_Values" ordered="false" upperBound="-1" eType="//States/InputParameterValues_parameterValues_Value" eOpposite="//States/InputParameterValues_parameterValues_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="integerValue_value_IntegerValue_Values" ordered="false" upperBound="-1" eType="//States/IntegerValue_value_IntegerValue_Value" eOpposite="//States/IntegerValue_value_IntegerValue_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_executor_Values" ordered="false" upperBound="-1" eType="//States/Locus_executor_Value" eOpposite="//States/Locus_executor_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_extensionalValues_Values" ordered="false" upperBound="-1" eType="//States/Locus_extensionalValues_Value" eOpposite="//States/Locus_extensionalValues_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_factory_Values" ordered="false" upperBound="-1" eType="//States/Locus_factory_Value" eOpposite="//States/Locus_factory_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="objectNodeActivation_offeredTokenCount_Values" ordered="false" upperBound="-1" eType="//States/ObjectNodeActivation_offeredTokenCount_Value" eOpposite="//States/ObjectNodeActivation_offeredTokenCount_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="objectToken_value_Values" ordered="false" upperBound="-1" eType="//States/ObjectToken_value_Value" eOpposite="//States/ObjectToken_value_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="object_types_Values" ordered="false" upperBound="-1" eType="//States/Object_types_Value" eOpposite="//States/Object_types_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="offer_offeredTokens_Values" ordered="false" upperBound="-1" eType="//States/Offer_offeredTokens_Value" eOpposite="//States/Offer_offeredTokens_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValue_parameter_ParameterValue_Values" ordered="false" upperBound="-1" eType="//States/ParameterValue_parameter_ParameterValue_Value" eOpposite="//States/ParameterValue_parameter_ParameterValue_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValue_values_ParameterValue_Values" ordered="false" upperBound="-1" eType="//States/ParameterValue_values_ParameterValue_Value" eOpposite="//States/ParameterValue_values_ParameterValue_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pinActivation_actionActivation_Values" ordered="false" upperBound="-1" eType="//States/PinActivation_actionActivation_Value" eOpposite="//States/PinActivation_actionActivation_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pinActivation_count_temp_Values" ordered="false" upperBound="-1" eType="//States/PinActivation_count_temp_Value" eOpposite="//States/PinActivation_count_temp_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="primitiveValue_type_Values" ordered="false" upperBound="-1" eType="//States/PrimitiveValue_type_Value" eOpposite="//States/PrimitiveValue_type_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reference_referent_Values" ordered="false" upperBound="-1" eType="//States/Reference_referent_Value" eOpposite="//States/Reference_referent_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="semanticVisitor_runtimeModelElement_Values" ordered="false" upperBound="-1" eType="//States/SemanticVisitor_runtimeModelElement_Value" eOpposite="//States/SemanticVisitor_runtimeModelElement_Value/states"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="startedSteps" upperBound="-1" eType="//Steps/SpecificStep" eOpposite="//Steps/SpecificStep/startingState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="token_holder_Values" ordered="false" upperBound="-1" eType="//States/Token_holder_Value" eOpposite="//States/Token_holder_Value/states"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Token_holder_Value" eSuperTypes="//States/Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/Token/holder"/>
+      </eAnnotations>
+      <eOperations name="getStatesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this.getStates();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="holder" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/Token/holder"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken" eOpposite="//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken/holderSequence"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1" upperBound="-1" eType="//States/State" eOpposite="//States/State/token_holder_Values"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Value" abstract="true" interface="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="statesNoOpposite" lowerBound="1" upperBound="-1" eType="//States/State" changeable="false" volatile="true" transient="true" derived="true"/>
+    </eClassifiers>
+    <eSubpackages name="fumlConfiguration" nsURI="umlTrace_fumlConfiguration" nsPrefix="">
+      <eClassifiers xsi:type="ecore:EClass" name="TracedElementConfiguration">
+        <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+          <details key="executionMetamodelElement" value="//ElementConfiguration"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+          <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//ElementConfiguration"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="semanticVisitorSequence" upperBound="-1" eType="//States/ElementConfiguration_semanticVisitor_Value" containment="true" eOpposite="//States/ElementConfiguration_semanticVisitor_Value/parent"/>
+      </eClassifiers>
+      <eSubpackages name="Loci" nsURI="umlTrace_Loci" nsPrefix="">
+        <eClassifiers xsi:type="ecore:EClass" name="TracedExecutionEnvironment">
+          <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+            <details key="executionMetamodelElement" value="//Loci/ExecutionEnvironment"/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutionEnvironmentSequence" upperBound="-1" eType="//States/ExecutionEnvironment_locus_ExecutionEnvironment_Value" containment="true" eOpposite="//States/ExecutionEnvironment_locus_ExecutionEnvironment_Value/parent"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+            <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Loci/ExecutionEnvironment"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="TracedExecutionFactory">
+          <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+            <details key="executionMetamodelElement" value="//Loci/ExecutionFactory"/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="builtInTypesSequence" upperBound="-1" eType="//States/ExecutionFactory_builtInTypes_Value" containment="true" eOpposite="//States/ExecutionFactory_builtInTypes_Value/parent"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutionFactorySequence" upperBound="-1" eType="//States/ExecutionFactory_locus_ExecutionFactory_Value" containment="true" eOpposite="//States/ExecutionFactory_locus_ExecutionFactory_Value/parent"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+            <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Loci/ExecutionFactory"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="primitiveBehaviorPrototypesSequence" upperBound="-1" eType="//States/ExecutionFactory_primitiveBehaviorPrototypes_Value" containment="true" eOpposite="//States/ExecutionFactory_primitiveBehaviorPrototypes_Value/parent"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="TracedExecutor">
+          <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+            <details key="executionMetamodelElement" value="//Loci/Executor"/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutorSequence" upperBound="-1" eType="//States/Executor_locus_Executor_Value" containment="true" eOpposite="//States/Executor_locus_Executor_Value/parent"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+            <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Loci/Executor"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="TracedLocus">
+          <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+            <details key="executionMetamodelElement" value="//Loci/Locus"/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="executorSequence" upperBound="-1" eType="//States/Locus_executor_Value" containment="true" eOpposite="//States/Locus_executor_Value/parent"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="extensionalValuesSequence" upperBound="-1" eType="//States/Locus_extensionalValues_Value" containment="true" eOpposite="//States/Locus_extensionalValues_Value/parent"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="factorySequence" upperBound="-1" eType="//States/Locus_factory_Value" containment="true" eOpposite="//States/Locus_factory_Value/parent"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+            <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Loci/Locus"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="TracedSemanticVisitor">
+          <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+            <details key="executionMetamodelElement" value="//Loci/SemanticVisitor"/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject_SemanticVisitor">
+            <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Loci/SemanticVisitor"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeModelElementSequence" upperBound="-1" eType="//States/SemanticVisitor_runtimeModelElement_Value" containment="true" eOpposite="//States/SemanticVisitor_runtimeModelElement_Value/parent"/>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages name="Activities" nsURI="umlTrace_Activities" nsPrefix="">
+        <eSubpackages name="IntermediateActivities" nsURI="umlTrace_IntermediateActivities" nsPrefix="">
+          <eClassifiers xsi:type="ecore:EClass" name="TracedActivityEdgeInstance">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityEdgeInstance"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="edge_ActivityEdgeInstanceSequence" upperBound="-1" eType="//States/ActivityEdgeInstance_edge_ActivityEdgeInstance_Value" containment="true" eOpposite="//States/ActivityEdgeInstance_edge_ActivityEdgeInstance_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityEdgeInstanceSequence" upperBound="-1" eType="//States/ActivityEdgeInstance_group_ActivityEdgeInstance_Value" containment="true" eOpposite="//States/ActivityEdgeInstance_group_ActivityEdgeInstance_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="offersSequence" upperBound="-1" eType="//States/ActivityEdgeInstance_offers_Value" containment="true" eOpposite="//States/ActivityEdgeInstance_offers_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+              <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Activities/IntermediateActivities/ActivityEdgeInstance"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="sourceSequence" upperBound="-1" eType="//States/ActivityEdgeInstance_source_Value" containment="true" eOpposite="//States/ActivityEdgeInstance_source_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="targetSequence" upperBound="-1" eType="//States/ActivityEdgeInstance_target_Value" containment="true" eOpposite="//States/ActivityEdgeInstance_target_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedActivityExecution" eSuperTypes="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityExecution"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="activationGroupSequence" upperBound="-1" eType="//States/ActivityExecution_activationGroup_Value" containment="true" eOpposite="//States/ActivityExecution_activationGroup_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedActivityNodeActivation" eSuperTypes="//States/fumlConfiguration/Loci/TracedSemanticVisitor">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivation"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityNodeActivationSequence" upperBound="-1" eType="//States/ActivityNodeActivation_group_ActivityNodeActivation_Value" containment="true" eOpposite="//States/ActivityNodeActivation_group_ActivityNodeActivation_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="heldTokensSequence" upperBound="-1" eType="//States/ActivityNodeActivation_heldTokens_Value" containment="true" eOpposite="//States/ActivityNodeActivation_heldTokens_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="incomingEdgesSequence" upperBound="-1" eType="//States/ActivityNodeActivation_incomingEdges_Value" containment="true" eOpposite="//States/ActivityNodeActivation_incomingEdges_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="isRunningSequence" upperBound="-1" eType="//States/ActivityNodeActivation_isRunning_Value" containment="true" eOpposite="//States/ActivityNodeActivation_isRunning_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="node_ActivityNodeActivationSequence" upperBound="-1" eType="//States/ActivityNodeActivation_node_ActivityNodeActivation_Value" containment="true" eOpposite="//States/ActivityNodeActivation_node_ActivityNodeActivation_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingEdgesSequence" upperBound="-1" eType="//States/ActivityNodeActivation_outgoingEdges_Value" containment="true" eOpposite="//States/ActivityNodeActivation_outgoingEdges_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="runningSequence" upperBound="-1" eType="//States/ActivityNodeActivation_running_Value" containment="true" eOpposite="//States/ActivityNodeActivation_running_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedActivityNodeActivationGroup">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ActivityNodeActivationGroup"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="activityExecutionSequence" upperBound="-1" eType="//States/ActivityNodeActivationGroup_activityExecution_Value" containment="true" eOpposite="//States/ActivityNodeActivationGroup_activityExecution_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="edgeInstancesSequence" upperBound="-1" eType="//States/ActivityNodeActivationGroup_edgeInstances_Value" containment="true" eOpposite="//States/ActivityNodeActivationGroup_edgeInstances_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="nodeActivationsSequence" upperBound="-1" eType="//States/ActivityNodeActivationGroup_nodeActivations_Value" containment="true" eOpposite="//States/ActivityNodeActivationGroup_nodeActivations_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+              <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Activities/IntermediateActivities/ActivityNodeActivationGroup"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedForkedToken" eSuperTypes="//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ForkedToken"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="baseTokenIsWithdrawnSequence" upperBound="-1" eType="//States/ForkedToken_baseTokenIsWithdrawn_Value" containment="true" eOpposite="//States/ForkedToken_baseTokenIsWithdrawn_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="baseTokenSequence" upperBound="-1" eType="//States/ForkedToken_baseToken_Value" containment="true" eOpposite="//States/ForkedToken_baseToken_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="remainingOffersCountSequence" upperBound="-1" eType="//States/ForkedToken_remainingOffersCount_Value" containment="true" eOpposite="//States/ForkedToken_remainingOffersCount_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedObjectNodeActivation" abstract="true" eSuperTypes="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ObjectNodeActivation"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="offeredTokenCountSequence" upperBound="-1" eType="//States/ObjectNodeActivation_offeredTokenCount_Value" containment="true" eOpposite="//States/ObjectNodeActivation_offeredTokenCount_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedObjectToken" eSuperTypes="//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/ObjectToken"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="valueSequence" upperBound="-1" eType="//States/ObjectToken_value_Value" containment="true" eOpposite="//States/ObjectToken_value_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedOffer">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/Offer"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="offeredTokensSequence" upperBound="-1" eType="//States/Offer_offeredTokens_Value" containment="true" eOpposite="//States/Offer_offeredTokens_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+              <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Activities/IntermediateActivities/Offer"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedToken">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Activities/IntermediateActivities/Token"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="holderSequence" upperBound="-1" eType="//States/Token_holder_Value" containment="true" eOpposite="//States/Token_holder_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject_Token">
+              <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Activities/IntermediateActivities/Token"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+      </eSubpackages>
+      <eSubpackages name="Classes" nsURI="umlTrace_Classes" nsPrefix="">
+        <eSubpackages name="Kernel" nsURI="umlTrace_Kernel" nsPrefix="">
+          <eClassifiers xsi:type="ecore:EClass" name="TracedBooleanValue" eSuperTypes="//States/fumlConfiguration/Classes/Kernel/TracedPrimitiveValue">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Classes/Kernel/BooleanValue"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="value_BooleanValueSequence" upperBound="-1" eType="//States/BooleanValue_value_BooleanValue_Value" containment="true" eOpposite="//States/BooleanValue_value_BooleanValue_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedCompoundValue" abstract="true" eSuperTypes="//States/fumlConfiguration/Classes/Kernel/TracedStructuredValue">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Classes/Kernel/CompoundValue"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="featureValuesSequence" upperBound="-1" eType="//States/CompoundValue_featureValues_Value" containment="true" eOpposite="//States/CompoundValue_featureValues_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedEvaluation" abstract="true" eSuperTypes="//States/fumlConfiguration/Loci/TracedSemanticVisitor">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Classes/Kernel/Evaluation"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="locus_EvaluationSequence" upperBound="-1" eType="//States/Evaluation_locus_Evaluation_Value" containment="true" eOpposite="//States/Evaluation_locus_Evaluation_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="specification_EvaluationSequence" upperBound="-1" eType="//States/Evaluation_specification_Evaluation_Value" containment="true" eOpposite="//States/Evaluation_specification_Evaluation_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedExtensionalValue" abstract="true" eSuperTypes="//States/fumlConfiguration/Classes/Kernel/TracedCompoundValue">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Classes/Kernel/ExtensionalValue"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExtensionalValueSequence" upperBound="-1" eType="//States/ExtensionalValue_locus_ExtensionalValue_Value" containment="true" eOpposite="//States/ExtensionalValue_locus_ExtensionalValue_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedFeatureValue" abstract="true">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Classes/Kernel/FeatureValue"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="featureSequence" upperBound="-1" eType="//States/FeatureValue_feature_Value" containment="true" eOpposite="//States/FeatureValue_feature_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="positionSequence" upperBound="-1" eType="//States/FeatureValue_position_Value" containment="true" eOpposite="//States/FeatureValue_position_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="values_FeatureValueSequence" upperBound="-1" eType="//States/FeatureValue_values_FeatureValue_Value" containment="true" eOpposite="//States/FeatureValue_values_FeatureValue_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedIntegerValue" eSuperTypes="//States/fumlConfiguration/Classes/Kernel/TracedPrimitiveValue">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Classes/Kernel/IntegerValue"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="value_IntegerValueSequence" upperBound="-1" eType="//States/IntegerValue_value_IntegerValue_Value" containment="true" eOpposite="//States/IntegerValue_value_IntegerValue_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedObject" eSuperTypes="//States/fumlConfiguration/Classes/Kernel/TracedExtensionalValue">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Classes/Kernel/Object"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="typesSequence" upperBound="-1" eType="//States/Object_types_Value" containment="true" eOpposite="//States/Object_types_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedPrimitiveValue" abstract="true" eSuperTypes="//States/fumlConfiguration/Classes/Kernel/TracedValue">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Classes/Kernel/PrimitiveValue"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="typeSequence" upperBound="-1" eType="//States/PrimitiveValue_type_Value" containment="true" eOpposite="//States/PrimitiveValue_type_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedReference" eSuperTypes="//States/fumlConfiguration/Classes/Kernel/TracedStructuredValue">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Classes/Kernel/Reference"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="referentSequence" upperBound="-1" eType="//States/Reference_referent_Value" containment="true" eOpposite="//States/Reference_referent_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedStructuredValue" abstract="true" eSuperTypes="//States/fumlConfiguration/Classes/Kernel/TracedValue"/>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedValue" abstract="true" eSuperTypes="//States/fumlConfiguration/Loci/TracedSemanticVisitor"/>
+        </eSubpackages>
+      </eSubpackages>
+      <eSubpackages name="CommonBehaviors" nsURI="umlTrace_CommonBehaviors" nsPrefix="">
+        <eSubpackages name="BasicBehaviors" nsURI="umlTrace_BasicBehaviors" nsPrefix="">
+          <eClassifiers xsi:type="ecore:EClass" name="TracedExecution" abstract="true" eSuperTypes="//States/fumlConfiguration/Classes/Kernel/TracedObject">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/Execution"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="contextSequence" upperBound="-1" eType="//States/Execution_context_Value" containment="true" eOpposite="//States/Execution_context_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValuesSequence" upperBound="-1" eType="//States/Execution_parameterValues_Value" containment="true" eOpposite="//States/Execution_parameterValues_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedOpaqueBehaviorExecution" abstract="true" eSuperTypes="//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedExecution"/>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedParameterValue">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+              <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//CommonBehaviors/BasicBehaviors/ParameterValue"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="parameter_ParameterValueSequence" upperBound="-1" eType="//States/ParameterValue_parameter_ParameterValue_Value" containment="true" eOpposite="//States/ParameterValue_parameter_ParameterValue_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="values_ParameterValueSequence" upperBound="-1" eType="//States/ParameterValue_values_ParameterValue_Value" containment="true" eOpposite="//States/ParameterValue_values_ParameterValue_Value/parent"/>
+          </eClassifiers>
+        </eSubpackages>
+      </eSubpackages>
+      <eSubpackages name="Actions" nsURI="umlTrace_Actions" nsPrefix="">
+        <eSubpackages name="BasicActions" nsURI="umlTrace_BasicActions" nsPrefix="">
+          <eClassifiers xsi:type="ecore:EClass" name="TracedActionActivation" abstract="true" eSuperTypes="//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Actions/BasicActions/ActionActivation"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="firingSequence" upperBound="-1" eType="//States/ActionActivation_firing_Value" containment="true" eOpposite="//States/ActionActivation_firing_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="pinActivationsSequence" upperBound="-1" eType="//States/ActionActivation_pinActivations_Value" containment="true" eOpposite="//States/ActionActivation_pinActivations_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedCallActionActivation" abstract="true" eSuperTypes="//States/fumlConfiguration/Actions/BasicActions/TracedInvocationActionActivation">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Actions/BasicActions/CallActionActivation"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="callExecutionsSequence" upperBound="-1" eType="//States/CallActionActivation_callExecutions_Value" containment="true" eOpposite="//States/CallActionActivation_callExecutions_Value/parent"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedInvocationActionActivation" abstract="true" eSuperTypes="//States/fumlConfiguration/Actions/BasicActions/TracedActionActivation"/>
+          <eClassifiers xsi:type="ecore:EClass" name="TracedPinActivation" abstract="true" eSuperTypes="//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectNodeActivation">
+            <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+              <details key="executionMetamodelElement" value="//Actions/BasicActions/PinActivation"/>
+            </eAnnotations>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="actionActivationSequence" upperBound="-1" eType="//States/PinActivation_actionActivation_Value" containment="true" eOpposite="//States/PinActivation_actionActivation_Value/parent"/>
+            <eStructuralFeatures xsi:type="ecore:EReference" name="count_tempSequence" upperBound="-1" eType="//States/PinActivation_count_temp_Value" containment="true" eOpposite="//States/PinActivation_count_temp_Value/parent"/>
+          </eClassifiers>
+        </eSubpackages>
+      </eSubpackages>
+      <eSubpackages name="Input" nsURI="umlTrace_Input" nsPrefix="">
+        <eClassifiers xsi:type="ecore:EClass" name="TracedInputParameterValues">
+          <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+            <details key="executionMetamodelElement" value="//Input/InputParameterValues"/>
+          </eAnnotations>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="nameSequence" upperBound="-1" eType="//States/InputParameterValues_name_Value" containment="true" eOpposite="//States/InputParameterValues_name_Value/parent"/>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+            <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic/model-gen/fuml.xmof.ecore#//Input/InputParameterValues"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValuesSequence" upperBound="-1" eType="//States/InputParameterValues_parameterValues_Value" containment="true" eOpposite="//States/InputParameterValues_parameterValues_Value/parent"/>
+        </eClassifiers>
+      </eSubpackages>
+    </eSubpackages>
+    <eSubpackages name="uml" nsURI="umlTrace_uml" nsPrefix="">
+      <eClassifiers xsi:type="ecore:EClass" name="TracedActivityEdge" abstract="true"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedActivityNode" abstract="true"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedClass">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedParameter">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//Parameter"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedPrimitiveType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+          <eType xsi:type="ecore:EClass" href="../../org.eclipse.uml2.uml/model/UML.ecore#//PrimitiveType"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedStructuralFeature" abstract="true"/>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedValueSpecification" abstract="true"/>
+    </eSubpackages>
+    <eSubpackages name="ecore" nsURI="umlTrace_ecore" nsPrefix="">
+      <eClassifiers xsi:type="ecore:EClass" name="TracedEModelElement" abstract="true"/>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

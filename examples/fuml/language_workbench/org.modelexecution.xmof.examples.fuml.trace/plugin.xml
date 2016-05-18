@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+-->
+<plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace" class="umlTrace.UmlTracePackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_Steps" class="umlTrace.Steps.StepsPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_States" class="umlTrace.States.StatesPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_fumlConfiguration" class="umlTrace.States.fumlConfiguration.FumlConfigurationPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_Loci" class="umlTrace.States.fumlConfiguration.Loci.LociPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_IntermediateActivities" class="umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_Kernel" class="umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_BasicBehaviors" class="umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_BasicActions" class="umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_Input" class="umlTrace.States.fumlConfiguration.Input.InputPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_uml" class="umlTrace.States.uml.UmlPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
+    <package uri="umlTrace_ecore" class="umlTrace.States.ecore.EcorePackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon Class="org.modelexecution.xmof.examples.fuml.trace.tracemanager.UmlTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.fuml.trace" Name="uml MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to uml language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" />
+  </extension>
+</plugin>
