@@ -2,3 +2,4 @@
 **/gemoc-gen
 *.class
 **/xtend-gen
+output*
