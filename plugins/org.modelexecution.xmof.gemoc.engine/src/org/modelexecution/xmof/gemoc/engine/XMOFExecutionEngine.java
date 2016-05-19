@@ -233,5 +233,12 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	public ConfigurationObjectMap getConfigurationMap() {
 		return configurationMap;
 	}
+	
+	public XMOFBasedModel getXMOFBasedModel() {
+		return vm.getModel();
+	}
 
+	public XMOFVirtualMachine getRawVirtualMachine() {
+		return vm;
+	}
 }
