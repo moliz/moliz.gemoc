@@ -51,5 +51,13 @@ class ModifyMetamodelOperations {
 		r.URI = r.URI.appendFileExtension("withoutactivities")
 		r.save(null)
 	}
+	
+	/*
+	 * Done manually, replace this:
+	 * http://www.eclipse.org/uml2/5.0.0/UML
+	 * by this:
+	 * platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore
+	 * only in the ecore, not on the xmof!
+	 */
 
 }
