@@ -5,6 +5,7 @@ package umlTrace.States.fumlConfiguration.Actions.BasicActions.impl;
 import fumlConfiguration.FumlConfigurationPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -20,10 +21,6 @@ import umlTrace.States.ecore.impl.EcorePackageImpl;
 
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsFactory;
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackage;
-import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation;
-import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation;
-import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInvocationActionActivation;
-import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation;
 
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 
@@ -130,8 +127,6 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static BasicActionsPackage init() {
@@ -159,33 +154,22 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
-		// Create package meta-data objects
-		theBasicActionsPackage.createPackageContents();
-		theUmlTracePackage.createPackageContents();
-		theStepsPackage.createPackageContents();
-		theStatesPackage.createPackageContents();
-		theFumlConfigurationPackage_1.createPackageContents();
-		theLociPackage.createPackageContents();
-		theIntermediateActivitiesPackage.createPackageContents();
-		theKernelPackage.createPackageContents();
-		theBasicBehaviorsPackage.createPackageContents();
-		theInputPackage.createPackageContents();
-		theUmlPackage.createPackageContents();
-		theEcorePackage.createPackageContents();
+		// Load packages
+		theUmlTracePackage.loadPackage();
 
-		// Initialize created meta-data
-		theBasicActionsPackage.initializePackageContents();
-		theUmlTracePackage.initializePackageContents();
-		theStepsPackage.initializePackageContents();
-		theStatesPackage.initializePackageContents();
-		theFumlConfigurationPackage_1.initializePackageContents();
-		theLociPackage.initializePackageContents();
-		theIntermediateActivitiesPackage.initializePackageContents();
-		theKernelPackage.initializePackageContents();
-		theBasicBehaviorsPackage.initializePackageContents();
-		theInputPackage.initializePackageContents();
-		theUmlPackage.initializePackageContents();
-		theEcorePackage.initializePackageContents();
+		// Fix loaded packages
+		theBasicActionsPackage.fixPackageContents();
+		theUmlTracePackage.fixPackageContents();
+		theStepsPackage.fixPackageContents();
+		theStatesPackage.fixPackageContents();
+		theFumlConfigurationPackage_1.fixPackageContents();
+		theLociPackage.fixPackageContents();
+		theIntermediateActivitiesPackage.fixPackageContents();
+		theKernelPackage.fixPackageContents();
+		theBasicBehaviorsPackage.fixPackageContents();
+		theInputPackage.fixPackageContents();
+		theUmlPackage.fixPackageContents();
+		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBasicActionsPackage.freeze();
@@ -202,6 +186,9 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * @generated
 	 */
 	public EClass getTracedActionActivation() {
+		if (tracedActionActivationEClass == null) {
+			tracedActionActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(0);
+		}
 		return tracedActionActivationEClass;
 	}
 
@@ -211,7 +198,7 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * @generated
 	 */
 	public EReference getTracedActionActivation_FiringSequence() {
-		return (EReference)tracedActionActivationEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedActionActivation().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -220,7 +207,7 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * @generated
 	 */
 	public EReference getTracedActionActivation_PinActivationsSequence() {
-		return (EReference)tracedActionActivationEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTracedActionActivation().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -229,6 +216,9 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * @generated
 	 */
 	public EClass getTracedCallActionActivation() {
+		if (tracedCallActionActivationEClass == null) {
+			tracedCallActionActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(1);
+		}
 		return tracedCallActionActivationEClass;
 	}
 
@@ -238,7 +228,7 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * @generated
 	 */
 	public EReference getTracedCallActionActivation_CallExecutionsSequence() {
-		return (EReference)tracedCallActionActivationEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedCallActionActivation().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -247,6 +237,9 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * @generated
 	 */
 	public EClass getTracedInvocationActionActivation() {
+		if (tracedInvocationActionActivationEClass == null) {
+			tracedInvocationActionActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(2);
+		}
 		return tracedInvocationActionActivationEClass;
 	}
 
@@ -256,6 +249,9 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * @generated
 	 */
 	public EClass getTracedPinActivation() {
+		if (tracedPinActivationEClass == null) {
+			tracedPinActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(3);
+		}
 		return tracedPinActivationEClass;
 	}
 
@@ -265,7 +261,7 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * @generated
 	 */
 	public EReference getTracedPinActivation_ActionActivationSequence() {
-		return (EReference)tracedPinActivationEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedPinActivation().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -274,7 +270,7 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * @generated
 	 */
 	public EReference getTracedPinActivation_Count_tempSequence() {
-		return (EReference)tracedPinActivationEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTracedPinActivation().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -286,121 +282,38 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 		return (BasicActionsFactory)getEFactoryInstance();
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isCreated = false;
+	private boolean isFixed = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
+	 * Fixes up the loaded package, to make it appear as if it had been programmatically built.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents() {
-		if (isCreated) return;
-		isCreated = true;
-
-		// Create classes and their features
-		tracedActionActivationEClass = createEClass(TRACED_ACTION_ACTIVATION);
-		createEReference(tracedActionActivationEClass, TRACED_ACTION_ACTIVATION__FIRING_SEQUENCE);
-		createEReference(tracedActionActivationEClass, TRACED_ACTION_ACTIVATION__PIN_ACTIVATIONS_SEQUENCE);
-
-		tracedCallActionActivationEClass = createEClass(TRACED_CALL_ACTION_ACTIVATION);
-		createEReference(tracedCallActionActivationEClass, TRACED_CALL_ACTION_ACTIVATION__CALL_EXECUTIONS_SEQUENCE);
-
-		tracedInvocationActionActivationEClass = createEClass(TRACED_INVOCATION_ACTION_ACTIVATION);
-
-		tracedPinActivationEClass = createEClass(TRACED_PIN_ACTIVATION);
-		createEReference(tracedPinActivationEClass, TRACED_PIN_ACTIVATION__ACTION_ACTIVATION_SEQUENCE);
-		createEReference(tracedPinActivationEClass, TRACED_PIN_ACTIVATION__COUNT_TEMP_SEQUENCE);
+	public void fixPackageContents() {
+		if (isFixed) return;
+		isFixed = true;
+		fixEClassifiers();
 	}
 
 	/**
+	 * Sets the instance class on the given classifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isInitialized = false;
-
-	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void initializePackageContents() {
-		if (isInitialized) return;
-		isInitialized = true;
-
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
-
-		// Obtain other dependent packages
-		IntermediateActivitiesPackage theIntermediateActivitiesPackage = (IntermediateActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI);
-		StatesPackage theStatesPackage = (StatesPackage)EPackage.Registry.INSTANCE.getEPackage(StatesPackage.eNS_URI);
-
-		// Create type parameters
-
-		// Set bounds for type parameters
-
-		// Add supertypes to classes
-		tracedActionActivationEClass.getESuperTypes().add(theIntermediateActivitiesPackage.getTracedActivityNodeActivation());
-		tracedCallActionActivationEClass.getESuperTypes().add(this.getTracedInvocationActionActivation());
-		tracedInvocationActionActivationEClass.getESuperTypes().add(this.getTracedActionActivation());
-		tracedPinActivationEClass.getESuperTypes().add(theIntermediateActivitiesPackage.getTracedObjectNodeActivation());
-
-		// Initialize classes, features, and operations; add parameters
-		initEClass(tracedActionActivationEClass, TracedActionActivation.class, "TracedActionActivation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedActionActivation_FiringSequence(), theStatesPackage.getActionActivation_firing_Value(), theStatesPackage.getActionActivation_firing_Value_Parent(), "firingSequence", null, 0, -1, TracedActionActivation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTracedActionActivation_PinActivationsSequence(), theStatesPackage.getActionActivation_pinActivations_Value(), theStatesPackage.getActionActivation_pinActivations_Value_Parent(), "pinActivationsSequence", null, 0, -1, TracedActionActivation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedCallActionActivationEClass, TracedCallActionActivation.class, "TracedCallActionActivation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedCallActionActivation_CallExecutionsSequence(), theStatesPackage.getCallActionActivation_callExecutions_Value(), theStatesPackage.getCallActionActivation_callExecutions_Value_Parent(), "callExecutionsSequence", null, 0, -1, TracedCallActionActivation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedInvocationActionActivationEClass, TracedInvocationActionActivation.class, "TracedInvocationActionActivation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tracedPinActivationEClass, TracedPinActivation.class, "TracedPinActivation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedPinActivation_ActionActivationSequence(), theStatesPackage.getPinActivation_actionActivation_Value(), theStatesPackage.getPinActivation_actionActivation_Value_Parent(), "actionActivationSequence", null, 0, -1, TracedPinActivation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTracedPinActivation_Count_tempSequence(), theStatesPackage.getPinActivation_count_temp_Value(), theStatesPackage.getPinActivation_count_temp_Value_Parent(), "count_tempSequence", null, 0, -1, TracedPinActivation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create annotations
-		// http://www.modelexecution.org/trace/XMOF
-		createXMOFAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.modelexecution.org/trace/XMOF</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createXMOFAnnotations() {
-		String source = "http://www.modelexecution.org/trace/XMOF";	
-		addAnnotation
-		  (tracedActionActivationEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Actions/BasicActions/ActionActivation"
-		   });	
-		addAnnotation
-		  (tracedCallActionActivationEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Actions/BasicActions/CallActionActivation"
-		   });	
-		addAnnotation
-		  (tracedPinActivationEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Actions/BasicActions/PinActivation"
-		   });
+	@Override
+	protected void fixInstanceClass(EClassifier eClassifier) {
+		if (eClassifier.getInstanceClassName() == null) {
+			eClassifier.setInstanceClassName("umlTrace.States.fumlConfiguration.Actions.BasicActions." + eClassifier.getName());
+			setGeneratedClassName(eClassifier);
+		}
 	}
 
 } //BasicActionsPackageImpl

@@ -5,6 +5,7 @@ package umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.impl;
 import fumlConfiguration.FumlConfigurationPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -32,9 +33,6 @@ import umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl;
 
 import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsFactory;
 import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage;
-import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution;
-import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedOpaqueBehaviorExecution;
-import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue;
 
 import umlTrace.States.fumlConfiguration.Input.InputPackage;
 
@@ -122,8 +120,6 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static BasicBehaviorsPackage init() {
@@ -151,33 +147,22 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
-		// Create package meta-data objects
-		theBasicBehaviorsPackage.createPackageContents();
-		theUmlTracePackage.createPackageContents();
-		theStepsPackage.createPackageContents();
-		theStatesPackage.createPackageContents();
-		theFumlConfigurationPackage_1.createPackageContents();
-		theLociPackage.createPackageContents();
-		theIntermediateActivitiesPackage.createPackageContents();
-		theKernelPackage.createPackageContents();
-		theBasicActionsPackage.createPackageContents();
-		theInputPackage.createPackageContents();
-		theUmlPackage.createPackageContents();
-		theEcorePackage.createPackageContents();
+		// Load packages
+		theUmlTracePackage.loadPackage();
 
-		// Initialize created meta-data
-		theBasicBehaviorsPackage.initializePackageContents();
-		theUmlTracePackage.initializePackageContents();
-		theStepsPackage.initializePackageContents();
-		theStatesPackage.initializePackageContents();
-		theFumlConfigurationPackage_1.initializePackageContents();
-		theLociPackage.initializePackageContents();
-		theIntermediateActivitiesPackage.initializePackageContents();
-		theKernelPackage.initializePackageContents();
-		theBasicActionsPackage.initializePackageContents();
-		theInputPackage.initializePackageContents();
-		theUmlPackage.initializePackageContents();
-		theEcorePackage.initializePackageContents();
+		// Fix loaded packages
+		theBasicBehaviorsPackage.fixPackageContents();
+		theUmlTracePackage.fixPackageContents();
+		theStepsPackage.fixPackageContents();
+		theStatesPackage.fixPackageContents();
+		theFumlConfigurationPackage_1.fixPackageContents();
+		theLociPackage.fixPackageContents();
+		theIntermediateActivitiesPackage.fixPackageContents();
+		theKernelPackage.fixPackageContents();
+		theBasicActionsPackage.fixPackageContents();
+		theInputPackage.fixPackageContents();
+		theUmlPackage.fixPackageContents();
+		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theBasicBehaviorsPackage.freeze();
@@ -194,6 +179,9 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * @generated
 	 */
 	public EClass getTracedExecution() {
+		if (tracedExecutionEClass == null) {
+			tracedExecutionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI).getEClassifiers().get(0);
+		}
 		return tracedExecutionEClass;
 	}
 
@@ -203,7 +191,7 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * @generated
 	 */
 	public EReference getTracedExecution_ContextSequence() {
-		return (EReference)tracedExecutionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedExecution().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -212,7 +200,7 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * @generated
 	 */
 	public EReference getTracedExecution_ParameterValuesSequence() {
-		return (EReference)tracedExecutionEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTracedExecution().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -221,6 +209,9 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * @generated
 	 */
 	public EClass getTracedOpaqueBehaviorExecution() {
+		if (tracedOpaqueBehaviorExecutionEClass == null) {
+			tracedOpaqueBehaviorExecutionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI).getEClassifiers().get(1);
+		}
 		return tracedOpaqueBehaviorExecutionEClass;
 	}
 
@@ -230,6 +221,9 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * @generated
 	 */
 	public EClass getTracedParameterValue() {
+		if (tracedParameterValueEClass == null) {
+			tracedParameterValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI).getEClassifiers().get(2);
+		}
 		return tracedParameterValueEClass;
 	}
 
@@ -239,7 +233,7 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * @generated
 	 */
 	public EReference getTracedParameterValue_OriginalObject() {
-		return (EReference)tracedParameterValueEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedParameterValue().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -248,7 +242,7 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * @generated
 	 */
 	public EReference getTracedParameterValue_Parameter_ParameterValueSequence() {
-		return (EReference)tracedParameterValueEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTracedParameterValue().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -257,7 +251,7 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * @generated
 	 */
 	public EReference getTracedParameterValue_Values_ParameterValueSequence() {
-		return (EReference)tracedParameterValueEClass.getEStructuralFeatures().get(2);
+        return (EReference)getTracedParameterValue().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -269,110 +263,38 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 		return (BasicBehaviorsFactory)getEFactoryInstance();
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isCreated = false;
+	private boolean isFixed = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
+	 * Fixes up the loaded package, to make it appear as if it had been programmatically built.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents() {
-		if (isCreated) return;
-		isCreated = true;
-
-		// Create classes and their features
-		tracedExecutionEClass = createEClass(TRACED_EXECUTION);
-		createEReference(tracedExecutionEClass, TRACED_EXECUTION__CONTEXT_SEQUENCE);
-		createEReference(tracedExecutionEClass, TRACED_EXECUTION__PARAMETER_VALUES_SEQUENCE);
-
-		tracedOpaqueBehaviorExecutionEClass = createEClass(TRACED_OPAQUE_BEHAVIOR_EXECUTION);
-
-		tracedParameterValueEClass = createEClass(TRACED_PARAMETER_VALUE);
-		createEReference(tracedParameterValueEClass, TRACED_PARAMETER_VALUE__ORIGINAL_OBJECT);
-		createEReference(tracedParameterValueEClass, TRACED_PARAMETER_VALUE__PARAMETER_PARAMETER_VALUE_SEQUENCE);
-		createEReference(tracedParameterValueEClass, TRACED_PARAMETER_VALUE__VALUES_PARAMETER_VALUE_SEQUENCE);
+	public void fixPackageContents() {
+		if (isFixed) return;
+		isFixed = true;
+		fixEClassifiers();
 	}
 
 	/**
+	 * Sets the instance class on the given classifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isInitialized = false;
-
-	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void initializePackageContents() {
-		if (isInitialized) return;
-		isInitialized = true;
-
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
-
-		// Obtain other dependent packages
-		KernelPackage theKernelPackage = (KernelPackage)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
-		StatesPackage theStatesPackage = (StatesPackage)EPackage.Registry.INSTANCE.getEPackage(StatesPackage.eNS_URI);
-		fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage theBasicBehaviorsPackage_1 = (fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage)EPackage.Registry.INSTANCE.getEPackage(fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eNS_URI);
-
-		// Create type parameters
-
-		// Set bounds for type parameters
-
-		// Add supertypes to classes
-		tracedExecutionEClass.getESuperTypes().add(theKernelPackage.getTracedObject());
-		tracedOpaqueBehaviorExecutionEClass.getESuperTypes().add(this.getTracedExecution());
-
-		// Initialize classes, features, and operations; add parameters
-		initEClass(tracedExecutionEClass, TracedExecution.class, "TracedExecution", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedExecution_ContextSequence(), theStatesPackage.getExecution_context_Value(), theStatesPackage.getExecution_context_Value_Parent(), "contextSequence", null, 0, -1, TracedExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTracedExecution_ParameterValuesSequence(), theStatesPackage.getExecution_parameterValues_Value(), theStatesPackage.getExecution_parameterValues_Value_Parent(), "parameterValuesSequence", null, 0, -1, TracedExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedOpaqueBehaviorExecutionEClass, TracedOpaqueBehaviorExecution.class, "TracedOpaqueBehaviorExecution", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tracedParameterValueEClass, TracedParameterValue.class, "TracedParameterValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedParameterValue_OriginalObject(), theBasicBehaviorsPackage_1.getParameterValue(), null, "originalObject", null, 0, 1, TracedParameterValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTracedParameterValue_Parameter_ParameterValueSequence(), theStatesPackage.getParameterValue_parameter_ParameterValue_Value(), theStatesPackage.getParameterValue_parameter_ParameterValue_Value_Parent(), "parameter_ParameterValueSequence", null, 0, -1, TracedParameterValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTracedParameterValue_Values_ParameterValueSequence(), theStatesPackage.getParameterValue_values_ParameterValue_Value(), theStatesPackage.getParameterValue_values_ParameterValue_Value_Parent(), "values_ParameterValueSequence", null, 0, -1, TracedParameterValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create annotations
-		// http://www.modelexecution.org/trace/XMOF
-		createXMOFAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.modelexecution.org/trace/XMOF</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createXMOFAnnotations() {
-		String source = "http://www.modelexecution.org/trace/XMOF";	
-		addAnnotation
-		  (tracedExecutionEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//CommonBehaviors/BasicBehaviors/Execution"
-		   });	
-		addAnnotation
-		  (tracedParameterValueEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//CommonBehaviors/BasicBehaviors/ParameterValue"
-		   });
+	@Override
+	protected void fixInstanceClass(EClassifier eClassifier) {
+		if (eClassifier.getInstanceClassName() == null) {
+			eClassifier.setInstanceClassName("umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors." + eClassifier.getName());
+			setGeneratedClassName(eClassifier);
+		}
 	}
 
 } //BasicBehaviorsPackageImpl
