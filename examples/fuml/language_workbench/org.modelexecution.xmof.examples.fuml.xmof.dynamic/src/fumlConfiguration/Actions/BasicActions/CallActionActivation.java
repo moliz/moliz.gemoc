@@ -13,10 +13,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.CallActionActivation#getCallExecutions <em>Call Executions</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Actions.BasicActions.BasicActionsPackage#getCallActionActivation()
  * @model abstract="true"
@@ -43,6 +43,7 @@ public interface CallActionActivation extends InvocationActionActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model executionRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getCallExecution(Execution execution);
@@ -51,6 +52,7 @@ public interface CallActionActivation extends InvocationActionActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model executionRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void removeCallExecution(Execution execution);
@@ -59,6 +61,7 @@ public interface CallActionActivation extends InvocationActionActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model callExecutionRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void initializeInputParameterValues(Execution callExecution);
@@ -67,6 +70,7 @@ public interface CallActionActivation extends InvocationActionActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model callExecutionRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void collectOutputParameterValues(Execution callExecution);

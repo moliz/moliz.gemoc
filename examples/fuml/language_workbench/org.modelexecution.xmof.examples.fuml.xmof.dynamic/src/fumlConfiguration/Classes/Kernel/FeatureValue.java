@@ -15,12 +15,12 @@ import org.eclipse.uml2.uml.StructuralFeature;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.FeatureValue#getFeature <em>Feature</em>}</li>
  *   <li>{@link fumlConfiguration.Classes.Kernel.FeatureValue#getValues_FeatureValue <em>Values Feature Value</em>}</li>
  *   <li>{@link fumlConfiguration.Classes.Kernel.FeatureValue#getPosition <em>Position</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Classes.Kernel.KernelPackage#getFeatureValue()
  * @model abstract="true"
@@ -99,6 +99,7 @@ public interface FeatureValue extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model valueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void copy(FeatureValue value);

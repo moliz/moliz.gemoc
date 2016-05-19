@@ -10,10 +10,10 @@ package fumlConfiguration.Classes.Kernel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.Reference#getReferent <em>Referent</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Classes.Kernel.KernelPackage#getReference()
  * @model

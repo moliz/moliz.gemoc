@@ -36,10 +36,10 @@ import org.eclipse.uml2.uml.internal.impl.InvocationActionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.InvocationActionConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -21,8 +21,6 @@ import org.eclipse.uml2.uml.ValueSpecification;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Decision Node Activation</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

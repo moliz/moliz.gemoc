@@ -29,11 +29,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Input.impl.InputParameterValuesImpl#getName <em>Name</em>}</li>
  *   <li>{@link fumlConfiguration.Input.impl.InputParameterValuesImpl#getParameterValues <em>Parameter Values</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

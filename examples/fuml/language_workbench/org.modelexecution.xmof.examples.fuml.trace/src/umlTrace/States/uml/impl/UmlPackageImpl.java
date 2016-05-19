@@ -5,12 +5,11 @@ package umlTrace.States.uml.impl;
 import fumlConfiguration.FumlConfigurationPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.uml2.uml.UMLPackage;
 
 import org.gemoc.executionframework.engine.mse.MsePackage;
 
@@ -48,13 +47,6 @@ import umlTrace.States.fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import umlTrace.States.impl.StatesPackageImpl;
 
-import umlTrace.States.uml.TracedActivityEdge;
-import umlTrace.States.uml.TracedActivityNode;
-import umlTrace.States.uml.TracedClass;
-import umlTrace.States.uml.TracedParameter;
-import umlTrace.States.uml.TracedPrimitiveType;
-import umlTrace.States.uml.TracedStructuralFeature;
-import umlTrace.States.uml.TracedValueSpecification;
 import umlTrace.States.uml.UmlFactory;
 import umlTrace.States.uml.UmlPackage;
 
@@ -156,8 +148,6 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static UmlPackage init() {
@@ -185,33 +175,22 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
-		// Create package meta-data objects
-		theUmlPackage.createPackageContents();
-		theUmlTracePackage.createPackageContents();
-		theStepsPackage.createPackageContents();
-		theStatesPackage.createPackageContents();
-		theFumlConfigurationPackage_1.createPackageContents();
-		theLociPackage.createPackageContents();
-		theIntermediateActivitiesPackage.createPackageContents();
-		theKernelPackage.createPackageContents();
-		theBasicBehaviorsPackage.createPackageContents();
-		theBasicActionsPackage.createPackageContents();
-		theInputPackage.createPackageContents();
-		theEcorePackage.createPackageContents();
+		// Load packages
+		theUmlTracePackage.loadPackage();
 
-		// Initialize created meta-data
-		theUmlPackage.initializePackageContents();
-		theUmlTracePackage.initializePackageContents();
-		theStepsPackage.initializePackageContents();
-		theStatesPackage.initializePackageContents();
-		theFumlConfigurationPackage_1.initializePackageContents();
-		theLociPackage.initializePackageContents();
-		theIntermediateActivitiesPackage.initializePackageContents();
-		theKernelPackage.initializePackageContents();
-		theBasicBehaviorsPackage.initializePackageContents();
-		theBasicActionsPackage.initializePackageContents();
-		theInputPackage.initializePackageContents();
-		theEcorePackage.initializePackageContents();
+		// Fix loaded packages
+		theUmlPackage.fixPackageContents();
+		theUmlTracePackage.fixPackageContents();
+		theStepsPackage.fixPackageContents();
+		theStatesPackage.fixPackageContents();
+		theFumlConfigurationPackage_1.fixPackageContents();
+		theLociPackage.fixPackageContents();
+		theIntermediateActivitiesPackage.fixPackageContents();
+		theKernelPackage.fixPackageContents();
+		theBasicBehaviorsPackage.fixPackageContents();
+		theBasicActionsPackage.fixPackageContents();
+		theInputPackage.fixPackageContents();
+		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theUmlPackage.freeze();
@@ -228,6 +207,9 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EClass getTracedActivityEdge() {
+		if (tracedActivityEdgeEClass == null) {
+			tracedActivityEdgeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI).getEClassifiers().get(0);
+		}
 		return tracedActivityEdgeEClass;
 	}
 
@@ -237,6 +219,9 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EClass getTracedActivityNode() {
+		if (tracedActivityNodeEClass == null) {
+			tracedActivityNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI).getEClassifiers().get(1);
+		}
 		return tracedActivityNodeEClass;
 	}
 
@@ -246,6 +231,9 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EClass getTracedClass() {
+		if (tracedClassEClass == null) {
+			tracedClassEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI).getEClassifiers().get(2);
+		}
 		return tracedClassEClass;
 	}
 
@@ -255,7 +243,7 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EReference getTracedClass_OriginalObject() {
-		return (EReference)tracedClassEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedClass().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -264,6 +252,9 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EClass getTracedParameter() {
+		if (tracedParameterEClass == null) {
+			tracedParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI).getEClassifiers().get(3);
+		}
 		return tracedParameterEClass;
 	}
 
@@ -273,7 +264,7 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EReference getTracedParameter_OriginalObject() {
-		return (EReference)tracedParameterEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedParameter().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -282,6 +273,9 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EClass getTracedPrimitiveType() {
+		if (tracedPrimitiveTypeEClass == null) {
+			tracedPrimitiveTypeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI).getEClassifiers().get(4);
+		}
 		return tracedPrimitiveTypeEClass;
 	}
 
@@ -291,7 +285,7 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EReference getTracedPrimitiveType_OriginalObject() {
-		return (EReference)tracedPrimitiveTypeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedPrimitiveType().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -300,6 +294,9 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EClass getTracedStructuralFeature() {
+		if (tracedStructuralFeatureEClass == null) {
+			tracedStructuralFeatureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI).getEClassifiers().get(5);
+		}
 		return tracedStructuralFeatureEClass;
 	}
 
@@ -309,6 +306,9 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 	 * @generated
 	 */
 	public EClass getTracedValueSpecification() {
+		if (tracedValueSpecificationEClass == null) {
+			tracedValueSpecificationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI).getEClassifiers().get(6);
+		}
 		return tracedValueSpecificationEClass;
 	}
 
@@ -321,92 +321,38 @@ public class UmlPackageImpl extends EPackageImpl implements UmlPackage {
 		return (UmlFactory)getEFactoryInstance();
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isCreated = false;
+	private boolean isFixed = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
+	 * Fixes up the loaded package, to make it appear as if it had been programmatically built.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents() {
-		if (isCreated) return;
-		isCreated = true;
-
-		// Create classes and their features
-		tracedActivityEdgeEClass = createEClass(TRACED_ACTIVITY_EDGE);
-
-		tracedActivityNodeEClass = createEClass(TRACED_ACTIVITY_NODE);
-
-		tracedClassEClass = createEClass(TRACED_CLASS);
-		createEReference(tracedClassEClass, TRACED_CLASS__ORIGINAL_OBJECT);
-
-		tracedParameterEClass = createEClass(TRACED_PARAMETER);
-		createEReference(tracedParameterEClass, TRACED_PARAMETER__ORIGINAL_OBJECT);
-
-		tracedPrimitiveTypeEClass = createEClass(TRACED_PRIMITIVE_TYPE);
-		createEReference(tracedPrimitiveTypeEClass, TRACED_PRIMITIVE_TYPE__ORIGINAL_OBJECT);
-
-		tracedStructuralFeatureEClass = createEClass(TRACED_STRUCTURAL_FEATURE);
-
-		tracedValueSpecificationEClass = createEClass(TRACED_VALUE_SPECIFICATION);
+	public void fixPackageContents() {
+		if (isFixed) return;
+		isFixed = true;
+		fixEClassifiers();
 	}
 
 	/**
+	 * Sets the instance class on the given classifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isInitialized = false;
-
-	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void initializePackageContents() {
-		if (isInitialized) return;
-		isInitialized = true;
-
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
-
-		// Obtain other dependent packages
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-
-		// Create type parameters
-
-		// Set bounds for type parameters
-
-		// Add supertypes to classes
-
-		// Initialize classes, features, and operations; add parameters
-		initEClass(tracedActivityEdgeEClass, TracedActivityEdge.class, "TracedActivityEdge", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tracedActivityNodeEClass, TracedActivityNode.class, "TracedActivityNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tracedClassEClass, TracedClass.class, "TracedClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedClass_OriginalObject(), theUMLPackage.getClass_(), null, "originalObject", null, 0, 1, TracedClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedParameterEClass, TracedParameter.class, "TracedParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedParameter_OriginalObject(), theUMLPackage.getParameter(), null, "originalObject", null, 0, 1, TracedParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedPrimitiveTypeEClass, TracedPrimitiveType.class, "TracedPrimitiveType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedPrimitiveType_OriginalObject(), theUMLPackage.getPrimitiveType(), null, "originalObject", null, 0, 1, TracedPrimitiveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedStructuralFeatureEClass, TracedStructuralFeature.class, "TracedStructuralFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tracedValueSpecificationEClass, TracedValueSpecification.class, "TracedValueSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+	@Override
+	protected void fixInstanceClass(EClassifier eClassifier) {
+		if (eClassifier.getInstanceClassName() == null) {
+			eClassifier.setInstanceClassName("umlTrace.States.uml." + eClassifier.getName());
+			setGeneratedClassName(eClassifier);
+		}
 	}
 
 } //UmlPackageImpl

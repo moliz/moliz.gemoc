@@ -11,10 +11,10 @@ import fumlConfiguration.Classes.Kernel.Value;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ObjectToken#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getObjectToken()
  * @model

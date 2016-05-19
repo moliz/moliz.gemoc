@@ -30,10 +30,10 @@ import org.eclipse.uml2.uml.internal.impl.TemplateParameterImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.TemplateParameterConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

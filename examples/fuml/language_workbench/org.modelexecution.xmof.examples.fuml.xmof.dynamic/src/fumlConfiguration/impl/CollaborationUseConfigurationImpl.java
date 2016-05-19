@@ -31,10 +31,10 @@ import org.eclipse.uml2.uml.internal.impl.CollaborationUseImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.CollaborationUseConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

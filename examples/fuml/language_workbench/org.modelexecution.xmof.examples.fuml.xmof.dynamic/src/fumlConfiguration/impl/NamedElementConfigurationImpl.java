@@ -30,10 +30,10 @@ import org.eclipse.uml2.uml.internal.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.NamedElementConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

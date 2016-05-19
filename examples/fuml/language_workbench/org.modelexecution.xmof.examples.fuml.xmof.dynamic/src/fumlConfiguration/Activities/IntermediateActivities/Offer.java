@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.Offer#getOfferedTokens <em>Offered Tokens</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getOffer()
  * @model
@@ -43,6 +43,7 @@ public interface Offer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model hasTokensRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void hasTokens(boolean hasTokens);
@@ -51,6 +52,7 @@ public interface Offer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model offeredTokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getOfferedTokens(EList<Token> offeredTokens);
@@ -59,6 +61,7 @@ public interface Offer extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model countRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void countOfferedValues(int count);
@@ -66,7 +69,7 @@ public interface Offer extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void removeWithdrawnTokens();

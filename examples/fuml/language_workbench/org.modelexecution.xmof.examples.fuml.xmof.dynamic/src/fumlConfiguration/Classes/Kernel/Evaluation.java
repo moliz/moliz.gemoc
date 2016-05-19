@@ -14,11 +14,11 @@ import org.eclipse.uml2.uml.ValueSpecification;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.Evaluation#getSpecification_Evaluation <em>Specification Evaluation</em>}</li>
  *   <li>{@link fumlConfiguration.Classes.Kernel.Evaluation#getLocus_Evaluation <em>Locus Evaluation</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Classes.Kernel.KernelPackage#getEvaluation()
  * @model abstract="true"
@@ -81,6 +81,7 @@ public interface Evaluation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model valueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void evaluate(Value value);

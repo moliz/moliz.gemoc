@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Loci.ExecutionEnvironment#getLocus_ExecutionEnvironment <em>Locus Execution Environment</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Loci.LociPackage#getExecutionEnvironment()
  * @model

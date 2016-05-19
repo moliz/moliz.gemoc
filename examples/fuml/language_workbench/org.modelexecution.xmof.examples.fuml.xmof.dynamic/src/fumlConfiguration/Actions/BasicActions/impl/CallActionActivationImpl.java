@@ -27,10 +27,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.impl.CallActionActivationImpl#getCallExecutions <em>Call Executions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

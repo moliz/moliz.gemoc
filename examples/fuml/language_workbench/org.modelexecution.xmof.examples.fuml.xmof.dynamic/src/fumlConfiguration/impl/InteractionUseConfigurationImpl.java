@@ -32,10 +32,10 @@ import org.eclipse.uml2.uml.internal.impl.InteractionUseImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.InteractionUseConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

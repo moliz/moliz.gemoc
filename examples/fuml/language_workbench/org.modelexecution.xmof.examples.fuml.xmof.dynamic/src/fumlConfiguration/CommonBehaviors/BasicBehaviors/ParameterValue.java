@@ -17,11 +17,11 @@ import org.eclipse.uml2.uml.Parameter;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue#getParameter_ParameterValue <em>Parameter Parameter Value</em>}</li>
  *   <li>{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue#getValues_ParameterValue <em>Values Parameter Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage#getParameterValue()
  * @model
@@ -74,6 +74,7 @@ public interface ParameterValue extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model valueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void copy(ParameterValue value);

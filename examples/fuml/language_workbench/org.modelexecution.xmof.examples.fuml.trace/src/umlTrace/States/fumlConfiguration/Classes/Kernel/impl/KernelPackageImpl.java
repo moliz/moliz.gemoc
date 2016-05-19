@@ -5,6 +5,7 @@ package umlTrace.States.fumlConfiguration.Classes.Kernel.impl;
 import fumlConfiguration.FumlConfigurationPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -28,17 +29,6 @@ import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.
 
 import umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedCompoundValue;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedStructuredValue;
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue;
 
 import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage;
 
@@ -186,8 +176,6 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static KernelPackage init() {
@@ -215,33 +203,22 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
-		// Create package meta-data objects
-		theKernelPackage.createPackageContents();
-		theUmlTracePackage.createPackageContents();
-		theStepsPackage.createPackageContents();
-		theStatesPackage.createPackageContents();
-		theFumlConfigurationPackage_1.createPackageContents();
-		theLociPackage.createPackageContents();
-		theIntermediateActivitiesPackage.createPackageContents();
-		theBasicBehaviorsPackage.createPackageContents();
-		theBasicActionsPackage.createPackageContents();
-		theInputPackage.createPackageContents();
-		theUmlPackage.createPackageContents();
-		theEcorePackage.createPackageContents();
+		// Load packages
+		theUmlTracePackage.loadPackage();
 
-		// Initialize created meta-data
-		theKernelPackage.initializePackageContents();
-		theUmlTracePackage.initializePackageContents();
-		theStepsPackage.initializePackageContents();
-		theStatesPackage.initializePackageContents();
-		theFumlConfigurationPackage_1.initializePackageContents();
-		theLociPackage.initializePackageContents();
-		theIntermediateActivitiesPackage.initializePackageContents();
-		theBasicBehaviorsPackage.initializePackageContents();
-		theBasicActionsPackage.initializePackageContents();
-		theInputPackage.initializePackageContents();
-		theUmlPackage.initializePackageContents();
-		theEcorePackage.initializePackageContents();
+		// Fix loaded packages
+		theKernelPackage.fixPackageContents();
+		theUmlTracePackage.fixPackageContents();
+		theStepsPackage.fixPackageContents();
+		theStatesPackage.fixPackageContents();
+		theFumlConfigurationPackage_1.fixPackageContents();
+		theLociPackage.fixPackageContents();
+		theIntermediateActivitiesPackage.fixPackageContents();
+		theBasicBehaviorsPackage.fixPackageContents();
+		theBasicActionsPackage.fixPackageContents();
+		theInputPackage.fixPackageContents();
+		theUmlPackage.fixPackageContents();
+		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theKernelPackage.freeze();
@@ -258,6 +235,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedBooleanValue() {
+		if (tracedBooleanValueEClass == null) {
+			tracedBooleanValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(0);
+		}
 		return tracedBooleanValueEClass;
 	}
 
@@ -267,7 +247,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedBooleanValue_Value_BooleanValueSequence() {
-		return (EReference)tracedBooleanValueEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedBooleanValue().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -276,6 +256,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedCompoundValue() {
+		if (tracedCompoundValueEClass == null) {
+			tracedCompoundValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(1);
+		}
 		return tracedCompoundValueEClass;
 	}
 
@@ -285,7 +268,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedCompoundValue_FeatureValuesSequence() {
-		return (EReference)tracedCompoundValueEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedCompoundValue().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -294,6 +277,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedEvaluation() {
+		if (tracedEvaluationEClass == null) {
+			tracedEvaluationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(2);
+		}
 		return tracedEvaluationEClass;
 	}
 
@@ -303,7 +289,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedEvaluation_Locus_EvaluationSequence() {
-		return (EReference)tracedEvaluationEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedEvaluation().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -312,7 +298,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedEvaluation_Specification_EvaluationSequence() {
-		return (EReference)tracedEvaluationEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTracedEvaluation().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -321,6 +307,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedExtensionalValue() {
+		if (tracedExtensionalValueEClass == null) {
+			tracedExtensionalValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(3);
+		}
 		return tracedExtensionalValueEClass;
 	}
 
@@ -330,7 +319,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedExtensionalValue_Locus_ExtensionalValueSequence() {
-		return (EReference)tracedExtensionalValueEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedExtensionalValue().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -339,6 +328,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedFeatureValue() {
+		if (tracedFeatureValueEClass == null) {
+			tracedFeatureValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(4);
+		}
 		return tracedFeatureValueEClass;
 	}
 
@@ -348,7 +340,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedFeatureValue_FeatureSequence() {
-		return (EReference)tracedFeatureValueEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedFeatureValue().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -357,7 +349,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedFeatureValue_PositionSequence() {
-		return (EReference)tracedFeatureValueEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTracedFeatureValue().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -366,7 +358,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedFeatureValue_Values_FeatureValueSequence() {
-		return (EReference)tracedFeatureValueEClass.getEStructuralFeatures().get(2);
+        return (EReference)getTracedFeatureValue().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -375,6 +367,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedIntegerValue() {
+		if (tracedIntegerValueEClass == null) {
+			tracedIntegerValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(5);
+		}
 		return tracedIntegerValueEClass;
 	}
 
@@ -384,7 +379,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedIntegerValue_Value_IntegerValueSequence() {
-		return (EReference)tracedIntegerValueEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedIntegerValue().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -393,6 +388,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedObject() {
+		if (tracedObjectEClass == null) {
+			tracedObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(6);
+		}
 		return tracedObjectEClass;
 	}
 
@@ -402,7 +400,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedObject_TypesSequence() {
-		return (EReference)tracedObjectEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedObject().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -411,6 +409,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedPrimitiveValue() {
+		if (tracedPrimitiveValueEClass == null) {
+			tracedPrimitiveValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(7);
+		}
 		return tracedPrimitiveValueEClass;
 	}
 
@@ -420,7 +421,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedPrimitiveValue_TypeSequence() {
-		return (EReference)tracedPrimitiveValueEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedPrimitiveValue().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -429,6 +430,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedReference() {
+		if (tracedReferenceEClass == null) {
+			tracedReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(8);
+		}
 		return tracedReferenceEClass;
 	}
 
@@ -438,7 +442,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EReference getTracedReference_ReferentSequence() {
-		return (EReference)tracedReferenceEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedReference().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -447,6 +451,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedStructuredValue() {
+		if (tracedStructuredValueEClass == null) {
+			tracedStructuredValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(9);
+		}
 		return tracedStructuredValueEClass;
 	}
 
@@ -456,6 +463,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	public EClass getTracedValue() {
+		if (tracedValueEClass == null) {
+			tracedValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(10);
+		}
 		return tracedValueEClass;
 	}
 
@@ -468,205 +478,38 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		return (KernelFactory)getEFactoryInstance();
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isCreated = false;
+	private boolean isFixed = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
+	 * Fixes up the loaded package, to make it appear as if it had been programmatically built.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents() {
-		if (isCreated) return;
-		isCreated = true;
-
-		// Create classes and their features
-		tracedBooleanValueEClass = createEClass(TRACED_BOOLEAN_VALUE);
-		createEReference(tracedBooleanValueEClass, TRACED_BOOLEAN_VALUE__VALUE_BOOLEAN_VALUE_SEQUENCE);
-
-		tracedCompoundValueEClass = createEClass(TRACED_COMPOUND_VALUE);
-		createEReference(tracedCompoundValueEClass, TRACED_COMPOUND_VALUE__FEATURE_VALUES_SEQUENCE);
-
-		tracedEvaluationEClass = createEClass(TRACED_EVALUATION);
-		createEReference(tracedEvaluationEClass, TRACED_EVALUATION__LOCUS_EVALUATION_SEQUENCE);
-		createEReference(tracedEvaluationEClass, TRACED_EVALUATION__SPECIFICATION_EVALUATION_SEQUENCE);
-
-		tracedExtensionalValueEClass = createEClass(TRACED_EXTENSIONAL_VALUE);
-		createEReference(tracedExtensionalValueEClass, TRACED_EXTENSIONAL_VALUE__LOCUS_EXTENSIONAL_VALUE_SEQUENCE);
-
-		tracedFeatureValueEClass = createEClass(TRACED_FEATURE_VALUE);
-		createEReference(tracedFeatureValueEClass, TRACED_FEATURE_VALUE__FEATURE_SEQUENCE);
-		createEReference(tracedFeatureValueEClass, TRACED_FEATURE_VALUE__POSITION_SEQUENCE);
-		createEReference(tracedFeatureValueEClass, TRACED_FEATURE_VALUE__VALUES_FEATURE_VALUE_SEQUENCE);
-
-		tracedIntegerValueEClass = createEClass(TRACED_INTEGER_VALUE);
-		createEReference(tracedIntegerValueEClass, TRACED_INTEGER_VALUE__VALUE_INTEGER_VALUE_SEQUENCE);
-
-		tracedObjectEClass = createEClass(TRACED_OBJECT);
-		createEReference(tracedObjectEClass, TRACED_OBJECT__TYPES_SEQUENCE);
-
-		tracedPrimitiveValueEClass = createEClass(TRACED_PRIMITIVE_VALUE);
-		createEReference(tracedPrimitiveValueEClass, TRACED_PRIMITIVE_VALUE__TYPE_SEQUENCE);
-
-		tracedReferenceEClass = createEClass(TRACED_REFERENCE);
-		createEReference(tracedReferenceEClass, TRACED_REFERENCE__REFERENT_SEQUENCE);
-
-		tracedStructuredValueEClass = createEClass(TRACED_STRUCTURED_VALUE);
-
-		tracedValueEClass = createEClass(TRACED_VALUE);
+	public void fixPackageContents() {
+		if (isFixed) return;
+		isFixed = true;
+		fixEClassifiers();
 	}
 
 	/**
+	 * Sets the instance class on the given classifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isInitialized = false;
-
-	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void initializePackageContents() {
-		if (isInitialized) return;
-		isInitialized = true;
-
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
-
-		// Obtain other dependent packages
-		StatesPackage theStatesPackage = (StatesPackage)EPackage.Registry.INSTANCE.getEPackage(StatesPackage.eNS_URI);
-		LociPackage theLociPackage = (LociPackage)EPackage.Registry.INSTANCE.getEPackage(LociPackage.eNS_URI);
-
-		// Create type parameters
-
-		// Set bounds for type parameters
-
-		// Add supertypes to classes
-		tracedBooleanValueEClass.getESuperTypes().add(this.getTracedPrimitiveValue());
-		tracedCompoundValueEClass.getESuperTypes().add(this.getTracedStructuredValue());
-		tracedEvaluationEClass.getESuperTypes().add(theLociPackage.getTracedSemanticVisitor());
-		tracedExtensionalValueEClass.getESuperTypes().add(this.getTracedCompoundValue());
-		tracedIntegerValueEClass.getESuperTypes().add(this.getTracedPrimitiveValue());
-		tracedObjectEClass.getESuperTypes().add(this.getTracedExtensionalValue());
-		tracedPrimitiveValueEClass.getESuperTypes().add(this.getTracedValue());
-		tracedReferenceEClass.getESuperTypes().add(this.getTracedStructuredValue());
-		tracedStructuredValueEClass.getESuperTypes().add(this.getTracedValue());
-		tracedValueEClass.getESuperTypes().add(theLociPackage.getTracedSemanticVisitor());
-
-		// Initialize classes, features, and operations; add parameters
-		initEClass(tracedBooleanValueEClass, TracedBooleanValue.class, "TracedBooleanValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedBooleanValue_Value_BooleanValueSequence(), theStatesPackage.getBooleanValue_value_BooleanValue_Value(), theStatesPackage.getBooleanValue_value_BooleanValue_Value_Parent(), "value_BooleanValueSequence", null, 0, -1, TracedBooleanValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedCompoundValueEClass, TracedCompoundValue.class, "TracedCompoundValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedCompoundValue_FeatureValuesSequence(), theStatesPackage.getCompoundValue_featureValues_Value(), theStatesPackage.getCompoundValue_featureValues_Value_Parent(), "featureValuesSequence", null, 0, -1, TracedCompoundValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedEvaluationEClass, TracedEvaluation.class, "TracedEvaluation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedEvaluation_Locus_EvaluationSequence(), theStatesPackage.getEvaluation_locus_Evaluation_Value(), theStatesPackage.getEvaluation_locus_Evaluation_Value_Parent(), "locus_EvaluationSequence", null, 0, -1, TracedEvaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTracedEvaluation_Specification_EvaluationSequence(), theStatesPackage.getEvaluation_specification_Evaluation_Value(), theStatesPackage.getEvaluation_specification_Evaluation_Value_Parent(), "specification_EvaluationSequence", null, 0, -1, TracedEvaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedExtensionalValueEClass, TracedExtensionalValue.class, "TracedExtensionalValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedExtensionalValue_Locus_ExtensionalValueSequence(), theStatesPackage.getExtensionalValue_locus_ExtensionalValue_Value(), theStatesPackage.getExtensionalValue_locus_ExtensionalValue_Value_Parent(), "locus_ExtensionalValueSequence", null, 0, -1, TracedExtensionalValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedFeatureValueEClass, TracedFeatureValue.class, "TracedFeatureValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedFeatureValue_FeatureSequence(), theStatesPackage.getFeatureValue_feature_Value(), theStatesPackage.getFeatureValue_feature_Value_Parent(), "featureSequence", null, 0, -1, TracedFeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTracedFeatureValue_PositionSequence(), theStatesPackage.getFeatureValue_position_Value(), theStatesPackage.getFeatureValue_position_Value_Parent(), "positionSequence", null, 0, -1, TracedFeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTracedFeatureValue_Values_FeatureValueSequence(), theStatesPackage.getFeatureValue_values_FeatureValue_Value(), theStatesPackage.getFeatureValue_values_FeatureValue_Value_Parent(), "values_FeatureValueSequence", null, 0, -1, TracedFeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedIntegerValueEClass, TracedIntegerValue.class, "TracedIntegerValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedIntegerValue_Value_IntegerValueSequence(), theStatesPackage.getIntegerValue_value_IntegerValue_Value(), theStatesPackage.getIntegerValue_value_IntegerValue_Value_Parent(), "value_IntegerValueSequence", null, 0, -1, TracedIntegerValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedObjectEClass, TracedObject.class, "TracedObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedObject_TypesSequence(), theStatesPackage.getObject_types_Value(), theStatesPackage.getObject_types_Value_Parent(), "typesSequence", null, 0, -1, TracedObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedPrimitiveValueEClass, TracedPrimitiveValue.class, "TracedPrimitiveValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedPrimitiveValue_TypeSequence(), theStatesPackage.getPrimitiveValue_type_Value(), theStatesPackage.getPrimitiveValue_type_Value_Parent(), "typeSequence", null, 0, -1, TracedPrimitiveValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedReferenceEClass, TracedReference.class, "TracedReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedReference_ReferentSequence(), theStatesPackage.getReference_referent_Value(), theStatesPackage.getReference_referent_Value_Parent(), "referentSequence", null, 0, -1, TracedReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tracedStructuredValueEClass, TracedStructuredValue.class, "TracedStructuredValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tracedValueEClass, TracedValue.class, "TracedValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		// Create annotations
-		// http://www.modelexecution.org/trace/XMOF
-		createXMOFAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.modelexecution.org/trace/XMOF</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createXMOFAnnotations() {
-		String source = "http://www.modelexecution.org/trace/XMOF";	
-		addAnnotation
-		  (tracedBooleanValueEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Classes/Kernel/BooleanValue"
-		   });	
-		addAnnotation
-		  (tracedCompoundValueEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Classes/Kernel/CompoundValue"
-		   });	
-		addAnnotation
-		  (tracedEvaluationEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Classes/Kernel/Evaluation"
-		   });	
-		addAnnotation
-		  (tracedExtensionalValueEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Classes/Kernel/ExtensionalValue"
-		   });	
-		addAnnotation
-		  (tracedFeatureValueEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Classes/Kernel/FeatureValue"
-		   });	
-		addAnnotation
-		  (tracedIntegerValueEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Classes/Kernel/IntegerValue"
-		   });	
-		addAnnotation
-		  (tracedObjectEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Classes/Kernel/Object"
-		   });	
-		addAnnotation
-		  (tracedPrimitiveValueEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Classes/Kernel/PrimitiveValue"
-		   });	
-		addAnnotation
-		  (tracedReferenceEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//Classes/Kernel/Reference"
-		   });
+	@Override
+	protected void fixInstanceClass(EClassifier eClassifier) {
+		if (eClassifier.getInstanceClassName() == null) {
+			eClassifier.setInstanceClassName("umlTrace.States.fumlConfiguration.Classes.Kernel." + eClassifier.getName());
+			setGeneratedClassName(eClassifier);
+		}
 	}
 
 } //KernelPackageImpl

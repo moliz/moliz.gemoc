@@ -34,12 +34,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Loci.impl.LocusImpl#getFactory <em>Factory</em>}</li>
  *   <li>{@link fumlConfiguration.Loci.impl.LocusImpl#getExecutor <em>Executor</em>}</li>
  *   <li>{@link fumlConfiguration.Loci.impl.LocusImpl#getExtensionalValues <em>Extensional Values</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

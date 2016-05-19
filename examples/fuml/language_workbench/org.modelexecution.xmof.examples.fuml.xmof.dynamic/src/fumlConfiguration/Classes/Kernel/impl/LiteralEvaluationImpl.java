@@ -17,8 +17,6 @@ import org.eclipse.uml2.uml.PrimitiveType;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Literal Evaluation</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -33,7 +33,7 @@ public class RootImplicitStepImpl extends SmallStepImpl implements RootImplicitS
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return StepsPackage.Literals.ROOT_IMPLICIT_STEP;
+		return StepsPackage.eINSTANCE.getRootImplicitStep();
 	}
 
 } //RootImplicitStepImpl

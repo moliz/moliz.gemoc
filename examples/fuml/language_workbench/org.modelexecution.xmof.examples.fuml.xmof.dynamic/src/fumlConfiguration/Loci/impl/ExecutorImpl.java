@@ -34,10 +34,10 @@ import org.eclipse.uml2.uml.ValueSpecification;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Loci.impl.ExecutorImpl#getLocus_Executor <em>Locus Executor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

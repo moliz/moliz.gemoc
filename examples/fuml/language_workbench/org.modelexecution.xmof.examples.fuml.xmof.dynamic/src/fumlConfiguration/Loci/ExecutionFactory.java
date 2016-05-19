@@ -24,12 +24,12 @@ import org.eclipse.uml2.uml.ValueSpecification;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Loci.ExecutionFactory#getLocus_ExecutionFactory <em>Locus Execution Factory</em>}</li>
  *   <li>{@link fumlConfiguration.Loci.ExecutionFactory#getPrimitiveBehaviorPrototypes <em>Primitive Behavior Prototypes</em>}</li>
  *   <li>{@link fumlConfiguration.Loci.ExecutionFactory#getBuiltInTypes <em>Built In Types</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Loci.LociPackage#getExecutionFactory()
  * @model
@@ -100,6 +100,7 @@ public interface ExecutionFactory extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model behaviorRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void createExecution(Behavior behavior, fumlConfiguration.Classes.Kernel.Object context, Execution execution);
@@ -108,6 +109,7 @@ public interface ExecutionFactory extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model elementRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void instantiateVisitor(Element element, SemanticVisitor visitor);
@@ -116,6 +118,7 @@ public interface ExecutionFactory extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model evaluationRequired="true" specificationRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void createEvaluation(Evaluation evaluation, ValueSpecification specification);
@@ -124,6 +127,7 @@ public interface ExecutionFactory extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model nameRequired="true" typeRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getBuiltInType(String name, PrimitiveType type);
@@ -132,6 +136,7 @@ public interface ExecutionFactory extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model behaviorRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void instantiateOpaqueBehaviorExecution(OpaqueBehavior behavior, OpaqueBehaviorExecution execution);

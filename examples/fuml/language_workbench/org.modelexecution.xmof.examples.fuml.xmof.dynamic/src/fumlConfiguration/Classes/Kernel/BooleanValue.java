@@ -10,10 +10,10 @@ package fumlConfiguration.Classes.Kernel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.BooleanValue#isValue_BooleanValue <em>Value Boolean Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Classes.Kernel.KernelPackage#getBooleanValue()
  * @model

@@ -36,10 +36,10 @@ import org.eclipse.uml2.uml.internal.impl.ValueSpecificationActionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.ValueSpecificationActionConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

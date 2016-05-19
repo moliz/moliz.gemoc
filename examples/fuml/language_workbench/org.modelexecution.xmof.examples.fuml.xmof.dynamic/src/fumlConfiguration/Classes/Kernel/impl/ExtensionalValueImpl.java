@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.impl.ExtensionalValueImpl#getLocus_ExtensionalValue <em>Locus Extensional Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

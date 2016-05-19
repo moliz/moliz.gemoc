@@ -23,6 +23,7 @@ public interface DecisionNodeActivation extends ControlNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model incomingTokensMany="true" removedControlTokensMany="true" incomingTokens_joinedControlTokensRemovedMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void removeJoinedControlTokens(EList<Token> incomingTokens, EList<Token> removedControlTokens, EList<Token> incomingTokens_joinedControlTokensRemoved);
@@ -31,6 +32,7 @@ public interface DecisionNodeActivation extends ControlNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model incomingTokensMany="true" decisionValuesMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getDecisionValues(EList<Token> incomingTokens, EList<Value> decisionValues);
@@ -39,6 +41,7 @@ public interface DecisionNodeActivation extends ControlNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model incomingTokensMany="true" decisionValuesMany="true" edgeInstanceRequired="true" offeredTokensMany="true" receivesOfferRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void determineOfferedTokens(EList<Token> incomingTokens, EList<Value> decisionValues, ActivityEdgeInstance edgeInstance, EList<Token> offeredTokens, boolean receivesOffer);
@@ -47,6 +50,7 @@ public interface DecisionNodeActivation extends ControlNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model guardRequired="true" valueRequired="true" resultRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void test(ValueSpecification guard, Value value, boolean result);
@@ -55,6 +59,7 @@ public interface DecisionNodeActivation extends ControlNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model returnRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void hasObjectFlowInput(boolean return_);
@@ -62,7 +67,7 @@ public interface DecisionNodeActivation extends ControlNodeActivation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getDecisionInputFlowValue(Value value);
@@ -71,6 +76,7 @@ public interface DecisionNodeActivation extends ControlNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model inputValueRequired="true" decisionInputResultRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void executeDecisionInputBehavior(Value inputValue, Value decisionInputValue, Value decisionInputResult);
@@ -78,7 +84,7 @@ public interface DecisionNodeActivation extends ControlNodeActivation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getDecisionInputFlowInstance(ActivityEdgeInstance edgeInstance);

@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Input.InputParameterValues#getName <em>Name</em>}</li>
  *   <li>{@link fumlConfiguration.Input.InputParameterValues#getParameterValues <em>Parameter Values</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Input.InputPackage#getInputParameterValues()
  * @model

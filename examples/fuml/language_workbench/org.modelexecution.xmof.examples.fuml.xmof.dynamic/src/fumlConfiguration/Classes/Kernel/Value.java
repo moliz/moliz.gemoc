@@ -23,6 +23,7 @@ public interface Value extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model typesMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getTypes(EList<Classifier> types);
@@ -31,6 +32,7 @@ public interface Value extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model valueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void copy(Value value);
@@ -39,6 +41,7 @@ public interface Value extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model valueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void new_(Value value);
@@ -47,6 +50,7 @@ public interface Value extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model otherValueRequired="true" returnRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void equals(Value otherValue, boolean return_);
@@ -55,6 +59,7 @@ public interface Value extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model typeRequired="true" hasTypeRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void hasType(Classifier type, boolean hasType);

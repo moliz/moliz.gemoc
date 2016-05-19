@@ -37,12 +37,12 @@ import org.eclipse.uml2.uml.ActivityNode;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityNodeActivationGroupImpl#getActivityExecution <em>Activity Execution</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityNodeActivationGroupImpl#getEdgeInstances <em>Edge Instances</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityNodeActivationGroupImpl#getNodeActivations <em>Node Activations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

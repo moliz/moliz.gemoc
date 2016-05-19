@@ -19,11 +19,11 @@ import org.eclipse.uml2.uml.Pin;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.ActionActivation#getPinActivations <em>Pin Activations</em>}</li>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.ActionActivation#isFiring <em>Firing</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Actions.BasicActions.BasicActionsPackage#getActionActivation()
  * @model abstract="true"
@@ -78,6 +78,7 @@ public interface ActionActivation extends ActivityNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model pinRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getPinActivation(Pin pin, PinActivation return_);
@@ -85,7 +86,7 @@ public interface ActionActivation extends ActivityNodeActivation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void sendOffers();
@@ -93,7 +94,7 @@ public interface ActionActivation extends ActivityNodeActivation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void doAction();
@@ -102,6 +103,7 @@ public interface ActionActivation extends ActivityNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model fireAgainRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void shouldFireAgain(boolean fireAgain);
@@ -110,6 +112,7 @@ public interface ActionActivation extends ActivityNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model pinRequired="true" valueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void putToken(OutputPin pin, Value value);
@@ -118,6 +121,7 @@ public interface ActionActivation extends ActivityNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model pinRequired="true" valuesMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void takeTokens(InputPin pin, EList<Value> values);
@@ -126,6 +130,7 @@ public interface ActionActivation extends ActivityNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model pinRequired="true" valuesRequired="true" valuesMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void putTokens(OutputPin pin, EList<Value> values);

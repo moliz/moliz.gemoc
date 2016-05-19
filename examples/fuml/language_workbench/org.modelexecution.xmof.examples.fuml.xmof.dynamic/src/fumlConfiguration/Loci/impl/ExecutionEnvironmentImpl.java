@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Loci.impl.ExecutionEnvironmentImpl#getLocus_ExecutionEnvironment <em>Locus Execution Environment</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

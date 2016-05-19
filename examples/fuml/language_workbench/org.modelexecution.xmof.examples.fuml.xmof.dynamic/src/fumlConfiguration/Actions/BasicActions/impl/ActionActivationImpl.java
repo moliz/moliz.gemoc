@@ -37,11 +37,11 @@ import org.eclipse.uml2.uml.Pin;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.impl.ActionActivationImpl#getPinActivations <em>Pin Activations</em>}</li>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.impl.ActionActivationImpl#isFiring <em>Firing</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -3,6 +3,7 @@
 package umlTrace.States.fumlConfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -42,8 +43,6 @@ import umlTrace.States.fumlConfiguration.Input.impl.InputPackageImpl;
 import umlTrace.States.fumlConfiguration.Loci.LociPackage;
 
 import umlTrace.States.fumlConfiguration.Loci.impl.LociPackageImpl;
-
-import umlTrace.States.fumlConfiguration.TracedElementConfiguration;
 
 import umlTrace.States.impl.StatesPackageImpl;
 
@@ -107,8 +106,6 @@ public class FumlConfigurationPackageImpl extends EPackageImpl implements FumlCo
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static FumlConfigurationPackage init() {
@@ -136,33 +133,22 @@ public class FumlConfigurationPackageImpl extends EPackageImpl implements FumlCo
 		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
-		// Create package meta-data objects
-		theFumlConfigurationPackage.createPackageContents();
-		theUmlTracePackage.createPackageContents();
-		theStepsPackage.createPackageContents();
-		theStatesPackage.createPackageContents();
-		theLociPackage.createPackageContents();
-		theIntermediateActivitiesPackage.createPackageContents();
-		theKernelPackage.createPackageContents();
-		theBasicBehaviorsPackage.createPackageContents();
-		theBasicActionsPackage.createPackageContents();
-		theInputPackage.createPackageContents();
-		theUmlPackage.createPackageContents();
-		theEcorePackage.createPackageContents();
+		// Load packages
+		theUmlTracePackage.loadPackage();
 
-		// Initialize created meta-data
-		theFumlConfigurationPackage.initializePackageContents();
-		theUmlTracePackage.initializePackageContents();
-		theStepsPackage.initializePackageContents();
-		theStatesPackage.initializePackageContents();
-		theLociPackage.initializePackageContents();
-		theIntermediateActivitiesPackage.initializePackageContents();
-		theKernelPackage.initializePackageContents();
-		theBasicBehaviorsPackage.initializePackageContents();
-		theBasicActionsPackage.initializePackageContents();
-		theInputPackage.initializePackageContents();
-		theUmlPackage.initializePackageContents();
-		theEcorePackage.initializePackageContents();
+		// Fix loaded packages
+		theFumlConfigurationPackage.fixPackageContents();
+		theUmlTracePackage.fixPackageContents();
+		theStepsPackage.fixPackageContents();
+		theStatesPackage.fixPackageContents();
+		theLociPackage.fixPackageContents();
+		theIntermediateActivitiesPackage.fixPackageContents();
+		theKernelPackage.fixPackageContents();
+		theBasicBehaviorsPackage.fixPackageContents();
+		theBasicActionsPackage.fixPackageContents();
+		theInputPackage.fixPackageContents();
+		theUmlPackage.fixPackageContents();
+		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theFumlConfigurationPackage.freeze();
@@ -179,6 +165,9 @@ public class FumlConfigurationPackageImpl extends EPackageImpl implements FumlCo
 	 * @generated
 	 */
 	public EClass getTracedElementConfiguration() {
+		if (tracedElementConfigurationEClass == null) {
+			tracedElementConfigurationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationPackage.eNS_URI).getEClassifiers().get(0);
+		}
 		return tracedElementConfigurationEClass;
 	}
 
@@ -188,7 +177,7 @@ public class FumlConfigurationPackageImpl extends EPackageImpl implements FumlCo
 	 * @generated
 	 */
 	public EReference getTracedElementConfiguration_OriginalObject() {
-		return (EReference)tracedElementConfigurationEClass.getEStructuralFeatures().get(0);
+        return (EReference)getTracedElementConfiguration().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -197,7 +186,7 @@ public class FumlConfigurationPackageImpl extends EPackageImpl implements FumlCo
 	 * @generated
 	 */
 	public EReference getTracedElementConfiguration_SemanticVisitorSequence() {
-		return (EReference)tracedElementConfigurationEClass.getEStructuralFeatures().get(1);
+        return (EReference)getTracedElementConfiguration().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -209,101 +198,38 @@ public class FumlConfigurationPackageImpl extends EPackageImpl implements FumlCo
 		return (FumlConfigurationFactory)getEFactoryInstance();
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isCreated = false;
+	private boolean isFixed = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
+	 * Fixes up the loaded package, to make it appear as if it had been programmatically built.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents() {
-		if (isCreated) return;
-		isCreated = true;
-
-		// Create classes and their features
-		tracedElementConfigurationEClass = createEClass(TRACED_ELEMENT_CONFIGURATION);
-		createEReference(tracedElementConfigurationEClass, TRACED_ELEMENT_CONFIGURATION__ORIGINAL_OBJECT);
-		createEReference(tracedElementConfigurationEClass, TRACED_ELEMENT_CONFIGURATION__SEMANTIC_VISITOR_SEQUENCE);
+	public void fixPackageContents() {
+		if (isFixed) return;
+		isFixed = true;
+		fixEClassifiers();
 	}
 
 	/**
+	 * Sets the instance class on the given classifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isInitialized = false;
-
-	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void initializePackageContents() {
-		if (isInitialized) return;
-		isInitialized = true;
-
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
-
-		// Obtain other dependent packages
-		LociPackage theLociPackage = (LociPackage)EPackage.Registry.INSTANCE.getEPackage(LociPackage.eNS_URI);
-		IntermediateActivitiesPackage theIntermediateActivitiesPackage = (IntermediateActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI);
-		KernelPackage theKernelPackage = (KernelPackage)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
-		BasicBehaviorsPackage theBasicBehaviorsPackage = (BasicBehaviorsPackage)EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI);
-		BasicActionsPackage theBasicActionsPackage = (BasicActionsPackage)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI);
-		InputPackage theInputPackage = (InputPackage)EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI);
-		fumlConfiguration.FumlConfigurationPackage theFumlConfigurationPackage_1 = (fumlConfiguration.FumlConfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(fumlConfiguration.FumlConfigurationPackage.eNS_URI);
-		StatesPackage theStatesPackage = (StatesPackage)EPackage.Registry.INSTANCE.getEPackage(StatesPackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theLociPackage);
-		getESubpackages().add(theIntermediateActivitiesPackage);
-		getESubpackages().add(theKernelPackage);
-		getESubpackages().add(theBasicBehaviorsPackage);
-		getESubpackages().add(theBasicActionsPackage);
-		getESubpackages().add(theInputPackage);
-
-		// Create type parameters
-
-		// Set bounds for type parameters
-
-		// Add supertypes to classes
-
-		// Initialize classes, features, and operations; add parameters
-		initEClass(tracedElementConfigurationEClass, TracedElementConfiguration.class, "TracedElementConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTracedElementConfiguration_OriginalObject(), theFumlConfigurationPackage_1.getElementConfiguration(), null, "originalObject", null, 0, 1, TracedElementConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTracedElementConfiguration_SemanticVisitorSequence(), theStatesPackage.getElementConfiguration_semanticVisitor_Value(), theStatesPackage.getElementConfiguration_semanticVisitor_Value_Parent(), "semanticVisitorSequence", null, 0, -1, TracedElementConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create annotations
-		// http://www.modelexecution.org/trace/XMOF
-		createXMOFAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.modelexecution.org/trace/XMOF</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createXMOFAnnotations() {
-		String source = "http://www.modelexecution.org/trace/XMOF";	
-		addAnnotation
-		  (tracedElementConfigurationEClass, 
-		   source, 
-		   new String[] {
-			 "executionMetamodelElement", "//ElementConfiguration"
-		   });
+	@Override
+	protected void fixInstanceClass(EClassifier eClassifier) {
+		if (eClassifier.getInstanceClassName() == null) {
+			eClassifier.setInstanceClassName("umlTrace.States.fumlConfiguration." + eClassifier.getName());
+			setGeneratedClassName(eClassifier);
+		}
 	}
 
 } //FumlConfigurationPackageImpl

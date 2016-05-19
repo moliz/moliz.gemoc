@@ -929,6 +929,19 @@ public class UmlTraceExplorer implements ITraceExplorer {
 									value.getOutgoingEdges()));
 				}
 			}
+			for (umlTrace.States.InputParameterValues_parameterValues_Value value : stateToGo
+					.getInputParameterValues_parameterValues_Values()) {
+				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) {
+					umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues parent_cast = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) value
+							.getParent();
+					fumlConfiguration.Input.InputParameterValues originalObject = (fumlConfiguration.Input.InputParameterValues) parent_cast
+							.getOriginalObject();
+					originalObject.getParameterValues().clear();
+					originalObject.getParameterValues()
+							.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue>) getTracedToExe(
+									value.getParameterValues()));
+				}
+			}
 			for (umlTrace.States.Execution_parameterValues_Value value : stateToGo
 					.getExecution_parameterValues_Values()) {
 				if (value
@@ -937,19 +950,6 @@ public class UmlTraceExplorer implements ITraceExplorer {
 							.getParent();
 					fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution originalObject = (fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) parent_cast
 							.getOriginalObject_SemanticVisitor();
-					originalObject.getParameterValues().clear();
-					originalObject.getParameterValues()
-							.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue>) getTracedToExe(
-									value.getParameterValues()));
-				}
-			}
-			for (umlTrace.States.InputParameterValues_parameterValues_Value value : stateToGo
-					.getInputParameterValues_parameterValues_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) {
-					umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues parent_cast = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) value
-							.getParent();
-					fumlConfiguration.Input.InputParameterValues originalObject = (fumlConfiguration.Input.InputParameterValues) parent_cast
-							.getOriginalObject();
 					originalObject.getParameterValues().clear();
 					originalObject.getParameterValues()
 							.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue>) getTracedToExe(

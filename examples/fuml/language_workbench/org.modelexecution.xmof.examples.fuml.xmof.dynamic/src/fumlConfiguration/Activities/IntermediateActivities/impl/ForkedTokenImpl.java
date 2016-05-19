@@ -23,12 +23,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ForkedTokenImpl#getBaseToken <em>Base Token</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ForkedTokenImpl#getRemainingOffersCount <em>Remaining Offers Count</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ForkedTokenImpl#isBaseTokenIsWithdrawn <em>Base Token Is Withdrawn</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

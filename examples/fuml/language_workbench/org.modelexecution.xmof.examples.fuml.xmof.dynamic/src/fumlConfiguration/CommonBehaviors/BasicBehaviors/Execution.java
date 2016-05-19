@@ -14,11 +14,11 @@ import org.eclipse.uml2.uml.Parameter;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#getContext <em>Context</em>}</li>
  *   <li>{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#getParameterValues <em>Parameter Values</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage#getExecution()
  * @model abstract="true"
@@ -71,6 +71,7 @@ public interface Execution extends fumlConfiguration.Classes.Kernel.Object {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model parameterValueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void setParameterValue(ParameterValue parameterValue);
@@ -78,7 +79,7 @@ public interface Execution extends fumlConfiguration.Classes.Kernel.Object {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void execute();
@@ -87,6 +88,7 @@ public interface Execution extends fumlConfiguration.Classes.Kernel.Object {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model outputParameterValuesMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getOutputParameterValues(EList<ParameterValue> outputParameterValues);
@@ -95,6 +97,7 @@ public interface Execution extends fumlConfiguration.Classes.Kernel.Object {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model parameterRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getParameterValue(Parameter parameter, ParameterValue parameterValue);
@@ -102,7 +105,7 @@ public interface Execution extends fumlConfiguration.Classes.Kernel.Object {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void terminate();
@@ -111,6 +114,7 @@ public interface Execution extends fumlConfiguration.Classes.Kernel.Object {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model behaviorRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getBehavior(Behavior behavior);

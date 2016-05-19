@@ -26,6 +26,7 @@ public interface ModelConfiguration extends Model, PackageConfiguration {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model executionEnvironmentRequired="true" behaviorRequired="true" inputsMany="true" outputsMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void main(ExecutionEnvironment executionEnvironment, Behavior behavior, fumlConfiguration.Classes.Kernel.Object context, EList<ParameterValue> inputs, EList<ParameterValue> outputs);

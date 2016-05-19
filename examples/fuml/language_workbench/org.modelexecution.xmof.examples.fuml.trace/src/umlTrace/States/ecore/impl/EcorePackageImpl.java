@@ -5,6 +5,7 @@ package umlTrace.States.ecore.impl;
 import fumlConfiguration.FumlConfigurationPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -15,7 +16,6 @@ import umlTrace.States.StatesPackage;
 
 import umlTrace.States.ecore.EcoreFactory;
 import umlTrace.States.ecore.EcorePackage;
-import umlTrace.States.ecore.TracedEModelElement;
 
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackage;
 
@@ -105,8 +105,6 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static EcorePackage init() {
@@ -134,33 +132,22 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
 		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
 
-		// Create package meta-data objects
-		theEcorePackage.createPackageContents();
-		theUmlTracePackage.createPackageContents();
-		theStepsPackage.createPackageContents();
-		theStatesPackage.createPackageContents();
-		theFumlConfigurationPackage_1.createPackageContents();
-		theLociPackage.createPackageContents();
-		theIntermediateActivitiesPackage.createPackageContents();
-		theKernelPackage.createPackageContents();
-		theBasicBehaviorsPackage.createPackageContents();
-		theBasicActionsPackage.createPackageContents();
-		theInputPackage.createPackageContents();
-		theUmlPackage.createPackageContents();
+		// Load packages
+		theUmlTracePackage.loadPackage();
 
-		// Initialize created meta-data
-		theEcorePackage.initializePackageContents();
-		theUmlTracePackage.initializePackageContents();
-		theStepsPackage.initializePackageContents();
-		theStatesPackage.initializePackageContents();
-		theFumlConfigurationPackage_1.initializePackageContents();
-		theLociPackage.initializePackageContents();
-		theIntermediateActivitiesPackage.initializePackageContents();
-		theKernelPackage.initializePackageContents();
-		theBasicBehaviorsPackage.initializePackageContents();
-		theBasicActionsPackage.initializePackageContents();
-		theInputPackage.initializePackageContents();
-		theUmlPackage.initializePackageContents();
+		// Fix loaded packages
+		theEcorePackage.fixPackageContents();
+		theUmlTracePackage.fixPackageContents();
+		theStepsPackage.fixPackageContents();
+		theStatesPackage.fixPackageContents();
+		theFumlConfigurationPackage_1.fixPackageContents();
+		theLociPackage.fixPackageContents();
+		theIntermediateActivitiesPackage.fixPackageContents();
+		theKernelPackage.fixPackageContents();
+		theBasicBehaviorsPackage.fixPackageContents();
+		theBasicActionsPackage.fixPackageContents();
+		theInputPackage.fixPackageContents();
+		theUmlPackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theEcorePackage.freeze();
@@ -177,6 +164,9 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 	 * @generated
 	 */
 	public EClass getTracedEModelElement() {
+		if (tracedEModelElementEClass == null) {
+			tracedEModelElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI).getEClassifiers().get(0);
+		}
 		return tracedEModelElementEClass;
 	}
 
@@ -189,59 +179,38 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 		return (EcoreFactory)getEFactoryInstance();
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isCreated = false;
+	private boolean isFixed = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
+	 * Fixes up the loaded package, to make it appear as if it had been programmatically built.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents() {
-		if (isCreated) return;
-		isCreated = true;
-
-		// Create classes and their features
-		tracedEModelElementEClass = createEClass(TRACED_EMODEL_ELEMENT);
+	public void fixPackageContents() {
+		if (isFixed) return;
+		isFixed = true;
+		fixEClassifiers();
 	}
 
 	/**
+	 * Sets the instance class on the given classifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isInitialized = false;
-
-	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void initializePackageContents() {
-		if (isInitialized) return;
-		isInitialized = true;
-
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
-
-		// Create type parameters
-
-		// Set bounds for type parameters
-
-		// Add supertypes to classes
-
-		// Initialize classes, features, and operations; add parameters
-		initEClass(tracedEModelElementEClass, TracedEModelElement.class, "TracedEModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+	@Override
+	protected void fixInstanceClass(EClassifier eClassifier) {
+		if (eClassifier.getInstanceClassName() == null) {
+			eClassifier.setInstanceClassName("umlTrace.States.ecore." + eClassifier.getName());
+			setGeneratedClassName(eClassifier);
+		}
 	}
 
 } //EcorePackageImpl

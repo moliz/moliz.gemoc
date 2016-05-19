@@ -11,10 +11,10 @@ import fumlConfiguration.Loci.Locus;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.ExtensionalValue#getLocus_ExtensionalValue <em>Locus Extensional Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Classes.Kernel.KernelPackage#getExtensionalValue()
  * @model abstract="true"
@@ -52,7 +52,7 @@ public interface ExtensionalValue extends CompoundValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void destroy();

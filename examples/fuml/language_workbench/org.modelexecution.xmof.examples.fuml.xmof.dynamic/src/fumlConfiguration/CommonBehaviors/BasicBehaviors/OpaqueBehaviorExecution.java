@@ -19,6 +19,7 @@ public interface OpaqueBehaviorExecution extends Execution {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model inputParametersMany="true" outputParametersMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void doBody(EList<ParameterValue> inputParameters, EList<ParameterValue> outputParameters);

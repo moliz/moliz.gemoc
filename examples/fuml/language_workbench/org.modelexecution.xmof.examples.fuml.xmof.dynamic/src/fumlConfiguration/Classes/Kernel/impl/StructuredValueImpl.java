@@ -19,8 +19,6 @@ import org.eclipse.uml2.uml.StructuralFeature;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Structured Value</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

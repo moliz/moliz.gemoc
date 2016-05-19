@@ -1097,27 +1097,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 					} else if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
 						fumlConfiguration.Classes.Kernel.Reference o_cast = (fumlConfiguration.Classes.Kernel.Reference) o;
 
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getReference_Referent().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
-									.get(o);
-							umlTrace.States.Reference_referent_Value lastValue = traced.getReferentSequence()
-									.get(traced.getReferentSequence().size() - 1);
-							newState.getReference_referent_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getReferent());
-							umlTrace.States.Reference_referent_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createReference_referent_Value();
-							newValue.setReferent(
-									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
-											.get(o_cast.getReferent())));
-							traced.getReferentSequence().add(newValue);
-							newState.getReference_referent_Values().add(newValue);
-						}
-
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
@@ -1138,6 +1117,27 @@ public class UmlTraceConstructor implements ITraceConstructor {
 											.get(o_cast.getRuntimeModelElement())));
 							traced.getRuntimeModelElementSequence().add(newValue);
 							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getReference_Referent().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
+									.get(o);
+							umlTrace.States.Reference_referent_Value lastValue = traced.getReferentSequence()
+									.get(traced.getReferentSequence().size() - 1);
+							newState.getReference_referent_Values().remove(lastValue);
+
+							// And we create a proper new value
+							storeAsTracedObject(o_cast.getReferent());
+							umlTrace.States.Reference_referent_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createReference_referent_Value();
+							newValue.setReferent(
+									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+											.get(o_cast.getReferent())));
+							traced.getReferentSequence().add(newValue);
+							newState.getReference_referent_Values().add(newValue);
 						}
 					} else if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
 						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
@@ -1166,27 +1166,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getObjectToken_Value().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
-									.get(o);
-							umlTrace.States.ObjectToken_value_Value lastValue = traced.getValueSequence()
-									.get(traced.getValueSequence().size() - 1);
-							newState.getObjectToken_value_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getValue());
-							umlTrace.States.ObjectToken_value_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createObjectToken_value_Value();
-							newValue.setValue(
-									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue) exeToTraced
-											.get(o_cast.getValue())));
-							traced.getValueSequence().add(newValue);
-							newState.getObjectToken_value_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getToken_Holder().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
@@ -1206,30 +1185,29 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							traced.getHolderSequence().add(newValue);
 							newState.getToken_holder_Values().add(newValue);
 						}
-					} else if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
-						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
 
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getObjectToken_Value().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
 									.get(o);
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
-									.getRuntimeModelElementSequence()
-									.get(traced.getRuntimeModelElementSequence().size() - 1);
-							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+							umlTrace.States.ObjectToken_value_Value lastValue = traced.getValueSequence()
+									.get(traced.getValueSequence().size() - 1);
+							newState.getObjectToken_value_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createSemanticVisitor_runtimeModelElement_Value();
-							newValue.setRuntimeModelElement(
-									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-											.get(o_cast.getRuntimeModelElement())));
-							traced.getRuntimeModelElementSequence().add(newValue);
-							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+							storeAsTracedObject(o_cast.getValue());
+							umlTrace.States.ObjectToken_value_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createObjectToken_value_Value();
+							newValue.setValue(
+									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue) exeToTraced
+											.get(o_cast.getValue())));
+							traced.getValueSequence().add(newValue);
+							newState.getObjectToken_value_Values().add(newValue);
 						}
+					} else if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
+						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
@@ -1251,6 +1229,28 @@ public class UmlTraceConstructor implements ITraceConstructor {
 											.get(o_cast.getLocus_ExtensionalValue())));
 							traced.getLocus_ExtensionalValueSequence().add(newValue);
 							newState.getExtensionalValue_locus_ExtensionalValue_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							storeAsTracedObject(o_cast.getRuntimeModelElement());
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
 						}
 					} else if (o instanceof fumlConfiguration.Loci.Locus) {
 						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
@@ -1298,23 +1298,26 @@ public class UmlTraceConstructor implements ITraceConstructor {
 					} else if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
 						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
 
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getIntegerValue_Value_IntegerValue().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
 							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
 									.get(o);
-							umlTrace.States.IntegerValue_value_IntegerValue_Value lastValue = traced
-									.getValue_IntegerValueSequence()
-									.get(traced.getValue_IntegerValueSequence().size() - 1);
-							newState.getIntegerValue_value_IntegerValue_Values().remove(lastValue);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
 
 							// And we create a proper new value
-							umlTrace.States.IntegerValue_value_IntegerValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createIntegerValue_value_IntegerValue_Value();
-							newValue.setValue_IntegerValue(o_cast.getValue_IntegerValue());
-							traced.getValue_IntegerValueSequence().add(newValue);
-							newState.getIntegerValue_value_IntegerValue_Values().add(newValue);
+							storeAsTracedObject(o_cast.getRuntimeModelElement());
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
@@ -1337,26 +1340,23 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getPrimitiveValue_type_Values().add(newValue);
 						}
 
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getIntegerValue_Value_IntegerValue().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
 							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
 									.get(o);
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
-									.getRuntimeModelElementSequence()
-									.get(traced.getRuntimeModelElementSequence().size() - 1);
-							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+							umlTrace.States.IntegerValue_value_IntegerValue_Value lastValue = traced
+									.getValue_IntegerValueSequence()
+									.get(traced.getValue_IntegerValueSequence().size() - 1);
+							newState.getIntegerValue_value_IntegerValue_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createSemanticVisitor_runtimeModelElement_Value();
-							newValue.setRuntimeModelElement(
-									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-											.get(o_cast.getRuntimeModelElement())));
-							traced.getRuntimeModelElementSequence().add(newValue);
-							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+							umlTrace.States.IntegerValue_value_IntegerValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createIntegerValue_value_IntegerValue_Value();
+							newValue.setValue_IntegerValue(o_cast.getValue_IntegerValue());
+							traced.getValue_IntegerValueSequence().add(newValue);
+							newState.getIntegerValue_value_IntegerValue_Values().add(newValue);
 						}
 					} else if (o instanceof fumlConfiguration.Input.InputParameterValues) {
 						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
@@ -1382,6 +1382,27 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getToken_Holder().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
+									.get(o);
+							umlTrace.States.Token_holder_Value lastValue = traced.getHolderSequence()
+									.get(traced.getHolderSequence().size() - 1);
+							newState.getToken_holder_Values().remove(lastValue);
+
+							// And we create a proper new value
+							storeAsTracedObject(o_cast.getHolder());
+							umlTrace.States.Token_holder_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createToken_holder_Value();
+							newValue.setHolder(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+											.get(o_cast.getHolder())));
+							traced.getHolderSequence().add(newValue);
+							newState.getToken_holder_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getForkedToken_RemainingOffersCount().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
@@ -1398,25 +1419,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newValue.setRemainingOffersCount(o_cast.getRemainingOffersCount());
 							traced.getRemainingOffersCountSequence().add(newValue);
 							newState.getForkedToken_remainingOffersCount_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getForkedToken_BaseTokenIsWithdrawn().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
-									.get(o);
-							umlTrace.States.ForkedToken_baseTokenIsWithdrawn_Value lastValue = traced
-									.getBaseTokenIsWithdrawnSequence()
-									.get(traced.getBaseTokenIsWithdrawnSequence().size() - 1);
-							newState.getForkedToken_baseTokenIsWithdrawn_Values().remove(lastValue);
-
-							// And we create a proper new value
-							umlTrace.States.ForkedToken_baseTokenIsWithdrawn_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createForkedToken_baseTokenIsWithdrawn_Value();
-							newValue.setBaseTokenIsWithdrawn(o_cast.isBaseTokenIsWithdrawn());
-							traced.getBaseTokenIsWithdrawnSequence().add(newValue);
-							newState.getForkedToken_baseTokenIsWithdrawn_Values().add(newValue);
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
@@ -1441,24 +1443,22 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getToken_Holder().getFeatureID()) {
+								.getForkedToken_BaseTokenIsWithdrawn().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
 							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
 									.get(o);
-							umlTrace.States.Token_holder_Value lastValue = traced.getHolderSequence()
-									.get(traced.getHolderSequence().size() - 1);
-							newState.getToken_holder_Values().remove(lastValue);
+							umlTrace.States.ForkedToken_baseTokenIsWithdrawn_Value lastValue = traced
+									.getBaseTokenIsWithdrawnSequence()
+									.get(traced.getBaseTokenIsWithdrawnSequence().size() - 1);
+							newState.getForkedToken_baseTokenIsWithdrawn_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getHolder());
-							umlTrace.States.Token_holder_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createToken_holder_Value();
-							newValue.setHolder(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-											.get(o_cast.getHolder())));
-							traced.getHolderSequence().add(newValue);
-							newState.getToken_holder_Values().add(newValue);
+							umlTrace.States.ForkedToken_baseTokenIsWithdrawn_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createForkedToken_baseTokenIsWithdrawn_Value();
+							newValue.setBaseTokenIsWithdrawn(o_cast.isBaseTokenIsWithdrawn());
+							traced.getBaseTokenIsWithdrawnSequence().add(newValue);
+							newState.getForkedToken_baseTokenIsWithdrawn_Values().add(newValue);
 						}
 					} else if (o instanceof fumlConfiguration.Loci.Executor) {
 						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
@@ -1534,23 +1534,22 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getPrimitiveValue_Type().getFeatureID()) {
+								.getBooleanValue_Value_BooleanValue().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
 							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
 									.get(o);
-							umlTrace.States.PrimitiveValue_type_Value lastValue = traced.getTypeSequence()
-									.get(traced.getTypeSequence().size() - 1);
-							newState.getPrimitiveValue_type_Values().remove(lastValue);
+							umlTrace.States.BooleanValue_value_BooleanValue_Value lastValue = traced
+									.getValue_BooleanValueSequence()
+									.get(traced.getValue_BooleanValueSequence().size() - 1);
+							newState.getBooleanValue_value_BooleanValue_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getType());
-							umlTrace.States.PrimitiveValue_type_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createPrimitiveValue_type_Value();
-							newValue.setType(
-									((umlTrace.States.uml.TracedPrimitiveType) exeToTraced.get(o_cast.getType())));
-							traced.getTypeSequence().add(newValue);
-							newState.getPrimitiveValue_type_Values().add(newValue);
+							umlTrace.States.BooleanValue_value_BooleanValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createBooleanValue_value_BooleanValue_Value();
+							newValue.setValue_BooleanValue(o_cast.isValue_BooleanValue());
+							traced.getValue_BooleanValueSequence().add(newValue);
+							newState.getBooleanValue_value_BooleanValue_Values().add(newValue);
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
@@ -1576,22 +1575,23 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getBooleanValue_Value_BooleanValue().getFeatureID()) {
+								.getPrimitiveValue_Type().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
 							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
 									.get(o);
-							umlTrace.States.BooleanValue_value_BooleanValue_Value lastValue = traced
-									.getValue_BooleanValueSequence()
-									.get(traced.getValue_BooleanValueSequence().size() - 1);
-							newState.getBooleanValue_value_BooleanValue_Values().remove(lastValue);
+							umlTrace.States.PrimitiveValue_type_Value lastValue = traced.getTypeSequence()
+									.get(traced.getTypeSequence().size() - 1);
+							newState.getPrimitiveValue_type_Values().remove(lastValue);
 
 							// And we create a proper new value
-							umlTrace.States.BooleanValue_value_BooleanValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createBooleanValue_value_BooleanValue_Value();
-							newValue.setValue_BooleanValue(o_cast.isValue_BooleanValue());
-							traced.getValue_BooleanValueSequence().add(newValue);
-							newState.getBooleanValue_value_BooleanValue_Values().add(newValue);
+							storeAsTracedObject(o_cast.getType());
+							umlTrace.States.PrimitiveValue_type_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createPrimitiveValue_type_Value();
+							newValue.setType(
+									((umlTrace.States.uml.TracedPrimitiveType) exeToTraced.get(o_cast.getType())));
+							traced.getTypeSequence().add(newValue);
+							newState.getPrimitiveValue_type_Values().add(newValue);
 						}
 					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
@@ -1621,6 +1621,46 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							storeAsTracedObject(o_cast.getGroup_ActivityNodeActivation());
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
@@ -1643,43 +1683,21 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivation_Running().getFeatureID()) {
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
 							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
 									.get(o);
-							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
-									.get(traced.getRunningSequence().size() - 1);
-							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
 
 							// And we create a proper new value
-							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityNodeActivation_running_Value();
-							newValue.setRunning(o_cast.isRunning());
-							traced.getRunningSequence().add(newValue);
-							newState.getActivityNodeActivation_running_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-									.get(o);
-							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
-									.getGroup_ActivityNodeActivationSequence()
-									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
-							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getGroup_ActivityNodeActivation());
-							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
-							newValue.setGroup_ActivityNodeActivation(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-											.get(o_cast.getGroup_ActivityNodeActivation())));
-							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
-							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
@@ -1703,26 +1721,30 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							traced.getRuntimeModelElementSequence().add(newValue);
 							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
 						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivation_IsRunning().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-									.get(o);
-							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
-									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
-							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
-
-							// And we create a proper new value
-							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityNodeActivation_isRunning_Value();
-							newValue.setIsRunning(o_cast.isIsRunning());
-							traced.getIsRunningSequence().add(newValue);
-							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
-						}
 					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
+									.get(o);
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value lastValue = traced
+									.getLocus_ExtensionalValueSequence()
+									.get(traced.getLocus_ExtensionalValueSequence().size() - 1);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							storeAsTracedObject(o_cast.getLocus_ExtensionalValue());
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExtensionalValue_locus_ExtensionalValue_Value();
+							newValue.setLocus_ExtensionalValue(
+									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+											.get(o_cast.getLocus_ExtensionalValue())));
+							traced.getLocus_ExtensionalValueSequence().add(newValue);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().add(newValue);
+						}
 
 						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
 								.getExecution_Context().getFeatureID()) {
@@ -1743,28 +1765,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 											.get(o_cast.getContext())));
 							traced.getContextSequence().add(newValue);
 							newState.getExecution_context_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
-									.get(o);
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
-									.getRuntimeModelElementSequence()
-									.get(traced.getRuntimeModelElementSequence().size() - 1);
-							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createSemanticVisitor_runtimeModelElement_Value();
-							newValue.setRuntimeModelElement(
-									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-											.get(o_cast.getRuntimeModelElement())));
-							traced.getRuntimeModelElementSequence().add(newValue);
-							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
@@ -1788,26 +1788,26 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getActivityExecution_activationGroup_Values().add(newValue);
 						}
 
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
 							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
 									.get(o);
-							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value lastValue = traced
-									.getLocus_ExtensionalValueSequence()
-									.get(traced.getLocus_ExtensionalValueSequence().size() - 1);
-							newState.getExtensionalValue_locus_ExtensionalValue_Values().remove(lastValue);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getLocus_ExtensionalValue());
-							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createExtensionalValue_locus_ExtensionalValue_Value();
-							newValue.setLocus_ExtensionalValue(
-									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-											.get(o_cast.getLocus_ExtensionalValue())));
-							traced.getLocus_ExtensionalValueSequence().add(newValue);
-							newState.getExtensionalValue_locus_ExtensionalValue_Values().add(newValue);
+							storeAsTracedObject(o_cast.getRuntimeModelElement());
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
 						}
 					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
@@ -1834,6 +1834,27 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityEdgeInstance_Edge_ActivityEdgeInstance().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value lastValue = traced
+									.getEdge_ActivityEdgeInstanceSequence()
+									.get(traced.getEdge_ActivityEdgeInstanceSequence().size() - 1);
+							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().remove(lastValue);
+
+							// And we create a proper new value
+							storeAsTracedObject(o_cast.getEdge_ActivityEdgeInstance());
+							umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityEdgeInstance_edge_ActivityEdgeInstance_Value();
+							newValue.setEdge_ActivityEdgeInstance(((umlTrace.States.uml.TracedActivityEdge) exeToTraced
+									.get(o_cast.getEdge_ActivityEdgeInstance())));
+							traced.getEdge_ActivityEdgeInstanceSequence().add(newValue);
+							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityEdgeInstance_Group_ActivityEdgeInstance().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
@@ -1853,27 +1874,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 											.get(o_cast.getGroup_ActivityEdgeInstance())));
 							traced.getGroup_ActivityEdgeInstanceSequence().add(newValue);
 							newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Edge_ActivityEdgeInstance().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-									.get(o);
-							umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value lastValue = traced
-									.getEdge_ActivityEdgeInstanceSequence()
-									.get(traced.getEdge_ActivityEdgeInstanceSequence().size() - 1);
-							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getEdge_ActivityEdgeInstance());
-							umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityEdgeInstance_edge_ActivityEdgeInstance_Value();
-							newValue.setEdge_ActivityEdgeInstance(((umlTrace.States.uml.TracedActivityEdge) exeToTraced
-									.get(o_cast.getEdge_ActivityEdgeInstance())));
-							traced.getEdge_ActivityEdgeInstanceSequence().add(newValue);
-							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().add(newValue);
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
@@ -2220,54 +2220,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory tracedObject = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getExecutionFactory_BuiltInTypes().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.ExecutionFactory_builtInTypes_Value> valueSequence = tracedObject
-									.getBuiltInTypesSequence();
-							umlTrace.States.ExecutionFactory_builtInTypes_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (org.eclipse.uml2.uml.PrimitiveType aValue : o_cast.getBuiltInTypes()) {
-								storeAsTracedObject(aValue);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getBuiltInTypes().size() == o_cast.getBuiltInTypes().size()) {
-									java.util.Iterator<org.eclipse.uml2.uml.PrimitiveType> it = o_cast.getBuiltInTypes()
-											.iterator();
-									for (umlTrace.States.uml.TracedPrimitiveType aPreviousValue : previousValue
-											.getBuiltInTypes()) {
-										org.eclipse.uml2.uml.PrimitiveType aCurrentValue = it.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.ExecutionFactory_builtInTypes_Value lastValue = tracedObject
-										.getBuiltInTypesSequence()
-										.get(tracedObject.getBuiltInTypesSequence().size() - 1);
-								newState.getExecutionFactory_builtInTypes_Values().remove(lastValue);
-								// And we create a proper new value							
-								umlTrace.States.ExecutionFactory_builtInTypes_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createExecutionFactory_builtInTypes_Value();
-								newValue.getBuiltInTypes()
-										.addAll((Collection<? extends umlTrace.States.uml.TracedPrimitiveType>) getExeToTraced(
-												o_cast.getBuiltInTypes()));
-								tracedObject.getBuiltInTypesSequence().add(newValue);
-								newState.getExecutionFactory_builtInTypes_Values().add(newValue);
-							}
-						}
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getExecutionFactory_PrimitiveBehaviorPrototypes().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
 							List<umlTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value> valueSequence = tracedObject
@@ -2316,6 +2268,54 @@ public class UmlTraceConstructor implements ITraceConstructor {
 												o_cast.getPrimitiveBehaviorPrototypes()));
 								tracedObject.getPrimitiveBehaviorPrototypesSequence().add(newValue);
 								newState.getExecutionFactory_primitiveBehaviorPrototypes_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getExecutionFactory_BuiltInTypes().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ExecutionFactory_builtInTypes_Value> valueSequence = tracedObject
+									.getBuiltInTypesSequence();
+							umlTrace.States.ExecutionFactory_builtInTypes_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (org.eclipse.uml2.uml.PrimitiveType aValue : o_cast.getBuiltInTypes()) {
+								storeAsTracedObject(aValue);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getBuiltInTypes().size() == o_cast.getBuiltInTypes().size()) {
+									java.util.Iterator<org.eclipse.uml2.uml.PrimitiveType> it = o_cast.getBuiltInTypes()
+											.iterator();
+									for (umlTrace.States.uml.TracedPrimitiveType aPreviousValue : previousValue
+											.getBuiltInTypes()) {
+										org.eclipse.uml2.uml.PrimitiveType aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ExecutionFactory_builtInTypes_Value lastValue = tracedObject
+										.getBuiltInTypesSequence()
+										.get(tracedObject.getBuiltInTypesSequence().size() - 1);
+								newState.getExecutionFactory_builtInTypes_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ExecutionFactory_builtInTypes_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createExecutionFactory_builtInTypes_Value();
+								newValue.getBuiltInTypes()
+										.addAll((Collection<? extends umlTrace.States.uml.TracedPrimitiveType>) getExeToTraced(
+												o_cast.getBuiltInTypes()));
+								tracedObject.getBuiltInTypesSequence().add(newValue);
+								newState.getExecutionFactory_builtInTypes_Values().add(newValue);
 							}
 						}
 					} else if (o instanceof fumlConfiguration.ElementConfiguration) {
@@ -2528,56 +2528,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							}
 						}
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
-									.getIncomingEdgesSequence();
-							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
-									.getIncomingEdges()) {
-								storeAsTracedObject(aValue);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
-									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
-											.getIncomingEdges().iterator();
-									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
-											.getIncomingEdges()) {
-										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
-												.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
-										.getIncomingEdgesSequence()
-										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
-								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
-								// And we create a proper new value							
-								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createActivityNodeActivation_incomingEdges_Value();
-								newValue.getIncomingEdges()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
-												o_cast.getIncomingEdges()));
-								tracedObject.getIncomingEdgesSequence().add(newValue);
-								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
-							}
-						}
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
 							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
@@ -2627,10 +2577,110 @@ public class UmlTraceConstructor implements ITraceConstructor {
 								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
 							}
 						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								storeAsTracedObject(aValue);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges()));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
 					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o;
 						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
 								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getExecution_ParameterValues().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.Execution_parameterValues_Value> valueSequence = tracedObject
+									.getParameterValuesSequence();
+							umlTrace.States.Execution_parameterValues_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast
+									.getParameterValues()) {
+								storeAsTracedObject(aValue);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getParameterValues().size() == o_cast.getParameterValues().size()) {
+									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue> it = o_cast
+											.getParameterValues().iterator();
+									for (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue aPreviousValue : previousValue
+											.getParameterValues()) {
+										fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.Execution_parameterValues_Value lastValue = tracedObject
+										.getParameterValuesSequence()
+										.get(tracedObject.getParameterValuesSequence().size() - 1);
+								newState.getExecution_parameterValues_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.Execution_parameterValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createExecution_parameterValues_Value();
+								newValue.getParameterValues()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+												o_cast.getParameterValues()));
+								tracedObject.getParameterValuesSequence().add(newValue);
+								newState.getExecution_parameterValues_Values().add(newValue);
+							}
+						}
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getObject_Types().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
@@ -2721,56 +2771,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 												o_cast.getFeatureValues()));
 								tracedObject.getFeatureValuesSequence().add(newValue);
 								newState.getCompoundValue_featureValues_Values().add(newValue);
-							}
-						}
-						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
-								.getExecution_ParameterValues().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.Execution_parameterValues_Value> valueSequence = tracedObject
-									.getParameterValuesSequence();
-							umlTrace.States.Execution_parameterValues_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast
-									.getParameterValues()) {
-								storeAsTracedObject(aValue);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getParameterValues().size() == o_cast.getParameterValues().size()) {
-									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue> it = o_cast
-											.getParameterValues().iterator();
-									for (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue aPreviousValue : previousValue
-											.getParameterValues()) {
-										fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aCurrentValue = it
-												.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.Execution_parameterValues_Value lastValue = tracedObject
-										.getParameterValuesSequence()
-										.get(tracedObject.getParameterValuesSequence().size() - 1);
-								newState.getExecution_parameterValues_Values().remove(lastValue);
-								// And we create a proper new value							
-								umlTrace.States.Execution_parameterValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createExecution_parameterValues_Value();
-								newValue.getParameterValues()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
-												o_cast.getParameterValues()));
-								tracedObject.getParameterValuesSequence().add(newValue);
-								newState.getExecution_parameterValues_Values().add(newValue);
 							}
 						}
 					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
@@ -2864,6 +2864,835 @@ public class UmlTraceConstructor implements ITraceConstructor {
 			}
 
 			// Adding step in its dedicated sequence/dimension
+			if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_DoAction_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_DoAction_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_DoAction_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_DoAction_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_DoAction_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_DoAction_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Fire_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Fire_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_Fire_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Fire_ActionActivation) step_cast;
+				traceRoot.getFumlConfiguration_Actions_BasicActions_ActionActivation_Fire_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_Fire_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_GetPinActivation_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_GetPinActivation_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_GetPinActivation_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_GetPinActivation_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_GetPinActivation_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_GetPinActivation_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Inisitalize_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Inisitalize_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_Inisitalize_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Inisitalize_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_Inisitalize_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_Inisitalize_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivation) step_cast;
+				traceRoot.getFumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutToken_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutToken_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_PutToken_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutToken_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_PutToken_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_PutToken_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutTokens_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutTokens_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_PutTokens_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutTokens_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_PutTokens_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_PutTokens_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_SendOffers_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_SendOffers_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_SendOffers_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_SendOffers_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_SendOffers_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_SendOffers_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeTokens_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeTokens_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_TakeTokens_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeTokens_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_TakeTokens_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_TakeTokens_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Terminate_ActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Terminate_ActionActivation fumlConfiguration_Actions_BasicActions_ActionActivation_Terminate_ActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Terminate_ActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_ActionActivation_Terminate_ActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_ActionActivation_Terminate_ActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_CollectOutputParameterValues_CallActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_CollectOutputParameterValues_CallActionActivation fumlConfiguration_Actions_BasicActions_CallActionActivation_CollectOutputParameterValues_CallActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_CollectOutputParameterValues_CallActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_CallActionActivation_CollectOutputParameterValues_CallActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_CallActionActivation_CollectOutputParameterValues_CallActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivation fumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_GetCallExecution_CallActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_GetCallExecution_CallActionActivation fumlConfiguration_Actions_BasicActions_CallActionActivation_GetCallExecution_CallActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_GetCallExecution_CallActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_CallActionActivation_GetCallExecution_CallActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_CallActionActivation_GetCallExecution_CallActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_InitializeInputParameterValues_CallActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_InitializeInputParameterValues_CallActionActivation fumlConfiguration_Actions_BasicActions_CallActionActivation_InitializeInputParameterValues_CallActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_InitializeInputParameterValues_CallActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_CallActionActivation_InitializeInputParameterValues_CallActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_CallActionActivation_InitializeInputParameterValues_CallActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_RemoveCallExecution_CallActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_RemoveCallExecution_CallActionActivation fumlConfiguration_Actions_BasicActions_CallActionActivation_RemoveCallExecution_CallActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_RemoveCallExecution_CallActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_CallActionActivation_RemoveCallExecution_CallActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_CallActionActivation_RemoveCallExecution_CallActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_Terminate_CallActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_Terminate_CallActionActivation fumlConfiguration_Actions_BasicActions_CallActionActivation_Terminate_CallActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_Terminate_CallActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_CallActionActivation_Terminate_CallActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_CallActionActivation_Terminate_CallActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallBehaviorActionActivation_GetCallExecution_CallBehaviorActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallBehaviorActionActivation_GetCallExecution_CallBehaviorActionActivation fumlConfiguration_Actions_BasicActions_CallBehaviorActionActivation_GetCallExecution_CallBehaviorActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallBehaviorActionActivation_GetCallExecution_CallBehaviorActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_CallBehaviorActionActivation_GetCallExecution_CallBehaviorActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_CallBehaviorActionActivation_GetCallExecution_CallBehaviorActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_InputPinActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_InputPinActivation fumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_InputPinActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_InputPinActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_InputPinActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_InputPinActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivation fumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_OpaqueActionActivation_DoAction_OpaqueAction) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_OpaqueActionActivation_DoAction_OpaqueAction fumlConfiguration_Actions_BasicActions_OpaqueActionActivation_DoAction_OpaqueActionInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_OpaqueActionActivation_DoAction_OpaqueAction) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_OpaqueActionActivation_DoAction_OpaqueAction_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_OpaqueActionActivation_DoAction_OpaqueActionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_Fire_PinActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_Fire_PinActivation fumlConfiguration_Actions_BasicActions_PinActivation_Fire_PinActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_Fire_PinActivation) step_cast;
+				traceRoot.getFumlConfiguration_Actions_BasicActions_PinActivation_Fire_PinActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_PinActivation_Fire_PinActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTokens_PinActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTokens_PinActivation fumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTokens_PinActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTokens_PinActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTokens_PinActivation_Sequence()
+						.add(fumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTokens_PinActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivation fumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation fumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivation fumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation) {
+				umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation fumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivationInstance = (umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation_Sequence()
+						.add(fumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_CountOfferedValues_ActivityEdgeInstance) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_CountOfferedValues_ActivityEdgeInstance fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_CountOfferedValues_ActivityEdgeInstanceInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_CountOfferedValues_ActivityEdgeInstance) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_CountOfferedValues_ActivityEdgeInstance_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_CountOfferedValues_ActivityEdgeInstanceInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_HasOffer_ActivityEdgeInstance) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_HasOffer_ActivityEdgeInstance fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_HasOffer_ActivityEdgeInstanceInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_HasOffer_ActivityEdgeInstance) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_HasOffer_ActivityEdgeInstance_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_HasOffer_ActivityEdgeInstanceInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_SendOffer_ActivityEdgeInstance) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_SendOffer_ActivityEdgeInstance fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_SendOffer_ActivityEdgeInstanceInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_SendOffer_ActivityEdgeInstance) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_SendOffer_ActivityEdgeInstance_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_SendOffer_ActivityEdgeInstanceInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstanceInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstanceInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstanceInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstanceInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_CollectOutputParameterValues_ActivityExecution) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_CollectOutputParameterValues_ActivityExecution fumlConfiguration_Activities_IntermediateActivities_ActivityExecution_CollectOutputParameterValues_ActivityExecutionInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_CollectOutputParameterValues_ActivityExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityExecution_CollectOutputParameterValues_ActivityExecution_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityExecution_CollectOutputParameterValues_ActivityExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Execute_ActivityExecution) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Execute_ActivityExecution fumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Execute_ActivityExecutionInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Execute_ActivityExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Execute_ActivityExecution_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Execute_ActivityExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_SetParameterValueValues_ActivityExecution) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_SetParameterValueValues_ActivityExecution fumlConfiguration_Activities_IntermediateActivities_ActivityExecution_SetParameterValueValues_ActivityExecutionInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_SetParameterValueValues_ActivityExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityExecution_SetParameterValueValues_ActivityExecution_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityExecution_SetParameterValueValues_ActivityExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Terminate_ActivityExecution) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Terminate_ActivityExecution fumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Terminate_ActivityExecutionInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Terminate_ActivityExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Terminate_ActivityExecution_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Terminate_ActivityExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddToken_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddToken_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddToken_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddToken_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddToken_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddToken_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddTokens_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddTokens_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddTokens_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddTokens_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddTokens_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddTokens_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ClearTokens_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ClearTokens_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ClearTokens_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ClearTokens_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ClearTokens_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ClearTokens_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateEdgeInstances_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateEdgeInstances_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateEdgeInstances_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateEdgeInstances_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateEdgeInstances_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateEdgeInstances_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateNodeActivations_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateNodeActivations_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateNodeActivations_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateNodeActivations_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateNodeActivations_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_CreateNodeActivations_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Fire_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Fire_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Fire_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Fire_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Fire_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Fire_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetActivityExecution_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetActivityExecution_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetActivityExecution_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetActivityExecution_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetActivityExecution_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetActivityExecution_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionContext_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionContext_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionContext_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionContext_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionContext_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionContext_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionLocus_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionLocus_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionLocus_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionLocus_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionLocus_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionLocus_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetNodeActivation_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetNodeActivation_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetNodeActivation_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetNodeActivation_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetNodeActivation_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetNodeActivation_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetTokens_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetTokens_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetTokens_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetTokens_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetTokens_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetTokens_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_HasOffers_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_HasOffers_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_HasOffers_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_HasOffers_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_HasOffers_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_HasOffers_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Initialize_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Initialize_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Initialize_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Initialize_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Initialize_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Initialize_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsReady_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsReady_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsReady_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsReady_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsReady_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsReady_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsRunning_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsRunning_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsRunning_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsRunning_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsRunning_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsRunning_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsSourceFor_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsSourceFor_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsSourceFor_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsSourceFor_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsSourceFor_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsSourceFor_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ReceiveOffer_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ReceiveOffer_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ReceiveOffer_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ReceiveOffer_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ReceiveOffer_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ReceiveOffer_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_RemoveToken_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_RemoveToken_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_RemoveToken_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_RemoveToken_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_RemoveToken_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_RemoveToken_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Run_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Run_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Run_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Run_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Run_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Run_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_SendOffers_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_SendOffers_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_SendOffers_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_SendOffers_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_SendOffers_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_SendOffers_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Terminate_ActivityNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Terminate_ActivityNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Terminate_ActivityNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Terminate_ActivityNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Terminate_ActivityNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_Terminate_ActivityNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Activate_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Activate_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Activate_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Activate_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Activate_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Activate_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CheckIncomingEdges_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CheckIncomingEdges_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CheckIncomingEdges_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CheckIncomingEdges_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CheckIncomingEdges_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CheckIncomingEdges_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateEdgeInstances_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateEdgeInstances_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateEdgeInstances_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateEdgeInstances_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateEdgeInstances_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateEdgeInstances_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivation_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivation_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivation_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivation_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivation_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivation_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivations_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivations_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivations_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivations_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivations_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivations_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetActivityExecution_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetActivityExecution_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetActivityExecution_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetActivityExecution_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetActivityExecution_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetActivityExecution_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetInitiallyEnabledNodeActivations_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetInitiallyEnabledNodeActivations_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetInitiallyEnabledNodeActivations_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetInitiallyEnabledNodeActivations_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetInitiallyEnabledNodeActivations_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetInitiallyEnabledNodeActivations_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetNodeActivation_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetNodeActivation_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetNodeActivation_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetNodeActivation_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetNodeActivation_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetNodeActivation_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetOutputParameterNodeActivations_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetOutputParameterNodeActivations_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetOutputParameterNodeActivations_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetOutputParameterNodeActivations_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetOutputParameterNodeActivations_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetOutputParameterNodeActivations_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetSourceActivations_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetSourceActivations_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetSourceActivations_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetSourceActivations_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetSourceActivations_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetSourceActivations_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_RunNodes_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_RunNodes_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_RunNodes_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_RunNodes_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_RunNodes_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_RunNodes_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Run_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Run_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Run_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Run_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Run_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Run_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_TerminateAll_ActivityNodeActivationGroup) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_TerminateAll_ActivityNodeActivationGroup fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_TerminateAll_ActivityNodeActivationGroupInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_TerminateAll_ActivityNodeActivationGroup) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_TerminateAll_ActivityNodeActivationGroup_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_TerminateAll_ActivityNodeActivationGroupInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_ClearTokens_ActivityParameterNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_ClearTokens_ActivityParameterNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_ClearTokens_ActivityParameterNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_ClearTokens_ActivityParameterNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_ClearTokens_ActivityParameterNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_ClearTokens_ActivityParameterNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation fumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ControlNodeActivation_Fire_ControlNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ControlNodeActivation_Fire_ControlNodeActivation fumlConfiguration_Activities_IntermediateActivities_ControlNodeActivation_Fire_ControlNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ControlNodeActivation_Fire_ControlNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ControlNodeActivation_Fire_ControlNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ControlNodeActivation_Fire_ControlNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ControlToken_IsControl_ControlToken) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ControlToken_IsControl_ControlToken fumlConfiguration_Activities_IntermediateActivities_ControlToken_IsControl_ControlTokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ControlToken_IsControl_ControlToken) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ControlToken_IsControl_ControlToken_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ControlToken_IsControl_ControlTokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_DetermineOfferedTokens_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_DetermineOfferedTokens_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_DetermineOfferedTokens_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_DetermineOfferedTokens_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_DetermineOfferedTokens_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_DetermineOfferedTokens_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_ExecuteDecisionInputBehavior_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_ExecuteDecisionInputBehavior_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_ExecuteDecisionInputBehavior_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_ExecuteDecisionInputBehavior_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_ExecuteDecisionInputBehavior_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_ExecuteDecisionInputBehavior_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Fire_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Fire_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Fire_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Fire_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Fire_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Fire_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowInstance_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowInstance_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowInstance_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowInstance_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowInstance_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowInstance_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowValue_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowValue_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowValue_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowValue_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowValue_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowValue_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionValues_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionValues_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionValues_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionValues_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionValues_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionValues_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_HasObjectFlowInput_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_HasObjectFlowInput_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_HasObjectFlowInput_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_HasObjectFlowInput_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_HasObjectFlowInput_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_HasObjectFlowInput_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_IsReady_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_IsReady_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_IsReady_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_IsReady_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_IsReady_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_IsReady_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_RemoveJoinedControlTokens_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_RemoveJoinedControlTokens_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_RemoveJoinedControlTokens_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_RemoveJoinedControlTokens_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_RemoveJoinedControlTokens_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_RemoveJoinedControlTokens_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivation fumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_GetValue_ForkedToken) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_GetValue_ForkedToken fumlConfiguration_Activities_IntermediateActivities_ForkedToken_GetValue_ForkedTokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_GetValue_ForkedToken) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ForkedToken_GetValue_ForkedToken_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ForkedToken_GetValue_ForkedTokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Initialize_ForkedToken) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Initialize_ForkedToken fumlConfiguration_Activities_IntermediateActivities_ForkedToken_Initialize_ForkedTokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Initialize_ForkedToken) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ForkedToken_Initialize_ForkedToken_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ForkedToken_Initialize_ForkedTokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_IsControl_ForkedToken) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_IsControl_ForkedToken fumlConfiguration_Activities_IntermediateActivities_ForkedToken_IsControl_ForkedTokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_IsControl_ForkedToken) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ForkedToken_IsControl_ForkedToken_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ForkedToken_IsControl_ForkedTokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Withdraw_ForkedToken) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Withdraw_ForkedToken fumlConfiguration_Activities_IntermediateActivities_ForkedToken_Withdraw_ForkedTokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Withdraw_ForkedToken) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ForkedToken_Withdraw_ForkedToken_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ForkedToken_Withdraw_ForkedTokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivation fumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_JoinNodeActivation_IsReady_JoinNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_JoinNodeActivation_IsReady_JoinNodeActivation fumlConfiguration_Activities_IntermediateActivities_JoinNodeActivation_IsReady_JoinNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_JoinNodeActivation_IsReady_JoinNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_JoinNodeActivation_IsReady_JoinNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_JoinNodeActivation_IsReady_JoinNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_AddToken_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_AddToken_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_AddToken_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_AddToken_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_AddToken_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_AddToken_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_ClearTokens_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_ClearTokens_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_ClearTokens_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_ClearTokens_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_ClearTokens_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_ClearTokens_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountOfferedValues_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountOfferedValues_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountOfferedValues_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountOfferedValues_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountOfferedValues_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountOfferedValues_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountUnofferedTokens_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountUnofferedTokens_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountUnofferedTokens_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountUnofferedTokens_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountUnofferedTokens_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountUnofferedTokens_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_GetUnofferedTokens_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_GetUnofferedTokens_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_GetUnofferedTokens_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_GetUnofferedTokens_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_GetUnofferedTokens_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_GetUnofferedTokens_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Initialize_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Initialize_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Initialize_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Initialize_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Initialize_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Initialize_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendOffers_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendOffers_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendOffers_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendOffers_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendOffers_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendOffers_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendUnofferedTokens_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendUnofferedTokens_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendUnofferedTokens_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendUnofferedTokens_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendUnofferedTokens_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendUnofferedTokens_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_TakeUnofferedTokens_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_TakeUnofferedTokens_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_TakeUnofferedTokens_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_TakeUnofferedTokens_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_TakeUnofferedTokens_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_TakeUnofferedTokens_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Terminate_ObjectNodeActivation) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Terminate_ObjectNodeActivation fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Terminate_ObjectNodeActivationInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Terminate_ObjectNodeActivation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Terminate_ObjectNodeActivation_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Terminate_ObjectNodeActivationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectToken_GetValue_ObjectToken) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectToken_GetValue_ObjectToken fumlConfiguration_Activities_IntermediateActivities_ObjectToken_GetValue_ObjectTokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectToken_GetValue_ObjectToken) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectToken_GetValue_ObjectToken_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectToken_GetValue_ObjectTokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectToken_IsControl_ObjectToken) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectToken_IsControl_ObjectToken fumlConfiguration_Activities_IntermediateActivities_ObjectToken_IsControl_ObjectTokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectToken_IsControl_ObjectToken) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_ObjectToken_IsControl_ObjectToken_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_ObjectToken_IsControl_ObjectTokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_Offer) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_Offer fumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_OfferInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_Offer) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_Offer_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_OfferInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_Offer) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_Offer fumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_OfferInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_Offer) step_cast;
+				traceRoot.getFumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_Offer_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_OfferInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_HasTokens_Offer) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_HasTokens_Offer fumlConfiguration_Activities_IntermediateActivities_Offer_HasTokens_OfferInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_HasTokens_Offer) step_cast;
+				traceRoot.getFumlConfiguration_Activities_IntermediateActivities_Offer_HasTokens_Offer_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_Offer_HasTokens_OfferInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWithdrawnTokens_Offer) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWithdrawnTokens_Offer fumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWithdrawnTokens_OfferInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWithdrawnTokens_Offer) step_cast;
+				traceRoot
+						.getFumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWithdrawnTokens_Offer_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWithdrawnTokens_OfferInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_GetValue_Token) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_GetValue_Token fumlConfiguration_Activities_IntermediateActivities_Token_GetValue_TokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_GetValue_Token) step_cast;
+				traceRoot.getFumlConfiguration_Activities_IntermediateActivities_Token_GetValue_Token_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_Token_GetValue_TokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_IsControl_Token) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_IsControl_Token fumlConfiguration_Activities_IntermediateActivities_Token_IsControl_TokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_IsControl_Token) step_cast;
+				traceRoot.getFumlConfiguration_Activities_IntermediateActivities_Token_IsControl_Token_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_Token_IsControl_TokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_IsWithdrawn_Token) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_IsWithdrawn_Token fumlConfiguration_Activities_IntermediateActivities_Token_IsWithdrawn_TokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_IsWithdrawn_Token) step_cast;
+				traceRoot.getFumlConfiguration_Activities_IntermediateActivities_Token_IsWithdrawn_Token_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_Token_IsWithdrawn_TokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Transfer_Token) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Transfer_Token fumlConfiguration_Activities_IntermediateActivities_Token_Transfer_TokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Transfer_Token) step_cast;
+				traceRoot.getFumlConfiguration_Activities_IntermediateActivities_Token_Transfer_Token_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_Token_Transfer_TokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Withdraw_Token) {
+				umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Withdraw_Token fumlConfiguration_Activities_IntermediateActivities_Token_Withdraw_TokenInstance = (umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Withdraw_Token) step_cast;
+				traceRoot.getFumlConfiguration_Activities_IntermediateActivities_Token_Withdraw_Token_Sequence()
+						.add(fumlConfiguration_Activities_IntermediateActivities_Token_Withdraw_TokenInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue fumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Equals_BooleanValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Equals_BooleanValue fumlConfiguration_Classes_Kernel_BooleanValue_Equals_BooleanValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Equals_BooleanValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_BooleanValue_Equals_BooleanValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_BooleanValue_Equals_BooleanValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_New_BooleanValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_New_BooleanValue fumlConfiguration_Classes_Kernel_BooleanValue_New_BooleanValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_New_BooleanValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_BooleanValue_New_BooleanValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_BooleanValue_New_BooleanValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue fumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_GetFeatureValue_CompoundValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_GetFeatureValue_CompoundValue fumlConfiguration_Classes_Kernel_CompoundValue_GetFeatureValue_CompoundValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_GetFeatureValue_CompoundValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_CompoundValue_GetFeatureValue_CompoundValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_CompoundValue_GetFeatureValue_CompoundValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_SetFeatureValue_CompoundValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_SetFeatureValue_CompoundValue fumlConfiguration_Classes_Kernel_CompoundValue_SetFeatureValue_CompoundValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_SetFeatureValue_CompoundValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_CompoundValue_SetFeatureValue_CompoundValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_CompoundValue_SetFeatureValue_CompoundValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Evaluation_Evaluate_Evaluation) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Evaluation_Evaluate_Evaluation fumlConfiguration_Classes_Kernel_Evaluation_Evaluate_EvaluationInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Evaluation_Evaluate_Evaluation) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Evaluation_Evaluate_Evaluation_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Evaluation_Evaluate_EvaluationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValue fumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Destroy_ExtensionalValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Destroy_ExtensionalValue fumlConfiguration_Classes_Kernel_ExtensionalValue_Destroy_ExtensionalValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Destroy_ExtensionalValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_ExtensionalValue_Destroy_ExtensionalValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_ExtensionalValue_Destroy_ExtensionalValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue fumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_Copy_IntegerValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_Copy_IntegerValue fumlConfiguration_Classes_Kernel_IntegerValue_Copy_IntegerValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_Copy_IntegerValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_IntegerValue_Copy_IntegerValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_IntegerValue_Copy_IntegerValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_Equals_IntegerValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_Equals_IntegerValue fumlConfiguration_Classes_Kernel_IntegerValue_Equals_IntegerValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_Equals_IntegerValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_IntegerValue_Equals_IntegerValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_IntegerValue_Equals_IntegerValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_New_IntegerValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_New_IntegerValue fumlConfiguration_Classes_Kernel_IntegerValue_New_IntegerValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_New_IntegerValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_IntegerValue_New_IntegerValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_IntegerValue_New_IntegerValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralBooleanEvaluation_Evaluate_LiteralBooleanEvaluation) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralBooleanEvaluation_Evaluate_LiteralBooleanEvaluation fumlConfiguration_Classes_Kernel_LiteralBooleanEvaluation_Evaluate_LiteralBooleanEvaluationInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralBooleanEvaluation_Evaluate_LiteralBooleanEvaluation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Classes_Kernel_LiteralBooleanEvaluation_Evaluate_LiteralBooleanEvaluation_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_LiteralBooleanEvaluation_Evaluate_LiteralBooleanEvaluationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralEvaluation_GetType_LiteralEvaluation) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralEvaluation_GetType_LiteralEvaluation fumlConfiguration_Classes_Kernel_LiteralEvaluation_GetType_LiteralEvaluationInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralEvaluation_GetType_LiteralEvaluation) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_LiteralEvaluation_GetType_LiteralEvaluation_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_LiteralEvaluation_GetType_LiteralEvaluationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluation) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluation fumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluationInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluation) step_cast;
+				traceRoot
+						.getFumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluation_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluationInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Copy_Object) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Copy_Object fumlConfiguration_Classes_Kernel_Object_Copy_ObjectInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Copy_Object) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Object_Copy_Object_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Object_Copy_ObjectInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Destroy_Object) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Destroy_Object fumlConfiguration_Classes_Kernel_Object_Destroy_ObjectInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Destroy_Object) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Object_Destroy_Object_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Object_Destroy_ObjectInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_GetTypes_Object) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_GetTypes_Object fumlConfiguration_Classes_Kernel_Object_GetTypes_ObjectInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_GetTypes_Object) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Object_GetTypes_Object_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Object_GetTypes_ObjectInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_New_Object) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_New_Object fumlConfiguration_Classes_Kernel_Object_New_ObjectInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_New_Object) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Object_New_Object_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Object_New_ObjectInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValue fumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_PrimitiveValue_GetTypes_PrimitiveValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_PrimitiveValue_GetTypes_PrimitiveValue fumlConfiguration_Classes_Kernel_PrimitiveValue_GetTypes_PrimitiveValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_PrimitiveValue_GetTypes_PrimitiveValue) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_PrimitiveValue_GetTypes_PrimitiveValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_PrimitiveValue_GetTypes_PrimitiveValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_Reference) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_Reference fumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_ReferenceInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_Reference) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_Reference_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_ReferenceInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_SetFeatureValue_Reference) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_SetFeatureValue_Reference fumlConfiguration_Classes_Kernel_Reference_SetFeatureValue_ReferenceInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_SetFeatureValue_Reference) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Reference_SetFeatureValue_Reference_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Reference_SetFeatureValue_ReferenceInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue fumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue) step_cast;
+				traceRoot
+						.getFumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Copy_Value) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Copy_Value fumlConfiguration_Classes_Kernel_Value_Copy_ValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Copy_Value) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Value_Copy_Value_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Value_Copy_ValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Equals_Value) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Equals_Value fumlConfiguration_Classes_Kernel_Value_Equals_ValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Equals_Value) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Value_Equals_Value_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Value_Equals_ValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_GetTypes_Value) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_GetTypes_Value fumlConfiguration_Classes_Kernel_Value_GetTypes_ValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_GetTypes_Value) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Value_GetTypes_Value_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Value_GetTypes_ValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_HasType_Value) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_HasType_Value fumlConfiguration_Classes_Kernel_Value_HasType_ValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_HasType_Value) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Value_HasType_Value_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Value_HasType_ValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_New_Value) {
+				umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_New_Value fumlConfiguration_Classes_Kernel_Value_New_ValueInstance = (umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_New_Value) step_cast;
+				traceRoot.getFumlConfiguration_Classes_Kernel_Value_New_Value_Sequence()
+						.add(fumlConfiguration_Classes_Kernel_Value_New_ValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_Execution) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_Execution fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_ExecutionInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_Execution) step_cast;
+				traceRoot.getFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_Execution_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_ExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Execute_Execution) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Execute_Execution fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Execute_ExecutionInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Execute_Execution) step_cast;
+				traceRoot.getFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Execute_Execution_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Execute_ExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetBehavior_Execution) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetBehavior_Execution fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetBehavior_ExecutionInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetBehavior_Execution) step_cast;
+				traceRoot.getFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetBehavior_Execution_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetBehavior_ExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetOutputParameterValues_Execution) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetOutputParameterValues_Execution fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetOutputParameterValues_ExecutionInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetOutputParameterValues_Execution) step_cast;
+				traceRoot
+						.getFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetOutputParameterValues_Execution_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetOutputParameterValues_ExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetParameterValue_Execution) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetParameterValue_Execution fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetParameterValue_ExecutionInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetParameterValue_Execution) step_cast;
+				traceRoot
+						.getFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetParameterValue_Execution_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetParameterValue_ExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_SetParameterValue_Execution) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_SetParameterValue_Execution fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_SetParameterValue_ExecutionInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_SetParameterValue_Execution) step_cast;
+				traceRoot
+						.getFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_SetParameterValue_Execution_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_SetParameterValue_ExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Terminate_Execution) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Terminate_Execution fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Terminate_ExecutionInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Terminate_Execution) step_cast;
+				traceRoot.getFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Terminate_Execution_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Terminate_ExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_DoBody_OpaqueBehaviorExecution) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_DoBody_OpaqueBehaviorExecution fumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_DoBody_OpaqueBehaviorExecutionInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_DoBody_OpaqueBehaviorExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_DoBody_OpaqueBehaviorExecution_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_DoBody_OpaqueBehaviorExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecution) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecution fumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecutionInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecution_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValue) {
+				umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValue fumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValueInstance = (umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValue) step_cast;
+				traceRoot
+						.getFumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValue_Sequence()
+						.add(fumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValueInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateEvaluation_ExecutionFactory) {
+				umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateEvaluation_ExecutionFactory fumlConfiguration_Loci_ExecutionFactory_CreateEvaluation_ExecutionFactoryInstance = (umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateEvaluation_ExecutionFactory) step_cast;
+				traceRoot.getFumlConfiguration_Loci_ExecutionFactory_CreateEvaluation_ExecutionFactory_Sequence()
+						.add(fumlConfiguration_Loci_ExecutionFactory_CreateEvaluation_ExecutionFactoryInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateExecution_ExecutionFactory) {
+				umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateExecution_ExecutionFactory fumlConfiguration_Loci_ExecutionFactory_CreateExecution_ExecutionFactoryInstance = (umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateExecution_ExecutionFactory) step_cast;
+				traceRoot.getFumlConfiguration_Loci_ExecutionFactory_CreateExecution_ExecutionFactory_Sequence()
+						.add(fumlConfiguration_Loci_ExecutionFactory_CreateExecution_ExecutionFactoryInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_GetBuiltInType_ExecutionFactory) {
+				umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_GetBuiltInType_ExecutionFactory fumlConfiguration_Loci_ExecutionFactory_GetBuiltInType_ExecutionFactoryInstance = (umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_GetBuiltInType_ExecutionFactory) step_cast;
+				traceRoot.getFumlConfiguration_Loci_ExecutionFactory_GetBuiltInType_ExecutionFactory_Sequence()
+						.add(fumlConfiguration_Loci_ExecutionFactory_GetBuiltInType_ExecutionFactoryInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateOpaqueBehaviorExecution_ExecutionFactory) {
+				umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateOpaqueBehaviorExecution_ExecutionFactory fumlConfiguration_Loci_ExecutionFactory_InstantiateOpaqueBehaviorExecution_ExecutionFactoryInstance = (umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateOpaqueBehaviorExecution_ExecutionFactory) step_cast;
+				traceRoot
+						.getFumlConfiguration_Loci_ExecutionFactory_InstantiateOpaqueBehaviorExecution_ExecutionFactory_Sequence()
+						.add(fumlConfiguration_Loci_ExecutionFactory_InstantiateOpaqueBehaviorExecution_ExecutionFactoryInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateVisitor_ExecutionFactory) {
+				umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateVisitor_ExecutionFactory fumlConfiguration_Loci_ExecutionFactory_InstantiateVisitor_ExecutionFactoryInstance = (umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateVisitor_ExecutionFactory) step_cast;
+				traceRoot.getFumlConfiguration_Loci_ExecutionFactory_InstantiateVisitor_ExecutionFactory_Sequence()
+						.add(fumlConfiguration_Loci_ExecutionFactory_InstantiateVisitor_ExecutionFactoryInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_Executor_Evaluate_Executor) {
+				umlTrace.Steps.FumlConfiguration_Loci_Executor_Evaluate_Executor fumlConfiguration_Loci_Executor_Evaluate_ExecutorInstance = (umlTrace.Steps.FumlConfiguration_Loci_Executor_Evaluate_Executor) step_cast;
+				traceRoot.getFumlConfiguration_Loci_Executor_Evaluate_Executor_Sequence()
+						.add(fumlConfiguration_Loci_Executor_Evaluate_ExecutorInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_Executor_Execute_Executor) {
+				umlTrace.Steps.FumlConfiguration_Loci_Executor_Execute_Executor fumlConfiguration_Loci_Executor_Execute_ExecutorInstance = (umlTrace.Steps.FumlConfiguration_Loci_Executor_Execute_Executor) step_cast;
+				traceRoot.getFumlConfiguration_Loci_Executor_Execute_Executor_Sequence()
+						.add(fumlConfiguration_Loci_Executor_Execute_ExecutorInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_Locus_Add_Locus) {
+				umlTrace.Steps.FumlConfiguration_Loci_Locus_Add_Locus fumlConfiguration_Loci_Locus_Add_LocusInstance = (umlTrace.Steps.FumlConfiguration_Loci_Locus_Add_Locus) step_cast;
+				traceRoot.getFumlConfiguration_Loci_Locus_Add_Locus_Sequence()
+						.add(fumlConfiguration_Loci_Locus_Add_LocusInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_Locus_Instantiate_Locus) {
+				umlTrace.Steps.FumlConfiguration_Loci_Locus_Instantiate_Locus fumlConfiguration_Loci_Locus_Instantiate_LocusInstance = (umlTrace.Steps.FumlConfiguration_Loci_Locus_Instantiate_Locus) step_cast;
+				traceRoot.getFumlConfiguration_Loci_Locus_Instantiate_Locus_Sequence()
+						.add(fumlConfiguration_Loci_Locus_Instantiate_LocusInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_Locus_Remove_Locus) {
+				umlTrace.Steps.FumlConfiguration_Loci_Locus_Remove_Locus fumlConfiguration_Loci_Locus_Remove_LocusInstance = (umlTrace.Steps.FumlConfiguration_Loci_Locus_Remove_Locus) step_cast;
+				traceRoot.getFumlConfiguration_Loci_Locus_Remove_Locus_Sequence()
+						.add(fumlConfiguration_Loci_Locus_Remove_LocusInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisitor) {
+				umlTrace.Steps.FumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisitor fumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisitorInstance = (umlTrace.Steps.FumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisitor) step_cast;
+				traceRoot.getFumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisitor_Sequence()
+						.add(fumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisitorInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_ModelConfiguration_Main) {
+				umlTrace.Steps.FumlConfiguration_ModelConfiguration_Main fumlConfiguration_ModelConfiguration_MainInstance = (umlTrace.Steps.FumlConfiguration_ModelConfiguration_Main) step_cast;
+				traceRoot.getFumlConfiguration_ModelConfiguration_Main_Sequence()
+						.add(fumlConfiguration_ModelConfiguration_MainInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_DoBody_IntegerGreaterFunctionBehaviorExecution) {
+				umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_DoBody_IntegerGreaterFunctionBehaviorExecution fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_DoBody_IntegerGreaterFunctionBehaviorExecutionInstance = (umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_DoBody_IntegerGreaterFunctionBehaviorExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_DoBody_IntegerGreaterFunctionBehaviorExecution_Sequence()
+						.add(fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_DoBody_IntegerGreaterFunctionBehaviorExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_New_IntegerGreaterFunctionBehaviorExecution) {
+				umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_New_IntegerGreaterFunctionBehaviorExecution fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_New_IntegerGreaterFunctionBehaviorExecutionInstance = (umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_New_IntegerGreaterFunctionBehaviorExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_New_IntegerGreaterFunctionBehaviorExecution_Sequence()
+						.add(fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_New_IntegerGreaterFunctionBehaviorExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_DoBody_IntegerLessFunctionBehaviorExecution) {
+				umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_DoBody_IntegerLessFunctionBehaviorExecution fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_DoBody_IntegerLessFunctionBehaviorExecutionInstance = (umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_DoBody_IntegerLessFunctionBehaviorExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_DoBody_IntegerLessFunctionBehaviorExecution_Sequence()
+						.add(fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_DoBody_IntegerLessFunctionBehaviorExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_New_IntegerLessFunctionBehaviorExecution) {
+				umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_New_IntegerLessFunctionBehaviorExecution fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_New_IntegerLessFunctionBehaviorExecutionInstance = (umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_New_IntegerLessFunctionBehaviorExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_New_IntegerLessFunctionBehaviorExecution_Sequence()
+						.add(fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_New_IntegerLessFunctionBehaviorExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecution) {
+				umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecution fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecutionInstance = (umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecution_Sequence()
+						.add(fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecutionInstance);
+			} else if (step_cast instanceof umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution) {
+				umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecutionInstance = (umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution) step_cast;
+				traceRoot
+						.getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence()
+						.add(fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecutionInstance);
+			}
 		}
 		context.push(step_cast);
 	}
@@ -2872,6 +3701,371 @@ public class UmlTraceConstructor implements ITraceConstructor {
 	private void addImplicitStep(umlTrace.Steps.SpecificStep currentStep, umlTrace.States.State startingState,
 			umlTrace.States.State endingState) {
 
+		umlTrace.Steps.SpecificStep implicitStep = null;
+		if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Fire_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_Fire_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutToken_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_PutToken_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutTokens_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_PutTokens_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_SendOffers_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_SendOffers_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeTokens_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_TakeTokens_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Terminate_ActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_ActionActivation_Terminate_ActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_CollectOutputParameterValues_CallActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_CallActionActivation_CollectOutputParameterValues_CallActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_InitializeInputParameterValues_CallActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_CallActionActivation_InitializeInputParameterValues_CallActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_Terminate_CallActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_CallActionActivation_Terminate_CallActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallBehaviorActionActivation_GetCallExecution_CallBehaviorActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_CallBehaviorActionActivation_GetCallExecution_CallBehaviorActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_InputPinActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_InputPinActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_Fire_PinActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_PinActivation_Fire_PinActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTokens_PinActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTokens_PinActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_CountOfferedValues_ActivityEdgeInstance) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_CountOfferedValues_ActivityEdgeInstance_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_HasOffer_ActivityEdgeInstance) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_HasOffer_ActivityEdgeInstance_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_SendOffer_ActivityEdgeInstance) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_SendOffer_ActivityEdgeInstance_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_CollectOutputParameterValues_ActivityExecution) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityExecution_CollectOutputParameterValues_ActivityExecution_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Execute_ActivityExecution) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Execute_ActivityExecution_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_SetParameterValueValues_ActivityExecution) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityExecution_SetParameterValueValues_ActivityExecution_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Terminate_ActivityExecution) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Terminate_ActivityExecution_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Activate_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Activate_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CheckIncomingEdges_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CheckIncomingEdges_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateEdgeInstances_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateEdgeInstances_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivation_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivation_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivations_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivations_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetInitiallyEnabledNodeActivations_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetInitiallyEnabledNodeActivations_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetNodeActivation_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetNodeActivation_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetSourceActivations_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetSourceActivations_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_RunNodes_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_RunNodes_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Run_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Run_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_TerminateAll_ActivityNodeActivationGroup) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_TerminateAll_ActivityNodeActivationGroup_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddToken_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddToken_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddTokens_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddTokens_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ClearTokens_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ClearTokens_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetActivityExecution_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetActivityExecution_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionContext_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionContext_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionLocus_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionLocus_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_HasOffers_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_HasOffers_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsReady_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsReady_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ReceiveOffer_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ReceiveOffer_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_SendOffers_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_SendOffers_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_ClearTokens_ActivityParameterNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_ClearTokens_ActivityParameterNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ControlNodeActivation_Fire_ControlNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ControlNodeActivation_Fire_ControlNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_DetermineOfferedTokens_DecisionNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_DetermineOfferedTokens_DecisionNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Fire_DecisionNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Fire_DecisionNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowValue_DecisionNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowValue_DecisionNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionValues_DecisionNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionValues_DecisionNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_IsReady_DecisionNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_IsReady_DecisionNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_RemoveJoinedControlTokens_DecisionNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_RemoveJoinedControlTokens_DecisionNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_GetValue_ForkedToken) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ForkedToken_GetValue_ForkedToken_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_IsControl_ForkedToken) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ForkedToken_IsControl_ForkedToken_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Withdraw_ForkedToken) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ForkedToken_Withdraw_ForkedToken_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_JoinNodeActivation_IsReady_JoinNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_JoinNodeActivation_IsReady_JoinNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_AddToken_ObjectNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_AddToken_ObjectNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_ClearTokens_ObjectNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_ClearTokens_ObjectNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountOfferedValues_ObjectNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountOfferedValues_ObjectNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_GetUnofferedTokens_ObjectNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_GetUnofferedTokens_ObjectNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendOffers_ObjectNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendOffers_ObjectNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendUnofferedTokens_ObjectNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendUnofferedTokens_ObjectNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_TakeUnofferedTokens_ObjectNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_TakeUnofferedTokens_ObjectNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Terminate_ObjectNodeActivation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Terminate_ObjectNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_Offer) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_Offer_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_Offer) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_Offer_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_HasTokens_Offer) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_Offer_HasTokens_Offer_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWithdrawnTokens_Offer) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWithdrawnTokens_Offer_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Transfer_Token) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_Token_Transfer_Token_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Withdraw_Token) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Activities_IntermediateActivities_Token_Withdraw_Token_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_SetFeatureValue_CompoundValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_CompoundValue_SetFeatureValue_CompoundValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Destroy_ExtensionalValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_ExtensionalValue_Destroy_ExtensionalValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_Copy_IntegerValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_IntegerValue_Copy_IntegerValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralBooleanEvaluation_Evaluate_LiteralBooleanEvaluation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_LiteralBooleanEvaluation_Evaluate_LiteralBooleanEvaluation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralEvaluation_GetType_LiteralEvaluation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_LiteralEvaluation_GetType_LiteralEvaluation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluation) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluation_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Copy_Object) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_Object_Copy_Object_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Destroy_Object) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_Object_Destroy_Object_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_Reference) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_Reference_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_SetFeatureValue_Reference) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_Reference_SetFeatureValue_Reference_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Copy_Value) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_Value_Copy_Value_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Equals_Value) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_Value_Equals_Value_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_HasType_Value) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Classes_Kernel_Value_HasType_Value_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_Execution) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_Execution_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetBehavior_Execution) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetBehavior_Execution_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_SetParameterValue_Execution) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_SetParameterValue_Execution_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecution) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecution_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValue) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValue_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateEvaluation_ExecutionFactory) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Loci_ExecutionFactory_CreateEvaluation_ExecutionFactory_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateExecution_ExecutionFactory) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Loci_ExecutionFactory_CreateExecution_ExecutionFactory_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateOpaqueBehaviorExecution_ExecutionFactory) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Loci_ExecutionFactory_InstantiateOpaqueBehaviorExecution_ExecutionFactory_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateVisitor_ExecutionFactory) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Loci_ExecutionFactory_InstantiateVisitor_ExecutionFactory_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Loci_Executor_Evaluate_Executor) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Loci_Executor_Evaluate_Executor_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Loci_Executor_Execute_Executor) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Loci_Executor_Execute_Executor_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_Loci_Locus_Instantiate_Locus) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_Loci_Locus_Instantiate_Locus_ImplicitStep();
+		} else if (currentStep instanceof umlTrace.Steps.FumlConfiguration_ModelConfiguration_Main) {
+			implicitStep = umlTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfiguration_ModelConfiguration_Main_ImplicitStep();
+		}
+		if (implicitStep != null) {
+			implicitStep.setStartingState(startingState);
+			implicitStep.setEndingState(endingState);
+			((SequentialStep<umlTrace.Steps.SpecificStep>) currentStep).getSubSteps().add(implicitStep);
+
+		}
 	}
 
 	@Override

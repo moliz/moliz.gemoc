@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.ActivityEdge;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance#getGroup_ActivityEdgeInstance <em>Group Activity Edge Instance</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance#getEdge_ActivityEdgeInstance <em>Edge Activity Edge Instance</em>}</li>
@@ -22,7 +23,6 @@ import org.eclipse.uml2.uml.ActivityEdge;
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance#getTarget <em>Target</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance#getOffers <em>Offers</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getActivityEdgeInstance()
  * @model
@@ -159,6 +159,7 @@ public interface ActivityEdgeInstance extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model hasOfferRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void hasOffer(boolean hasOffer);
@@ -167,6 +168,7 @@ public interface ActivityEdgeInstance extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model offeredTokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void takeOfferedTokens(EList<Token> offeredTokens);
@@ -175,6 +177,7 @@ public interface ActivityEdgeInstance extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model countRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void countOfferedValues(int count);
@@ -183,6 +186,7 @@ public interface ActivityEdgeInstance extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model offeredTokensMany="true" maxCountRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void takeOfferedTokens(EList<Token> offeredTokens, int maxCount);
@@ -191,6 +195,7 @@ public interface ActivityEdgeInstance extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model tokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void sendOffer(EList<Token> tokens);

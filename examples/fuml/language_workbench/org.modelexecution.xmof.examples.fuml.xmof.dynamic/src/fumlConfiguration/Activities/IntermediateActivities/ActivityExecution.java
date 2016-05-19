@@ -12,10 +12,10 @@ import fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityExecution#getActivationGroup <em>Activation Group</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getActivityExecution()
  * @model
@@ -53,7 +53,7 @@ public interface ActivityExecution extends Execution {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void collectOutputParameterValues();
@@ -62,6 +62,7 @@ public interface ActivityExecution extends Execution {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model parameterValueRequired="true" outputActivationRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void setParameterValueValues(ParameterValue parameterValue, ActivityParameterNodeActivation outputActivation);

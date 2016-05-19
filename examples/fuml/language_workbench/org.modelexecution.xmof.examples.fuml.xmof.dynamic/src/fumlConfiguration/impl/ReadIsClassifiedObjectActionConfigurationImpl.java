@@ -36,10 +36,10 @@ import org.eclipse.uml2.uml.internal.impl.ReadIsClassifiedObjectActionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.ReadIsClassifiedObjectActionConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

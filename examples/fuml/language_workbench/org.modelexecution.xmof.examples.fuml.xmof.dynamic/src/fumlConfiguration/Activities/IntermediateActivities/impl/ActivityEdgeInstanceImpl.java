@@ -35,6 +35,7 @@ import org.eclipse.uml2.uml.ActivityEdge;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityEdgeInstanceImpl#getGroup_ActivityEdgeInstance <em>Group Activity Edge Instance</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityEdgeInstanceImpl#getEdge_ActivityEdgeInstance <em>Edge Activity Edge Instance</em>}</li>
@@ -42,7 +43,6 @@ import org.eclipse.uml2.uml.ActivityEdge;
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityEdgeInstanceImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityEdgeInstanceImpl#getOffers <em>Offers</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

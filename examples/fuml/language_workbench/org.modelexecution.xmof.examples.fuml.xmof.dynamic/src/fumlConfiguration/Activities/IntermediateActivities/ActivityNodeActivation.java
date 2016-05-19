@@ -16,6 +16,7 @@ import org.eclipse.uml2.uml.ActivityNode;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation#getGroup_ActivityNodeActivation <em>Group Activity Node Activation</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation#getNode_ActivityNodeActivation <em>Node Activity Node Activation</em>}</li>
@@ -25,7 +26,6 @@ import org.eclipse.uml2.uml.ActivityNode;
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation#isIsRunning <em>Is Running</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation#getHeldTokens <em>Held Tokens</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getActivityNodeActivation()
  * @model
@@ -196,6 +196,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model tokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getTokens(EList<Token> tokens);
@@ -203,7 +204,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void createNodeActivations();
@@ -211,7 +212,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void createEdgeInstances();
@@ -219,7 +220,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void run();
@@ -227,7 +228,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void receiveOffer();
@@ -236,6 +237,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model isReadyRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void isReady(boolean isReady);
@@ -244,6 +246,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model tokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void takeOfferedTokens(EList<Token> tokens);
@@ -252,6 +255,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model incomingTokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void fire(EList<Token> incomingTokens);
@@ -260,6 +264,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model isRunningRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void isRunning(boolean isRunning);
@@ -268,6 +273,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model hasOffersRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void hasOffers(boolean hasOffers);
@@ -276,6 +282,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model tokenRequired="true" positionRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void removeToken(Token token, int position);
@@ -284,6 +291,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model tokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void addTokens(EList<Token> tokens);
@@ -292,6 +300,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model tokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void sendOffers(EList<Token> tokens);
@@ -300,6 +309,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model tokenRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void addToken(Token token);
@@ -308,6 +318,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model isSourceForRequired="true" edgeInstanceRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void isSourceFor(boolean isSourceFor, ActivityEdgeInstance edgeInstance);
@@ -316,6 +327,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model nodeRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getNodeActivation(ActivityNode node, ActivityNodeActivation activation);
@@ -323,7 +335,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void terminate();
@@ -331,7 +343,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void clearTokens();
@@ -340,6 +352,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model locusRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getExecutionLocus(Locus locus);
@@ -348,6 +361,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model activityExecutionRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getActivityExecution(ActivityExecution activityExecution);
@@ -355,7 +369,7 @@ public interface ActivityNodeActivation extends SemanticVisitor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getExecutionContext(fumlConfiguration.Classes.Kernel.Object context);

@@ -33,10 +33,10 @@ import org.eclipse.uml2.uml.internal.impl.RedefinableTemplateSignatureImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.RedefinableTemplateSignatureConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
