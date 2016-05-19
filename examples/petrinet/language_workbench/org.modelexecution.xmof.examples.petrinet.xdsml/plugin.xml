@@ -8,8 +8,6 @@
     <modeltype id="org.modelexecution.examples.petrinet.PetrinetMT" uri="http://petrinetmt/" />
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="" entryPoints="" exactType="org.modelexecution.examples.petrinet.PetrinetMT" id="org.modelexecution.examples.petrinet.Petrinet" uri="http://petrinet/1.0">
-      <adapter class="org.modelexecution.examples.petrinet.petrinet.adapters.petrinetmt.PetrinetAdapter" modeltypeId="org.modelexecution.examples.petrinet.PetrinetMT" />
-    </language>
+    <language aspects="" entryPoints="" exactType="org.modelexecution.examples.petrinet.PetrinetMT" id="org.modelexecution.examples.petrinet.Petrinet" uri="http://petrinet/1.0" />
   </extension>
 </plugin>
