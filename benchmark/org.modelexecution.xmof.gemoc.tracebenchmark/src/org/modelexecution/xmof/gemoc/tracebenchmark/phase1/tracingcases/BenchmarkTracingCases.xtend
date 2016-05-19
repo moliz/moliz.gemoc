@@ -8,6 +8,8 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLa
 interface BenchmarkTracingCase {
 
 	def void configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context);
+	
+	def void initialize();
 
 	def int computeMemoryUsage(File dumpFile)
 
@@ -28,6 +30,10 @@ class NoTraceCase implements BenchmarkTracingCase {
 	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
 		// Nothing to do, no trace addon
 	}
+	
+	override initialize() {
+		
+	}
 
 	override computeMemoryUsage(File dumpFile) {
 		return 0
@@ -47,39 +53,6 @@ class NoTraceCase implements BenchmarkTracingCase {
 
 	override createsTrace() {
 		false
-	}
-	
-	override saveTrace(String string) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-
-}
-
-class GenericTraceCase implements BenchmarkTracingCase {
-
-	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
-		// TODO Tanja, how to enable that?
-	}
-
-	override computeMemoryUsage(File dumpFile) {
-		// TODO find which are the classes used 
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-
-	override setLanguage(BenchmarkLanguage language) {
-		// Nothing to do
-	}
-
-	override getSimpleName() {
-		"generic_traces"
-	}
-
-	override getNumberOfStates() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-
-	override createsTrace() {
-		true
 	}
 	
 	override saveTrace(String string) {

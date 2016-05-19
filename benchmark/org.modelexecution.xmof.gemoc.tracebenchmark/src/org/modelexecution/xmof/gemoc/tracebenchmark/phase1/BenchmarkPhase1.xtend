@@ -63,8 +63,8 @@ class BenchmarkPhase1 {
 	static val fuml = new Fuml(#{"testmodel.uml" -> #["test1parameter.xmi"]})
 
 	// Input data for all tests
-	static val tracingCases = #{new NoTraceCase, new DSTraceCase}
-	static val languages = #{fuml}
+	static val tracingCases = #{new org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.GenericTraceCase}
+	static val languages = #{petriNet}
 
 	// Common to all tests (used by @BeforeClass and @AfterClass)
 	static var IProject eclipseProject
@@ -119,6 +119,7 @@ class BenchmarkPhase1 {
 		executioncontext.initializeResourceModel();
 		tracingCase.configureEngineForTracing(engine, executioncontext)
 		engine.initialize(executioncontext);
+		tracingCase.initialize();
 
 		// Execution
 		if (wait)
@@ -213,10 +214,11 @@ class BenchmarkPhase1 {
 
 	@Test
 	def void test() {
-
-		val job = new Job(testCaseName) {
+			val job = new Job(testCaseName) {
 
 			override protected run(IProgressMonitor m) {
+				
+				
 
 				try {
 

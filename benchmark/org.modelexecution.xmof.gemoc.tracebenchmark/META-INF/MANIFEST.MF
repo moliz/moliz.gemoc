@@ -21,4 +21,5 @@ Require-Bundle: org.eclipse.xtend.lib,
  org.eclipse.mat.hprof,
  org.eclipse.mat.jdt,
  org.eclipse.emf.transaction,
- org.modelexecution.xmof.examples.fuml.trace;bundle-version="1.0.0"
+ org.modelexecution.xmof.examples.fuml.trace;bundle-version="1.0.0",
+ org.modelexecution.xmof.gemoc.generictraceconstructor;bundle-version="1.0.0"
