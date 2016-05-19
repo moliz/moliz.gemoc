@@ -44,6 +44,9 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.Benchmar
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.Fuml
+import fr.inria.diverse.trace.commons.testutil.Investigation
+import java.util.HashSet
+import org.eclipse.emf.ecore.EObject
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
@@ -60,12 +63,24 @@ class BenchmarkPhase1 {
 	static val petriNet = new PetriNetLanguage(
 		#{"net1.petrinet" -> #[""], "net1bis.petrinet" -> #[""]}
 	)
-	static val fuml = new Fuml(#{"testmodel.uml" -> #["test1parameter.xmi"]})
+	static val fuml = new Fuml(#{
+		"testmodel.uml" -> #[
+//			"test1parameter.xmi",
+			"test2parameter.xmi"
+//			"test3parameter.xmi"
+		] // ,
+//		"Nokia/ExampleA/ExampleAV1.uml" -> #[
+//			"ExampleAV1_parameter_1_1.xmi"
+//		]
+	})
 
 	// Input data for all tests
-	static val tracingCases = #{new NoTraceCase, new DSTraceCase}
+	static val tracingCases = #{
+		//new NoTraceCase, 
+		new DSTraceCase
+	}
 	static val languages = #{fuml}
-
+	// static val languages = #{petriNet}
 	// Common to all tests (used by @BeforeClass and @AfterClass)
 	static var IProject eclipseProject
 	static var File outputFolder
@@ -134,11 +149,23 @@ class BenchmarkPhase1 {
 		// But we save to a separate file to keep the original model safe for further executions
 		if (!confModelSaved) {
 			val Resource confModel = executioncontext.resourceModel
+			val res = new HashSet<EObject>
+			val pointed = new HashSet<EObject>
+			for (c : confModel.contents) {
+				res.addAll(Investigation::findObjectsThatPointToObjectsWithoutResource(c, pointed))
+			}
+			val newRoots = new HashSet<EObject>
+			for (p : pointed) {
+				val root = Investigation::findRoot(p)
+				newRoots.add(root)
+			}
+
 			val formerURI = confModel.URI
 			val newURI = formerURI.appendFileExtension("tmp")
 			val TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(confModel);
 			val Command cmd = new RecordingCommand(editingDomain) {
 				override doExecute() {
+					confModel.contents.addAll(newRoots)
 					confModel.URI = newURI
 					confModel.save(null)
 					confModel.URI = formerURI
@@ -362,6 +389,7 @@ class BenchmarkPhase1 {
 	def static void closeCSV() {
 		outputCSVWriter.close
 		EclipseTestUtil.waitForJobs
+	// EclipseTestUtil.waitForJobsThenWindowClosed
 	}
 
 	@Parameters(name="{0}")
