@@ -11,10 +11,10 @@ import org.eclipse.uml2.uml.PrimitiveType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.PrimitiveValue#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Classes.Kernel.KernelPackage#getPrimitiveValue()
  * @model abstract="true"

@@ -19,6 +19,7 @@ public interface LiteralEvaluation extends Evaluation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model builtInTypeNameRequired="true" typeRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getType(String builtInTypeName, PrimitiveType type);

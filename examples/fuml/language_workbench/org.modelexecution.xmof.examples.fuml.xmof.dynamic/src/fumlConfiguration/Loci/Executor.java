@@ -20,10 +20,10 @@ import org.eclipse.uml2.uml.ValueSpecification;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Loci.Executor#getLocus_Executor <em>Locus Executor</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Loci.LociPackage#getExecutor()
  * @model
@@ -62,6 +62,7 @@ public interface Executor extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model behaviorRequired="true" inputsMany="true" outputsMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void execute(Behavior behavior, fumlConfiguration.Classes.Kernel.Object context, EList<ParameterValue> inputs, EList<ParameterValue> outputs);
@@ -70,6 +71,7 @@ public interface Executor extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model specificationRequired="true" valueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void evaluate(ValueSpecification specification, Value value);

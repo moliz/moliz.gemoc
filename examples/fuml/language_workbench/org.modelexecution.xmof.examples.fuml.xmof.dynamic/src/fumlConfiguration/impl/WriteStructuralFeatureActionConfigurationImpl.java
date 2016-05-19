@@ -37,10 +37,10 @@ import org.eclipse.uml2.uml.internal.impl.WriteStructuralFeatureActionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.WriteStructuralFeatureActionConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

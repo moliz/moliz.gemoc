@@ -19,8 +19,6 @@ import org.eclipse.uml2.uml.Activity;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Activity Content Configuration</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

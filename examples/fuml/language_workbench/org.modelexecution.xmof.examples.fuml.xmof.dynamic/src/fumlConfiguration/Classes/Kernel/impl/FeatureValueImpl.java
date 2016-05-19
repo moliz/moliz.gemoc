@@ -32,12 +32,12 @@ import org.eclipse.uml2.uml.StructuralFeature;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.impl.FeatureValueImpl#getFeature <em>Feature</em>}</li>
  *   <li>{@link fumlConfiguration.Classes.Kernel.impl.FeatureValueImpl#getValues_FeatureValue <em>Values Feature Value</em>}</li>
  *   <li>{@link fumlConfiguration.Classes.Kernel.impl.FeatureValueImpl#getPosition <em>Position</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

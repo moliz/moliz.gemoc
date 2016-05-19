@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.impl.ReferenceImpl#getReferent <em>Referent</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -42,12 +42,12 @@ import org.eclipse.uml2.uml.ValueSpecification;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Loci.impl.ExecutionFactoryImpl#getLocus_ExecutionFactory <em>Locus Execution Factory</em>}</li>
  *   <li>{@link fumlConfiguration.Loci.impl.ExecutionFactoryImpl#getPrimitiveBehaviorPrototypes <em>Primitive Behavior Prototypes</em>}</li>
  *   <li>{@link fumlConfiguration.Loci.impl.ExecutionFactoryImpl#getBuiltInTypes <em>Built In Types</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

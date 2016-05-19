@@ -34,11 +34,11 @@ import org.eclipse.uml2.uml.Parameter;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.ExecutionImpl#getContext <em>Context</em>}</li>
  *   <li>{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.ExecutionImpl#getParameterValues <em>Parameter Values</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

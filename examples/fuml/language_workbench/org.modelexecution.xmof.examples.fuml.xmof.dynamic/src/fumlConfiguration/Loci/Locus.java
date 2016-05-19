@@ -15,12 +15,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Loci.Locus#getFactory <em>Factory</em>}</li>
  *   <li>{@link fumlConfiguration.Loci.Locus#getExecutor <em>Executor</em>}</li>
  *   <li>{@link fumlConfiguration.Loci.Locus#getExtensionalValues <em>Extensional Values</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Loci.LociPackage#getLocus()
  * @model
@@ -105,6 +105,7 @@ public interface Locus extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model valueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void remove(ExtensionalValue value);
@@ -113,6 +114,7 @@ public interface Locus extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model valueRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void add(ExtensionalValue value);
@@ -121,6 +123,7 @@ public interface Locus extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model typeRequired="true" objectRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void instantiate(org.eclipse.uml2.uml.Class type, fumlConfiguration.Classes.Kernel.Object object);

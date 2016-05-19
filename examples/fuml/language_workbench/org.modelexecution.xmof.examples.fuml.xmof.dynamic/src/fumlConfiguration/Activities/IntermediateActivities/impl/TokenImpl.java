@@ -29,10 +29,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.TokenImpl#getHolder <em>Holder</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

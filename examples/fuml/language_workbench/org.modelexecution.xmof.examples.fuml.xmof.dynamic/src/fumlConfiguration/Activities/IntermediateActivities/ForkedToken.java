@@ -10,12 +10,12 @@ package fumlConfiguration.Activities.IntermediateActivities;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ForkedToken#getBaseToken <em>Base Token</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ForkedToken#getRemainingOffersCount <em>Remaining Offers Count</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ForkedToken#isBaseTokenIsWithdrawn <em>Base Token Is Withdrawn</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getForkedToken()
  * @model
@@ -103,7 +103,7 @@ public interface ForkedToken extends Token {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void initialize();

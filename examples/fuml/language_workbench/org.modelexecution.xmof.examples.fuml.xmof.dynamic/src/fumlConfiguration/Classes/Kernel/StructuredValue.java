@@ -20,7 +20,7 @@ public interface StructuredValue extends Value {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void createFeatureValues();
@@ -29,6 +29,7 @@ public interface StructuredValue extends Value {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model featureRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getFeatureValue(StructuralFeature feature, FeatureValue featureValue);
@@ -37,6 +38,7 @@ public interface StructuredValue extends Value {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model featureRequired="true" valuesMany="true" positionRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void setFeatureValue(StructuralFeature feature, EList<Value> values, int position);

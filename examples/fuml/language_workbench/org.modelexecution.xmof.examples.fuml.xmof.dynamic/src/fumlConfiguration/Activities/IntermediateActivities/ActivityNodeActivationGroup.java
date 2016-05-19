@@ -16,12 +16,12 @@ import org.eclipse.uml2.uml.ActivityNode;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup#getActivityExecution <em>Activity Execution</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup#getEdgeInstances <em>Edge Instances</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup#getNodeActivations <em>Node Activations</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getActivityNodeActivationGroup()
  * @model
@@ -96,6 +96,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model nodesMany="true" edgesMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void activate(EList<ActivityNode> nodes, EList<ActivityEdge> edges);
@@ -104,6 +105,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model outputParameterNodeActivationsMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getOutputParameterNodeActivations(EList<EObject> outputParameterNodeActivations);
@@ -112,6 +114,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model nodesMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void createNodeActivations(EList<ActivityNode> nodes);
@@ -120,6 +123,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model edgesMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void createEdgeInstances(EList<ActivityEdge> edges);
@@ -128,6 +132,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model activationsMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void run(EList<ActivityNodeActivation> activations);
@@ -136,6 +141,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model nodeRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void createNodeActivation(ActivityNode node, ActivityNodeActivation activation);
@@ -143,7 +149,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getActivityExecution(ActivityExecution activityExecution);
@@ -152,6 +158,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model nodeRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getNodeActivation(ActivityNode node, ActivityNodeActivation activation);
@@ -160,6 +167,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model activationsMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void runNodes(EList<ActivityNodeActivation> activations);
@@ -168,6 +176,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model activationsMany="true" enabledActivationsMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getInitiallyEnabledNodeActivations(EList<ActivityNodeActivation> activations, EList<ActivityNodeActivation> enabledActivations);
@@ -176,6 +185,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model activationMany="true" activationsMany="true" returnRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void checkIncomingEdges(EList<ActivityNodeActivation> activation, EList<ActivityNodeActivation> activations, boolean return_);
@@ -184,6 +194,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model activationsMany="true" incomingEdgeRequired="true" sourceActivationsMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getSourceActivations(EList<ActivityNodeActivation> activations, ActivityEdgeInstance incomingEdge, EList<ActivityNodeActivation> sourceActivations);
@@ -191,7 +202,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void terminateAll();

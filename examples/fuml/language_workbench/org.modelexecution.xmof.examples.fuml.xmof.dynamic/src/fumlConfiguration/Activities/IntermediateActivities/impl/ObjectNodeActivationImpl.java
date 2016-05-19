@@ -22,10 +22,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ObjectNodeActivationImpl#getOfferedTokenCount <em>Offered Token Count</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

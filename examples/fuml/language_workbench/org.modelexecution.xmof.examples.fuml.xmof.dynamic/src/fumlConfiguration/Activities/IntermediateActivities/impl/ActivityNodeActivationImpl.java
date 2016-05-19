@@ -40,6 +40,7 @@ import org.eclipse.uml2.uml.ActivityNode;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityNodeActivationImpl#getGroup_ActivityNodeActivation <em>Group Activity Node Activation</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityNodeActivationImpl#getNode_ActivityNodeActivation <em>Node Activity Node Activation</em>}</li>
@@ -49,7 +50,6 @@ import org.eclipse.uml2.uml.ActivityNode;
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityNodeActivationImpl#isIsRunning <em>Is Running</em>}</li>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.impl.ActivityNodeActivationImpl#getHeldTokens <em>Held Tokens</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

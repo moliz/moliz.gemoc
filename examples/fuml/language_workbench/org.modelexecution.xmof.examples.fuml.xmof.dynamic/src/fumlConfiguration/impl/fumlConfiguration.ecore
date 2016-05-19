@@ -5,11 +5,18 @@
     nsPrefix="fumlConf">
   <eClassifiers xsi:type="kernel:BehavioredEClass" name="ModelConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Model #//PackageConfiguration">
     <eOperations xsi:type="kernel:BehavioredEOperation" name="main">
-      <eParameters name="executionEnvironment" lowerBound="1" eType="#//Loci/ExecutionEnvironment"/>
-      <eParameters name="behavior" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
-      <eParameters name="context" eType="#//Kernel/Object"/>
-      <eParameters name="inputs" upperBound="-1" eType="#//BasicBehaviors/ParameterValue"/>
-      <eParameters name="outputs" upperBound="-1" eType="#//BasicBehaviors/ParameterValue"/>
+      <eAnnotations source="http://www.modelexecution.org/xmof">
+        <details key="Step" value="true"/>
+      </eAnnotations>
+      <eParameters xsi:type="kernel:DirectedParameter" name="executionEnvironment"
+          lowerBound="1" eType="#//Loci/ExecutionEnvironment"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+          eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="context" eType="#//Kernel/Object"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="inputs" upperBound="-1"
+          eType="#//BasicBehaviors/ParameterValue"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="outputs" upperBound="-1"
+          eType="#//BasicBehaviors/ParameterValue" direction="RETURN"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="kernel:BehavioredEClass" name="ElementConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Element">
@@ -452,14 +459,27 @@
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="Locus">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="remove">
-        <eParameters name="value" lowerBound="1" eType="#//Kernel/ExtensionalValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//Kernel/ExtensionalValue"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="add">
-        <eParameters name="value" lowerBound="1" eType="#//Kernel/ExtensionalValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//Kernel/ExtensionalValue"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="instantiate">
-        <eParameters name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
-        <eParameters name="object" lowerBound="1" eType="#//Kernel/Object"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="type" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="object" lowerBound="1"
+            eType="#//Kernel/Object" direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="factory" eType="#//Loci/ExecutionFactory"
           containment="true" eOpposite="#//Loci/ExecutionFactory/locus_ExecutionFactory"/>
@@ -470,39 +490,76 @@
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="Executor">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="execute">
-        <eParameters name="behavior" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
-        <eParameters name="context" eType="#//Kernel/Object"/>
-        <eParameters name="inputs" upperBound="-1" eType="#//BasicBehaviors/ParameterValue"/>
-        <eParameters name="outputs" upperBound="-1" eType="#//BasicBehaviors/ParameterValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="context" eType="#//Kernel/Object"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="inputs" upperBound="-1"
+            eType="#//BasicBehaviors/ParameterValue"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputs" upperBound="-1"
+            eType="#//BasicBehaviors/ParameterValue" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="evaluate">
-        <eParameters name="specification" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
-        <eParameters name="value" lowerBound="1" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="specification" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//Kernel/Value" direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="locus_Executor" eType="#//Loci/Locus"
           eOpposite="#//Loci/Locus/executor"/>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExecutionFactory">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="createExecution">
-        <eParameters name="behavior" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
-        <eParameters name="context" eType="#//Kernel/Object"/>
-        <eParameters name="execution" eType="#//BasicBehaviors/Execution"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="context" eType="#//Kernel/Object"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="execution" eType="#//BasicBehaviors/Execution"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="instantiateVisitor">
-        <eParameters name="element" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
-        <eParameters name="visitor" eType="#//Loci/SemanticVisitor"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="element" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="visitor" eType="#//Loci/SemanticVisitor"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="createEvaluation">
-        <eParameters name="evaluation" lowerBound="1" eType="#//Kernel/Evaluation"/>
-        <eParameters name="specification" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="evaluation" lowerBound="1"
+            eType="#//Kernel/Evaluation" direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="specification" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getBuiltInType">
-        <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="type" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="instantiateOpaqueBehaviorExecution">
-        <eParameters name="behavior" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior"/>
-        <eParameters name="execution" eType="#//BasicBehaviors/OpaqueBehaviorExecution"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="execution" eType="#//BasicBehaviors/OpaqueBehaviorExecution"
+            direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutionFactory"
           eType="#//Loci/Locus" eOpposite="#//Loci/Locus/factory"/>
@@ -512,7 +569,11 @@
           eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="SemanticVisitor">
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="initialize"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="initialize">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeModelElement"
           eType="#//ElementConfiguration" eOpposite="#//ElementConfiguration/semanticVisitor"/>
     </eClassifiers>
@@ -521,7 +582,11 @@
       nsPrefix="KernelConf">
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExtensionalValue" abstract="true"
         eSuperTypes="#//Kernel/CompoundValue">
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="destroy"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="destroy">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExtensionalValue"
           eType="#//Loci/Locus" eOpposite="#//Loci/Locus/extensionalValues"/>
     </eClassifiers>
@@ -531,15 +596,30 @@
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="StructuredValue" abstract="true"
         eSuperTypes="#//Kernel/Value">
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="createFeatureValues"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createFeatureValues">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getFeatureValue">
-        <eParameters name="feature" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeature"/>
-        <eParameters name="featureValue" eType="#//Kernel/FeatureValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="feature" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeature"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="featureValue" eType="#//Kernel/FeatureValue"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="setFeatureValue">
-        <eParameters name="feature" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeature"/>
-        <eParameters name="values" upperBound="-1" eType="#//Kernel/Value"/>
-        <eParameters name="position" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="feature" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeature"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="values" upperBound="-1"
+            eType="#//Kernel/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="position" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="CompoundValue" abstract="true"
@@ -550,27 +630,56 @@
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="Value" abstract="true"
         eSuperTypes="#//Loci/SemanticVisitor">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getTypes">
-        <eParameters name="types" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="types" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="copy">
-        <eParameters name="value" lowerBound="1" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//Kernel/Value" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="new">
-        <eParameters name="value" lowerBound="1" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//Kernel/Value" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="equals">
-        <eParameters name="otherValue" lowerBound="1" eType="#//Kernel/Value"/>
-        <eParameters name="return" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="otherValue" lowerBound="1"
+            eType="#//Kernel/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="return" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="hasType">
-        <eParameters name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
-        <eParameters name="hasType" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="type" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="hasType" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="Evaluation" abstract="true"
         eSuperTypes="#//Loci/SemanticVisitor">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="evaluate">
-        <eParameters name="value" lowerBound="1" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//Kernel/Value" direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="specification_Evaluation"
           lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
@@ -582,8 +691,14 @@
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralEvaluation" abstract="true"
         eSuperTypes="#//Kernel/Evaluation">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getType">
-        <eParameters name="builtInTypeName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="type" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="builtInTypeName" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="type" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"
+            direction="RETURN"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="PrimitiveValue" abstract="true"
@@ -597,7 +712,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="FeatureValue" abstract="true">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="copy">
-        <eParameters name="value" lowerBound="1" eType="#//Kernel/FeatureValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//Kernel/FeatureValue" direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
           eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeature"/>
@@ -621,19 +740,45 @@
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="Execution" abstract="true"
         eSuperTypes="#//Kernel/Object">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="setParameterValue">
-        <eParameters name="parameterValue" lowerBound="1" eType="#//BasicBehaviors/ParameterValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="parameterValue" lowerBound="1"
+            eType="#//BasicBehaviors/ParameterValue"/>
       </eOperations>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="execute"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="execute">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getOutputParameterValues">
-        <eParameters name="outputParameterValues" upperBound="-1" eType="#//BasicBehaviors/ParameterValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputParameterValues"
+            upperBound="-1" eType="#//BasicBehaviors/ParameterValue" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getParameterValue">
-        <eParameters name="parameter" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
-        <eParameters name="parameterValue" eType="#//BasicBehaviors/ParameterValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="parameter" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="parameterValue" eType="#//BasicBehaviors/ParameterValue"
+            direction="RETURN"/>
       </eOperations>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="terminate"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="terminate">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getBehavior">
-        <eParameters name="behavior" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"
+            direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
           eType="#//Kernel/Object"/>
@@ -643,13 +788,22 @@
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="OpaqueBehaviorExecution"
         abstract="true" eSuperTypes="#//BasicBehaviors/Execution">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="doBody">
-        <eParameters name="inputParameters" upperBound="-1" eType="#//BasicBehaviors/ParameterValue"/>
-        <eParameters name="outputParameters" upperBound="-1" eType="#//BasicBehaviors/ParameterValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="inputParameters" upperBound="-1"
+            eType="#//BasicBehaviors/ParameterValue"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputParameters" upperBound="-1"
+            eType="#//BasicBehaviors/ParameterValue"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ParameterValue">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="copy">
-        <eParameters name="value" lowerBound="1" eType="#//BasicBehaviors/ParameterValue"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//BasicBehaviors/ParameterValue" direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameter_ParameterValue"
           lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
@@ -669,10 +823,19 @@
   <eSubpackages name="IntermediateActivities" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/activities/intermediateactivities"
       nsPrefix="IntermediateActivitiesConf">
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityExecution" eSuperTypes="#//BasicBehaviors/Execution">
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="collectOutputParameterValues"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="collectOutputParameterValues">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="setParameterValueValues">
-        <eParameters name="parameterValue" lowerBound="1" eType="#//BasicBehaviors/ParameterValue"/>
-        <eParameters name="outputActivation" lowerBound="1" eType="#//IntermediateActivities/ActivityParameterNodeActivation"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="parameterValue" lowerBound="1"
+            eType="#//BasicBehaviors/ParameterValue"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputActivation" lowerBound="1"
+            eType="#//IntermediateActivities/ActivityParameterNodeActivation"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="activationGroup" lowerBound="1"
           eType="#//IntermediateActivities/ActivityNodeActivationGroup" containment="true"
@@ -680,50 +843,114 @@
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityNodeActivationGroup">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="activate">
-        <eParameters name="nodes" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
-        <eParameters name="edges" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityEdge"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="nodes" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="edges" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityEdge"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getOutputParameterNodeActivations">
-        <eParameters name="outputParameterNodeActivations" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputParameterNodeActivations"
+            upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="createNodeActivations">
-        <eParameters name="nodes" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="nodes" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="createEdgeInstances">
-        <eParameters name="edges" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityEdge"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="edges" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityEdge"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="run">
-        <eParameters name="activations" upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivities/ActivityNodeActivation"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="createNodeActivation">
-        <eParameters name="node" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
-        <eParameters name="activation" eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="node" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activation" eType="#//IntermediateActivities/ActivityNodeActivation"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getActivityExecution">
-        <eParameters name="activityExecution" eType="#//IntermediateActivities/ActivityExecution"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activityExecution"
+            eType="#//IntermediateActivities/ActivityExecution" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getNodeActivation">
-        <eParameters name="node" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
-        <eParameters name="activation" eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="node" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activation" eType="#//IntermediateActivities/ActivityNodeActivation"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="runNodes">
-        <eParameters name="activations" upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivities/ActivityNodeActivation"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getInitiallyEnabledNodeActivations">
-        <eParameters name="activations" upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"/>
-        <eParameters name="enabledActivations" upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="enabledActivations"
+            upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="checkIncomingEdges">
-        <eParameters name="activation" upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"/>
-        <eParameters name="activations" upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"/>
-        <eParameters name="return" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activation" upperBound="-1"
+            eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="return" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getSourceActivations">
-        <eParameters name="activations" upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"/>
-        <eParameters name="incomingEdge" lowerBound="1" eType="#//IntermediateActivities/ActivityEdgeInstance"/>
-        <eParameters name="sourceActivations" upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingEdge" lowerBound="1"
+            eType="#//IntermediateActivities/ActivityEdgeInstance"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="sourceActivations"
+            upperBound="-1" eType="#//IntermediateActivities/ActivityNodeActivation"
+            direction="RETURN"/>
       </eOperations>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="terminateAll"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="terminateAll">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="activityExecution" eType="#//IntermediateActivities/ActivityExecution"
           eOpposite="#//IntermediateActivities/ActivityExecution/activationGroup"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="edgeInstances" upperBound="-1"
@@ -738,58 +965,149 @@
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityNodeActivation"
         eSuperTypes="#//Loci/SemanticVisitor">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getTokens">
-        <eParameters name="tokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token" direction="RETURN"/>
       </eOperations>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="createNodeActivations"/>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="createEdgeInstances"/>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="run"/>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="receiveOffer"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createNodeActivations">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createEdgeInstances">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="run">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="receiveOffer">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="isReady">
-        <eParameters name="isReady" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="isReady" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="takeOfferedTokens">
-        <eParameters name="tokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="fire">
-        <eParameters name="incomingTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="isRunning">
-        <eParameters name="isRunning" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="isRunning" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="hasOffers">
-        <eParameters name="hasOffers" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="hasOffers" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="removeToken">
-        <eParameters name="token" lowerBound="1" eType="#//IntermediateActivities/Token"/>
-        <eParameters name="position" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="token" lowerBound="1"
+            eType="#//IntermediateActivities/Token"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="position" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="addTokens">
-        <eParameters name="tokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="sendOffers">
-        <eParameters name="tokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="addToken">
-        <eParameters name="token" lowerBound="1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="token" lowerBound="1"
+            eType="#//IntermediateActivities/Token"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="isSourceFor">
-        <eParameters name="isSourceFor" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-        <eParameters name="edgeInstance" lowerBound="1" eType="#//IntermediateActivities/ActivityEdgeInstance"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="isSourceFor" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="edgeInstance" lowerBound="1"
+            eType="#//IntermediateActivities/ActivityEdgeInstance"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getNodeActivation">
-        <eParameters name="node" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
-        <eParameters name="activation" eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="node" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activation" eType="#//IntermediateActivities/ActivityNodeActivation"
+            direction="RETURN"/>
       </eOperations>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="terminate"/>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="clearTokens"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="terminate">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="clearTokens">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getExecutionLocus">
-        <eParameters name="locus" lowerBound="1" eType="#//Loci/Locus"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="locus" lowerBound="1"
+            eType="#//Loci/Locus" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getActivityExecution">
-        <eParameters name="activityExecution" lowerBound="1" eType="#//IntermediateActivities/ActivityExecution"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activityExecution"
+            lowerBound="1" eType="#//IntermediateActivities/ActivityExecution" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getExecutionContext">
-        <eParameters name="context" eType="#//Kernel/Object"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="context" eType="#//Kernel/Object"
+            direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityNodeActivation"
           eType="#//IntermediateActivities/ActivityNodeActivationGroup" eOpposite="#//IntermediateActivities/ActivityNodeActivationGroup/nodeActivations"/>
@@ -807,39 +1125,84 @@
           eType="#//IntermediateActivities/Token" containment="true" eOpposite="#//IntermediateActivities/Token/holder"/>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="Token">
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="withdraw"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="withdraw">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="isWithdrawn">
-        <eParameters name="isWithdrawn" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="isWithdrawn" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="transfer">
-        <eParameters name="holder" lowerBound="1" eType="#//IntermediateActivities/ActivityNodeActivation"/>
-        <eParameters name="token" lowerBound="1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="holder" lowerBound="1"
+            eType="#//IntermediateActivities/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="token" lowerBound="1"
+            eType="#//IntermediateActivities/Token" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getValue">
-        <eParameters name="value" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" eType="#//Kernel/Value"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="isControl">
-        <eParameters name="isControl" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="isControl" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="holder" eType="#//IntermediateActivities/ActivityNodeActivation"
           eOpposite="#//IntermediateActivities/ActivityNodeActivation/heldTokens"/>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityEdgeInstance">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="hasOffer">
-        <eParameters name="hasOffer" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="hasOffer" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="takeOfferedTokens">
-        <eParameters name="offeredTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="offeredTokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="countOfferedValues">
-        <eParameters name="count" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="count" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="takeOfferedTokens">
-        <eParameters name="offeredTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
-        <eParameters name="maxCount" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="offeredTokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token" direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="maxCount" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="sendOffer">
-        <eParameters name="tokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityEdgeInstance"
           lowerBound="1" eType="#//IntermediateActivities/ActivityNodeActivationGroup"
@@ -858,72 +1221,154 @@
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ObjectNodeActivation" abstract="true"
         eSuperTypes="#//IntermediateActivities/ActivityNodeActivation">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="countUnofferedTokens">
-        <eParameters name="count" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="count" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
       </eOperations>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="sendUnofferedTokens"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="sendUnofferedTokens">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getUnofferedTokens">
-        <eParameters name="unofferedTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="unofferedTokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="countOfferedValues">
-        <eParameters name="count" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="count" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="takeUnofferedTokens">
-        <eParameters name="tokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token" direction="RETURN"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="offeredTokenCount" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="Offer">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="hasTokens">
-        <eParameters name="hasTokens" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="hasTokens" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getOfferedTokens">
-        <eParameters name="offeredTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="offeredTokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="countOfferedValues">
-        <eParameters name="count" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="count" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
       </eOperations>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="removeWithdrawnTokens"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="removeWithdrawnTokens">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="offeredTokens" upperBound="-1"
           eType="#//IntermediateActivities/Token"/>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="DecisionNodeActivation"
         eSuperTypes="#//IntermediateActivities/ControlNodeActivation">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="removeJoinedControlTokens">
-        <eParameters name="incomingTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
-        <eParameters name="removedControlTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
-        <eParameters name="incomingTokens_joinedControlTokensRemoved" upperBound="-1"
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens" upperBound="-1"
             eType="#//IntermediateActivities/Token"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="removedControlTokens"
+            upperBound="-1" eType="#//IntermediateActivities/Token" direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens_joinedControlTokensRemoved"
+            upperBound="-1" eType="#//IntermediateActivities/Token" direction="OUT"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getDecisionValues">
-        <eParameters name="incomingTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
-        <eParameters name="decisionValues" upperBound="-1" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="decisionValues" upperBound="-1"
+            eType="#//Kernel/Value" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="determineOfferedTokens">
-        <eParameters name="incomingTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
-        <eParameters name="decisionValues" upperBound="-1" eType="#//Kernel/Value"/>
-        <eParameters name="edgeInstance" lowerBound="1" eType="#//IntermediateActivities/ActivityEdgeInstance"/>
-        <eParameters name="offeredTokens" upperBound="-1" eType="#//IntermediateActivities/Token"/>
-        <eParameters name="receivesOffer" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="decisionValues" upperBound="-1"
+            eType="#//Kernel/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="edgeInstance" lowerBound="1"
+            eType="#//IntermediateActivities/ActivityEdgeInstance"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="offeredTokens" upperBound="-1"
+            eType="#//IntermediateActivities/Token" direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="receivesOffer" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="OUT"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="test">
-        <eParameters name="guard" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
-        <eParameters name="value" lowerBound="1" eType="#//Kernel/Value"/>
-        <eParameters name="result" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="guard" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//Kernel/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="result" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="hasObjectFlowInput">
-        <eParameters name="return" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="return" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getDecisionInputFlowValue">
-        <eParameters name="value" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" eType="#//Kernel/Value"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="executeDecisionInputBehavior">
-        <eParameters name="inputValue" lowerBound="1" eType="#//Kernel/Value"/>
-        <eParameters name="decisionInputValue" eType="#//Kernel/Value"/>
-        <eParameters name="decisionInputResult" lowerBound="1" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="inputValue" lowerBound="1"
+            eType="#//Kernel/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="decisionInputValue"
+            eType="#//Kernel/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="decisionInputResult"
+            lowerBound="1" eType="#//Kernel/Value" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getDecisionInputFlowInstance">
-        <eParameters name="edgeInstance" eType="#//IntermediateActivities/ActivityEdgeInstance"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="edgeInstance" eType="#//IntermediateActivities/ActivityEdgeInstance"
+            direction="RETURN"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ControlToken" eSuperTypes="#//IntermediateActivities/Token"/>
@@ -932,7 +1377,11 @@
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ForkedToken" eSuperTypes="#//IntermediateActivities/Token">
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="initialize"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="initialize">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="baseToken" lowerBound="1"
           eType="#//IntermediateActivities/Token"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="remainingOffersCount"
@@ -953,25 +1402,58 @@
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActionActivation" abstract="true"
         eSuperTypes="#//IntermediateActivities/ActivityNodeActivation">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getPinActivation">
-        <eParameters name="pin" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Pin"/>
-        <eParameters name="return" eType="#//BasicActions/PinActivation"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="pin" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Pin"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="return" eType="#//BasicActions/PinActivation"
+            direction="RETURN"/>
       </eOperations>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="sendOffers"/>
-      <eOperations xsi:type="kernel:BehavioredEOperation" name="doAction"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="sendOffers">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="doAction">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+      </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="shouldFireAgain">
-        <eParameters name="fireAgain" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="fireAgain" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="putToken">
-        <eParameters name="pin" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//OutputPin"/>
-        <eParameters name="value" lowerBound="1" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="pin" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//OutputPin"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//Kernel/Value"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="takeTokens">
-        <eParameters name="pin" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//InputPin"/>
-        <eParameters name="values" upperBound="-1" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="pin" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//InputPin"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="values" upperBound="-1"
+            eType="#//Kernel/Value" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="putTokens">
-        <eParameters name="pin" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//OutputPin"/>
-        <eParameters name="values" lowerBound="1" upperBound="-1" eType="#//Kernel/Value"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="pin" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//OutputPin"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="values" lowerBound="1"
+            upperBound="-1" eType="#//Kernel/Value"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="pinActivations" upperBound="-1"
           eType="#//BasicActions/PinActivation" eOpposite="#//BasicActions/PinActivation/actionActivation"/>
@@ -991,16 +1473,32 @@
     <eClassifiers xsi:type="kernel:BehavioredEClass" name="CallActionActivation" abstract="true"
         eSuperTypes="#//BasicActions/InvocationActionActivation">
       <eOperations xsi:type="kernel:BehavioredEOperation" name="getCallExecution">
-        <eParameters name="execution" lowerBound="1" eType="#//BasicBehaviors/Execution"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="execution" lowerBound="1"
+            eType="#//BasicBehaviors/Execution" direction="RETURN"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="removeCallExecution">
-        <eParameters name="execution" lowerBound="1" eType="#//BasicBehaviors/Execution"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="execution" lowerBound="1"
+            eType="#//BasicBehaviors/Execution"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="initializeInputParameterValues">
-        <eParameters name="callExecution" lowerBound="1" eType="#//BasicBehaviors/Execution"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="callExecution" lowerBound="1"
+            eType="#//BasicBehaviors/Execution"/>
       </eOperations>
       <eOperations xsi:type="kernel:BehavioredEOperation" name="collectOutputParameterValues">
-        <eParameters name="callExecution" lowerBound="1" eType="#//BasicBehaviors/Execution"/>
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="callExecution" lowerBound="1"
+            eType="#//BasicBehaviors/Execution"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="callExecutions" upperBound="-1"
           eType="#//BasicBehaviors/Execution" containment="true"/>

@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.impl.PinActivationImpl#getActionActivation <em>Action Activation</em>}</li>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.impl.PinActivationImpl#getCount_temp <em>Count temp</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

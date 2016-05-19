@@ -11,10 +11,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation#getOfferedTokenCount <em>Offered Token Count</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getObjectNodeActivation()
  * @model abstract="true"
@@ -51,6 +51,7 @@ public interface ObjectNodeActivation extends ActivityNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model countRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void countUnofferedTokens(int count);
@@ -58,7 +59,7 @@ public interface ObjectNodeActivation extends ActivityNodeActivation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void sendUnofferedTokens();
@@ -67,6 +68,7 @@ public interface ObjectNodeActivation extends ActivityNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model unofferedTokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void getUnofferedTokens(EList<Token> unofferedTokens);
@@ -75,6 +77,7 @@ public interface ObjectNodeActivation extends ActivityNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model countRequired="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void countOfferedValues(int count);
@@ -83,6 +86,7 @@ public interface ObjectNodeActivation extends ActivityNodeActivation {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model tokensMany="true"
+	 *        annotation="http://www.modelexecution.org/xmof Step='true'"
 	 * @generated
 	 */
 	void takeUnofferedTokens(EList<Token> tokens);

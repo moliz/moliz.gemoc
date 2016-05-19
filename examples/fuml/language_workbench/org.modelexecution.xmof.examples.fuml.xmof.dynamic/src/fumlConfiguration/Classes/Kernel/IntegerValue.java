@@ -10,10 +10,10 @@ package fumlConfiguration.Classes.Kernel;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.IntegerValue#getValue_IntegerValue <em>Value Integer Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Classes.Kernel.KernelPackage#getIntegerValue()
  * @model

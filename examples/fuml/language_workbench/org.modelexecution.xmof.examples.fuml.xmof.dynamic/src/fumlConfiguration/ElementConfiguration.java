@@ -15,10 +15,10 @@ import org.eclipse.uml2.uml.Element;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.ElementConfiguration#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.FumlConfigurationPackage#getElementConfiguration()
  * @model

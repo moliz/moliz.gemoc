@@ -11,11 +11,11 @@ import fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.PinActivation#getActionActivation <em>Action Activation</em>}</li>
  *   <li>{@link fumlConfiguration.Actions.BasicActions.PinActivation#getCount_temp <em>Count temp</em>}</li>
  * </ul>
- * </p>
  *
  * @see fumlConfiguration.Actions.BasicActions.BasicActionsPackage#getPinActivation()
  * @model abstract="true"

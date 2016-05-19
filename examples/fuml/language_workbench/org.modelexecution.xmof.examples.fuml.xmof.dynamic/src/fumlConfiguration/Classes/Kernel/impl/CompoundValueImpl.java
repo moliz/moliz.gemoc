@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.impl.CompoundValueImpl#getFeatureValues <em>Feature Values</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

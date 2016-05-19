@@ -29,11 +29,11 @@ import org.eclipse.uml2.uml.ValueSpecification;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.Classes.Kernel.impl.EvaluationImpl#getSpecification_Evaluation <em>Specification Evaluation</em>}</li>
  *   <li>{@link fumlConfiguration.Classes.Kernel.impl.EvaluationImpl#getLocus_Evaluation <em>Locus Evaluation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -33,10 +33,10 @@ import org.eclipse.uml2.uml.internal.impl.BehaviorExecutionSpecificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fumlConfiguration.impl.BehaviorExecutionSpecificationConfigurationImpl#getSemanticVisitor <em>Semantic Visitor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
