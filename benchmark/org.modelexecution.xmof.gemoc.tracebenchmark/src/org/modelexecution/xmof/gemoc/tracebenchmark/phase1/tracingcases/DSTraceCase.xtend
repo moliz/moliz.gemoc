@@ -22,6 +22,10 @@ class DSTraceCase implements BenchmarkTracingCase {
 		this.traceAddon = language.fullTraceAddon
 		context.executionPlatform.addEngineAddon(traceAddon)
 	}
+	
+	override initialize() {
+		
+	}
 
 	static val String queryStart = '''select a.@retainedHeapSize from ".*'''
 	static val String queryEndSimple = '''.*" a'''

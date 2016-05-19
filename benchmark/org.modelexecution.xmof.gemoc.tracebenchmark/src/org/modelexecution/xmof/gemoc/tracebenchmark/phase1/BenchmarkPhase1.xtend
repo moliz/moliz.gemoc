@@ -134,6 +134,7 @@ class BenchmarkPhase1 {
 		executioncontext.initializeResourceModel();
 		tracingCase.configureEngineForTracing(engine, executioncontext)
 		engine.initialize(executioncontext);
+		tracingCase.initialize();
 
 		// Execution
 		if (wait)
@@ -240,10 +241,11 @@ class BenchmarkPhase1 {
 
 	@Test
 	def void test() {
-
-		val job = new Job(testCaseName) {
+			val job = new Job(testCaseName) {
 
 			override protected run(IProgressMonitor m) {
+				
+				
 
 				try {
 
