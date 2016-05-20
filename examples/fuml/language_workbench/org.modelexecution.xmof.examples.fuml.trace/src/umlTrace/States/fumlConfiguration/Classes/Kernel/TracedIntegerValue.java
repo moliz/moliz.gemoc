@@ -19,7 +19,7 @@ import umlTrace.States.IntegerValue_value_IntegerValue_Value;
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage#getTracedIntegerValue()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/IntegerValue'"
+ * @model
  * @generated
  */
 public interface TracedIntegerValue extends TracedPrimitiveValue {

@@ -65,16 +65,7 @@ public interface KernelPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedValue()
 	 * @generated
 	 */
-	int TRACED_VALUE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR = LociPackage.TRACED_SEMANTIC_VISITOR__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
+	int TRACED_VALUE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -111,16 +102,7 @@ public interface KernelPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedPrimitiveValue()
 	 * @generated
 	 */
-	int TRACED_PRIMITIVE_VALUE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_PRIMITIVE_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
+	int TRACED_PRIMITIVE_VALUE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -167,15 +149,6 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 */
 	int TRACED_BOOLEAN_VALUE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_BOOLEAN_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_PRIMITIVE_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -230,16 +203,7 @@ public interface KernelPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedStructuredValue()
 	 * @generated
 	 */
-	int TRACED_STRUCTURED_VALUE = 9;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_STRUCTURED_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
+	int TRACED_STRUCTURED_VALUE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -277,15 +241,6 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 */
 	int TRACED_COMPOUND_VALUE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_COMPOUND_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_STRUCTURED_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -332,15 +287,6 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 */
 	int TRACED_EVALUATION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_EVALUATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = LociPackage.TRACED_SEMANTIC_VISITOR__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -396,15 +342,6 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 */
 	int TRACED_EXTENSIONAL_VALUE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_EXTENSIONAL_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_COMPOUND_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -517,15 +454,6 @@ public interface KernelPackage extends EPackage {
 	int TRACED_INTEGER_VALUE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_INTEGER_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_PRIMITIVE_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
-
-	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -571,6 +499,171 @@ public interface KernelPackage extends EPackage {
 	int TRACED_INTEGER_VALUE_OPERATION_COUNT = TRACED_PRIMITIVE_VALUE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralEvaluationImpl <em>Traced Literal Evaluation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralEvaluationImpl
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedLiteralEvaluation()
+	 * @generated
+	 */
+	int TRACED_LITERAL_EVALUATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_EVALUATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_EVALUATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Locus Evaluation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_EVALUATION__LOCUS_EVALUATION_SEQUENCE = TRACED_EVALUATION__LOCUS_EVALUATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Specification Evaluation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_EVALUATION__SPECIFICATION_EVALUATION_SEQUENCE = TRACED_EVALUATION__SPECIFICATION_EVALUATION_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Literal Evaluation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_EVALUATION_FEATURE_COUNT = TRACED_EVALUATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Literal Evaluation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_EVALUATION_OPERATION_COUNT = TRACED_EVALUATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralBooleanEvaluationImpl <em>Traced Literal Boolean Evaluation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralBooleanEvaluationImpl
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedLiteralBooleanEvaluation()
+	 * @generated
+	 */
+	int TRACED_LITERAL_BOOLEAN_EVALUATION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_BOOLEAN_EVALUATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_LITERAL_EVALUATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Locus Evaluation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_BOOLEAN_EVALUATION__LOCUS_EVALUATION_SEQUENCE = TRACED_LITERAL_EVALUATION__LOCUS_EVALUATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Specification Evaluation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_BOOLEAN_EVALUATION__SPECIFICATION_EVALUATION_SEQUENCE = TRACED_LITERAL_EVALUATION__SPECIFICATION_EVALUATION_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Literal Boolean Evaluation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_BOOLEAN_EVALUATION_FEATURE_COUNT = TRACED_LITERAL_EVALUATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Literal Boolean Evaluation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_BOOLEAN_EVALUATION_OPERATION_COUNT = TRACED_LITERAL_EVALUATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralIntegerEvaluationImpl <em>Traced Literal Integer Evaluation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralIntegerEvaluationImpl
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedLiteralIntegerEvaluation()
+	 * @generated
+	 */
+	int TRACED_LITERAL_INTEGER_EVALUATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_INTEGER_EVALUATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_LITERAL_EVALUATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Locus Evaluation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_INTEGER_EVALUATION__LOCUS_EVALUATION_SEQUENCE = TRACED_LITERAL_EVALUATION__LOCUS_EVALUATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Specification Evaluation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_INTEGER_EVALUATION__SPECIFICATION_EVALUATION_SEQUENCE = TRACED_LITERAL_EVALUATION__SPECIFICATION_EVALUATION_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Literal Integer Evaluation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_INTEGER_EVALUATION_FEATURE_COUNT = TRACED_LITERAL_EVALUATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Literal Integer Evaluation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_LITERAL_INTEGER_EVALUATION_OPERATION_COUNT = TRACED_LITERAL_EVALUATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedObjectImpl <em>Traced Object</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -578,16 +671,7 @@ public interface KernelPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedObject()
 	 * @generated
 	 */
-	int TRACED_OBJECT = 6;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_OBJECT__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_EXTENSIONAL_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
+	int TRACED_OBJECT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -651,16 +735,7 @@ public interface KernelPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedReference()
 	 * @generated
 	 */
-	int TRACED_REFERENCE = 8;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_REFERENCE__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_STRUCTURED_VALUE__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
+	int TRACED_REFERENCE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -857,6 +932,36 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTracedIntegerValue_Value_IntegerValueSequence();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation <em>Traced Literal Boolean Evaluation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Literal Boolean Evaluation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation
+	 * @generated
+	 */
+	EClass getTracedLiteralBooleanEvaluation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralEvaluation <em>Traced Literal Evaluation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Literal Evaluation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralEvaluation
+	 * @generated
+	 */
+	EClass getTracedLiteralEvaluation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation <em>Traced Literal Integer Evaluation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Literal Integer Evaluation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation
+	 * @generated
+	 */
+	EClass getTracedLiteralIntegerEvaluation();
 
 	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject <em>Traced Object</em>}'.
@@ -1095,6 +1200,36 @@ public interface KernelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRACED_INTEGER_VALUE__VALUE_INTEGER_VALUE_SEQUENCE = eINSTANCE.getTracedIntegerValue_Value_IntegerValueSequence();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralBooleanEvaluationImpl <em>Traced Literal Boolean Evaluation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralBooleanEvaluationImpl
+		 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedLiteralBooleanEvaluation()
+		 * @generated
+		 */
+		EClass TRACED_LITERAL_BOOLEAN_EVALUATION = eINSTANCE.getTracedLiteralBooleanEvaluation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralEvaluationImpl <em>Traced Literal Evaluation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralEvaluationImpl
+		 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedLiteralEvaluation()
+		 * @generated
+		 */
+		EClass TRACED_LITERAL_EVALUATION = eINSTANCE.getTracedLiteralEvaluation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralIntegerEvaluationImpl <em>Traced Literal Integer Evaluation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedLiteralIntegerEvaluationImpl
+		 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl#getTracedLiteralIntegerEvaluation()
+		 * @generated
+		 */
+		EClass TRACED_LITERAL_INTEGER_EVALUATION = eINSTANCE.getTracedLiteralIntegerEvaluation();
 
 		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.impl.TracedObjectImpl <em>Traced Object</em>}' class.

@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivation_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivation_AbstractSubStep;
@@ -240,8 +240,8 @@ public class FumlConfiguration_Activities_IntermediateActivities_JoinNodeActivat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public JoinNodeActivation getCaller() {
-		return (fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedJoinNodeActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

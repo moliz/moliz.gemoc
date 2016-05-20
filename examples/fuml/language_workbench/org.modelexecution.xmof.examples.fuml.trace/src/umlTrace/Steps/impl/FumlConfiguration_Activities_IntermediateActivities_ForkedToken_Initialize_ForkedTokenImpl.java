@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.ForkedToken;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken;
 
 import umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Initialize_ForkedToken;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Ini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ForkedToken getCaller() {
-		return (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) this.getMseoccurrence().getMse().getCaller();
+	public TracedForkedToken getCaller() {
+		return (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

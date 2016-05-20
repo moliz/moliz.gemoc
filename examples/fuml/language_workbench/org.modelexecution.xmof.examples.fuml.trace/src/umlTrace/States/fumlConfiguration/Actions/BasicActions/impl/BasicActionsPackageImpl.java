@@ -22,6 +22,10 @@ import umlTrace.States.ecore.impl.EcorePackageImpl;
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsFactory;
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackage;
 
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
@@ -42,13 +46,13 @@ import umlTrace.States.fumlConfiguration.Loci.LociPackage;
 
 import umlTrace.States.fumlConfiguration.Loci.impl.LociPackageImpl;
 
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import umlTrace.States.impl.StatesPackageImpl;
-
-import umlTrace.States.uml.UmlPackage;
-
-import umlTrace.States.uml.impl.UmlPackageImpl;
 
 import umlTrace.Steps.StepsPackage;
 
@@ -84,7 +88,35 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass tracedCallBehaviorActionActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedInputPinActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass tracedInvocationActionActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedOpaqueActionActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedOutputPinActivationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,8 +182,9 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 		IntermediateActivitiesPackageImpl theIntermediateActivitiesPackage = (IntermediateActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) instanceof IntermediateActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) : IntermediateActivitiesPackage.eINSTANCE);
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) instanceof KernelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) : KernelPackage.eINSTANCE);
 		BasicBehaviorsPackageImpl theBasicBehaviorsPackage = (BasicBehaviorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) instanceof BasicBehaviorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) : BasicBehaviorsPackage.eINSTANCE);
+		IntermediateActionsPackageImpl theIntermediateActionsPackage = (IntermediateActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) instanceof IntermediateActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) : IntermediateActionsPackage.eINSTANCE);
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
-		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
+		IntegerFunctionsPackageImpl theIntegerFunctionsPackage = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) : IntegerFunctionsPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
 		// Load packages
@@ -167,8 +200,9 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 		theIntermediateActivitiesPackage.fixPackageContents();
 		theKernelPackage.fixPackageContents();
 		theBasicBehaviorsPackage.fixPackageContents();
+		theIntermediateActionsPackage.fixPackageContents();
 		theInputPackage.fixPackageContents();
-		theUmlPackage.fixPackageContents();
+		theIntegerFunctionsPackage.fixPackageContents();
 		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -236,9 +270,33 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTracedCallBehaviorActionActivation() {
+		if (tracedCallBehaviorActionActivationEClass == null) {
+			tracedCallBehaviorActionActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(2);
+		}
+		return tracedCallBehaviorActionActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedInputPinActivation() {
+		if (tracedInputPinActivationEClass == null) {
+			tracedInputPinActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(3);
+		}
+		return tracedInputPinActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTracedInvocationActionActivation() {
 		if (tracedInvocationActionActivationEClass == null) {
-			tracedInvocationActionActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(2);
+			tracedInvocationActionActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(4);
 		}
 		return tracedInvocationActionActivationEClass;
 	}
@@ -248,9 +306,33 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTracedOpaqueActionActivation() {
+		if (tracedOpaqueActionActivationEClass == null) {
+			tracedOpaqueActionActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(5);
+		}
+		return tracedOpaqueActionActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedOutputPinActivation() {
+		if (tracedOutputPinActivationEClass == null) {
+			tracedOutputPinActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(6);
+		}
+		return tracedOutputPinActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTracedPinActivation() {
 		if (tracedPinActivationEClass == null) {
-			tracedPinActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(3);
+			tracedPinActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(7);
 		}
 		return tracedPinActivationEClass;
 	}

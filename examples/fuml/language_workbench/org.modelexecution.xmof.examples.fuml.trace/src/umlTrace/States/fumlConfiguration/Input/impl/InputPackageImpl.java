@@ -23,6 +23,10 @@ import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackag
 
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
 
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
@@ -42,13 +46,13 @@ import umlTrace.States.fumlConfiguration.Loci.LociPackage;
 
 import umlTrace.States.fumlConfiguration.Loci.impl.LociPackageImpl;
 
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import umlTrace.States.impl.StatesPackageImpl;
-
-import umlTrace.States.uml.UmlPackage;
-
-import umlTrace.States.uml.impl.UmlPackageImpl;
 
 import umlTrace.Steps.StepsPackage;
 
@@ -130,7 +134,8 @@ public class InputPackageImpl extends EPackageImpl implements InputPackage {
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) instanceof KernelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) : KernelPackage.eINSTANCE);
 		BasicBehaviorsPackageImpl theBasicBehaviorsPackage = (BasicBehaviorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) instanceof BasicBehaviorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) : BasicBehaviorsPackage.eINSTANCE);
 		BasicActionsPackageImpl theBasicActionsPackage = (BasicActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) instanceof BasicActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) : BasicActionsPackage.eINSTANCE);
-		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
+		IntermediateActionsPackageImpl theIntermediateActionsPackage = (IntermediateActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) instanceof IntermediateActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) : IntermediateActionsPackage.eINSTANCE);
+		IntegerFunctionsPackageImpl theIntegerFunctionsPackage = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) : IntegerFunctionsPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
 		// Load packages
@@ -147,7 +152,8 @@ public class InputPackageImpl extends EPackageImpl implements InputPackage {
 		theKernelPackage.fixPackageContents();
 		theBasicBehaviorsPackage.fixPackageContents();
 		theBasicActionsPackage.fixPackageContents();
-		theUmlPackage.fixPackageContents();
+		theIntermediateActionsPackage.fixPackageContents();
+		theIntegerFunctionsPackage.fixPackageContents();
 		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -185,17 +191,8 @@ public class InputPackageImpl extends EPackageImpl implements InputPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedInputParameterValues_OriginalObject() {
-        return (EReference)getTracedInputParameterValues().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTracedInputParameterValues_ParameterValuesSequence() {
-        return (EReference)getTracedInputParameterValues().getEStructuralFeatures().get(2);
+        return (EReference)getTracedInputParameterValues().getEStructuralFeatures().get(1);
 	}
 
 	/**

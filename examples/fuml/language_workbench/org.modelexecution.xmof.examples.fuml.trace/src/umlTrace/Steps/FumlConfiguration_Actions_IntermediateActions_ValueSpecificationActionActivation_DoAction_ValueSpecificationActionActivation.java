@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation;
-
 import org.gemoc.executionframework.engine.mse.SequentialStep;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Actions_IntermediateActions_ValueSpecificatio
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	ValueSpecificationActionActivation getCaller();
+	TracedValueSpecificationActionActivation getCaller();
 
 } // FumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation

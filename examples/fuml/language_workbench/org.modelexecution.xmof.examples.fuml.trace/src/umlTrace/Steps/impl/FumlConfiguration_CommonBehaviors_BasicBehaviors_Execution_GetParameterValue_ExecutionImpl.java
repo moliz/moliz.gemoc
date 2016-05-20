@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution;
 
 import umlTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetParameterValue_Execution;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Execution getCaller() {
-		return (fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) this.getMseoccurrence().getMse().getCaller();
+	public TracedExecution getCaller() {
+		return (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue;
-
 import org.gemoc.executionframework.engine.mse.SequentialStep;
+
+import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	ParameterValue getCaller();
+	TracedParameterValue getCaller();
 
 } // FumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValue

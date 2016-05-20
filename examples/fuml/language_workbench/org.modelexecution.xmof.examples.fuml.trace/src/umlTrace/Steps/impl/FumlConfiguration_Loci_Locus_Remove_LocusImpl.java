@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Loci.Locus;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Loci.TracedLocus;
 
 import umlTrace.Steps.FumlConfiguration_Loci_Locus_Remove_Locus;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_Loci_Locus_Remove_LocusImpl extends StepImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Locus getCaller() {
-		return (fumlConfiguration.Loci.Locus) this.getMseoccurrence().getMse().getCaller();
+	public TracedLocus getCaller() {
+		return (umlTrace.States.fumlConfiguration.Loci.TracedLocus) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

@@ -2,8 +2,6 @@
  */
 package umlTrace.States.fumlConfiguration.Loci;
 
-import fumlConfiguration.Loci.Executor;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -20,11 +18,10 @@ import umlTrace.States.Executor_locus_Executor_Value;
  * </p>
  * <ul>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutor#getLocus_ExecutorSequence <em>Locus Executor Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutor#getOriginalObject <em>Original Object</em>}</li>
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Loci.LociPackage#getTracedExecutor()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Loci/Executor'"
+ * @model
  * @generated
  */
 public interface TracedExecutor extends EObject {
@@ -45,31 +42,5 @@ public interface TracedExecutor extends EObject {
 	 * @generated
 	 */
 	EList<Executor_locus_Executor_Value> getLocus_ExecutorSequence();
-
-	/**
-	 * Returns the value of the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Original Object</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Original Object</em>' reference.
-	 * @see #setOriginalObject(Executor)
-	 * @see umlTrace.States.fumlConfiguration.Loci.LociPackage#getTracedExecutor_OriginalObject()
-	 * @model
-	 * @generated
-	 */
-	Executor getOriginalObject();
-
-	/**
-	 * Sets the value of the '{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutor#getOriginalObject <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Original Object</em>' reference.
-	 * @see #getOriginalObject()
-	 * @generated
-	 */
-	void setOriginalObject(Executor value);
 
 } // TracedExecutor

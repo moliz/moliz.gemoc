@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivation;
 import umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivation_AbstractSubStep;
@@ -236,8 +236,8 @@ public class FumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureV
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddStructuralFeatureValueActionActivation getCaller() {
-		return (fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedAddStructuralFeatureValueActionActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

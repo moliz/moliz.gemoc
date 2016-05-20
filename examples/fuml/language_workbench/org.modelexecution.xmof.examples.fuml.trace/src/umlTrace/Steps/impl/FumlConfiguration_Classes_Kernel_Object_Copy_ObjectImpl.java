@@ -28,6 +28,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
 
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject;
+
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Copy_Object;
@@ -239,8 +241,8 @@ public class FumlConfiguration_Classes_Kernel_Object_Copy_ObjectImpl extends Ste
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public fumlConfiguration.Classes.Kernel.Object getCaller() {
-		return (fumlConfiguration.Classes.Kernel.Object) this.getMseoccurrence().getMse().getCaller();
+	public TracedObject getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

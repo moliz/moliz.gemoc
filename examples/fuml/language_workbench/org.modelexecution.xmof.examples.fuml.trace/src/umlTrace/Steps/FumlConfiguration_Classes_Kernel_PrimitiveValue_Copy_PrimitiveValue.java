@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Classes.Kernel.PrimitiveValue;
-
 import org.gemoc.executionframework.engine.mse.SequentialStep;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveV
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Classes.Kernel.PrimitiveValue) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	PrimitiveValue getCaller();
+	TracedPrimitiveValue getCaller();
 
 } // FumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValue

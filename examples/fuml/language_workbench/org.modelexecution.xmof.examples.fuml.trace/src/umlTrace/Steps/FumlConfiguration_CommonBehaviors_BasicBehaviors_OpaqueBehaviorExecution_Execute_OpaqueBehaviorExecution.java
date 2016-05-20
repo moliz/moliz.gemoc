@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-
 import org.gemoc.executionframework.engine.mse.SequentialStep;
+
+import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedOpaqueBehaviorExecution;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehavior
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedOpaqueBehaviorExecution) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	OpaqueBehaviorExecution getCaller();
+	TracedOpaqueBehaviorExecution getCaller();
 
 } // FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecution

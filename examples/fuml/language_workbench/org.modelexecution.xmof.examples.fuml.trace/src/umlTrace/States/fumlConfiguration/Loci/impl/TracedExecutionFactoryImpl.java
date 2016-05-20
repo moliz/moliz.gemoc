@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.Loci.impl;
 
-import fumlConfiguration.Loci.ExecutionFactory;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -38,7 +34,6 @@ import umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory;
  * <ul>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedExecutionFactoryImpl#getBuiltInTypesSequence <em>Built In Types Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedExecutionFactoryImpl#getLocus_ExecutionFactorySequence <em>Locus Execution Factory Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedExecutionFactoryImpl#getOriginalObject <em>Original Object</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedExecutionFactoryImpl#getPrimitiveBehaviorPrototypesSequence <em>Primitive Behavior Prototypes Sequence</em>}</li>
  * </ul>
  *
@@ -64,16 +59,6 @@ public class TracedExecutionFactoryImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<ExecutionFactory_locus_ExecutionFactory_Value> locus_ExecutionFactorySequence;
-
-	/**
-	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected ExecutionFactory originalObject;
 
 	/**
 	 * The cached value of the '{@link #getPrimitiveBehaviorPrototypesSequence() <em>Primitive Behavior Prototypes Sequence</em>}' containment reference list.
@@ -126,44 +111,6 @@ public class TracedExecutionFactoryImpl extends MinimalEObjectImpl.Container imp
 			locus_ExecutionFactorySequence = new EObjectContainmentWithInverseEList<ExecutionFactory_locus_ExecutionFactory_Value>(ExecutionFactory_locus_ExecutionFactory_Value.class, this, LociPackage.TRACED_EXECUTION_FACTORY__LOCUS_EXECUTION_FACTORY_SEQUENCE, StatesPackage.EXECUTION_FACTORY_LOCUS_EXECUTION_FACTORY_VALUE__PARENT);
 		}
 		return locus_ExecutionFactorySequence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExecutionFactory getOriginalObject() {
-		if (originalObject != null && originalObject.eIsProxy()) {
-			InternalEObject oldOriginalObject = (InternalEObject)originalObject;
-			originalObject = (ExecutionFactory)eResolveProxy(oldOriginalObject);
-			if (originalObject != oldOriginalObject) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LociPackage.TRACED_EXECUTION_FACTORY__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-			}
-		}
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExecutionFactory basicGetOriginalObject() {
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject(ExecutionFactory newOriginalObject) {
-		ExecutionFactory oldOriginalObject = originalObject;
-		originalObject = newOriginalObject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LociPackage.TRACED_EXECUTION_FACTORY__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
 	}
 
 	/**
@@ -227,9 +174,6 @@ public class TracedExecutionFactoryImpl extends MinimalEObjectImpl.Container imp
 				return getBuiltInTypesSequence();
 			case LociPackage.TRACED_EXECUTION_FACTORY__LOCUS_EXECUTION_FACTORY_SEQUENCE:
 				return getLocus_ExecutionFactorySequence();
-			case LociPackage.TRACED_EXECUTION_FACTORY__ORIGINAL_OBJECT:
-				if (resolve) return getOriginalObject();
-				return basicGetOriginalObject();
 			case LociPackage.TRACED_EXECUTION_FACTORY__PRIMITIVE_BEHAVIOR_PROTOTYPES_SEQUENCE:
 				return getPrimitiveBehaviorPrototypesSequence();
 		}
@@ -253,9 +197,6 @@ public class TracedExecutionFactoryImpl extends MinimalEObjectImpl.Container imp
 				getLocus_ExecutionFactorySequence().clear();
 				getLocus_ExecutionFactorySequence().addAll((Collection<? extends ExecutionFactory_locus_ExecutionFactory_Value>)newValue);
 				return;
-			case LociPackage.TRACED_EXECUTION_FACTORY__ORIGINAL_OBJECT:
-				setOriginalObject((ExecutionFactory)newValue);
-				return;
 			case LociPackage.TRACED_EXECUTION_FACTORY__PRIMITIVE_BEHAVIOR_PROTOTYPES_SEQUENCE:
 				getPrimitiveBehaviorPrototypesSequence().clear();
 				getPrimitiveBehaviorPrototypesSequence().addAll((Collection<? extends ExecutionFactory_primitiveBehaviorPrototypes_Value>)newValue);
@@ -278,9 +219,6 @@ public class TracedExecutionFactoryImpl extends MinimalEObjectImpl.Container imp
 			case LociPackage.TRACED_EXECUTION_FACTORY__LOCUS_EXECUTION_FACTORY_SEQUENCE:
 				getLocus_ExecutionFactorySequence().clear();
 				return;
-			case LociPackage.TRACED_EXECUTION_FACTORY__ORIGINAL_OBJECT:
-				setOriginalObject((ExecutionFactory)null);
-				return;
 			case LociPackage.TRACED_EXECUTION_FACTORY__PRIMITIVE_BEHAVIOR_PROTOTYPES_SEQUENCE:
 				getPrimitiveBehaviorPrototypesSequence().clear();
 				return;
@@ -300,8 +238,6 @@ public class TracedExecutionFactoryImpl extends MinimalEObjectImpl.Container imp
 				return builtInTypesSequence != null && !builtInTypesSequence.isEmpty();
 			case LociPackage.TRACED_EXECUTION_FACTORY__LOCUS_EXECUTION_FACTORY_SEQUENCE:
 				return locus_ExecutionFactorySequence != null && !locus_ExecutionFactorySequence.isEmpty();
-			case LociPackage.TRACED_EXECUTION_FACTORY__ORIGINAL_OBJECT:
-				return originalObject != null;
 			case LociPackage.TRACED_EXECUTION_FACTORY__PRIMITIVE_BEHAVIOR_PROTOTYPES_SEQUENCE:
 				return primitiveBehaviorPrototypesSequence != null && !primitiveBehaviorPrototypesSequence.isEmpty();
 		}

@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject;
 
-import umlTrace.States.uml.TracedClass;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Object types Value</b></em>'.
@@ -75,7 +73,7 @@ public interface Object_types_Value extends Value {
 
 	/**
 	 * Returns the value of the '<em><b>Types</b></em>' reference list.
-	 * The list contents are of type {@link umlTrace.States.uml.TracedClass}.
+	 * The list contents are of type {@link org.eclipse.uml2.uml.Class}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Types</em>' reference list isn't clear,
@@ -87,7 +85,7 @@ public interface Object_types_Value extends Value {
 	 * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/Object/types'"
 	 * @generated
 	 */
-	EList<TracedClass> getTypes();
+	EList<org.eclipse.uml2.uml.Class> getTypes();
 
 	/**
 	 * <!-- begin-user-doc -->

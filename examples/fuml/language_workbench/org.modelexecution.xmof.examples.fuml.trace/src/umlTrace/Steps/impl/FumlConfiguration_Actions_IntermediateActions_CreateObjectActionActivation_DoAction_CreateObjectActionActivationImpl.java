@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation;
 import umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation_AbstractSubStep;
@@ -236,8 +236,8 @@ public class FumlConfiguration_Actions_IntermediateActions_CreateObjectActionAct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CreateObjectActionActivation getCaller() {
-		return (fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedCreateObjectActionActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

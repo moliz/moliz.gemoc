@@ -40,6 +40,24 @@ public interface KernelFactory extends EFactory {
 	TracedIntegerValue createTracedIntegerValue();
 
 	/**
+	 * Returns a new object of class '<em>Traced Literal Boolean Evaluation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Literal Boolean Evaluation</em>'.
+	 * @generated
+	 */
+	TracedLiteralBooleanEvaluation createTracedLiteralBooleanEvaluation();
+
+	/**
+	 * Returns a new object of class '<em>Traced Literal Integer Evaluation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Literal Integer Evaluation</em>'.
+	 * @generated
+	 */
+	TracedLiteralIntegerEvaluation createTracedLiteralIntegerEvaluation();
+
+	/**
 	 * Returns a new object of class '<em>Traced Object</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

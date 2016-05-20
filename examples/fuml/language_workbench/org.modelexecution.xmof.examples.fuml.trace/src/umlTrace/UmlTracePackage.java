@@ -1670,13 +1670,49 @@ public interface UmlTracePackage extends EPackage {
 	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 175;
 
 	/**
+	 * The feature id for the '<em><b>Basic Actions traced Call Behavior Action Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 176;
+
+	/**
+	 * The feature id for the '<em><b>Basic Actions traced Input Pin Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 177;
+
+	/**
+	 * The feature id for the '<em><b>Basic Actions traced Opaque Action Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 178;
+
+	/**
+	 * The feature id for the '<em><b>Basic Actions traced Output Pin Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 179;
+
+	/**
 	 * The feature id for the '<em><b>Basic Behaviors traced Parameter Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES = MsePackage.TRACE_FEATURE_COUNT + 176;
+	int SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES = MsePackage.TRACE_FEATURE_COUNT + 180;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Element Configurations</b></em>' containment reference list.
@@ -1685,7 +1721,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 177;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 181;
 
 	/**
 	 * The feature id for the '<em><b>Input traced Input Parameter Valuess</b></em>' containment reference list.
@@ -1694,7 +1730,70 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INPUT_TRACED_INPUT_PARAMETER_VALUESS = MsePackage.TRACE_FEATURE_COUNT + 178;
+	int SPECIFIC_TRACE__INPUT_TRACED_INPUT_PARAMETER_VALUESS = MsePackage.TRACE_FEATURE_COUNT + 182;
+
+	/**
+	 * The feature id for the '<em><b>Integer Functions traced Integer Greater Function Behavior Executions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS = MsePackage.TRACE_FEATURE_COUNT + 183;
+
+	/**
+	 * The feature id for the '<em><b>Integer Functions traced Integer Less Function Behavior Executions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS = MsePackage.TRACE_FEATURE_COUNT + 184;
+
+	/**
+	 * The feature id for the '<em><b>Integer Functions traced Integer Plus Function Behavior Executions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS = MsePackage.TRACE_FEATURE_COUNT + 185;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Actions traced Add Structural Feature Value Action Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 186;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Actions traced Create Object Action Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 187;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Actions traced Read Structural Feature Action Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 188;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Actions traced Value Specification Action Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 189;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Edge Instances</b></em>' containment reference list.
@@ -1703,7 +1802,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES = MsePackage.TRACE_FEATURE_COUNT + 179;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES = MsePackage.TRACE_FEATURE_COUNT + 190;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Executions</b></em>' containment reference list.
@@ -1712,7 +1811,16 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS = MsePackage.TRACE_FEATURE_COUNT + 180;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS = MsePackage.TRACE_FEATURE_COUNT + 191;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Activities traced Activity Final Node Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 192;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Node Activation Groups</b></em>' containment reference list.
@@ -1721,7 +1829,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATION_GROUPS = MsePackage.TRACE_FEATURE_COUNT + 181;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATION_GROUPS = MsePackage.TRACE_FEATURE_COUNT + 193;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Node Activations</b></em>' containment reference list.
@@ -1730,7 +1838,43 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 182;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 194;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Activities traced Activity Parameter Node Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 195;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Activities traced Control Tokens</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 196;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Activities traced Decision Node Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 197;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Activities traced Fork Node Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 198;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Forked Tokens</b></em>' containment reference list.
@@ -1739,7 +1883,34 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 183;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 199;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Activities traced Initial Node Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 200;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Activities traced Join Node Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 201;
+
+	/**
+	 * The feature id for the '<em><b>Intermediate Activities traced Merge Node Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 202;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Object Tokens</b></em>' containment reference list.
@@ -1748,7 +1919,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OBJECT_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 184;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OBJECT_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 203;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Offers</b></em>' containment reference list.
@@ -1757,7 +1928,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OFFERS = MsePackage.TRACE_FEATURE_COUNT + 185;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OFFERS = MsePackage.TRACE_FEATURE_COUNT + 204;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Tokens</b></em>' containment reference list.
@@ -1766,7 +1937,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 186;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 205;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced Boolean Values</b></em>' containment reference list.
@@ -1775,7 +1946,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_BOOLEAN_VALUES = MsePackage.TRACE_FEATURE_COUNT + 187;
+	int SPECIFIC_TRACE__KERNEL_TRACED_BOOLEAN_VALUES = MsePackage.TRACE_FEATURE_COUNT + 206;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced Integer Values</b></em>' containment reference list.
@@ -1784,7 +1955,25 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES = MsePackage.TRACE_FEATURE_COUNT + 188;
+	int SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES = MsePackage.TRACE_FEATURE_COUNT + 207;
+
+	/**
+	 * The feature id for the '<em><b>Kernel traced Literal Boolean Evaluations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS = MsePackage.TRACE_FEATURE_COUNT + 208;
+
+	/**
+	 * The feature id for the '<em><b>Kernel traced Literal Integer Evaluations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS = MsePackage.TRACE_FEATURE_COUNT + 209;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced Objects</b></em>' containment reference list.
@@ -1793,7 +1982,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_OBJECTS = MsePackage.TRACE_FEATURE_COUNT + 189;
+	int SPECIFIC_TRACE__KERNEL_TRACED_OBJECTS = MsePackage.TRACE_FEATURE_COUNT + 210;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced References</b></em>' containment reference list.
@@ -1802,7 +1991,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_REFERENCES = MsePackage.TRACE_FEATURE_COUNT + 190;
+	int SPECIFIC_TRACE__KERNEL_TRACED_REFERENCES = MsePackage.TRACE_FEATURE_COUNT + 211;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Execution Environments</b></em>' containment reference list.
@@ -1811,7 +2000,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTION_ENVIRONMENTS = MsePackage.TRACE_FEATURE_COUNT + 191;
+	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTION_ENVIRONMENTS = MsePackage.TRACE_FEATURE_COUNT + 212;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Execution Factorys</b></em>' containment reference list.
@@ -1820,7 +2009,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTION_FACTORYS = MsePackage.TRACE_FEATURE_COUNT + 192;
+	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTION_FACTORYS = MsePackage.TRACE_FEATURE_COUNT + 213;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Executors</b></em>' containment reference list.
@@ -1829,7 +2018,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTORS = MsePackage.TRACE_FEATURE_COUNT + 193;
+	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTORS = MsePackage.TRACE_FEATURE_COUNT + 214;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Locuss</b></em>' containment reference list.
@@ -1838,7 +2027,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_LOCUSS = MsePackage.TRACE_FEATURE_COUNT + 194;
+	int SPECIFIC_TRACE__LOCI_TRACED_LOCUSS = MsePackage.TRACE_FEATURE_COUNT + 215;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Semantic Visitors</b></em>' containment reference list.
@@ -1847,7 +2036,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_SEMANTIC_VISITORS = MsePackage.TRACE_FEATURE_COUNT + 195;
+	int SPECIFIC_TRACE__LOCI_TRACED_SEMANTIC_VISITORS = MsePackage.TRACE_FEATURE_COUNT + 216;
 
 	/**
 	 * The feature id for the '<em><b>States Trace</b></em>' containment reference list.
@@ -1856,34 +2045,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__STATES_TRACE = MsePackage.TRACE_FEATURE_COUNT + 196;
-
-	/**
-	 * The feature id for the '<em><b>Uml traced Classs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPECIFIC_TRACE__UML_TRACED_CLASSS = MsePackage.TRACE_FEATURE_COUNT + 197;
-
-	/**
-	 * The feature id for the '<em><b>Uml traced Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPECIFIC_TRACE__UML_TRACED_PARAMETERS = MsePackage.TRACE_FEATURE_COUNT + 198;
-
-	/**
-	 * The feature id for the '<em><b>Uml traced Primitive Types</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPECIFIC_TRACE__UML_TRACED_PRIMITIVE_TYPES = MsePackage.TRACE_FEATURE_COUNT + 199;
+	int SPECIFIC_TRACE__STATES_TRACE = MsePackage.TRACE_FEATURE_COUNT + 217;
 
 	/**
 	 * The number of structural features of the '<em>Specific Trace</em>' class.
@@ -1892,7 +2054,7 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE_FEATURE_COUNT = MsePackage.TRACE_FEATURE_COUNT + 200;
+	int SPECIFIC_TRACE_FEATURE_COUNT = MsePackage.TRACE_FEATURE_COUNT + 218;
 
 	/**
 	 * The number of operations of the '<em>Specific Trace</em>' class.
@@ -3851,6 +4013,50 @@ public interface UmlTracePackage extends EPackage {
 	EReference getSpecificTrace_FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getBasicActions_tracedCallBehaviorActionActivations <em>Basic Actions traced Call Behavior Action Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Basic Actions traced Call Behavior Action Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getBasicActions_tracedCallBehaviorActionActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_BasicActions_tracedCallBehaviorActionActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getBasicActions_tracedInputPinActivations <em>Basic Actions traced Input Pin Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Basic Actions traced Input Pin Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getBasicActions_tracedInputPinActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_BasicActions_tracedInputPinActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getBasicActions_tracedOpaqueActionActivations <em>Basic Actions traced Opaque Action Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Basic Actions traced Opaque Action Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getBasicActions_tracedOpaqueActionActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_BasicActions_tracedOpaqueActionActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getBasicActions_tracedOutputPinActivations <em>Basic Actions traced Output Pin Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Basic Actions traced Output Pin Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getBasicActions_tracedOutputPinActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_BasicActions_tracedOutputPinActivations();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getBasicBehaviors_tracedParameterValues <em>Basic Behaviors traced Parameter Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3884,6 +4090,83 @@ public interface UmlTracePackage extends EPackage {
 	EReference getSpecificTrace_Input_tracedInputParameterValuess();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions <em>Integer Functions traced Integer Greater Function Behavior Executions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Integer Functions traced Integer Greater Function Behavior Executions</em>'.
+	 * @see umlTrace.SpecificTrace#getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions <em>Integer Functions traced Integer Less Function Behavior Executions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Integer Functions traced Integer Less Function Behavior Executions</em>'.
+	 * @see umlTrace.SpecificTrace#getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions <em>Integer Functions traced Integer Plus Function Behavior Executions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Integer Functions traced Integer Plus Function Behavior Executions</em>'.
+	 * @see umlTrace.SpecificTrace#getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActions_tracedAddStructuralFeatureValueActionActivations <em>Intermediate Actions traced Add Structural Feature Value Action Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Actions traced Add Structural Feature Value Action Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActions_tracedAddStructuralFeatureValueActionActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActions_tracedAddStructuralFeatureValueActionActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActions_tracedCreateObjectActionActivations <em>Intermediate Actions traced Create Object Action Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Actions traced Create Object Action Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActions_tracedCreateObjectActionActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActions_tracedCreateObjectActionActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActions_tracedReadStructuralFeatureActionActivations <em>Intermediate Actions traced Read Structural Feature Action Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Actions traced Read Structural Feature Action Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActions_tracedReadStructuralFeatureActionActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActions_tracedReadStructuralFeatureActionActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActions_tracedValueSpecificationActionActivations <em>Intermediate Actions traced Value Specification Action Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Actions traced Value Specification Action Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActions_tracedValueSpecificationActionActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActions_tracedValueSpecificationActionActivations();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityEdgeInstances <em>Intermediate Activities traced Activity Edge Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3904,6 +4187,17 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSpecificTrace_IntermediateActivities_tracedActivityExecutions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityFinalNodeActivations <em>Intermediate Activities traced Activity Final Node Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Activities traced Activity Final Node Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityFinalNodeActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActivities_tracedActivityFinalNodeActivations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityNodeActivationGroups <em>Intermediate Activities traced Activity Node Activation Groups</em>}'.
@@ -3928,6 +4222,50 @@ public interface UmlTracePackage extends EPackage {
 	EReference getSpecificTrace_IntermediateActivities_tracedActivityNodeActivations();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityParameterNodeActivations <em>Intermediate Activities traced Activity Parameter Node Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Activities traced Activity Parameter Node Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityParameterNodeActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActivities_tracedActivityParameterNodeActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedControlTokens <em>Intermediate Activities traced Control Tokens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Activities traced Control Tokens</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActivities_tracedControlTokens()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActivities_tracedControlTokens();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedDecisionNodeActivations <em>Intermediate Activities traced Decision Node Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Activities traced Decision Node Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActivities_tracedDecisionNodeActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActivities_tracedDecisionNodeActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedForkNodeActivations <em>Intermediate Activities traced Fork Node Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Activities traced Fork Node Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActivities_tracedForkNodeActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActivities_tracedForkNodeActivations();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedForkedTokens <em>Intermediate Activities traced Forked Tokens</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3937,6 +4275,39 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSpecificTrace_IntermediateActivities_tracedForkedTokens();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedInitialNodeActivations <em>Intermediate Activities traced Initial Node Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Activities traced Initial Node Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActivities_tracedInitialNodeActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActivities_tracedInitialNodeActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedJoinNodeActivations <em>Intermediate Activities traced Join Node Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Activities traced Join Node Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActivities_tracedJoinNodeActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActivities_tracedJoinNodeActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedMergeNodeActivations <em>Intermediate Activities traced Merge Node Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intermediate Activities traced Merge Node Activations</em>'.
+	 * @see umlTrace.SpecificTrace#getIntermediateActivities_tracedMergeNodeActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_IntermediateActivities_tracedMergeNodeActivations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedObjectTokens <em>Intermediate Activities traced Object Tokens</em>}'.
@@ -3992,6 +4363,28 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSpecificTrace_Kernel_tracedIntegerValues();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getKernel_tracedLiteralBooleanEvaluations <em>Kernel traced Literal Boolean Evaluations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Kernel traced Literal Boolean Evaluations</em>'.
+	 * @see umlTrace.SpecificTrace#getKernel_tracedLiteralBooleanEvaluations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_Kernel_tracedLiteralBooleanEvaluations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getKernel_tracedLiteralIntegerEvaluations <em>Kernel traced Literal Integer Evaluations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Kernel traced Literal Integer Evaluations</em>'.
+	 * @see umlTrace.SpecificTrace#getKernel_tracedLiteralIntegerEvaluations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_Kernel_tracedLiteralIntegerEvaluations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getKernel_tracedObjects <em>Kernel traced Objects</em>}'.
@@ -4080,39 +4473,6 @@ public interface UmlTracePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSpecificTrace_StatesTrace();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getUml_tracedClasss <em>Uml traced Classs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Uml traced Classs</em>'.
-	 * @see umlTrace.SpecificTrace#getUml_tracedClasss()
-	 * @see #getSpecificTrace()
-	 * @generated
-	 */
-	EReference getSpecificTrace_Uml_tracedClasss();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getUml_tracedParameters <em>Uml traced Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Uml traced Parameters</em>'.
-	 * @see umlTrace.SpecificTrace#getUml_tracedParameters()
-	 * @see #getSpecificTrace()
-	 * @generated
-	 */
-	EReference getSpecificTrace_Uml_tracedParameters();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link umlTrace.SpecificTrace#getUml_tracedPrimitiveTypes <em>Uml traced Primitive Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Uml traced Primitive Types</em>'.
-	 * @see umlTrace.SpecificTrace#getUml_tracedPrimitiveTypes()
-	 * @see #getSpecificTrace()
-	 * @generated
-	 */
-	EReference getSpecificTrace_Uml_tracedPrimitiveTypes();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -5556,6 +5916,38 @@ public interface UmlTracePackage extends EPackage {
 		EReference SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = eINSTANCE.getSpecificTrace_FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence();
 
 		/**
+		 * The meta object literal for the '<em><b>Basic Actions traced Call Behavior Action Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS = eINSTANCE.getSpecificTrace_BasicActions_tracedCallBehaviorActionActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Basic Actions traced Input Pin Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS = eINSTANCE.getSpecificTrace_BasicActions_tracedInputPinActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Basic Actions traced Opaque Action Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS = eINSTANCE.getSpecificTrace_BasicActions_tracedOpaqueActionActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Basic Actions traced Output Pin Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS = eINSTANCE.getSpecificTrace_BasicActions_tracedOutputPinActivations();
+
+		/**
 		 * The meta object literal for the '<em><b>Basic Behaviors traced Parameter Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5580,6 +5972,62 @@ public interface UmlTracePackage extends EPackage {
 		EReference SPECIFIC_TRACE__INPUT_TRACED_INPUT_PARAMETER_VALUESS = eINSTANCE.getSpecificTrace_Input_tracedInputParameterValuess();
 
 		/**
+		 * The meta object literal for the '<em><b>Integer Functions traced Integer Greater Function Behavior Executions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS = eINSTANCE.getSpecificTrace_IntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions();
+
+		/**
+		 * The meta object literal for the '<em><b>Integer Functions traced Integer Less Function Behavior Executions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS = eINSTANCE.getSpecificTrace_IntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions();
+
+		/**
+		 * The meta object literal for the '<em><b>Integer Functions traced Integer Plus Function Behavior Executions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS = eINSTANCE.getSpecificTrace_IntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Actions traced Add Structural Feature Value Action Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActions_tracedAddStructuralFeatureValueActionActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Actions traced Create Object Action Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActions_tracedCreateObjectActionActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Actions traced Read Structural Feature Action Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActions_tracedReadStructuralFeatureActionActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Actions traced Value Specification Action Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActions_tracedValueSpecificationActionActivations();
+
+		/**
 		 * The meta object literal for the '<em><b>Intermediate Activities traced Activity Edge Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5594,6 +6042,14 @@ public interface UmlTracePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedActivityExecutions();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Activities traced Activity Final Node Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedActivityFinalNodeActivations();
 
 		/**
 		 * The meta object literal for the '<em><b>Intermediate Activities traced Activity Node Activation Groups</b></em>' containment reference list feature.
@@ -5612,12 +6068,68 @@ public interface UmlTracePackage extends EPackage {
 		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedActivityNodeActivations();
 
 		/**
+		 * The meta object literal for the '<em><b>Intermediate Activities traced Activity Parameter Node Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedActivityParameterNodeActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Activities traced Control Tokens</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedControlTokens();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Activities traced Decision Node Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedDecisionNodeActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Activities traced Fork Node Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedForkNodeActivations();
+
+		/**
 		 * The meta object literal for the '<em><b>Intermediate Activities traced Forked Tokens</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedForkedTokens();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Activities traced Initial Node Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedInitialNodeActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Activities traced Join Node Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedJoinNodeActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Intermediate Activities traced Merge Node Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS = eINSTANCE.getSpecificTrace_IntermediateActivities_tracedMergeNodeActivations();
 
 		/**
 		 * The meta object literal for the '<em><b>Intermediate Activities traced Object Tokens</b></em>' containment reference list feature.
@@ -5658,6 +6170,22 @@ public interface UmlTracePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES = eINSTANCE.getSpecificTrace_Kernel_tracedIntegerValues();
+
+		/**
+		 * The meta object literal for the '<em><b>Kernel traced Literal Boolean Evaluations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS = eINSTANCE.getSpecificTrace_Kernel_tracedLiteralBooleanEvaluations();
+
+		/**
+		 * The meta object literal for the '<em><b>Kernel traced Literal Integer Evaluations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS = eINSTANCE.getSpecificTrace_Kernel_tracedLiteralIntegerEvaluations();
 
 		/**
 		 * The meta object literal for the '<em><b>Kernel traced Objects</b></em>' containment reference list feature.
@@ -5722,30 +6250,6 @@ public interface UmlTracePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SPECIFIC_TRACE__STATES_TRACE = eINSTANCE.getSpecificTrace_StatesTrace();
-
-		/**
-		 * The meta object literal for the '<em><b>Uml traced Classs</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPECIFIC_TRACE__UML_TRACED_CLASSS = eINSTANCE.getSpecificTrace_Uml_tracedClasss();
-
-		/**
-		 * The meta object literal for the '<em><b>Uml traced Parameters</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPECIFIC_TRACE__UML_TRACED_PARAMETERS = eINSTANCE.getSpecificTrace_Uml_tracedParameters();
-
-		/**
-		 * The meta object literal for the '<em><b>Uml traced Primitive Types</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPECIFIC_TRACE__UML_TRACED_PRIMITIVE_TYPES = eINSTANCE.getSpecificTrace_Uml_tracedPrimitiveTypes();
 
 	}
 

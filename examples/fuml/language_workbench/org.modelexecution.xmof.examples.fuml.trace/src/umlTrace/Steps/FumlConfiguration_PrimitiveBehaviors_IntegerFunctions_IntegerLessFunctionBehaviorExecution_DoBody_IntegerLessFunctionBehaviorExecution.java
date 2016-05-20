@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution;
-
 import org.gemoc.executionframework.engine.mse.SmallStep;
+
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLe
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	IntegerLessFunctionBehaviorExecution getCaller();
+	TracedIntegerLessFunctionBehaviorExecution getCaller();
 
 } // FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_DoBody_IntegerLessFunctionBehaviorExecution

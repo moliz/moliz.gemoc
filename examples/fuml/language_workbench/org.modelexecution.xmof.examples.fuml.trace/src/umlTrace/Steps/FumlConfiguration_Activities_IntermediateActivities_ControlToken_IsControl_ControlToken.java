@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Activities.IntermediateActivities.ControlToken;
-
 import org.gemoc.executionframework.engine.mse.SmallStep;
+
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Activities_IntermediateActivities_ControlToke
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Activities.IntermediateActivities.ControlToken) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	ControlToken getCaller();
+	TracedControlToken getCaller();
 
 } // FumlConfiguration_Activities_IntermediateActivities_ControlToken_IsControl_ControlToken

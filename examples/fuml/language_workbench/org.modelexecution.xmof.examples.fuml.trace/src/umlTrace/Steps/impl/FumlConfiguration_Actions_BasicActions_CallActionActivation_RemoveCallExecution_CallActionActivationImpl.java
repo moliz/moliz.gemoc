@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Actions.BasicActions.CallActionActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_RemoveCallExecution_CallActionActivation;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_Actions_BasicActions_CallActionActivation_RemoveC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CallActionActivation getCaller() {
-		return (fumlConfiguration.Actions.BasicActions.CallActionActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedCallActionActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

@@ -19,7 +19,7 @@ import umlTrace.States.ObjectToken_value_Value;
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getTracedObjectToken()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Activities/IntermediateActivities/ObjectToken'"
+ * @model
  * @generated
  */
 public interface TracedObjectToken extends TracedToken {

@@ -23,6 +23,10 @@ import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackag
 
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
 
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
@@ -42,13 +46,13 @@ import umlTrace.States.fumlConfiguration.Loci.LociPackage;
 
 import umlTrace.States.fumlConfiguration.Loci.impl.LociPackageImpl;
 
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import umlTrace.States.impl.StatesPackageImpl;
-
-import umlTrace.States.uml.UmlPackage;
-
-import umlTrace.States.uml.impl.UmlPackageImpl;
 
 import umlTrace.Steps.StepsPackage;
 
@@ -106,6 +110,27 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	private EClass tracedIntegerValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedLiteralBooleanEvaluationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedLiteralEvaluationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedLiteralIntegerEvaluationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,8 +224,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		IntermediateActivitiesPackageImpl theIntermediateActivitiesPackage = (IntermediateActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) instanceof IntermediateActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) : IntermediateActivitiesPackage.eINSTANCE);
 		BasicBehaviorsPackageImpl theBasicBehaviorsPackage = (BasicBehaviorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) instanceof BasicBehaviorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) : BasicBehaviorsPackage.eINSTANCE);
 		BasicActionsPackageImpl theBasicActionsPackage = (BasicActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) instanceof BasicActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) : BasicActionsPackage.eINSTANCE);
+		IntermediateActionsPackageImpl theIntermediateActionsPackage = (IntermediateActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) instanceof IntermediateActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) : IntermediateActionsPackage.eINSTANCE);
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
-		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
+		IntegerFunctionsPackageImpl theIntegerFunctionsPackage = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) : IntegerFunctionsPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
 		// Load packages
@@ -216,8 +242,9 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		theIntermediateActivitiesPackage.fixPackageContents();
 		theBasicBehaviorsPackage.fixPackageContents();
 		theBasicActionsPackage.fixPackageContents();
+		theIntermediateActionsPackage.fixPackageContents();
 		theInputPackage.fixPackageContents();
-		theUmlPackage.fixPackageContents();
+		theIntegerFunctionsPackage.fixPackageContents();
 		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -387,9 +414,45 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTracedLiteralBooleanEvaluation() {
+		if (tracedLiteralBooleanEvaluationEClass == null) {
+			tracedLiteralBooleanEvaluationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(6);
+		}
+		return tracedLiteralBooleanEvaluationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedLiteralEvaluation() {
+		if (tracedLiteralEvaluationEClass == null) {
+			tracedLiteralEvaluationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(7);
+		}
+		return tracedLiteralEvaluationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedLiteralIntegerEvaluation() {
+		if (tracedLiteralIntegerEvaluationEClass == null) {
+			tracedLiteralIntegerEvaluationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(8);
+		}
+		return tracedLiteralIntegerEvaluationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTracedObject() {
 		if (tracedObjectEClass == null) {
-			tracedObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(6);
+			tracedObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(9);
 		}
 		return tracedObjectEClass;
 	}
@@ -410,7 +473,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 */
 	public EClass getTracedPrimitiveValue() {
 		if (tracedPrimitiveValueEClass == null) {
-			tracedPrimitiveValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(7);
+			tracedPrimitiveValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(10);
 		}
 		return tracedPrimitiveValueEClass;
 	}
@@ -431,7 +494,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 */
 	public EClass getTracedReference() {
 		if (tracedReferenceEClass == null) {
-			tracedReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(8);
+			tracedReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(11);
 		}
 		return tracedReferenceEClass;
 	}
@@ -452,7 +515,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 */
 	public EClass getTracedStructuredValue() {
 		if (tracedStructuredValueEClass == null) {
-			tracedStructuredValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(9);
+			tracedStructuredValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(12);
 		}
 		return tracedStructuredValueEClass;
 	}
@@ -464,7 +527,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 */
 	public EClass getTracedValue() {
 		if (tracedValueEClass == null) {
-			tracedValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(10);
+			tracedValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI).getEClassifiers().get(13);
 		}
 		return tracedValueEClass;
 	}

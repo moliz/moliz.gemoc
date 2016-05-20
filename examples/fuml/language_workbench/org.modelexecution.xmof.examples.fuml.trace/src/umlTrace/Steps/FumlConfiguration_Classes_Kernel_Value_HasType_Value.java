@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Classes.Kernel.Value;
-
 import org.gemoc.executionframework.engine.mse.SequentialStep;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Classes_Kernel_Value_HasType_Value extends Fu
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Classes.Kernel.Value) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	Value getCaller();
+	TracedValue getCaller();
 
 } // FumlConfiguration_Classes_Kernel_Value_HasType_Value

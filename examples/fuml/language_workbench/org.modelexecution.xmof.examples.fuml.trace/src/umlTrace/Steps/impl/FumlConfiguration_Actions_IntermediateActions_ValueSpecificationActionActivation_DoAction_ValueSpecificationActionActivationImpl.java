@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation;
 import umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation_AbstractSubStep;
@@ -236,8 +236,8 @@ public class FumlConfiguration_Actions_IntermediateActions_ValueSpecificationAct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ValueSpecificationActionActivation getCaller() {
-		return (fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedValueSpecificationActionActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

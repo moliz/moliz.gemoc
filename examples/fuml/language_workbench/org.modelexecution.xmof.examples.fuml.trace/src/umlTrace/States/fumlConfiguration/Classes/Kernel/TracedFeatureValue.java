@@ -26,7 +26,6 @@ import umlTrace.States.FeatureValue_values_FeatureValue_Value;
  *
  * @see umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage#getTracedFeatureValue()
  * @model abstract="true"
- *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/FeatureValue'"
  * @generated
  */
 public interface TracedFeatureValue extends EObject {

@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation;
 
 import umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation;
 import umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation_AbstractSubStep;
@@ -236,8 +236,8 @@ public class FumlConfiguration_Activities_IntermediateActivities_DecisionNodeAct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DecisionNodeActivation getCaller() {
-		return (fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedDecisionNodeActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

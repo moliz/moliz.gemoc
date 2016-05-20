@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution;
 
 import umlTrace.Steps.FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreaterFunctionBehaviorExecution_New_IntegerGreaterFunctionBehaviorExecution;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerGreate
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IntegerGreaterFunctionBehaviorExecution getCaller() {
-		return (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) this.getMseoccurrence().getMse().getCaller();
+	public TracedIntegerGreaterFunctionBehaviorExecution getCaller() {
+		return (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

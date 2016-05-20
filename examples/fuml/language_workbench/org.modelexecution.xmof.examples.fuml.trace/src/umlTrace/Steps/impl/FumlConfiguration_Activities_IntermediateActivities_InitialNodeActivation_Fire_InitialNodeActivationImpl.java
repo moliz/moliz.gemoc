@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivation;
@@ -237,8 +237,8 @@ public class FumlConfiguration_Activities_IntermediateActivities_InitialNodeActi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InitialNodeActivation getCaller() {
-		return (fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedInitialNodeActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

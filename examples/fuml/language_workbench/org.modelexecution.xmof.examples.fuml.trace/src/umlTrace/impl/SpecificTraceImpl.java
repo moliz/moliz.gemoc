@@ -23,17 +23,37 @@ import umlTrace.SpecificTrace;
 
 import umlTrace.States.State;
 
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation;
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation;
+
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken;
 
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue;
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation;
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference;
 
@@ -47,11 +67,11 @@ import umlTrace.States.fumlConfiguration.Loci.TracedExecutor;
 import umlTrace.States.fumlConfiguration.Loci.TracedLocus;
 import umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor;
 
-import umlTrace.States.fumlConfiguration.TracedElementConfiguration;
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution;
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution;
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution;
 
-import umlTrace.States.uml.TracedClass;
-import umlTrace.States.uml.TracedParameter;
-import umlTrace.States.uml.TracedPrimitiveType;
+import umlTrace.States.fumlConfiguration.TracedElementConfiguration;
 
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivation;
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_DoAction_ActionActivation;
@@ -417,19 +437,40 @@ import umlTrace.UmlTracePackage;
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_New_IntegerLessFunctionBehaviorExecution_Sequence <em>Fuml Configuration Primitive Behaviors Integer Functions Integer Less Function Behavior Execution New Integer Less Function Behavior Execution Sequence</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecution_Sequence <em>Fuml Configuration Primitive Behaviors Integer Functions Integer Plus Function Behavior Execution Do Body Integer Plus Function Behavior Execution Sequence</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence <em>Fuml Configuration Primitive Behaviors Integer Functions Integer Plus Function Behavior Execution New Integer Plus Function Behavior Execution Sequence</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getBasicActions_tracedCallBehaviorActionActivations <em>Basic Actions traced Call Behavior Action Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getBasicActions_tracedInputPinActivations <em>Basic Actions traced Input Pin Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getBasicActions_tracedOpaqueActionActivations <em>Basic Actions traced Opaque Action Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getBasicActions_tracedOutputPinActivations <em>Basic Actions traced Output Pin Activations</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getBasicBehaviors_tracedParameterValues <em>Basic Behaviors traced Parameter Values</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getFumlConfiguration_tracedElementConfigurations <em>Fuml Configuration traced Element Configurations</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getInput_tracedInputParameterValuess <em>Input traced Input Parameter Valuess</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions <em>Integer Functions traced Integer Greater Function Behavior Executions</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions <em>Integer Functions traced Integer Less Function Behavior Executions</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions <em>Integer Functions traced Integer Plus Function Behavior Executions</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActions_tracedAddStructuralFeatureValueActionActivations <em>Intermediate Actions traced Add Structural Feature Value Action Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActions_tracedCreateObjectActionActivations <em>Intermediate Actions traced Create Object Action Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActions_tracedReadStructuralFeatureActionActivations <em>Intermediate Actions traced Read Structural Feature Action Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActions_tracedValueSpecificationActionActivations <em>Intermediate Actions traced Value Specification Action Activations</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedActivityEdgeInstances <em>Intermediate Activities traced Activity Edge Instances</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedActivityExecutions <em>Intermediate Activities traced Activity Executions</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedActivityFinalNodeActivations <em>Intermediate Activities traced Activity Final Node Activations</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedActivityNodeActivationGroups <em>Intermediate Activities traced Activity Node Activation Groups</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedActivityNodeActivations <em>Intermediate Activities traced Activity Node Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedActivityParameterNodeActivations <em>Intermediate Activities traced Activity Parameter Node Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedControlTokens <em>Intermediate Activities traced Control Tokens</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedDecisionNodeActivations <em>Intermediate Activities traced Decision Node Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedForkNodeActivations <em>Intermediate Activities traced Fork Node Activations</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedForkedTokens <em>Intermediate Activities traced Forked Tokens</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedInitialNodeActivations <em>Intermediate Activities traced Initial Node Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedJoinNodeActivations <em>Intermediate Activities traced Join Node Activations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedMergeNodeActivations <em>Intermediate Activities traced Merge Node Activations</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedObjectTokens <em>Intermediate Activities traced Object Tokens</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedOffers <em>Intermediate Activities traced Offers</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getIntermediateActivities_tracedTokens <em>Intermediate Activities traced Tokens</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getKernel_tracedBooleanValues <em>Kernel traced Boolean Values</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getKernel_tracedIntegerValues <em>Kernel traced Integer Values</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getKernel_tracedLiteralBooleanEvaluations <em>Kernel traced Literal Boolean Evaluations</em>}</li>
+ *   <li>{@link umlTrace.impl.SpecificTraceImpl#getKernel_tracedLiteralIntegerEvaluations <em>Kernel traced Literal Integer Evaluations</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getKernel_tracedObjects <em>Kernel traced Objects</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getKernel_tracedReferences <em>Kernel traced References</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getLoci_tracedExecutionEnvironments <em>Loci traced Execution Environments</em>}</li>
@@ -438,9 +479,6 @@ import umlTrace.UmlTracePackage;
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getLoci_tracedLocuss <em>Loci traced Locuss</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getLoci_tracedSemanticVisitors <em>Loci traced Semantic Visitors</em>}</li>
  *   <li>{@link umlTrace.impl.SpecificTraceImpl#getStatesTrace <em>States Trace</em>}</li>
- *   <li>{@link umlTrace.impl.SpecificTraceImpl#getUml_tracedClasss <em>Uml traced Classs</em>}</li>
- *   <li>{@link umlTrace.impl.SpecificTraceImpl#getUml_tracedParameters <em>Uml traced Parameters</em>}</li>
- *   <li>{@link umlTrace.impl.SpecificTraceImpl#getUml_tracedPrimitiveTypes <em>Uml traced Primitive Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -2207,6 +2245,46 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	protected EList<FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution> fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence;
 
 	/**
+	 * The cached value of the '{@link #getBasicActions_tracedCallBehaviorActionActivations() <em>Basic Actions traced Call Behavior Action Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBasicActions_tracedCallBehaviorActionActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedCallBehaviorActionActivation> basicActions_tracedCallBehaviorActionActivations;
+
+	/**
+	 * The cached value of the '{@link #getBasicActions_tracedInputPinActivations() <em>Basic Actions traced Input Pin Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBasicActions_tracedInputPinActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedInputPinActivation> basicActions_tracedInputPinActivations;
+
+	/**
+	 * The cached value of the '{@link #getBasicActions_tracedOpaqueActionActivations() <em>Basic Actions traced Opaque Action Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBasicActions_tracedOpaqueActionActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedOpaqueActionActivation> basicActions_tracedOpaqueActionActivations;
+
+	/**
+	 * The cached value of the '{@link #getBasicActions_tracedOutputPinActivations() <em>Basic Actions traced Output Pin Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBasicActions_tracedOutputPinActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedOutputPinActivation> basicActions_tracedOutputPinActivations;
+
+	/**
 	 * The cached value of the '{@link #getBasicBehaviors_tracedParameterValues() <em>Basic Behaviors traced Parameter Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2237,6 +2315,76 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	protected EList<TracedInputParameterValues> input_tracedInputParameterValuess;
 
 	/**
+	 * The cached value of the '{@link #getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions() <em>Integer Functions traced Integer Greater Function Behavior Executions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedIntegerGreaterFunctionBehaviorExecution> integerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions;
+
+	/**
+	 * The cached value of the '{@link #getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions() <em>Integer Functions traced Integer Less Function Behavior Executions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedIntegerLessFunctionBehaviorExecution> integerFunctions_tracedIntegerLessFunctionBehaviorExecutions;
+
+	/**
+	 * The cached value of the '{@link #getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions() <em>Integer Functions traced Integer Plus Function Behavior Executions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedIntegerPlusFunctionBehaviorExecution> integerFunctions_tracedIntegerPlusFunctionBehaviorExecutions;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActions_tracedAddStructuralFeatureValueActionActivations() <em>Intermediate Actions traced Add Structural Feature Value Action Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActions_tracedAddStructuralFeatureValueActionActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedAddStructuralFeatureValueActionActivation> intermediateActions_tracedAddStructuralFeatureValueActionActivations;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActions_tracedCreateObjectActionActivations() <em>Intermediate Actions traced Create Object Action Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActions_tracedCreateObjectActionActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedCreateObjectActionActivation> intermediateActions_tracedCreateObjectActionActivations;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActions_tracedReadStructuralFeatureActionActivations() <em>Intermediate Actions traced Read Structural Feature Action Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActions_tracedReadStructuralFeatureActionActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedReadStructuralFeatureActionActivation> intermediateActions_tracedReadStructuralFeatureActionActivations;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActions_tracedValueSpecificationActionActivations() <em>Intermediate Actions traced Value Specification Action Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActions_tracedValueSpecificationActionActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedValueSpecificationActionActivation> intermediateActions_tracedValueSpecificationActionActivations;
+
+	/**
 	 * The cached value of the '{@link #getIntermediateActivities_tracedActivityEdgeInstances() <em>Intermediate Activities traced Activity Edge Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2255,6 +2403,16 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * @ordered
 	 */
 	protected EList<TracedActivityExecution> intermediateActivities_tracedActivityExecutions;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActivities_tracedActivityFinalNodeActivations() <em>Intermediate Activities traced Activity Final Node Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActivities_tracedActivityFinalNodeActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedActivityFinalNodeActivation> intermediateActivities_tracedActivityFinalNodeActivations;
 
 	/**
 	 * The cached value of the '{@link #getIntermediateActivities_tracedActivityNodeActivationGroups() <em>Intermediate Activities traced Activity Node Activation Groups</em>}' containment reference list.
@@ -2277,6 +2435,46 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	protected EList<TracedActivityNodeActivation> intermediateActivities_tracedActivityNodeActivations;
 
 	/**
+	 * The cached value of the '{@link #getIntermediateActivities_tracedActivityParameterNodeActivations() <em>Intermediate Activities traced Activity Parameter Node Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActivities_tracedActivityParameterNodeActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedActivityParameterNodeActivation> intermediateActivities_tracedActivityParameterNodeActivations;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActivities_tracedControlTokens() <em>Intermediate Activities traced Control Tokens</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActivities_tracedControlTokens()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedControlToken> intermediateActivities_tracedControlTokens;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActivities_tracedDecisionNodeActivations() <em>Intermediate Activities traced Decision Node Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActivities_tracedDecisionNodeActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedDecisionNodeActivation> intermediateActivities_tracedDecisionNodeActivations;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActivities_tracedForkNodeActivations() <em>Intermediate Activities traced Fork Node Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActivities_tracedForkNodeActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedForkNodeActivation> intermediateActivities_tracedForkNodeActivations;
+
+	/**
 	 * The cached value of the '{@link #getIntermediateActivities_tracedForkedTokens() <em>Intermediate Activities traced Forked Tokens</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2285,6 +2483,36 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * @ordered
 	 */
 	protected EList<TracedForkedToken> intermediateActivities_tracedForkedTokens;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActivities_tracedInitialNodeActivations() <em>Intermediate Activities traced Initial Node Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActivities_tracedInitialNodeActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedInitialNodeActivation> intermediateActivities_tracedInitialNodeActivations;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActivities_tracedJoinNodeActivations() <em>Intermediate Activities traced Join Node Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActivities_tracedJoinNodeActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedJoinNodeActivation> intermediateActivities_tracedJoinNodeActivations;
+
+	/**
+	 * The cached value of the '{@link #getIntermediateActivities_tracedMergeNodeActivations() <em>Intermediate Activities traced Merge Node Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntermediateActivities_tracedMergeNodeActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedMergeNodeActivation> intermediateActivities_tracedMergeNodeActivations;
 
 	/**
 	 * The cached value of the '{@link #getIntermediateActivities_tracedObjectTokens() <em>Intermediate Activities traced Object Tokens</em>}' containment reference list.
@@ -2335,6 +2563,26 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * @ordered
 	 */
 	protected EList<TracedIntegerValue> kernel_tracedIntegerValues;
+
+	/**
+	 * The cached value of the '{@link #getKernel_tracedLiteralBooleanEvaluations() <em>Kernel traced Literal Boolean Evaluations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKernel_tracedLiteralBooleanEvaluations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedLiteralBooleanEvaluation> kernel_tracedLiteralBooleanEvaluations;
+
+	/**
+	 * The cached value of the '{@link #getKernel_tracedLiteralIntegerEvaluations() <em>Kernel traced Literal Integer Evaluations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKernel_tracedLiteralIntegerEvaluations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedLiteralIntegerEvaluation> kernel_tracedLiteralIntegerEvaluations;
 
 	/**
 	 * The cached value of the '{@link #getKernel_tracedObjects() <em>Kernel traced Objects</em>}' containment reference list.
@@ -2415,36 +2663,6 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * @ordered
 	 */
 	protected EList<State> statesTrace;
-
-	/**
-	 * The cached value of the '{@link #getUml_tracedClasss() <em>Uml traced Classs</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUml_tracedClasss()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<TracedClass> uml_tracedClasss;
-
-	/**
-	 * The cached value of the '{@link #getUml_tracedParameters() <em>Uml traced Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUml_tracedParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<TracedParameter> uml_tracedParameters;
-
-	/**
-	 * The cached value of the '{@link #getUml_tracedPrimitiveTypes() <em>Uml traced Primitive Types</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUml_tracedPrimitiveTypes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<TracedPrimitiveType> uml_tracedPrimitiveTypes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -4593,6 +4811,54 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<TracedCallBehaviorActionActivation> getBasicActions_tracedCallBehaviorActionActivations() {
+		if (basicActions_tracedCallBehaviorActionActivations == null) {
+			basicActions_tracedCallBehaviorActionActivations = new EObjectContainmentEList<TracedCallBehaviorActionActivation>(TracedCallBehaviorActionActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS);
+		}
+		return basicActions_tracedCallBehaviorActionActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedInputPinActivation> getBasicActions_tracedInputPinActivations() {
+		if (basicActions_tracedInputPinActivations == null) {
+			basicActions_tracedInputPinActivations = new EObjectContainmentEList<TracedInputPinActivation>(TracedInputPinActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS);
+		}
+		return basicActions_tracedInputPinActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedOpaqueActionActivation> getBasicActions_tracedOpaqueActionActivations() {
+		if (basicActions_tracedOpaqueActionActivations == null) {
+			basicActions_tracedOpaqueActionActivations = new EObjectContainmentEList<TracedOpaqueActionActivation>(TracedOpaqueActionActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS);
+		}
+		return basicActions_tracedOpaqueActionActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedOutputPinActivation> getBasicActions_tracedOutputPinActivations() {
+		if (basicActions_tracedOutputPinActivations == null) {
+			basicActions_tracedOutputPinActivations = new EObjectContainmentEList<TracedOutputPinActivation>(TracedOutputPinActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS);
+		}
+		return basicActions_tracedOutputPinActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<TracedParameterValue> getBasicBehaviors_tracedParameterValues() {
 		if (basicBehaviors_tracedParameterValues == null) {
 			basicBehaviors_tracedParameterValues = new EObjectContainmentEList<TracedParameterValue>(TracedParameterValue.class, this, UmlTracePackage.SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES);
@@ -4629,6 +4895,90 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<TracedIntegerGreaterFunctionBehaviorExecution> getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions() {
+		if (integerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions == null) {
+			integerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions = new EObjectContainmentEList<TracedIntegerGreaterFunctionBehaviorExecution>(TracedIntegerGreaterFunctionBehaviorExecution.class, this, UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS);
+		}
+		return integerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedIntegerLessFunctionBehaviorExecution> getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions() {
+		if (integerFunctions_tracedIntegerLessFunctionBehaviorExecutions == null) {
+			integerFunctions_tracedIntegerLessFunctionBehaviorExecutions = new EObjectContainmentEList<TracedIntegerLessFunctionBehaviorExecution>(TracedIntegerLessFunctionBehaviorExecution.class, this, UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS);
+		}
+		return integerFunctions_tracedIntegerLessFunctionBehaviorExecutions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedIntegerPlusFunctionBehaviorExecution> getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions() {
+		if (integerFunctions_tracedIntegerPlusFunctionBehaviorExecutions == null) {
+			integerFunctions_tracedIntegerPlusFunctionBehaviorExecutions = new EObjectContainmentEList<TracedIntegerPlusFunctionBehaviorExecution>(TracedIntegerPlusFunctionBehaviorExecution.class, this, UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS);
+		}
+		return integerFunctions_tracedIntegerPlusFunctionBehaviorExecutions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedAddStructuralFeatureValueActionActivation> getIntermediateActions_tracedAddStructuralFeatureValueActionActivations() {
+		if (intermediateActions_tracedAddStructuralFeatureValueActionActivations == null) {
+			intermediateActions_tracedAddStructuralFeatureValueActionActivations = new EObjectContainmentEList<TracedAddStructuralFeatureValueActionActivation>(TracedAddStructuralFeatureValueActionActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS);
+		}
+		return intermediateActions_tracedAddStructuralFeatureValueActionActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedCreateObjectActionActivation> getIntermediateActions_tracedCreateObjectActionActivations() {
+		if (intermediateActions_tracedCreateObjectActionActivations == null) {
+			intermediateActions_tracedCreateObjectActionActivations = new EObjectContainmentEList<TracedCreateObjectActionActivation>(TracedCreateObjectActionActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS);
+		}
+		return intermediateActions_tracedCreateObjectActionActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedReadStructuralFeatureActionActivation> getIntermediateActions_tracedReadStructuralFeatureActionActivations() {
+		if (intermediateActions_tracedReadStructuralFeatureActionActivations == null) {
+			intermediateActions_tracedReadStructuralFeatureActionActivations = new EObjectContainmentEList<TracedReadStructuralFeatureActionActivation>(TracedReadStructuralFeatureActionActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS);
+		}
+		return intermediateActions_tracedReadStructuralFeatureActionActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedValueSpecificationActionActivation> getIntermediateActions_tracedValueSpecificationActionActivations() {
+		if (intermediateActions_tracedValueSpecificationActionActivations == null) {
+			intermediateActions_tracedValueSpecificationActionActivations = new EObjectContainmentEList<TracedValueSpecificationActionActivation>(TracedValueSpecificationActionActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS);
+		}
+		return intermediateActions_tracedValueSpecificationActionActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<TracedActivityEdgeInstance> getIntermediateActivities_tracedActivityEdgeInstances() {
 		if (intermediateActivities_tracedActivityEdgeInstances == null) {
 			intermediateActivities_tracedActivityEdgeInstances = new EObjectContainmentEList<TracedActivityEdgeInstance>(TracedActivityEdgeInstance.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES);
@@ -4646,6 +4996,18 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			intermediateActivities_tracedActivityExecutions = new EObjectContainmentEList<TracedActivityExecution>(TracedActivityExecution.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS);
 		}
 		return intermediateActivities_tracedActivityExecutions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedActivityFinalNodeActivation> getIntermediateActivities_tracedActivityFinalNodeActivations() {
+		if (intermediateActivities_tracedActivityFinalNodeActivations == null) {
+			intermediateActivities_tracedActivityFinalNodeActivations = new EObjectContainmentEList<TracedActivityFinalNodeActivation>(TracedActivityFinalNodeActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS);
+		}
+		return intermediateActivities_tracedActivityFinalNodeActivations;
 	}
 
 	/**
@@ -4677,11 +5039,95 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<TracedActivityParameterNodeActivation> getIntermediateActivities_tracedActivityParameterNodeActivations() {
+		if (intermediateActivities_tracedActivityParameterNodeActivations == null) {
+			intermediateActivities_tracedActivityParameterNodeActivations = new EObjectContainmentEList<TracedActivityParameterNodeActivation>(TracedActivityParameterNodeActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS);
+		}
+		return intermediateActivities_tracedActivityParameterNodeActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedControlToken> getIntermediateActivities_tracedControlTokens() {
+		if (intermediateActivities_tracedControlTokens == null) {
+			intermediateActivities_tracedControlTokens = new EObjectContainmentEList<TracedControlToken>(TracedControlToken.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS);
+		}
+		return intermediateActivities_tracedControlTokens;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedDecisionNodeActivation> getIntermediateActivities_tracedDecisionNodeActivations() {
+		if (intermediateActivities_tracedDecisionNodeActivations == null) {
+			intermediateActivities_tracedDecisionNodeActivations = new EObjectContainmentEList<TracedDecisionNodeActivation>(TracedDecisionNodeActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS);
+		}
+		return intermediateActivities_tracedDecisionNodeActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedForkNodeActivation> getIntermediateActivities_tracedForkNodeActivations() {
+		if (intermediateActivities_tracedForkNodeActivations == null) {
+			intermediateActivities_tracedForkNodeActivations = new EObjectContainmentEList<TracedForkNodeActivation>(TracedForkNodeActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS);
+		}
+		return intermediateActivities_tracedForkNodeActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<TracedForkedToken> getIntermediateActivities_tracedForkedTokens() {
 		if (intermediateActivities_tracedForkedTokens == null) {
 			intermediateActivities_tracedForkedTokens = new EObjectContainmentEList<TracedForkedToken>(TracedForkedToken.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS);
 		}
 		return intermediateActivities_tracedForkedTokens;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedInitialNodeActivation> getIntermediateActivities_tracedInitialNodeActivations() {
+		if (intermediateActivities_tracedInitialNodeActivations == null) {
+			intermediateActivities_tracedInitialNodeActivations = new EObjectContainmentEList<TracedInitialNodeActivation>(TracedInitialNodeActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS);
+		}
+		return intermediateActivities_tracedInitialNodeActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedJoinNodeActivation> getIntermediateActivities_tracedJoinNodeActivations() {
+		if (intermediateActivities_tracedJoinNodeActivations == null) {
+			intermediateActivities_tracedJoinNodeActivations = new EObjectContainmentEList<TracedJoinNodeActivation>(TracedJoinNodeActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS);
+		}
+		return intermediateActivities_tracedJoinNodeActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedMergeNodeActivation> getIntermediateActivities_tracedMergeNodeActivations() {
+		if (intermediateActivities_tracedMergeNodeActivations == null) {
+			intermediateActivities_tracedMergeNodeActivations = new EObjectContainmentEList<TracedMergeNodeActivation>(TracedMergeNodeActivation.class, this, UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS);
+		}
+		return intermediateActivities_tracedMergeNodeActivations;
 	}
 
 	/**
@@ -4742,6 +5188,30 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			kernel_tracedIntegerValues = new EObjectContainmentEList<TracedIntegerValue>(TracedIntegerValue.class, this, UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES);
 		}
 		return kernel_tracedIntegerValues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedLiteralBooleanEvaluation> getKernel_tracedLiteralBooleanEvaluations() {
+		if (kernel_tracedLiteralBooleanEvaluations == null) {
+			kernel_tracedLiteralBooleanEvaluations = new EObjectContainmentEList<TracedLiteralBooleanEvaluation>(TracedLiteralBooleanEvaluation.class, this, UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS);
+		}
+		return kernel_tracedLiteralBooleanEvaluations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedLiteralIntegerEvaluation> getKernel_tracedLiteralIntegerEvaluations() {
+		if (kernel_tracedLiteralIntegerEvaluations == null) {
+			kernel_tracedLiteralIntegerEvaluations = new EObjectContainmentEList<TracedLiteralIntegerEvaluation>(TracedLiteralIntegerEvaluation.class, this, UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS);
+		}
+		return kernel_tracedLiteralIntegerEvaluations;
 	}
 
 	/**
@@ -4845,61 +5315,63 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TracedClass> getUml_tracedClasss() {
-		if (uml_tracedClasss == null) {
-			uml_tracedClasss = new EObjectContainmentEList<TracedClass>(TracedClass.class, this, UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_CLASSS);
-		}
-		return uml_tracedClasss;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<TracedParameter> getUml_tracedParameters() {
-		if (uml_tracedParameters == null) {
-			uml_tracedParameters = new EObjectContainmentEList<TracedParameter>(TracedParameter.class, this, UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PARAMETERS);
-		}
-		return uml_tracedParameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<TracedPrimitiveType> getUml_tracedPrimitiveTypes() {
-		if (uml_tracedPrimitiveTypes == null) {
-			uml_tracedPrimitiveTypes = new EObjectContainmentEList<TracedPrimitiveType>(TracedPrimitiveType.class, this, UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PRIMITIVE_TYPES);
-		}
-		return uml_tracedPrimitiveTypes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS:
+				return ((InternalEList<?>)getBasicActions_tracedCallBehaviorActionActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS:
+				return ((InternalEList<?>)getBasicActions_tracedInputPinActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS:
+				return ((InternalEList<?>)getBasicActions_tracedOpaqueActionActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS:
+				return ((InternalEList<?>)getBasicActions_tracedOutputPinActivations()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES:
 				return ((InternalEList<?>)getBasicBehaviors_tracedParameterValues()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ELEMENT_CONFIGURATIONS:
 				return ((InternalEList<?>)getFumlConfiguration_tracedElementConfigurations()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__INPUT_TRACED_INPUT_PARAMETER_VALUESS:
 				return ((InternalEList<?>)getInput_tracedInputParameterValuess()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS:
+				return ((InternalEList<?>)getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				return ((InternalEList<?>)getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				return ((InternalEList<?>)getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActions_tracedAddStructuralFeatureValueActionActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActions_tracedCreateObjectActionActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActions_tracedReadStructuralFeatureActionActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActions_tracedValueSpecificationActionActivations()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES:
 				return ((InternalEList<?>)getIntermediateActivities_tracedActivityEdgeInstances()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS:
 				return ((InternalEList<?>)getIntermediateActivities_tracedActivityExecutions()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActivities_tracedActivityFinalNodeActivations()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATION_GROUPS:
 				return ((InternalEList<?>)getIntermediateActivities_tracedActivityNodeActivationGroups()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATIONS:
 				return ((InternalEList<?>)getIntermediateActivities_tracedActivityNodeActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActivities_tracedActivityParameterNodeActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS:
+				return ((InternalEList<?>)getIntermediateActivities_tracedControlTokens()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActivities_tracedDecisionNodeActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActivities_tracedForkNodeActivations()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS:
 				return ((InternalEList<?>)getIntermediateActivities_tracedForkedTokens()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActivities_tracedInitialNodeActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActivities_tracedJoinNodeActivations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS:
+				return ((InternalEList<?>)getIntermediateActivities_tracedMergeNodeActivations()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OBJECT_TOKENS:
 				return ((InternalEList<?>)getIntermediateActivities_tracedObjectTokens()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OFFERS:
@@ -4910,6 +5382,10 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return ((InternalEList<?>)getKernel_tracedBooleanValues()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES:
 				return ((InternalEList<?>)getKernel_tracedIntegerValues()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS:
+				return ((InternalEList<?>)getKernel_tracedLiteralBooleanEvaluations()).basicRemove(otherEnd, msgs);
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS:
+				return ((InternalEList<?>)getKernel_tracedLiteralIntegerEvaluations()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_OBJECTS:
 				return ((InternalEList<?>)getKernel_tracedObjects()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_REFERENCES:
@@ -4926,12 +5402,6 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return ((InternalEList<?>)getLoci_tracedSemanticVisitors()).basicRemove(otherEnd, msgs);
 			case UmlTracePackage.SPECIFIC_TRACE__STATES_TRACE:
 				return ((InternalEList<?>)getStatesTrace()).basicRemove(otherEnd, msgs);
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_CLASSS:
-				return ((InternalEList<?>)getUml_tracedClasss()).basicRemove(otherEnd, msgs);
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PARAMETERS:
-				return ((InternalEList<?>)getUml_tracedParameters()).basicRemove(otherEnd, msgs);
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PRIMITIVE_TYPES:
-				return ((InternalEList<?>)getUml_tracedPrimitiveTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -5296,22 +5766,60 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecution_Sequence();
 			case UmlTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE:
 				return getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence();
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS:
+				return getBasicActions_tracedCallBehaviorActionActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS:
+				return getBasicActions_tracedInputPinActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS:
+				return getBasicActions_tracedOpaqueActionActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS:
+				return getBasicActions_tracedOutputPinActivations();
 			case UmlTracePackage.SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES:
 				return getBasicBehaviors_tracedParameterValues();
 			case UmlTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ELEMENT_CONFIGURATIONS:
 				return getFumlConfiguration_tracedElementConfigurations();
 			case UmlTracePackage.SPECIFIC_TRACE__INPUT_TRACED_INPUT_PARAMETER_VALUESS:
 				return getInput_tracedInputParameterValuess();
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS:
+				return getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions();
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				return getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions();
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				return getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS:
+				return getIntermediateActions_tracedAddStructuralFeatureValueActionActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS:
+				return getIntermediateActions_tracedCreateObjectActionActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS:
+				return getIntermediateActions_tracedReadStructuralFeatureActionActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS:
+				return getIntermediateActions_tracedValueSpecificationActionActivations();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES:
 				return getIntermediateActivities_tracedActivityEdgeInstances();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS:
 				return getIntermediateActivities_tracedActivityExecutions();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS:
+				return getIntermediateActivities_tracedActivityFinalNodeActivations();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATION_GROUPS:
 				return getIntermediateActivities_tracedActivityNodeActivationGroups();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATIONS:
 				return getIntermediateActivities_tracedActivityNodeActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS:
+				return getIntermediateActivities_tracedActivityParameterNodeActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS:
+				return getIntermediateActivities_tracedControlTokens();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS:
+				return getIntermediateActivities_tracedDecisionNodeActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS:
+				return getIntermediateActivities_tracedForkNodeActivations();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS:
 				return getIntermediateActivities_tracedForkedTokens();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS:
+				return getIntermediateActivities_tracedInitialNodeActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS:
+				return getIntermediateActivities_tracedJoinNodeActivations();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS:
+				return getIntermediateActivities_tracedMergeNodeActivations();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OBJECT_TOKENS:
 				return getIntermediateActivities_tracedObjectTokens();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OFFERS:
@@ -5322,6 +5830,10 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return getKernel_tracedBooleanValues();
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES:
 				return getKernel_tracedIntegerValues();
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS:
+				return getKernel_tracedLiteralBooleanEvaluations();
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS:
+				return getKernel_tracedLiteralIntegerEvaluations();
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_OBJECTS:
 				return getKernel_tracedObjects();
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_REFERENCES:
@@ -5338,12 +5850,6 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return getLoci_tracedSemanticVisitors();
 			case UmlTracePackage.SPECIFIC_TRACE__STATES_TRACE:
 				return getStatesTrace();
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_CLASSS:
-				return getUml_tracedClasss();
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PARAMETERS:
-				return getUml_tracedParameters();
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PRIMITIVE_TYPES:
-				return getUml_tracedPrimitiveTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -6061,6 +6567,22 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence().clear();
 				getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence().addAll((Collection<? extends FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution>)newValue);
 				return;
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS:
+				getBasicActions_tracedCallBehaviorActionActivations().clear();
+				getBasicActions_tracedCallBehaviorActionActivations().addAll((Collection<? extends TracedCallBehaviorActionActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS:
+				getBasicActions_tracedInputPinActivations().clear();
+				getBasicActions_tracedInputPinActivations().addAll((Collection<? extends TracedInputPinActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS:
+				getBasicActions_tracedOpaqueActionActivations().clear();
+				getBasicActions_tracedOpaqueActionActivations().addAll((Collection<? extends TracedOpaqueActionActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS:
+				getBasicActions_tracedOutputPinActivations().clear();
+				getBasicActions_tracedOutputPinActivations().addAll((Collection<? extends TracedOutputPinActivation>)newValue);
+				return;
 			case UmlTracePackage.SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES:
 				getBasicBehaviors_tracedParameterValues().clear();
 				getBasicBehaviors_tracedParameterValues().addAll((Collection<? extends TracedParameterValue>)newValue);
@@ -6073,6 +6595,34 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				getInput_tracedInputParameterValuess().clear();
 				getInput_tracedInputParameterValuess().addAll((Collection<? extends TracedInputParameterValues>)newValue);
 				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS:
+				getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions().clear();
+				getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions().addAll((Collection<? extends TracedIntegerGreaterFunctionBehaviorExecution>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions().clear();
+				getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions().addAll((Collection<? extends TracedIntegerLessFunctionBehaviorExecution>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions().clear();
+				getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions().addAll((Collection<? extends TracedIntegerPlusFunctionBehaviorExecution>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS:
+				getIntermediateActions_tracedAddStructuralFeatureValueActionActivations().clear();
+				getIntermediateActions_tracedAddStructuralFeatureValueActionActivations().addAll((Collection<? extends TracedAddStructuralFeatureValueActionActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS:
+				getIntermediateActions_tracedCreateObjectActionActivations().clear();
+				getIntermediateActions_tracedCreateObjectActionActivations().addAll((Collection<? extends TracedCreateObjectActionActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS:
+				getIntermediateActions_tracedReadStructuralFeatureActionActivations().clear();
+				getIntermediateActions_tracedReadStructuralFeatureActionActivations().addAll((Collection<? extends TracedReadStructuralFeatureActionActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS:
+				getIntermediateActions_tracedValueSpecificationActionActivations().clear();
+				getIntermediateActions_tracedValueSpecificationActionActivations().addAll((Collection<? extends TracedValueSpecificationActionActivation>)newValue);
+				return;
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES:
 				getIntermediateActivities_tracedActivityEdgeInstances().clear();
 				getIntermediateActivities_tracedActivityEdgeInstances().addAll((Collection<? extends TracedActivityEdgeInstance>)newValue);
@@ -6080,6 +6630,10 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS:
 				getIntermediateActivities_tracedActivityExecutions().clear();
 				getIntermediateActivities_tracedActivityExecutions().addAll((Collection<? extends TracedActivityExecution>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedActivityFinalNodeActivations().clear();
+				getIntermediateActivities_tracedActivityFinalNodeActivations().addAll((Collection<? extends TracedActivityFinalNodeActivation>)newValue);
 				return;
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATION_GROUPS:
 				getIntermediateActivities_tracedActivityNodeActivationGroups().clear();
@@ -6089,9 +6643,37 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				getIntermediateActivities_tracedActivityNodeActivations().clear();
 				getIntermediateActivities_tracedActivityNodeActivations().addAll((Collection<? extends TracedActivityNodeActivation>)newValue);
 				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedActivityParameterNodeActivations().clear();
+				getIntermediateActivities_tracedActivityParameterNodeActivations().addAll((Collection<? extends TracedActivityParameterNodeActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS:
+				getIntermediateActivities_tracedControlTokens().clear();
+				getIntermediateActivities_tracedControlTokens().addAll((Collection<? extends TracedControlToken>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedDecisionNodeActivations().clear();
+				getIntermediateActivities_tracedDecisionNodeActivations().addAll((Collection<? extends TracedDecisionNodeActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedForkNodeActivations().clear();
+				getIntermediateActivities_tracedForkNodeActivations().addAll((Collection<? extends TracedForkNodeActivation>)newValue);
+				return;
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS:
 				getIntermediateActivities_tracedForkedTokens().clear();
 				getIntermediateActivities_tracedForkedTokens().addAll((Collection<? extends TracedForkedToken>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedInitialNodeActivations().clear();
+				getIntermediateActivities_tracedInitialNodeActivations().addAll((Collection<? extends TracedInitialNodeActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedJoinNodeActivations().clear();
+				getIntermediateActivities_tracedJoinNodeActivations().addAll((Collection<? extends TracedJoinNodeActivation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedMergeNodeActivations().clear();
+				getIntermediateActivities_tracedMergeNodeActivations().addAll((Collection<? extends TracedMergeNodeActivation>)newValue);
 				return;
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OBJECT_TOKENS:
 				getIntermediateActivities_tracedObjectTokens().clear();
@@ -6112,6 +6694,14 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES:
 				getKernel_tracedIntegerValues().clear();
 				getKernel_tracedIntegerValues().addAll((Collection<? extends TracedIntegerValue>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS:
+				getKernel_tracedLiteralBooleanEvaluations().clear();
+				getKernel_tracedLiteralBooleanEvaluations().addAll((Collection<? extends TracedLiteralBooleanEvaluation>)newValue);
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS:
+				getKernel_tracedLiteralIntegerEvaluations().clear();
+				getKernel_tracedLiteralIntegerEvaluations().addAll((Collection<? extends TracedLiteralIntegerEvaluation>)newValue);
 				return;
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_OBJECTS:
 				getKernel_tracedObjects().clear();
@@ -6144,18 +6734,6 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case UmlTracePackage.SPECIFIC_TRACE__STATES_TRACE:
 				getStatesTrace().clear();
 				getStatesTrace().addAll((Collection<? extends State>)newValue);
-				return;
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_CLASSS:
-				getUml_tracedClasss().clear();
-				getUml_tracedClasss().addAll((Collection<? extends TracedClass>)newValue);
-				return;
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PARAMETERS:
-				getUml_tracedParameters().clear();
-				getUml_tracedParameters().addAll((Collection<? extends TracedParameter>)newValue);
-				return;
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PRIMITIVE_TYPES:
-				getUml_tracedPrimitiveTypes().clear();
-				getUml_tracedPrimitiveTypes().addAll((Collection<? extends TracedPrimitiveType>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -6697,6 +7275,18 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case UmlTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE:
 				getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence().clear();
 				return;
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS:
+				getBasicActions_tracedCallBehaviorActionActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS:
+				getBasicActions_tracedInputPinActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS:
+				getBasicActions_tracedOpaqueActionActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS:
+				getBasicActions_tracedOutputPinActivations().clear();
+				return;
 			case UmlTracePackage.SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES:
 				getBasicBehaviors_tracedParameterValues().clear();
 				return;
@@ -6706,11 +7296,35 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case UmlTracePackage.SPECIFIC_TRACE__INPUT_TRACED_INPUT_PARAMETER_VALUESS:
 				getInput_tracedInputParameterValuess().clear();
 				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS:
+				getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS:
+				getIntermediateActions_tracedAddStructuralFeatureValueActionActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS:
+				getIntermediateActions_tracedCreateObjectActionActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS:
+				getIntermediateActions_tracedReadStructuralFeatureActionActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS:
+				getIntermediateActions_tracedValueSpecificationActionActivations().clear();
+				return;
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES:
 				getIntermediateActivities_tracedActivityEdgeInstances().clear();
 				return;
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS:
 				getIntermediateActivities_tracedActivityExecutions().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedActivityFinalNodeActivations().clear();
 				return;
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATION_GROUPS:
 				getIntermediateActivities_tracedActivityNodeActivationGroups().clear();
@@ -6718,8 +7332,29 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATIONS:
 				getIntermediateActivities_tracedActivityNodeActivations().clear();
 				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedActivityParameterNodeActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS:
+				getIntermediateActivities_tracedControlTokens().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedDecisionNodeActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedForkNodeActivations().clear();
+				return;
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS:
 				getIntermediateActivities_tracedForkedTokens().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedInitialNodeActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedJoinNodeActivations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS:
+				getIntermediateActivities_tracedMergeNodeActivations().clear();
 				return;
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OBJECT_TOKENS:
 				getIntermediateActivities_tracedObjectTokens().clear();
@@ -6735,6 +7370,12 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return;
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES:
 				getKernel_tracedIntegerValues().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS:
+				getKernel_tracedLiteralBooleanEvaluations().clear();
+				return;
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS:
+				getKernel_tracedLiteralIntegerEvaluations().clear();
 				return;
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_OBJECTS:
 				getKernel_tracedObjects().clear();
@@ -6759,15 +7400,6 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return;
 			case UmlTracePackage.SPECIFIC_TRACE__STATES_TRACE:
 				getStatesTrace().clear();
-				return;
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_CLASSS:
-				getUml_tracedClasss().clear();
-				return;
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PARAMETERS:
-				getUml_tracedParameters().clear();
-				return;
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PRIMITIVE_TYPES:
-				getUml_tracedPrimitiveTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -7133,22 +7765,60 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecution_Sequence != null && !fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecution_Sequence.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE:
 				return fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence != null && !fumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS:
+				return basicActions_tracedCallBehaviorActionActivations != null && !basicActions_tracedCallBehaviorActionActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS:
+				return basicActions_tracedInputPinActivations != null && !basicActions_tracedInputPinActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS:
+				return basicActions_tracedOpaqueActionActivations != null && !basicActions_tracedOpaqueActionActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS:
+				return basicActions_tracedOutputPinActivations != null && !basicActions_tracedOutputPinActivations.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES:
 				return basicBehaviors_tracedParameterValues != null && !basicBehaviors_tracedParameterValues.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ELEMENT_CONFIGURATIONS:
 				return fumlConfiguration_tracedElementConfigurations != null && !fumlConfiguration_tracedElementConfigurations.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__INPUT_TRACED_INPUT_PARAMETER_VALUESS:
 				return input_tracedInputParameterValuess != null && !input_tracedInputParameterValuess.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS:
+				return integerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions != null && !integerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				return integerFunctions_tracedIntegerLessFunctionBehaviorExecutions != null && !integerFunctions_tracedIntegerLessFunctionBehaviorExecutions.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS:
+				return integerFunctions_tracedIntegerPlusFunctionBehaviorExecutions != null && !integerFunctions_tracedIntegerPlusFunctionBehaviorExecutions.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS:
+				return intermediateActions_tracedAddStructuralFeatureValueActionActivations != null && !intermediateActions_tracedAddStructuralFeatureValueActionActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS:
+				return intermediateActions_tracedCreateObjectActionActivations != null && !intermediateActions_tracedCreateObjectActionActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS:
+				return intermediateActions_tracedReadStructuralFeatureActionActivations != null && !intermediateActions_tracedReadStructuralFeatureActionActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS:
+				return intermediateActions_tracedValueSpecificationActionActivations != null && !intermediateActions_tracedValueSpecificationActionActivations.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES:
 				return intermediateActivities_tracedActivityEdgeInstances != null && !intermediateActivities_tracedActivityEdgeInstances.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS:
 				return intermediateActivities_tracedActivityExecutions != null && !intermediateActivities_tracedActivityExecutions.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS:
+				return intermediateActivities_tracedActivityFinalNodeActivations != null && !intermediateActivities_tracedActivityFinalNodeActivations.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATION_GROUPS:
 				return intermediateActivities_tracedActivityNodeActivationGroups != null && !intermediateActivities_tracedActivityNodeActivationGroups.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATIONS:
 				return intermediateActivities_tracedActivityNodeActivations != null && !intermediateActivities_tracedActivityNodeActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS:
+				return intermediateActivities_tracedActivityParameterNodeActivations != null && !intermediateActivities_tracedActivityParameterNodeActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS:
+				return intermediateActivities_tracedControlTokens != null && !intermediateActivities_tracedControlTokens.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS:
+				return intermediateActivities_tracedDecisionNodeActivations != null && !intermediateActivities_tracedDecisionNodeActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS:
+				return intermediateActivities_tracedForkNodeActivations != null && !intermediateActivities_tracedForkNodeActivations.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS:
 				return intermediateActivities_tracedForkedTokens != null && !intermediateActivities_tracedForkedTokens.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS:
+				return intermediateActivities_tracedInitialNodeActivations != null && !intermediateActivities_tracedInitialNodeActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS:
+				return intermediateActivities_tracedJoinNodeActivations != null && !intermediateActivities_tracedJoinNodeActivations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS:
+				return intermediateActivities_tracedMergeNodeActivations != null && !intermediateActivities_tracedMergeNodeActivations.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OBJECT_TOKENS:
 				return intermediateActivities_tracedObjectTokens != null && !intermediateActivities_tracedObjectTokens.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OFFERS:
@@ -7159,6 +7829,10 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return kernel_tracedBooleanValues != null && !kernel_tracedBooleanValues.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES:
 				return kernel_tracedIntegerValues != null && !kernel_tracedIntegerValues.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS:
+				return kernel_tracedLiteralBooleanEvaluations != null && !kernel_tracedLiteralBooleanEvaluations.isEmpty();
+			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS:
+				return kernel_tracedLiteralIntegerEvaluations != null && !kernel_tracedLiteralIntegerEvaluations.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_OBJECTS:
 				return kernel_tracedObjects != null && !kernel_tracedObjects.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__KERNEL_TRACED_REFERENCES:
@@ -7175,12 +7849,6 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return loci_tracedSemanticVisitors != null && !loci_tracedSemanticVisitors.isEmpty();
 			case UmlTracePackage.SPECIFIC_TRACE__STATES_TRACE:
 				return statesTrace != null && !statesTrace.isEmpty();
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_CLASSS:
-				return uml_tracedClasss != null && !uml_tracedClasss.isEmpty();
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PARAMETERS:
-				return uml_tracedParameters != null && !uml_tracedParameters.isEmpty();
-			case UmlTracePackage.SPECIFIC_TRACE__UML_TRACED_PRIMITIVE_TYPES:
-				return uml_tracedPrimitiveTypes != null && !uml_tracedPrimitiveTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.Value;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_HasType_Value;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_Value_HasType_Value_AbstractSubStep;
@@ -236,8 +236,8 @@ public class FumlConfiguration_Classes_Kernel_Value_HasType_ValueImpl extends St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Value getCaller() {
-		return (fumlConfiguration.Classes.Kernel.Value) this.getMseoccurrence().getMse().getCaller();
+	public TracedValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

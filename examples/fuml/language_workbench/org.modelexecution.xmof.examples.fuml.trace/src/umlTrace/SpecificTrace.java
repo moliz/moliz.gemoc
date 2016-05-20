@@ -9,17 +9,37 @@ import org.gemoc.executionframework.engine.mse.Trace;
 
 import umlTrace.States.State;
 
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation;
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation;
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation;
+
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken;
 
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue;
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation;
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference;
 
@@ -33,11 +53,11 @@ import umlTrace.States.fumlConfiguration.Loci.TracedExecutor;
 import umlTrace.States.fumlConfiguration.Loci.TracedLocus;
 import umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor;
 
-import umlTrace.States.fumlConfiguration.TracedElementConfiguration;
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution;
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution;
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution;
 
-import umlTrace.States.uml.TracedClass;
-import umlTrace.States.uml.TracedParameter;
-import umlTrace.States.uml.TracedPrimitiveType;
+import umlTrace.States.fumlConfiguration.TracedElementConfiguration;
 
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivation;
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_DoAction_ActionActivation;
@@ -402,19 +422,40 @@ import umlTrace.Steps.SpecificStep;
  *   <li>{@link umlTrace.SpecificTrace#getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerLessFunctionBehaviorExecution_New_IntegerLessFunctionBehaviorExecution_Sequence <em>Fuml Configuration Primitive Behaviors Integer Functions Integer Less Function Behavior Execution New Integer Less Function Behavior Execution Sequence</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_DoBody_IntegerPlusFunctionBehaviorExecution_Sequence <em>Fuml Configuration Primitive Behaviors Integer Functions Integer Plus Function Behavior Execution Do Body Integer Plus Function Behavior Execution Sequence</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence <em>Fuml Configuration Primitive Behaviors Integer Functions Integer Plus Function Behavior Execution New Integer Plus Function Behavior Execution Sequence</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getBasicActions_tracedCallBehaviorActionActivations <em>Basic Actions traced Call Behavior Action Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getBasicActions_tracedInputPinActivations <em>Basic Actions traced Input Pin Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getBasicActions_tracedOpaqueActionActivations <em>Basic Actions traced Opaque Action Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getBasicActions_tracedOutputPinActivations <em>Basic Actions traced Output Pin Activations</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getBasicBehaviors_tracedParameterValues <em>Basic Behaviors traced Parameter Values</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getFumlConfiguration_tracedElementConfigurations <em>Fuml Configuration traced Element Configurations</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getInput_tracedInputParameterValuess <em>Input traced Input Parameter Valuess</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions <em>Integer Functions traced Integer Greater Function Behavior Executions</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions <em>Integer Functions traced Integer Less Function Behavior Executions</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions <em>Integer Functions traced Integer Plus Function Behavior Executions</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActions_tracedAddStructuralFeatureValueActionActivations <em>Intermediate Actions traced Add Structural Feature Value Action Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActions_tracedCreateObjectActionActivations <em>Intermediate Actions traced Create Object Action Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActions_tracedReadStructuralFeatureActionActivations <em>Intermediate Actions traced Read Structural Feature Action Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActions_tracedValueSpecificationActionActivations <em>Intermediate Actions traced Value Specification Action Activations</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityEdgeInstances <em>Intermediate Activities traced Activity Edge Instances</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityExecutions <em>Intermediate Activities traced Activity Executions</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityFinalNodeActivations <em>Intermediate Activities traced Activity Final Node Activations</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityNodeActivationGroups <em>Intermediate Activities traced Activity Node Activation Groups</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityNodeActivations <em>Intermediate Activities traced Activity Node Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedActivityParameterNodeActivations <em>Intermediate Activities traced Activity Parameter Node Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedControlTokens <em>Intermediate Activities traced Control Tokens</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedDecisionNodeActivations <em>Intermediate Activities traced Decision Node Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedForkNodeActivations <em>Intermediate Activities traced Fork Node Activations</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedForkedTokens <em>Intermediate Activities traced Forked Tokens</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedInitialNodeActivations <em>Intermediate Activities traced Initial Node Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedJoinNodeActivations <em>Intermediate Activities traced Join Node Activations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedMergeNodeActivations <em>Intermediate Activities traced Merge Node Activations</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedObjectTokens <em>Intermediate Activities traced Object Tokens</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedOffers <em>Intermediate Activities traced Offers</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getIntermediateActivities_tracedTokens <em>Intermediate Activities traced Tokens</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getKernel_tracedBooleanValues <em>Kernel traced Boolean Values</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getKernel_tracedIntegerValues <em>Kernel traced Integer Values</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getKernel_tracedLiteralBooleanEvaluations <em>Kernel traced Literal Boolean Evaluations</em>}</li>
+ *   <li>{@link umlTrace.SpecificTrace#getKernel_tracedLiteralIntegerEvaluations <em>Kernel traced Literal Integer Evaluations</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getKernel_tracedObjects <em>Kernel traced Objects</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getKernel_tracedReferences <em>Kernel traced References</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getLoci_tracedExecutionEnvironments <em>Loci traced Execution Environments</em>}</li>
@@ -423,9 +464,6 @@ import umlTrace.Steps.SpecificStep;
  *   <li>{@link umlTrace.SpecificTrace#getLoci_tracedLocuss <em>Loci traced Locuss</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getLoci_tracedSemanticVisitors <em>Loci traced Semantic Visitors</em>}</li>
  *   <li>{@link umlTrace.SpecificTrace#getStatesTrace <em>States Trace</em>}</li>
- *   <li>{@link umlTrace.SpecificTrace#getUml_tracedClasss <em>Uml traced Classs</em>}</li>
- *   <li>{@link umlTrace.SpecificTrace#getUml_tracedParameters <em>Uml traced Parameters</em>}</li>
- *   <li>{@link umlTrace.SpecificTrace#getUml_tracedPrimitiveTypes <em>Uml traced Primitive Types</em>}</li>
  * </ul>
  *
  * @see umlTrace.UmlTracePackage#getSpecificTrace()
@@ -3250,6 +3288,70 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	EList<FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution> getFumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence();
 
 	/**
+	 * Returns the value of the '<em><b>Basic Actions traced Call Behavior Action Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Basic Actions traced Call Behavior Action Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Basic Actions traced Call Behavior Action Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_BasicActions_tracedCallBehaviorActionActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedCallBehaviorActionActivation> getBasicActions_tracedCallBehaviorActionActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Basic Actions traced Input Pin Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Basic Actions traced Input Pin Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Basic Actions traced Input Pin Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_BasicActions_tracedInputPinActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedInputPinActivation> getBasicActions_tracedInputPinActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Basic Actions traced Opaque Action Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Basic Actions traced Opaque Action Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Basic Actions traced Opaque Action Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_BasicActions_tracedOpaqueActionActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedOpaqueActionActivation> getBasicActions_tracedOpaqueActionActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Basic Actions traced Output Pin Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Basic Actions traced Output Pin Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Basic Actions traced Output Pin Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_BasicActions_tracedOutputPinActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedOutputPinActivation> getBasicActions_tracedOutputPinActivations();
+
+	/**
 	 * Returns the value of the '<em><b>Basic Behaviors traced Parameter Values</b></em>' containment reference list.
 	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue}.
 	 * <!-- begin-user-doc -->
@@ -3298,6 +3400,118 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	EList<TracedInputParameterValues> getInput_tracedInputParameterValuess();
 
 	/**
+	 * Returns the value of the '<em><b>Integer Functions traced Integer Greater Function Behavior Executions</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Integer Functions traced Integer Greater Function Behavior Executions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Integer Functions traced Integer Greater Function Behavior Executions</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedIntegerGreaterFunctionBehaviorExecution> getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions();
+
+	/**
+	 * Returns the value of the '<em><b>Integer Functions traced Integer Less Function Behavior Executions</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Integer Functions traced Integer Less Function Behavior Executions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Integer Functions traced Integer Less Function Behavior Executions</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedIntegerLessFunctionBehaviorExecution> getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions();
+
+	/**
+	 * Returns the value of the '<em><b>Integer Functions traced Integer Plus Function Behavior Executions</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Integer Functions traced Integer Plus Function Behavior Executions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Integer Functions traced Integer Plus Function Behavior Executions</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedIntegerPlusFunctionBehaviorExecution> getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Actions traced Add Structural Feature Value Action Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Actions traced Add Structural Feature Value Action Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Actions traced Add Structural Feature Value Action Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActions_tracedAddStructuralFeatureValueActionActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedAddStructuralFeatureValueActionActivation> getIntermediateActions_tracedAddStructuralFeatureValueActionActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Actions traced Create Object Action Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Actions traced Create Object Action Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Actions traced Create Object Action Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActions_tracedCreateObjectActionActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedCreateObjectActionActivation> getIntermediateActions_tracedCreateObjectActionActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Actions traced Read Structural Feature Action Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Actions traced Read Structural Feature Action Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Actions traced Read Structural Feature Action Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActions_tracedReadStructuralFeatureActionActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedReadStructuralFeatureActionActivation> getIntermediateActions_tracedReadStructuralFeatureActionActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Actions traced Value Specification Action Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Actions traced Value Specification Action Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Actions traced Value Specification Action Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActions_tracedValueSpecificationActionActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedValueSpecificationActionActivation> getIntermediateActions_tracedValueSpecificationActionActivations();
+
+	/**
 	 * Returns the value of the '<em><b>Intermediate Activities traced Activity Edge Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance}.
 	 * <!-- begin-user-doc -->
@@ -3328,6 +3542,22 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	 * @generated
 	 */
 	EList<TracedActivityExecution> getIntermediateActivities_tracedActivityExecutions();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Activities traced Activity Final Node Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Activities traced Activity Final Node Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Activities traced Activity Final Node Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActivities_tracedActivityFinalNodeActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedActivityFinalNodeActivation> getIntermediateActivities_tracedActivityFinalNodeActivations();
 
 	/**
 	 * Returns the value of the '<em><b>Intermediate Activities traced Activity Node Activation Groups</b></em>' containment reference list.
@@ -3362,6 +3592,70 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	EList<TracedActivityNodeActivation> getIntermediateActivities_tracedActivityNodeActivations();
 
 	/**
+	 * Returns the value of the '<em><b>Intermediate Activities traced Activity Parameter Node Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Activities traced Activity Parameter Node Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Activities traced Activity Parameter Node Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActivities_tracedActivityParameterNodeActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedActivityParameterNodeActivation> getIntermediateActivities_tracedActivityParameterNodeActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Activities traced Control Tokens</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Activities traced Control Tokens</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Activities traced Control Tokens</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActivities_tracedControlTokens()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedControlToken> getIntermediateActivities_tracedControlTokens();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Activities traced Decision Node Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Activities traced Decision Node Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Activities traced Decision Node Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActivities_tracedDecisionNodeActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedDecisionNodeActivation> getIntermediateActivities_tracedDecisionNodeActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Activities traced Fork Node Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Activities traced Fork Node Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Activities traced Fork Node Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActivities_tracedForkNodeActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedForkNodeActivation> getIntermediateActivities_tracedForkNodeActivations();
+
+	/**
 	 * Returns the value of the '<em><b>Intermediate Activities traced Forked Tokens</b></em>' containment reference list.
 	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken}.
 	 * <!-- begin-user-doc -->
@@ -3376,6 +3670,54 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	 * @generated
 	 */
 	EList<TracedForkedToken> getIntermediateActivities_tracedForkedTokens();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Activities traced Initial Node Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Activities traced Initial Node Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Activities traced Initial Node Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActivities_tracedInitialNodeActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedInitialNodeActivation> getIntermediateActivities_tracedInitialNodeActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Activities traced Join Node Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Activities traced Join Node Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Activities traced Join Node Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActivities_tracedJoinNodeActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedJoinNodeActivation> getIntermediateActivities_tracedJoinNodeActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Intermediate Activities traced Merge Node Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Intermediate Activities traced Merge Node Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intermediate Activities traced Merge Node Activations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_IntermediateActivities_tracedMergeNodeActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedMergeNodeActivation> getIntermediateActivities_tracedMergeNodeActivations();
 
 	/**
 	 * Returns the value of the '<em><b>Intermediate Activities traced Object Tokens</b></em>' containment reference list.
@@ -3456,6 +3798,38 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	 * @generated
 	 */
 	EList<TracedIntegerValue> getKernel_tracedIntegerValues();
+
+	/**
+	 * Returns the value of the '<em><b>Kernel traced Literal Boolean Evaluations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Kernel traced Literal Boolean Evaluations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Kernel traced Literal Boolean Evaluations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_Kernel_tracedLiteralBooleanEvaluations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedLiteralBooleanEvaluation> getKernel_tracedLiteralBooleanEvaluations();
+
+	/**
+	 * Returns the value of the '<em><b>Kernel traced Literal Integer Evaluations</b></em>' containment reference list.
+	 * The list contents are of type {@link umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Kernel traced Literal Integer Evaluations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Kernel traced Literal Integer Evaluations</em>' containment reference list.
+	 * @see umlTrace.UmlTracePackage#getSpecificTrace_Kernel_tracedLiteralIntegerEvaluations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedLiteralIntegerEvaluation> getKernel_tracedLiteralIntegerEvaluations();
 
 	/**
 	 * Returns the value of the '<em><b>Kernel traced Objects</b></em>' containment reference list.
@@ -3584,53 +3958,5 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	 * @generated
 	 */
 	EList<State> getStatesTrace();
-
-	/**
-	 * Returns the value of the '<em><b>Uml traced Classs</b></em>' containment reference list.
-	 * The list contents are of type {@link umlTrace.States.uml.TracedClass}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Uml traced Classs</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uml traced Classs</em>' containment reference list.
-	 * @see umlTrace.UmlTracePackage#getSpecificTrace_Uml_tracedClasss()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<TracedClass> getUml_tracedClasss();
-
-	/**
-	 * Returns the value of the '<em><b>Uml traced Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link umlTrace.States.uml.TracedParameter}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Uml traced Parameters</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uml traced Parameters</em>' containment reference list.
-	 * @see umlTrace.UmlTracePackage#getSpecificTrace_Uml_tracedParameters()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<TracedParameter> getUml_tracedParameters();
-
-	/**
-	 * Returns the value of the '<em><b>Uml traced Primitive Types</b></em>' containment reference list.
-	 * The list contents are of type {@link umlTrace.States.uml.TracedPrimitiveType}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Uml traced Primitive Types</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uml traced Primitive Types</em>' containment reference list.
-	 * @see umlTrace.UmlTracePackage#getSpecificTrace_Uml_tracedPrimitiveTypes()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<TracedPrimitiveType> getUml_tracedPrimitiveTypes();
 
 } // SpecificTrace

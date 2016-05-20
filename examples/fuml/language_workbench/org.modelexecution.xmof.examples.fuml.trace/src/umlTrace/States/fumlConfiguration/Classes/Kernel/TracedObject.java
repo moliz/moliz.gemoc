@@ -19,7 +19,7 @@ import umlTrace.States.Object_types_Value;
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage#getTracedObject()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/Object'"
+ * @model
  * @generated
  */
 public interface TracedObject extends TracedExtensionalValue {

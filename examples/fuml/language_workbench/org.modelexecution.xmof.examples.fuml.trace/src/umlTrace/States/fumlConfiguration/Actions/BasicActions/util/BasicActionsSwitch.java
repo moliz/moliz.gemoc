@@ -89,12 +89,52 @@ public class BasicActionsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BasicActionsPackage.TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION: {
+				TracedCallBehaviorActionActivation tracedCallBehaviorActionActivation = (TracedCallBehaviorActionActivation)theEObject;
+				T result = caseTracedCallBehaviorActionActivation(tracedCallBehaviorActionActivation);
+				if (result == null) result = caseTracedCallActionActivation(tracedCallBehaviorActionActivation);
+				if (result == null) result = caseTracedInvocationActionActivation(tracedCallBehaviorActionActivation);
+				if (result == null) result = caseTracedActionActivation(tracedCallBehaviorActionActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedCallBehaviorActionActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedCallBehaviorActionActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicActionsPackage.TRACED_INPUT_PIN_ACTIVATION: {
+				TracedInputPinActivation tracedInputPinActivation = (TracedInputPinActivation)theEObject;
+				T result = caseTracedInputPinActivation(tracedInputPinActivation);
+				if (result == null) result = caseTracedPinActivation(tracedInputPinActivation);
+				if (result == null) result = caseTracedObjectNodeActivation(tracedInputPinActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedInputPinActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedInputPinActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case BasicActionsPackage.TRACED_INVOCATION_ACTION_ACTIVATION: {
 				TracedInvocationActionActivation tracedInvocationActionActivation = (TracedInvocationActionActivation)theEObject;
 				T result = caseTracedInvocationActionActivation(tracedInvocationActionActivation);
 				if (result == null) result = caseTracedActionActivation(tracedInvocationActionActivation);
 				if (result == null) result = caseTracedActivityNodeActivation(tracedInvocationActionActivation);
 				if (result == null) result = caseTracedSemanticVisitor(tracedInvocationActionActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicActionsPackage.TRACED_OPAQUE_ACTION_ACTIVATION: {
+				TracedOpaqueActionActivation tracedOpaqueActionActivation = (TracedOpaqueActionActivation)theEObject;
+				T result = caseTracedOpaqueActionActivation(tracedOpaqueActionActivation);
+				if (result == null) result = caseTracedActionActivation(tracedOpaqueActionActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedOpaqueActionActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedOpaqueActionActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicActionsPackage.TRACED_OUTPUT_PIN_ACTIVATION: {
+				TracedOutputPinActivation tracedOutputPinActivation = (TracedOutputPinActivation)theEObject;
+				T result = caseTracedOutputPinActivation(tracedOutputPinActivation);
+				if (result == null) result = caseTracedPinActivation(tracedOutputPinActivation);
+				if (result == null) result = caseTracedObjectNodeActivation(tracedOutputPinActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedOutputPinActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedOutputPinActivation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,6 +182,36 @@ public class BasicActionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Call Behavior Action Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Call Behavior Action Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedCallBehaviorActionActivation(TracedCallBehaviorActionActivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Input Pin Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Input Pin Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedInputPinActivation(TracedInputPinActivation object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Traced Invocation Action Activation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -153,6 +223,36 @@ public class BasicActionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTracedInvocationActionActivation(TracedInvocationActionActivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Opaque Action Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Opaque Action Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedOpaqueActionActivation(TracedOpaqueActionActivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Output Pin Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Output Pin Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedOutputPinActivation(TracedOutputPinActivation object) {
 		return null;
 	}
 

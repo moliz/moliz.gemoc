@@ -4,9 +4,9 @@ package umlTrace.States;
 
 import org.eclipse.emf.common.util.EList;
 
-import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance;
+import org.eclipse.uml2.uml.ActivityEdge;
 
-import umlTrace.States.uml.TracedActivityEdge;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,12 +36,12 @@ public interface ActivityEdgeInstance_edge_ActivityEdgeInstance_Value extends Va
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Edge Activity Edge Instance</em>' reference.
-	 * @see #setEdge_ActivityEdgeInstance(TracedActivityEdge)
+	 * @see #setEdge_ActivityEdgeInstance(ActivityEdge)
 	 * @see umlTrace.States.StatesPackage#getActivityEdgeInstance_edge_ActivityEdgeInstance_Value_Edge_ActivityEdgeInstance()
 	 * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Activities/IntermediateActivities/ActivityEdgeInstance/edge_ActivityEdgeInstance'"
 	 * @generated
 	 */
-	TracedActivityEdge getEdge_ActivityEdgeInstance();
+	ActivityEdge getEdge_ActivityEdgeInstance();
 
 	/**
 	 * Sets the value of the '{@link umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value#getEdge_ActivityEdgeInstance <em>Edge Activity Edge Instance</em>}' reference.
@@ -51,7 +51,7 @@ public interface ActivityEdgeInstance_edge_ActivityEdgeInstance_Value extends Va
 	 * @see #getEdge_ActivityEdgeInstance()
 	 * @generated
 	 */
-	void setEdge_ActivityEdgeInstance(TracedActivityEdge value);
+	void setEdge_ActivityEdgeInstance(ActivityEdge value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.

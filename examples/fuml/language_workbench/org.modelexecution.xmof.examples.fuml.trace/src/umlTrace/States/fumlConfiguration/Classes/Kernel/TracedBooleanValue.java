@@ -19,7 +19,7 @@ import umlTrace.States.BooleanValue_value_BooleanValue_Value;
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage#getTracedBooleanValue()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/BooleanValue'"
+ * @model
  * @generated
  */
 public interface TracedBooleanValue extends TracedPrimitiveValue {

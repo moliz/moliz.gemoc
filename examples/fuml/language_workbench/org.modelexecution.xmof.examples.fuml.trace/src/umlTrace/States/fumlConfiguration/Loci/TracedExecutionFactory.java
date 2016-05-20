@@ -2,8 +2,6 @@
  */
 package umlTrace.States.fumlConfiguration.Loci;
 
-import fumlConfiguration.Loci.ExecutionFactory;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -23,12 +21,11 @@ import umlTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value;
  * <ul>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory#getBuiltInTypesSequence <em>Built In Types Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory#getLocus_ExecutionFactorySequence <em>Locus Execution Factory Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory#getOriginalObject <em>Original Object</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory#getPrimitiveBehaviorPrototypesSequence <em>Primitive Behavior Prototypes Sequence</em>}</li>
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Loci.LociPackage#getTracedExecutionFactory()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Loci/ExecutionFactory'"
+ * @model
  * @generated
  */
 public interface TracedExecutionFactory extends EObject {
@@ -67,32 +64,6 @@ public interface TracedExecutionFactory extends EObject {
 	 * @generated
 	 */
 	EList<ExecutionFactory_locus_ExecutionFactory_Value> getLocus_ExecutionFactorySequence();
-
-	/**
-	 * Returns the value of the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Original Object</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Original Object</em>' reference.
-	 * @see #setOriginalObject(ExecutionFactory)
-	 * @see umlTrace.States.fumlConfiguration.Loci.LociPackage#getTracedExecutionFactory_OriginalObject()
-	 * @model
-	 * @generated
-	 */
-	ExecutionFactory getOriginalObject();
-
-	/**
-	 * Sets the value of the '{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory#getOriginalObject <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Original Object</em>' reference.
-	 * @see #getOriginalObject()
-	 * @generated
-	 */
-	void setOriginalObject(ExecutionFactory value);
 
 	/**
 	 * Returns the value of the '<em><b>Primitive Behavior Prototypes Sequence</b></em>' containment reference list.

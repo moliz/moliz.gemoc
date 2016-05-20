@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.Offer;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -35,7 +31,6 @@ import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.Trace
  * </p>
  * <ul>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedOfferImpl#getOfferedTokensSequence <em>Offered Tokens Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedOfferImpl#getOriginalObject <em>Original Object</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,16 +45,6 @@ public class TracedOfferImpl extends MinimalEObjectImpl.Container implements Tra
 	 * @ordered
 	 */
 	protected EList<Offer_offeredTokens_Value> offeredTokensSequence;
-
-	/**
-	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected Offer originalObject;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,44 +75,6 @@ public class TracedOfferImpl extends MinimalEObjectImpl.Container implements Tra
 			offeredTokensSequence = new EObjectContainmentWithInverseEList<Offer_offeredTokens_Value>(Offer_offeredTokens_Value.class, this, IntermediateActivitiesPackage.TRACED_OFFER__OFFERED_TOKENS_SEQUENCE, StatesPackage.OFFER_OFFERED_TOKENS_VALUE__PARENT);
 		}
 		return offeredTokensSequence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Offer getOriginalObject() {
-		if (originalObject != null && originalObject.eIsProxy()) {
-			InternalEObject oldOriginalObject = (InternalEObject)originalObject;
-			originalObject = (Offer)eResolveProxy(oldOriginalObject);
-			if (originalObject != oldOriginalObject) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IntermediateActivitiesPackage.TRACED_OFFER__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-			}
-		}
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Offer basicGetOriginalObject() {
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject(Offer newOriginalObject) {
-		Offer oldOriginalObject = originalObject;
-		originalObject = newOriginalObject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IntermediateActivitiesPackage.TRACED_OFFER__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
 	}
 
 	/**
@@ -169,9 +116,6 @@ public class TracedOfferImpl extends MinimalEObjectImpl.Container implements Tra
 		switch (featureID) {
 			case IntermediateActivitiesPackage.TRACED_OFFER__OFFERED_TOKENS_SEQUENCE:
 				return getOfferedTokensSequence();
-			case IntermediateActivitiesPackage.TRACED_OFFER__ORIGINAL_OBJECT:
-				if (resolve) return getOriginalObject();
-				return basicGetOriginalObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,9 +133,6 @@ public class TracedOfferImpl extends MinimalEObjectImpl.Container implements Tra
 				getOfferedTokensSequence().clear();
 				getOfferedTokensSequence().addAll((Collection<? extends Offer_offeredTokens_Value>)newValue);
 				return;
-			case IntermediateActivitiesPackage.TRACED_OFFER__ORIGINAL_OBJECT:
-				setOriginalObject((Offer)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -207,9 +148,6 @@ public class TracedOfferImpl extends MinimalEObjectImpl.Container implements Tra
 			case IntermediateActivitiesPackage.TRACED_OFFER__OFFERED_TOKENS_SEQUENCE:
 				getOfferedTokensSequence().clear();
 				return;
-			case IntermediateActivitiesPackage.TRACED_OFFER__ORIGINAL_OBJECT:
-				setOriginalObject((Offer)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -224,8 +162,6 @@ public class TracedOfferImpl extends MinimalEObjectImpl.Container implements Tra
 		switch (featureID) {
 			case IntermediateActivitiesPackage.TRACED_OFFER__OFFERED_TOKENS_SEQUENCE:
 				return offeredTokensSequence != null && !offeredTokensSequence.isEmpty();
-			case IntermediateActivitiesPackage.TRACED_OFFER__ORIGINAL_OBJECT:
-				return originalObject != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -20,14 +20,14 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.uml2.uml.PrimitiveType;
+
 import umlTrace.States.ExecutionFactory_builtInTypes_Value;
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
 
 import umlTrace.States.fumlConfiguration.Loci.LociPackage;
 import umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory;
-
-import umlTrace.States.uml.TracedPrimitiveType;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +54,7 @@ public class ExecutionFactory_builtInTypes_ValueImpl extends MinimalEObjectImpl.
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TracedPrimitiveType> builtInTypes;
+	protected EList<PrimitiveType> builtInTypes;
 
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
@@ -99,9 +99,9 @@ public class ExecutionFactory_builtInTypes_ValueImpl extends MinimalEObjectImpl.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TracedPrimitiveType> getBuiltInTypes() {
+	public EList<PrimitiveType> getBuiltInTypes() {
 		if (builtInTypes == null) {
-			builtInTypes = new EObjectResolvingEList<TracedPrimitiveType>(TracedPrimitiveType.class, this, StatesPackage.EXECUTION_FACTORY_BUILT_IN_TYPES_VALUE__BUILT_IN_TYPES);
+			builtInTypes = new EObjectResolvingEList<PrimitiveType>(PrimitiveType.class, this, StatesPackage.EXECUTION_FACTORY_BUILT_IN_TYPES_VALUE__BUILT_IN_TYPES);
 		}
 		return builtInTypes;
 	}
@@ -239,7 +239,7 @@ public class ExecutionFactory_builtInTypes_ValueImpl extends MinimalEObjectImpl.
 		switch (featureID) {
 			case StatesPackage.EXECUTION_FACTORY_BUILT_IN_TYPES_VALUE__BUILT_IN_TYPES:
 				getBuiltInTypes().clear();
-				getBuiltInTypes().addAll((Collection<? extends TracedPrimitiveType>)newValue);
+				getBuiltInTypes().addAll((Collection<? extends PrimitiveType>)newValue);
 				return;
 			case StatesPackage.EXECUTION_FACTORY_BUILT_IN_TYPES_VALUE__PARENT:
 				setParent((TracedExecutionFactory)newValue);

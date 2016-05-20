@@ -33,7 +33,7 @@ import umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor;
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getTracedActivityNodeActivation()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Activities/IntermediateActivities/ActivityNodeActivation'"
+ * @model
  * @generated
  */
 public interface TracedActivityNodeActivation extends TracedSemanticVisitor {

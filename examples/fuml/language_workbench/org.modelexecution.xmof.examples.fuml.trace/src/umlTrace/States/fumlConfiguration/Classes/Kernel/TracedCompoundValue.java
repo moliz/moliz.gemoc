@@ -20,7 +20,6 @@ import umlTrace.States.CompoundValue_featureValues_Value;
  *
  * @see umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage#getTracedCompoundValue()
  * @model abstract="true"
- *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/CompoundValue'"
  * @generated
  */
 public interface TracedCompoundValue extends TracedStructuredValue {

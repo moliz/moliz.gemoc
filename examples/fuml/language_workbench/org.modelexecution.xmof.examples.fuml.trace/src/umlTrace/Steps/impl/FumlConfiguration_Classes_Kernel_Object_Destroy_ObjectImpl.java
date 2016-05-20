@@ -28,6 +28,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
 
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject;
+
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivation_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Destroy_Object;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Destroy_Object_AbstractSubStep;
@@ -235,8 +237,8 @@ public class FumlConfiguration_Classes_Kernel_Object_Destroy_ObjectImpl extends 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public fumlConfiguration.Classes.Kernel.Object getCaller() {
-		return (fumlConfiguration.Classes.Kernel.Object) this.getMseoccurrence().getMse().getCaller();
+	public TracedObject getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

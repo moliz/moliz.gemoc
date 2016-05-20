@@ -19,14 +19,14 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.uml2.uml.ActivityEdge;
+
 import umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value;
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
 
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance;
-
-import umlTrace.States.uml.TracedActivityEdge;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public class ActivityEdgeInstance_edge_ActivityEdgeInstance_ValueImpl extends Mi
 	 * @generated
 	 * @ordered
 	 */
-	protected TracedActivityEdge edge_ActivityEdgeInstance;
+	protected ActivityEdge edge_ActivityEdgeInstance;
 
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
@@ -98,10 +98,10 @@ public class ActivityEdgeInstance_edge_ActivityEdgeInstance_ValueImpl extends Mi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedActivityEdge getEdge_ActivityEdgeInstance() {
+	public ActivityEdge getEdge_ActivityEdgeInstance() {
 		if (edge_ActivityEdgeInstance != null && edge_ActivityEdgeInstance.eIsProxy()) {
 			InternalEObject oldEdge_ActivityEdgeInstance = (InternalEObject)edge_ActivityEdgeInstance;
-			edge_ActivityEdgeInstance = (TracedActivityEdge)eResolveProxy(oldEdge_ActivityEdgeInstance);
+			edge_ActivityEdgeInstance = (ActivityEdge)eResolveProxy(oldEdge_ActivityEdgeInstance);
 			if (edge_ActivityEdgeInstance != oldEdge_ActivityEdgeInstance) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatesPackage.ACTIVITY_EDGE_INSTANCE_EDGE_ACTIVITY_EDGE_INSTANCE_VALUE__EDGE_ACTIVITY_EDGE_INSTANCE, oldEdge_ActivityEdgeInstance, edge_ActivityEdgeInstance));
@@ -115,7 +115,7 @@ public class ActivityEdgeInstance_edge_ActivityEdgeInstance_ValueImpl extends Mi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedActivityEdge basicGetEdge_ActivityEdgeInstance() {
+	public ActivityEdge basicGetEdge_ActivityEdgeInstance() {
 		return edge_ActivityEdgeInstance;
 	}
 
@@ -124,8 +124,8 @@ public class ActivityEdgeInstance_edge_ActivityEdgeInstance_ValueImpl extends Mi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEdge_ActivityEdgeInstance(TracedActivityEdge newEdge_ActivityEdgeInstance) {
-		TracedActivityEdge oldEdge_ActivityEdgeInstance = edge_ActivityEdgeInstance;
+	public void setEdge_ActivityEdgeInstance(ActivityEdge newEdge_ActivityEdgeInstance) {
+		ActivityEdge oldEdge_ActivityEdgeInstance = edge_ActivityEdgeInstance;
 		edge_ActivityEdgeInstance = newEdge_ActivityEdgeInstance;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatesPackage.ACTIVITY_EDGE_INSTANCE_EDGE_ACTIVITY_EDGE_INSTANCE_VALUE__EDGE_ACTIVITY_EDGE_INSTANCE, oldEdge_ActivityEdgeInstance, edge_ActivityEdgeInstance));
@@ -264,7 +264,7 @@ public class ActivityEdgeInstance_edge_ActivityEdgeInstance_ValueImpl extends Mi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StatesPackage.ACTIVITY_EDGE_INSTANCE_EDGE_ACTIVITY_EDGE_INSTANCE_VALUE__EDGE_ACTIVITY_EDGE_INSTANCE:
-				setEdge_ActivityEdgeInstance((TracedActivityEdge)newValue);
+				setEdge_ActivityEdgeInstance((ActivityEdge)newValue);
 				return;
 			case StatesPackage.ACTIVITY_EDGE_INSTANCE_EDGE_ACTIVITY_EDGE_INSTANCE_VALUE__PARENT:
 				setParent((TracedActivityEdgeInstance)newValue);
@@ -286,7 +286,7 @@ public class ActivityEdgeInstance_edge_ActivityEdgeInstance_ValueImpl extends Mi
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StatesPackage.ACTIVITY_EDGE_INSTANCE_EDGE_ACTIVITY_EDGE_INSTANCE_VALUE__EDGE_ACTIVITY_EDGE_INSTANCE:
-				setEdge_ActivityEdgeInstance((TracedActivityEdge)null);
+				setEdge_ActivityEdgeInstance((ActivityEdge)null);
 				return;
 			case StatesPackage.ACTIVITY_EDGE_INSTANCE_EDGE_ACTIVITY_EDGE_INSTANCE_VALUE__PARENT:
 				setParent((TracedActivityEdgeInstance)null);

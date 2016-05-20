@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Classes.Kernel.Evaluation;
-
 import org.gemoc.executionframework.engine.mse.SmallStep;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Classes_Kernel_Evaluation_Evaluate_Evaluation
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Classes.Kernel.Evaluation) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	Evaluation getCaller();
+	TracedEvaluation getCaller();
 
 } // FumlConfiguration_Classes_Kernel_Evaluation_Evaluate_Evaluation

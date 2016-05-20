@@ -68,15 +68,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	int TRACED_EXECUTION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_EXECUTION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = KernelPackage.TRACED_OBJECT__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
-
-	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -157,15 +148,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	 * @generated
 	 */
 	int TRACED_OPAQUE_BEHAVIOR_EXECUTION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_OPAQUE_BEHAVIOR_EXECUTION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_EXECUTION__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -250,22 +232,13 @@ public interface BasicBehaviorsPackage extends EPackage {
 	int TRACED_PARAMETER_VALUE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_PARAMETER_VALUE__ORIGINAL_OBJECT = 0;
-
-	/**
 	 * The feature id for the '<em><b>Parameter Parameter Value Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_PARAMETER_VALUE__PARAMETER_PARAMETER_VALUE_SEQUENCE = 1;
+	int TRACED_PARAMETER_VALUE__PARAMETER_PARAMETER_VALUE_SEQUENCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Values Parameter Value Sequence</b></em>' containment reference list.
@@ -274,7 +247,7 @@ public interface BasicBehaviorsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_PARAMETER_VALUE__VALUES_PARAMETER_VALUE_SEQUENCE = 2;
+	int TRACED_PARAMETER_VALUE__VALUES_PARAMETER_VALUE_SEQUENCE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Traced Parameter Value</em>' class.
@@ -283,7 +256,7 @@ public interface BasicBehaviorsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_PARAMETER_VALUE_FEATURE_COUNT = 3;
+	int TRACED_PARAMETER_VALUE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Traced Parameter Value</em>' class.
@@ -346,17 +319,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTracedParameterValue();
-
-	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue#getOriginalObject <em>Original Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object</em>'.
-	 * @see umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue#getOriginalObject()
-	 * @see #getTracedParameterValue()
-	 * @generated
-	 */
-	EReference getTracedParameterValue_OriginalObject();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue#getParameter_ParameterValueSequence <em>Parameter Parameter Value Sequence</em>}'.
@@ -448,14 +410,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRACED_PARAMETER_VALUE = eINSTANCE.getTracedParameterValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_PARAMETER_VALUE__ORIGINAL_OBJECT = eINSTANCE.getTracedParameterValue_OriginalObject();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameter Parameter Value Sequence</b></em>' containment reference list feature.

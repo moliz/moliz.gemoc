@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.Loci.impl;
 
-import fumlConfiguration.Loci.Executor;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -35,7 +31,6 @@ import umlTrace.States.fumlConfiguration.Loci.TracedExecutor;
  * </p>
  * <ul>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedExecutorImpl#getLocus_ExecutorSequence <em>Locus Executor Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedExecutorImpl#getOriginalObject <em>Original Object</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,16 +45,6 @@ public class TracedExecutorImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<Executor_locus_Executor_Value> locus_ExecutorSequence;
-
-	/**
-	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected Executor originalObject;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,44 +75,6 @@ public class TracedExecutorImpl extends MinimalEObjectImpl.Container implements 
 			locus_ExecutorSequence = new EObjectContainmentWithInverseEList<Executor_locus_Executor_Value>(Executor_locus_Executor_Value.class, this, LociPackage.TRACED_EXECUTOR__LOCUS_EXECUTOR_SEQUENCE, StatesPackage.EXECUTOR_LOCUS_EXECUTOR_VALUE__PARENT);
 		}
 		return locus_ExecutorSequence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Executor getOriginalObject() {
-		if (originalObject != null && originalObject.eIsProxy()) {
-			InternalEObject oldOriginalObject = (InternalEObject)originalObject;
-			originalObject = (Executor)eResolveProxy(oldOriginalObject);
-			if (originalObject != oldOriginalObject) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LociPackage.TRACED_EXECUTOR__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-			}
-		}
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Executor basicGetOriginalObject() {
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject(Executor newOriginalObject) {
-		Executor oldOriginalObject = originalObject;
-		originalObject = newOriginalObject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LociPackage.TRACED_EXECUTOR__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
 	}
 
 	/**
@@ -169,9 +116,6 @@ public class TracedExecutorImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case LociPackage.TRACED_EXECUTOR__LOCUS_EXECUTOR_SEQUENCE:
 				return getLocus_ExecutorSequence();
-			case LociPackage.TRACED_EXECUTOR__ORIGINAL_OBJECT:
-				if (resolve) return getOriginalObject();
-				return basicGetOriginalObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,9 +133,6 @@ public class TracedExecutorImpl extends MinimalEObjectImpl.Container implements 
 				getLocus_ExecutorSequence().clear();
 				getLocus_ExecutorSequence().addAll((Collection<? extends Executor_locus_Executor_Value>)newValue);
 				return;
-			case LociPackage.TRACED_EXECUTOR__ORIGINAL_OBJECT:
-				setOriginalObject((Executor)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -207,9 +148,6 @@ public class TracedExecutorImpl extends MinimalEObjectImpl.Container implements 
 			case LociPackage.TRACED_EXECUTOR__LOCUS_EXECUTOR_SEQUENCE:
 				getLocus_ExecutorSequence().clear();
 				return;
-			case LociPackage.TRACED_EXECUTOR__ORIGINAL_OBJECT:
-				setOriginalObject((Executor)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -224,8 +162,6 @@ public class TracedExecutorImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case LociPackage.TRACED_EXECUTOR__LOCUS_EXECUTOR_SEQUENCE:
 				return locus_ExecutorSequence != null && !locus_ExecutorSequence.isEmpty();
-			case LociPackage.TRACED_EXECUTOR__ORIGINAL_OBJECT:
-				return originalObject != null;
 		}
 		return super.eIsSet(featureID);
 	}

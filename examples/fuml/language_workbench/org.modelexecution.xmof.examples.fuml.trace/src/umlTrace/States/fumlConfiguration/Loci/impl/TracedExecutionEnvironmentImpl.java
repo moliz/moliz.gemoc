@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.Loci.impl;
 
-import fumlConfiguration.Loci.ExecutionEnvironment;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -35,7 +31,6 @@ import umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment;
  * </p>
  * <ul>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedExecutionEnvironmentImpl#getLocus_ExecutionEnvironmentSequence <em>Locus Execution Environment Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedExecutionEnvironmentImpl#getOriginalObject <em>Original Object</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,16 +45,6 @@ public class TracedExecutionEnvironmentImpl extends MinimalEObjectImpl.Container
 	 * @ordered
 	 */
 	protected EList<ExecutionEnvironment_locus_ExecutionEnvironment_Value> locus_ExecutionEnvironmentSequence;
-
-	/**
-	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected ExecutionEnvironment originalObject;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,44 +75,6 @@ public class TracedExecutionEnvironmentImpl extends MinimalEObjectImpl.Container
 			locus_ExecutionEnvironmentSequence = new EObjectContainmentWithInverseEList<ExecutionEnvironment_locus_ExecutionEnvironment_Value>(ExecutionEnvironment_locus_ExecutionEnvironment_Value.class, this, LociPackage.TRACED_EXECUTION_ENVIRONMENT__LOCUS_EXECUTION_ENVIRONMENT_SEQUENCE, StatesPackage.EXECUTION_ENVIRONMENT_LOCUS_EXECUTION_ENVIRONMENT_VALUE__PARENT);
 		}
 		return locus_ExecutionEnvironmentSequence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExecutionEnvironment getOriginalObject() {
-		if (originalObject != null && originalObject.eIsProxy()) {
-			InternalEObject oldOriginalObject = (InternalEObject)originalObject;
-			originalObject = (ExecutionEnvironment)eResolveProxy(oldOriginalObject);
-			if (originalObject != oldOriginalObject) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LociPackage.TRACED_EXECUTION_ENVIRONMENT__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-			}
-		}
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExecutionEnvironment basicGetOriginalObject() {
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject(ExecutionEnvironment newOriginalObject) {
-		ExecutionEnvironment oldOriginalObject = originalObject;
-		originalObject = newOriginalObject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LociPackage.TRACED_EXECUTION_ENVIRONMENT__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
 	}
 
 	/**
@@ -169,9 +116,6 @@ public class TracedExecutionEnvironmentImpl extends MinimalEObjectImpl.Container
 		switch (featureID) {
 			case LociPackage.TRACED_EXECUTION_ENVIRONMENT__LOCUS_EXECUTION_ENVIRONMENT_SEQUENCE:
 				return getLocus_ExecutionEnvironmentSequence();
-			case LociPackage.TRACED_EXECUTION_ENVIRONMENT__ORIGINAL_OBJECT:
-				if (resolve) return getOriginalObject();
-				return basicGetOriginalObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,9 +133,6 @@ public class TracedExecutionEnvironmentImpl extends MinimalEObjectImpl.Container
 				getLocus_ExecutionEnvironmentSequence().clear();
 				getLocus_ExecutionEnvironmentSequence().addAll((Collection<? extends ExecutionEnvironment_locus_ExecutionEnvironment_Value>)newValue);
 				return;
-			case LociPackage.TRACED_EXECUTION_ENVIRONMENT__ORIGINAL_OBJECT:
-				setOriginalObject((ExecutionEnvironment)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -207,9 +148,6 @@ public class TracedExecutionEnvironmentImpl extends MinimalEObjectImpl.Container
 			case LociPackage.TRACED_EXECUTION_ENVIRONMENT__LOCUS_EXECUTION_ENVIRONMENT_SEQUENCE:
 				getLocus_ExecutionEnvironmentSequence().clear();
 				return;
-			case LociPackage.TRACED_EXECUTION_ENVIRONMENT__ORIGINAL_OBJECT:
-				setOriginalObject((ExecutionEnvironment)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -224,8 +162,6 @@ public class TracedExecutionEnvironmentImpl extends MinimalEObjectImpl.Container
 		switch (featureID) {
 			case LociPackage.TRACED_EXECUTION_ENVIRONMENT__LOCUS_EXECUTION_ENVIRONMENT_SEQUENCE:
 				return locus_ExecutionEnvironmentSequence != null && !locus_ExecutionEnvironmentSequence.isEmpty();
-			case LociPackage.TRACED_EXECUTION_ENVIRONMENT__ORIGINAL_OBJECT:
-				return originalObject != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Classes.Kernel.BooleanValue;
-
 import org.gemoc.executionframework.engine.mse.SequentialStep;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Classes.Kernel.BooleanValue) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	BooleanValue getCaller();
+	TracedBooleanValue getCaller();
 
 } // FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue

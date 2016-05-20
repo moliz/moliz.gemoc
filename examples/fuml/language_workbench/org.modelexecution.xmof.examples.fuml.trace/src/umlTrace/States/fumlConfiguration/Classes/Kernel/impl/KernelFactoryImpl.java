@@ -58,6 +58,8 @@ public class KernelFactoryImpl extends EFactoryImpl implements KernelFactory {
 		switch (eClass.getClassifierID()) {
 			case KernelPackage.TRACED_BOOLEAN_VALUE: return createTracedBooleanValue();
 			case KernelPackage.TRACED_INTEGER_VALUE: return createTracedIntegerValue();
+			case KernelPackage.TRACED_LITERAL_BOOLEAN_EVALUATION: return createTracedLiteralBooleanEvaluation();
+			case KernelPackage.TRACED_LITERAL_INTEGER_EVALUATION: return createTracedLiteralIntegerEvaluation();
 			case KernelPackage.TRACED_OBJECT: return createTracedObject();
 			case KernelPackage.TRACED_REFERENCE: return createTracedReference();
 			default:
@@ -83,6 +85,26 @@ public class KernelFactoryImpl extends EFactoryImpl implements KernelFactory {
 	public TracedIntegerValue createTracedIntegerValue() {
 		TracedIntegerValueImpl tracedIntegerValue = new TracedIntegerValueImpl();
 		return tracedIntegerValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracedLiteralBooleanEvaluation createTracedLiteralBooleanEvaluation() {
+		TracedLiteralBooleanEvaluationImpl tracedLiteralBooleanEvaluation = new TracedLiteralBooleanEvaluationImpl();
+		return tracedLiteralBooleanEvaluation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracedLiteralIntegerEvaluation createTracedLiteralIntegerEvaluation() {
+		TracedLiteralIntegerEvaluationImpl tracedLiteralIntegerEvaluation = new TracedLiteralIntegerEvaluationImpl();
+		return tracedLiteralIntegerEvaluation;
 	}
 
 	/**

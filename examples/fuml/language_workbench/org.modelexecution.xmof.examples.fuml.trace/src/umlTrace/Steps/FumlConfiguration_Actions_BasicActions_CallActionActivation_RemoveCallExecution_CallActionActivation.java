@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Actions.BasicActions.CallActionActivation;
-
 import org.gemoc.executionframework.engine.mse.SmallStep;
+
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Actions_BasicActions_CallActionActivation_Rem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Actions.BasicActions.CallActionActivation) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	CallActionActivation getCaller();
+	TracedCallActionActivation getCaller();
 
 } // FumlConfiguration_Actions_BasicActions_CallActionActivation_RemoveCallExecution_CallActionActivation

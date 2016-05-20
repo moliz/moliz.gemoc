@@ -23,7 +23,7 @@ import umlTrace.States.ForkedToken_remainingOffersCount_Value;
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getTracedForkedToken()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Activities/IntermediateActivities/ForkedToken'"
+ * @model
  * @generated
  */
 public interface TracedForkedToken extends TracedToken {

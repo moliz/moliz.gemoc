@@ -24,7 +24,6 @@ import umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor;
  *
  * @see umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage#getTracedEvaluation()
  * @model abstract="true"
- *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/Evaluation'"
  * @generated
  */
 public interface TracedEvaluation extends TracedSemanticVisitor {

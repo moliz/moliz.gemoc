@@ -68,15 +68,6 @@ public interface BasicActionsPackage extends EPackage {
 	int TRACED_ACTION_ACTIVATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_ACTION_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
-
-	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,16 +183,7 @@ public interface BasicActionsPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedInvocationActionActivation()
 	 * @generated
 	 */
-	int TRACED_INVOCATION_ACTION_ACTIVATION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_INVOCATION_ACTION_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_ACTION_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
+	int TRACED_INVOCATION_ACTION_ACTIVATION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -322,15 +304,6 @@ public interface BasicActionsPackage extends EPackage {
 	int TRACED_CALL_ACTION_ACTIVATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_CALL_ACTION_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_INVOCATION_ACTION_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
-
-	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -448,6 +421,133 @@ public interface BasicActionsPackage extends EPackage {
 	int TRACED_CALL_ACTION_ACTIVATION_OPERATION_COUNT = TRACED_INVOCATION_ACTION_ACTIVATION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedCallBehaviorActionActivationImpl <em>Traced Call Behavior Action Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedCallBehaviorActionActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedCallBehaviorActionActivation()
+	 * @generated
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__RUNNING_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Firing Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__FIRING_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__FIRING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Pin Activations Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__PIN_ACTIVATIONS_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__PIN_ACTIVATIONS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Call Executions Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION__CALL_EXECUTIONS_SEQUENCE = TRACED_CALL_ACTION_ACTIVATION__CALL_EXECUTIONS_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Call Behavior Action Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION_FEATURE_COUNT = TRACED_CALL_ACTION_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Call Behavior Action Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION_OPERATION_COUNT = TRACED_CALL_ACTION_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedPinActivationImpl <em>Traced Pin Activation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -455,16 +555,7 @@ public interface BasicActionsPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedPinActivation()
 	 * @generated
 	 */
-	int TRACED_PIN_ACTIVATION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_PIN_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = IntermediateActivitiesPackage.TRACED_OBJECT_NODE_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
+	int TRACED_PIN_ACTIVATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -583,6 +674,378 @@ public interface BasicActionsPackage extends EPackage {
 	 */
 	int TRACED_PIN_ACTIVATION_OPERATION_COUNT = IntermediateActivitiesPackage.TRACED_OBJECT_NODE_ACTIVATION_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedInputPinActivationImpl <em>Traced Input Pin Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedInputPinActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedInputPinActivation()
+	 * @generated
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_PIN_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_PIN_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_PIN_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_PIN_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_PIN_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_PIN_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_PIN_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__RUNNING_SEQUENCE = TRACED_PIN_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Offered Token Count Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__OFFERED_TOKEN_COUNT_SEQUENCE = TRACED_PIN_ACTIVATION__OFFERED_TOKEN_COUNT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Action Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__ACTION_ACTIVATION_SEQUENCE = TRACED_PIN_ACTIVATION__ACTION_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Count temp Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION__COUNT_TEMP_SEQUENCE = TRACED_PIN_ACTIVATION__COUNT_TEMP_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Input Pin Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION_FEATURE_COUNT = TRACED_PIN_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Input Pin Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INPUT_PIN_ACTIVATION_OPERATION_COUNT = TRACED_PIN_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedOpaqueActionActivationImpl <em>Traced Opaque Action Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedOpaqueActionActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedOpaqueActionActivation()
+	 * @generated
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_ACTION_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_ACTION_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_ACTION_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_ACTION_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_ACTION_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_ACTION_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_ACTION_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__RUNNING_SEQUENCE = TRACED_ACTION_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Firing Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__FIRING_SEQUENCE = TRACED_ACTION_ACTIVATION__FIRING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Pin Activations Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION__PIN_ACTIVATIONS_SEQUENCE = TRACED_ACTION_ACTIVATION__PIN_ACTIVATIONS_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Opaque Action Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION_FEATURE_COUNT = TRACED_ACTION_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Opaque Action Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OPAQUE_ACTION_ACTIVATION_OPERATION_COUNT = TRACED_ACTION_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedOutputPinActivationImpl <em>Traced Output Pin Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedOutputPinActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedOutputPinActivation()
+	 * @generated
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_PIN_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_PIN_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_PIN_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_PIN_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_PIN_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_PIN_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_PIN_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__RUNNING_SEQUENCE = TRACED_PIN_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Offered Token Count Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__OFFERED_TOKEN_COUNT_SEQUENCE = TRACED_PIN_ACTIVATION__OFFERED_TOKEN_COUNT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Action Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__ACTION_ACTIVATION_SEQUENCE = TRACED_PIN_ACTIVATION__ACTION_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Count temp Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION__COUNT_TEMP_SEQUENCE = TRACED_PIN_ACTIVATION__COUNT_TEMP_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Output Pin Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION_FEATURE_COUNT = TRACED_PIN_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Output Pin Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_OUTPUT_PIN_ACTIVATION_OPERATION_COUNT = TRACED_PIN_ACTIVATION_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation <em>Traced Action Activation</em>}'.
@@ -638,6 +1101,26 @@ public interface BasicActionsPackage extends EPackage {
 	EReference getTracedCallActionActivation_CallExecutionsSequence();
 
 	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation <em>Traced Call Behavior Action Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Call Behavior Action Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation
+	 * @generated
+	 */
+	EClass getTracedCallBehaviorActionActivation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation <em>Traced Input Pin Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Input Pin Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation
+	 * @generated
+	 */
+	EClass getTracedInputPinActivation();
+
+	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInvocationActionActivation <em>Traced Invocation Action Activation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -646,6 +1129,26 @@ public interface BasicActionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTracedInvocationActionActivation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation <em>Traced Opaque Action Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Opaque Action Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation
+	 * @generated
+	 */
+	EClass getTracedOpaqueActionActivation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation <em>Traced Output Pin Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Output Pin Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation
+	 * @generated
+	 */
+	EClass getTracedOutputPinActivation();
 
 	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation <em>Traced Pin Activation</em>}'.
@@ -747,6 +1250,26 @@ public interface BasicActionsPackage extends EPackage {
 		EReference TRACED_CALL_ACTION_ACTIVATION__CALL_EXECUTIONS_SEQUENCE = eINSTANCE.getTracedCallActionActivation_CallExecutionsSequence();
 
 		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedCallBehaviorActionActivationImpl <em>Traced Call Behavior Action Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedCallBehaviorActionActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedCallBehaviorActionActivation()
+		 * @generated
+		 */
+		EClass TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION = eINSTANCE.getTracedCallBehaviorActionActivation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedInputPinActivationImpl <em>Traced Input Pin Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedInputPinActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedInputPinActivation()
+		 * @generated
+		 */
+		EClass TRACED_INPUT_PIN_ACTIVATION = eINSTANCE.getTracedInputPinActivation();
+
+		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedInvocationActionActivationImpl <em>Traced Invocation Action Activation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -755,6 +1278,26 @@ public interface BasicActionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRACED_INVOCATION_ACTION_ACTIVATION = eINSTANCE.getTracedInvocationActionActivation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedOpaqueActionActivationImpl <em>Traced Opaque Action Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedOpaqueActionActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedOpaqueActionActivation()
+		 * @generated
+		 */
+		EClass TRACED_OPAQUE_ACTION_ACTIVATION = eINSTANCE.getTracedOpaqueActionActivation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedOutputPinActivationImpl <em>Traced Output Pin Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedOutputPinActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl#getTracedOutputPinActivation()
+		 * @generated
+		 */
+		EClass TRACED_OUTPUT_PIN_ACTIVATION = eINSTANCE.getTracedOutputPinActivation();
 
 		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.TracedPinActivationImpl <em>Traced Pin Activation</em>}' class.

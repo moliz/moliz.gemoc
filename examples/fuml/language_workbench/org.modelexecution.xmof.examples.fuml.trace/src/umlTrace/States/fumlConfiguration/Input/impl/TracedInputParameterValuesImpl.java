@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.Input.impl;
 
-import fumlConfiguration.Input.InputParameterValues;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -36,7 +32,6 @@ import umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues;
  * </p>
  * <ul>
  *   <li>{@link umlTrace.States.fumlConfiguration.Input.impl.TracedInputParameterValuesImpl#getNameSequence <em>Name Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Input.impl.TracedInputParameterValuesImpl#getOriginalObject <em>Original Object</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Input.impl.TracedInputParameterValuesImpl#getParameterValuesSequence <em>Parameter Values Sequence</em>}</li>
  * </ul>
  *
@@ -52,16 +47,6 @@ public class TracedInputParameterValuesImpl extends MinimalEObjectImpl.Container
 	 * @ordered
 	 */
 	protected EList<InputParameterValues_name_Value> nameSequence;
-
-	/**
-	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected InputParameterValues originalObject;
 
 	/**
 	 * The cached value of the '{@link #getParameterValuesSequence() <em>Parameter Values Sequence</em>}' containment reference list.
@@ -102,44 +87,6 @@ public class TracedInputParameterValuesImpl extends MinimalEObjectImpl.Container
 			nameSequence = new EObjectContainmentWithInverseEList<InputParameterValues_name_Value>(InputParameterValues_name_Value.class, this, InputPackage.TRACED_INPUT_PARAMETER_VALUES__NAME_SEQUENCE, StatesPackage.INPUT_PARAMETER_VALUES_NAME_VALUE__PARENT);
 		}
 		return nameSequence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InputParameterValues getOriginalObject() {
-		if (originalObject != null && originalObject.eIsProxy()) {
-			InternalEObject oldOriginalObject = (InternalEObject)originalObject;
-			originalObject = (InputParameterValues)eResolveProxy(oldOriginalObject);
-			if (originalObject != oldOriginalObject) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InputPackage.TRACED_INPUT_PARAMETER_VALUES__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-			}
-		}
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InputParameterValues basicGetOriginalObject() {
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject(InputParameterValues newOriginalObject) {
-		InputParameterValues oldOriginalObject = originalObject;
-		originalObject = newOriginalObject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InputPackage.TRACED_INPUT_PARAMETER_VALUES__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
 	}
 
 	/**
@@ -197,9 +144,6 @@ public class TracedInputParameterValuesImpl extends MinimalEObjectImpl.Container
 		switch (featureID) {
 			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__NAME_SEQUENCE:
 				return getNameSequence();
-			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__ORIGINAL_OBJECT:
-				if (resolve) return getOriginalObject();
-				return basicGetOriginalObject();
 			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__PARAMETER_VALUES_SEQUENCE:
 				return getParameterValuesSequence();
 		}
@@ -218,9 +162,6 @@ public class TracedInputParameterValuesImpl extends MinimalEObjectImpl.Container
 			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__NAME_SEQUENCE:
 				getNameSequence().clear();
 				getNameSequence().addAll((Collection<? extends InputParameterValues_name_Value>)newValue);
-				return;
-			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__ORIGINAL_OBJECT:
-				setOriginalObject((InputParameterValues)newValue);
 				return;
 			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__PARAMETER_VALUES_SEQUENCE:
 				getParameterValuesSequence().clear();
@@ -241,9 +182,6 @@ public class TracedInputParameterValuesImpl extends MinimalEObjectImpl.Container
 			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__NAME_SEQUENCE:
 				getNameSequence().clear();
 				return;
-			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__ORIGINAL_OBJECT:
-				setOriginalObject((InputParameterValues)null);
-				return;
 			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__PARAMETER_VALUES_SEQUENCE:
 				getParameterValuesSequence().clear();
 				return;
@@ -261,8 +199,6 @@ public class TracedInputParameterValuesImpl extends MinimalEObjectImpl.Container
 		switch (featureID) {
 			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__NAME_SEQUENCE:
 				return nameSequence != null && !nameSequence.isEmpty();
-			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__ORIGINAL_OBJECT:
-				return originalObject != null;
 			case InputPackage.TRACED_INPUT_PARAMETER_VALUES__PARAMETER_VALUES_SEQUENCE:
 				return parameterValuesSequence != null && !parameterValuesSequence.isEmpty();
 		}

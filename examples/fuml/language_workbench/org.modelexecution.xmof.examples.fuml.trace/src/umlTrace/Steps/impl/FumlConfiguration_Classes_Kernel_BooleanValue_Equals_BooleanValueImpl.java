@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.BooleanValue;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Equals_BooleanValue;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_Classes_Kernel_BooleanValue_Equals_BooleanValueIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BooleanValue getCaller() {
-		return (fumlConfiguration.Classes.Kernel.BooleanValue) this.getMseoccurrence().getMse().getCaller();
+	public TracedBooleanValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

@@ -4,9 +4,9 @@ package umlTrace.States;
 
 import org.eclipse.emf.common.util.EList;
 
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue;
+import org.eclipse.uml2.uml.StructuralFeature;
 
-import umlTrace.States.uml.TracedStructuralFeature;
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,13 +36,13 @@ public interface FeatureValue_feature_Value extends Value {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Feature</em>' reference.
-	 * @see #setFeature(TracedStructuralFeature)
+	 * @see #setFeature(StructuralFeature)
 	 * @see umlTrace.States.StatesPackage#getFeatureValue_feature_Value_Feature()
 	 * @model required="true"
 	 *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/FeatureValue/feature'"
 	 * @generated
 	 */
-	TracedStructuralFeature getFeature();
+	StructuralFeature getFeature();
 
 	/**
 	 * Sets the value of the '{@link umlTrace.States.FeatureValue_feature_Value#getFeature <em>Feature</em>}' reference.
@@ -52,7 +52,7 @@ public interface FeatureValue_feature_Value extends Value {
 	 * @see #getFeature()
 	 * @generated
 	 */
-	void setFeature(TracedStructuralFeature value);
+	void setFeature(StructuralFeature value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.

@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Loci.SemanticVisitor;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor;
 
 import umlTrace.Steps.FumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisitor;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisitorIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SemanticVisitor getCaller() {
-		return (fumlConfiguration.Loci.SemanticVisitor) this.getMseoccurrence().getMse().getCaller();
+	public TracedSemanticVisitor getCaller() {
+		return (umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

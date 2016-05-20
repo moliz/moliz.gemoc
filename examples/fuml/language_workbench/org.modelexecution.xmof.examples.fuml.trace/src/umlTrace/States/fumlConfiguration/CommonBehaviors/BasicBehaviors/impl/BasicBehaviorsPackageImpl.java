@@ -23,6 +23,10 @@ import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackag
 
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
 
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
@@ -42,13 +46,13 @@ import umlTrace.States.fumlConfiguration.Loci.LociPackage;
 
 import umlTrace.States.fumlConfiguration.Loci.impl.LociPackageImpl;
 
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import umlTrace.States.impl.StatesPackageImpl;
-
-import umlTrace.States.uml.UmlPackage;
-
-import umlTrace.States.uml.impl.UmlPackageImpl;
 
 import umlTrace.Steps.StepsPackage;
 
@@ -143,8 +147,9 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 		IntermediateActivitiesPackageImpl theIntermediateActivitiesPackage = (IntermediateActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) instanceof IntermediateActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) : IntermediateActivitiesPackage.eINSTANCE);
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) instanceof KernelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) : KernelPackage.eINSTANCE);
 		BasicActionsPackageImpl theBasicActionsPackage = (BasicActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) instanceof BasicActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) : BasicActionsPackage.eINSTANCE);
+		IntermediateActionsPackageImpl theIntermediateActionsPackage = (IntermediateActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) instanceof IntermediateActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) : IntermediateActionsPackage.eINSTANCE);
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
-		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
+		IntegerFunctionsPackageImpl theIntegerFunctionsPackage = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) : IntegerFunctionsPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
 		// Load packages
@@ -160,8 +165,9 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 		theIntermediateActivitiesPackage.fixPackageContents();
 		theKernelPackage.fixPackageContents();
 		theBasicActionsPackage.fixPackageContents();
+		theIntermediateActionsPackage.fixPackageContents();
 		theInputPackage.fixPackageContents();
-		theUmlPackage.fixPackageContents();
+		theIntegerFunctionsPackage.fixPackageContents();
 		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -232,7 +238,7 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedParameterValue_OriginalObject() {
+	public EReference getTracedParameterValue_Parameter_ParameterValueSequence() {
         return (EReference)getTracedParameterValue().getEStructuralFeatures().get(0);
 	}
 
@@ -241,17 +247,8 @@ public class BasicBehaviorsPackageImpl extends EPackageImpl implements BasicBeha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedParameterValue_Parameter_ParameterValueSequence() {
-        return (EReference)getTracedParameterValue().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTracedParameterValue_Values_ParameterValueSequence() {
-        return (EReference)getTracedParameterValue().getEStructuralFeatures().get(2);
+        return (EReference)getTracedParameterValue().getEStructuralFeatures().get(1);
 	}
 
 	/**

@@ -20,7 +20,6 @@ import umlTrace.States.CallActionActivation_callExecutions_Value;
  *
  * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackage#getTracedCallActionActivation()
  * @model abstract="true"
- *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Actions/BasicActions/CallActionActivation'"
  * @generated
  */
 public interface TracedCallActionActivation extends TracedInvocationActionActivation {

@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Classes.Kernel.StructuredValue;
-
 import org.gemoc.executionframework.engine.mse.SequentialStep;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedStructuredValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureV
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Classes.Kernel.StructuredValue) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedStructuredValue) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	StructuredValue getCaller();
+	TracedStructuredValue getCaller();
 
 } // FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue

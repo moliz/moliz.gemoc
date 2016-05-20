@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Actions.BasicActions.PinActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivation_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep;
@@ -238,8 +238,8 @@ public class FumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTok
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PinActivation getCaller() {
-		return (fumlConfiguration.Actions.BasicActions.PinActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedPinActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

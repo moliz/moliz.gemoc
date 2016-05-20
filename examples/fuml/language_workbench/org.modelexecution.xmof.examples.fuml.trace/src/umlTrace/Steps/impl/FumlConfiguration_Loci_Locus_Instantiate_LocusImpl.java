@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Loci.Locus;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Loci.TracedLocus;
 
 import umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Loci_Locus_Instantiate_Locus;
@@ -237,8 +237,8 @@ public class FumlConfiguration_Loci_Locus_Instantiate_LocusImpl extends StepImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Locus getCaller() {
-		return (fumlConfiguration.Loci.Locus) this.getMseoccurrence().getMse().getCaller();
+	public TracedLocus getCaller() {
+		return (umlTrace.States.fumlConfiguration.Loci.TracedLocus) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

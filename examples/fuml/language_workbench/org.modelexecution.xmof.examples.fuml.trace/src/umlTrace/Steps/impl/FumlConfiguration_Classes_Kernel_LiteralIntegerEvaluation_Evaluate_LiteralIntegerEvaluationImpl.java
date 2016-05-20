@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluation;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluation_AbstractSubStep;
@@ -236,8 +236,8 @@ public class FumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LiteralIntegerEvaluation getCaller() {
-		return (fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) this.getMseoccurrence().getMse().getCaller();
+	public TracedLiteralIntegerEvaluation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

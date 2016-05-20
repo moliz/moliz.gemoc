@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Actions.BasicActions.InputPinActivation;
-
 import org.gemoc.executionframework.engine.mse.SequentialStep;
+
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Actions_BasicActions_InputPinActivation_Recei
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Actions.BasicActions.InputPinActivation) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	InputPinActivation getCaller();
+	TracedInputPinActivation getCaller();
 
 } // FumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivation

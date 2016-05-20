@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.impl;
 
-import fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -35,7 +31,6 @@ import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedPa
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.TracedParameterValueImpl#getOriginalObject <em>Original Object</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.TracedParameterValueImpl#getParameter_ParameterValueSequence <em>Parameter Parameter Value Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.TracedParameterValueImpl#getValues_ParameterValueSequence <em>Values Parameter Value Sequence</em>}</li>
  * </ul>
@@ -43,16 +38,6 @@ import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedPa
  * @generated
  */
 public class TracedParameterValueImpl extends MinimalEObjectImpl.Container implements TracedParameterValue {
-	/**
-	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected ParameterValue originalObject;
-
 	/**
 	 * The cached value of the '{@link #getParameter_ParameterValueSequence() <em>Parameter Parameter Value Sequence</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -90,44 +75,6 @@ public class TracedParameterValueImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	protected EClass eStaticClass() {
 		return BasicBehaviorsPackage.Literals.TRACED_PARAMETER_VALUE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ParameterValue getOriginalObject() {
-		if (originalObject != null && originalObject.eIsProxy()) {
-			InternalEObject oldOriginalObject = (InternalEObject)originalObject;
-			originalObject = (ParameterValue)eResolveProxy(oldOriginalObject);
-			if (originalObject != oldOriginalObject) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-			}
-		}
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ParameterValue basicGetOriginalObject() {
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject(ParameterValue newOriginalObject) {
-		ParameterValue oldOriginalObject = originalObject;
-		originalObject = newOriginalObject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
 	}
 
 	/**
@@ -195,9 +142,6 @@ public class TracedParameterValueImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__ORIGINAL_OBJECT:
-				if (resolve) return getOriginalObject();
-				return basicGetOriginalObject();
 			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__PARAMETER_PARAMETER_VALUE_SEQUENCE:
 				return getParameter_ParameterValueSequence();
 			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__VALUES_PARAMETER_VALUE_SEQUENCE:
@@ -215,9 +159,6 @@ public class TracedParameterValueImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__ORIGINAL_OBJECT:
-				setOriginalObject((ParameterValue)newValue);
-				return;
 			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__PARAMETER_PARAMETER_VALUE_SEQUENCE:
 				getParameter_ParameterValueSequence().clear();
 				getParameter_ParameterValueSequence().addAll((Collection<? extends ParameterValue_parameter_ParameterValue_Value>)newValue);
@@ -238,9 +179,6 @@ public class TracedParameterValueImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__ORIGINAL_OBJECT:
-				setOriginalObject((ParameterValue)null);
-				return;
 			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__PARAMETER_PARAMETER_VALUE_SEQUENCE:
 				getParameter_ParameterValueSequence().clear();
 				return;
@@ -259,8 +197,6 @@ public class TracedParameterValueImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__ORIGINAL_OBJECT:
-				return originalObject != null;
 			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__PARAMETER_PARAMETER_VALUE_SEQUENCE:
 				return parameter_ParameterValueSequence != null && !parameter_ParameterValueSequence.isEmpty();
 			case BasicBehaviorsPackage.TRACED_PARAMETER_VALUE__VALUES_PARAMETER_VALUE_SEQUENCE:

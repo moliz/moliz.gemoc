@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.ObjectToken;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken;
 
 import umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectToken_IsControl_ObjectToken;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_Activities_IntermediateActivities_ObjectToken_IsC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObjectToken getCaller() {
-		return (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) this.getMseoccurrence().getMse().getCaller();
+	public TracedObjectToken getCaller() {
+		return (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

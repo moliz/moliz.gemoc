@@ -4,9 +4,9 @@ package umlTrace.States;
 
 import org.eclipse.emf.common.util.EList;
 
-import umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory;
+import org.eclipse.uml2.uml.PrimitiveType;
 
-import umlTrace.States.uml.TracedPrimitiveType;
+import umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import umlTrace.States.uml.TracedPrimitiveType;
 public interface ExecutionFactory_builtInTypes_Value extends Value {
 	/**
 	 * Returns the value of the '<em><b>Built In Types</b></em>' reference list.
-	 * The list contents are of type {@link umlTrace.States.uml.TracedPrimitiveType}.
+	 * The list contents are of type {@link org.eclipse.uml2.uml.PrimitiveType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Built In Types</em>' reference list isn't clear,
@@ -41,7 +41,7 @@ public interface ExecutionFactory_builtInTypes_Value extends Value {
 	 * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Loci/ExecutionFactory/builtInTypes'"
 	 * @generated
 	 */
-	EList<TracedPrimitiveType> getBuiltInTypes();
+	EList<PrimitiveType> getBuiltInTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.

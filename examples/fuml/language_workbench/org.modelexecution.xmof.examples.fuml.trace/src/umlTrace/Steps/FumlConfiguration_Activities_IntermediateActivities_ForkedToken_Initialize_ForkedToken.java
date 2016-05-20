@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Activities.IntermediateActivities.ForkedToken;
-
 import org.gemoc.executionframework.engine.mse.SmallStep;
+
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Activities_IntermediateActivities_ForkedToken
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	ForkedToken getCaller();
+	TracedForkedToken getCaller();
 
 } // FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Initialize_ForkedToken

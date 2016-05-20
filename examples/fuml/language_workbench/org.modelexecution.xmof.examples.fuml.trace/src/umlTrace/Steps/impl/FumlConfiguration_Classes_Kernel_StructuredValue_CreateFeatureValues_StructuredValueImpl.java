@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.StructuredValue;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedStructuredValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue_AbstractSubStep;
@@ -237,8 +237,8 @@ public class FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValue
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StructuredValue getCaller() {
-		return (fumlConfiguration.Classes.Kernel.StructuredValue) this.getMseoccurrence().getMse().getCaller();
+	public TracedStructuredValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedStructuredValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

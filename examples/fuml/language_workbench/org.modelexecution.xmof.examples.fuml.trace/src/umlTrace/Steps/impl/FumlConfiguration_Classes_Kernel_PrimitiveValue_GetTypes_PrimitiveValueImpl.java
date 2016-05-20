@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.PrimitiveValue;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_PrimitiveValue_GetTypes_PrimitiveValue;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_Classes_Kernel_PrimitiveValue_GetTypes_PrimitiveV
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PrimitiveValue getCaller() {
-		return (fumlConfiguration.Classes.Kernel.PrimitiveValue) this.getMseoccurrence().getMse().getCaller();
+	public TracedPrimitiveValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

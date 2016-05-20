@@ -118,6 +118,32 @@ public class KernelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case KernelPackage.TRACED_LITERAL_BOOLEAN_EVALUATION: {
+				TracedLiteralBooleanEvaluation tracedLiteralBooleanEvaluation = (TracedLiteralBooleanEvaluation)theEObject;
+				T result = caseTracedLiteralBooleanEvaluation(tracedLiteralBooleanEvaluation);
+				if (result == null) result = caseTracedLiteralEvaluation(tracedLiteralBooleanEvaluation);
+				if (result == null) result = caseTracedEvaluation(tracedLiteralBooleanEvaluation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedLiteralBooleanEvaluation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KernelPackage.TRACED_LITERAL_EVALUATION: {
+				TracedLiteralEvaluation tracedLiteralEvaluation = (TracedLiteralEvaluation)theEObject;
+				T result = caseTracedLiteralEvaluation(tracedLiteralEvaluation);
+				if (result == null) result = caseTracedEvaluation(tracedLiteralEvaluation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedLiteralEvaluation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KernelPackage.TRACED_LITERAL_INTEGER_EVALUATION: {
+				TracedLiteralIntegerEvaluation tracedLiteralIntegerEvaluation = (TracedLiteralIntegerEvaluation)theEObject;
+				T result = caseTracedLiteralIntegerEvaluation(tracedLiteralIntegerEvaluation);
+				if (result == null) result = caseTracedLiteralEvaluation(tracedLiteralIntegerEvaluation);
+				if (result == null) result = caseTracedEvaluation(tracedLiteralIntegerEvaluation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedLiteralIntegerEvaluation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case KernelPackage.TRACED_OBJECT: {
 				TracedObject tracedObject = (TracedObject)theEObject;
 				T result = caseTracedObject(tracedObject);
@@ -252,6 +278,51 @@ public class KernelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTracedIntegerValue(TracedIntegerValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Literal Boolean Evaluation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Literal Boolean Evaluation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedLiteralBooleanEvaluation(TracedLiteralBooleanEvaluation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Literal Evaluation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Literal Evaluation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedLiteralEvaluation(TracedLiteralEvaluation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Literal Integer Evaluation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Literal Integer Evaluation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedLiteralIntegerEvaluation(TracedLiteralIntegerEvaluation object) {
 		return null;
 	}
 

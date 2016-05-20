@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.BooleanValue;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue_AbstractSubStep;
@@ -240,8 +240,8 @@ public class FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValueImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BooleanValue getCaller() {
-		return (fumlConfiguration.Classes.Kernel.BooleanValue) this.getMseoccurrence().getMse().getCaller();
+	public TracedBooleanValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

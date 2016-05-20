@@ -2,9 +2,9 @@
  */
 package umlTrace.Steps;
 
-import fumlConfiguration.Loci.SemanticVisitor;
-
 import org.gemoc.executionframework.engine.mse.SmallStep;
+
+import umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,9 +21,9 @@ public interface FumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisit
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (fumlConfiguration.Loci.SemanticVisitor) this.getMseoccurrence().getMse().getCaller();'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return (umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) this.getMseoccurrence().getMse().getCaller();'"
 	 * @generated
 	 */
-	SemanticVisitor getCaller();
+	TracedSemanticVisitor getCaller();
 
 } // FumlConfiguration_Loci_SemanticVisitor_Initialize_SemanticVisitor

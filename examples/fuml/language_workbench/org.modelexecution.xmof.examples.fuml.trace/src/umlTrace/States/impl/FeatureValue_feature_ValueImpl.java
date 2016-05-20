@@ -19,14 +19,14 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.uml2.uml.StructuralFeature;
+
 import umlTrace.States.FeatureValue_feature_Value;
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
 
 import umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue;
-
-import umlTrace.States.uml.TracedStructuralFeature;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public class FeatureValue_feature_ValueImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 * @ordered
 	 */
-	protected TracedStructuralFeature feature;
+	protected StructuralFeature feature;
 
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
@@ -98,10 +98,10 @@ public class FeatureValue_feature_ValueImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedStructuralFeature getFeature() {
+	public StructuralFeature getFeature() {
 		if (feature != null && feature.eIsProxy()) {
 			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (TracedStructuralFeature)eResolveProxy(oldFeature);
+			feature = (StructuralFeature)eResolveProxy(oldFeature);
 			if (feature != oldFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatesPackage.FEATURE_VALUE_FEATURE_VALUE__FEATURE, oldFeature, feature));
@@ -115,7 +115,7 @@ public class FeatureValue_feature_ValueImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedStructuralFeature basicGetFeature() {
+	public StructuralFeature basicGetFeature() {
 		return feature;
 	}
 
@@ -124,8 +124,8 @@ public class FeatureValue_feature_ValueImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFeature(TracedStructuralFeature newFeature) {
-		TracedStructuralFeature oldFeature = feature;
+	public void setFeature(StructuralFeature newFeature) {
+		StructuralFeature oldFeature = feature;
 		feature = newFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatesPackage.FEATURE_VALUE_FEATURE_VALUE__FEATURE, oldFeature, feature));
@@ -264,7 +264,7 @@ public class FeatureValue_feature_ValueImpl extends MinimalEObjectImpl.Container
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StatesPackage.FEATURE_VALUE_FEATURE_VALUE__FEATURE:
-				setFeature((TracedStructuralFeature)newValue);
+				setFeature((StructuralFeature)newValue);
 				return;
 			case StatesPackage.FEATURE_VALUE_FEATURE_VALUE__PARENT:
 				setParent((TracedFeatureValue)newValue);
@@ -286,7 +286,7 @@ public class FeatureValue_feature_ValueImpl extends MinimalEObjectImpl.Container
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StatesPackage.FEATURE_VALUE_FEATURE_VALUE__FEATURE:
-				setFeature((TracedStructuralFeature)null);
+				setFeature((StructuralFeature)null);
 				return;
 			case StatesPackage.FEATURE_VALUE_FEATURE_VALUE__PARENT:
 				setParent((TracedFeatureValue)null);

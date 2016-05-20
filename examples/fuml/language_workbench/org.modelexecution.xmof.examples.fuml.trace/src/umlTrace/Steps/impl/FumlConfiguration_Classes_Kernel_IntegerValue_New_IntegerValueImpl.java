@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.IntegerValue;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_New_IntegerValue;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_Classes_Kernel_IntegerValue_New_IntegerValueImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IntegerValue getCaller() {
-		return (fumlConfiguration.Classes.Kernel.IntegerValue) this.getMseoccurrence().getMse().getCaller();
+	public TracedIntegerValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

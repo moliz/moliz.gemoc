@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -39,7 +35,6 @@ import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.Trace
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityNodeActivationGroupImpl#getActivityExecutionSequence <em>Activity Execution Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityNodeActivationGroupImpl#getEdgeInstancesSequence <em>Edge Instances Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityNodeActivationGroupImpl#getNodeActivationsSequence <em>Node Activations Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityNodeActivationGroupImpl#getOriginalObject <em>Original Object</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,16 +69,6 @@ public class TracedActivityNodeActivationGroupImpl extends MinimalEObjectImpl.Co
 	 * @ordered
 	 */
 	protected EList<ActivityNodeActivationGroup_nodeActivations_Value> nodeActivationsSequence;
-
-	/**
-	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected ActivityNodeActivationGroup originalObject;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,44 +130,6 @@ public class TracedActivityNodeActivationGroupImpl extends MinimalEObjectImpl.Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActivityNodeActivationGroup getOriginalObject() {
-		if (originalObject != null && originalObject.eIsProxy()) {
-			InternalEObject oldOriginalObject = (InternalEObject)originalObject;
-			originalObject = (ActivityNodeActivationGroup)eResolveProxy(oldOriginalObject);
-			if (originalObject != oldOriginalObject) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-			}
-		}
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ActivityNodeActivationGroup basicGetOriginalObject() {
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject(ActivityNodeActivationGroup newOriginalObject) {
-		ActivityNodeActivationGroup oldOriginalObject = originalObject;
-		originalObject = newOriginalObject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -229,9 +176,6 @@ public class TracedActivityNodeActivationGroupImpl extends MinimalEObjectImpl.Co
 				return getEdgeInstancesSequence();
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__NODE_ACTIVATIONS_SEQUENCE:
 				return getNodeActivationsSequence();
-			case IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__ORIGINAL_OBJECT:
-				if (resolve) return getOriginalObject();
-				return basicGetOriginalObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,9 +201,6 @@ public class TracedActivityNodeActivationGroupImpl extends MinimalEObjectImpl.Co
 				getNodeActivationsSequence().clear();
 				getNodeActivationsSequence().addAll((Collection<? extends ActivityNodeActivationGroup_nodeActivations_Value>)newValue);
 				return;
-			case IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__ORIGINAL_OBJECT:
-				setOriginalObject((ActivityNodeActivationGroup)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -281,9 +222,6 @@ public class TracedActivityNodeActivationGroupImpl extends MinimalEObjectImpl.Co
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__NODE_ACTIVATIONS_SEQUENCE:
 				getNodeActivationsSequence().clear();
 				return;
-			case IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__ORIGINAL_OBJECT:
-				setOriginalObject((ActivityNodeActivationGroup)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -302,8 +240,6 @@ public class TracedActivityNodeActivationGroupImpl extends MinimalEObjectImpl.Co
 				return edgeInstancesSequence != null && !edgeInstancesSequence.isEmpty();
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__NODE_ACTIVATIONS_SEQUENCE:
 				return nodeActivationsSequence != null && !nodeActivationsSequence.isEmpty();
-			case IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__ORIGINAL_OBJECT:
-				return originalObject != null;
 		}
 		return super.eIsSet(featureID);
 	}

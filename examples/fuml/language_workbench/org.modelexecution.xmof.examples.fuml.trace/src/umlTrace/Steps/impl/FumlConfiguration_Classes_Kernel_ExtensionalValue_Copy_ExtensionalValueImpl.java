@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.ExtensionalValue;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValue;
@@ -241,8 +241,8 @@ public class FumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalV
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExtensionalValue getCaller() {
-		return (fumlConfiguration.Classes.Kernel.ExtensionalValue) this.getMseoccurrence().getMse().getCaller();
+	public TracedExtensionalValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

@@ -75,22 +75,13 @@ public interface InputPackage extends EPackage {
 	int TRACED_INPUT_PARAMETER_VALUES__NAME_SEQUENCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_INPUT_PARAMETER_VALUES__ORIGINAL_OBJECT = 1;
-
-	/**
 	 * The feature id for the '<em><b>Parameter Values Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_INPUT_PARAMETER_VALUES__PARAMETER_VALUES_SEQUENCE = 2;
+	int TRACED_INPUT_PARAMETER_VALUES__PARAMETER_VALUES_SEQUENCE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Traced Input Parameter Values</em>' class.
@@ -99,7 +90,7 @@ public interface InputPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_INPUT_PARAMETER_VALUES_FEATURE_COUNT = 3;
+	int TRACED_INPUT_PARAMETER_VALUES_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Traced Input Parameter Values</em>' class.
@@ -131,17 +122,6 @@ public interface InputPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTracedInputParameterValues_NameSequence();
-
-	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues#getOriginalObject <em>Original Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues#getOriginalObject()
-	 * @see #getTracedInputParameterValues()
-	 * @generated
-	 */
-	EReference getTracedInputParameterValues_OriginalObject();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues#getParameterValuesSequence <em>Parameter Values Sequence</em>}'.
@@ -194,14 +174,6 @@ public interface InputPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRACED_INPUT_PARAMETER_VALUES__NAME_SEQUENCE = eINSTANCE.getTracedInputParameterValues_NameSequence();
-
-		/**
-		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_INPUT_PARAMETER_VALUES__ORIGINAL_OBJECT = eINSTANCE.getTracedInputParameterValues_OriginalObject();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameter Values Sequence</b></em>' containment reference list feature.

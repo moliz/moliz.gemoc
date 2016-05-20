@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.Token;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -35,7 +31,6 @@ import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.Trace
  * </p>
  * <ul>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedTokenImpl#getHolderSequence <em>Holder Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedTokenImpl#getOriginalObject_Token <em>Original Object Token</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,16 +45,6 @@ public class TracedTokenImpl extends MinimalEObjectImpl.Container implements Tra
 	 * @ordered
 	 */
 	protected EList<Token_holder_Value> holderSequence;
-
-	/**
-	 * The cached value of the '{@link #getOriginalObject_Token() <em>Original Object Token</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject_Token()
-	 * @generated
-	 * @ordered
-	 */
-	protected Token originalObject_Token;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,44 +75,6 @@ public class TracedTokenImpl extends MinimalEObjectImpl.Container implements Tra
 			holderSequence = new EObjectContainmentWithInverseEList<Token_holder_Value>(Token_holder_Value.class, this, IntermediateActivitiesPackage.TRACED_TOKEN__HOLDER_SEQUENCE, StatesPackage.TOKEN_HOLDER_VALUE__PARENT);
 		}
 		return holderSequence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Token getOriginalObject_Token() {
-		if (originalObject_Token != null && originalObject_Token.eIsProxy()) {
-			InternalEObject oldOriginalObject_Token = (InternalEObject)originalObject_Token;
-			originalObject_Token = (Token)eResolveProxy(oldOriginalObject_Token);
-			if (originalObject_Token != oldOriginalObject_Token) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IntermediateActivitiesPackage.TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN, oldOriginalObject_Token, originalObject_Token));
-			}
-		}
-		return originalObject_Token;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Token basicGetOriginalObject_Token() {
-		return originalObject_Token;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject_Token(Token newOriginalObject_Token) {
-		Token oldOriginalObject_Token = originalObject_Token;
-		originalObject_Token = newOriginalObject_Token;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IntermediateActivitiesPackage.TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN, oldOriginalObject_Token, originalObject_Token));
 	}
 
 	/**
@@ -169,9 +116,6 @@ public class TracedTokenImpl extends MinimalEObjectImpl.Container implements Tra
 		switch (featureID) {
 			case IntermediateActivitiesPackage.TRACED_TOKEN__HOLDER_SEQUENCE:
 				return getHolderSequence();
-			case IntermediateActivitiesPackage.TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN:
-				if (resolve) return getOriginalObject_Token();
-				return basicGetOriginalObject_Token();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,9 +133,6 @@ public class TracedTokenImpl extends MinimalEObjectImpl.Container implements Tra
 				getHolderSequence().clear();
 				getHolderSequence().addAll((Collection<? extends Token_holder_Value>)newValue);
 				return;
-			case IntermediateActivitiesPackage.TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN:
-				setOriginalObject_Token((Token)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -207,9 +148,6 @@ public class TracedTokenImpl extends MinimalEObjectImpl.Container implements Tra
 			case IntermediateActivitiesPackage.TRACED_TOKEN__HOLDER_SEQUENCE:
 				getHolderSequence().clear();
 				return;
-			case IntermediateActivitiesPackage.TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN:
-				setOriginalObject_Token((Token)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -224,8 +162,6 @@ public class TracedTokenImpl extends MinimalEObjectImpl.Container implements Tra
 		switch (featureID) {
 			case IntermediateActivitiesPackage.TRACED_TOKEN__HOLDER_SEQUENCE:
 				return holderSequence != null && !holderSequence.isEmpty();
-			case IntermediateActivitiesPackage.TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN:
-				return originalObject_Token != null;
 		}
 		return super.eIsSet(featureID);
 	}

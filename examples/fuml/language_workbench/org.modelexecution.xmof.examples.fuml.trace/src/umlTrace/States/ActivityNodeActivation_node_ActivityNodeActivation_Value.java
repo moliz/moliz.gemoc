@@ -4,9 +4,9 @@ package umlTrace.States;
 
 import org.eclipse.emf.common.util.EList;
 
-import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation;
+import org.eclipse.uml2.uml.ActivityNode;
 
-import umlTrace.States.uml.TracedActivityNode;
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,12 +36,12 @@ public interface ActivityNodeActivation_node_ActivityNodeActivation_Value extend
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Node Activity Node Activation</em>' reference.
-	 * @see #setNode_ActivityNodeActivation(TracedActivityNode)
+	 * @see #setNode_ActivityNodeActivation(ActivityNode)
 	 * @see umlTrace.States.StatesPackage#getActivityNodeActivation_node_ActivityNodeActivation_Value_Node_ActivityNodeActivation()
 	 * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Activities/IntermediateActivities/ActivityNodeActivation/node_ActivityNodeActivation'"
 	 * @generated
 	 */
-	TracedActivityNode getNode_ActivityNodeActivation();
+	ActivityNode getNode_ActivityNodeActivation();
 
 	/**
 	 * Sets the value of the '{@link umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value#getNode_ActivityNodeActivation <em>Node Activity Node Activation</em>}' reference.
@@ -51,7 +51,7 @@ public interface ActivityNodeActivation_node_ActivityNodeActivation_Value extend
 	 * @see #getNode_ActivityNodeActivation()
 	 * @generated
 	 */
-	void setNode_ActivityNodeActivation(TracedActivityNode value);
+	void setNode_ActivityNodeActivation(ActivityNode value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.

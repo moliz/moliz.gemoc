@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.fuml.trace/src" modelPluginID="org.modelexecution.xmof.examples.fuml.trace" modelName="UmlTrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
-  <foreignModel>file:/tmp/diverse2512498521527925518tracemmgeneration/umlTrace.ecore</foreignModel>
+  <foreignModel>file:/tmp/diverse2684920692998927656tracemmgeneration/umlTrace.ecore</foreignModel>
   <genPackages prefix="UmlTrace" disposableProviderFactory="true">
     <ecorePackage href="umlTrace.ecore#/"/>
     <genClasses>
@@ -534,6 +534,18 @@
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/FumlConfiguration_PrimitiveBehaviors_IntegerFunctions_IntegerPlusFunctionBehaviorExecution_New_IntegerPlusFunctionBehaviorExecution_Sequence"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/basicActions_tracedCallBehaviorActionActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/basicActions_tracedInputPinActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/basicActions_tracedOpaqueActionActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/basicActions_tracedOutputPinActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/basicBehaviors_tracedParameterValues"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
@@ -543,10 +555,34 @@
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/input_tracedInputParameterValuess"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/integerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/integerFunctions_tracedIntegerLessFunctionBehaviorExecutions"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/integerFunctions_tracedIntegerPlusFunctionBehaviorExecutions"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActions_tracedAddStructuralFeatureValueActionActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActions_tracedCreateObjectActionActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActions_tracedReadStructuralFeatureActionActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActions_tracedValueSpecificationActionActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityEdgeInstances"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityExecutions"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityFinalNodeActivations"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityNodeActivationGroups"/>
@@ -555,7 +591,28 @@
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityNodeActivations"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedActivityParameterNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedControlTokens"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedDecisionNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedForkNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedForkedTokens"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedInitialNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedJoinNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedMergeNodeActivations"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/intermediateActivities_tracedObjectTokens"/>
@@ -571,6 +628,12 @@
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/kernel_tracedIntegerValues"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/kernel_tracedLiteralBooleanEvaluations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/kernel_tracedLiteralIntegerEvaluations"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/kernel_tracedObjects"/>
@@ -595,15 +658,6 @@
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/statesTrace"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/uml_tracedClasss"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/uml_tracedParameters"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//SpecificTrace/uml_tracedPrimitiveTypes"/>
       </genFeatures>
     </genClasses>
     <nestedGenPackages prefix="Steps" disposableProviderFactory="true" loadInitialization="true" literalsInterface="false">
@@ -3434,9 +3488,6 @@
             <genFeatures property="None" children="true" createChild="true">
               <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionEnvironment/locus_ExecutionEnvironmentSequence"/>
             </genFeatures>
-            <genFeatures notify="false" createChild="false" propertySortChoices="true">
-              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionEnvironment/originalObject"/>
-            </genFeatures>
           </genClasses>
           <genClasses>
             <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionFactory"/>
@@ -3446,9 +3497,6 @@
             <genFeatures property="None" children="true" createChild="true">
               <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionFactory/locus_ExecutionFactorySequence"/>
             </genFeatures>
-            <genFeatures notify="false" createChild="false" propertySortChoices="true">
-              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionFactory/originalObject"/>
-            </genFeatures>
             <genFeatures property="None" children="true" createChild="true">
               <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutionFactory/primitiveBehaviorPrototypesSequence"/>
             </genFeatures>
@@ -3457,9 +3505,6 @@
             <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutor"/>
             <genFeatures property="None" children="true" createChild="true">
               <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutor/locus_ExecutorSequence"/>
-            </genFeatures>
-            <genFeatures notify="false" createChild="false" propertySortChoices="true">
-              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedExecutor/originalObject"/>
             </genFeatures>
           </genClasses>
           <genClasses>
@@ -3473,15 +3518,9 @@
             <genFeatures property="None" children="true" createChild="true">
               <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedLocus/factorySequence"/>
             </genFeatures>
-            <genFeatures notify="false" createChild="false" propertySortChoices="true">
-              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedLocus/originalObject"/>
-            </genFeatures>
           </genClasses>
           <genClasses>
             <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedSemanticVisitor"/>
-            <genFeatures notify="false" createChild="false" propertySortChoices="true">
-              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedSemanticVisitor/originalObject_SemanticVisitor"/>
-            </genFeatures>
             <genFeatures property="None" children="true" createChild="true">
               <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Loci/TracedSemanticVisitor/runtimeModelElementSequence"/>
             </genFeatures>
@@ -3502,9 +3541,6 @@
               <genFeatures property="None" children="true" createChild="true">
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/offersSequence"/>
               </genFeatures>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true">
-                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/originalObject"/>
-              </genFeatures>
               <genFeatures property="None" children="true" createChild="true">
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityEdgeInstance/sourceSequence"/>
               </genFeatures>
@@ -3517,6 +3553,9 @@
               <genFeatures property="None" children="true" createChild="true">
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityExecution/activationGroupSequence"/>
               </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityFinalNodeActivation"/>
             </genClasses>
             <genClasses>
               <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivation"/>
@@ -3553,9 +3592,21 @@
               <genFeatures property="None" children="true" createChild="true">
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup/nodeActivationsSequence"/>
               </genFeatures>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true">
-                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityNodeActivationGroup/originalObject"/>
-              </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedActivityParameterNodeActivation"/>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedControlNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedControlToken"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedDecisionNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkNodeActivation"/>
             </genClasses>
             <genClasses>
               <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken"/>
@@ -3568,6 +3619,15 @@
               <genFeatures property="None" children="true" createChild="true">
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedForkedToken/remainingOffersCountSequence"/>
               </genFeatures>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedInitialNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedJoinNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedMergeNodeActivation"/>
             </genClasses>
             <genClasses image="false">
               <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedObjectNodeActivation"/>
@@ -3586,17 +3646,11 @@
               <genFeatures property="None" children="true" createChild="true">
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedOffer/offeredTokensSequence"/>
               </genFeatures>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true">
-                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedOffer/originalObject"/>
-              </genFeatures>
             </genClasses>
             <genClasses>
               <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken"/>
               <genFeatures property="None" children="true" createChild="true">
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken/holderSequence"/>
-              </genFeatures>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true">
-                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Activities/IntermediateActivities/TracedToken/originalObject_Token"/>
               </genFeatures>
             </genClasses>
           </nestedGenPackages>
@@ -3651,6 +3705,15 @@
               </genFeatures>
             </genClasses>
             <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedLiteralBooleanEvaluation"/>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedLiteralEvaluation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedLiteralIntegerEvaluation"/>
+            </genClasses>
+            <genClasses>
               <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedObject"/>
               <genFeatures property="None" children="true" createChild="true">
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Classes/Kernel/TracedObject/typesSequence"/>
@@ -3694,9 +3757,6 @@
             </genClasses>
             <genClasses>
               <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue"/>
-              <genFeatures notify="false" createChild="false" propertySortChoices="true">
-                <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue/originalObject"/>
-              </genFeatures>
               <genFeatures property="None" children="true" createChild="true">
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/CommonBehaviors/BasicBehaviors/TracedParameterValue/parameter_ParameterValueSequence"/>
               </genFeatures>
@@ -3725,8 +3785,20 @@
                 <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedCallActionActivation/callExecutionsSequence"/>
               </genFeatures>
             </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedCallBehaviorActionActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedInputPinActivation"/>
+            </genClasses>
             <genClasses image="false">
               <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedInvocationActionActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedOpaqueActionActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedOutputPinActivation"/>
             </genClasses>
             <genClasses image="false">
               <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/BasicActions/TracedPinActivation"/>
@@ -3738,6 +3810,27 @@
               </genFeatures>
             </genClasses>
           </nestedGenPackages>
+          <nestedGenPackages prefix="IntermediateActions" disposableProviderFactory="true">
+            <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Actions/IntermediateActions"/>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/IntermediateActions/TracedAddStructuralFeatureValueActionActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/IntermediateActions/TracedCreateObjectActionActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/IntermediateActions/TracedReadStructuralFeatureActionActivation"/>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/IntermediateActions/TracedStructuralFeatureActionActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/IntermediateActions/TracedValueSpecificationActionActivation"/>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/Actions/IntermediateActions/TracedWriteStructuralFeatureActionActivation"/>
+            </genClasses>
+          </nestedGenPackages>
         </nestedGenPackages>
         <nestedGenPackages prefix="Input" disposableProviderFactory="true">
           <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/Input"/>
@@ -3746,47 +3839,26 @@
             <genFeatures property="None" children="true" createChild="true">
               <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Input/TracedInputParameterValues/nameSequence"/>
             </genFeatures>
-            <genFeatures notify="false" createChild="false" propertySortChoices="true">
-              <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Input/TracedInputParameterValues/originalObject"/>
-            </genFeatures>
             <genFeatures property="None" children="true" createChild="true">
               <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/fumlConfiguration/Input/TracedInputParameterValues/parameterValuesSequence"/>
             </genFeatures>
           </genClasses>
         </nestedGenPackages>
-      </nestedGenPackages>
-      <nestedGenPackages prefix="Uml" disposableProviderFactory="true">
-        <ecorePackage href="umlTrace.ecore#//States/uml"/>
-        <genClasses image="false">
-          <ecoreClass href="umlTrace.ecore#//States/uml/TracedActivityEdge"/>
-        </genClasses>
-        <genClasses image="false">
-          <ecoreClass href="umlTrace.ecore#//States/uml/TracedActivityNode"/>
-        </genClasses>
-        <genClasses>
-          <ecoreClass href="umlTrace.ecore#//States/uml/TracedClass"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true">
-            <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/uml/TracedClass/originalObject"/>
-          </genFeatures>
-        </genClasses>
-        <genClasses>
-          <ecoreClass href="umlTrace.ecore#//States/uml/TracedParameter"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true">
-            <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/uml/TracedParameter/originalObject"/>
-          </genFeatures>
-        </genClasses>
-        <genClasses>
-          <ecoreClass href="umlTrace.ecore#//States/uml/TracedPrimitiveType"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true">
-            <ecoreFeature xsi:type="ecore:EReference" href="umlTrace.ecore#//States/uml/TracedPrimitiveType/originalObject"/>
-          </genFeatures>
-        </genClasses>
-        <genClasses image="false">
-          <ecoreClass href="umlTrace.ecore#//States/uml/TracedStructuralFeature"/>
-        </genClasses>
-        <genClasses image="false">
-          <ecoreClass href="umlTrace.ecore#//States/uml/TracedValueSpecification"/>
-        </genClasses>
+        <nestedGenPackages prefix="PrimitiveBehaviors" disposableProviderFactory="true">
+          <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/PrimitiveBehaviors"/>
+          <nestedGenPackages prefix="IntegerFunctions" disposableProviderFactory="true">
+            <ecorePackage href="umlTrace.ecore#//States/fumlConfiguration/PrimitiveBehaviors/IntegerFunctions"/>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/PrimitiveBehaviors/IntegerFunctions/TracedIntegerGreaterFunctionBehaviorExecution"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/PrimitiveBehaviors/IntegerFunctions/TracedIntegerLessFunctionBehaviorExecution"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="umlTrace.ecore#//States/fumlConfiguration/PrimitiveBehaviors/IntegerFunctions/TracedIntegerPlusFunctionBehaviorExecution"/>
+            </genClasses>
+          </nestedGenPackages>
+        </nestedGenPackages>
       </nestedGenPackages>
       <nestedGenPackages prefix="Ecore" disposableProviderFactory="true">
         <ecorePackage href="umlTrace.ecore#//States/ecore"/>

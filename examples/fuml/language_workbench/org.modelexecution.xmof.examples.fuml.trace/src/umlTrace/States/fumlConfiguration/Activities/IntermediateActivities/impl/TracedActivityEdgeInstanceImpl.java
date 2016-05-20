@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -41,7 +37,6 @@ import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.Trace
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityEdgeInstanceImpl#getEdge_ActivityEdgeInstanceSequence <em>Edge Activity Edge Instance Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityEdgeInstanceImpl#getGroup_ActivityEdgeInstanceSequence <em>Group Activity Edge Instance Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityEdgeInstanceImpl#getOffersSequence <em>Offers Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityEdgeInstanceImpl#getOriginalObject <em>Original Object</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityEdgeInstanceImpl#getSourceSequence <em>Source Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityEdgeInstanceImpl#getTargetSequence <em>Target Sequence</em>}</li>
  * </ul>
@@ -78,16 +73,6 @@ public class TracedActivityEdgeInstanceImpl extends MinimalEObjectImpl.Container
 	 * @ordered
 	 */
 	protected EList<ActivityEdgeInstance_offers_Value> offersSequence;
-
-	/**
-	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected ActivityEdgeInstance originalObject;
 
 	/**
 	 * The cached value of the '{@link #getSourceSequence() <em>Source Sequence</em>}' containment reference list.
@@ -162,44 +147,6 @@ public class TracedActivityEdgeInstanceImpl extends MinimalEObjectImpl.Container
 			offersSequence = new EObjectContainmentWithInverseEList<ActivityEdgeInstance_offers_Value>(ActivityEdgeInstance_offers_Value.class, this, IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__OFFERS_SEQUENCE, StatesPackage.ACTIVITY_EDGE_INSTANCE_OFFERS_VALUE__PARENT);
 		}
 		return offersSequence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ActivityEdgeInstance getOriginalObject() {
-		if (originalObject != null && originalObject.eIsProxy()) {
-			InternalEObject oldOriginalObject = (InternalEObject)originalObject;
-			originalObject = (ActivityEdgeInstance)eResolveProxy(oldOriginalObject);
-			if (originalObject != oldOriginalObject) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-			}
-		}
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ActivityEdgeInstance basicGetOriginalObject() {
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject(ActivityEdgeInstance newOriginalObject) {
-		ActivityEdgeInstance oldOriginalObject = originalObject;
-		originalObject = newOriginalObject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
 	}
 
 	/**
@@ -285,9 +232,6 @@ public class TracedActivityEdgeInstanceImpl extends MinimalEObjectImpl.Container
 				return getGroup_ActivityEdgeInstanceSequence();
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__OFFERS_SEQUENCE:
 				return getOffersSequence();
-			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__ORIGINAL_OBJECT:
-				if (resolve) return getOriginalObject();
-				return basicGetOriginalObject();
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__SOURCE_SEQUENCE:
 				return getSourceSequence();
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__TARGET_SEQUENCE:
@@ -316,9 +260,6 @@ public class TracedActivityEdgeInstanceImpl extends MinimalEObjectImpl.Container
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__OFFERS_SEQUENCE:
 				getOffersSequence().clear();
 				getOffersSequence().addAll((Collection<? extends ActivityEdgeInstance_offers_Value>)newValue);
-				return;
-			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__ORIGINAL_OBJECT:
-				setOriginalObject((ActivityEdgeInstance)newValue);
 				return;
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__SOURCE_SEQUENCE:
 				getSourceSequence().clear();
@@ -349,9 +290,6 @@ public class TracedActivityEdgeInstanceImpl extends MinimalEObjectImpl.Container
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__OFFERS_SEQUENCE:
 				getOffersSequence().clear();
 				return;
-			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__ORIGINAL_OBJECT:
-				setOriginalObject((ActivityEdgeInstance)null);
-				return;
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__SOURCE_SEQUENCE:
 				getSourceSequence().clear();
 				return;
@@ -376,8 +314,6 @@ public class TracedActivityEdgeInstanceImpl extends MinimalEObjectImpl.Container
 				return group_ActivityEdgeInstanceSequence != null && !group_ActivityEdgeInstanceSequence.isEmpty();
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__OFFERS_SEQUENCE:
 				return offersSequence != null && !offersSequence.isEmpty();
-			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__ORIGINAL_OBJECT:
-				return originalObject != null;
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__SOURCE_SEQUENCE:
 				return sourceSequence != null && !sourceSequence.isEmpty();
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_EDGE_INSTANCE__TARGET_SEQUENCE:

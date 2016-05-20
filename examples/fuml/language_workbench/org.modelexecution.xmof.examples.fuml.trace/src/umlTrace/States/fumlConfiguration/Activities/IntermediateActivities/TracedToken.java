@@ -2,8 +2,6 @@
  */
 package umlTrace.States.fumlConfiguration.Activities.IntermediateActivities;
 
-import fumlConfiguration.Activities.IntermediateActivities.Token;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -20,11 +18,10 @@ import umlTrace.States.Token_holder_Value;
  * </p>
  * <ul>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken#getHolderSequence <em>Holder Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken#getOriginalObject_Token <em>Original Object Token</em>}</li>
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getTracedToken()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Activities/IntermediateActivities/Token'"
+ * @model
  * @generated
  */
 public interface TracedToken extends EObject {
@@ -45,31 +42,5 @@ public interface TracedToken extends EObject {
 	 * @generated
 	 */
 	EList<Token_holder_Value> getHolderSequence();
-
-	/**
-	 * Returns the value of the '<em><b>Original Object Token</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Original Object Token</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Original Object Token</em>' reference.
-	 * @see #setOriginalObject_Token(Token)
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getTracedToken_OriginalObject_Token()
-	 * @model
-	 * @generated
-	 */
-	Token getOriginalObject_Token();
-
-	/**
-	 * Sets the value of the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken#getOriginalObject_Token <em>Original Object Token</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Original Object Token</em>' reference.
-	 * @see #getOriginalObject_Token()
-	 * @generated
-	 */
-	void setOriginalObject_Token(Token value);
 
 } // TracedToken

@@ -4,9 +4,9 @@ package umlTrace.States;
 
 import org.eclipse.emf.common.util.EList;
 
-import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue;
+import org.eclipse.uml2.uml.Parameter;
 
-import umlTrace.States.uml.TracedParameter;
+import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,13 +36,13 @@ public interface ParameterValue_parameter_ParameterValue_Value extends Value {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter Parameter Value</em>' reference.
-	 * @see #setParameter_ParameterValue(TracedParameter)
+	 * @see #setParameter_ParameterValue(Parameter)
 	 * @see umlTrace.States.StatesPackage#getParameterValue_parameter_ParameterValue_Value_Parameter_ParameterValue()
 	 * @model required="true"
 	 *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//CommonBehaviors/BasicBehaviors/ParameterValue/parameter_ParameterValue'"
 	 * @generated
 	 */
-	TracedParameter getParameter_ParameterValue();
+	Parameter getParameter_ParameterValue();
 
 	/**
 	 * Sets the value of the '{@link umlTrace.States.ParameterValue_parameter_ParameterValue_Value#getParameter_ParameterValue <em>Parameter Parameter Value</em>}' reference.
@@ -52,7 +52,7 @@ public interface ParameterValue_parameter_ParameterValue_Value extends Value {
 	 * @see #getParameter_ParameterValue()
 	 * @generated
 	 */
-	void setParameter_ParameterValue(TracedParameter value);
+	void setParameter_ParameterValue(Parameter value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.

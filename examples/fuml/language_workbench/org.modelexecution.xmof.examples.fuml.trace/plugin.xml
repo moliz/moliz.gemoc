@@ -41,11 +41,15 @@
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated umlTrace -->
+    <package uri="umlTrace_IntermediateActions" class="umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage" genModel="model/umlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated umlTrace -->
     <package uri="umlTrace_Input" class="umlTrace.States.fumlConfiguration.Input.InputPackage" genModel="model/umlTrace.genmodel" />
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated umlTrace -->
-    <package uri="umlTrace_uml" class="umlTrace.States.uml.UmlPackage" genModel="model/umlTrace.genmodel" />
+    <package uri="umlTrace_IntegerFunctions" class="umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage" genModel="model/umlTrace.genmodel" />
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated umlTrace -->

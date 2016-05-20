@@ -20,7 +20,6 @@ import umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value;
  *
  * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getTracedObjectNodeActivation()
  * @model abstract="true"
- *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Activities/IntermediateActivities/ObjectNodeActivation'"
  * @generated
  */
 public interface TracedObjectNodeActivation extends TracedActivityNodeActivation {

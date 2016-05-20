@@ -75,22 +75,13 @@ public interface LociPackage extends EPackage {
 	int TRACED_EXECUTION_ENVIRONMENT__LOCUS_EXECUTION_ENVIRONMENT_SEQUENCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_EXECUTION_ENVIRONMENT__ORIGINAL_OBJECT = 1;
-
-	/**
 	 * The number of structural features of the '<em>Traced Execution Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_EXECUTION_ENVIRONMENT_FEATURE_COUNT = 2;
+	int TRACED_EXECUTION_ENVIRONMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Traced Execution Environment</em>' class.
@@ -130,22 +121,13 @@ public interface LociPackage extends EPackage {
 	int TRACED_EXECUTION_FACTORY__LOCUS_EXECUTION_FACTORY_SEQUENCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_EXECUTION_FACTORY__ORIGINAL_OBJECT = 2;
-
-	/**
 	 * The feature id for the '<em><b>Primitive Behavior Prototypes Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_EXECUTION_FACTORY__PRIMITIVE_BEHAVIOR_PROTOTYPES_SEQUENCE = 3;
+	int TRACED_EXECUTION_FACTORY__PRIMITIVE_BEHAVIOR_PROTOTYPES_SEQUENCE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Traced Execution Factory</em>' class.
@@ -154,7 +136,7 @@ public interface LociPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_EXECUTION_FACTORY_FEATURE_COUNT = 4;
+	int TRACED_EXECUTION_FACTORY_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Traced Execution Factory</em>' class.
@@ -185,22 +167,13 @@ public interface LociPackage extends EPackage {
 	int TRACED_EXECUTOR__LOCUS_EXECUTOR_SEQUENCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_EXECUTOR__ORIGINAL_OBJECT = 1;
-
-	/**
 	 * The number of structural features of the '<em>Traced Executor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_EXECUTOR_FEATURE_COUNT = 2;
+	int TRACED_EXECUTOR_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Traced Executor</em>' class.
@@ -249,22 +222,13 @@ public interface LociPackage extends EPackage {
 	int TRACED_LOCUS__FACTORY_SEQUENCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_LOCUS__ORIGINAL_OBJECT = 3;
-
-	/**
 	 * The number of structural features of the '<em>Traced Locus</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_LOCUS_FEATURE_COUNT = 4;
+	int TRACED_LOCUS_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Traced Locus</em>' class.
@@ -286,22 +250,13 @@ public interface LociPackage extends EPackage {
 	int TRACED_SEMANTIC_VISITOR = 4;
 
 	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_SEMANTIC_VISITOR__ORIGINAL_OBJECT_SEMANTIC_VISITOR = 0;
-
-	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_SEMANTIC_VISITOR__RUNTIME_MODEL_ELEMENT_SEQUENCE = 1;
+	int TRACED_SEMANTIC_VISITOR__RUNTIME_MODEL_ELEMENT_SEQUENCE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Traced Semantic Visitor</em>' class.
@@ -310,7 +265,7 @@ public interface LociPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_SEMANTIC_VISITOR_FEATURE_COUNT = 2;
+	int TRACED_SEMANTIC_VISITOR_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Traced Semantic Visitor</em>' class.
@@ -342,17 +297,6 @@ public interface LociPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTracedExecutionEnvironment_Locus_ExecutionEnvironmentSequence();
-
-	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment#getOriginalObject <em>Original Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment#getOriginalObject()
-	 * @see #getTracedExecutionEnvironment()
-	 * @generated
-	 */
-	EReference getTracedExecutionEnvironment_OriginalObject();
 
 	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory <em>Traced Execution Factory</em>}'.
@@ -387,17 +331,6 @@ public interface LociPackage extends EPackage {
 	EReference getTracedExecutionFactory_Locus_ExecutionFactorySequence();
 
 	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory#getOriginalObject <em>Original Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory#getOriginalObject()
-	 * @see #getTracedExecutionFactory()
-	 * @generated
-	 */
-	EReference getTracedExecutionFactory_OriginalObject();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory#getPrimitiveBehaviorPrototypesSequence <em>Primitive Behavior Prototypes Sequence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -428,17 +361,6 @@ public interface LociPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTracedExecutor_Locus_ExecutorSequence();
-
-	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Loci.TracedExecutor#getOriginalObject <em>Original Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Loci.TracedExecutor#getOriginalObject()
-	 * @see #getTracedExecutor()
-	 * @generated
-	 */
-	EReference getTracedExecutor_OriginalObject();
 
 	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Loci.TracedLocus <em>Traced Locus</em>}'.
@@ -484,17 +406,6 @@ public interface LociPackage extends EPackage {
 	EReference getTracedLocus_FactorySequence();
 
 	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Loci.TracedLocus#getOriginalObject <em>Original Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Loci.TracedLocus#getOriginalObject()
-	 * @see #getTracedLocus()
-	 * @generated
-	 */
-	EReference getTracedLocus_OriginalObject();
-
-	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor <em>Traced Semantic Visitor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -503,17 +414,6 @@ public interface LociPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTracedSemanticVisitor();
-
-	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor#getOriginalObject_SemanticVisitor <em>Original Object Semantic Visitor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object Semantic Visitor</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor#getOriginalObject_SemanticVisitor()
-	 * @see #getTracedSemanticVisitor()
-	 * @generated
-	 */
-	EReference getTracedSemanticVisitor_OriginalObject_SemanticVisitor();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor#getRuntimeModelElementSequence <em>Runtime Model Element Sequence</em>}'.
@@ -568,14 +468,6 @@ public interface LociPackage extends EPackage {
 		EReference TRACED_EXECUTION_ENVIRONMENT__LOCUS_EXECUTION_ENVIRONMENT_SEQUENCE = eINSTANCE.getTracedExecutionEnvironment_Locus_ExecutionEnvironmentSequence();
 
 		/**
-		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_EXECUTION_ENVIRONMENT__ORIGINAL_OBJECT = eINSTANCE.getTracedExecutionEnvironment_OriginalObject();
-
-		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedExecutionFactoryImpl <em>Traced Execution Factory</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -602,14 +494,6 @@ public interface LociPackage extends EPackage {
 		EReference TRACED_EXECUTION_FACTORY__LOCUS_EXECUTION_FACTORY_SEQUENCE = eINSTANCE.getTracedExecutionFactory_Locus_ExecutionFactorySequence();
 
 		/**
-		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_EXECUTION_FACTORY__ORIGINAL_OBJECT = eINSTANCE.getTracedExecutionFactory_OriginalObject();
-
-		/**
 		 * The meta object literal for the '<em><b>Primitive Behavior Prototypes Sequence</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -634,14 +518,6 @@ public interface LociPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRACED_EXECUTOR__LOCUS_EXECUTOR_SEQUENCE = eINSTANCE.getTracedExecutor_Locus_ExecutorSequence();
-
-		/**
-		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_EXECUTOR__ORIGINAL_OBJECT = eINSTANCE.getTracedExecutor_OriginalObject();
 
 		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedLocusImpl <em>Traced Locus</em>}' class.
@@ -678,14 +554,6 @@ public interface LociPackage extends EPackage {
 		EReference TRACED_LOCUS__FACTORY_SEQUENCE = eINSTANCE.getTracedLocus_FactorySequence();
 
 		/**
-		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_LOCUS__ORIGINAL_OBJECT = eINSTANCE.getTracedLocus_OriginalObject();
-
-		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedSemanticVisitorImpl <em>Traced Semantic Visitor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -694,14 +562,6 @@ public interface LociPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRACED_SEMANTIC_VISITOR = eINSTANCE.getTracedSemanticVisitor();
-
-		/**
-		 * The meta object literal for the '<em><b>Original Object Semantic Visitor</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_SEMANTIC_VISITOR__ORIGINAL_OBJECT_SEMANTIC_VISITOR = eINSTANCE.getTracedSemanticVisitor_OriginalObject_SemanticVisitor();
 
 		/**
 		 * The meta object literal for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list feature.

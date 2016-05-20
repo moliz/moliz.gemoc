@@ -86,6 +86,10 @@ public class IntermediateActivitiesAdapterFactory extends AdapterFactoryImpl {
 				return createTracedActivityExecutionAdapter();
 			}
 			@Override
+			public Adapter caseTracedActivityFinalNodeActivation(TracedActivityFinalNodeActivation object) {
+				return createTracedActivityFinalNodeActivationAdapter();
+			}
+			@Override
 			public Adapter caseTracedActivityNodeActivation(TracedActivityNodeActivation object) {
 				return createTracedActivityNodeActivationAdapter();
 			}
@@ -94,8 +98,40 @@ public class IntermediateActivitiesAdapterFactory extends AdapterFactoryImpl {
 				return createTracedActivityNodeActivationGroupAdapter();
 			}
 			@Override
+			public Adapter caseTracedActivityParameterNodeActivation(TracedActivityParameterNodeActivation object) {
+				return createTracedActivityParameterNodeActivationAdapter();
+			}
+			@Override
+			public Adapter caseTracedControlNodeActivation(TracedControlNodeActivation object) {
+				return createTracedControlNodeActivationAdapter();
+			}
+			@Override
+			public Adapter caseTracedControlToken(TracedControlToken object) {
+				return createTracedControlTokenAdapter();
+			}
+			@Override
+			public Adapter caseTracedDecisionNodeActivation(TracedDecisionNodeActivation object) {
+				return createTracedDecisionNodeActivationAdapter();
+			}
+			@Override
+			public Adapter caseTracedForkNodeActivation(TracedForkNodeActivation object) {
+				return createTracedForkNodeActivationAdapter();
+			}
+			@Override
 			public Adapter caseTracedForkedToken(TracedForkedToken object) {
 				return createTracedForkedTokenAdapter();
+			}
+			@Override
+			public Adapter caseTracedInitialNodeActivation(TracedInitialNodeActivation object) {
+				return createTracedInitialNodeActivationAdapter();
+			}
+			@Override
+			public Adapter caseTracedJoinNodeActivation(TracedJoinNodeActivation object) {
+				return createTracedJoinNodeActivationAdapter();
+			}
+			@Override
+			public Adapter caseTracedMergeNodeActivation(TracedMergeNodeActivation object) {
+				return createTracedMergeNodeActivationAdapter();
 			}
 			@Override
 			public Adapter caseTracedObjectNodeActivation(TracedObjectNodeActivation object) {
@@ -190,6 +226,20 @@ public class IntermediateActivitiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation <em>Traced Activity Final Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation
+	 * @generated
+	 */
+	public Adapter createTracedActivityFinalNodeActivationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation <em>Traced Activity Node Activation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -218,6 +268,76 @@ public class IntermediateActivitiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation <em>Traced Activity Parameter Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation
+	 * @generated
+	 */
+	public Adapter createTracedActivityParameterNodeActivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlNodeActivation <em>Traced Control Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlNodeActivation
+	 * @generated
+	 */
+	public Adapter createTracedControlNodeActivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken <em>Traced Control Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken
+	 * @generated
+	 */
+	public Adapter createTracedControlTokenAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation <em>Traced Decision Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation
+	 * @generated
+	 */
+	public Adapter createTracedDecisionNodeActivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation <em>Traced Fork Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation
+	 * @generated
+	 */
+	public Adapter createTracedForkNodeActivationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken <em>Traced Forked Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -228,6 +348,48 @@ public class IntermediateActivitiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTracedForkedTokenAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation <em>Traced Initial Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation
+	 * @generated
+	 */
+	public Adapter createTracedInitialNodeActivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation <em>Traced Join Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation
+	 * @generated
+	 */
+	public Adapter createTracedJoinNodeActivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation <em>Traced Merge Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation
+	 * @generated
+	 */
+	public Adapter createTracedMergeNodeActivationAdapter() {
 		return null;
 	}
 

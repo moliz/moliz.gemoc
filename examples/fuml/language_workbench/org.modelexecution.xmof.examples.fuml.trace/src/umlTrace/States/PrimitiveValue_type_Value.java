@@ -4,9 +4,9 @@ package umlTrace.States;
 
 import org.eclipse.emf.common.util.EList;
 
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue;
+import org.eclipse.uml2.uml.PrimitiveType;
 
-import umlTrace.States.uml.TracedPrimitiveType;
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,13 +82,13 @@ public interface PrimitiveValue_type_Value extends Value {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(TracedPrimitiveType)
+	 * @see #setType(PrimitiveType)
 	 * @see umlTrace.States.StatesPackage#getPrimitiveValue_type_Value_Type()
 	 * @model required="true"
 	 *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/PrimitiveValue/type'"
 	 * @generated
 	 */
-	TracedPrimitiveType getType();
+	PrimitiveType getType();
 
 	/**
 	 * Sets the value of the '{@link umlTrace.States.PrimitiveValue_type_Value#getType <em>Type</em>}' reference.
@@ -98,7 +98,7 @@ public interface PrimitiveValue_type_Value extends Value {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(TracedPrimitiveType value);
+	void setType(PrimitiveType value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -19,7 +19,7 @@ import umlTrace.States.Reference_referent_Value;
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage#getTracedReference()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/Reference'"
+ * @model
  * @generated
  */
 public interface TracedReference extends TracedStructuredValue {

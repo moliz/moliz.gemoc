@@ -23,6 +23,10 @@ import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackag
 
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
 
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
@@ -42,13 +46,13 @@ import umlTrace.States.fumlConfiguration.Input.impl.InputPackageImpl;
 import umlTrace.States.fumlConfiguration.Loci.LociFactory;
 import umlTrace.States.fumlConfiguration.Loci.LociPackage;
 
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import umlTrace.States.impl.StatesPackageImpl;
-
-import umlTrace.States.uml.UmlPackage;
-
-import umlTrace.States.uml.impl.UmlPackageImpl;
 
 import umlTrace.Steps.StepsPackage;
 
@@ -157,8 +161,9 @@ public class LociPackageImpl extends EPackageImpl implements LociPackage {
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) instanceof KernelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) : KernelPackage.eINSTANCE);
 		BasicBehaviorsPackageImpl theBasicBehaviorsPackage = (BasicBehaviorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) instanceof BasicBehaviorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) : BasicBehaviorsPackage.eINSTANCE);
 		BasicActionsPackageImpl theBasicActionsPackage = (BasicActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) instanceof BasicActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) : BasicActionsPackage.eINSTANCE);
+		IntermediateActionsPackageImpl theIntermediateActionsPackage = (IntermediateActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) instanceof IntermediateActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) : IntermediateActionsPackage.eINSTANCE);
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
-		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
+		IntegerFunctionsPackageImpl theIntegerFunctionsPackage = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) : IntegerFunctionsPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
 		// Load packages
@@ -174,8 +179,9 @@ public class LociPackageImpl extends EPackageImpl implements LociPackage {
 		theKernelPackage.fixPackageContents();
 		theBasicBehaviorsPackage.fixPackageContents();
 		theBasicActionsPackage.fixPackageContents();
+		theIntermediateActionsPackage.fixPackageContents();
 		theInputPackage.fixPackageContents();
-		theUmlPackage.fixPackageContents();
+		theIntegerFunctionsPackage.fixPackageContents();
 		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -213,15 +219,6 @@ public class LociPackageImpl extends EPackageImpl implements LociPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedExecutionEnvironment_OriginalObject() {
-        return (EReference)getTracedExecutionEnvironment().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTracedExecutionFactory() {
 		if (tracedExecutionFactoryEClass == null) {
 			tracedExecutionFactoryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(LociPackage.eNS_URI).getEClassifiers().get(1);
@@ -252,17 +249,8 @@ public class LociPackageImpl extends EPackageImpl implements LociPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedExecutionFactory_OriginalObject() {
-        return (EReference)getTracedExecutionFactory().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTracedExecutionFactory_PrimitiveBehaviorPrototypesSequence() {
-        return (EReference)getTracedExecutionFactory().getEStructuralFeatures().get(3);
+        return (EReference)getTracedExecutionFactory().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -284,15 +272,6 @@ public class LociPackageImpl extends EPackageImpl implements LociPackage {
 	 */
 	public EReference getTracedExecutor_Locus_ExecutorSequence() {
         return (EReference)getTracedExecutor().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTracedExecutor_OriginalObject() {
-        return (EReference)getTracedExecutor().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -339,15 +318,6 @@ public class LociPackageImpl extends EPackageImpl implements LociPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedLocus_OriginalObject() {
-        return (EReference)getTracedLocus().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTracedSemanticVisitor() {
 		if (tracedSemanticVisitorEClass == null) {
 			tracedSemanticVisitorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(LociPackage.eNS_URI).getEClassifiers().get(4);
@@ -360,17 +330,8 @@ public class LociPackageImpl extends EPackageImpl implements LociPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedSemanticVisitor_OriginalObject_SemanticVisitor() {
-        return (EReference)getTracedSemanticVisitor().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTracedSemanticVisitor_RuntimeModelElementSequence() {
-        return (EReference)getTracedSemanticVisitor().getEStructuralFeatures().get(1);
+        return (EReference)getTracedSemanticVisitor().getEStructuralFeatures().get(0);
 	}
 
 	/**

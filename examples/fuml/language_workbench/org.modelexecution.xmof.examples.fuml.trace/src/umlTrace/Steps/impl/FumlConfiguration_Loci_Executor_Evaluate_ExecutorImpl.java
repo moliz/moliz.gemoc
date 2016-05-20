@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Loci.Executor;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Loci.TracedExecutor;
 
 import umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation_AbstractSubStep;
@@ -238,8 +238,8 @@ public class FumlConfiguration_Loci_Executor_Evaluate_ExecutorImpl extends StepI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Executor getCaller() {
-		return (fumlConfiguration.Loci.Executor) this.getMseoccurrence().getMse().getCaller();
+	public TracedExecutor getCaller() {
+		return (umlTrace.States.fumlConfiguration.Loci.TracedExecutor) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

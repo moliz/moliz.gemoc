@@ -21,7 +21,7 @@ import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedEx
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getTracedActivityExecution()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Activities/IntermediateActivities/ActivityExecution'"
+ * @model
  * @generated
  */
 public interface TracedActivityExecution extends TracedExecution {

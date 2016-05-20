@@ -81,8 +81,24 @@ public class BasicActionsAdapterFactory extends AdapterFactoryImpl {
 				return createTracedCallActionActivationAdapter();
 			}
 			@Override
+			public Adapter caseTracedCallBehaviorActionActivation(TracedCallBehaviorActionActivation object) {
+				return createTracedCallBehaviorActionActivationAdapter();
+			}
+			@Override
+			public Adapter caseTracedInputPinActivation(TracedInputPinActivation object) {
+				return createTracedInputPinActivationAdapter();
+			}
+			@Override
 			public Adapter caseTracedInvocationActionActivation(TracedInvocationActionActivation object) {
 				return createTracedInvocationActionActivationAdapter();
+			}
+			@Override
+			public Adapter caseTracedOpaqueActionActivation(TracedOpaqueActionActivation object) {
+				return createTracedOpaqueActionActivationAdapter();
+			}
+			@Override
+			public Adapter caseTracedOutputPinActivation(TracedOutputPinActivation object) {
+				return createTracedOutputPinActivationAdapter();
 			}
 			@Override
 			public Adapter caseTracedPinActivation(TracedPinActivation object) {
@@ -149,6 +165,34 @@ public class BasicActionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation <em>Traced Call Behavior Action Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation
+	 * @generated
+	 */
+	public Adapter createTracedCallBehaviorActionActivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation <em>Traced Input Pin Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation
+	 * @generated
+	 */
+	public Adapter createTracedInputPinActivationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInvocationActionActivation <em>Traced Invocation Action Activation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -159,6 +203,34 @@ public class BasicActionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTracedInvocationActionActivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation <em>Traced Opaque Action Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation
+	 * @generated
+	 */
+	public Adapter createTracedOpaqueActionActivationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation <em>Traced Output Pin Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation
+	 * @generated
+	 */
+	public Adapter createTracedOutputPinActivationAdapter() {
 		return null;
 	}
 

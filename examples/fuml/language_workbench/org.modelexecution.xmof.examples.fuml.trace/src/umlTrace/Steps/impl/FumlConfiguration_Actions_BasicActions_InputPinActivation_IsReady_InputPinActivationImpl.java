@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Actions.BasicActions.InputPinActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivation_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivation_AbstractSubStep;
@@ -239,8 +239,8 @@ public class FumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InputPinActivation getCaller() {
-		return (fumlConfiguration.Actions.BasicActions.InputPinActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedInputPinActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

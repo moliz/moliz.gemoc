@@ -97,22 +97,13 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	int TRACED_ACTIVITY_EDGE_INSTANCE__OFFERS_SEQUENCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_ACTIVITY_EDGE_INSTANCE__ORIGINAL_OBJECT = 3;
-
-	/**
 	 * The feature id for the '<em><b>Source Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_ACTIVITY_EDGE_INSTANCE__SOURCE_SEQUENCE = 4;
+	int TRACED_ACTIVITY_EDGE_INSTANCE__SOURCE_SEQUENCE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Target Sequence</b></em>' containment reference list.
@@ -121,7 +112,7 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_ACTIVITY_EDGE_INSTANCE__TARGET_SEQUENCE = 5;
+	int TRACED_ACTIVITY_EDGE_INSTANCE__TARGET_SEQUENCE = 4;
 
 	/**
 	 * The number of structural features of the '<em>Traced Activity Edge Instance</em>' class.
@@ -130,7 +121,7 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_ACTIVITY_EDGE_INSTANCE_FEATURE_COUNT = 6;
+	int TRACED_ACTIVITY_EDGE_INSTANCE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Traced Activity Edge Instance</em>' class.
@@ -150,15 +141,6 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @generated
 	 */
 	int TRACED_ACTIVITY_EXECUTION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_ACTIVITY_EXECUTION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = BasicBehaviorsPackage.TRACED_EXECUTION__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -249,16 +231,7 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedActivityNodeActivation()
 	 * @generated
 	 */
-	int TRACED_ACTIVITY_NODE_ACTIVATION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_ACTIVITY_NODE_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = LociPackage.TRACED_SEMANTIC_VISITOR__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
+	int TRACED_ACTIVITY_NODE_ACTIVATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -351,6 +324,206 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	int TRACED_ACTIVITY_NODE_ACTIVATION_OPERATION_COUNT = LociPackage.TRACED_SEMANTIC_VISITOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedControlNodeActivationImpl <em>Traced Control Node Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedControlNodeActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedControlNodeActivation()
+	 * @generated
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_ACTIVITY_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_ACTIVITY_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_ACTIVITY_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_ACTIVITY_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_ACTIVITY_NODE_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_ACTIVITY_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_ACTIVITY_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION__RUNNING_SEQUENCE = TRACED_ACTIVITY_NODE_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Control Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION_FEATURE_COUNT = TRACED_ACTIVITY_NODE_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Control Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_NODE_ACTIVATION_OPERATION_COUNT = TRACED_ACTIVITY_NODE_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityFinalNodeActivationImpl <em>Traced Activity Final Node Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityFinalNodeActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedActivityFinalNodeActivation()
+	 * @generated
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION__RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Activity Final Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION_FEATURE_COUNT = TRACED_CONTROL_NODE_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Activity Final Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_FINAL_NODE_ACTIVATION_OPERATION_COUNT = TRACED_CONTROL_NODE_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityNodeActivationGroupImpl <em>Traced Activity Node Activation Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -358,7 +531,7 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedActivityNodeActivationGroup()
 	 * @generated
 	 */
-	int TRACED_ACTIVITY_NODE_ACTIVATION_GROUP = 3;
+	int TRACED_ACTIVITY_NODE_ACTIVATION_GROUP = 4;
 
 	/**
 	 * The feature id for the '<em><b>Activity Execution Sequence</b></em>' containment reference list.
@@ -388,22 +561,13 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	int TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__NODE_ACTIVATIONS_SEQUENCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__ORIGINAL_OBJECT = 3;
-
-	/**
 	 * The number of structural features of the '<em>Traced Activity Node Activation Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_ACTIVITY_NODE_ACTIVATION_GROUP_FEATURE_COUNT = 4;
+	int TRACED_ACTIVITY_NODE_ACTIVATION_GROUP_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Traced Activity Node Activation Group</em>' class.
@@ -415,125 +579,6 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	int TRACED_ACTIVITY_NODE_ACTIVATION_GROUP_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedTokenImpl <em>Traced Token</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedTokenImpl
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedToken()
-	 * @generated
-	 */
-	int TRACED_TOKEN = 8;
-
-	/**
-	 * The feature id for the '<em><b>Holder Sequence</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_TOKEN__HOLDER_SEQUENCE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Token</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN = 1;
-
-	/**
-	 * The number of structural features of the '<em>Traced Token</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_TOKEN_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Traced Token</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_TOKEN_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedForkedTokenImpl <em>Traced Forked Token</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedForkedTokenImpl
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedForkedToken()
-	 * @generated
-	 */
-	int TRACED_FORKED_TOKEN = 4;
-
-	/**
-	 * The feature id for the '<em><b>Holder Sequence</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_FORKED_TOKEN__HOLDER_SEQUENCE = TRACED_TOKEN__HOLDER_SEQUENCE;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Token</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_FORKED_TOKEN__ORIGINAL_OBJECT_TOKEN = TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN;
-
-	/**
-	 * The feature id for the '<em><b>Base Token Is Withdrawn Sequence</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_FORKED_TOKEN__BASE_TOKEN_IS_WITHDRAWN_SEQUENCE = TRACED_TOKEN_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Base Token Sequence</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_FORKED_TOKEN__BASE_TOKEN_SEQUENCE = TRACED_TOKEN_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Remaining Offers Count Sequence</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_FORKED_TOKEN__REMAINING_OFFERS_COUNT_SEQUENCE = TRACED_TOKEN_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Traced Forked Token</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_FORKED_TOKEN_FEATURE_COUNT = TRACED_TOKEN_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Traced Forked Token</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_FORKED_TOKEN_OPERATION_COUNT = TRACED_TOKEN_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedObjectNodeActivationImpl <em>Traced Object Node Activation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -541,16 +586,7 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedObjectNodeActivation()
 	 * @generated
 	 */
-	int TRACED_OBJECT_NODE_ACTIVATION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Semantic Visitor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_OBJECT_NODE_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR = TRACED_ACTIVITY_NODE_ACTIVATION__ORIGINAL_OBJECT_SEMANTIC_VISITOR;
+	int TRACED_OBJECT_NODE_ACTIVATION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
@@ -652,6 +688,753 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	int TRACED_OBJECT_NODE_ACTIVATION_OPERATION_COUNT = TRACED_ACTIVITY_NODE_ACTIVATION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityParameterNodeActivationImpl <em>Traced Activity Parameter Node Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityParameterNodeActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedActivityParameterNodeActivation()
+	 * @generated
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_OBJECT_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_OBJECT_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_OBJECT_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_OBJECT_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_OBJECT_NODE_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_OBJECT_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_OBJECT_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__RUNNING_SEQUENCE = TRACED_OBJECT_NODE_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Offered Token Count Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__OFFERED_TOKEN_COUNT_SEQUENCE = TRACED_OBJECT_NODE_ACTIVATION__OFFERED_TOKEN_COUNT_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Activity Parameter Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION_FEATURE_COUNT = TRACED_OBJECT_NODE_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Activity Parameter Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION_OPERATION_COUNT = TRACED_OBJECT_NODE_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedTokenImpl <em>Traced Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedTokenImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedToken()
+	 * @generated
+	 */
+	int TRACED_TOKEN = 17;
+
+	/**
+	 * The feature id for the '<em><b>Holder Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_TOKEN__HOLDER_SEQUENCE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Traced Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_TOKEN_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Traced Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_TOKEN_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedControlTokenImpl <em>Traced Control Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedControlTokenImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedControlToken()
+	 * @generated
+	 */
+	int TRACED_CONTROL_TOKEN = 7;
+
+	/**
+	 * The feature id for the '<em><b>Holder Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_TOKEN__HOLDER_SEQUENCE = TRACED_TOKEN__HOLDER_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Control Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_TOKEN_FEATURE_COUNT = TRACED_TOKEN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Control Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_CONTROL_TOKEN_OPERATION_COUNT = TRACED_TOKEN_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedDecisionNodeActivationImpl <em>Traced Decision Node Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedDecisionNodeActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedDecisionNodeActivation()
+	 * @generated
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION__RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Decision Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION_FEATURE_COUNT = TRACED_CONTROL_NODE_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Decision Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_DECISION_NODE_ACTIVATION_OPERATION_COUNT = TRACED_CONTROL_NODE_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedForkNodeActivationImpl <em>Traced Fork Node Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedForkNodeActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedForkNodeActivation()
+	 * @generated
+	 */
+	int TRACED_FORK_NODE_ACTIVATION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION__RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Fork Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION_FEATURE_COUNT = TRACED_CONTROL_NODE_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Fork Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORK_NODE_ACTIVATION_OPERATION_COUNT = TRACED_CONTROL_NODE_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedForkedTokenImpl <em>Traced Forked Token</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedForkedTokenImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedForkedToken()
+	 * @generated
+	 */
+	int TRACED_FORKED_TOKEN = 10;
+
+	/**
+	 * The feature id for the '<em><b>Holder Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORKED_TOKEN__HOLDER_SEQUENCE = TRACED_TOKEN__HOLDER_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Base Token Is Withdrawn Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORKED_TOKEN__BASE_TOKEN_IS_WITHDRAWN_SEQUENCE = TRACED_TOKEN_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Base Token Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORKED_TOKEN__BASE_TOKEN_SEQUENCE = TRACED_TOKEN_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Remaining Offers Count Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORKED_TOKEN__REMAINING_OFFERS_COUNT_SEQUENCE = TRACED_TOKEN_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Traced Forked Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORKED_TOKEN_FEATURE_COUNT = TRACED_TOKEN_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Traced Forked Token</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_FORKED_TOKEN_OPERATION_COUNT = TRACED_TOKEN_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedInitialNodeActivationImpl <em>Traced Initial Node Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedInitialNodeActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedInitialNodeActivation()
+	 * @generated
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION__RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Initial Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION_FEATURE_COUNT = TRACED_CONTROL_NODE_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Initial Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_INITIAL_NODE_ACTIVATION_OPERATION_COUNT = TRACED_CONTROL_NODE_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedJoinNodeActivationImpl <em>Traced Join Node Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedJoinNodeActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedJoinNodeActivation()
+	 * @generated
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION__RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Join Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION_FEATURE_COUNT = TRACED_CONTROL_NODE_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Join Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_JOIN_NODE_ACTIVATION_OPERATION_COUNT = TRACED_CONTROL_NODE_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedMergeNodeActivationImpl <em>Traced Merge Node Activation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedMergeNodeActivationImpl
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedMergeNodeActivation()
+	 * @generated
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Group Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__GROUP_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Held Tokens Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__HELD_TOKENS_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__INCOMING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION__IS_RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__IS_RUNNING_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Node Activity Node Activation Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__NODE_ACTIVITY_NODE_ACTIVATION_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__OUTGOING_EDGES_SEQUENCE;
+
+	/**
+	 * The feature id for the '<em><b>Running Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION__RUNNING_SEQUENCE = TRACED_CONTROL_NODE_ACTIVATION__RUNNING_SEQUENCE;
+
+	/**
+	 * The number of structural features of the '<em>Traced Merge Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION_FEATURE_COUNT = TRACED_CONTROL_NODE_ACTIVATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Traced Merge Node Activation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_MERGE_NODE_ACTIVATION_OPERATION_COUNT = TRACED_CONTROL_NODE_ACTIVATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedObjectTokenImpl <em>Traced Object Token</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -659,7 +1442,7 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedObjectToken()
 	 * @generated
 	 */
-	int TRACED_OBJECT_TOKEN = 6;
+	int TRACED_OBJECT_TOKEN = 15;
 
 	/**
 	 * The feature id for the '<em><b>Holder Sequence</b></em>' containment reference list.
@@ -669,15 +1452,6 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRACED_OBJECT_TOKEN__HOLDER_SEQUENCE = TRACED_TOKEN__HOLDER_SEQUENCE;
-
-	/**
-	 * The feature id for the '<em><b>Original Object Token</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_OBJECT_TOKEN__ORIGINAL_OBJECT_TOKEN = TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN;
 
 	/**
 	 * The feature id for the '<em><b>Value Sequence</b></em>' containment reference list.
@@ -714,7 +1488,7 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedOffer()
 	 * @generated
 	 */
-	int TRACED_OFFER = 7;
+	int TRACED_OFFER = 16;
 
 	/**
 	 * The feature id for the '<em><b>Offered Tokens Sequence</b></em>' containment reference list.
@@ -726,22 +1500,13 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	int TRACED_OFFER__OFFERED_TOKENS_SEQUENCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRACED_OFFER__ORIGINAL_OBJECT = 1;
-
-	/**
 	 * The number of structural features of the '<em>Traced Offer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_OFFER_FEATURE_COUNT = 2;
+	int TRACED_OFFER_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Traced Offer</em>' class.
@@ -797,17 +1562,6 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	EReference getTracedActivityEdgeInstance_OffersSequence();
 
 	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance#getOriginalObject <em>Original Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance#getOriginalObject()
-	 * @see #getTracedActivityEdgeInstance()
-	 * @generated
-	 */
-	EReference getTracedActivityEdgeInstance_OriginalObject();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance#getSourceSequence <em>Source Sequence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -849,6 +1603,16 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTracedActivityExecution_ActivationGroupSequence();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation <em>Traced Activity Final Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Activity Final Node Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation
+	 * @generated
+	 */
+	EClass getTracedActivityFinalNodeActivation();
 
 	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation <em>Traced Activity Node Activation</em>}'.
@@ -981,15 +1745,54 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	EReference getTracedActivityNodeActivationGroup_NodeActivationsSequence();
 
 	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup#getOriginalObject <em>Original Object</em>}'.
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation <em>Traced Activity Parameter Node Activation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup#getOriginalObject()
-	 * @see #getTracedActivityNodeActivationGroup()
+	 * @return the meta object for class '<em>Traced Activity Parameter Node Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation
 	 * @generated
 	 */
-	EReference getTracedActivityNodeActivationGroup_OriginalObject();
+	EClass getTracedActivityParameterNodeActivation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlNodeActivation <em>Traced Control Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Control Node Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlNodeActivation
+	 * @generated
+	 */
+	EClass getTracedControlNodeActivation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken <em>Traced Control Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Control Token</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken
+	 * @generated
+	 */
+	EClass getTracedControlToken();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation <em>Traced Decision Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Decision Node Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation
+	 * @generated
+	 */
+	EClass getTracedDecisionNodeActivation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation <em>Traced Fork Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Fork Node Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation
+	 * @generated
+	 */
+	EClass getTracedForkNodeActivation();
 
 	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken <em>Traced Forked Token</em>}'.
@@ -1033,6 +1836,36 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTracedForkedToken_RemainingOffersCountSequence();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation <em>Traced Initial Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Initial Node Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation
+	 * @generated
+	 */
+	EClass getTracedInitialNodeActivation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation <em>Traced Join Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Join Node Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation
+	 * @generated
+	 */
+	EClass getTracedJoinNodeActivation();
+
+	/**
+	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation <em>Traced Merge Node Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traced Merge Node Activation</em>'.
+	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation
+	 * @generated
+	 */
+	EClass getTracedMergeNodeActivation();
 
 	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectNodeActivation <em>Traced Object Node Activation</em>}'.
@@ -1098,17 +1931,6 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	EReference getTracedOffer_OfferedTokensSequence();
 
 	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer#getOriginalObject <em>Original Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer#getOriginalObject()
-	 * @see #getTracedOffer()
-	 * @generated
-	 */
-	EReference getTracedOffer_OriginalObject();
-
-	/**
 	 * Returns the meta object for class '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken <em>Traced Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1128,17 +1950,6 @@ public interface IntermediateActivitiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTracedToken_HolderSequence();
-
-	/**
-	 * Returns the meta object for the reference '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken#getOriginalObject_Token <em>Original Object Token</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Original Object Token</em>'.
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken#getOriginalObject_Token()
-	 * @see #getTracedToken()
-	 * @generated
-	 */
-	EReference getTracedToken_OriginalObject_Token();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1198,14 +2009,6 @@ public interface IntermediateActivitiesPackage extends EPackage {
 		EReference TRACED_ACTIVITY_EDGE_INSTANCE__OFFERS_SEQUENCE = eINSTANCE.getTracedActivityEdgeInstance_OffersSequence();
 
 		/**
-		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_ACTIVITY_EDGE_INSTANCE__ORIGINAL_OBJECT = eINSTANCE.getTracedActivityEdgeInstance_OriginalObject();
-
-		/**
 		 * The meta object literal for the '<em><b>Source Sequence</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1238,6 +2041,16 @@ public interface IntermediateActivitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRACED_ACTIVITY_EXECUTION__ACTIVATION_GROUP_SEQUENCE = eINSTANCE.getTracedActivityExecution_ActivationGroupSequence();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityFinalNodeActivationImpl <em>Traced Activity Final Node Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityFinalNodeActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedActivityFinalNodeActivation()
+		 * @generated
+		 */
+		EClass TRACED_ACTIVITY_FINAL_NODE_ACTIVATION = eINSTANCE.getTracedActivityFinalNodeActivation();
 
 		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityNodeActivationImpl <em>Traced Activity Node Activation</em>}' class.
@@ -1340,12 +2153,54 @@ public interface IntermediateActivitiesPackage extends EPackage {
 		EReference TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__NODE_ACTIVATIONS_SEQUENCE = eINSTANCE.getTracedActivityNodeActivationGroup_NodeActivationsSequence();
 
 		/**
-		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityParameterNodeActivationImpl <em>Traced Activity Parameter Node Activation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedActivityParameterNodeActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedActivityParameterNodeActivation()
 		 * @generated
 		 */
-		EReference TRACED_ACTIVITY_NODE_ACTIVATION_GROUP__ORIGINAL_OBJECT = eINSTANCE.getTracedActivityNodeActivationGroup_OriginalObject();
+		EClass TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION = eINSTANCE.getTracedActivityParameterNodeActivation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedControlNodeActivationImpl <em>Traced Control Node Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedControlNodeActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedControlNodeActivation()
+		 * @generated
+		 */
+		EClass TRACED_CONTROL_NODE_ACTIVATION = eINSTANCE.getTracedControlNodeActivation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedControlTokenImpl <em>Traced Control Token</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedControlTokenImpl
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedControlToken()
+		 * @generated
+		 */
+		EClass TRACED_CONTROL_TOKEN = eINSTANCE.getTracedControlToken();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedDecisionNodeActivationImpl <em>Traced Decision Node Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedDecisionNodeActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedDecisionNodeActivation()
+		 * @generated
+		 */
+		EClass TRACED_DECISION_NODE_ACTIVATION = eINSTANCE.getTracedDecisionNodeActivation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedForkNodeActivationImpl <em>Traced Fork Node Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedForkNodeActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedForkNodeActivation()
+		 * @generated
+		 */
+		EClass TRACED_FORK_NODE_ACTIVATION = eINSTANCE.getTracedForkNodeActivation();
 
 		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedForkedTokenImpl <em>Traced Forked Token</em>}' class.
@@ -1380,6 +2235,36 @@ public interface IntermediateActivitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRACED_FORKED_TOKEN__REMAINING_OFFERS_COUNT_SEQUENCE = eINSTANCE.getTracedForkedToken_RemainingOffersCountSequence();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedInitialNodeActivationImpl <em>Traced Initial Node Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedInitialNodeActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedInitialNodeActivation()
+		 * @generated
+		 */
+		EClass TRACED_INITIAL_NODE_ACTIVATION = eINSTANCE.getTracedInitialNodeActivation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedJoinNodeActivationImpl <em>Traced Join Node Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedJoinNodeActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedJoinNodeActivation()
+		 * @generated
+		 */
+		EClass TRACED_JOIN_NODE_ACTIVATION = eINSTANCE.getTracedJoinNodeActivation();
+
+		/**
+		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedMergeNodeActivationImpl <em>Traced Merge Node Activation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedMergeNodeActivationImpl
+		 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl#getTracedMergeNodeActivation()
+		 * @generated
+		 */
+		EClass TRACED_MERGE_NODE_ACTIVATION = eINSTANCE.getTracedMergeNodeActivation();
 
 		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedObjectNodeActivationImpl <em>Traced Object Node Activation</em>}' class.
@@ -1436,14 +2321,6 @@ public interface IntermediateActivitiesPackage extends EPackage {
 		EReference TRACED_OFFER__OFFERED_TOKENS_SEQUENCE = eINSTANCE.getTracedOffer_OfferedTokensSequence();
 
 		/**
-		 * The meta object literal for the '<em><b>Original Object</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_OFFER__ORIGINAL_OBJECT = eINSTANCE.getTracedOffer_OriginalObject();
-
-		/**
 		 * The meta object literal for the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.TracedTokenImpl <em>Traced Token</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1460,14 +2337,6 @@ public interface IntermediateActivitiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRACED_TOKEN__HOLDER_SEQUENCE = eINSTANCE.getTracedToken_HolderSequence();
-
-		/**
-		 * The meta object literal for the '<em><b>Original Object Token</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRACED_TOKEN__ORIGINAL_OBJECT_TOKEN = eINSTANCE.getTracedToken_OriginalObject_Token();
 
 	}
 

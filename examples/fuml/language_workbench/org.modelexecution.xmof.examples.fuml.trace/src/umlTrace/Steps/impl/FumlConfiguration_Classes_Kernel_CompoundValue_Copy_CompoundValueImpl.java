@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.CompoundValue;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedCompoundValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue_AbstractSubStep;
@@ -240,8 +240,8 @@ public class FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValueIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CompoundValue getCaller() {
-		return (fumlConfiguration.Classes.Kernel.CompoundValue) this.getMseoccurrence().getMse().getCaller();
+	public TracedCompoundValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedCompoundValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

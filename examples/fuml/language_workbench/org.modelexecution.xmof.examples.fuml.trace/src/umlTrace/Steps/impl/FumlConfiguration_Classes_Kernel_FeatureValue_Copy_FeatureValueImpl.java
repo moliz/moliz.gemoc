@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.FeatureValue;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue_AbstractSubStep;
@@ -236,8 +236,8 @@ public class FumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValueImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureValue getCaller() {
-		return (fumlConfiguration.Classes.Kernel.FeatureValue) this.getMseoccurrence().getMse().getCaller();
+	public TracedFeatureValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

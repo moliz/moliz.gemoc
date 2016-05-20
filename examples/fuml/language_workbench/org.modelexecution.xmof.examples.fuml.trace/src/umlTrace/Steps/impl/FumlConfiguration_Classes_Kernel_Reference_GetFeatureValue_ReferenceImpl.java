@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.Reference;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference;
 
 import umlTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivation_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_Reference;
@@ -237,8 +237,8 @@ public class FumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_Referenc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Reference getCaller() {
-		return (fumlConfiguration.Classes.Kernel.Reference) this.getMseoccurrence().getMse().getCaller();
+	public TracedReference getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

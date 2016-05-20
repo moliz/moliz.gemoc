@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Actions.BasicActions.OpaqueActionActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_OpaqueActionActivation_DoAction_OpaqueAction;
 import umlTrace.Steps.StepsPackage;
@@ -203,8 +203,8 @@ public class FumlConfiguration_Actions_BasicActions_OpaqueActionActivation_DoAct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OpaqueActionActivation getCaller() {
-		return (fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedOpaqueActionActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

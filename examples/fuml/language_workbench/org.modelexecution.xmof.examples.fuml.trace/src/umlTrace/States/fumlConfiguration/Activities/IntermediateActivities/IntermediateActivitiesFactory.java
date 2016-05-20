@@ -40,6 +40,15 @@ public interface IntermediateActivitiesFactory extends EFactory {
 	TracedActivityExecution createTracedActivityExecution();
 
 	/**
+	 * Returns a new object of class '<em>Traced Activity Final Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Activity Final Node Activation</em>'.
+	 * @generated
+	 */
+	TracedActivityFinalNodeActivation createTracedActivityFinalNodeActivation();
+
+	/**
 	 * Returns a new object of class '<em>Traced Activity Node Activation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,6 +67,42 @@ public interface IntermediateActivitiesFactory extends EFactory {
 	TracedActivityNodeActivationGroup createTracedActivityNodeActivationGroup();
 
 	/**
+	 * Returns a new object of class '<em>Traced Activity Parameter Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Activity Parameter Node Activation</em>'.
+	 * @generated
+	 */
+	TracedActivityParameterNodeActivation createTracedActivityParameterNodeActivation();
+
+	/**
+	 * Returns a new object of class '<em>Traced Control Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Control Token</em>'.
+	 * @generated
+	 */
+	TracedControlToken createTracedControlToken();
+
+	/**
+	 * Returns a new object of class '<em>Traced Decision Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Decision Node Activation</em>'.
+	 * @generated
+	 */
+	TracedDecisionNodeActivation createTracedDecisionNodeActivation();
+
+	/**
+	 * Returns a new object of class '<em>Traced Fork Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Fork Node Activation</em>'.
+	 * @generated
+	 */
+	TracedForkNodeActivation createTracedForkNodeActivation();
+
+	/**
 	 * Returns a new object of class '<em>Traced Forked Token</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,6 +110,33 @@ public interface IntermediateActivitiesFactory extends EFactory {
 	 * @generated
 	 */
 	TracedForkedToken createTracedForkedToken();
+
+	/**
+	 * Returns a new object of class '<em>Traced Initial Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Initial Node Activation</em>'.
+	 * @generated
+	 */
+	TracedInitialNodeActivation createTracedInitialNodeActivation();
+
+	/**
+	 * Returns a new object of class '<em>Traced Join Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Join Node Activation</em>'.
+	 * @generated
+	 */
+	TracedJoinNodeActivation createTracedJoinNodeActivation();
+
+	/**
+	 * Returns a new object of class '<em>Traced Merge Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Merge Node Activation</em>'.
+	 * @generated
+	 */
+	TracedMergeNodeActivation createTracedMergeNodeActivation();
 
 	/**
 	 * Returns a new object of class '<em>Traced Object Token</em>'.

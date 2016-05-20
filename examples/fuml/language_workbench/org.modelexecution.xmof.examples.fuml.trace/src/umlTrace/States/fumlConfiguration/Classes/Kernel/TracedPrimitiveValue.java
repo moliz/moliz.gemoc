@@ -20,7 +20,6 @@ import umlTrace.States.PrimitiveValue_type_Value;
  *
  * @see umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage#getTracedPrimitiveValue()
  * @model abstract="true"
- *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/PrimitiveValue'"
  * @generated
  */
 public interface TracedPrimitiveValue extends TracedValue {

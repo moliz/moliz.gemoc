@@ -78,12 +78,23 @@ public class UmlTraceExplorer implements ITraceExplorer {
 		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution tracedObject : traceRoot
 				.getIntermediateActivities_tracedActivityExecutions()) {
 			result.add(tracedObject.getActivationGroupSequence());
-			result.add(tracedObject.getContextSequence());
 			result.add(tracedObject.getFeatureValuesSequence());
 			result.add(tracedObject.getLocus_ExtensionalValueSequence());
+			result.add(tracedObject.getTypesSequence());
+			result.add(tracedObject.getContextSequence());
 			result.add(tracedObject.getParameterValuesSequence());
 			result.add(tracedObject.getRuntimeModelElementSequence());
-			result.add(tracedObject.getTypesSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation tracedObject : traceRoot
+				.getIntermediateActivities_tracedActivityFinalNodeActivations()) {
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
 		}
 		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation tracedObject : traceRoot
 				.getIntermediateActivities_tracedActivityNodeActivations()) {
@@ -102,13 +113,78 @@ public class UmlTraceExplorer implements ITraceExplorer {
 			result.add(tracedObject.getEdgeInstancesSequence());
 			result.add(tracedObject.getNodeActivationsSequence());
 		}
+		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation tracedObject : traceRoot
+				.getIntermediateActivities_tracedActivityParameterNodeActivations()) {
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getOfferedTokenCountSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation tracedObject : traceRoot
+				.getIntermediateActions_tracedAddStructuralFeatureValueActionActivations()) {
+			result.add(tracedObject.getFiringSequence());
+			result.add(tracedObject.getPinActivationsSequence());
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
 		for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue tracedObject : traceRoot
 				.getKernel_tracedBooleanValues()) {
-			result.add(tracedObject.getRuntimeModelElementSequence());
-			result.add(tracedObject.getTypeSequence());
 			result.add(tracedObject.getValue_BooleanValueSequence());
+			result.add(tracedObject.getTypeSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
 		}
-		for (umlTrace.States.uml.TracedClass tracedObject : traceRoot.getUml_tracedClasss()) {
+		for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation tracedObject : traceRoot
+				.getBasicActions_tracedCallBehaviorActionActivations()) {
+			result.add(tracedObject.getFiringSequence());
+			result.add(tracedObject.getPinActivationsSequence());
+			result.add(tracedObject.getCallExecutionsSequence());
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken tracedObject : traceRoot
+				.getIntermediateActivities_tracedControlTokens()) {
+			result.add(tracedObject.getHolderSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation tracedObject : traceRoot
+				.getIntermediateActions_tracedCreateObjectActionActivations()) {
+			result.add(tracedObject.getFiringSequence());
+			result.add(tracedObject.getPinActivationsSequence());
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation tracedObject : traceRoot
+				.getIntermediateActivities_tracedDecisionNodeActivations()) {
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
 		}
 		for (umlTrace.States.fumlConfiguration.TracedElementConfiguration tracedObject : traceRoot
 				.getFumlConfiguration_tracedElementConfigurations()) {
@@ -127,53 +203,186 @@ public class UmlTraceExplorer implements ITraceExplorer {
 		for (umlTrace.States.fumlConfiguration.Loci.TracedExecutor tracedObject : traceRoot.getLoci_tracedExecutors()) {
 			result.add(tracedObject.getLocus_ExecutorSequence());
 		}
+		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation tracedObject : traceRoot
+				.getIntermediateActivities_tracedForkNodeActivations()) {
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
 		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken tracedObject : traceRoot
 				.getIntermediateActivities_tracedForkedTokens()) {
 			result.add(tracedObject.getBaseTokenSequence());
 			result.add(tracedObject.getBaseTokenIsWithdrawnSequence());
-			result.add(tracedObject.getHolderSequence());
 			result.add(tracedObject.getRemainingOffersCountSequence());
+			result.add(tracedObject.getHolderSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation tracedObject : traceRoot
+				.getIntermediateActivities_tracedInitialNodeActivations()) {
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
 		}
 		for (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues tracedObject : traceRoot
 				.getInput_tracedInputParameterValuess()) {
 			result.add(tracedObject.getNameSequence());
 			result.add(tracedObject.getParameterValuesSequence());
 		}
+		for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation tracedObject : traceRoot
+				.getBasicActions_tracedInputPinActivations()) {
+			result.add(tracedObject.getActionActivationSequence());
+			result.add(tracedObject.getCount_tempSequence());
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getOfferedTokenCountSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution tracedObject : traceRoot
+				.getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions()) {
+			result.add(tracedObject.getFeatureValuesSequence());
+			result.add(tracedObject.getLocus_ExtensionalValueSequence());
+			result.add(tracedObject.getTypesSequence());
+			result.add(tracedObject.getContextSequence());
+			result.add(tracedObject.getParameterValuesSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution tracedObject : traceRoot
+				.getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions()) {
+			result.add(tracedObject.getFeatureValuesSequence());
+			result.add(tracedObject.getLocus_ExtensionalValueSequence());
+			result.add(tracedObject.getTypesSequence());
+			result.add(tracedObject.getContextSequence());
+			result.add(tracedObject.getParameterValuesSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution tracedObject : traceRoot
+				.getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions()) {
+			result.add(tracedObject.getFeatureValuesSequence());
+			result.add(tracedObject.getLocus_ExtensionalValueSequence());
+			result.add(tracedObject.getTypesSequence());
+			result.add(tracedObject.getContextSequence());
+			result.add(tracedObject.getParameterValuesSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
 		for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue tracedObject : traceRoot
 				.getKernel_tracedIntegerValues()) {
-			result.add(tracedObject.getRuntimeModelElementSequence());
-			result.add(tracedObject.getTypeSequence());
 			result.add(tracedObject.getValue_IntegerValueSequence());
+			result.add(tracedObject.getTypeSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation tracedObject : traceRoot
+				.getIntermediateActivities_tracedJoinNodeActivations()) {
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation tracedObject : traceRoot
+				.getKernel_tracedLiteralBooleanEvaluations()) {
+			result.add(tracedObject.getLocus_EvaluationSequence());
+			result.add(tracedObject.getSpecification_EvaluationSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation tracedObject : traceRoot
+				.getKernel_tracedLiteralIntegerEvaluations()) {
+			result.add(tracedObject.getLocus_EvaluationSequence());
+			result.add(tracedObject.getSpecification_EvaluationSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
 		}
 		for (umlTrace.States.fumlConfiguration.Loci.TracedLocus tracedObject : traceRoot.getLoci_tracedLocuss()) {
 			result.add(tracedObject.getExecutorSequence());
 			result.add(tracedObject.getExtensionalValuesSequence());
 			result.add(tracedObject.getFactorySequence());
 		}
+		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation tracedObject : traceRoot
+				.getIntermediateActivities_tracedMergeNodeActivations()) {
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
 		for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject tracedObject : traceRoot
 				.getKernel_tracedObjects()) {
 			result.add(tracedObject.getFeatureValuesSequence());
 			result.add(tracedObject.getLocus_ExtensionalValueSequence());
-			result.add(tracedObject.getRuntimeModelElementSequence());
 			result.add(tracedObject.getTypesSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
 		}
 		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken tracedObject : traceRoot
 				.getIntermediateActivities_tracedObjectTokens()) {
-			result.add(tracedObject.getHolderSequence());
 			result.add(tracedObject.getValueSequence());
+			result.add(tracedObject.getHolderSequence());
 		}
 		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer tracedObject : traceRoot
 				.getIntermediateActivities_tracedOffers()) {
 			result.add(tracedObject.getOfferedTokensSequence());
 		}
-		for (umlTrace.States.uml.TracedParameter tracedObject : traceRoot.getUml_tracedParameters()) {
+		for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation tracedObject : traceRoot
+				.getBasicActions_tracedOpaqueActionActivations()) {
+			result.add(tracedObject.getFiringSequence());
+			result.add(tracedObject.getPinActivationsSequence());
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation tracedObject : traceRoot
+				.getBasicActions_tracedOutputPinActivations()) {
+			result.add(tracedObject.getActionActivationSequence());
+			result.add(tracedObject.getCount_tempSequence());
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getOfferedTokenCountSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
 		}
 		for (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue tracedObject : traceRoot
 				.getBasicBehaviors_tracedParameterValues()) {
 			result.add(tracedObject.getParameter_ParameterValueSequence());
 			result.add(tracedObject.getValues_ParameterValueSequence());
 		}
-		for (umlTrace.States.uml.TracedPrimitiveType tracedObject : traceRoot.getUml_tracedPrimitiveTypes()) {
+		for (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation tracedObject : traceRoot
+				.getIntermediateActions_tracedReadStructuralFeatureActionActivations()) {
+			result.add(tracedObject.getFiringSequence());
+			result.add(tracedObject.getPinActivationsSequence());
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
 		}
 		for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference tracedObject : traceRoot
 				.getKernel_tracedReferences()) {
@@ -187,6 +396,19 @@ public class UmlTraceExplorer implements ITraceExplorer {
 		for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken tracedObject : traceRoot
 				.getIntermediateActivities_tracedTokens()) {
 			result.add(tracedObject.getHolderSequence());
+		}
+		for (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation tracedObject : traceRoot
+				.getIntermediateActions_tracedValueSpecificationActionActivations()) {
+			result.add(tracedObject.getFiringSequence());
+			result.add(tracedObject.getPinActivationsSequence());
+			result.add(tracedObject.getGroup_ActivityNodeActivationSequence());
+			result.add(tracedObject.getHeldTokensSequence());
+			result.add(tracedObject.getIncomingEdgesSequence());
+			result.add(tracedObject.getIsRunningSequence());
+			result.add(tracedObject.getNode_ActivityNodeActivationSequence());
+			result.add(tracedObject.getOutgoingEdgesSequence());
+			result.add(tracedObject.getRunningSequence());
+			result.add(tracedObject.getRuntimeModelElementSequence());
 		}
 		return result;
 	}
@@ -457,672 +679,6 @@ public class UmlTraceExplorer implements ITraceExplorer {
 	private void goTo(EObject eObject) {
 		if (eObject instanceof umlTrace.States.State) {
 			umlTrace.States.State stateToGo = (umlTrace.States.State) eObject;
-			for (umlTrace.States.PinActivation_actionActivation_Value value : stateToGo
-					.getPinActivation_actionActivation_Values()) {
-			}
-			for (umlTrace.States.ActivityExecution_activationGroup_Value value : stateToGo
-					.getActivityExecution_activationGroup_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup toset = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) getTracedToExe(
-							value.getActivationGroup());
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) parent_cast
-							.getOriginalObject_SemanticVisitor()).getActivationGroup();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) parent_cast
-								.getOriginalObject_SemanticVisitor()).setActivationGroup(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ActivityNodeActivationGroup_activityExecution_Value value : stateToGo
-					.getActivityNodeActivationGroup_activityExecution_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityExecution toset = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) getTracedToExe(
-							value.getActivityExecution());
-					fumlConfiguration.Activities.IntermediateActivities.ActivityExecution current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) parent_cast
-							.getOriginalObject()).getActivityExecution();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) parent_cast
-								.getOriginalObject()).setActivityExecution(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ForkedToken_baseToken_Value value : stateToGo.getForkedToken_baseToken_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.Token toset = (fumlConfiguration.Activities.IntermediateActivities.Token) getTracedToExe(
-							value.getBaseToken());
-					fumlConfiguration.Activities.IntermediateActivities.Token current = ((fumlConfiguration.Activities.IntermediateActivities.ForkedToken) parent_cast
-							.getOriginalObject_Token()).getBaseToken();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ForkedToken) parent_cast
-								.getOriginalObject_Token()).setBaseToken(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ForkedToken_baseTokenIsWithdrawn_Value value : stateToGo
-					.getForkedToken_baseTokenIsWithdrawn_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) value
-							.getParent();
-					boolean toset = value.isBaseTokenIsWithdrawn();
-					boolean current = ((fumlConfiguration.Activities.IntermediateActivities.ForkedToken) parent_cast
-							.getOriginalObject_Token()).isBaseTokenIsWithdrawn();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ForkedToken) parent_cast
-								.getOriginalObject_Token()).setBaseTokenIsWithdrawn(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ExecutionFactory_builtInTypes_Value value : stateToGo
-					.getExecutionFactory_builtInTypes_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) {
-					umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory parent_cast = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) value
-							.getParent();
-					fumlConfiguration.Loci.ExecutionFactory originalObject = (fumlConfiguration.Loci.ExecutionFactory) parent_cast
-							.getOriginalObject();
-					originalObject.getBuiltInTypes().clear();
-					originalObject.getBuiltInTypes()
-							.addAll((Collection<? extends org.eclipse.uml2.uml.PrimitiveType>) getTracedToExe(
-									value.getBuiltInTypes()));
-				}
-			}
-			for (umlTrace.States.CallActionActivation_callExecutions_Value value : stateToGo
-					.getCallActionActivation_callExecutions_Values()) {
-			}
-			for (umlTrace.States.Execution_context_Value value : stateToGo.getExecution_context_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) value
-							.getParent();
-					fumlConfiguration.Classes.Kernel.Object toset = (fumlConfiguration.Classes.Kernel.Object) getTracedToExe(
-							value.getContext());
-					fumlConfiguration.Classes.Kernel.Object current = ((fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) parent_cast
-							.getOriginalObject_SemanticVisitor()).getContext();
-					if (current != toset) {
-						((fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) parent_cast
-								.getOriginalObject_SemanticVisitor()).setContext(toset);
-					}
-				}
-			}
-			for (umlTrace.States.PinActivation_count_temp_Value value : stateToGo
-					.getPinActivation_count_temp_Values()) {
-			}
-			for (umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value value : stateToGo
-					.getActivityNodeActivationGroup_edgeInstances_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup originalObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) parent_cast
-							.getOriginalObject();
-					originalObject.getEdgeInstances().clear();
-					originalObject.getEdgeInstances()
-							.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance>) getTracedToExe(
-									value.getEdgeInstances()));
-				}
-			}
-			for (umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value value : stateToGo
-					.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) value
-							.getParent();
-					org.eclipse.uml2.uml.ActivityEdge toset = (org.eclipse.uml2.uml.ActivityEdge) getTracedToExe(
-							value.getEdge_ActivityEdgeInstance());
-					org.eclipse.uml2.uml.ActivityEdge current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) parent_cast
-							.getOriginalObject()).getEdge_ActivityEdgeInstance();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) parent_cast
-								.getOriginalObject()).setEdge_ActivityEdgeInstance(toset);
-					}
-				}
-			}
-			for (umlTrace.States.Locus_executor_Value value : stateToGo.getLocus_executor_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Loci.TracedLocus) {
-					umlTrace.States.fumlConfiguration.Loci.TracedLocus parent_cast = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) value
-							.getParent();
-					fumlConfiguration.Loci.Executor toset = (fumlConfiguration.Loci.Executor) getTracedToExe(
-							value.getExecutor());
-					fumlConfiguration.Loci.Executor current = ((fumlConfiguration.Loci.Locus) parent_cast
-							.getOriginalObject()).getExecutor();
-					if (current != toset) {
-						((fumlConfiguration.Loci.Locus) parent_cast.getOriginalObject()).setExecutor(toset);
-					}
-				}
-			}
-			for (umlTrace.States.Locus_extensionalValues_Value value : stateToGo.getLocus_extensionalValues_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Loci.TracedLocus) {
-					umlTrace.States.fumlConfiguration.Loci.TracedLocus parent_cast = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) value
-							.getParent();
-					fumlConfiguration.Loci.Locus originalObject = (fumlConfiguration.Loci.Locus) parent_cast
-							.getOriginalObject();
-					originalObject.getExtensionalValues().clear();
-					originalObject.getExtensionalValues()
-							.addAll((Collection<? extends fumlConfiguration.Classes.Kernel.ExtensionalValue>) getTracedToExe(
-									value.getExtensionalValues()));
-				}
-			}
-			for (umlTrace.States.Locus_factory_Value value : stateToGo.getLocus_factory_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Loci.TracedLocus) {
-					umlTrace.States.fumlConfiguration.Loci.TracedLocus parent_cast = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) value
-							.getParent();
-					fumlConfiguration.Loci.ExecutionFactory toset = (fumlConfiguration.Loci.ExecutionFactory) getTracedToExe(
-							value.getFactory());
-					fumlConfiguration.Loci.ExecutionFactory current = ((fumlConfiguration.Loci.Locus) parent_cast
-							.getOriginalObject()).getFactory();
-					if (current != toset) {
-						((fumlConfiguration.Loci.Locus) parent_cast.getOriginalObject()).setFactory(toset);
-					}
-				}
-			}
-			for (umlTrace.States.FeatureValue_feature_Value value : stateToGo.getFeatureValue_feature_Values()) {
-			}
-			for (umlTrace.States.CompoundValue_featureValues_Value value : stateToGo
-					.getCompoundValue_featureValues_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) value
-							.getParent();
-					fumlConfiguration.Classes.Kernel.CompoundValue originalObject = (fumlConfiguration.Classes.Kernel.CompoundValue) parent_cast
-							.getOriginalObject_SemanticVisitor();
-					originalObject.getFeatureValues().clear();
-					originalObject.getFeatureValues()
-							.addAll((Collection<? extends fumlConfiguration.Classes.Kernel.FeatureValue>) getTracedToExe(
-									value.getFeatureValues()));
-				}
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) value
-							.getParent();
-					fumlConfiguration.Classes.Kernel.CompoundValue originalObject = (fumlConfiguration.Classes.Kernel.CompoundValue) parent_cast
-							.getOriginalObject_SemanticVisitor();
-					originalObject.getFeatureValues().clear();
-					originalObject.getFeatureValues()
-							.addAll((Collection<? extends fumlConfiguration.Classes.Kernel.FeatureValue>) getTracedToExe(
-									value.getFeatureValues()));
-				}
-			}
-			for (umlTrace.States.ActionActivation_firing_Value value : stateToGo.getActionActivation_firing_Values()) {
-			}
-			for (umlTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value value : stateToGo
-					.getActivityEdgeInstance_group_ActivityEdgeInstance_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup toset = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) getTracedToExe(
-							value.getGroup_ActivityEdgeInstance());
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) parent_cast
-							.getOriginalObject()).getGroup_ActivityEdgeInstance();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) parent_cast
-								.getOriginalObject()).setGroup_ActivityEdgeInstance(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value value : stateToGo
-					.getActivityNodeActivation_group_ActivityNodeActivation_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup toset = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) getTracedToExe(
-							value.getGroup_ActivityNodeActivation());
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-							.getOriginalObject_SemanticVisitor()).getGroup_ActivityNodeActivation();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-								.getOriginalObject_SemanticVisitor()).setGroup_ActivityNodeActivation(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ActivityNodeActivation_heldTokens_Value value : stateToGo
-					.getActivityNodeActivation_heldTokens_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation originalObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-							.getOriginalObject_SemanticVisitor();
-					originalObject.getHeldTokens().clear();
-					originalObject.getHeldTokens()
-							.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.Token>) getTracedToExe(
-									value.getHeldTokens()));
-				}
-			}
-			for (umlTrace.States.Token_holder_Value value : stateToGo.getToken_holder_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation toset = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
-							value.getHolder());
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation current = ((fumlConfiguration.Activities.IntermediateActivities.Token) parent_cast
-							.getOriginalObject_Token()).getHolder();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.Token) parent_cast
-								.getOriginalObject_Token()).setHolder(toset);
-					}
-				}
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation toset = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
-							value.getHolder());
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation current = ((fumlConfiguration.Activities.IntermediateActivities.Token) parent_cast
-							.getOriginalObject_Token()).getHolder();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.Token) parent_cast
-								.getOriginalObject_Token()).setHolder(toset);
-					}
-				}
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation toset = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
-							value.getHolder());
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation current = ((fumlConfiguration.Activities.IntermediateActivities.Token) parent_cast
-							.getOriginalObject_Token()).getHolder();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.Token) parent_cast
-								.getOriginalObject_Token()).setHolder(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ActivityNodeActivation_incomingEdges_Value value : stateToGo
-					.getActivityNodeActivation_incomingEdges_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation originalObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-							.getOriginalObject_SemanticVisitor();
-					originalObject.getIncomingEdges().clear();
-					originalObject.getIncomingEdges()
-							.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance>) getTracedToExe(
-									value.getIncomingEdges()));
-				}
-			}
-			for (umlTrace.States.ActivityNodeActivation_isRunning_Value value : stateToGo
-					.getActivityNodeActivation_isRunning_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value
-							.getParent();
-					boolean toset = value.isIsRunning();
-					boolean current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-							.getOriginalObject_SemanticVisitor()).isIsRunning();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-								.getOriginalObject_SemanticVisitor()).setIsRunning(toset);
-					}
-				}
-			}
-			for (umlTrace.States.Evaluation_locus_Evaluation_Value value : stateToGo
-					.getEvaluation_locus_Evaluation_Values()) {
-			}
-			for (umlTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value value : stateToGo
-					.getExecutionEnvironment_locus_ExecutionEnvironment_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) {
-					umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment parent_cast = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) value
-							.getParent();
-					fumlConfiguration.Loci.Locus toset = (fumlConfiguration.Loci.Locus) getTracedToExe(
-							value.getLocus_ExecutionEnvironment());
-					fumlConfiguration.Loci.Locus current = ((fumlConfiguration.Loci.ExecutionEnvironment) parent_cast
-							.getOriginalObject()).getLocus_ExecutionEnvironment();
-					if (current != toset) {
-						((fumlConfiguration.Loci.ExecutionEnvironment) parent_cast.getOriginalObject())
-								.setLocus_ExecutionEnvironment(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ExecutionFactory_locus_ExecutionFactory_Value value : stateToGo
-					.getExecutionFactory_locus_ExecutionFactory_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) {
-					umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory parent_cast = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) value
-							.getParent();
-					fumlConfiguration.Loci.Locus toset = (fumlConfiguration.Loci.Locus) getTracedToExe(
-							value.getLocus_ExecutionFactory());
-					fumlConfiguration.Loci.Locus current = ((fumlConfiguration.Loci.ExecutionFactory) parent_cast
-							.getOriginalObject()).getLocus_ExecutionFactory();
-					if (current != toset) {
-						((fumlConfiguration.Loci.ExecutionFactory) parent_cast.getOriginalObject())
-								.setLocus_ExecutionFactory(toset);
-					}
-				}
-			}
-			for (umlTrace.States.Executor_locus_Executor_Value value : stateToGo.getExecutor_locus_Executor_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Loci.TracedExecutor) {
-					umlTrace.States.fumlConfiguration.Loci.TracedExecutor parent_cast = (umlTrace.States.fumlConfiguration.Loci.TracedExecutor) value
-							.getParent();
-					fumlConfiguration.Loci.Locus toset = (fumlConfiguration.Loci.Locus) getTracedToExe(
-							value.getLocus_Executor());
-					fumlConfiguration.Loci.Locus current = ((fumlConfiguration.Loci.Executor) parent_cast
-							.getOriginalObject()).getLocus_Executor();
-					if (current != toset) {
-						((fumlConfiguration.Loci.Executor) parent_cast.getOriginalObject()).setLocus_Executor(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value value : stateToGo
-					.getExtensionalValue_locus_ExtensionalValue_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) value
-							.getParent();
-					fumlConfiguration.Loci.Locus toset = (fumlConfiguration.Loci.Locus) getTracedToExe(
-							value.getLocus_ExtensionalValue());
-					fumlConfiguration.Loci.Locus current = ((fumlConfiguration.Classes.Kernel.ExtensionalValue) parent_cast
-							.getOriginalObject_SemanticVisitor()).getLocus_ExtensionalValue();
-					if (current != toset) {
-						((fumlConfiguration.Classes.Kernel.ExtensionalValue) parent_cast
-								.getOriginalObject_SemanticVisitor()).setLocus_ExtensionalValue(toset);
-					}
-				}
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) value
-							.getParent();
-					fumlConfiguration.Loci.Locus toset = (fumlConfiguration.Loci.Locus) getTracedToExe(
-							value.getLocus_ExtensionalValue());
-					fumlConfiguration.Loci.Locus current = ((fumlConfiguration.Classes.Kernel.ExtensionalValue) parent_cast
-							.getOriginalObject_SemanticVisitor()).getLocus_ExtensionalValue();
-					if (current != toset) {
-						((fumlConfiguration.Classes.Kernel.ExtensionalValue) parent_cast
-								.getOriginalObject_SemanticVisitor()).setLocus_ExtensionalValue(toset);
-					}
-				}
-			}
-			for (umlTrace.States.InputParameterValues_name_Value value : stateToGo
-					.getInputParameterValues_name_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) {
-					umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues parent_cast = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) value
-							.getParent();
-					java.lang.String toset = value.getName();
-					java.lang.String current = ((fumlConfiguration.Input.InputParameterValues) parent_cast
-							.getOriginalObject()).getName();
-					if (current != toset) {
-						((fumlConfiguration.Input.InputParameterValues) parent_cast.getOriginalObject()).setName(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value value : stateToGo
-					.getActivityNodeActivationGroup_nodeActivations_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup originalObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) parent_cast
-							.getOriginalObject();
-					originalObject.getNodeActivations().clear();
-					originalObject.getNodeActivations()
-							.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation>) getTracedToExe(
-									value.getNodeActivations()));
-				}
-			}
-			for (umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value value : stateToGo
-					.getActivityNodeActivation_node_ActivityNodeActivation_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value
-							.getParent();
-					org.eclipse.uml2.uml.ActivityNode toset = (org.eclipse.uml2.uml.ActivityNode) getTracedToExe(
-							value.getNode_ActivityNodeActivation());
-					org.eclipse.uml2.uml.ActivityNode current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-							.getOriginalObject_SemanticVisitor()).getNode_ActivityNodeActivation();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-								.getOriginalObject_SemanticVisitor()).setNode_ActivityNodeActivation(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value value : stateToGo
-					.getObjectNodeActivation_offeredTokenCount_Values()) {
-			}
-			for (umlTrace.States.Offer_offeredTokens_Value value : stateToGo.getOffer_offeredTokens_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.Offer originalObject = (fumlConfiguration.Activities.IntermediateActivities.Offer) parent_cast
-							.getOriginalObject();
-					originalObject.getOfferedTokens().clear();
-					originalObject.getOfferedTokens()
-							.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.Token>) getTracedToExe(
-									value.getOfferedTokens()));
-				}
-			}
-			for (umlTrace.States.ActivityEdgeInstance_offers_Value value : stateToGo
-					.getActivityEdgeInstance_offers_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance originalObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) parent_cast
-							.getOriginalObject();
-					originalObject.getOffers().clear();
-					originalObject.getOffers()
-							.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.Offer>) getTracedToExe(
-									value.getOffers()));
-				}
-			}
-			for (umlTrace.States.ActivityNodeActivation_outgoingEdges_Value value : stateToGo
-					.getActivityNodeActivation_outgoingEdges_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation originalObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-							.getOriginalObject_SemanticVisitor();
-					originalObject.getOutgoingEdges().clear();
-					originalObject.getOutgoingEdges()
-							.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance>) getTracedToExe(
-									value.getOutgoingEdges()));
-				}
-			}
-			for (umlTrace.States.InputParameterValues_parameterValues_Value value : stateToGo
-					.getInputParameterValues_parameterValues_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) {
-					umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues parent_cast = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) value
-							.getParent();
-					fumlConfiguration.Input.InputParameterValues originalObject = (fumlConfiguration.Input.InputParameterValues) parent_cast
-							.getOriginalObject();
-					originalObject.getParameterValues().clear();
-					originalObject.getParameterValues()
-							.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue>) getTracedToExe(
-									value.getParameterValues()));
-				}
-			}
-			for (umlTrace.States.Execution_parameterValues_Value value : stateToGo
-					.getExecution_parameterValues_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) value
-							.getParent();
-					fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution originalObject = (fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) parent_cast
-							.getOriginalObject_SemanticVisitor();
-					originalObject.getParameterValues().clear();
-					originalObject.getParameterValues()
-							.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue>) getTracedToExe(
-									value.getParameterValues()));
-				}
-			}
-			for (umlTrace.States.ParameterValue_parameter_ParameterValue_Value value : stateToGo
-					.getParameterValue_parameter_ParameterValue_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) {
-					umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue parent_cast = (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) value
-							.getParent();
-					org.eclipse.uml2.uml.Parameter toset = (org.eclipse.uml2.uml.Parameter) getTracedToExe(
-							value.getParameter_ParameterValue());
-					org.eclipse.uml2.uml.Parameter current = ((fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) parent_cast
-							.getOriginalObject()).getParameter_ParameterValue();
-					if (current != toset) {
-						((fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) parent_cast
-								.getOriginalObject()).setParameter_ParameterValue(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ActionActivation_pinActivations_Value value : stateToGo
-					.getActionActivation_pinActivations_Values()) {
-			}
-			for (umlTrace.States.FeatureValue_position_Value value : stateToGo.getFeatureValue_position_Values()) {
-			}
-			for (umlTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value value : stateToGo
-					.getExecutionFactory_primitiveBehaviorPrototypes_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) {
-					umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory parent_cast = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) value
-							.getParent();
-					fumlConfiguration.Loci.ExecutionFactory originalObject = (fumlConfiguration.Loci.ExecutionFactory) parent_cast
-							.getOriginalObject();
-					originalObject.getPrimitiveBehaviorPrototypes().clear();
-					originalObject.getPrimitiveBehaviorPrototypes()
-							.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution>) getTracedToExe(
-									value.getPrimitiveBehaviorPrototypes()));
-				}
-			}
-			for (umlTrace.States.Reference_referent_Value value : stateToGo.getReference_referent_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) value
-							.getParent();
-					fumlConfiguration.Classes.Kernel.Object toset = (fumlConfiguration.Classes.Kernel.Object) getTracedToExe(
-							value.getReferent());
-					fumlConfiguration.Classes.Kernel.Object current = ((fumlConfiguration.Classes.Kernel.Reference) parent_cast
-							.getOriginalObject_SemanticVisitor()).getReferent();
-					if (current != toset) {
-						((fumlConfiguration.Classes.Kernel.Reference) parent_cast.getOriginalObject_SemanticVisitor())
-								.setReferent(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ForkedToken_remainingOffersCount_Value value : stateToGo
-					.getForkedToken_remainingOffersCount_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) value
-							.getParent();
-					int toset = value.getRemainingOffersCount();
-					int current = ((fumlConfiguration.Activities.IntermediateActivities.ForkedToken) parent_cast
-							.getOriginalObject_Token()).getRemainingOffersCount();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ForkedToken) parent_cast
-								.getOriginalObject_Token()).setRemainingOffersCount(toset);
-					}
-				}
-			}
-			for (umlTrace.States.ActivityNodeActivation_running_Value value : stateToGo
-					.getActivityNodeActivation_running_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value
-							.getParent();
-					boolean toset = value.isRunning();
-					boolean current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-							.getOriginalObject_SemanticVisitor()).isRunning();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) parent_cast
-								.getOriginalObject_SemanticVisitor()).setRunning(toset);
-					}
-				}
-			}
-			for (umlTrace.States.SemanticVisitor_runtimeModelElement_Value value : stateToGo
-					.getSemanticVisitor_runtimeModelElement_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) value
-							.getParent();
-					fumlConfiguration.ElementConfiguration toset = (fumlConfiguration.ElementConfiguration) getTracedToExe(
-							value.getRuntimeModelElement());
-					fumlConfiguration.ElementConfiguration current = ((fumlConfiguration.Loci.SemanticVisitor) parent_cast
-							.getOriginalObject_SemanticVisitor()).getRuntimeModelElement();
-					if (current != toset) {
-						((fumlConfiguration.Loci.SemanticVisitor) parent_cast.getOriginalObject_SemanticVisitor())
-								.setRuntimeModelElement(toset);
-					}
-				}
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value
-							.getParent();
-					fumlConfiguration.ElementConfiguration toset = (fumlConfiguration.ElementConfiguration) getTracedToExe(
-							value.getRuntimeModelElement());
-					fumlConfiguration.ElementConfiguration current = ((fumlConfiguration.Loci.SemanticVisitor) parent_cast
-							.getOriginalObject_SemanticVisitor()).getRuntimeModelElement();
-					if (current != toset) {
-						((fumlConfiguration.Loci.SemanticVisitor) parent_cast.getOriginalObject_SemanticVisitor())
-								.setRuntimeModelElement(toset);
-					}
-				}
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) value
-							.getParent();
-					fumlConfiguration.ElementConfiguration toset = (fumlConfiguration.ElementConfiguration) getTracedToExe(
-							value.getRuntimeModelElement());
-					fumlConfiguration.ElementConfiguration current = ((fumlConfiguration.Loci.SemanticVisitor) parent_cast
-							.getOriginalObject_SemanticVisitor()).getRuntimeModelElement();
-					if (current != toset) {
-						((fumlConfiguration.Loci.SemanticVisitor) parent_cast.getOriginalObject_SemanticVisitor())
-								.setRuntimeModelElement(toset);
-					}
-				}
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) value
-							.getParent();
-					fumlConfiguration.ElementConfiguration toset = (fumlConfiguration.ElementConfiguration) getTracedToExe(
-							value.getRuntimeModelElement());
-					fumlConfiguration.ElementConfiguration current = ((fumlConfiguration.Loci.SemanticVisitor) parent_cast
-							.getOriginalObject_SemanticVisitor()).getRuntimeModelElement();
-					if (current != toset) {
-						((fumlConfiguration.Loci.SemanticVisitor) parent_cast.getOriginalObject_SemanticVisitor())
-								.setRuntimeModelElement(toset);
-					}
-				}
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) value
-							.getParent();
-					fumlConfiguration.ElementConfiguration toset = (fumlConfiguration.ElementConfiguration) getTracedToExe(
-							value.getRuntimeModelElement());
-					fumlConfiguration.ElementConfiguration current = ((fumlConfiguration.Loci.SemanticVisitor) parent_cast
-							.getOriginalObject_SemanticVisitor()).getRuntimeModelElement();
-					if (current != toset) {
-						((fumlConfiguration.Loci.SemanticVisitor) parent_cast.getOriginalObject_SemanticVisitor())
-								.setRuntimeModelElement(toset);
-					}
-				}
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) value
-							.getParent();
-					fumlConfiguration.ElementConfiguration toset = (fumlConfiguration.ElementConfiguration) getTracedToExe(
-							value.getRuntimeModelElement());
-					fumlConfiguration.ElementConfiguration current = ((fumlConfiguration.Loci.SemanticVisitor) parent_cast
-							.getOriginalObject_SemanticVisitor()).getRuntimeModelElement();
-					if (current != toset) {
-						((fumlConfiguration.Loci.SemanticVisitor) parent_cast.getOriginalObject_SemanticVisitor())
-								.setRuntimeModelElement(toset);
-					}
-				}
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) {
-					umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor parent_cast = (umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) value
-							.getParent();
-					fumlConfiguration.ElementConfiguration toset = (fumlConfiguration.ElementConfiguration) getTracedToExe(
-							value.getRuntimeModelElement());
-					fumlConfiguration.ElementConfiguration current = ((fumlConfiguration.Loci.SemanticVisitor) parent_cast
-							.getOriginalObject_SemanticVisitor()).getRuntimeModelElement();
-					if (current != toset) {
-						((fumlConfiguration.Loci.SemanticVisitor) parent_cast.getOriginalObject_SemanticVisitor())
-								.setRuntimeModelElement(toset);
-					}
-				}
-			}
 			for (umlTrace.States.ElementConfiguration_semanticVisitor_Value value : stateToGo
 					.getElementConfiguration_semanticVisitor_Values()) {
 				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.TracedElementConfiguration) {
@@ -1136,147 +692,394 @@ public class UmlTraceExplorer implements ITraceExplorer {
 									value.getSemanticVisitor()));
 				}
 			}
+			for (umlTrace.States.ActionActivation_firing_Value value : stateToGo.getActionActivation_firing_Values()) {
+				fumlConfiguration.Actions.BasicActions.ActionActivation exeObject = (fumlConfiguration.Actions.BasicActions.ActionActivation) getTracedToExe(
+						value.getParent());
+				exeObject.setFiring(value.isFiring());
+			}
+			for (umlTrace.States.ActionActivation_pinActivations_Value value : stateToGo
+					.getActionActivation_pinActivations_Values()) {
+				fumlConfiguration.Actions.BasicActions.ActionActivation exeObject = (fumlConfiguration.Actions.BasicActions.ActionActivation) getTracedToExe(
+						value.getParent());
+				exeObject.getPinActivations().clear();
+				exeObject.getPinActivations()
+						.addAll((Collection<? extends fumlConfiguration.Actions.BasicActions.PinActivation>) getTracedToExe(
+								value.getPinActivations()));
+			}
+			for (umlTrace.States.CallActionActivation_callExecutions_Value value : stateToGo
+					.getCallActionActivation_callExecutions_Values()) {
+				fumlConfiguration.Actions.BasicActions.CallActionActivation exeObject = (fumlConfiguration.Actions.BasicActions.CallActionActivation) getTracedToExe(
+						value.getParent());
+				exeObject.getCallExecutions().clear();
+				exeObject.getCallExecutions()
+						.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution>) getTracedToExe(
+								value.getCallExecutions()));
+			}
+			for (umlTrace.States.PinActivation_actionActivation_Value value : stateToGo
+					.getPinActivation_actionActivation_Values()) {
+				fumlConfiguration.Actions.BasicActions.PinActivation exeObject = (fumlConfiguration.Actions.BasicActions.PinActivation) getTracedToExe(
+						value.getParent());
+				exeObject.setActionActivation((fumlConfiguration.Actions.BasicActions.ActionActivation) getTracedToExe(
+						value.getActionActivation()));
+			}
+			for (umlTrace.States.PinActivation_count_temp_Value value : stateToGo
+					.getPinActivation_count_temp_Values()) {
+				fumlConfiguration.Actions.BasicActions.PinActivation exeObject = (fumlConfiguration.Actions.BasicActions.PinActivation) getTracedToExe(
+						value.getParent());
+				exeObject.setCount_temp(value.getCount_temp());
+			}
+			for (umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value value : stateToGo
+					.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) getTracedToExe(
+						value.getParent());
+				exeObject.setEdge_ActivityEdgeInstance(value.getEdge_ActivityEdgeInstance());
+			}
+			for (umlTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value value : stateToGo
+					.getActivityEdgeInstance_group_ActivityEdgeInstance_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) getTracedToExe(
+						value.getParent());
+				exeObject.setGroup_ActivityEdgeInstance(
+						(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) getTracedToExe(
+								value.getGroup_ActivityEdgeInstance()));
+			}
+			for (umlTrace.States.ActivityEdgeInstance_offers_Value value : stateToGo
+					.getActivityEdgeInstance_offers_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) getTracedToExe(
+						value.getParent());
+				exeObject.getOffers().clear();
+				exeObject.getOffers()
+						.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.Offer>) getTracedToExe(
+								value.getOffers()));
+			}
 			for (umlTrace.States.ActivityEdgeInstance_source_Value value : stateToGo
 					.getActivityEdgeInstance_source_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation toset = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
-							value.getSource());
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) parent_cast
-							.getOriginalObject()).getSource();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) parent_cast
-								.getOriginalObject()).setSource(toset);
-					}
-				}
-			}
-			for (umlTrace.States.Evaluation_specification_Evaluation_Value value : stateToGo
-					.getEvaluation_specification_Evaluation_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) getTracedToExe(
+						value.getParent());
+				exeObject.setSource(
+						(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+								value.getSource()));
 			}
 			for (umlTrace.States.ActivityEdgeInstance_target_Value value : stateToGo
 					.getActivityEdgeInstance_target_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) value
-							.getParent();
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation toset = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
-							value.getTarget());
-					fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation current = ((fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) parent_cast
-							.getOriginalObject()).getTarget();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) parent_cast
-								.getOriginalObject()).setTarget(toset);
-					}
-				}
+				fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) getTracedToExe(
+						value.getParent());
+				exeObject.setTarget(
+						(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+								value.getTarget()));
 			}
-			for (umlTrace.States.PrimitiveValue_type_Value value : stateToGo.getPrimitiveValue_type_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) value
-							.getParent();
-					org.eclipse.uml2.uml.PrimitiveType toset = (org.eclipse.uml2.uml.PrimitiveType) getTracedToExe(
-							value.getType());
-					org.eclipse.uml2.uml.PrimitiveType current = ((fumlConfiguration.Classes.Kernel.PrimitiveValue) parent_cast
-							.getOriginalObject_SemanticVisitor()).getType();
-					if (current != toset) {
-						((fumlConfiguration.Classes.Kernel.PrimitiveValue) parent_cast
-								.getOriginalObject_SemanticVisitor()).setType(toset);
-					}
-				}
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) value
-							.getParent();
-					org.eclipse.uml2.uml.PrimitiveType toset = (org.eclipse.uml2.uml.PrimitiveType) getTracedToExe(
-							value.getType());
-					org.eclipse.uml2.uml.PrimitiveType current = ((fumlConfiguration.Classes.Kernel.PrimitiveValue) parent_cast
-							.getOriginalObject_SemanticVisitor()).getType();
-					if (current != toset) {
-						((fumlConfiguration.Classes.Kernel.PrimitiveValue) parent_cast
-								.getOriginalObject_SemanticVisitor()).setType(toset);
-					}
-				}
+			for (umlTrace.States.ActivityExecution_activationGroup_Value value : stateToGo
+					.getActivityExecution_activationGroup_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityExecution exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) getTracedToExe(
+						value.getParent());
+				exeObject.setActivationGroup(
+						(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) getTracedToExe(
+								value.getActivationGroup()));
 			}
-			for (umlTrace.States.Object_types_Value value : stateToGo.getObject_types_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) value
-							.getParent();
-					fumlConfiguration.Classes.Kernel.Object originalObject = (fumlConfiguration.Classes.Kernel.Object) parent_cast
-							.getOriginalObject_SemanticVisitor();
-					originalObject.getTypes().clear();
-					originalObject.getTypes().addAll(
-							(Collection<? extends org.eclipse.uml2.uml.Class>) getTracedToExe(value.getTypes()));
-				}
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) value
-							.getParent();
-					fumlConfiguration.Classes.Kernel.Object originalObject = (fumlConfiguration.Classes.Kernel.Object) parent_cast
-							.getOriginalObject_SemanticVisitor();
-					originalObject.getTypes().clear();
-					originalObject.getTypes().addAll(
-							(Collection<? extends org.eclipse.uml2.uml.Class>) getTracedToExe(value.getTypes()));
-				}
+			for (umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value value : stateToGo
+					.getActivityNodeActivation_group_ActivityNodeActivation_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+						value.getParent());
+				exeObject.setGroup_ActivityNodeActivation(
+						(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) getTracedToExe(
+								value.getGroup_ActivityNodeActivation()));
+			}
+			for (umlTrace.States.ActivityNodeActivation_heldTokens_Value value : stateToGo
+					.getActivityNodeActivation_heldTokens_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+						value.getParent());
+				exeObject.getHeldTokens().clear();
+				exeObject.getHeldTokens()
+						.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.Token>) getTracedToExe(
+								value.getHeldTokens()));
+			}
+			for (umlTrace.States.ActivityNodeActivation_incomingEdges_Value value : stateToGo
+					.getActivityNodeActivation_incomingEdges_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+						value.getParent());
+				exeObject.getIncomingEdges().clear();
+				exeObject.getIncomingEdges()
+						.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance>) getTracedToExe(
+								value.getIncomingEdges()));
+			}
+			for (umlTrace.States.ActivityNodeActivation_isRunning_Value value : stateToGo
+					.getActivityNodeActivation_isRunning_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+						value.getParent());
+				exeObject.setIsRunning(value.isIsRunning());
+			}
+			for (umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value value : stateToGo
+					.getActivityNodeActivation_node_ActivityNodeActivation_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+						value.getParent());
+				exeObject.setNode_ActivityNodeActivation(value.getNode_ActivityNodeActivation());
+			}
+			for (umlTrace.States.ActivityNodeActivation_outgoingEdges_Value value : stateToGo
+					.getActivityNodeActivation_outgoingEdges_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+						value.getParent());
+				exeObject.getOutgoingEdges().clear();
+				exeObject.getOutgoingEdges()
+						.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance>) getTracedToExe(
+								value.getOutgoingEdges()));
+			}
+			for (umlTrace.States.ActivityNodeActivation_running_Value value : stateToGo
+					.getActivityNodeActivation_running_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+						value.getParent());
+				exeObject.setRunning(value.isRunning());
+			}
+			for (umlTrace.States.ActivityNodeActivationGroup_activityExecution_Value value : stateToGo
+					.getActivityNodeActivationGroup_activityExecution_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) getTracedToExe(
+						value.getParent());
+				exeObject.setActivityExecution(
+						(fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) getTracedToExe(
+								value.getActivityExecution()));
+			}
+			for (umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value value : stateToGo
+					.getActivityNodeActivationGroup_edgeInstances_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) getTracedToExe(
+						value.getParent());
+				exeObject.getEdgeInstances().clear();
+				exeObject.getEdgeInstances()
+						.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance>) getTracedToExe(
+								value.getEdgeInstances()));
+			}
+			for (umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value value : stateToGo
+					.getActivityNodeActivationGroup_nodeActivations_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup exeObject = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) getTracedToExe(
+						value.getParent());
+				exeObject.getNodeActivations().clear();
+				exeObject.getNodeActivations()
+						.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation>) getTracedToExe(
+								value.getNodeActivations()));
+			}
+			for (umlTrace.States.ForkedToken_baseToken_Value value : stateToGo.getForkedToken_baseToken_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ForkedToken exeObject = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) getTracedToExe(
+						value.getParent());
+				exeObject.setBaseToken((fumlConfiguration.Activities.IntermediateActivities.Token) getTracedToExe(
+						value.getBaseToken()));
+			}
+			for (umlTrace.States.ForkedToken_baseTokenIsWithdrawn_Value value : stateToGo
+					.getForkedToken_baseTokenIsWithdrawn_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ForkedToken exeObject = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) getTracedToExe(
+						value.getParent());
+				exeObject.setBaseTokenIsWithdrawn(value.isBaseTokenIsWithdrawn());
+			}
+			for (umlTrace.States.ForkedToken_remainingOffersCount_Value value : stateToGo
+					.getForkedToken_remainingOffersCount_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ForkedToken exeObject = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) getTracedToExe(
+						value.getParent());
+				exeObject.setRemainingOffersCount(value.getRemainingOffersCount());
+			}
+			for (umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value value : stateToGo
+					.getObjectNodeActivation_offeredTokenCount_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation exeObject = (fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) getTracedToExe(
+						value.getParent());
+				exeObject.setOfferedTokenCount(value.getOfferedTokenCount());
 			}
 			for (umlTrace.States.ObjectToken_value_Value value : stateToGo.getObjectToken_value_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) {
-					umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken parent_cast = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) value
-							.getParent();
-					fumlConfiguration.Classes.Kernel.Value toset = (fumlConfiguration.Classes.Kernel.Value) getTracedToExe(
-							value.getValue());
-					fumlConfiguration.Classes.Kernel.Value current = ((fumlConfiguration.Activities.IntermediateActivities.ObjectToken) parent_cast
-							.getOriginalObject_Token()).getValue();
-					if (current != toset) {
-						((fumlConfiguration.Activities.IntermediateActivities.ObjectToken) parent_cast
-								.getOriginalObject_Token()).setValue(toset);
-					}
-				}
+				fumlConfiguration.Activities.IntermediateActivities.ObjectToken exeObject = (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) getTracedToExe(
+						value.getParent());
+				exeObject.setValue((fumlConfiguration.Classes.Kernel.Value) getTracedToExe(value.getValue()));
+			}
+			for (umlTrace.States.Offer_offeredTokens_Value value : stateToGo.getOffer_offeredTokens_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.Offer exeObject = (fumlConfiguration.Activities.IntermediateActivities.Offer) getTracedToExe(
+						value.getParent());
+				exeObject.getOfferedTokens().clear();
+				exeObject.getOfferedTokens()
+						.addAll((Collection<? extends fumlConfiguration.Activities.IntermediateActivities.Token>) getTracedToExe(
+								value.getOfferedTokens()));
+			}
+			for (umlTrace.States.Token_holder_Value value : stateToGo.getToken_holder_Values()) {
+				fumlConfiguration.Activities.IntermediateActivities.Token exeObject = (fumlConfiguration.Activities.IntermediateActivities.Token) getTracedToExe(
+						value.getParent());
+				exeObject.setHolder(
+						(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) getTracedToExe(
+								value.getHolder()));
 			}
 			for (umlTrace.States.BooleanValue_value_BooleanValue_Value value : stateToGo
 					.getBooleanValue_value_BooleanValue_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) value
-							.getParent();
-					boolean toset = value.isValue_BooleanValue();
-					boolean current = ((fumlConfiguration.Classes.Kernel.BooleanValue) parent_cast
-							.getOriginalObject_SemanticVisitor()).isValue_BooleanValue();
-					if (current != toset) {
-						((fumlConfiguration.Classes.Kernel.BooleanValue) parent_cast
-								.getOriginalObject_SemanticVisitor()).setValue_BooleanValue(toset);
-					}
-				}
+				fumlConfiguration.Classes.Kernel.BooleanValue exeObject = (fumlConfiguration.Classes.Kernel.BooleanValue) getTracedToExe(
+						value.getParent());
+				exeObject.setValue_BooleanValue(value.isValue_BooleanValue());
 			}
-			for (umlTrace.States.IntegerValue_value_IntegerValue_Value value : stateToGo
-					.getIntegerValue_value_IntegerValue_Values()) {
-				if (value.getParent() instanceof umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) {
-					umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue parent_cast = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) value
-							.getParent();
-					int toset = value.getValue_IntegerValue();
-					int current = ((fumlConfiguration.Classes.Kernel.IntegerValue) parent_cast
-							.getOriginalObject_SemanticVisitor()).getValue_IntegerValue();
-					if (current != toset) {
-						((fumlConfiguration.Classes.Kernel.IntegerValue) parent_cast
-								.getOriginalObject_SemanticVisitor()).setValue_IntegerValue(toset);
-					}
-				}
+			for (umlTrace.States.CompoundValue_featureValues_Value value : stateToGo
+					.getCompoundValue_featureValues_Values()) {
+				fumlConfiguration.Classes.Kernel.CompoundValue exeObject = (fumlConfiguration.Classes.Kernel.CompoundValue) getTracedToExe(
+						value.getParent());
+				exeObject.getFeatureValues().clear();
+				exeObject.getFeatureValues()
+						.addAll((Collection<? extends fumlConfiguration.Classes.Kernel.FeatureValue>) getTracedToExe(
+								value.getFeatureValues()));
+			}
+			for (umlTrace.States.Evaluation_locus_Evaluation_Value value : stateToGo
+					.getEvaluation_locus_Evaluation_Values()) {
+				fumlConfiguration.Classes.Kernel.Evaluation exeObject = (fumlConfiguration.Classes.Kernel.Evaluation) getTracedToExe(
+						value.getParent());
+				exeObject.setLocus_Evaluation(
+						(fumlConfiguration.Loci.Locus) getTracedToExe(value.getLocus_Evaluation()));
+			}
+			for (umlTrace.States.Evaluation_specification_Evaluation_Value value : stateToGo
+					.getEvaluation_specification_Evaluation_Values()) {
+				fumlConfiguration.Classes.Kernel.Evaluation exeObject = (fumlConfiguration.Classes.Kernel.Evaluation) getTracedToExe(
+						value.getParent());
+				exeObject.setSpecification_Evaluation(value.getSpecification_Evaluation());
+			}
+			for (umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value value : stateToGo
+					.getExtensionalValue_locus_ExtensionalValue_Values()) {
+				fumlConfiguration.Classes.Kernel.ExtensionalValue exeObject = (fumlConfiguration.Classes.Kernel.ExtensionalValue) getTracedToExe(
+						value.getParent());
+				exeObject.setLocus_ExtensionalValue(
+						(fumlConfiguration.Loci.Locus) getTracedToExe(value.getLocus_ExtensionalValue()));
+			}
+			for (umlTrace.States.FeatureValue_feature_Value value : stateToGo.getFeatureValue_feature_Values()) {
+				fumlConfiguration.Classes.Kernel.FeatureValue exeObject = (fumlConfiguration.Classes.Kernel.FeatureValue) getTracedToExe(
+						value.getParent());
+				exeObject.setFeature(value.getFeature());
+			}
+			for (umlTrace.States.FeatureValue_position_Value value : stateToGo.getFeatureValue_position_Values()) {
+				fumlConfiguration.Classes.Kernel.FeatureValue exeObject = (fumlConfiguration.Classes.Kernel.FeatureValue) getTracedToExe(
+						value.getParent());
+				exeObject.setPosition(value.getPosition());
 			}
 			for (umlTrace.States.FeatureValue_values_FeatureValue_Value value : stateToGo
 					.getFeatureValue_values_FeatureValue_Values()) {
+				fumlConfiguration.Classes.Kernel.FeatureValue exeObject = (fumlConfiguration.Classes.Kernel.FeatureValue) getTracedToExe(
+						value.getParent());
+				exeObject.getValues_FeatureValue().clear();
+				exeObject.getValues_FeatureValue()
+						.addAll((Collection<? extends fumlConfiguration.Classes.Kernel.Value>) getTracedToExe(
+								value.getValues_FeatureValue()));
+			}
+			for (umlTrace.States.IntegerValue_value_IntegerValue_Value value : stateToGo
+					.getIntegerValue_value_IntegerValue_Values()) {
+				fumlConfiguration.Classes.Kernel.IntegerValue exeObject = (fumlConfiguration.Classes.Kernel.IntegerValue) getTracedToExe(
+						value.getParent());
+				exeObject.setValue_IntegerValue(value.getValue_IntegerValue());
+			}
+			for (umlTrace.States.Object_types_Value value : stateToGo.getObject_types_Values()) {
+				fumlConfiguration.Classes.Kernel.Object exeObject = (fumlConfiguration.Classes.Kernel.Object) getTracedToExe(
+						value.getParent());
+				exeObject.getTypes().clear();
+				exeObject.getTypes()
+						.addAll((Collection<? extends org.eclipse.uml2.uml.Class>) getTracedToExe(value.getTypes()));
+			}
+			for (umlTrace.States.PrimitiveValue_type_Value value : stateToGo.getPrimitiveValue_type_Values()) {
+				fumlConfiguration.Classes.Kernel.PrimitiveValue exeObject = (fumlConfiguration.Classes.Kernel.PrimitiveValue) getTracedToExe(
+						value.getParent());
+				exeObject.setType(value.getType());
+			}
+			for (umlTrace.States.Reference_referent_Value value : stateToGo.getReference_referent_Values()) {
+				fumlConfiguration.Classes.Kernel.Reference exeObject = (fumlConfiguration.Classes.Kernel.Reference) getTracedToExe(
+						value.getParent());
+				exeObject.setReferent((fumlConfiguration.Classes.Kernel.Object) getTracedToExe(value.getReferent()));
+			}
+			for (umlTrace.States.Execution_context_Value value : stateToGo.getExecution_context_Values()) {
+				fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution exeObject = (fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) getTracedToExe(
+						value.getParent());
+				exeObject.setContext((fumlConfiguration.Classes.Kernel.Object) getTracedToExe(value.getContext()));
+			}
+			for (umlTrace.States.Execution_parameterValues_Value value : stateToGo
+					.getExecution_parameterValues_Values()) {
+				fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution exeObject = (fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) getTracedToExe(
+						value.getParent());
+				exeObject.getParameterValues().clear();
+				exeObject.getParameterValues()
+						.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue>) getTracedToExe(
+								value.getParameterValues()));
+			}
+			for (umlTrace.States.ParameterValue_parameter_ParameterValue_Value value : stateToGo
+					.getParameterValue_parameter_ParameterValue_Values()) {
+				fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue exeObject = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) getTracedToExe(
+						value.getParent());
+				exeObject.setParameter_ParameterValue(value.getParameter_ParameterValue());
 			}
 			for (umlTrace.States.ParameterValue_values_ParameterValue_Value value : stateToGo
 					.getParameterValue_values_ParameterValue_Values()) {
-				if (value
-						.getParent() instanceof umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) {
-					umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue parent_cast = (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) value
-							.getParent();
-					fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue originalObject = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) parent_cast
-							.getOriginalObject();
-					originalObject.getValues_ParameterValue().clear();
-					originalObject.getValues_ParameterValue()
-							.addAll((Collection<? extends fumlConfiguration.Classes.Kernel.Value>) getTracedToExe(
-									value.getValues_ParameterValue()));
-				}
+				fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue exeObject = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) getTracedToExe(
+						value.getParent());
+				exeObject.getValues_ParameterValue().clear();
+				exeObject.getValues_ParameterValue()
+						.addAll((Collection<? extends fumlConfiguration.Classes.Kernel.Value>) getTracedToExe(
+								value.getValues_ParameterValue()));
+			}
+			for (umlTrace.States.InputParameterValues_name_Value value : stateToGo
+					.getInputParameterValues_name_Values()) {
+				fumlConfiguration.Input.InputParameterValues exeObject = (fumlConfiguration.Input.InputParameterValues) getTracedToExe(
+						value.getParent());
+				exeObject.setName(value.getName());
+			}
+			for (umlTrace.States.InputParameterValues_parameterValues_Value value : stateToGo
+					.getInputParameterValues_parameterValues_Values()) {
+				fumlConfiguration.Input.InputParameterValues exeObject = (fumlConfiguration.Input.InputParameterValues) getTracedToExe(
+						value.getParent());
+				exeObject.getParameterValues().clear();
+				exeObject.getParameterValues()
+						.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue>) getTracedToExe(
+								value.getParameterValues()));
+			}
+			for (umlTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value value : stateToGo
+					.getExecutionEnvironment_locus_ExecutionEnvironment_Values()) {
+				fumlConfiguration.Loci.ExecutionEnvironment exeObject = (fumlConfiguration.Loci.ExecutionEnvironment) getTracedToExe(
+						value.getParent());
+				exeObject.setLocus_ExecutionEnvironment(
+						(fumlConfiguration.Loci.Locus) getTracedToExe(value.getLocus_ExecutionEnvironment()));
+			}
+			for (umlTrace.States.ExecutionFactory_builtInTypes_Value value : stateToGo
+					.getExecutionFactory_builtInTypes_Values()) {
+				fumlConfiguration.Loci.ExecutionFactory exeObject = (fumlConfiguration.Loci.ExecutionFactory) getTracedToExe(
+						value.getParent());
+				exeObject.getBuiltInTypes().clear();
+				exeObject.getBuiltInTypes()
+						.addAll((Collection<? extends org.eclipse.uml2.uml.PrimitiveType>) getTracedToExe(
+								value.getBuiltInTypes()));
+			}
+			for (umlTrace.States.ExecutionFactory_locus_ExecutionFactory_Value value : stateToGo
+					.getExecutionFactory_locus_ExecutionFactory_Values()) {
+				fumlConfiguration.Loci.ExecutionFactory exeObject = (fumlConfiguration.Loci.ExecutionFactory) getTracedToExe(
+						value.getParent());
+				exeObject.setLocus_ExecutionFactory(
+						(fumlConfiguration.Loci.Locus) getTracedToExe(value.getLocus_ExecutionFactory()));
+			}
+			for (umlTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value value : stateToGo
+					.getExecutionFactory_primitiveBehaviorPrototypes_Values()) {
+				fumlConfiguration.Loci.ExecutionFactory exeObject = (fumlConfiguration.Loci.ExecutionFactory) getTracedToExe(
+						value.getParent());
+				exeObject.getPrimitiveBehaviorPrototypes().clear();
+				exeObject.getPrimitiveBehaviorPrototypes()
+						.addAll((Collection<? extends fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution>) getTracedToExe(
+								value.getPrimitiveBehaviorPrototypes()));
+			}
+			for (umlTrace.States.Executor_locus_Executor_Value value : stateToGo.getExecutor_locus_Executor_Values()) {
+				fumlConfiguration.Loci.Executor exeObject = (fumlConfiguration.Loci.Executor) getTracedToExe(
+						value.getParent());
+				exeObject.setLocus_Executor((fumlConfiguration.Loci.Locus) getTracedToExe(value.getLocus_Executor()));
+			}
+			for (umlTrace.States.Locus_executor_Value value : stateToGo.getLocus_executor_Values()) {
+				fumlConfiguration.Loci.Locus exeObject = (fumlConfiguration.Loci.Locus) getTracedToExe(
+						value.getParent());
+				exeObject.setExecutor((fumlConfiguration.Loci.Executor) getTracedToExe(value.getExecutor()));
+			}
+			for (umlTrace.States.Locus_extensionalValues_Value value : stateToGo.getLocus_extensionalValues_Values()) {
+				fumlConfiguration.Loci.Locus exeObject = (fumlConfiguration.Loci.Locus) getTracedToExe(
+						value.getParent());
+				exeObject.getExtensionalValues().clear();
+				exeObject.getExtensionalValues()
+						.addAll((Collection<? extends fumlConfiguration.Classes.Kernel.ExtensionalValue>) getTracedToExe(
+								value.getExtensionalValues()));
+			}
+			for (umlTrace.States.Locus_factory_Value value : stateToGo.getLocus_factory_Values()) {
+				fumlConfiguration.Loci.Locus exeObject = (fumlConfiguration.Loci.Locus) getTracedToExe(
+						value.getParent());
+				exeObject.setFactory((fumlConfiguration.Loci.ExecutionFactory) getTracedToExe(value.getFactory()));
+			}
+			for (umlTrace.States.SemanticVisitor_runtimeModelElement_Value value : stateToGo
+					.getSemanticVisitor_runtimeModelElement_Values()) {
+				fumlConfiguration.Loci.SemanticVisitor exeObject = (fumlConfiguration.Loci.SemanticVisitor) getTracedToExe(
+						value.getParent());
+				exeObject.setRuntimeModelElement(
+						(fumlConfiguration.ElementConfiguration) getTracedToExe(value.getRuntimeModelElement()));
 			}
 		} else if (eObject instanceof umlTrace.States.Value) {
 			goTo(((umlTrace.States.Value) eObject).getStatesNoOpposite().get(0));
@@ -1741,7 +1544,8 @@ public class UmlTraceExplorer implements ITraceExplorer {
 			computeExplorerState(newPath);
 			update();
 		} else {
-			throw new IllegalArgumentException("ArduinoTraceExplorer expects arduino-specific steps");
+			throw new IllegalArgumentException(
+					"UmlTraceExplorer expects specific steps and cannot handle this: " + step);
 		}
 	}
 

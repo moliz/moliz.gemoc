@@ -19,14 +19,14 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.uml2.uml.Parameter;
+
 import umlTrace.States.ParameterValue_parameter_ParameterValue_Value;
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
 
 import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage;
 import umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue;
-
-import umlTrace.States.uml.TracedParameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public class ParameterValue_parameter_ParameterValue_ValueImpl extends MinimalEO
 	 * @generated
 	 * @ordered
 	 */
-	protected TracedParameter parameter_ParameterValue;
+	protected Parameter parameter_ParameterValue;
 
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
@@ -98,10 +98,10 @@ public class ParameterValue_parameter_ParameterValue_ValueImpl extends MinimalEO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedParameter getParameter_ParameterValue() {
+	public Parameter getParameter_ParameterValue() {
 		if (parameter_ParameterValue != null && parameter_ParameterValue.eIsProxy()) {
 			InternalEObject oldParameter_ParameterValue = (InternalEObject)parameter_ParameterValue;
-			parameter_ParameterValue = (TracedParameter)eResolveProxy(oldParameter_ParameterValue);
+			parameter_ParameterValue = (Parameter)eResolveProxy(oldParameter_ParameterValue);
 			if (parameter_ParameterValue != oldParameter_ParameterValue) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatesPackage.PARAMETER_VALUE_PARAMETER_PARAMETER_VALUE_VALUE__PARAMETER_PARAMETER_VALUE, oldParameter_ParameterValue, parameter_ParameterValue));
@@ -115,7 +115,7 @@ public class ParameterValue_parameter_ParameterValue_ValueImpl extends MinimalEO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedParameter basicGetParameter_ParameterValue() {
+	public Parameter basicGetParameter_ParameterValue() {
 		return parameter_ParameterValue;
 	}
 
@@ -124,8 +124,8 @@ public class ParameterValue_parameter_ParameterValue_ValueImpl extends MinimalEO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParameter_ParameterValue(TracedParameter newParameter_ParameterValue) {
-		TracedParameter oldParameter_ParameterValue = parameter_ParameterValue;
+	public void setParameter_ParameterValue(Parameter newParameter_ParameterValue) {
+		Parameter oldParameter_ParameterValue = parameter_ParameterValue;
 		parameter_ParameterValue = newParameter_ParameterValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatesPackage.PARAMETER_VALUE_PARAMETER_PARAMETER_VALUE_VALUE__PARAMETER_PARAMETER_VALUE, oldParameter_ParameterValue, parameter_ParameterValue));
@@ -264,7 +264,7 @@ public class ParameterValue_parameter_ParameterValue_ValueImpl extends MinimalEO
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StatesPackage.PARAMETER_VALUE_PARAMETER_PARAMETER_VALUE_VALUE__PARAMETER_PARAMETER_VALUE:
-				setParameter_ParameterValue((TracedParameter)newValue);
+				setParameter_ParameterValue((Parameter)newValue);
 				return;
 			case StatesPackage.PARAMETER_VALUE_PARAMETER_PARAMETER_VALUE_VALUE__PARENT:
 				setParent((TracedParameterValue)newValue);
@@ -286,7 +286,7 @@ public class ParameterValue_parameter_ParameterValue_ValueImpl extends MinimalEO
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StatesPackage.PARAMETER_VALUE_PARAMETER_PARAMETER_VALUE_VALUE__PARAMETER_PARAMETER_VALUE:
-				setParameter_ParameterValue((TracedParameter)null);
+				setParameter_ParameterValue((Parameter)null);
 				return;
 			case StatesPackage.PARAMETER_VALUE_PARAMETER_PARAMETER_VALUE_VALUE__PARENT:
 				setParent((TracedParameterValue)null);

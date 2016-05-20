@@ -23,6 +23,10 @@ import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackag
 
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
 
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 
@@ -42,13 +46,13 @@ import umlTrace.States.fumlConfiguration.Loci.LociPackage;
 
 import umlTrace.States.fumlConfiguration.Loci.impl.LociPackageImpl;
 
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import umlTrace.States.impl.StatesPackageImpl;
-
-import umlTrace.States.uml.UmlPackage;
-
-import umlTrace.States.uml.impl.UmlPackageImpl;
 
 import umlTrace.Steps.StepsPackage;
 
@@ -84,6 +88,13 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass tracedActivityFinalNodeActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass tracedActivityNodeActivationEClass = null;
 
 	/**
@@ -98,7 +109,63 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass tracedActivityParameterNodeActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedControlNodeActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedControlTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedDecisionNodeActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedForkNodeActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass tracedForkedTokenEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedInitialNodeActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedJoinNodeActivationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tracedMergeNodeActivationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,8 +252,9 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) instanceof KernelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) : KernelPackage.eINSTANCE);
 		BasicBehaviorsPackageImpl theBasicBehaviorsPackage = (BasicBehaviorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) instanceof BasicBehaviorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) : BasicBehaviorsPackage.eINSTANCE);
 		BasicActionsPackageImpl theBasicActionsPackage = (BasicActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) instanceof BasicActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) : BasicActionsPackage.eINSTANCE);
+		IntermediateActionsPackageImpl theIntermediateActionsPackage = (IntermediateActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) instanceof IntermediateActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) : IntermediateActionsPackage.eINSTANCE);
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
-		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
+		IntegerFunctionsPackageImpl theIntegerFunctionsPackage = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) : IntegerFunctionsPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
 		// Load packages
@@ -202,8 +270,9 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 		theKernelPackage.fixPackageContents();
 		theBasicBehaviorsPackage.fixPackageContents();
 		theBasicActionsPackage.fixPackageContents();
+		theIntermediateActionsPackage.fixPackageContents();
 		theInputPackage.fixPackageContents();
-		theUmlPackage.fixPackageContents();
+		theIntegerFunctionsPackage.fixPackageContents();
 		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -259,7 +328,7 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedActivityEdgeInstance_OriginalObject() {
+	public EReference getTracedActivityEdgeInstance_SourceSequence() {
         return (EReference)getTracedActivityEdgeInstance().getEStructuralFeatures().get(3);
 	}
 
@@ -268,17 +337,8 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedActivityEdgeInstance_SourceSequence() {
-        return (EReference)getTracedActivityEdgeInstance().getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTracedActivityEdgeInstance_TargetSequence() {
-        return (EReference)getTracedActivityEdgeInstance().getEStructuralFeatures().get(5);
+        return (EReference)getTracedActivityEdgeInstance().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -307,9 +367,21 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTracedActivityFinalNodeActivation() {
+		if (tracedActivityFinalNodeActivationEClass == null) {
+			tracedActivityFinalNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(2);
+		}
+		return tracedActivityFinalNodeActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTracedActivityNodeActivation() {
 		if (tracedActivityNodeActivationEClass == null) {
-			tracedActivityNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(2);
+			tracedActivityNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(3);
 		}
 		return tracedActivityNodeActivationEClass;
 	}
@@ -384,7 +456,7 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 */
 	public EClass getTracedActivityNodeActivationGroup() {
 		if (tracedActivityNodeActivationGroupEClass == null) {
-			tracedActivityNodeActivationGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(3);
+			tracedActivityNodeActivationGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(4);
 		}
 		return tracedActivityNodeActivationGroupEClass;
 	}
@@ -421,8 +493,59 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedActivityNodeActivationGroup_OriginalObject() {
-        return (EReference)getTracedActivityNodeActivationGroup().getEStructuralFeatures().get(3);
+	public EClass getTracedActivityParameterNodeActivation() {
+		if (tracedActivityParameterNodeActivationEClass == null) {
+			tracedActivityParameterNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(5);
+		}
+		return tracedActivityParameterNodeActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedControlNodeActivation() {
+		if (tracedControlNodeActivationEClass == null) {
+			tracedControlNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(6);
+		}
+		return tracedControlNodeActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedControlToken() {
+		if (tracedControlTokenEClass == null) {
+			tracedControlTokenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(7);
+		}
+		return tracedControlTokenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedDecisionNodeActivation() {
+		if (tracedDecisionNodeActivationEClass == null) {
+			tracedDecisionNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(8);
+		}
+		return tracedDecisionNodeActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedForkNodeActivation() {
+		if (tracedForkNodeActivationEClass == null) {
+			tracedForkNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(9);
+		}
+		return tracedForkNodeActivationEClass;
 	}
 
 	/**
@@ -432,7 +555,7 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 */
 	public EClass getTracedForkedToken() {
 		if (tracedForkedTokenEClass == null) {
-			tracedForkedTokenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(4);
+			tracedForkedTokenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(10);
 		}
 		return tracedForkedTokenEClass;
 	}
@@ -469,9 +592,45 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTracedInitialNodeActivation() {
+		if (tracedInitialNodeActivationEClass == null) {
+			tracedInitialNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(11);
+		}
+		return tracedInitialNodeActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedJoinNodeActivation() {
+		if (tracedJoinNodeActivationEClass == null) {
+			tracedJoinNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(12);
+		}
+		return tracedJoinNodeActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTracedMergeNodeActivation() {
+		if (tracedMergeNodeActivationEClass == null) {
+			tracedMergeNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(13);
+		}
+		return tracedMergeNodeActivationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTracedObjectNodeActivation() {
 		if (tracedObjectNodeActivationEClass == null) {
-			tracedObjectNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(5);
+			tracedObjectNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(14);
 		}
 		return tracedObjectNodeActivationEClass;
 	}
@@ -492,7 +651,7 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 */
 	public EClass getTracedObjectToken() {
 		if (tracedObjectTokenEClass == null) {
-			tracedObjectTokenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(6);
+			tracedObjectTokenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(15);
 		}
 		return tracedObjectTokenEClass;
 	}
@@ -513,7 +672,7 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 */
 	public EClass getTracedOffer() {
 		if (tracedOfferEClass == null) {
-			tracedOfferEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(7);
+			tracedOfferEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(16);
 		}
 		return tracedOfferEClass;
 	}
@@ -532,18 +691,9 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTracedOffer_OriginalObject() {
-        return (EReference)getTracedOffer().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTracedToken() {
 		if (tracedTokenEClass == null) {
-			tracedTokenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(8);
+			tracedTokenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI).getEClassifiers().get(17);
 		}
 		return tracedTokenEClass;
 	}
@@ -555,15 +705,6 @@ public class IntermediateActivitiesPackageImpl extends EPackageImpl implements I
 	 */
 	public EReference getTracedToken_HolderSequence() {
         return (EReference)getTracedToken().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTracedToken_OriginalObject_Token() {
-        return (EReference)getTracedToken().getEStructuralFeatures().get(1);
 	}
 
 	/**

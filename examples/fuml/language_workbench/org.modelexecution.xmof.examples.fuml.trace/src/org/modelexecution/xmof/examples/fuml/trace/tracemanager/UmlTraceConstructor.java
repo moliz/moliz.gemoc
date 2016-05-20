@@ -46,13 +46,8 @@ public class UmlTraceConstructor implements ITraceConstructor {
 				for (TreeIterator<EObject> i = r.getAllContents(); i.hasNext();) {
 					EObject o = i.next();
 
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
-						fumlConfiguration.Activities.IntermediateActivities.Token o_cast = (fumlConfiguration.Activities.IntermediateActivities.Token) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
-						fumlConfiguration.Loci.SemanticVisitor o_cast = (fumlConfiguration.Loci.SemanticVisitor) o;
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
@@ -61,8 +56,23 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						addNewObjectToState(o_cast, lastState);
 					} else
 
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
 					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
 						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Actions.BasicActions.OutputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.OutputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.OutputPinActivation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) {
+						fumlConfiguration.Actions.BasicActions.OpaqueActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
@@ -76,8 +86,8 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						addNewObjectToState(o_cast, lastState);
 					} else
 
-					if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
-						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
@@ -86,8 +96,43 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						addNewObjectToState(o_cast, lastState);
 					} else
 
+					if (o instanceof fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) {
+						fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation o_cast = (fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) {
+						fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation o_cast = (fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
 					if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
 						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Actions.BasicActions.InputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.InputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.InputPinActivation) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
@@ -96,8 +141,18 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						addNewObjectToState(o_cast, lastState);
 					} else
 
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
 						fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
@@ -121,13 +176,53 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						addNewObjectToState(o_cast, lastState);
 					} else
 
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ControlToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ControlToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ControlToken) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
+						fumlConfiguration.Activities.IntermediateActivities.Token o_cast = (fumlConfiguration.Activities.IntermediateActivities.Token) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+						fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
 					if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
 						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
@@ -141,6 +236,16 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						addNewObjectToState(o_cast, lastState);
 					} else
 
+					if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
+						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
+						fumlConfiguration.Loci.SemanticVisitor o_cast = (fumlConfiguration.Loci.SemanticVisitor) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
 						addNewObjectToState(o_cast, lastState);
@@ -151,806 +256,4085 @@ public class UmlTraceConstructor implements ITraceConstructor {
 		}
 	}
 
-	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.Token o_cast,
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Actions.BasicActions.ActionActivation o_cast,
 			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
-				.get(o_cast);
 
-		// Creation of the first value of the field holder
-		umlTrace.States.Token_holder_Value firstValue_holder = umlTrace.States.StatesFactory.eINSTANCE
-				.createToken_holder_Value();
-		if (o_cast.getHolder() != null) {
-			storeAsTracedObject(o_cast.getHolder());
-			firstValue_holder.setHolder(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-							.get(o_cast.getHolder())));
+		if (o_cast instanceof fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) o_cast,
+					newState);
 		}
-		traced.getHolderSequence().add(firstValue_holder);
-		newState.getToken_holder_Values().add(firstValue_holder);
-	}
 
-	private void addNewObjectToState(fumlConfiguration.Loci.SemanticVisitor o_cast, umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor traced = (umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) exeToTraced
-				.get(o_cast);
-
-		// Creation of the first value of the field runtimeModelElement
-		umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
-				.createSemanticVisitor_runtimeModelElement_Value();
-		if (o_cast.getRuntimeModelElement() != null) {
-			storeAsTracedObject(o_cast.getRuntimeModelElement());
-			firstValue_runtimeModelElement
-					.setRuntimeModelElement(((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-							.get(o_cast.getRuntimeModelElement())));
-		}
-		traced.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
-		newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
-	}
-
-	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.Reference o_cast,
-			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
-				.get(o_cast);
-
-		// Creation of the first value of the field referent
-		umlTrace.States.Reference_referent_Value firstValue_referent = umlTrace.States.StatesFactory.eINSTANCE
-				.createReference_referent_Value();
-		if (o_cast.getReferent() != null) {
-			storeAsTracedObject(o_cast.getReferent());
-			firstValue_referent.setReferent(((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
-					.get(o_cast.getReferent())));
-		}
-		traced.getReferentSequence().add(firstValue_referent);
-		newState.getReference_referent_Values().add(firstValue_referent);
-
-		// Creation of the first value of the field runtimeModelElement
-		umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
-				.createSemanticVisitor_runtimeModelElement_Value();
-		if (o_cast.getRuntimeModelElement() != null) {
-			storeAsTracedObject(o_cast.getRuntimeModelElement());
-			firstValue_runtimeModelElement
-					.setRuntimeModelElement(((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-							.get(o_cast.getRuntimeModelElement())));
-		}
-		traced.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
-		newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
-	}
+	}// end addNewObjectToState
 
 	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast,
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast,
 			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue traced = (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
-				.get(o_cast);
 
-		// Creation of the first value of the field parameter_ParameterValue
-		umlTrace.States.ParameterValue_parameter_ParameterValue_Value firstValue_parameter_ParameterValue = umlTrace.States.StatesFactory.eINSTANCE
-				.createParameterValue_parameter_ParameterValue_Value();
-		if (o_cast.getParameter_ParameterValue() != null) {
-			storeAsTracedObject(o_cast.getParameter_ParameterValue());
-			firstValue_parameter_ParameterValue.setParameter_ParameterValue(
-					((umlTrace.States.uml.TracedParameter) exeToTraced.get(o_cast.getParameter_ParameterValue())));
-		}
-		traced.getParameter_ParameterValueSequence().add(firstValue_parameter_ParameterValue);
-		newState.getParameterValue_parameter_ParameterValue_Values().add(firstValue_parameter_ParameterValue);
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedActivityEdgeInstance();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedActivityEdgeInstances().add(tracedObject);
 
-		// Creation of the first value of the field values_ParameterValue
-		for (fumlConfiguration.Classes.Kernel.Value aValue : o_cast.getValues_ParameterValue()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ParameterValue_values_ParameterValue_Value firstValue_values_ParameterValue = umlTrace.States.StatesFactory.eINSTANCE
-				.createParameterValue_values_ParameterValue_Value();
-		firstValue_values_ParameterValue.getValues_ParameterValue()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue>) getExeToTraced(
-						o_cast.getValues_ParameterValue()));
-		traced.getValues_ParameterValueSequence().add(firstValue_values_ParameterValue);
-		newState.getParameterValue_values_ParameterValue_Values().add(firstValue_values_ParameterValue);
-	}
+			// Creation of the first value of the field edge_ActivityEdgeInstance
+			umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value firstValue_edge_ActivityEdgeInstance = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityEdgeInstance_edge_ActivityEdgeInstance_Value();
+
+			if (o_cast.getEdge_ActivityEdgeInstance() != null) {
+				firstValue_edge_ActivityEdgeInstance
+						.setEdge_ActivityEdgeInstance(o_cast.getEdge_ActivityEdgeInstance());
+			} else {
+				firstValue_edge_ActivityEdgeInstance.setEdge_ActivityEdgeInstance(null);
+			}
+
+			tracedObject.getEdge_ActivityEdgeInstanceSequence().add(firstValue_edge_ActivityEdgeInstance);
+			newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values()
+					.add(firstValue_edge_ActivityEdgeInstance);
+
+			// Creation of the first value of the field group_ActivityEdgeInstance
+			umlTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value firstValue_group_ActivityEdgeInstance = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityEdgeInstance_group_ActivityEdgeInstance_Value();
+
+			if (o_cast.getGroup_ActivityEdgeInstance() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityEdgeInstance(), newState);
+				firstValue_group_ActivityEdgeInstance.setGroup_ActivityEdgeInstance(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityEdgeInstance())));
+			} else {
+				firstValue_group_ActivityEdgeInstance.setGroup_ActivityEdgeInstance(null);
+			}
+
+			tracedObject.getGroup_ActivityEdgeInstanceSequence().add(firstValue_group_ActivityEdgeInstance);
+			newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values()
+					.add(firstValue_group_ActivityEdgeInstance);
+
+			// Creation of the first value of the field offers
+			umlTrace.States.ActivityEdgeInstance_offers_Value firstValue_offers = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityEdgeInstance_offers_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Offer aValue : o_cast.getOffers()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_offers.getOffers()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer>) getExeToTraced(
+							o_cast.getOffers(), newState));
+
+			tracedObject.getOffersSequence().add(firstValue_offers);
+			newState.getActivityEdgeInstance_offers_Values().add(firstValue_offers);
+
+			// Creation of the first value of the field source
+			umlTrace.States.ActivityEdgeInstance_source_Value firstValue_source = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityEdgeInstance_source_Value();
+
+			if (o_cast.getSource() != null) {
+				addNewObjectToState(o_cast.getSource(), newState);
+				firstValue_source.setSource(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast.getSource())));
+			} else {
+				firstValue_source.setSource(null);
+			}
+
+			tracedObject.getSourceSequence().add(firstValue_source);
+			newState.getActivityEdgeInstance_source_Values().add(firstValue_source);
+
+			// Creation of the first value of the field target
+			umlTrace.States.ActivityEdgeInstance_target_Value firstValue_target = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityEdgeInstance_target_Value();
+
+			if (o_cast.getTarget() != null) {
+				addNewObjectToState(o_cast.getTarget(), newState);
+				firstValue_target.setTarget(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast.getTarget())));
+			} else {
+				firstValue_target.setTarget(null);
+			}
+
+			tracedObject.getTargetSequence().add(firstValue_target);
+			newState.getActivityEdgeInstance_target_Values().add(firstValue_target);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
 
 	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.Offer o_cast,
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast,
 			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) exeToTraced
-				.get(o_cast);
 
-		// Creation of the first value of the field offeredTokens
-		for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getOfferedTokens()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.Offer_offeredTokens_Value firstValue_offeredTokens = umlTrace.States.StatesFactory.eINSTANCE
-				.createOffer_offeredTokens_Value();
-		firstValue_offeredTokens.getOfferedTokens()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
-						o_cast.getOfferedTokens()));
-		traced.getOfferedTokensSequence().add(firstValue_offeredTokens);
-		newState.getOffer_offeredTokens_Values().add(firstValue_offeredTokens);
-	}
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedActivityExecution();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedActivityExecutions().add(tracedObject);
 
-	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast,
-			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
-				.get(o_cast);
+			// Creation of the first value of the field activationGroup
+			umlTrace.States.ActivityExecution_activationGroup_Value firstValue_activationGroup = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityExecution_activationGroup_Value();
 
-		// Creation of the first value of the field holder
-		umlTrace.States.Token_holder_Value firstValue_holder = umlTrace.States.StatesFactory.eINSTANCE
-				.createToken_holder_Value();
-		if (o_cast.getHolder() != null) {
-			storeAsTracedObject(o_cast.getHolder());
-			firstValue_holder.setHolder(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-							.get(o_cast.getHolder())));
-		}
-		traced.getHolderSequence().add(firstValue_holder);
-		newState.getToken_holder_Values().add(firstValue_holder);
+			if (o_cast.getActivationGroup() != null) {
+				addNewObjectToState(o_cast.getActivationGroup(), newState);
+				firstValue_activationGroup.setActivationGroup(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getActivationGroup())));
+			} else {
+				firstValue_activationGroup.setActivationGroup(null);
+			}
 
-		// Creation of the first value of the field value
-		umlTrace.States.ObjectToken_value_Value firstValue_value = umlTrace.States.StatesFactory.eINSTANCE
-				.createObjectToken_value_Value();
-		if (o_cast.getValue() != null) {
-			storeAsTracedObject(o_cast.getValue());
-			firstValue_value.setValue(((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue) exeToTraced
-					.get(o_cast.getValue())));
-		}
-		traced.getValueSequence().add(firstValue_value);
-		newState.getObjectToken_value_Values().add(firstValue_value);
-	}
+			tracedObject.getActivationGroupSequence().add(firstValue_activationGroup);
+			newState.getActivityExecution_activationGroup_Values().add(firstValue_activationGroup);
+
+			// Creation of the first value of the field featureValues
+			umlTrace.States.CompoundValue_featureValues_Value firstValue_featureValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createCompoundValue_featureValues_Value();
+
+			for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_featureValues.getFeatureValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
+							o_cast.getFeatureValues(), newState));
+
+			tracedObject.getFeatureValuesSequence().add(firstValue_featureValues);
+			newState.getCompoundValue_featureValues_Values().add(firstValue_featureValues);
+
+			// Creation of the first value of the field locus_ExtensionalValue
+			umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value firstValue_locus_ExtensionalValue = umlTrace.States.StatesFactory.eINSTANCE
+					.createExtensionalValue_locus_ExtensionalValue_Value();
+
+			if (o_cast.getLocus_ExtensionalValue() != null) {
+				addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
+				firstValue_locus_ExtensionalValue
+						.setLocus_ExtensionalValue(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_ExtensionalValue())));
+			} else {
+				firstValue_locus_ExtensionalValue.setLocus_ExtensionalValue(null);
+			}
+
+			tracedObject.getLocus_ExtensionalValueSequence().add(firstValue_locus_ExtensionalValue);
+			newState.getExtensionalValue_locus_ExtensionalValue_Values().add(firstValue_locus_ExtensionalValue);
+
+			// Creation of the first value of the field types
+			umlTrace.States.Object_types_Value firstValue_types = umlTrace.States.StatesFactory.eINSTANCE
+					.createObject_types_Value();
+
+			firstValue_types.getTypes().addAll((Collection<? extends org.eclipse.uml2.uml.Class>) o_cast.getTypes());
+
+			tracedObject.getTypesSequence().add(firstValue_types);
+			newState.getObject_types_Values().add(firstValue_types);
+
+			// Creation of the first value of the field context
+			umlTrace.States.Execution_context_Value firstValue_context = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecution_context_Value();
+
+			if (o_cast.getContext() != null) {
+				addNewObjectToState(o_cast.getContext(), newState);
+				firstValue_context
+						.setContext(((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+								.get(o_cast.getContext())));
+			} else {
+				firstValue_context.setContext(null);
+			}
+
+			tracedObject.getContextSequence().add(firstValue_context);
+			newState.getExecution_context_Values().add(firstValue_context);
+
+			// Creation of the first value of the field parameterValues
+			umlTrace.States.Execution_parameterValues_Value firstValue_parameterValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecution_parameterValues_Value();
+
+			for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast.getParameterValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_parameterValues.getParameterValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+							o_cast.getParameterValues(), newState));
+
+			tracedObject.getParameterValuesSequence().add(firstValue_parameterValues);
+			newState.getExecution_parameterValues_Values().add(firstValue_parameterValues);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
 
 	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.Object o_cast, umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
-				.get(o_cast);
+	private void addNewObjectToState(
+			fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation o_cast,
+			umlTrace.States.State newState) {
 
-		// Creation of the first value of the field featureValues
-		for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.CompoundValue_featureValues_Value firstValue_featureValues = umlTrace.States.StatesFactory.eINSTANCE
-				.createCompoundValue_featureValues_Value();
-		firstValue_featureValues.getFeatureValues()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
-						o_cast.getFeatureValues()));
-		traced.getFeatureValuesSequence().add(firstValue_featureValues);
-		newState.getCompoundValue_featureValues_Values().add(firstValue_featureValues);
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedActivityFinalNodeActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedActivityFinalNodeActivations().add(tracedObject);
 
-		// Creation of the first value of the field locus_ExtensionalValue
-		umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value firstValue_locus_ExtensionalValue = umlTrace.States.StatesFactory.eINSTANCE
-				.createExtensionalValue_locus_ExtensionalValue_Value();
-		if (o_cast.getLocus_ExtensionalValue() != null) {
-			storeAsTracedObject(o_cast.getLocus_ExtensionalValue());
-			firstValue_locus_ExtensionalValue
-					.setLocus_ExtensionalValue(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-							.get(o_cast.getLocus_ExtensionalValue())));
-		}
-		traced.getLocus_ExtensionalValueSequence().add(firstValue_locus_ExtensionalValue);
-		newState.getExtensionalValue_locus_ExtensionalValue_Values().add(firstValue_locus_ExtensionalValue);
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
-		// Creation of the first value of the field runtimeModelElement
-		umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
-				.createSemanticVisitor_runtimeModelElement_Value();
-		if (o_cast.getRuntimeModelElement() != null) {
-			storeAsTracedObject(o_cast.getRuntimeModelElement());
-			firstValue_runtimeModelElement
-					.setRuntimeModelElement(((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-							.get(o_cast.getRuntimeModelElement())));
-		}
-		traced.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
-		newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
 
-		// Creation of the first value of the field types
-		for (org.eclipse.uml2.uml.Class aValue : o_cast.getTypes()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.Object_types_Value firstValue_types = umlTrace.States.StatesFactory.eINSTANCE
-				.createObject_types_Value();
-		firstValue_types.getTypes()
-				.addAll((Collection<? extends umlTrace.States.uml.TracedClass>) getExeToTraced(o_cast.getTypes()));
-		traced.getTypesSequence().add(firstValue_types);
-		newState.getObject_types_Values().add(firstValue_types);
-	}
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
 
 	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.Loci.Locus o_cast, umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Loci.TracedLocus traced = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-				.get(o_cast);
-
-		// Creation of the first value of the field executor
-		umlTrace.States.Locus_executor_Value firstValue_executor = umlTrace.States.StatesFactory.eINSTANCE
-				.createLocus_executor_Value();
-		if (o_cast.getExecutor() != null) {
-			storeAsTracedObject(o_cast.getExecutor());
-			firstValue_executor.setExecutor(
-					((umlTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced.get(o_cast.getExecutor())));
-		}
-		traced.getExecutorSequence().add(firstValue_executor);
-		newState.getLocus_executor_Values().add(firstValue_executor);
-
-		// Creation of the first value of the field extensionalValues
-		for (fumlConfiguration.Classes.Kernel.ExtensionalValue aValue : o_cast.getExtensionalValues()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.Locus_extensionalValues_Value firstValue_extensionalValues = umlTrace.States.StatesFactory.eINSTANCE
-				.createLocus_extensionalValues_Value();
-		firstValue_extensionalValues.getExtensionalValues()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue>) getExeToTraced(
-						o_cast.getExtensionalValues()));
-		traced.getExtensionalValuesSequence().add(firstValue_extensionalValues);
-		newState.getLocus_extensionalValues_Values().add(firstValue_extensionalValues);
-
-		// Creation of the first value of the field factory
-		umlTrace.States.Locus_factory_Value firstValue_factory = umlTrace.States.StatesFactory.eINSTANCE
-				.createLocus_factory_Value();
-		if (o_cast.getFactory() != null) {
-			storeAsTracedObject(o_cast.getFactory());
-			firstValue_factory.setFactory(((umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
-					.get(o_cast.getFactory())));
-		}
-		traced.getFactorySequence().add(firstValue_factory);
-		newState.getLocus_factory_Values().add(firstValue_factory);
-	}
-
-	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.IntegerValue o_cast,
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast,
 			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
-				.get(o_cast);
 
-		// Creation of the first value of the field runtimeModelElement
-		umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
-				.createSemanticVisitor_runtimeModelElement_Value();
-		if (o_cast.getRuntimeModelElement() != null) {
-			storeAsTracedObject(o_cast.getRuntimeModelElement());
-			firstValue_runtimeModelElement
-					.setRuntimeModelElement(((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-							.get(o_cast.getRuntimeModelElement())));
-		}
-		traced.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
-		newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+		if (o_cast instanceof fumlConfiguration.Actions.BasicActions.InputPinActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.InputPinActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.OutputPinActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.OutputPinActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) o_cast,
+					newState);
+		} else
 
-		// Creation of the first value of the field type
-		umlTrace.States.PrimitiveValue_type_Value firstValue_type = umlTrace.States.StatesFactory.eINSTANCE
-				.createPrimitiveValue_type_Value();
-		if (o_cast.getType() != null) {
-			storeAsTracedObject(o_cast.getType());
-			firstValue_type.setType(((umlTrace.States.uml.TracedPrimitiveType) exeToTraced.get(o_cast.getType())));
-		}
-		traced.getTypeSequence().add(firstValue_type);
-		newState.getPrimitiveValue_type_Values().add(firstValue_type);
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedActivityNodeActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedActivityNodeActivations().add(tracedObject);
 
-		// Creation of the first value of the field value_IntegerValue
-		umlTrace.States.IntegerValue_value_IntegerValue_Value firstValue_value_IntegerValue = umlTrace.States.StatesFactory.eINSTANCE
-				.createIntegerValue_value_IntegerValue_Value();
-		traced.getValue_IntegerValueSequence().add(firstValue_value_IntegerValue);
-		newState.getIntegerValue_value_IntegerValue_Values().add(firstValue_value_IntegerValue);
-	}
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
-	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.Input.InputParameterValues o_cast,
-			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues traced = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
-				.get(o_cast);
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
 
-		// Creation of the first value of the field name
-		umlTrace.States.InputParameterValues_name_Value firstValue_name = umlTrace.States.StatesFactory.eINSTANCE
-				.createInputParameterValues_name_Value();
-		traced.getNameSequence().add(firstValue_name);
-		newState.getInputParameterValues_name_Values().add(firstValue_name);
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
 
-		// Creation of the first value of the field parameterValues
-		for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast.getParameterValues()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.InputParameterValues_parameterValues_Value firstValue_parameterValues = umlTrace.States.StatesFactory.eINSTANCE
-				.createInputParameterValues_parameterValues_Value();
-		firstValue_parameterValues.getParameterValues()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
-						o_cast.getParameterValues()));
-		traced.getParameterValuesSequence().add(firstValue_parameterValues);
-		newState.getInputParameterValues_parameterValues_Values().add(firstValue_parameterValues);
-	}
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
 
-	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast,
-			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
-				.get(o_cast);
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
 
-		// Creation of the first value of the field baseToken
-		umlTrace.States.ForkedToken_baseToken_Value firstValue_baseToken = umlTrace.States.StatesFactory.eINSTANCE
-				.createForkedToken_baseToken_Value();
-		if (o_cast.getBaseToken() != null) {
-			storeAsTracedObject(o_cast.getBaseToken());
-			firstValue_baseToken.setBaseToken(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
-							.get(o_cast.getBaseToken())));
-		}
-		traced.getBaseTokenSequence().add(firstValue_baseToken);
-		newState.getForkedToken_baseToken_Values().add(firstValue_baseToken);
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
 
-		// Creation of the first value of the field baseTokenIsWithdrawn
-		umlTrace.States.ForkedToken_baseTokenIsWithdrawn_Value firstValue_baseTokenIsWithdrawn = umlTrace.States.StatesFactory.eINSTANCE
-				.createForkedToken_baseTokenIsWithdrawn_Value();
-		traced.getBaseTokenIsWithdrawnSequence().add(firstValue_baseTokenIsWithdrawn);
-		newState.getForkedToken_baseTokenIsWithdrawn_Values().add(firstValue_baseTokenIsWithdrawn);
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
 
-		// Creation of the first value of the field holder
-		umlTrace.States.Token_holder_Value firstValue_holder = umlTrace.States.StatesFactory.eINSTANCE
-				.createToken_holder_Value();
-		if (o_cast.getHolder() != null) {
-			storeAsTracedObject(o_cast.getHolder());
-			firstValue_holder.setHolder(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-							.get(o_cast.getHolder())));
-		}
-		traced.getHolderSequence().add(firstValue_holder);
-		newState.getToken_holder_Values().add(firstValue_holder);
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
 
-		// Creation of the first value of the field remainingOffersCount
-		umlTrace.States.ForkedToken_remainingOffersCount_Value firstValue_remainingOffersCount = umlTrace.States.StatesFactory.eINSTANCE
-				.createForkedToken_remainingOffersCount_Value();
-		traced.getRemainingOffersCountSequence().add(firstValue_remainingOffersCount);
-		newState.getForkedToken_remainingOffersCount_Values().add(firstValue_remainingOffersCount);
-	}
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
 
-	private void addNewObjectToState(fumlConfiguration.Loci.Executor o_cast, umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Loci.TracedExecutor traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
-				.get(o_cast);
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
 
-		// Creation of the first value of the field locus_Executor
-		umlTrace.States.Executor_locus_Executor_Value firstValue_locus_Executor = umlTrace.States.StatesFactory.eINSTANCE
-				.createExecutor_locus_Executor_Value();
-		if (o_cast.getLocus_Executor() != null) {
-			storeAsTracedObject(o_cast.getLocus_Executor());
-			firstValue_locus_Executor.setLocus_Executor(
-					((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced.get(o_cast.getLocus_Executor())));
-		}
-		traced.getLocus_ExecutorSequence().add(firstValue_locus_Executor);
-		newState.getExecutor_locus_Executor_Values().add(firstValue_locus_Executor);
-	}
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
 
-	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.Loci.ExecutionFactory o_cast, umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
-				.get(o_cast);
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
 
-		// Creation of the first value of the field builtInTypes
-		for (org.eclipse.uml2.uml.PrimitiveType aValue : o_cast.getBuiltInTypes()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ExecutionFactory_builtInTypes_Value firstValue_builtInTypes = umlTrace.States.StatesFactory.eINSTANCE
-				.createExecutionFactory_builtInTypes_Value();
-		firstValue_builtInTypes.getBuiltInTypes()
-				.addAll((Collection<? extends umlTrace.States.uml.TracedPrimitiveType>) getExeToTraced(
-						o_cast.getBuiltInTypes()));
-		traced.getBuiltInTypesSequence().add(firstValue_builtInTypes);
-		newState.getExecutionFactory_builtInTypes_Values().add(firstValue_builtInTypes);
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-		// Creation of the first value of the field locus_ExecutionFactory
-		umlTrace.States.ExecutionFactory_locus_ExecutionFactory_Value firstValue_locus_ExecutionFactory = umlTrace.States.StatesFactory.eINSTANCE
-				.createExecutionFactory_locus_ExecutionFactory_Value();
-		if (o_cast.getLocus_ExecutionFactory() != null) {
-			storeAsTracedObject(o_cast.getLocus_ExecutionFactory());
-			firstValue_locus_ExecutionFactory
-					.setLocus_ExecutionFactory(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-							.get(o_cast.getLocus_ExecutionFactory())));
-		}
-		traced.getLocus_ExecutionFactorySequence().add(firstValue_locus_ExecutionFactory);
-		newState.getExecutionFactory_locus_ExecutionFactory_Values().add(firstValue_locus_ExecutionFactory);
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
-		// Creation of the first value of the field primitiveBehaviorPrototypes
-		for (fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution aValue : o_cast
-				.getPrimitiveBehaviorPrototypes()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value firstValue_primitiveBehaviorPrototypes = umlTrace.States.StatesFactory.eINSTANCE
-				.createExecutionFactory_primitiveBehaviorPrototypes_Value();
-		firstValue_primitiveBehaviorPrototypes.getPrimitiveBehaviorPrototypes()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedOpaqueBehaviorExecution>) getExeToTraced(
-						o_cast.getPrimitiveBehaviorPrototypes()));
-		traced.getPrimitiveBehaviorPrototypesSequence().add(firstValue_primitiveBehaviorPrototypes);
-		newState.getExecutionFactory_primitiveBehaviorPrototypes_Values().add(firstValue_primitiveBehaviorPrototypes);
-	}
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
 
-	private void addNewObjectToState(fumlConfiguration.Loci.ExecutionEnvironment o_cast,
-			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) exeToTraced
-				.get(o_cast);
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
 
-		// Creation of the first value of the field locus_ExecutionEnvironment
-		umlTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value firstValue_locus_ExecutionEnvironment = umlTrace.States.StatesFactory.eINSTANCE
-				.createExecutionEnvironment_locus_ExecutionEnvironment_Value();
-		if (o_cast.getLocus_ExecutionEnvironment() != null) {
-			storeAsTracedObject(o_cast.getLocus_ExecutionEnvironment());
-			firstValue_locus_ExecutionEnvironment
-					.setLocus_ExecutionEnvironment(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-							.get(o_cast.getLocus_ExecutionEnvironment())));
-		}
-		traced.getLocus_ExecutionEnvironmentSequence().add(firstValue_locus_ExecutionEnvironment);
-		newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values().add(firstValue_locus_ExecutionEnvironment);
-	}
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
 
-	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.ElementConfiguration o_cast, umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.TracedElementConfiguration traced = (umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-				.get(o_cast);
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
 
-		// Creation of the first value of the field semanticVisitor
-		for (fumlConfiguration.Loci.SemanticVisitor aValue : o_cast.getSemanticVisitor()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ElementConfiguration_semanticVisitor_Value firstValue_semanticVisitor = umlTrace.States.StatesFactory.eINSTANCE
-				.createElementConfiguration_semanticVisitor_Value();
-		firstValue_semanticVisitor.getSemanticVisitor()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor>) getExeToTraced(
-						o_cast.getSemanticVisitor()));
-		traced.getSemanticVisitorSequence().add(firstValue_semanticVisitor);
-		newState.getElementConfiguration_semanticVisitor_Values().add(firstValue_semanticVisitor);
-	}
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
 
-	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.BooleanValue o_cast,
-			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
-				.get(o_cast);
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
 
-		// Creation of the first value of the field runtimeModelElement
-		umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
-				.createSemanticVisitor_runtimeModelElement_Value();
-		if (o_cast.getRuntimeModelElement() != null) {
-			storeAsTracedObject(o_cast.getRuntimeModelElement());
-			firstValue_runtimeModelElement
-					.setRuntimeModelElement(((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-							.get(o_cast.getRuntimeModelElement())));
-		}
-		traced.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
-		newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
 
-		// Creation of the first value of the field type
-		umlTrace.States.PrimitiveValue_type_Value firstValue_type = umlTrace.States.StatesFactory.eINSTANCE
-				.createPrimitiveValue_type_Value();
-		if (o_cast.getType() != null) {
-			storeAsTracedObject(o_cast.getType());
-			firstValue_type.setType(((umlTrace.States.uml.TracedPrimitiveType) exeToTraced.get(o_cast.getType())));
-		}
-		traced.getTypeSequence().add(firstValue_type);
-		newState.getPrimitiveValue_type_Values().add(firstValue_type);
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
 
-		// Creation of the first value of the field value_BooleanValue
-		umlTrace.States.BooleanValue_value_BooleanValue_Value firstValue_value_BooleanValue = umlTrace.States.StatesFactory.eINSTANCE
-				.createBooleanValue_value_BooleanValue_Value();
-		traced.getValue_BooleanValueSequence().add(firstValue_value_BooleanValue);
-		newState.getBooleanValue_value_BooleanValue_Values().add(firstValue_value_BooleanValue);
-	}
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
 
 	@SuppressWarnings("unchecked")
 	private void addNewObjectToState(
 			fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast,
 			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-				.get(o_cast);
 
-		// Creation of the first value of the field activityExecution
-		umlTrace.States.ActivityNodeActivationGroup_activityExecution_Value firstValue_activityExecution = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivationGroup_activityExecution_Value();
-		if (o_cast.getActivityExecution() != null) {
-			storeAsTracedObject(o_cast.getActivityExecution());
-			firstValue_activityExecution.setActivityExecution(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
-							.get(o_cast.getActivityExecution())));
-		}
-		traced.getActivityExecutionSequence().add(firstValue_activityExecution);
-		newState.getActivityNodeActivationGroup_activityExecution_Values().add(firstValue_activityExecution);
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedActivityNodeActivationGroup();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedActivityNodeActivationGroups().add(tracedObject);
 
-		// Creation of the first value of the field edgeInstances
-		for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
-				.getEdgeInstances()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value firstValue_edgeInstances = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivationGroup_edgeInstances_Value();
-		firstValue_edgeInstances.getEdgeInstances()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
-						o_cast.getEdgeInstances()));
-		traced.getEdgeInstancesSequence().add(firstValue_edgeInstances);
-		newState.getActivityNodeActivationGroup_edgeInstances_Values().add(firstValue_edgeInstances);
+			// Creation of the first value of the field activityExecution
+			umlTrace.States.ActivityNodeActivationGroup_activityExecution_Value firstValue_activityExecution = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivationGroup_activityExecution_Value();
 
-		// Creation of the first value of the field nodeActivations
-		for (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation aValue : o_cast
-				.getNodeActivations()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value firstValue_nodeActivations = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivationGroup_nodeActivations_Value();
-		firstValue_nodeActivations.getNodeActivations()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation>) getExeToTraced(
-						o_cast.getNodeActivations()));
-		traced.getNodeActivationsSequence().add(firstValue_nodeActivations);
-		newState.getActivityNodeActivationGroup_nodeActivations_Values().add(firstValue_nodeActivations);
-	}
+			if (o_cast.getActivityExecution() != null) {
+				addNewObjectToState(o_cast.getActivityExecution(), newState);
+				firstValue_activityExecution.setActivityExecution(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
+								.get(o_cast.getActivityExecution())));
+			} else {
+				firstValue_activityExecution.setActivityExecution(null);
+			}
 
-	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast,
-			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-				.get(o_cast);
+			tracedObject.getActivityExecutionSequence().add(firstValue_activityExecution);
+			newState.getActivityNodeActivationGroup_activityExecution_Values().add(firstValue_activityExecution);
 
-		// Creation of the first value of the field group_ActivityNodeActivation
-		umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivation_group_ActivityNodeActivation_Value();
-		if (o_cast.getGroup_ActivityNodeActivation() != null) {
-			storeAsTracedObject(o_cast.getGroup_ActivityNodeActivation());
-			firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-							.get(o_cast.getGroup_ActivityNodeActivation())));
-		}
-		traced.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
-		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
-				.add(firstValue_group_ActivityNodeActivation);
+			// Creation of the first value of the field edgeInstances
+			umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value firstValue_edgeInstances = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivationGroup_edgeInstances_Value();
 
-		// Creation of the first value of the field heldTokens
-		for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivation_heldTokens_Value();
-		firstValue_heldTokens.getHeldTokens()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
-						o_cast.getHeldTokens()));
-		traced.getHeldTokensSequence().add(firstValue_heldTokens);
-		newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getEdgeInstances()) {
+				addNewObjectToState(aValue, newState);
+			}
 
-		// Creation of the first value of the field incomingEdges
-		for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
-				.getIncomingEdges()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivation_incomingEdges_Value();
-		firstValue_incomingEdges.getIncomingEdges()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
-						o_cast.getIncomingEdges()));
-		traced.getIncomingEdgesSequence().add(firstValue_incomingEdges);
-		newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+			firstValue_edgeInstances.getEdgeInstances()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getEdgeInstances(), newState));
 
-		// Creation of the first value of the field isRunning
-		umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivation_isRunning_Value();
-		traced.getIsRunningSequence().add(firstValue_isRunning);
-		newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+			tracedObject.getEdgeInstancesSequence().add(firstValue_edgeInstances);
+			newState.getActivityNodeActivationGroup_edgeInstances_Values().add(firstValue_edgeInstances);
 
-		// Creation of the first value of the field node_ActivityNodeActivation
-		umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivation_node_ActivityNodeActivation_Value();
-		if (o_cast.getNode_ActivityNodeActivation() != null) {
-			storeAsTracedObject(o_cast.getNode_ActivityNodeActivation());
-			firstValue_node_ActivityNodeActivation
-					.setNode_ActivityNodeActivation(((umlTrace.States.uml.TracedActivityNode) exeToTraced
-							.get(o_cast.getNode_ActivityNodeActivation())));
-		}
-		traced.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
-		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
-				.add(firstValue_node_ActivityNodeActivation);
+			// Creation of the first value of the field nodeActivations
+			umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value firstValue_nodeActivations = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivationGroup_nodeActivations_Value();
 
-		// Creation of the first value of the field outgoingEdges
-		for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
-				.getOutgoingEdges()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivation_outgoingEdges_Value();
-		firstValue_outgoingEdges.getOutgoingEdges()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
-						o_cast.getOutgoingEdges()));
-		traced.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
-		newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation aValue : o_cast
+					.getNodeActivations()) {
+				addNewObjectToState(aValue, newState);
+			}
 
-		// Creation of the first value of the field running
-		umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityNodeActivation_running_Value();
-		traced.getRunningSequence().add(firstValue_running);
-		newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+			firstValue_nodeActivations.getNodeActivations()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation>) getExeToTraced(
+							o_cast.getNodeActivations(), newState));
 
-		// Creation of the first value of the field runtimeModelElement
-		umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
-				.createSemanticVisitor_runtimeModelElement_Value();
-		if (o_cast.getRuntimeModelElement() != null) {
-			storeAsTracedObject(o_cast.getRuntimeModelElement());
-			firstValue_runtimeModelElement
-					.setRuntimeModelElement(((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-							.get(o_cast.getRuntimeModelElement())));
-		}
-		traced.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
-		newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
-	}
+			tracedObject.getNodeActivationsSequence().add(firstValue_nodeActivations);
+			newState.getActivityNodeActivationGroup_nodeActivations_Values().add(firstValue_nodeActivations);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
 
 	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast,
+	private void addNewObjectToState(
+			fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation o_cast,
 			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
-				.get(o_cast);
 
-		// Creation of the first value of the field activationGroup
-		umlTrace.States.ActivityExecution_activationGroup_Value firstValue_activationGroup = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityExecution_activationGroup_Value();
-		if (o_cast.getActivationGroup() != null) {
-			storeAsTracedObject(o_cast.getActivationGroup());
-			firstValue_activationGroup.setActivationGroup(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-							.get(o_cast.getActivationGroup())));
-		}
-		traced.getActivationGroupSequence().add(firstValue_activationGroup);
-		newState.getActivityExecution_activationGroup_Values().add(firstValue_activationGroup);
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedActivityParameterNodeActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedActivityParameterNodeActivations().add(tracedObject);
 
-		// Creation of the first value of the field context
-		umlTrace.States.Execution_context_Value firstValue_context = umlTrace.States.StatesFactory.eINSTANCE
-				.createExecution_context_Value();
-		if (o_cast.getContext() != null) {
-			storeAsTracedObject(o_cast.getContext());
-			firstValue_context.setContext(((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
-					.get(o_cast.getContext())));
-		}
-		traced.getContextSequence().add(firstValue_context);
-		newState.getExecution_context_Values().add(firstValue_context);
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
-		// Creation of the first value of the field featureValues
-		for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.CompoundValue_featureValues_Value firstValue_featureValues = umlTrace.States.StatesFactory.eINSTANCE
-				.createCompoundValue_featureValues_Value();
-		firstValue_featureValues.getFeatureValues()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
-						o_cast.getFeatureValues()));
-		traced.getFeatureValuesSequence().add(firstValue_featureValues);
-		newState.getCompoundValue_featureValues_Values().add(firstValue_featureValues);
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
 
-		// Creation of the first value of the field locus_ExtensionalValue
-		umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value firstValue_locus_ExtensionalValue = umlTrace.States.StatesFactory.eINSTANCE
-				.createExtensionalValue_locus_ExtensionalValue_Value();
-		if (o_cast.getLocus_ExtensionalValue() != null) {
-			storeAsTracedObject(o_cast.getLocus_ExtensionalValue());
-			firstValue_locus_ExtensionalValue
-					.setLocus_ExtensionalValue(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-							.get(o_cast.getLocus_ExtensionalValue())));
-		}
-		traced.getLocus_ExtensionalValueSequence().add(firstValue_locus_ExtensionalValue);
-		newState.getExtensionalValue_locus_ExtensionalValue_Values().add(firstValue_locus_ExtensionalValue);
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
 
-		// Creation of the first value of the field parameterValues
-		for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast.getParameterValues()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.Execution_parameterValues_Value firstValue_parameterValues = umlTrace.States.StatesFactory.eINSTANCE
-				.createExecution_parameterValues_Value();
-		firstValue_parameterValues.getParameterValues()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
-						o_cast.getParameterValues()));
-		traced.getParameterValuesSequence().add(firstValue_parameterValues);
-		newState.getExecution_parameterValues_Values().add(firstValue_parameterValues);
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
 
-		// Creation of the first value of the field runtimeModelElement
-		umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
-				.createSemanticVisitor_runtimeModelElement_Value();
-		if (o_cast.getRuntimeModelElement() != null) {
-			storeAsTracedObject(o_cast.getRuntimeModelElement());
-			firstValue_runtimeModelElement
-					.setRuntimeModelElement(((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-							.get(o_cast.getRuntimeModelElement())));
-		}
-		traced.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
-		newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
 
-		// Creation of the first value of the field types
-		for (org.eclipse.uml2.uml.Class aValue : o_cast.getTypes()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.Object_types_Value firstValue_types = umlTrace.States.StatesFactory.eINSTANCE
-				.createObject_types_Value();
-		firstValue_types.getTypes()
-				.addAll((Collection<? extends umlTrace.States.uml.TracedClass>) getExeToTraced(o_cast.getTypes()));
-		traced.getTypesSequence().add(firstValue_types);
-		newState.getObject_types_Values().add(firstValue_types);
-	}
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field offeredTokenCount
+			umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value firstValue_offeredTokenCount = umlTrace.States.StatesFactory.eINSTANCE
+					.createObjectNodeActivation_offeredTokenCount_Value();
+
+			firstValue_offeredTokenCount.setOfferedTokenCount(o_cast.getOfferedTokenCount());
+			tracedObject.getOfferedTokenCountSequence().add(firstValue_offeredTokenCount);
+			newState.getObjectNodeActivation_offeredTokenCount_Values().add(firstValue_offeredTokenCount);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
 
 	@SuppressWarnings("unchecked")
-	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast,
+	private void addNewObjectToState(
+			fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation o_cast,
 			umlTrace.States.State newState) {
-		storeAsTracedObject(o_cast);
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-				.get(o_cast);
 
-		// Creation of the first value of the field edge_ActivityEdgeInstance
-		umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value firstValue_edge_ActivityEdgeInstance = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityEdgeInstance_edge_ActivityEdgeInstance_Value();
-		if (o_cast.getEdge_ActivityEdgeInstance() != null) {
-			storeAsTracedObject(o_cast.getEdge_ActivityEdgeInstance());
-			firstValue_edge_ActivityEdgeInstance.setEdge_ActivityEdgeInstance(
-					((umlTrace.States.uml.TracedActivityEdge) exeToTraced.get(o_cast.getEdge_ActivityEdgeInstance())));
-		}
-		traced.getEdge_ActivityEdgeInstanceSequence().add(firstValue_edge_ActivityEdgeInstance);
-		newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().add(firstValue_edge_ActivityEdgeInstance);
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation tracedObject = umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsFactory.eINSTANCE
+					.createTracedAddStructuralFeatureValueActionActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActions_tracedAddStructuralFeatureValueActionActivations().add(tracedObject);
 
-		// Creation of the first value of the field group_ActivityEdgeInstance
-		umlTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value firstValue_group_ActivityEdgeInstance = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityEdgeInstance_group_ActivityEdgeInstance_Value();
-		if (o_cast.getGroup_ActivityEdgeInstance() != null) {
-			storeAsTracedObject(o_cast.getGroup_ActivityEdgeInstance());
-			firstValue_group_ActivityEdgeInstance.setGroup_ActivityEdgeInstance(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-							.get(o_cast.getGroup_ActivityEdgeInstance())));
-		}
-		traced.getGroup_ActivityEdgeInstanceSequence().add(firstValue_group_ActivityEdgeInstance);
-		newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().add(firstValue_group_ActivityEdgeInstance);
+			// Creation of the first value of the field firing
+			umlTrace.States.ActionActivation_firing_Value firstValue_firing = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_firing_Value();
 
-		// Creation of the first value of the field offers
-		for (fumlConfiguration.Activities.IntermediateActivities.Offer aValue : o_cast.getOffers()) {
-			storeAsTracedObject(aValue);
-		}
-		umlTrace.States.ActivityEdgeInstance_offers_Value firstValue_offers = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityEdgeInstance_offers_Value();
-		firstValue_offers.getOffers()
-				.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer>) getExeToTraced(
-						o_cast.getOffers()));
-		traced.getOffersSequence().add(firstValue_offers);
-		newState.getActivityEdgeInstance_offers_Values().add(firstValue_offers);
+			firstValue_firing.setFiring(o_cast.isFiring());
+			tracedObject.getFiringSequence().add(firstValue_firing);
+			newState.getActionActivation_firing_Values().add(firstValue_firing);
 
-		// Creation of the first value of the field source
-		umlTrace.States.ActivityEdgeInstance_source_Value firstValue_source = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityEdgeInstance_source_Value();
-		if (o_cast.getSource() != null) {
-			storeAsTracedObject(o_cast.getSource());
-			firstValue_source.setSource(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-							.get(o_cast.getSource())));
-		}
-		traced.getSourceSequence().add(firstValue_source);
-		newState.getActivityEdgeInstance_source_Values().add(firstValue_source);
+			// Creation of the first value of the field pinActivations
+			umlTrace.States.ActionActivation_pinActivations_Value firstValue_pinActivations = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_pinActivations_Value();
 
-		// Creation of the first value of the field target
-		umlTrace.States.ActivityEdgeInstance_target_Value firstValue_target = umlTrace.States.StatesFactory.eINSTANCE
-				.createActivityEdgeInstance_target_Value();
-		if (o_cast.getTarget() != null) {
-			storeAsTracedObject(o_cast.getTarget());
-			firstValue_target.setTarget(
-					((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-							.get(o_cast.getTarget())));
+			for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast.getPinActivations()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_pinActivations.getPinActivations()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+							o_cast.getPinActivations(), newState));
+
+			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
+			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.BooleanValue o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
+					.createTracedBooleanValue();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getKernel_tracedBooleanValues().add(tracedObject);
+
+			// Creation of the first value of the field value_BooleanValue
+			umlTrace.States.BooleanValue_value_BooleanValue_Value firstValue_value_BooleanValue = umlTrace.States.StatesFactory.eINSTANCE
+					.createBooleanValue_value_BooleanValue_Value();
+
+			firstValue_value_BooleanValue.setValue_BooleanValue(o_cast.isValue_BooleanValue());
+			tracedObject.getValue_BooleanValueSequence().add(firstValue_value_BooleanValue);
+			newState.getBooleanValue_value_BooleanValue_Values().add(firstValue_value_BooleanValue);
+
+			// Creation of the first value of the field type
+			umlTrace.States.PrimitiveValue_type_Value firstValue_type = umlTrace.States.StatesFactory.eINSTANCE
+					.createPrimitiveValue_type_Value();
+
+			if (o_cast.getType() != null) {
+				firstValue_type.setType(o_cast.getType());
+			} else {
+				firstValue_type.setType(null);
+			}
+
+			tracedObject.getTypeSequence().add(firstValue_type);
+			newState.getPrimitiveValue_type_Values().add(firstValue_type);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Actions.BasicActions.CallActionActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o_cast, newState);
 		}
-		traced.getTargetSequence().add(firstValue_target);
-		newState.getActivityEdgeInstance_target_Values().add(firstValue_target);
-	}
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation tracedObject = umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsFactory.eINSTANCE
+					.createTracedCallBehaviorActionActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getBasicActions_tracedCallBehaviorActionActivations().add(tracedObject);
+
+			// Creation of the first value of the field firing
+			umlTrace.States.ActionActivation_firing_Value firstValue_firing = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_firing_Value();
+
+			firstValue_firing.setFiring(o_cast.isFiring());
+			tracedObject.getFiringSequence().add(firstValue_firing);
+			newState.getActionActivation_firing_Values().add(firstValue_firing);
+
+			// Creation of the first value of the field pinActivations
+			umlTrace.States.ActionActivation_pinActivations_Value firstValue_pinActivations = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_pinActivations_Value();
+
+			for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast.getPinActivations()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_pinActivations.getPinActivations()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+							o_cast.getPinActivations(), newState));
+
+			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
+			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
+
+			// Creation of the first value of the field callExecutions
+			umlTrace.States.CallActionActivation_callExecutions_Value firstValue_callExecutions = umlTrace.States.StatesFactory.eINSTANCE
+					.createCallActionActivation_callExecutions_Value();
+
+			for (fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution aValue : o_cast.getCallExecutions()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_callExecutions.getCallExecutions()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution>) getExeToTraced(
+							o_cast.getCallExecutions(), newState));
+
+			tracedObject.getCallExecutionsSequence().add(firstValue_callExecutions);
+			newState.getCallActionActivation_callExecutions_Values().add(firstValue_callExecutions);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.CompoundValue o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Object) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.Object) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ControlNodeActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) o_cast,
+					newState);
+		}
+
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ControlToken o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedControlToken();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedControlTokens().add(tracedObject);
+
+			// Creation of the first value of the field holder
+			umlTrace.States.Token_holder_Value firstValue_holder = umlTrace.States.StatesFactory.eINSTANCE
+					.createToken_holder_Value();
+
+			if (o_cast.getHolder() != null) {
+				addNewObjectToState(o_cast.getHolder(), newState);
+				firstValue_holder.setHolder(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast.getHolder())));
+			} else {
+				firstValue_holder.setHolder(null);
+			}
+
+			tracedObject.getHolderSequence().add(firstValue_holder);
+			newState.getToken_holder_Values().add(firstValue_holder);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation tracedObject = umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsFactory.eINSTANCE
+					.createTracedCreateObjectActionActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActions_tracedCreateObjectActionActivations().add(tracedObject);
+
+			// Creation of the first value of the field firing
+			umlTrace.States.ActionActivation_firing_Value firstValue_firing = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_firing_Value();
+
+			firstValue_firing.setFiring(o_cast.isFiring());
+			tracedObject.getFiringSequence().add(firstValue_firing);
+			newState.getActionActivation_firing_Values().add(firstValue_firing);
+
+			// Creation of the first value of the field pinActivations
+			umlTrace.States.ActionActivation_pinActivations_Value firstValue_pinActivations = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_pinActivations_Value();
+
+			for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast.getPinActivations()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_pinActivations.getPinActivations()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+							o_cast.getPinActivations(), newState));
+
+			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
+			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedDecisionNodeActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedDecisionNodeActivations().add(tracedObject);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(org.eclipse.emf.ecore.EModelElement o_cast, umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.ElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.ElementConfiguration) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.ElementConfiguration o_cast, umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.TracedElementConfiguration tracedObject = umlTrace.States.fumlConfiguration.FumlConfigurationFactory.eINSTANCE
+					.createTracedElementConfiguration();
+			tracedObject.setOriginalObject(o_cast);
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getFumlConfiguration_tracedElementConfigurations().add(tracedObject);
+
+			// Creation of the first value of the field semanticVisitor
+			umlTrace.States.ElementConfiguration_semanticVisitor_Value firstValue_semanticVisitor = umlTrace.States.StatesFactory.eINSTANCE
+					.createElementConfiguration_semanticVisitor_Value();
+
+			for (fumlConfiguration.Loci.SemanticVisitor aValue : o_cast.getSemanticVisitor()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_semanticVisitor.getSemanticVisitor()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor>) getExeToTraced(
+							o_cast.getSemanticVisitor(), newState));
+
+			tracedObject.getSemanticVisitorSequence().add(firstValue_semanticVisitor);
+			newState.getElementConfiguration_semanticVisitor_Values().add(firstValue_semanticVisitor);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.Evaluation o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
+					newState);
+		}
+
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Loci.ExecutionEnvironment o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE
+					.createTracedExecutionEnvironment();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getLoci_tracedExecutionEnvironments().add(tracedObject);
+
+			// Creation of the first value of the field locus_ExecutionEnvironment
+			umlTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value firstValue_locus_ExecutionEnvironment = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecutionEnvironment_locus_ExecutionEnvironment_Value();
+
+			if (o_cast.getLocus_ExecutionEnvironment() != null) {
+				addNewObjectToState(o_cast.getLocus_ExecutionEnvironment(), newState);
+				firstValue_locus_ExecutionEnvironment
+						.setLocus_ExecutionEnvironment(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_ExecutionEnvironment())));
+			} else {
+				firstValue_locus_ExecutionEnvironment.setLocus_ExecutionEnvironment(null);
+			}
+
+			tracedObject.getLocus_ExecutionEnvironmentSequence().add(firstValue_locus_ExecutionEnvironment);
+			newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values()
+					.add(firstValue_locus_ExecutionEnvironment);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Loci.ExecutionFactory o_cast, umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE
+					.createTracedExecutionFactory();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getLoci_tracedExecutionFactorys().add(tracedObject);
+
+			// Creation of the first value of the field builtInTypes
+			umlTrace.States.ExecutionFactory_builtInTypes_Value firstValue_builtInTypes = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecutionFactory_builtInTypes_Value();
+
+			firstValue_builtInTypes.getBuiltInTypes()
+					.addAll((Collection<? extends org.eclipse.uml2.uml.PrimitiveType>) o_cast.getBuiltInTypes());
+
+			tracedObject.getBuiltInTypesSequence().add(firstValue_builtInTypes);
+			newState.getExecutionFactory_builtInTypes_Values().add(firstValue_builtInTypes);
+
+			// Creation of the first value of the field locus_ExecutionFactory
+			umlTrace.States.ExecutionFactory_locus_ExecutionFactory_Value firstValue_locus_ExecutionFactory = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecutionFactory_locus_ExecutionFactory_Value();
+
+			if (o_cast.getLocus_ExecutionFactory() != null) {
+				addNewObjectToState(o_cast.getLocus_ExecutionFactory(), newState);
+				firstValue_locus_ExecutionFactory
+						.setLocus_ExecutionFactory(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_ExecutionFactory())));
+			} else {
+				firstValue_locus_ExecutionFactory.setLocus_ExecutionFactory(null);
+			}
+
+			tracedObject.getLocus_ExecutionFactorySequence().add(firstValue_locus_ExecutionFactory);
+			newState.getExecutionFactory_locus_ExecutionFactory_Values().add(firstValue_locus_ExecutionFactory);
+
+			// Creation of the first value of the field primitiveBehaviorPrototypes
+			umlTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value firstValue_primitiveBehaviorPrototypes = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecutionFactory_primitiveBehaviorPrototypes_Value();
+
+			for (fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution aValue : o_cast
+					.getPrimitiveBehaviorPrototypes()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_primitiveBehaviorPrototypes.getPrimitiveBehaviorPrototypes()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedOpaqueBehaviorExecution>) getExeToTraced(
+							o_cast.getPrimitiveBehaviorPrototypes(), newState));
+
+			tracedObject.getPrimitiveBehaviorPrototypesSequence().add(firstValue_primitiveBehaviorPrototypes);
+			newState.getExecutionFactory_primitiveBehaviorPrototypes_Values()
+					.add(firstValue_primitiveBehaviorPrototypes);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Loci.Executor o_cast, umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Loci.TracedExecutor tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE
+					.createTracedExecutor();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getLoci_tracedExecutors().add(tracedObject);
+
+			// Creation of the first value of the field locus_Executor
+			umlTrace.States.Executor_locus_Executor_Value firstValue_locus_Executor = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecutor_locus_Executor_Value();
+
+			if (o_cast.getLocus_Executor() != null) {
+				addNewObjectToState(o_cast.getLocus_Executor(), newState);
+				firstValue_locus_Executor
+						.setLocus_Executor(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_Executor())));
+			} else {
+				firstValue_locus_Executor.setLocus_Executor(null);
+			}
+
+			tracedObject.getLocus_ExecutorSequence().add(firstValue_locus_Executor);
+			newState.getExecutor_locus_Executor_Values().add(firstValue_locus_Executor);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.ExtensionalValue o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Object) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.Object) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.FeatureValue o_cast,
+			umlTrace.States.State newState) {
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedForkNodeActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedForkNodeActivations().add(tracedObject);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedForkedToken();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedForkedTokens().add(tracedObject);
+
+			// Creation of the first value of the field baseToken
+			umlTrace.States.ForkedToken_baseToken_Value firstValue_baseToken = umlTrace.States.StatesFactory.eINSTANCE
+					.createForkedToken_baseToken_Value();
+
+			if (o_cast.getBaseToken() != null) {
+				addNewObjectToState(o_cast.getBaseToken(), newState);
+				firstValue_baseToken.setBaseToken(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
+								.get(o_cast.getBaseToken())));
+			} else {
+				firstValue_baseToken.setBaseToken(null);
+			}
+
+			tracedObject.getBaseTokenSequence().add(firstValue_baseToken);
+			newState.getForkedToken_baseToken_Values().add(firstValue_baseToken);
+
+			// Creation of the first value of the field baseTokenIsWithdrawn
+			umlTrace.States.ForkedToken_baseTokenIsWithdrawn_Value firstValue_baseTokenIsWithdrawn = umlTrace.States.StatesFactory.eINSTANCE
+					.createForkedToken_baseTokenIsWithdrawn_Value();
+
+			firstValue_baseTokenIsWithdrawn.setBaseTokenIsWithdrawn(o_cast.isBaseTokenIsWithdrawn());
+			tracedObject.getBaseTokenIsWithdrawnSequence().add(firstValue_baseTokenIsWithdrawn);
+			newState.getForkedToken_baseTokenIsWithdrawn_Values().add(firstValue_baseTokenIsWithdrawn);
+
+			// Creation of the first value of the field remainingOffersCount
+			umlTrace.States.ForkedToken_remainingOffersCount_Value firstValue_remainingOffersCount = umlTrace.States.StatesFactory.eINSTANCE
+					.createForkedToken_remainingOffersCount_Value();
+
+			firstValue_remainingOffersCount.setRemainingOffersCount(o_cast.getRemainingOffersCount());
+			tracedObject.getRemainingOffersCountSequence().add(firstValue_remainingOffersCount);
+			newState.getForkedToken_remainingOffersCount_Values().add(firstValue_remainingOffersCount);
+
+			// Creation of the first value of the field holder
+			umlTrace.States.Token_holder_Value firstValue_holder = umlTrace.States.StatesFactory.eINSTANCE
+					.createToken_holder_Value();
+
+			if (o_cast.getHolder() != null) {
+				addNewObjectToState(o_cast.getHolder(), newState);
+				firstValue_holder.setHolder(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast.getHolder())));
+			} else {
+				firstValue_holder.setHolder(null);
+			}
+
+			tracedObject.getHolderSequence().add(firstValue_holder);
+			newState.getToken_holder_Values().add(firstValue_holder);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedInitialNodeActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedInitialNodeActivations().add(tracedObject);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Input.InputParameterValues o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues tracedObject = umlTrace.States.fumlConfiguration.Input.InputFactory.eINSTANCE
+					.createTracedInputParameterValues();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getInput_tracedInputParameterValuess().add(tracedObject);
+
+			// Creation of the first value of the field name
+			umlTrace.States.InputParameterValues_name_Value firstValue_name = umlTrace.States.StatesFactory.eINSTANCE
+					.createInputParameterValues_name_Value();
+
+			firstValue_name.setName(o_cast.getName());
+			tracedObject.getNameSequence().add(firstValue_name);
+			newState.getInputParameterValues_name_Values().add(firstValue_name);
+
+			// Creation of the first value of the field parameterValues
+			umlTrace.States.InputParameterValues_parameterValues_Value firstValue_parameterValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createInputParameterValues_parameterValues_Value();
+
+			for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast.getParameterValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_parameterValues.getParameterValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+							o_cast.getParameterValues(), newState));
+
+			tracedObject.getParameterValuesSequence().add(firstValue_parameterValues);
+			newState.getInputParameterValues_parameterValues_Values().add(firstValue_parameterValues);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Actions.BasicActions.InputPinActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation tracedObject = umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsFactory.eINSTANCE
+					.createTracedInputPinActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getBasicActions_tracedInputPinActivations().add(tracedObject);
+
+			// Creation of the first value of the field actionActivation
+			umlTrace.States.PinActivation_actionActivation_Value firstValue_actionActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createPinActivation_actionActivation_Value();
+
+			if (o_cast.getActionActivation() != null) {
+				addNewObjectToState(o_cast.getActionActivation(), newState);
+				firstValue_actionActivation.setActionActivation(
+						((umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
+								.get(o_cast.getActionActivation())));
+			} else {
+				firstValue_actionActivation.setActionActivation(null);
+			}
+
+			tracedObject.getActionActivationSequence().add(firstValue_actionActivation);
+			newState.getPinActivation_actionActivation_Values().add(firstValue_actionActivation);
+
+			// Creation of the first value of the field count_temp
+			umlTrace.States.PinActivation_count_temp_Value firstValue_count_temp = umlTrace.States.StatesFactory.eINSTANCE
+					.createPinActivation_count_temp_Value();
+
+			firstValue_count_temp.setCount_temp(o_cast.getCount_temp());
+			tracedObject.getCount_tempSequence().add(firstValue_count_temp);
+			newState.getPinActivation_count_temp_Values().add(firstValue_count_temp);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field offeredTokenCount
+			umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value firstValue_offeredTokenCount = umlTrace.States.StatesFactory.eINSTANCE
+					.createObjectNodeActivation_offeredTokenCount_Value();
+
+			firstValue_offeredTokenCount.setOfferedTokenCount(o_cast.getOfferedTokenCount());
+			tracedObject.getOfferedTokenCountSequence().add(firstValue_offeredTokenCount);
+			newState.getObjectNodeActivation_offeredTokenCount_Values().add(firstValue_offeredTokenCount);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(
+			fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution tracedObject = umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsFactory.eINSTANCE
+					.createTracedIntegerGreaterFunctionBehaviorExecution();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions().add(tracedObject);
+
+			// Creation of the first value of the field featureValues
+			umlTrace.States.CompoundValue_featureValues_Value firstValue_featureValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createCompoundValue_featureValues_Value();
+
+			for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_featureValues.getFeatureValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
+							o_cast.getFeatureValues(), newState));
+
+			tracedObject.getFeatureValuesSequence().add(firstValue_featureValues);
+			newState.getCompoundValue_featureValues_Values().add(firstValue_featureValues);
+
+			// Creation of the first value of the field locus_ExtensionalValue
+			umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value firstValue_locus_ExtensionalValue = umlTrace.States.StatesFactory.eINSTANCE
+					.createExtensionalValue_locus_ExtensionalValue_Value();
+
+			if (o_cast.getLocus_ExtensionalValue() != null) {
+				addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
+				firstValue_locus_ExtensionalValue
+						.setLocus_ExtensionalValue(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_ExtensionalValue())));
+			} else {
+				firstValue_locus_ExtensionalValue.setLocus_ExtensionalValue(null);
+			}
+
+			tracedObject.getLocus_ExtensionalValueSequence().add(firstValue_locus_ExtensionalValue);
+			newState.getExtensionalValue_locus_ExtensionalValue_Values().add(firstValue_locus_ExtensionalValue);
+
+			// Creation of the first value of the field types
+			umlTrace.States.Object_types_Value firstValue_types = umlTrace.States.StatesFactory.eINSTANCE
+					.createObject_types_Value();
+
+			firstValue_types.getTypes().addAll((Collection<? extends org.eclipse.uml2.uml.Class>) o_cast.getTypes());
+
+			tracedObject.getTypesSequence().add(firstValue_types);
+			newState.getObject_types_Values().add(firstValue_types);
+
+			// Creation of the first value of the field context
+			umlTrace.States.Execution_context_Value firstValue_context = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecution_context_Value();
+
+			if (o_cast.getContext() != null) {
+				addNewObjectToState(o_cast.getContext(), newState);
+				firstValue_context
+						.setContext(((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+								.get(o_cast.getContext())));
+			} else {
+				firstValue_context.setContext(null);
+			}
+
+			tracedObject.getContextSequence().add(firstValue_context);
+			newState.getExecution_context_Values().add(firstValue_context);
+
+			// Creation of the first value of the field parameterValues
+			umlTrace.States.Execution_parameterValues_Value firstValue_parameterValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecution_parameterValues_Value();
+
+			for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast.getParameterValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_parameterValues.getParameterValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+							o_cast.getParameterValues(), newState));
+
+			tracedObject.getParameterValuesSequence().add(firstValue_parameterValues);
+			newState.getExecution_parameterValues_Values().add(firstValue_parameterValues);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(
+			fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution tracedObject = umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsFactory.eINSTANCE
+					.createTracedIntegerLessFunctionBehaviorExecution();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions().add(tracedObject);
+
+			// Creation of the first value of the field featureValues
+			umlTrace.States.CompoundValue_featureValues_Value firstValue_featureValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createCompoundValue_featureValues_Value();
+
+			for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_featureValues.getFeatureValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
+							o_cast.getFeatureValues(), newState));
+
+			tracedObject.getFeatureValuesSequence().add(firstValue_featureValues);
+			newState.getCompoundValue_featureValues_Values().add(firstValue_featureValues);
+
+			// Creation of the first value of the field locus_ExtensionalValue
+			umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value firstValue_locus_ExtensionalValue = umlTrace.States.StatesFactory.eINSTANCE
+					.createExtensionalValue_locus_ExtensionalValue_Value();
+
+			if (o_cast.getLocus_ExtensionalValue() != null) {
+				addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
+				firstValue_locus_ExtensionalValue
+						.setLocus_ExtensionalValue(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_ExtensionalValue())));
+			} else {
+				firstValue_locus_ExtensionalValue.setLocus_ExtensionalValue(null);
+			}
+
+			tracedObject.getLocus_ExtensionalValueSequence().add(firstValue_locus_ExtensionalValue);
+			newState.getExtensionalValue_locus_ExtensionalValue_Values().add(firstValue_locus_ExtensionalValue);
+
+			// Creation of the first value of the field types
+			umlTrace.States.Object_types_Value firstValue_types = umlTrace.States.StatesFactory.eINSTANCE
+					.createObject_types_Value();
+
+			firstValue_types.getTypes().addAll((Collection<? extends org.eclipse.uml2.uml.Class>) o_cast.getTypes());
+
+			tracedObject.getTypesSequence().add(firstValue_types);
+			newState.getObject_types_Values().add(firstValue_types);
+
+			// Creation of the first value of the field context
+			umlTrace.States.Execution_context_Value firstValue_context = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecution_context_Value();
+
+			if (o_cast.getContext() != null) {
+				addNewObjectToState(o_cast.getContext(), newState);
+				firstValue_context
+						.setContext(((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+								.get(o_cast.getContext())));
+			} else {
+				firstValue_context.setContext(null);
+			}
+
+			tracedObject.getContextSequence().add(firstValue_context);
+			newState.getExecution_context_Values().add(firstValue_context);
+
+			// Creation of the first value of the field parameterValues
+			umlTrace.States.Execution_parameterValues_Value firstValue_parameterValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecution_parameterValues_Value();
+
+			for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast.getParameterValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_parameterValues.getParameterValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+							o_cast.getParameterValues(), newState));
+
+			tracedObject.getParameterValuesSequence().add(firstValue_parameterValues);
+			newState.getExecution_parameterValues_Values().add(firstValue_parameterValues);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(
+			fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution tracedObject = umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsFactory.eINSTANCE
+					.createTracedIntegerPlusFunctionBehaviorExecution();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions().add(tracedObject);
+
+			// Creation of the first value of the field featureValues
+			umlTrace.States.CompoundValue_featureValues_Value firstValue_featureValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createCompoundValue_featureValues_Value();
+
+			for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_featureValues.getFeatureValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
+							o_cast.getFeatureValues(), newState));
+
+			tracedObject.getFeatureValuesSequence().add(firstValue_featureValues);
+			newState.getCompoundValue_featureValues_Values().add(firstValue_featureValues);
+
+			// Creation of the first value of the field locus_ExtensionalValue
+			umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value firstValue_locus_ExtensionalValue = umlTrace.States.StatesFactory.eINSTANCE
+					.createExtensionalValue_locus_ExtensionalValue_Value();
+
+			if (o_cast.getLocus_ExtensionalValue() != null) {
+				addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
+				firstValue_locus_ExtensionalValue
+						.setLocus_ExtensionalValue(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_ExtensionalValue())));
+			} else {
+				firstValue_locus_ExtensionalValue.setLocus_ExtensionalValue(null);
+			}
+
+			tracedObject.getLocus_ExtensionalValueSequence().add(firstValue_locus_ExtensionalValue);
+			newState.getExtensionalValue_locus_ExtensionalValue_Values().add(firstValue_locus_ExtensionalValue);
+
+			// Creation of the first value of the field types
+			umlTrace.States.Object_types_Value firstValue_types = umlTrace.States.StatesFactory.eINSTANCE
+					.createObject_types_Value();
+
+			firstValue_types.getTypes().addAll((Collection<? extends org.eclipse.uml2.uml.Class>) o_cast.getTypes());
+
+			tracedObject.getTypesSequence().add(firstValue_types);
+			newState.getObject_types_Values().add(firstValue_types);
+
+			// Creation of the first value of the field context
+			umlTrace.States.Execution_context_Value firstValue_context = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecution_context_Value();
+
+			if (o_cast.getContext() != null) {
+				addNewObjectToState(o_cast.getContext(), newState);
+				firstValue_context
+						.setContext(((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+								.get(o_cast.getContext())));
+			} else {
+				firstValue_context.setContext(null);
+			}
+
+			tracedObject.getContextSequence().add(firstValue_context);
+			newState.getExecution_context_Values().add(firstValue_context);
+
+			// Creation of the first value of the field parameterValues
+			umlTrace.States.Execution_parameterValues_Value firstValue_parameterValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createExecution_parameterValues_Value();
+
+			for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast.getParameterValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_parameterValues.getParameterValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+							o_cast.getParameterValues(), newState));
+
+			tracedObject.getParameterValuesSequence().add(firstValue_parameterValues);
+			newState.getExecution_parameterValues_Values().add(firstValue_parameterValues);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.IntegerValue o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
+					.createTracedIntegerValue();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getKernel_tracedIntegerValues().add(tracedObject);
+
+			// Creation of the first value of the field value_IntegerValue
+			umlTrace.States.IntegerValue_value_IntegerValue_Value firstValue_value_IntegerValue = umlTrace.States.StatesFactory.eINSTANCE
+					.createIntegerValue_value_IntegerValue_Value();
+
+			firstValue_value_IntegerValue.setValue_IntegerValue(o_cast.getValue_IntegerValue());
+			tracedObject.getValue_IntegerValueSequence().add(firstValue_value_IntegerValue);
+			newState.getIntegerValue_value_IntegerValue_Values().add(firstValue_value_IntegerValue);
+
+			// Creation of the first value of the field type
+			umlTrace.States.PrimitiveValue_type_Value firstValue_type = umlTrace.States.StatesFactory.eINSTANCE
+					.createPrimitiveValue_type_Value();
+
+			if (o_cast.getType() != null) {
+				firstValue_type.setType(o_cast.getType());
+			} else {
+				firstValue_type.setType(null);
+			}
+
+			tracedObject.getTypeSequence().add(firstValue_type);
+			newState.getPrimitiveValue_type_Values().add(firstValue_type);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Actions.BasicActions.InvocationActionActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedJoinNodeActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedJoinNodeActivations().add(tracedObject);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
+					.createTracedLiteralBooleanEvaluation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getKernel_tracedLiteralBooleanEvaluations().add(tracedObject);
+
+			// Creation of the first value of the field locus_Evaluation
+			umlTrace.States.Evaluation_locus_Evaluation_Value firstValue_locus_Evaluation = umlTrace.States.StatesFactory.eINSTANCE
+					.createEvaluation_locus_Evaluation_Value();
+
+			if (o_cast.getLocus_Evaluation() != null) {
+				addNewObjectToState(o_cast.getLocus_Evaluation(), newState);
+				firstValue_locus_Evaluation
+						.setLocus_Evaluation(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_Evaluation())));
+			} else {
+				firstValue_locus_Evaluation.setLocus_Evaluation(null);
+			}
+
+			tracedObject.getLocus_EvaluationSequence().add(firstValue_locus_Evaluation);
+			newState.getEvaluation_locus_Evaluation_Values().add(firstValue_locus_Evaluation);
+
+			// Creation of the first value of the field specification_Evaluation
+			umlTrace.States.Evaluation_specification_Evaluation_Value firstValue_specification_Evaluation = umlTrace.States.StatesFactory.eINSTANCE
+					.createEvaluation_specification_Evaluation_Value();
+
+			if (o_cast.getSpecification_Evaluation() != null) {
+				firstValue_specification_Evaluation.setSpecification_Evaluation(o_cast.getSpecification_Evaluation());
+			} else {
+				firstValue_specification_Evaluation.setSpecification_Evaluation(null);
+			}
+
+			tracedObject.getSpecification_EvaluationSequence().add(firstValue_specification_Evaluation);
+			newState.getEvaluation_specification_Evaluation_Values().add(firstValue_specification_Evaluation);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.LiteralEvaluation o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
+					.createTracedLiteralIntegerEvaluation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getKernel_tracedLiteralIntegerEvaluations().add(tracedObject);
+
+			// Creation of the first value of the field locus_Evaluation
+			umlTrace.States.Evaluation_locus_Evaluation_Value firstValue_locus_Evaluation = umlTrace.States.StatesFactory.eINSTANCE
+					.createEvaluation_locus_Evaluation_Value();
+
+			if (o_cast.getLocus_Evaluation() != null) {
+				addNewObjectToState(o_cast.getLocus_Evaluation(), newState);
+				firstValue_locus_Evaluation
+						.setLocus_Evaluation(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_Evaluation())));
+			} else {
+				firstValue_locus_Evaluation.setLocus_Evaluation(null);
+			}
+
+			tracedObject.getLocus_EvaluationSequence().add(firstValue_locus_Evaluation);
+			newState.getEvaluation_locus_Evaluation_Values().add(firstValue_locus_Evaluation);
+
+			// Creation of the first value of the field specification_Evaluation
+			umlTrace.States.Evaluation_specification_Evaluation_Value firstValue_specification_Evaluation = umlTrace.States.StatesFactory.eINSTANCE
+					.createEvaluation_specification_Evaluation_Value();
+
+			if (o_cast.getSpecification_Evaluation() != null) {
+				firstValue_specification_Evaluation.setSpecification_Evaluation(o_cast.getSpecification_Evaluation());
+			} else {
+				firstValue_specification_Evaluation.setSpecification_Evaluation(null);
+			}
+
+			tracedObject.getSpecification_EvaluationSequence().add(firstValue_specification_Evaluation);
+			newState.getEvaluation_specification_Evaluation_Values().add(firstValue_specification_Evaluation);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Loci.Locus o_cast, umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Loci.TracedLocus tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE
+					.createTracedLocus();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getLoci_tracedLocuss().add(tracedObject);
+
+			// Creation of the first value of the field executor
+			umlTrace.States.Locus_executor_Value firstValue_executor = umlTrace.States.StatesFactory.eINSTANCE
+					.createLocus_executor_Value();
+
+			if (o_cast.getExecutor() != null) {
+				addNewObjectToState(o_cast.getExecutor(), newState);
+				firstValue_executor.setExecutor(((umlTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
+						.get(o_cast.getExecutor())));
+			} else {
+				firstValue_executor.setExecutor(null);
+			}
+
+			tracedObject.getExecutorSequence().add(firstValue_executor);
+			newState.getLocus_executor_Values().add(firstValue_executor);
+
+			// Creation of the first value of the field extensionalValues
+			umlTrace.States.Locus_extensionalValues_Value firstValue_extensionalValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createLocus_extensionalValues_Value();
+
+			for (fumlConfiguration.Classes.Kernel.ExtensionalValue aValue : o_cast.getExtensionalValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_extensionalValues.getExtensionalValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue>) getExeToTraced(
+							o_cast.getExtensionalValues(), newState));
+
+			tracedObject.getExtensionalValuesSequence().add(firstValue_extensionalValues);
+			newState.getLocus_extensionalValues_Values().add(firstValue_extensionalValues);
+
+			// Creation of the first value of the field factory
+			umlTrace.States.Locus_factory_Value firstValue_factory = umlTrace.States.StatesFactory.eINSTANCE
+					.createLocus_factory_Value();
+
+			if (o_cast.getFactory() != null) {
+				addNewObjectToState(o_cast.getFactory(), newState);
+				firstValue_factory
+						.setFactory(((umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
+								.get(o_cast.getFactory())));
+			} else {
+				firstValue_factory.setFactory(null);
+			}
+
+			tracedObject.getFactorySequence().add(firstValue_factory);
+			newState.getLocus_factory_Values().add(firstValue_factory);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedMergeNodeActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedMergeNodeActivations().add(tracedObject);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.Object o_cast, umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
+					newState);
+		} else
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
+					.createTracedObject();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getKernel_tracedObjects().add(tracedObject);
+
+			// Creation of the first value of the field featureValues
+			umlTrace.States.CompoundValue_featureValues_Value firstValue_featureValues = umlTrace.States.StatesFactory.eINSTANCE
+					.createCompoundValue_featureValues_Value();
+
+			for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_featureValues.getFeatureValues()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
+							o_cast.getFeatureValues(), newState));
+
+			tracedObject.getFeatureValuesSequence().add(firstValue_featureValues);
+			newState.getCompoundValue_featureValues_Values().add(firstValue_featureValues);
+
+			// Creation of the first value of the field locus_ExtensionalValue
+			umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value firstValue_locus_ExtensionalValue = umlTrace.States.StatesFactory.eINSTANCE
+					.createExtensionalValue_locus_ExtensionalValue_Value();
+
+			if (o_cast.getLocus_ExtensionalValue() != null) {
+				addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
+				firstValue_locus_ExtensionalValue
+						.setLocus_ExtensionalValue(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast.getLocus_ExtensionalValue())));
+			} else {
+				firstValue_locus_ExtensionalValue.setLocus_ExtensionalValue(null);
+			}
+
+			tracedObject.getLocus_ExtensionalValueSequence().add(firstValue_locus_ExtensionalValue);
+			newState.getExtensionalValue_locus_ExtensionalValue_Values().add(firstValue_locus_ExtensionalValue);
+
+			// Creation of the first value of the field types
+			umlTrace.States.Object_types_Value firstValue_types = umlTrace.States.StatesFactory.eINSTANCE
+					.createObject_types_Value();
+
+			firstValue_types.getTypes().addAll((Collection<? extends org.eclipse.uml2.uml.Class>) o_cast.getTypes());
+
+			tracedObject.getTypesSequence().add(firstValue_types);
+			newState.getObject_types_Values().add(firstValue_types);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Actions.BasicActions.InputPinActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.InputPinActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.OutputPinActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.OutputPinActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) o_cast,
+					newState);
+		}
+
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedObjectToken();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedObjectTokens().add(tracedObject);
+
+			// Creation of the first value of the field value
+			umlTrace.States.ObjectToken_value_Value firstValue_value = umlTrace.States.StatesFactory.eINSTANCE
+					.createObjectToken_value_Value();
+
+			if (o_cast.getValue() != null) {
+				addNewObjectToState(o_cast.getValue(), newState);
+				firstValue_value.setValue(((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue) exeToTraced
+						.get(o_cast.getValue())));
+			} else {
+				firstValue_value.setValue(null);
+			}
+
+			tracedObject.getValueSequence().add(firstValue_value);
+			newState.getObjectToken_value_Values().add(firstValue_value);
+
+			// Creation of the first value of the field holder
+			umlTrace.States.Token_holder_Value firstValue_holder = umlTrace.States.StatesFactory.eINSTANCE
+					.createToken_holder_Value();
+
+			if (o_cast.getHolder() != null) {
+				addNewObjectToState(o_cast.getHolder(), newState);
+				firstValue_holder.setHolder(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast.getHolder())));
+			} else {
+				firstValue_holder.setHolder(null);
+			}
+
+			tracedObject.getHolderSequence().add(firstValue_holder);
+			newState.getToken_holder_Values().add(firstValue_holder);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.Offer o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedOffer();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedOffers().add(tracedObject);
+
+			// Creation of the first value of the field offeredTokens
+			umlTrace.States.Offer_offeredTokens_Value firstValue_offeredTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createOffer_offeredTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getOfferedTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_offeredTokens.getOfferedTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getOfferedTokens(), newState));
+
+			tracedObject.getOfferedTokensSequence().add(firstValue_offeredTokens);
+			newState.getOffer_offeredTokens_Values().add(firstValue_offeredTokens);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Actions.BasicActions.OpaqueActionActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation tracedObject = umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsFactory.eINSTANCE
+					.createTracedOpaqueActionActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getBasicActions_tracedOpaqueActionActivations().add(tracedObject);
+
+			// Creation of the first value of the field firing
+			umlTrace.States.ActionActivation_firing_Value firstValue_firing = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_firing_Value();
+
+			firstValue_firing.setFiring(o_cast.isFiring());
+			tracedObject.getFiringSequence().add(firstValue_firing);
+			newState.getActionActivation_firing_Values().add(firstValue_firing);
+
+			// Creation of the first value of the field pinActivations
+			umlTrace.States.ActionActivation_pinActivations_Value firstValue_pinActivations = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_pinActivations_Value();
+
+			for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast.getPinActivations()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_pinActivations.getPinActivations()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+							o_cast.getPinActivations(), newState));
+
+			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
+			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
+					newState);
+		}
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Actions.BasicActions.OutputPinActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation tracedObject = umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsFactory.eINSTANCE
+					.createTracedOutputPinActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getBasicActions_tracedOutputPinActivations().add(tracedObject);
+
+			// Creation of the first value of the field actionActivation
+			umlTrace.States.PinActivation_actionActivation_Value firstValue_actionActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createPinActivation_actionActivation_Value();
+
+			if (o_cast.getActionActivation() != null) {
+				addNewObjectToState(o_cast.getActionActivation(), newState);
+				firstValue_actionActivation.setActionActivation(
+						((umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
+								.get(o_cast.getActionActivation())));
+			} else {
+				firstValue_actionActivation.setActionActivation(null);
+			}
+
+			tracedObject.getActionActivationSequence().add(firstValue_actionActivation);
+			newState.getPinActivation_actionActivation_Values().add(firstValue_actionActivation);
+
+			// Creation of the first value of the field count_temp
+			umlTrace.States.PinActivation_count_temp_Value firstValue_count_temp = umlTrace.States.StatesFactory.eINSTANCE
+					.createPinActivation_count_temp_Value();
+
+			firstValue_count_temp.setCount_temp(o_cast.getCount_temp());
+			tracedObject.getCount_tempSequence().add(firstValue_count_temp);
+			newState.getPinActivation_count_temp_Values().add(firstValue_count_temp);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field offeredTokenCount
+			umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value firstValue_offeredTokenCount = umlTrace.States.StatesFactory.eINSTANCE
+					.createObjectNodeActivation_offeredTokenCount_Value();
+
+			firstValue_offeredTokenCount.setOfferedTokenCount(o_cast.getOfferedTokenCount());
+			tracedObject.getOfferedTokenCountSequence().add(firstValue_offeredTokenCount);
+			newState.getObjectNodeActivation_offeredTokenCount_Values().add(firstValue_offeredTokenCount);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue tracedObject = umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsFactory.eINSTANCE
+					.createTracedParameterValue();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getBasicBehaviors_tracedParameterValues().add(tracedObject);
+
+			// Creation of the first value of the field parameter_ParameterValue
+			umlTrace.States.ParameterValue_parameter_ParameterValue_Value firstValue_parameter_ParameterValue = umlTrace.States.StatesFactory.eINSTANCE
+					.createParameterValue_parameter_ParameterValue_Value();
+
+			if (o_cast.getParameter_ParameterValue() != null) {
+				firstValue_parameter_ParameterValue.setParameter_ParameterValue(o_cast.getParameter_ParameterValue());
+			} else {
+				firstValue_parameter_ParameterValue.setParameter_ParameterValue(null);
+			}
+
+			tracedObject.getParameter_ParameterValueSequence().add(firstValue_parameter_ParameterValue);
+			newState.getParameterValue_parameter_ParameterValue_Values().add(firstValue_parameter_ParameterValue);
+
+			// Creation of the first value of the field values_ParameterValue
+			umlTrace.States.ParameterValue_values_ParameterValue_Value firstValue_values_ParameterValue = umlTrace.States.StatesFactory.eINSTANCE
+					.createParameterValue_values_ParameterValue_Value();
+
+			for (fumlConfiguration.Classes.Kernel.Value aValue : o_cast.getValues_ParameterValue()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_values_ParameterValue.getValues_ParameterValue()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue>) getExeToTraced(
+							o_cast.getValues_ParameterValue(), newState));
+
+			tracedObject.getValues_ParameterValueSequence().add(firstValue_values_ParameterValue);
+			newState.getParameterValue_values_ParameterValue_Values().add(firstValue_values_ParameterValue);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(fumlConfiguration.Actions.BasicActions.PinActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Actions.BasicActions.InputPinActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.InputPinActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.OutputPinActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.OutputPinActivation) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.PrimitiveValue o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.BooleanValue) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.IntegerValue) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(
+			fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation tracedObject = umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsFactory.eINSTANCE
+					.createTracedReadStructuralFeatureActionActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActions_tracedReadStructuralFeatureActionActivations().add(tracedObject);
+
+			// Creation of the first value of the field firing
+			umlTrace.States.ActionActivation_firing_Value firstValue_firing = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_firing_Value();
+
+			firstValue_firing.setFiring(o_cast.isFiring());
+			tracedObject.getFiringSequence().add(firstValue_firing);
+			newState.getActionActivation_firing_Values().add(firstValue_firing);
+
+			// Creation of the first value of the field pinActivations
+			umlTrace.States.ActionActivation_pinActivations_Value firstValue_pinActivations = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_pinActivations_Value();
+
+			for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast.getPinActivations()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_pinActivations.getPinActivations()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+							o_cast.getPinActivations(), newState));
+
+			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
+			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.Reference o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
+					.createTracedReference();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getKernel_tracedReferences().add(tracedObject);
+
+			// Creation of the first value of the field referent
+			umlTrace.States.Reference_referent_Value firstValue_referent = umlTrace.States.StatesFactory.eINSTANCE
+					.createReference_referent_Value();
+
+			if (o_cast.getReferent() != null) {
+				addNewObjectToState(o_cast.getReferent(), newState);
+				firstValue_referent
+						.setReferent(((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+								.get(o_cast.getReferent())));
+			} else {
+				firstValue_referent.setReferent(null);
+			}
+
+			tracedObject.getReferentSequence().add(firstValue_referent);
+			newState.getReference_referent_Values().add(firstValue_referent);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Loci.SemanticVisitor o_cast, umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Actions.BasicActions.InputPinActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.InputPinActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.OutputPinActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.OutputPinActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Reference) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.Reference) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.BooleanValue) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.IntegerValue) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Object) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.Object) o_cast, newState);
+		} else
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE
+					.createTracedSemanticVisitor();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getLoci_tracedSemanticVisitors().add(tracedObject);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(
+			fumlConfiguration.Actions.IntermediateActions.StructuralFeatureActionActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) o_cast,
+					newState);
+		}
+
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.StructuredValue o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Reference) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.Reference) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Object) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.Object) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.Token o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ControlToken) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ControlToken) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o_cast, newState);
+		} else
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
+					.createTracedToken();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActivities_tracedTokens().add(tracedObject);
+
+			// Creation of the first value of the field holder
+			umlTrace.States.Token_holder_Value firstValue_holder = umlTrace.States.StatesFactory.eINSTANCE
+					.createToken_holder_Value();
+
+			if (o_cast.getHolder() != null) {
+				addNewObjectToState(o_cast.getHolder(), newState);
+				firstValue_holder.setHolder(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast.getHolder())));
+			} else {
+				firstValue_holder.setHolder(null);
+			}
+
+			tracedObject.getHolderSequence().add(firstValue_holder);
+			newState.getToken_holder_Values().add(firstValue_holder);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.Value o_cast, umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Reference) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.Reference) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.BooleanValue) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.IntegerValue) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+			addNewObjectToState(
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Object) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.Object) o_cast, newState);
+		}
+
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(
+			fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (!exeToTraced.containsKey(o_cast)) {
+			umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation tracedObject = umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsFactory.eINSTANCE
+					.createTracedValueSpecificationActionActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getIntermediateActions_tracedValueSpecificationActionActivations().add(tracedObject);
+
+			// Creation of the first value of the field firing
+			umlTrace.States.ActionActivation_firing_Value firstValue_firing = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_firing_Value();
+
+			firstValue_firing.setFiring(o_cast.isFiring());
+			tracedObject.getFiringSequence().add(firstValue_firing);
+			newState.getActionActivation_firing_Values().add(firstValue_firing);
+
+			// Creation of the first value of the field pinActivations
+			umlTrace.States.ActionActivation_pinActivations_Value firstValue_pinActivations = umlTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_pinActivations_Value();
+
+			for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast.getPinActivations()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_pinActivations.getPinActivations()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+							o_cast.getPinActivations(), newState));
+
+			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
+			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
+
+			// Creation of the first value of the field group_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+
+			if (o_cast.getGroup_ActivityNodeActivation() != null) {
+				addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(
+						((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast.getGroup_ActivityNodeActivation())));
+			} else {
+				firstValue_group_ActivityNodeActivation.setGroup_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getGroup_ActivityNodeActivationSequence().add(firstValue_group_ActivityNodeActivation);
+			newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+					.add(firstValue_group_ActivityNodeActivation);
+
+			// Creation of the first value of the field heldTokens
+			umlTrace.States.ActivityNodeActivation_heldTokens_Value firstValue_heldTokens = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_heldTokens_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast.getHeldTokens()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_heldTokens.getHeldTokens()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+							o_cast.getHeldTokens(), newState));
+
+			tracedObject.getHeldTokensSequence().add(firstValue_heldTokens);
+			newState.getActivityNodeActivation_heldTokens_Values().add(firstValue_heldTokens);
+
+			// Creation of the first value of the field incomingEdges
+			umlTrace.States.ActivityNodeActivation_incomingEdges_Value firstValue_incomingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_incomingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getIncomingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_incomingEdges.getIncomingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getIncomingEdges(), newState));
+
+			tracedObject.getIncomingEdgesSequence().add(firstValue_incomingEdges);
+			newState.getActivityNodeActivation_incomingEdges_Values().add(firstValue_incomingEdges);
+
+			// Creation of the first value of the field isRunning
+			umlTrace.States.ActivityNodeActivation_isRunning_Value firstValue_isRunning = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_isRunning_Value();
+
+			firstValue_isRunning.setIsRunning(o_cast.isIsRunning());
+			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
+			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
+
+			// Creation of the first value of the field node_ActivityNodeActivation
+			umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+
+			if (o_cast.getNode_ActivityNodeActivation() != null) {
+				firstValue_node_ActivityNodeActivation
+						.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+			} else {
+				firstValue_node_ActivityNodeActivation.setNode_ActivityNodeActivation(null);
+			}
+
+			tracedObject.getNode_ActivityNodeActivationSequence().add(firstValue_node_ActivityNodeActivation);
+			newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+					.add(firstValue_node_ActivityNodeActivation);
+
+			// Creation of the first value of the field outgoingEdges
+			umlTrace.States.ActivityNodeActivation_outgoingEdges_Value firstValue_outgoingEdges = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_outgoingEdges_Value();
+
+			for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+					.getOutgoingEdges()) {
+				addNewObjectToState(aValue, newState);
+			}
+
+			firstValue_outgoingEdges.getOutgoingEdges()
+					.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+							o_cast.getOutgoingEdges(), newState));
+
+			tracedObject.getOutgoingEdgesSequence().add(firstValue_outgoingEdges);
+			newState.getActivityNodeActivation_outgoingEdges_Values().add(firstValue_outgoingEdges);
+
+			// Creation of the first value of the field running
+			umlTrace.States.ActivityNodeActivation_running_Value firstValue_running = umlTrace.States.StatesFactory.eINSTANCE
+					.createActivityNodeActivation_running_Value();
+
+			firstValue_running.setRunning(o_cast.isRunning());
+			tracedObject.getRunningSequence().add(firstValue_running);
+			newState.getActivityNodeActivation_running_Values().add(firstValue_running);
+
+			// Creation of the first value of the field runtimeModelElement
+			umlTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = umlTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast.getRuntimeModelElement())));
+			} else {
+				firstValue_runtimeModelElement.setRuntimeModelElement(null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+	}// end addNewObjectToState
+
+	@SuppressWarnings("unchecked")
+	private void addNewObjectToState(
+			fumlConfiguration.Actions.IntermediateActions.WriteStructuralFeatureActionActivation o_cast,
+			umlTrace.States.State newState) {
+
+		if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o_cast,
+					newState);
+		}
+
+	}// end addNewObjectToState
 
 	private umlTrace.States.State copyState(umlTrace.States.State oldState) {
 		umlTrace.States.State newState = umlTrace.States.StatesFactory.eINSTANCE.createState();
-		newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values()
-				.addAll(oldState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values());
-		newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values()
-				.addAll(oldState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values());
-		newState.getActivityEdgeInstance_offers_Values().addAll(oldState.getActivityEdgeInstance_offers_Values());
-		newState.getActivityEdgeInstance_source_Values().addAll(oldState.getActivityEdgeInstance_source_Values());
-		newState.getActivityEdgeInstance_target_Values().addAll(oldState.getActivityEdgeInstance_target_Values());
-		newState.getActivityExecution_activationGroup_Values()
-				.addAll(oldState.getActivityExecution_activationGroup_Values());
-		newState.getExecution_context_Values().addAll(oldState.getExecution_context_Values());
-		newState.getCompoundValue_featureValues_Values().addAll(oldState.getCompoundValue_featureValues_Values());
-		newState.getExtensionalValue_locus_ExtensionalValue_Values()
-				.addAll(oldState.getExtensionalValue_locus_ExtensionalValue_Values());
-		newState.getExecution_parameterValues_Values().addAll(oldState.getExecution_parameterValues_Values());
-		newState.getSemanticVisitor_runtimeModelElement_Values()
-				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
-		newState.getObject_types_Values().addAll(oldState.getObject_types_Values());
+		newState.getActionActivation_firing_Values().addAll(oldState.getActionActivation_firing_Values());
+		newState.getActionActivation_pinActivations_Values()
+				.addAll(oldState.getActionActivation_pinActivations_Values());
 		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
 				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
 		newState.getActivityNodeActivation_heldTokens_Values()
@@ -966,63 +4350,367 @@ public class UmlTraceConstructor implements ITraceConstructor {
 		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
 		newState.getSemanticVisitor_runtimeModelElement_Values()
 				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getReference_referent_Values().addAll(oldState.getReference_referent_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getActionActivation_firing_Values().addAll(oldState.getActionActivation_firing_Values());
+		newState.getActionActivation_pinActivations_Values()
+				.addAll(oldState.getActionActivation_pinActivations_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getParameterValue_parameter_ParameterValue_Values()
+				.addAll(oldState.getParameterValue_parameter_ParameterValue_Values());
+		newState.getParameterValue_values_ParameterValue_Values()
+				.addAll(oldState.getParameterValue_values_ParameterValue_Values());
+		newState.getPinActivation_actionActivation_Values().addAll(oldState.getPinActivation_actionActivation_Values());
+		newState.getPinActivation_count_temp_Values().addAll(oldState.getPinActivation_count_temp_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getObjectNodeActivation_offeredTokenCount_Values()
+				.addAll(oldState.getObjectNodeActivation_offeredTokenCount_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getActionActivation_firing_Values().addAll(oldState.getActionActivation_firing_Values());
+		newState.getActionActivation_pinActivations_Values()
+				.addAll(oldState.getActionActivation_pinActivations_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getOffer_offeredTokens_Values().addAll(oldState.getOffer_offeredTokens_Values());
+		newState.getObjectToken_value_Values().addAll(oldState.getObjectToken_value_Values());
+		newState.getToken_holder_Values().addAll(oldState.getToken_holder_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getLocus_executor_Values().addAll(oldState.getLocus_executor_Values());
+		newState.getLocus_extensionalValues_Values().addAll(oldState.getLocus_extensionalValues_Values());
+		newState.getLocus_factory_Values().addAll(oldState.getLocus_factory_Values());
+		newState.getEvaluation_locus_Evaluation_Values().addAll(oldState.getEvaluation_locus_Evaluation_Values());
+		newState.getEvaluation_specification_Evaluation_Values()
+				.addAll(oldState.getEvaluation_specification_Evaluation_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getEvaluation_locus_Evaluation_Values().addAll(oldState.getEvaluation_locus_Evaluation_Values());
+		newState.getEvaluation_specification_Evaluation_Values()
+				.addAll(oldState.getEvaluation_specification_Evaluation_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getIntegerValue_value_IntegerValue_Values()
+				.addAll(oldState.getIntegerValue_value_IntegerValue_Values());
+		newState.getPrimitiveValue_type_Values().addAll(oldState.getPrimitiveValue_type_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getCompoundValue_featureValues_Values().addAll(oldState.getCompoundValue_featureValues_Values());
+		newState.getExtensionalValue_locus_ExtensionalValue_Values()
+				.addAll(oldState.getExtensionalValue_locus_ExtensionalValue_Values());
+		newState.getObject_types_Values().addAll(oldState.getObject_types_Values());
+		newState.getExecution_context_Values().addAll(oldState.getExecution_context_Values());
+		newState.getExecution_parameterValues_Values().addAll(oldState.getExecution_parameterValues_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getCompoundValue_featureValues_Values().addAll(oldState.getCompoundValue_featureValues_Values());
+		newState.getExtensionalValue_locus_ExtensionalValue_Values()
+				.addAll(oldState.getExtensionalValue_locus_ExtensionalValue_Values());
+		newState.getObject_types_Values().addAll(oldState.getObject_types_Values());
+		newState.getExecution_context_Values().addAll(oldState.getExecution_context_Values());
+		newState.getExecution_parameterValues_Values().addAll(oldState.getExecution_parameterValues_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getCompoundValue_featureValues_Values().addAll(oldState.getCompoundValue_featureValues_Values());
+		newState.getExtensionalValue_locus_ExtensionalValue_Values()
+				.addAll(oldState.getExtensionalValue_locus_ExtensionalValue_Values());
+		newState.getObject_types_Values().addAll(oldState.getObject_types_Values());
+		newState.getExecution_context_Values().addAll(oldState.getExecution_context_Values());
+		newState.getExecution_parameterValues_Values().addAll(oldState.getExecution_parameterValues_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getPinActivation_actionActivation_Values().addAll(oldState.getPinActivation_actionActivation_Values());
+		newState.getPinActivation_count_temp_Values().addAll(oldState.getPinActivation_count_temp_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getObjectNodeActivation_offeredTokenCount_Values()
+				.addAll(oldState.getObjectNodeActivation_offeredTokenCount_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getInputParameterValues_name_Values().addAll(oldState.getInputParameterValues_name_Values());
+		newState.getInputParameterValues_parameterValues_Values()
+				.addAll(oldState.getInputParameterValues_parameterValues_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getForkedToken_baseToken_Values().addAll(oldState.getForkedToken_baseToken_Values());
+		newState.getForkedToken_baseTokenIsWithdrawn_Values()
+				.addAll(oldState.getForkedToken_baseTokenIsWithdrawn_Values());
+		newState.getForkedToken_remainingOffersCount_Values()
+				.addAll(oldState.getForkedToken_remainingOffersCount_Values());
+		newState.getToken_holder_Values().addAll(oldState.getToken_holder_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getExecutor_locus_Executor_Values().addAll(oldState.getExecutor_locus_Executor_Values());
+		newState.getExecutionFactory_builtInTypes_Values().addAll(oldState.getExecutionFactory_builtInTypes_Values());
+		newState.getExecutionFactory_locus_ExecutionFactory_Values()
+				.addAll(oldState.getExecutionFactory_locus_ExecutionFactory_Values());
+		newState.getExecutionFactory_primitiveBehaviorPrototypes_Values()
+				.addAll(oldState.getExecutionFactory_primitiveBehaviorPrototypes_Values());
+		newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values()
+				.addAll(oldState.getExecutionEnvironment_locus_ExecutionEnvironment_Values());
+		newState.getElementConfiguration_semanticVisitor_Values()
+				.addAll(oldState.getElementConfiguration_semanticVisitor_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getActionActivation_firing_Values().addAll(oldState.getActionActivation_firing_Values());
+		newState.getActionActivation_pinActivations_Values()
+				.addAll(oldState.getActionActivation_pinActivations_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getToken_holder_Values().addAll(oldState.getToken_holder_Values());
+		newState.getToken_holder_Values().addAll(oldState.getToken_holder_Values());
+		newState.getActionActivation_firing_Values().addAll(oldState.getActionActivation_firing_Values());
+		newState.getActionActivation_pinActivations_Values()
+				.addAll(oldState.getActionActivation_pinActivations_Values());
+		newState.getCallActionActivation_callExecutions_Values()
+				.addAll(oldState.getCallActionActivation_callExecutions_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getBooleanValue_value_BooleanValue_Values()
+				.addAll(oldState.getBooleanValue_value_BooleanValue_Values());
+		newState.getPrimitiveValue_type_Values().addAll(oldState.getPrimitiveValue_type_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getActionActivation_firing_Values().addAll(oldState.getActionActivation_firing_Values());
+		newState.getActionActivation_pinActivations_Values()
+				.addAll(oldState.getActionActivation_pinActivations_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
+		newState.getObjectNodeActivation_offeredTokenCount_Values()
+				.addAll(oldState.getObjectNodeActivation_offeredTokenCount_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
 		newState.getActivityNodeActivationGroup_activityExecution_Values()
 				.addAll(oldState.getActivityNodeActivationGroup_activityExecution_Values());
 		newState.getActivityNodeActivationGroup_edgeInstances_Values()
 				.addAll(oldState.getActivityNodeActivationGroup_edgeInstances_Values());
 		newState.getActivityNodeActivationGroup_nodeActivations_Values()
 				.addAll(oldState.getActivityNodeActivationGroup_nodeActivations_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
 		newState.getSemanticVisitor_runtimeModelElement_Values()
 				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
-		newState.getPrimitiveValue_type_Values().addAll(oldState.getPrimitiveValue_type_Values());
-		newState.getBooleanValue_value_BooleanValue_Values()
-				.addAll(oldState.getBooleanValue_value_BooleanValue_Values());
-		newState.getElementConfiguration_semanticVisitor_Values()
-				.addAll(oldState.getElementConfiguration_semanticVisitor_Values());
-		newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values()
-				.addAll(oldState.getExecutionEnvironment_locus_ExecutionEnvironment_Values());
-		newState.getExecutionFactory_builtInTypes_Values().addAll(oldState.getExecutionFactory_builtInTypes_Values());
-		newState.getExecutionFactory_locus_ExecutionFactory_Values()
-				.addAll(oldState.getExecutionFactory_locus_ExecutionFactory_Values());
-		newState.getExecutionFactory_primitiveBehaviorPrototypes_Values()
-				.addAll(oldState.getExecutionFactory_primitiveBehaviorPrototypes_Values());
-		newState.getExecutor_locus_Executor_Values().addAll(oldState.getExecutor_locus_Executor_Values());
-		newState.getForkedToken_baseToken_Values().addAll(oldState.getForkedToken_baseToken_Values());
-		newState.getForkedToken_baseTokenIsWithdrawn_Values()
-				.addAll(oldState.getForkedToken_baseTokenIsWithdrawn_Values());
-		newState.getToken_holder_Values().addAll(oldState.getToken_holder_Values());
-		newState.getForkedToken_remainingOffersCount_Values()
-				.addAll(oldState.getForkedToken_remainingOffersCount_Values());
-		newState.getInputParameterValues_name_Values().addAll(oldState.getInputParameterValues_name_Values());
-		newState.getInputParameterValues_parameterValues_Values()
-				.addAll(oldState.getInputParameterValues_parameterValues_Values());
+		newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_group_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_heldTokens_Values()
+				.addAll(oldState.getActivityNodeActivation_heldTokens_Values());
+		newState.getActivityNodeActivation_incomingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_incomingEdges_Values());
+		newState.getActivityNodeActivation_isRunning_Values()
+				.addAll(oldState.getActivityNodeActivation_isRunning_Values());
+		newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+				.addAll(oldState.getActivityNodeActivation_node_ActivityNodeActivation_Values());
+		newState.getActivityNodeActivation_outgoingEdges_Values()
+				.addAll(oldState.getActivityNodeActivation_outgoingEdges_Values());
+		newState.getActivityNodeActivation_running_Values().addAll(oldState.getActivityNodeActivation_running_Values());
 		newState.getSemanticVisitor_runtimeModelElement_Values()
 				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
-		newState.getPrimitiveValue_type_Values().addAll(oldState.getPrimitiveValue_type_Values());
-		newState.getIntegerValue_value_IntegerValue_Values()
-				.addAll(oldState.getIntegerValue_value_IntegerValue_Values());
-		newState.getLocus_executor_Values().addAll(oldState.getLocus_executor_Values());
-		newState.getLocus_extensionalValues_Values().addAll(oldState.getLocus_extensionalValues_Values());
-		newState.getLocus_factory_Values().addAll(oldState.getLocus_factory_Values());
+		newState.getActivityExecution_activationGroup_Values()
+				.addAll(oldState.getActivityExecution_activationGroup_Values());
 		newState.getCompoundValue_featureValues_Values().addAll(oldState.getCompoundValue_featureValues_Values());
 		newState.getExtensionalValue_locus_ExtensionalValue_Values()
 				.addAll(oldState.getExtensionalValue_locus_ExtensionalValue_Values());
-		newState.getSemanticVisitor_runtimeModelElement_Values()
-				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
 		newState.getObject_types_Values().addAll(oldState.getObject_types_Values());
-		newState.getToken_holder_Values().addAll(oldState.getToken_holder_Values());
-		newState.getObjectToken_value_Values().addAll(oldState.getObjectToken_value_Values());
-		newState.getOffer_offeredTokens_Values().addAll(oldState.getOffer_offeredTokens_Values());
-		newState.getParameterValue_parameter_ParameterValue_Values()
-				.addAll(oldState.getParameterValue_parameter_ParameterValue_Values());
-		newState.getParameterValue_values_ParameterValue_Values()
-				.addAll(oldState.getParameterValue_values_ParameterValue_Values());
-		newState.getReference_referent_Values().addAll(oldState.getReference_referent_Values());
+		newState.getExecution_context_Values().addAll(oldState.getExecution_context_Values());
+		newState.getExecution_parameterValues_Values().addAll(oldState.getExecution_parameterValues_Values());
+		newState.getSemanticVisitor_runtimeModelElement_Values()
+				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
+		newState.getCompoundValue_featureValues_Values().addAll(oldState.getCompoundValue_featureValues_Values());
+		newState.getExtensionalValue_locus_ExtensionalValue_Values()
+				.addAll(oldState.getExtensionalValue_locus_ExtensionalValue_Values());
+		newState.getObject_types_Values().addAll(oldState.getObject_types_Values());
 		newState.getSemanticVisitor_runtimeModelElement_Values()
 				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
 		newState.getSemanticVisitor_runtimeModelElement_Values()
 				.addAll(oldState.getSemanticVisitor_runtimeModelElement_Values());
-		newState.getToken_holder_Values().addAll(oldState.getToken_holder_Values());
+		newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values()
+				.addAll(oldState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values());
+		newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values()
+				.addAll(oldState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values());
+		newState.getActivityEdgeInstance_offers_Values().addAll(oldState.getActivityEdgeInstance_offers_Values());
+		newState.getActivityEdgeInstance_source_Values().addAll(oldState.getActivityEdgeInstance_source_Values());
+		newState.getActivityEdgeInstance_target_Values().addAll(oldState.getActivityEdgeInstance_target_Values());
 		return newState;
 	}
 
@@ -1039,45 +4727,506 @@ public class UmlTraceConstructor implements ITraceConstructor {
 			umlTrace.States.State newState = copyState(lastState);
 			for (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange modelChange : changes) {
 				EObject o = modelChange.getChangedObject();
+				// We only look at constructable objects that have mutable fields
+				// Here we have nothing to rollback, just a new object to add
+				if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NewObjectModelChange) {
+					stateChanged = true;
+					if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
+						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) {
+						fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation o_cast = (fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
+						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Loci.Locus) {
+						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Loci.ExecutionFactory) {
+						fumlConfiguration.Loci.ExecutionFactory o_cast = (fumlConfiguration.Loci.ExecutionFactory) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) {
+						fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation o_cast = (fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Loci.Executor) {
+						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
+						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
+						fumlConfiguration.Activities.IntermediateActivities.Offer o_cast = (fumlConfiguration.Activities.IntermediateActivities.Offer) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
+						fumlConfiguration.Classes.Kernel.Reference o_cast = (fumlConfiguration.Classes.Kernel.Reference) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+						fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.OutputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.OutputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.OutputPinActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
+						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) {
+						fumlConfiguration.Actions.BasicActions.OpaqueActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
+						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
+						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
+						fumlConfiguration.Activities.IntermediateActivities.Token o_cast = (fumlConfiguration.Activities.IntermediateActivities.Token) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.InputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.InputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.InputPinActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
+						fumlConfiguration.Loci.SemanticVisitor o_cast = (fumlConfiguration.Loci.SemanticVisitor) o;
+						addNewObjectToState(o_cast, newState);
+					}
+				}
+				// We only look at constructable objects that have mutable fields
+				// Here we must rollback to remove the values of the removed object from the copied state
+				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.RemovedObjectModelChange) {
+					stateChanged = true;
+					if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o;
+						umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
+						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
+						umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
+								.get(o_cast);
+						newState.getIntegerValue_value_IntegerValue_Values()
+								.remove(traced.getValue_IntegerValueSequence()
+										.get(traced.getValue_IntegerValueSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o;
+						umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) {
+						fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation o_cast = (fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) o;
+						umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+								.get(o_cast);
+						newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values()
+								.remove(traced.getEdge_ActivityEdgeInstanceSequence()
+										.get(traced.getEdge_ActivityEdgeInstanceSequence().size() - 1));
+						newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values()
+								.remove(traced.getGroup_ActivityEdgeInstanceSequence()
+										.get(traced.getGroup_ActivityEdgeInstanceSequence().size() - 1));
+						newState.getActivityEdgeInstance_offers_Values()
+								.remove(traced.getOffersSequence().get(traced.getOffersSequence().size() - 1));
+						newState.getActivityEdgeInstance_source_Values()
+								.remove(traced.getSourceSequence().get(traced.getSourceSequence().size() - 1));
+						newState.getActivityEdgeInstance_target_Values()
+								.remove(traced.getTargetSequence().get(traced.getTargetSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
+						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+						umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue traced = (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
+								.get(o_cast);
+						newState.getParameterValue_parameter_ParameterValue_Values()
+								.remove(traced.getParameter_ParameterValueSequence()
+										.get(traced.getParameter_ParameterValueSequence().size() - 1));
+						newState.getParameterValue_values_ParameterValue_Values()
+								.remove(traced.getValues_ParameterValueSequence()
+										.get(traced.getValues_ParameterValueSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Loci.Locus) {
+						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
+						umlTrace.States.fumlConfiguration.Loci.TracedLocus traced = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast);
+						newState.getLocus_extensionalValues_Values().remove(traced.getExtensionalValuesSequence()
+								.get(traced.getExtensionalValuesSequence().size() - 1));
+						newState.getLocus_executor_Values()
+								.remove(traced.getExecutorSequence().get(traced.getExecutorSequence().size() - 1));
+						newState.getLocus_factory_Values()
+								.remove(traced.getFactorySequence().get(traced.getFactorySequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
+								.get(o_cast);
+						newState.getObjectToken_value_Values()
+								.remove(traced.getValueSequence().get(traced.getValueSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Loci.ExecutionFactory) {
+						fumlConfiguration.Loci.ExecutionFactory o_cast = (fumlConfiguration.Loci.ExecutionFactory) o;
+						umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
+								.get(o_cast);
+						newState.getExecutionFactory_locus_ExecutionFactory_Values()
+								.remove(traced.getLocus_ExecutionFactorySequence()
+										.get(traced.getLocus_ExecutionFactorySequence().size() - 1));
+						newState.getExecutionFactory_primitiveBehaviorPrototypes_Values()
+								.remove(traced.getPrimitiveBehaviorPrototypesSequence()
+										.get(traced.getPrimitiveBehaviorPrototypesSequence().size() - 1));
+						newState.getExecutionFactory_builtInTypes_Values().remove(
+								traced.getBuiltInTypesSequence().get(traced.getBuiltInTypesSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) {
+						fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation o_cast = (fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) o;
+						umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Loci.Executor) {
+						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
+						umlTrace.States.fumlConfiguration.Loci.TracedExecutor traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
+								.get(o_cast);
+						newState.getExecutor_locus_Executor_Values().remove(
+								traced.getLocus_ExecutorSequence().get(traced.getLocus_ExecutorSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
+								.get(o_cast);
+						newState.getActivityExecution_activationGroup_Values().remove(traced
+								.getActivationGroupSequence().get(traced.getActivationGroupSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
+						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
+						umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
+								.get(o_cast);
+						newState.getBooleanValue_value_BooleanValue_Values()
+								.remove(traced.getValue_BooleanValueSequence()
+										.get(traced.getValue_BooleanValueSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
+						fumlConfiguration.Activities.IntermediateActivities.Offer o_cast = (fumlConfiguration.Activities.IntermediateActivities.Offer) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) exeToTraced
+								.get(o_cast);
+						newState.getOffer_offeredTokens_Values().remove(
+								traced.getOfferedTokensSequence().get(traced.getOfferedTokensSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
+						fumlConfiguration.Classes.Kernel.Reference o_cast = (fumlConfiguration.Classes.Kernel.Reference) o;
+						umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
+								.get(o_cast);
+						newState.getReference_referent_Values()
+								.remove(traced.getReferentSequence().get(traced.getReferentSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast);
+						newState.getActivityNodeActivationGroup_activityExecution_Values().remove(traced
+								.getActivityExecutionSequence().get(traced.getActivityExecutionSequence().size() - 1));
+						newState.getActivityNodeActivationGroup_edgeInstances_Values().remove(
+								traced.getEdgeInstancesSequence().get(traced.getEdgeInstancesSequence().size() - 1));
+						newState.getActivityNodeActivationGroup_nodeActivations_Values().remove(traced
+								.getNodeActivationsSequence().get(traced.getNodeActivationsSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+						fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.OutputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.OutputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.OutputPinActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
+						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
+						umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) exeToTraced
+								.get(o_cast);
+						newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values()
+								.remove(traced.getLocus_ExecutionEnvironmentSequence()
+										.get(traced.getLocus_ExecutionEnvironmentSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) {
+						fumlConfiguration.Actions.BasicActions.OpaqueActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
+						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+						umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues traced = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
+								.get(o_cast);
+						newState.getInputParameterValues_parameterValues_Values().remove(traced
+								.getParameterValuesSequence().get(traced.getParameterValuesSequence().size() - 1));
+						newState.getInputParameterValues_name_Values()
+								.remove(traced.getNameSequence().get(traced.getNameSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o;
+						umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
+						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
+						umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+								.get(o_cast);
+						newState.getObject_types_Values()
+								.remove(traced.getTypesSequence().get(traced.getTypesSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
+								.get(o_cast);
+						newState.getForkedToken_baseToken_Values()
+								.remove(traced.getBaseTokenSequence().get(traced.getBaseTokenSequence().size() - 1));
+						newState.getForkedToken_remainingOffersCount_Values()
+								.remove(traced.getRemainingOffersCountSequence()
+										.get(traced.getRemainingOffersCountSequence().size() - 1));
+						newState.getForkedToken_baseTokenIsWithdrawn_Values()
+								.remove(traced.getBaseTokenIsWithdrawnSequence()
+										.get(traced.getBaseTokenIsWithdrawnSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
+						fumlConfiguration.Activities.IntermediateActivities.Token o_cast = (fumlConfiguration.Activities.IntermediateActivities.Token) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
+								.get(o_cast);
+						newState.getToken_holder_Values()
+								.remove(traced.getHolderSequence().get(traced.getHolderSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.InputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.InputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.InputPinActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+								.get(o_cast);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast);
+						newState.getActivityNodeActivation_heldTokens_Values()
+								.remove(traced.getHeldTokensSequence().get(traced.getHeldTokensSequence().size() - 1));
+						newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+								.remove(traced.getGroup_ActivityNodeActivationSequence()
+										.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1));
+						newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+								.remove(traced.getNode_ActivityNodeActivationSequence()
+										.get(traced.getNode_ActivityNodeActivationSequence().size() - 1));
+						newState.getActivityNodeActivation_incomingEdges_Values().remove(
+								traced.getIncomingEdgesSequence().get(traced.getIncomingEdgesSequence().size() - 1));
+						newState.getActivityNodeActivation_outgoingEdges_Values().remove(
+								traced.getOutgoingEdgesSequence().get(traced.getOutgoingEdgesSequence().size() - 1));
+						newState.getActivityNodeActivation_running_Values()
+								.remove(traced.getRunningSequence().get(traced.getRunningSequence().size() - 1));
+						newState.getActivityNodeActivation_isRunning_Values()
+								.remove(traced.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
+						fumlConfiguration.Loci.SemanticVisitor o_cast = (fumlConfiguration.Loci.SemanticVisitor) o;
+						umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor traced = (umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) exeToTraced
+								.get(o_cast);
+						newState.getSemanticVisitor_runtimeModelElement_Values()
+								.remove(traced.getRuntimeModelElementSequence()
+										.get(traced.getRuntimeModelElementSequence().size() - 1));
+					}
+				}
 				// Here we must look at non-collection mutable fields
 				// We must rollback the last values from the copied state, and add new values as well
 				// ie. mix of remove and new
-				if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) {
+				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) {
 					stateChanged = true;
 
 					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) modelChange;
 					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
-						fumlConfiguration.Activities.IntermediateActivities.Token o_cast = (fumlConfiguration.Activities.IntermediateActivities.Token) o;
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getToken_Holder().getFeatureID()) {
+								.getActivityEdgeInstance_Edge_ActivityEdgeInstance().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
 									.get(o);
-							umlTrace.States.Token_holder_Value lastValue = traced.getHolderSequence()
-									.get(traced.getHolderSequence().size() - 1);
-							newState.getToken_holder_Values().remove(lastValue);
+							umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value lastValue = traced
+									.getEdge_ActivityEdgeInstanceSequence()
+									.get(traced.getEdge_ActivityEdgeInstanceSequence().size() - 1);
+							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getHolder());
-							umlTrace.States.Token_holder_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createToken_holder_Value();
-							newValue.setHolder(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-											.get(o_cast.getHolder())));
-							traced.getHolderSequence().add(newValue);
-							newState.getToken_holder_Values().add(newValue);
+							umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityEdgeInstance_edge_ActivityEdgeInstance_Value();
+							newValue.setEdge_ActivityEdgeInstance(o_cast.getEdge_ActivityEdgeInstance());
+							traced.getEdge_ActivityEdgeInstanceSequence().add(newValue);
+							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().add(newValue);
 						}
-					} else if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
-						fumlConfiguration.Loci.SemanticVisitor o_cast = (fumlConfiguration.Loci.SemanticVisitor) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityEdgeInstance_Group_ActivityEdgeInstance().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value lastValue = traced
+									.getGroup_ActivityEdgeInstanceSequence()
+									.get(traced.getGroup_ActivityEdgeInstanceSequence().size() - 1);
+							newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityEdgeInstance(), newState);
+							umlTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityEdgeInstance_group_ActivityEdgeInstance_Value();
+							newValue.setGroup_ActivityEdgeInstance(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityEdgeInstance())));
+							traced.getGroup_ActivityEdgeInstanceSequence().add(newValue);
+							newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityEdgeInstance_Source().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityEdgeInstance_source_Value lastValue = traced.getSourceSequence()
+									.get(traced.getSourceSequence().size() - 1);
+							newState.getActivityEdgeInstance_source_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getSource(), newState);
+							umlTrace.States.ActivityEdgeInstance_source_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityEdgeInstance_source_Value();
+							newValue.setSource(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+											.get(o_cast.getSource())));
+							traced.getSourceSequence().add(newValue);
+							newState.getActivityEdgeInstance_source_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityEdgeInstance_Target().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityEdgeInstance_target_Value lastValue = traced.getTargetSequence()
+									.get(traced.getTargetSequence().size() - 1);
+							newState.getActivityEdgeInstance_target_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getTarget(), newState);
+							umlTrace.States.ActivityEdgeInstance_target_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityEdgeInstance_target_Value();
+							newValue.setTarget(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+											.get(o_cast.getTarget())));
+							traced.getTargetSequence().add(newValue);
+							newState.getActivityEdgeInstance_target_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor traced = (umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
 									.get(o);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
 									.getRuntimeModelElementSequence()
@@ -1085,7 +5234,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createSemanticVisitor_runtimeModelElement_Value();
 							newValue.setRuntimeModelElement(
@@ -1094,126 +5243,12 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							traced.getRuntimeModelElementSequence().add(newValue);
 							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
 						}
-					} else if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
-						fumlConfiguration.Classes.Kernel.Reference o_cast = (fumlConfiguration.Classes.Kernel.Reference) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
-									.get(o);
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
-									.getRuntimeModelElementSequence()
-									.get(traced.getRuntimeModelElementSequence().size() - 1);
-							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createSemanticVisitor_runtimeModelElement_Value();
-							newValue.setRuntimeModelElement(
-									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-											.get(o_cast.getRuntimeModelElement())));
-							traced.getRuntimeModelElementSequence().add(newValue);
-							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getReference_Referent().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
-									.get(o);
-							umlTrace.States.Reference_referent_Value lastValue = traced.getReferentSequence()
-									.get(traced.getReferentSequence().size() - 1);
-							newState.getReference_referent_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getReferent());
-							umlTrace.States.Reference_referent_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createReference_referent_Value();
-							newValue.setReferent(
-									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
-											.get(o_cast.getReferent())));
-							traced.getReferentSequence().add(newValue);
-							newState.getReference_referent_Values().add(newValue);
-						}
-					} else if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
-						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
-
-						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
-								.getParameterValue_Parameter_ParameterValue().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue traced = (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
-									.get(o);
-							umlTrace.States.ParameterValue_parameter_ParameterValue_Value lastValue = traced
-									.getParameter_ParameterValueSequence()
-									.get(traced.getParameter_ParameterValueSequence().size() - 1);
-							newState.getParameterValue_parameter_ParameterValue_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getParameter_ParameterValue());
-							umlTrace.States.ParameterValue_parameter_ParameterValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createParameterValue_parameter_ParameterValue_Value();
-							newValue.setParameter_ParameterValue(((umlTrace.States.uml.TracedParameter) exeToTraced
-									.get(o_cast.getParameter_ParameterValue())));
-							traced.getParameter_ParameterValueSequence().add(newValue);
-							newState.getParameterValue_parameter_ParameterValue_Values().add(newValue);
-						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
-						fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getToken_Holder().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
-									.get(o);
-							umlTrace.States.Token_holder_Value lastValue = traced.getHolderSequence()
-									.get(traced.getHolderSequence().size() - 1);
-							newState.getToken_holder_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getHolder());
-							umlTrace.States.Token_holder_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createToken_holder_Value();
-							newValue.setHolder(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-											.get(o_cast.getHolder())));
-							traced.getHolderSequence().add(newValue);
-							newState.getToken_holder_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getObjectToken_Value().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
-									.get(o);
-							umlTrace.States.ObjectToken_value_Value lastValue = traced.getValueSequence()
-									.get(traced.getValueSequence().size() - 1);
-							newState.getObjectToken_value_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getValue());
-							umlTrace.States.ObjectToken_value_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createObjectToken_value_Value();
-							newValue.setValue(
-									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue) exeToTraced
-											.get(o_cast.getValue())));
-							traced.getValueSequence().add(newValue);
-							newState.getObjectToken_value_Values().add(newValue);
-						}
-					} else if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
-						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
 									.get(o);
 							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value lastValue = traced
 									.getLocus_ExtensionalValueSequence()
@@ -1221,7 +5256,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getExtensionalValue_locus_ExtensionalValue_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getLocus_ExtensionalValue());
+							addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
 							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createExtensionalValue_locus_ExtensionalValue_Value();
 							newValue.setLocus_ExtensionalValue(
@@ -1231,11 +5266,55 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getExtensionalValue_locus_ExtensionalValue_Values().add(newValue);
 						}
 
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getExecution_Context().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
+									.get(o);
+							umlTrace.States.Execution_context_Value lastValue = traced.getContextSequence()
+									.get(traced.getContextSequence().size() - 1);
+							newState.getExecution_context_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getContext(), newState);
+							umlTrace.States.Execution_context_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExecution_context_Value();
+							newValue.setContext(
+									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+											.get(o_cast.getContext())));
+							traced.getContextSequence().add(newValue);
+							newState.getExecution_context_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityExecution_ActivationGroup().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityExecution_activationGroup_Value lastValue = traced
+									.getActivationGroupSequence().get(traced.getActivationGroupSequence().size() - 1);
+							newState.getActivityExecution_activationGroup_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getActivationGroup(), newState);
+							umlTrace.States.ActivityExecution_activationGroup_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityExecution_activationGroup_Value();
+							newValue.setActivationGroup(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getActivationGroup())));
+							traced.getActivationGroupSequence().add(newValue);
+							newState.getActivityExecution_activationGroup_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) o;
+
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation) exeToTraced
 									.get(o);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
 									.getRuntimeModelElementSequence()
@@ -1243,7 +5322,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createSemanticVisitor_runtimeModelElement_Value();
 							newValue.setRuntimeModelElement(
@@ -1252,57 +5331,115 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							traced.getRuntimeModelElementSequence().add(newValue);
 							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
 						}
-					} else if (o instanceof fumlConfiguration.Loci.Locus) {
-						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
 
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Factory()
-								.getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Loci.TracedLocus traced = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation) exeToTraced
 									.get(o);
-							umlTrace.States.Locus_factory_Value lastValue = traced.getFactorySequence()
-									.get(traced.getFactorySequence().size() - 1);
-							newState.getLocus_factory_Values().remove(lastValue);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getFactory());
-							umlTrace.States.Locus_factory_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createLocus_factory_Value();
-							newValue.setFactory(
-									((umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
-											.get(o_cast.getFactory())));
-							traced.getFactorySequence().add(newValue);
-							newState.getLocus_factory_Values().add(newValue);
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
 						}
 
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Executor()
-								.getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Loci.TracedLocus traced = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation) exeToTraced
 									.get(o);
-							umlTrace.States.Locus_executor_Value lastValue = traced.getExecutorSequence()
-									.get(traced.getExecutorSequence().size() - 1);
-							newState.getLocus_executor_Values().remove(lastValue);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getExecutor());
-							umlTrace.States.Locus_executor_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createLocus_executor_Value();
-							newValue.setExecutor(((umlTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
-									.get(o_cast.getExecutor())));
-							traced.getExecutorSequence().add(newValue);
-							newState.getLocus_executor_Values().add(newValue);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
 						}
-					} else if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
-						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivationGroup_ActivityExecution().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivationGroup_activityExecution_Value lastValue = traced
+									.getActivityExecutionSequence()
+									.get(traced.getActivityExecutionSequence().size() - 1);
+							newState.getActivityNodeActivationGroup_activityExecution_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getActivityExecution(), newState);
+							umlTrace.States.ActivityNodeActivationGroup_activityExecution_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivationGroup_activityExecution_Value();
+							newValue.setActivityExecution(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
+											.get(o_cast.getActivityExecution())));
+							traced.getActivityExecutionSequence().add(newValue);
+							newState.getActivityNodeActivationGroup_activityExecution_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation) exeToTraced
 									.get(o);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
 									.getRuntimeModelElementSequence()
@@ -1310,7 +5447,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createSemanticVisitor_runtimeModelElement_Value();
 							newValue.setRuntimeModelElement(
@@ -1318,81 +5455,417 @@ public class UmlTraceConstructor implements ITraceConstructor {
 											.get(o_cast.getRuntimeModelElement())));
 							traced.getRuntimeModelElementSequence().add(newValue);
 							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getObjectNodeActivation_OfferedTokenCount().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value lastValue = traced
+									.getOfferedTokenCountSequence()
+									.get(traced.getOfferedTokenCountSequence().size() - 1);
+							newState.getObjectNodeActivation_offeredTokenCount_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createObjectNodeActivation_offeredTokenCount_Value();
+							newValue.setOfferedTokenCount(o_cast.getOfferedTokenCount());
+							traced.getOfferedTokenCountSequence().add(newValue);
+							newState.getObjectNodeActivation_offeredTokenCount_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_Firing().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActionActivation_firing_Value lastValue = traced.getFiringSequence()
+									.get(traced.getFiringSequence().size() - 1);
+							newState.getActionActivation_firing_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActionActivation_firing_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActionActivation_firing_Value();
+							newValue.setFiring(o_cast.isFiring());
+							traced.getFiringSequence().add(newValue);
+							newState.getActionActivation_firing_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
+						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getBooleanValue_Value_BooleanValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
+									.get(o);
+							umlTrace.States.BooleanValue_value_BooleanValue_Value lastValue = traced
+									.getValue_BooleanValueSequence()
+									.get(traced.getValue_BooleanValueSequence().size() - 1);
+							newState.getBooleanValue_value_BooleanValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.BooleanValue_value_BooleanValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createBooleanValue_value_BooleanValue_Value();
+							newValue.setValue_BooleanValue(o_cast.isValue_BooleanValue());
+							traced.getValue_BooleanValueSequence().add(newValue);
+							newState.getBooleanValue_value_BooleanValue_Values().add(newValue);
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getPrimitiveValue_Type().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
 									.get(o);
 							umlTrace.States.PrimitiveValue_type_Value lastValue = traced.getTypeSequence()
 									.get(traced.getTypeSequence().size() - 1);
 							newState.getPrimitiveValue_type_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getType());
 							umlTrace.States.PrimitiveValue_type_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createPrimitiveValue_type_Value();
-							newValue.setType(
-									((umlTrace.States.uml.TracedPrimitiveType) exeToTraced.get(o_cast.getType())));
+							newValue.setType(o_cast.getType());
 							traced.getTypeSequence().add(newValue);
 							newState.getPrimitiveValue_type_Values().add(newValue);
 						}
+					} else if (o instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+						fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o;
 
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getIntegerValue_Value_IntegerValue().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
-									.get(o);
-							umlTrace.States.IntegerValue_value_IntegerValue_Value lastValue = traced
-									.getValue_IntegerValueSequence()
-									.get(traced.getValue_IntegerValueSequence().size() - 1);
-							newState.getIntegerValue_value_IntegerValue_Values().remove(lastValue);
-
-							// And we create a proper new value
-							umlTrace.States.IntegerValue_value_IntegerValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createIntegerValue_value_IntegerValue_Value();
-							newValue.setValue_IntegerValue(o_cast.getValue_IntegerValue());
-							traced.getValue_IntegerValueSequence().add(newValue);
-							newState.getIntegerValue_value_IntegerValue_Values().add(newValue);
-						}
-					} else if (o instanceof fumlConfiguration.Input.InputParameterValues) {
-						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
-								.getInputParameterValues_Name().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues traced = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation) exeToTraced
 									.get(o);
-							umlTrace.States.InputParameterValues_name_Value lastValue = traced.getNameSequence()
-									.get(traced.getNameSequence().size() - 1);
-							newState.getInputParameterValues_name_Values().remove(lastValue);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
 
 							// And we create a proper new value
-							umlTrace.States.InputParameterValues_name_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createInputParameterValues_name_Value();
-							newValue.setName(o_cast.getName());
-							traced.getNameSequence().add(newValue);
-							newState.getInputParameterValues_name_Values().add(newValue);
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
 						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
-						fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_Firing().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActionActivation_firing_Value lastValue = traced.getFiringSequence()
+									.get(traced.getFiringSequence().size() - 1);
+							newState.getActionActivation_firing_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActionActivation_firing_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActionActivation_firing_Value();
+							newValue.setFiring(o_cast.isFiring());
+							traced.getFiringSequence().add(newValue);
+							newState.getActionActivation_firing_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ControlToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ControlToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ControlToken) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getToken_Holder().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken) exeToTraced
 									.get(o);
 							umlTrace.States.Token_holder_Value lastValue = traced.getHolderSequence()
 									.get(traced.getHolderSequence().size() - 1);
 							newState.getToken_holder_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getHolder());
+							addNewObjectToState(o_cast.getHolder(), newState);
 							umlTrace.States.Token_holder_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createToken_holder_Value();
 							newValue.setHolder(
@@ -1400,6 +5873,420 @@ public class UmlTraceConstructor implements ITraceConstructor {
 											.get(o_cast.getHolder())));
 							traced.getHolderSequence().add(newValue);
 							newState.getToken_holder_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_Firing().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActionActivation_firing_Value lastValue = traced.getFiringSequence()
+									.get(traced.getFiringSequence().size() - 1);
+							newState.getActionActivation_firing_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActionActivation_firing_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActionActivation_firing_Value();
+							newValue.setFiring(o_cast.isFiring());
+							traced.getFiringSequence().add(newValue);
+							newState.getActionActivation_firing_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
+						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getExecutionEnvironment_Locus_ExecutionEnvironment().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) exeToTraced
+									.get(o);
+							umlTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value lastValue = traced
+									.getLocus_ExecutionEnvironmentSequence()
+									.get(traced.getLocus_ExecutionEnvironmentSequence().size() - 1);
+							newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getLocus_ExecutionEnvironment(), newState);
+							umlTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExecutionEnvironment_locus_ExecutionEnvironment_Value();
+							newValue.setLocus_ExecutionEnvironment(
+									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+											.get(o_cast.getLocus_ExecutionEnvironment())));
+							traced.getLocus_ExecutionEnvironmentSequence().add(newValue);
+							newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Loci.ExecutionFactory) {
+						fumlConfiguration.Loci.ExecutionFactory o_cast = (fumlConfiguration.Loci.ExecutionFactory) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getExecutionFactory_Locus_ExecutionFactory().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
+									.get(o);
+							umlTrace.States.ExecutionFactory_locus_ExecutionFactory_Value lastValue = traced
+									.getLocus_ExecutionFactorySequence()
+									.get(traced.getLocus_ExecutionFactorySequence().size() - 1);
+							newState.getExecutionFactory_locus_ExecutionFactory_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getLocus_ExecutionFactory(), newState);
+							umlTrace.States.ExecutionFactory_locus_ExecutionFactory_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExecutionFactory_locus_ExecutionFactory_Value();
+							newValue.setLocus_ExecutionFactory(
+									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+											.get(o_cast.getLocus_ExecutionFactory())));
+							traced.getLocus_ExecutionFactorySequence().add(newValue);
+							newState.getExecutionFactory_locus_ExecutionFactory_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Loci.Executor) {
+						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getExecutor_Locus_Executor().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Loci.TracedExecutor traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
+									.get(o);
+							umlTrace.States.Executor_locus_Executor_Value lastValue = traced.getLocus_ExecutorSequence()
+									.get(traced.getLocus_ExecutorSequence().size() - 1);
+							newState.getExecutor_locus_Executor_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getLocus_Executor(), newState);
+							umlTrace.States.Executor_locus_Executor_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExecutor_locus_Executor_Value();
+							newValue.setLocus_Executor(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+									.get(o_cast.getLocus_Executor())));
+							traced.getLocus_ExecutorSequence().add(newValue);
+							newState.getExecutor_locus_Executor_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getForkedToken_BaseToken().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
+									.get(o);
+							umlTrace.States.ForkedToken_baseToken_Value lastValue = traced.getBaseTokenSequence()
+									.get(traced.getBaseTokenSequence().size() - 1);
+							newState.getForkedToken_baseToken_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getBaseToken(), newState);
+							umlTrace.States.ForkedToken_baseToken_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createForkedToken_baseToken_Value();
+							newValue.setBaseToken(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
+											.get(o_cast.getBaseToken())));
+							traced.getBaseTokenSequence().add(newValue);
+							newState.getForkedToken_baseToken_Values().add(newValue);
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
@@ -1422,27 +6309,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getForkedToken_BaseToken().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
-									.get(o);
-							umlTrace.States.ForkedToken_baseToken_Value lastValue = traced.getBaseTokenSequence()
-									.get(traced.getBaseTokenSequence().size() - 1);
-							newState.getForkedToken_baseToken_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getBaseToken());
-							umlTrace.States.ForkedToken_baseToken_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createForkedToken_baseToken_Value();
-							newValue.setBaseToken(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
-											.get(o_cast.getBaseToken())));
-							traced.getBaseTokenSequence().add(newValue);
-							newState.getForkedToken_baseToken_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getForkedToken_BaseTokenIsWithdrawn().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
@@ -1460,103 +6326,35 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							traced.getBaseTokenIsWithdrawnSequence().add(newValue);
 							newState.getForkedToken_baseTokenIsWithdrawn_Values().add(newValue);
 						}
-					} else if (o instanceof fumlConfiguration.Loci.Executor) {
-						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
 
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getExecutor_Locus_Executor().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getToken_Holder().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Loci.TracedExecutor traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
 									.get(o);
-							umlTrace.States.Executor_locus_Executor_Value lastValue = traced.getLocus_ExecutorSequence()
-									.get(traced.getLocus_ExecutorSequence().size() - 1);
-							newState.getExecutor_locus_Executor_Values().remove(lastValue);
+							umlTrace.States.Token_holder_Value lastValue = traced.getHolderSequence()
+									.get(traced.getHolderSequence().size() - 1);
+							newState.getToken_holder_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getLocus_Executor());
-							umlTrace.States.Executor_locus_Executor_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createExecutor_locus_Executor_Value();
-							newValue.setLocus_Executor(((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-									.get(o_cast.getLocus_Executor())));
-							traced.getLocus_ExecutorSequence().add(newValue);
-							newState.getExecutor_locus_Executor_Values().add(newValue);
+							addNewObjectToState(o_cast.getHolder(), newState);
+							umlTrace.States.Token_holder_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createToken_holder_Value();
+							newValue.setHolder(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+											.get(o_cast.getHolder())));
+							traced.getHolderSequence().add(newValue);
+							newState.getToken_holder_Values().add(newValue);
 						}
-					} else if (o instanceof fumlConfiguration.Loci.ExecutionFactory) {
-						fumlConfiguration.Loci.ExecutionFactory o_cast = (fumlConfiguration.Loci.ExecutionFactory) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getExecutionFactory_Locus_ExecutionFactory().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
-									.get(o);
-							umlTrace.States.ExecutionFactory_locus_ExecutionFactory_Value lastValue = traced
-									.getLocus_ExecutionFactorySequence()
-									.get(traced.getLocus_ExecutionFactorySequence().size() - 1);
-							newState.getExecutionFactory_locus_ExecutionFactory_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getLocus_ExecutionFactory());
-							umlTrace.States.ExecutionFactory_locus_ExecutionFactory_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createExecutionFactory_locus_ExecutionFactory_Value();
-							newValue.setLocus_ExecutionFactory(
-									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-											.get(o_cast.getLocus_ExecutionFactory())));
-							traced.getLocus_ExecutionFactorySequence().add(newValue);
-							newState.getExecutionFactory_locus_ExecutionFactory_Values().add(newValue);
-						}
-					} else if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
-						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getExecutionEnvironment_Locus_ExecutionEnvironment().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment traced = (umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) exeToTraced
-									.get(o);
-							umlTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value lastValue = traced
-									.getLocus_ExecutionEnvironmentSequence()
-									.get(traced.getLocus_ExecutionEnvironmentSequence().size() - 1);
-							newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getLocus_ExecutionEnvironment());
-							umlTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createExecutionEnvironment_locus_ExecutionEnvironment_Value();
-							newValue.setLocus_ExecutionEnvironment(
-									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-											.get(o_cast.getLocus_ExecutionEnvironment())));
-							traced.getLocus_ExecutionEnvironmentSequence().add(newValue);
-							newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values().add(newValue);
-						}
-					} else if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
-						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getBooleanValue_Value_BooleanValue().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
-									.get(o);
-							umlTrace.States.BooleanValue_value_BooleanValue_Value lastValue = traced
-									.getValue_BooleanValueSequence()
-									.get(traced.getValue_BooleanValueSequence().size() - 1);
-							newState.getBooleanValue_value_BooleanValue_Values().remove(lastValue);
-
-							// And we create a proper new value
-							umlTrace.States.BooleanValue_value_BooleanValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createBooleanValue_value_BooleanValue_Value();
-							newValue.setValue_BooleanValue(o_cast.isValue_BooleanValue());
-							traced.getValue_BooleanValueSequence().add(newValue);
-							newState.getBooleanValue_value_BooleanValue_Values().add(newValue);
-						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation) exeToTraced
 									.get(o);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
 									.getRuntimeModelElementSequence()
@@ -1564,7 +6362,553 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Input.InputParameterValues) {
+						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
+								.getInputParameterValues_Name().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues traced = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
+									.get(o);
+							umlTrace.States.InputParameterValues_name_Value lastValue = traced.getNameSequence()
+									.get(traced.getNameSequence().size() - 1);
+							newState.getInputParameterValues_name_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.InputParameterValues_name_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createInputParameterValues_name_Value();
+							newValue.setName(o_cast.getName());
+							traced.getNameSequence().add(newValue);
+							newState.getInputParameterValues_name_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Actions.BasicActions.InputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.InputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.InputPinActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getObjectNodeActivation_OfferedTokenCount().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value lastValue = traced
+									.getOfferedTokenCountSequence()
+									.get(traced.getOfferedTokenCountSequence().size() - 1);
+							newState.getObjectNodeActivation_offeredTokenCount_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createObjectNodeActivation_offeredTokenCount_Value();
+							newValue.setOfferedTokenCount(o_cast.getOfferedTokenCount());
+							traced.getOfferedTokenCountSequence().add(newValue);
+							newState.getObjectNodeActivation_offeredTokenCount_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getPinActivation_Count_temp().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.PinActivation_count_temp_Value lastValue = traced.getCount_tempSequence()
+									.get(traced.getCount_tempSequence().size() - 1);
+							newState.getPinActivation_count_temp_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.PinActivation_count_temp_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createPinActivation_count_temp_Value();
+							newValue.setCount_temp(o_cast.getCount_temp());
+							traced.getCount_tempSequence().add(newValue);
+							newState.getPinActivation_count_temp_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getPinActivation_ActionActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.PinActivation_actionActivation_Value lastValue = traced
+									.getActionActivationSequence().get(traced.getActionActivationSequence().size() - 1);
+							newState.getPinActivation_actionActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getActionActivation(), newState);
+							umlTrace.States.PinActivation_actionActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createPinActivation_actionActivation_Value();
+							newValue.setActionActivation(
+									((umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
+											.get(o_cast.getActionActivation())));
+							traced.getActionActivationSequence().add(newValue);
+							newState.getPinActivation_actionActivation_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution) exeToTraced
+									.get(o);
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value lastValue = traced
+									.getLocus_ExtensionalValueSequence()
+									.get(traced.getLocus_ExtensionalValueSequence().size() - 1);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExtensionalValue_locus_ExtensionalValue_Value();
+							newValue.setLocus_ExtensionalValue(
+									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+											.get(o_cast.getLocus_ExtensionalValue())));
+							traced.getLocus_ExtensionalValueSequence().add(newValue);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getExecution_Context().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution) exeToTraced
+									.get(o);
+							umlTrace.States.Execution_context_Value lastValue = traced.getContextSequence()
+									.get(traced.getContextSequence().size() - 1);
+							newState.getExecution_context_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getContext(), newState);
+							umlTrace.States.Execution_context_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExecution_context_Value();
+							newValue.setContext(
+									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+											.get(o_cast.getContext())));
+							traced.getContextSequence().add(newValue);
+							newState.getExecution_context_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution) exeToTraced
+									.get(o);
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value lastValue = traced
+									.getLocus_ExtensionalValueSequence()
+									.get(traced.getLocus_ExtensionalValueSequence().size() - 1);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExtensionalValue_locus_ExtensionalValue_Value();
+							newValue.setLocus_ExtensionalValue(
+									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+											.get(o_cast.getLocus_ExtensionalValue())));
+							traced.getLocus_ExtensionalValueSequence().add(newValue);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getExecution_Context().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution) exeToTraced
+									.get(o);
+							umlTrace.States.Execution_context_Value lastValue = traced.getContextSequence()
+									.get(traced.getContextSequence().size() - 1);
+							newState.getExecution_context_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getContext(), newState);
+							umlTrace.States.Execution_context_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExecution_context_Value();
+							newValue.setContext(
+									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+											.get(o_cast.getContext())));
+							traced.getContextSequence().add(newValue);
+							newState.getExecution_context_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution) exeToTraced
+									.get(o);
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value lastValue = traced
+									.getLocus_ExtensionalValueSequence()
+									.get(traced.getLocus_ExtensionalValueSequence().size() - 1);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExtensionalValue_locus_ExtensionalValue_Value();
+							newValue.setLocus_ExtensionalValue(
+									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+											.get(o_cast.getLocus_ExtensionalValue())));
+							traced.getLocus_ExtensionalValueSequence().add(newValue);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getExecution_Context().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution traced = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution) exeToTraced
+									.get(o);
+							umlTrace.States.Execution_context_Value lastValue = traced.getContextSequence()
+									.get(traced.getContextSequence().size() - 1);
+							newState.getExecution_context_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getContext(), newState);
+							umlTrace.States.Execution_context_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExecution_context_Value();
+							newValue.setContext(
+									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+											.get(o_cast.getContext())));
+							traced.getContextSequence().add(newValue);
+							newState.getExecution_context_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
+						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+									.get(o);
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value lastValue = traced
+									.getLocus_ExtensionalValueSequence()
+									.get(traced.getLocus_ExtensionalValueSequence().size() - 1);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getLocus_ExtensionalValue(), newState);
+							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createExtensionalValue_locus_ExtensionalValue_Value();
+							newValue.setLocus_ExtensionalValue(
+									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+											.get(o_cast.getLocus_ExtensionalValue())));
+							traced.getLocus_ExtensionalValueSequence().add(newValue);
+							newState.getExtensionalValue_locus_ExtensionalValue_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
+						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getIntegerValue_Value_IntegerValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
+									.get(o);
+							umlTrace.States.IntegerValue_value_IntegerValue_Value lastValue = traced
+									.getValue_IntegerValueSequence()
+									.get(traced.getValue_IntegerValueSequence().size() - 1);
+							newState.getIntegerValue_value_IntegerValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.IntegerValue_value_IntegerValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createIntegerValue_value_IntegerValue_Value();
+							newValue.setValue_IntegerValue(o_cast.getValue_IntegerValue());
+							traced.getValue_IntegerValueSequence().add(newValue);
+							newState.getIntegerValue_value_IntegerValue_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createSemanticVisitor_runtimeModelElement_Value();
 							newValue.setRuntimeModelElement(
@@ -1578,47 +6922,1065 @@ public class UmlTraceConstructor implements ITraceConstructor {
 								.getPrimitiveValue_Type().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
 									.get(o);
 							umlTrace.States.PrimitiveValue_type_Value lastValue = traced.getTypeSequence()
 									.get(traced.getTypeSequence().size() - 1);
 							newState.getPrimitiveValue_type_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getType());
 							umlTrace.States.PrimitiveValue_type_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createPrimitiveValue_type_Value();
-							newValue.setType(
-									((umlTrace.States.uml.TracedPrimitiveType) exeToTraced.get(o_cast.getType())));
+							newValue.setType(o_cast.getType());
 							traced.getTypeSequence().add(newValue);
 							newState.getPrimitiveValue_type_Values().add(newValue);
 						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) o;
 
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivationGroup_ActivityExecution().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation) exeToTraced
 									.get(o);
-							umlTrace.States.ActivityNodeActivationGroup_activityExecution_Value lastValue = traced
-									.getActivityExecutionSequence()
-									.get(traced.getActivityExecutionSequence().size() - 1);
-							newState.getActivityNodeActivationGroup_activityExecution_Values().remove(lastValue);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getActivityExecution());
-							umlTrace.States.ActivityNodeActivationGroup_activityExecution_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityNodeActivationGroup_activityExecution_Value();
-							newValue.setActivityExecution(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
-											.get(o_cast.getActivityExecution())));
-							traced.getActivityExecutionSequence().add(newValue);
-							newState.getActivityNodeActivationGroup_activityExecution_Values().add(newValue);
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) {
+						fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation o_cast = (fumlConfiguration.Classes.Kernel.LiteralBooleanEvaluation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getEvaluation_Locus_Evaluation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation) exeToTraced
+									.get(o);
+							umlTrace.States.Evaluation_locus_Evaluation_Value lastValue = traced
+									.getLocus_EvaluationSequence().get(traced.getLocus_EvaluationSequence().size() - 1);
+							newState.getEvaluation_locus_Evaluation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getLocus_Evaluation(), newState);
+							umlTrace.States.Evaluation_locus_Evaluation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createEvaluation_locus_Evaluation_Value();
+							newValue.setLocus_Evaluation(
+									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+											.get(o_cast.getLocus_Evaluation())));
+							traced.getLocus_EvaluationSequence().add(newValue);
+							newState.getEvaluation_locus_Evaluation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getEvaluation_Specification_Evaluation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation) exeToTraced
+									.get(o);
+							umlTrace.States.Evaluation_specification_Evaluation_Value lastValue = traced
+									.getSpecification_EvaluationSequence()
+									.get(traced.getSpecification_EvaluationSequence().size() - 1);
+							newState.getEvaluation_specification_Evaluation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.Evaluation_specification_Evaluation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createEvaluation_specification_Evaluation_Value();
+							newValue.setSpecification_Evaluation(o_cast.getSpecification_Evaluation());
+							traced.getSpecification_EvaluationSequence().add(newValue);
+							newState.getEvaluation_specification_Evaluation_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) {
+						fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation o_cast = (fumlConfiguration.Classes.Kernel.LiteralIntegerEvaluation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getEvaluation_Locus_Evaluation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation) exeToTraced
+									.get(o);
+							umlTrace.States.Evaluation_locus_Evaluation_Value lastValue = traced
+									.getLocus_EvaluationSequence().get(traced.getLocus_EvaluationSequence().size() - 1);
+							newState.getEvaluation_locus_Evaluation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getLocus_Evaluation(), newState);
+							umlTrace.States.Evaluation_locus_Evaluation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createEvaluation_locus_Evaluation_Value();
+							newValue.setLocus_Evaluation(
+									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+											.get(o_cast.getLocus_Evaluation())));
+							traced.getLocus_EvaluationSequence().add(newValue);
+							newState.getEvaluation_locus_Evaluation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getEvaluation_Specification_Evaluation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation) exeToTraced
+									.get(o);
+							umlTrace.States.Evaluation_specification_Evaluation_Value lastValue = traced
+									.getSpecification_EvaluationSequence()
+									.get(traced.getSpecification_EvaluationSequence().size() - 1);
+							newState.getEvaluation_specification_Evaluation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.Evaluation_specification_Evaluation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createEvaluation_specification_Evaluation_Value();
+							newValue.setSpecification_Evaluation(o_cast.getSpecification_Evaluation());
+							traced.getSpecification_EvaluationSequence().add(newValue);
+							newState.getEvaluation_specification_Evaluation_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Loci.Locus) {
+						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Executor()
+								.getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Loci.TracedLocus traced = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+									.get(o);
+							umlTrace.States.Locus_executor_Value lastValue = traced.getExecutorSequence()
+									.get(traced.getExecutorSequence().size() - 1);
+							newState.getLocus_executor_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getExecutor(), newState);
+							umlTrace.States.Locus_executor_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createLocus_executor_Value();
+							newValue.setExecutor(((umlTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
+									.get(o_cast.getExecutor())));
+							traced.getExecutorSequence().add(newValue);
+							newState.getLocus_executor_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Factory()
+								.getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Loci.TracedLocus traced = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+									.get(o);
+							umlTrace.States.Locus_factory_Value lastValue = traced.getFactorySequence()
+									.get(traced.getFactorySequence().size() - 1);
+							newState.getLocus_factory_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getFactory(), newState);
+							umlTrace.States.Locus_factory_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createLocus_factory_Value();
+							newValue.setFactory(
+									((umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
+											.get(o_cast.getFactory())));
+							traced.getFactorySequence().add(newValue);
+							newState.getLocus_factory_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getToken_Holder().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
+									.get(o);
+							umlTrace.States.Token_holder_Value lastValue = traced.getHolderSequence()
+									.get(traced.getHolderSequence().size() - 1);
+							newState.getToken_holder_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getHolder(), newState);
+							umlTrace.States.Token_holder_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createToken_holder_Value();
+							newValue.setHolder(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+											.get(o_cast.getHolder())));
+							traced.getHolderSequence().add(newValue);
+							newState.getToken_holder_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getObjectToken_Value().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
+									.get(o);
+							umlTrace.States.ObjectToken_value_Value lastValue = traced.getValueSequence()
+									.get(traced.getValueSequence().size() - 1);
+							newState.getObjectToken_value_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getValue(), newState);
+							umlTrace.States.ObjectToken_value_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createObjectToken_value_Value();
+							newValue.setValue(
+									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue) exeToTraced
+											.get(o_cast.getValue())));
+							traced.getValueSequence().add(newValue);
+							newState.getObjectToken_value_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
+						fumlConfiguration.Activities.IntermediateActivities.Token o_cast = (fumlConfiguration.Activities.IntermediateActivities.Token) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getToken_Holder().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
+									.get(o);
+							umlTrace.States.Token_holder_Value lastValue = traced.getHolderSequence()
+									.get(traced.getHolderSequence().size() - 1);
+							newState.getToken_holder_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getHolder(), newState);
+							umlTrace.States.Token_holder_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createToken_holder_Value();
+							newValue.setHolder(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+											.get(o_cast.getHolder())));
+							traced.getHolderSequence().add(newValue);
+							newState.getToken_holder_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) {
+						fumlConfiguration.Actions.BasicActions.OpaqueActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_Firing().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActionActivation_firing_Value lastValue = traced.getFiringSequence()
+									.get(traced.getFiringSequence().size() - 1);
+							newState.getActionActivation_firing_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActionActivation_firing_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActionActivation_firing_Value();
+							newValue.setFiring(o_cast.isFiring());
+							traced.getFiringSequence().add(newValue);
+							newState.getActionActivation_firing_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Actions.BasicActions.OutputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.OutputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.OutputPinActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getObjectNodeActivation_OfferedTokenCount().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value lastValue = traced
+									.getOfferedTokenCountSequence()
+									.get(traced.getOfferedTokenCountSequence().size() - 1);
+							newState.getObjectNodeActivation_offeredTokenCount_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ObjectNodeActivation_offeredTokenCount_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createObjectNodeActivation_offeredTokenCount_Value();
+							newValue.setOfferedTokenCount(o_cast.getOfferedTokenCount());
+							traced.getOfferedTokenCountSequence().add(newValue);
+							newState.getObjectNodeActivation_offeredTokenCount_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getPinActivation_Count_temp().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.PinActivation_count_temp_Value lastValue = traced.getCount_tempSequence()
+									.get(traced.getCount_tempSequence().size() - 1);
+							newState.getPinActivation_count_temp_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.PinActivation_count_temp_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createPinActivation_count_temp_Value();
+							newValue.setCount_temp(o_cast.getCount_temp());
+							traced.getCount_tempSequence().add(newValue);
+							newState.getPinActivation_count_temp_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getPinActivation_ActionActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation traced = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+									.get(o);
+							umlTrace.States.PinActivation_actionActivation_Value lastValue = traced
+									.getActionActivationSequence().get(traced.getActionActivationSequence().size() - 1);
+							newState.getPinActivation_actionActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getActionActivation(), newState);
+							umlTrace.States.PinActivation_actionActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createPinActivation_actionActivation_Value();
+							newValue.setActionActivation(
+									((umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
+											.get(o_cast.getActionActivation())));
+							traced.getActionActivationSequence().add(newValue);
+							newState.getPinActivation_actionActivation_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
+						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getParameterValue_Parameter_ParameterValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue traced = (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
+									.get(o);
+							umlTrace.States.ParameterValue_parameter_ParameterValue_Value lastValue = traced
+									.getParameter_ParameterValueSequence()
+									.get(traced.getParameter_ParameterValueSequence().size() - 1);
+							newState.getParameterValue_parameter_ParameterValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ParameterValue_parameter_ParameterValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createParameterValue_parameter_ParameterValue_Value();
+							newValue.setParameter_ParameterValue(o_cast.getParameter_ParameterValue());
+							traced.getParameter_ParameterValueSequence().add(newValue);
+							newState.getParameterValue_parameter_ParameterValue_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_Firing().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActionActivation_firing_Value lastValue = traced.getFiringSequence()
+									.get(traced.getFiringSequence().size() - 1);
+							newState.getActionActivation_firing_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActionActivation_firing_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActionActivation_firing_Value();
+							newValue.setFiring(o_cast.isFiring());
+							traced.getFiringSequence().add(newValue);
+							newState.getActionActivation_firing_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
+						fumlConfiguration.Classes.Kernel.Reference o_cast = (fumlConfiguration.Classes.Kernel.Reference) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getReference_Referent().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
+									.get(o);
+							umlTrace.States.Reference_referent_Value lastValue = traced.getReferentSequence()
+									.get(traced.getReferentSequence().size() - 1);
+							newState.getReference_referent_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getReferent(), newState);
+							umlTrace.States.Reference_referent_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createReference_referent_Value();
+							newValue.setReferent(
+									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+											.get(o_cast.getReferent())));
+							traced.getReferentSequence().add(newValue);
+							newState.getReference_referent_Values().add(newValue);
+						}
+					} else if (o instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
+							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							newValue.setGroup_ActivityNodeActivation(
+									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+											.get(o_cast.getGroup_ActivityNodeActivation())));
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_Firing().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActionActivation_firing_Value lastValue = traced.getFiringSequence()
+									.get(traced.getFiringSequence().size() - 1);
+							newState.getActionActivation_firing_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActionActivation_firing_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActionActivation_firing_Value();
+							newValue.setFiring(o_cast.isFiring());
+							traced.getFiringSequence().add(newValue);
+							newState.getActionActivation_firing_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Running().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_running_Value lastValue = traced.getRunningSequence()
+									.get(traced.getRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_running_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_running_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_running_Value();
+							newValue.setRunning(o_cast.isRunning());
+							traced.getRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_running_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation traced = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_isRunning_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
+							newValue.setIsRunning(o_cast.isIsRunning());
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
 						}
 					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
+									.getRuntimeModelElementSequence()
+									.get(traced.getRuntimeModelElementSequence().size() - 1);
+							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
+
+							// And we create a proper new value
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
+							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createSemanticVisitor_runtimeModelElement_Value();
+							newValue.setRuntimeModelElement(
+									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+											.get(o_cast.getRuntimeModelElement())));
+							traced.getRuntimeModelElementSequence().add(newValue);
+							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
+						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
@@ -1632,7 +7994,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getGroup_ActivityNodeActivation());
+							addNewObjectToState(o_cast.getGroup_ActivityNodeActivation(), newState);
 							umlTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 							newValue.setGroup_ActivityNodeActivation(
@@ -1640,6 +8002,25 @@ public class UmlTraceConstructor implements ITraceConstructor {
 											.get(o_cast.getGroup_ActivityNodeActivation())));
 							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
 							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+						}
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+									.get(o);
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
+									.getNode_ActivityNodeActivationSequence()
+									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
+							newValue.setNode_ActivityNodeActivation(o_cast.getNode_ActivityNodeActivation());
+							traced.getNode_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
@@ -1661,28 +8042,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 						}
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-									.get(o);
-							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
-									.getNode_ActivityNodeActivationSequence()
-									.get(traced.getNode_ActivityNodeActivationSequence().size() - 1);
-							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getNode_ActivityNodeActivation());
-							umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityNodeActivation_node_ActivityNodeActivation_Value();
-							newValue.setNode_ActivityNodeActivation(
-									((umlTrace.States.uml.TracedActivityNode) exeToTraced
-											.get(o_cast.getNode_ActivityNodeActivation())));
-							traced.getNode_ActivityNodeActivationSequence().add(newValue);
-							newState.getActivityNodeActivation_node_ActivityNodeActivation_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_IsRunning().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
@@ -1699,12 +8058,14 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							traced.getIsRunningSequence().add(newValue);
 							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
 						}
+					} else if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
+						fumlConfiguration.Loci.SemanticVisitor o_cast = (fumlConfiguration.Loci.SemanticVisitor) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+							umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor traced = (umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) exeToTraced
 									.get(o);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
 									.getRuntimeModelElementSequence()
@@ -1712,7 +8073,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
 
 							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
+							addNewObjectToState(o_cast.getRuntimeModelElement(), newState);
 							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 									.createSemanticVisitor_runtimeModelElement_Value();
 							newValue.setRuntimeModelElement(
@@ -1720,181 +8081,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 											.get(o_cast.getRuntimeModelElement())));
 							traced.getRuntimeModelElementSequence().add(newValue);
 							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
-						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
-									.get(o);
-							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value lastValue = traced
-									.getLocus_ExtensionalValueSequence()
-									.get(traced.getLocus_ExtensionalValueSequence().size() - 1);
-							newState.getExtensionalValue_locus_ExtensionalValue_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getLocus_ExtensionalValue());
-							umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createExtensionalValue_locus_ExtensionalValue_Value();
-							newValue.setLocus_ExtensionalValue(
-									((umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-											.get(o_cast.getLocus_ExtensionalValue())));
-							traced.getLocus_ExtensionalValueSequence().add(newValue);
-							newState.getExtensionalValue_locus_ExtensionalValue_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
-								.getExecution_Context().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
-									.get(o);
-							umlTrace.States.Execution_context_Value lastValue = traced.getContextSequence()
-									.get(traced.getContextSequence().size() - 1);
-							newState.getExecution_context_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getContext());
-							umlTrace.States.Execution_context_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createExecution_context_Value();
-							newValue.setContext(
-									((umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
-											.get(o_cast.getContext())));
-							traced.getContextSequence().add(newValue);
-							newState.getExecution_context_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityExecution_ActivationGroup().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
-									.get(o);
-							umlTrace.States.ActivityExecution_activationGroup_Value lastValue = traced
-									.getActivationGroupSequence().get(traced.getActivationGroupSequence().size() - 1);
-							newState.getActivityExecution_activationGroup_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getActivationGroup());
-							umlTrace.States.ActivityExecution_activationGroup_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityExecution_activationGroup_Value();
-							newValue.setActivationGroup(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-											.get(o_cast.getActivationGroup())));
-							traced.getActivationGroupSequence().add(newValue);
-							newState.getActivityExecution_activationGroup_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
-									.get(o);
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
-									.getRuntimeModelElementSequence()
-									.get(traced.getRuntimeModelElementSequence().size() - 1);
-							newState.getSemanticVisitor_runtimeModelElement_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getRuntimeModelElement());
-							umlTrace.States.SemanticVisitor_runtimeModelElement_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createSemanticVisitor_runtimeModelElement_Value();
-							newValue.setRuntimeModelElement(
-									((umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-											.get(o_cast.getRuntimeModelElement())));
-							traced.getRuntimeModelElementSequence().add(newValue);
-							newState.getSemanticVisitor_runtimeModelElement_Values().add(newValue);
-						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Source().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-									.get(o);
-							umlTrace.States.ActivityEdgeInstance_source_Value lastValue = traced.getSourceSequence()
-									.get(traced.getSourceSequence().size() - 1);
-							newState.getActivityEdgeInstance_source_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getSource());
-							umlTrace.States.ActivityEdgeInstance_source_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityEdgeInstance_source_Value();
-							newValue.setSource(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-											.get(o_cast.getSource())));
-							traced.getSourceSequence().add(newValue);
-							newState.getActivityEdgeInstance_source_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Edge_ActivityEdgeInstance().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-									.get(o);
-							umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value lastValue = traced
-									.getEdge_ActivityEdgeInstanceSequence()
-									.get(traced.getEdge_ActivityEdgeInstanceSequence().size() - 1);
-							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getEdge_ActivityEdgeInstance());
-							umlTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityEdgeInstance_edge_ActivityEdgeInstance_Value();
-							newValue.setEdge_ActivityEdgeInstance(((umlTrace.States.uml.TracedActivityEdge) exeToTraced
-									.get(o_cast.getEdge_ActivityEdgeInstance())));
-							traced.getEdge_ActivityEdgeInstanceSequence().add(newValue);
-							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Group_ActivityEdgeInstance().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-									.get(o);
-							umlTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value lastValue = traced
-									.getGroup_ActivityEdgeInstanceSequence()
-									.get(traced.getGroup_ActivityEdgeInstanceSequence().size() - 1);
-							newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getGroup_ActivityEdgeInstance());
-							umlTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityEdgeInstance_group_ActivityEdgeInstance_Value();
-							newValue.setGroup_ActivityEdgeInstance(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-											.get(o_cast.getGroup_ActivityEdgeInstance())));
-							traced.getGroup_ActivityEdgeInstanceSequence().add(newValue);
-							newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().add(newValue);
-						}
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Target().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-									.get(o);
-							umlTrace.States.ActivityEdgeInstance_target_Value lastValue = traced.getTargetSequence()
-									.get(traced.getTargetSequence().size() - 1);
-							newState.getActivityEdgeInstance_target_Values().remove(lastValue);
-
-							// And we create a proper new value
-							storeAsTracedObject(o_cast.getTarget());
-							umlTrace.States.ActivityEdgeInstance_target_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-									.createActivityEdgeInstance_target_Value();
-							newValue.setTarget(
-									((umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-											.get(o_cast.getTarget())));
-							traced.getTargetSequence().add(newValue);
-							newState.getActivityEdgeInstance_target_Values().add(newValue);
 						}
 					}
 				}
@@ -1904,84 +8090,31 @@ public class UmlTraceConstructor implements ITraceConstructor {
 				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) {
 					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) modelChange;
 					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
-					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
-						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
-						umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue tracedObject = (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
-								.getParameterValue_Values_ParameterValue().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.ParameterValue_values_ParameterValue_Value> valueSequence = tracedObject
-									.getValues_ParameterValueSequence();
-							umlTrace.States.ParameterValue_values_ParameterValue_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Classes.Kernel.Value aValue : o_cast.getValues_ParameterValue()) {
-								storeAsTracedObject(aValue);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getValues_ParameterValue().size() == o_cast.getValues_ParameterValue()
-										.size()) {
-									java.util.Iterator<fumlConfiguration.Classes.Kernel.Value> it = o_cast
-											.getValues_ParameterValue().iterator();
-									for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue aPreviousValue : previousValue
-											.getValues_ParameterValue()) {
-										fumlConfiguration.Classes.Kernel.Value aCurrentValue = it.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.ParameterValue_values_ParameterValue_Value lastValue = tracedObject
-										.getValues_ParameterValueSequence()
-										.get(tracedObject.getValues_ParameterValueSequence().size() - 1);
-								newState.getParameterValue_values_ParameterValue_Values().remove(lastValue);
-								// And we create a proper new value							
-								umlTrace.States.ParameterValue_values_ParameterValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createParameterValue_values_ParameterValue_Value();
-								newValue.getValues_ParameterValue()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue>) getExeToTraced(
-												o_cast.getValues_ParameterValue()));
-								tracedObject.getValues_ParameterValueSequence().add(newValue);
-								newState.getParameterValue_values_ParameterValue_Values().add(newValue);
-							}
-						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
-						fumlConfiguration.Activities.IntermediateActivities.Offer o_cast = (fumlConfiguration.Activities.IntermediateActivities.Offer) o;
-						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) exeToTraced
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getOffer_OfferedTokens().getFeatureID()) {
+								.getActivityEdgeInstance_Offers().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.Offer_offeredTokens_Value> valueSequence = tracedObject
-									.getOfferedTokensSequence();
-							umlTrace.States.Offer_offeredTokens_Value previousValue = null;
+							List<umlTrace.States.ActivityEdgeInstance_offers_Value> valueSequence = tracedObject
+									.getOffersSequence();
+							umlTrace.States.ActivityEdgeInstance_offers_Value previousValue = null;
 							if (!valueSequence.isEmpty()) {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
-							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
-									.getOfferedTokens()) {
-								storeAsTracedObject(aValue);
+							for (fumlConfiguration.Activities.IntermediateActivities.Offer aValue : o_cast
+									.getOffers()) {
+								addNewObjectToState(aValue, newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
-								if (previousValue.getOfferedTokens().size() == o_cast.getOfferedTokens().size()) {
-									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
-											.getOfferedTokens().iterator();
-									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
-											.getOfferedTokens()) {
-										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+								if (previousValue.getOffers().size() == o_cast.getOffers().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Offer> it = o_cast
+											.getOffers().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer aPreviousValue : previousValue
+											.getOffers()) {
+										fumlConfiguration.Activities.IntermediateActivities.Offer aCurrentValue = it
 												.next();
 										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
 											change = true;
@@ -1997,23 +8130,22 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							if (change) {
 								stateChanged = true;
 								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.Offer_offeredTokens_Value lastValue = tracedObject
-										.getOfferedTokensSequence()
-										.get(tracedObject.getOfferedTokensSequence().size() - 1);
-								newState.getOffer_offeredTokens_Values().remove(lastValue);
+								umlTrace.States.ActivityEdgeInstance_offers_Value lastValue = tracedObject
+										.getOffersSequence().get(tracedObject.getOffersSequence().size() - 1);
+								newState.getActivityEdgeInstance_offers_Values().remove(lastValue);
 								// And we create a proper new value							
-								umlTrace.States.Offer_offeredTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createOffer_offeredTokens_Value();
-								newValue.getOfferedTokens()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
-												o_cast.getOfferedTokens()));
-								tracedObject.getOfferedTokensSequence().add(newValue);
-								newState.getOffer_offeredTokens_Values().add(newValue);
+								umlTrace.States.ActivityEdgeInstance_offers_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityEdgeInstance_offers_Value();
+								newValue.getOffers()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer>) getExeToTraced(
+												o_cast.getOffers(), newState));
+								tracedObject.getOffersSequence().add(newValue);
+								newState.getActivityEdgeInstance_offers_Values().add(newValue);
 							}
 						}
-					} else if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
-						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
-						umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject tracedObject = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getObject_Types().getFeatureID()) {
@@ -2023,14 +8155,11 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							if (!valueSequence.isEmpty()) {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
-							for (org.eclipse.uml2.uml.Class aValue : o_cast.getTypes()) {
-								storeAsTracedObject(aValue);
-							}
 							boolean change = false;
 							if (previousValue != null) {
 								if (previousValue.getTypes().size() == o_cast.getTypes().size()) {
 									java.util.Iterator<org.eclipse.uml2.uml.Class> it = o_cast.getTypes().iterator();
-									for (umlTrace.States.uml.TracedClass aPreviousValue : previousValue.getTypes()) {
+									for (org.eclipse.uml2.uml.Class aPreviousValue : previousValue.getTypes()) {
 										org.eclipse.uml2.uml.Class aCurrentValue = it.next();
 										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
 											change = true;
@@ -2052,9 +8181,10 @@ public class UmlTraceConstructor implements ITraceConstructor {
 								// And we create a proper new value							
 								umlTrace.States.Object_types_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 										.createObject_types_Value();
+								Collection<? extends EObject> tmp = getExeToTraced(
+										o_cast.getTypes(), newState);
 								newValue.getTypes()
-										.addAll((Collection<? extends umlTrace.States.uml.TracedClass>) getExeToTraced(
-												o_cast.getTypes()));
+										.addAll((Collection<? extends org.eclipse.uml2.uml.Class>) tmp);
 								tracedObject.getTypesSequence().add(newValue);
 								newState.getObject_types_Values().add(newValue);
 							}
@@ -2069,7 +8199,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
 							for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
-								storeAsTracedObject(aValue);
+								addNewObjectToState(aValue, newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
@@ -2102,81 +8232,23 @@ public class UmlTraceConstructor implements ITraceConstructor {
 										.createCompoundValue_featureValues_Value();
 								newValue.getFeatureValues()
 										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
-												o_cast.getFeatureValues()));
+												o_cast.getFeatureValues(), newState));
 								tracedObject.getFeatureValuesSequence().add(newValue);
 								newState.getCompoundValue_featureValues_Values().add(newValue);
 							}
 						}
-					} else if (o instanceof fumlConfiguration.Loci.Locus) {
-						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
-						umlTrace.States.fumlConfiguration.Loci.TracedLocus tracedObject = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getLocus_ExtensionalValues().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getExecution_ParameterValues().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.Locus_extensionalValues_Value> valueSequence = tracedObject
-									.getExtensionalValuesSequence();
-							umlTrace.States.Locus_extensionalValues_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Classes.Kernel.ExtensionalValue aValue : o_cast
-									.getExtensionalValues()) {
-								storeAsTracedObject(aValue);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getExtensionalValues().size() == o_cast.getExtensionalValues()
-										.size()) {
-									java.util.Iterator<fumlConfiguration.Classes.Kernel.ExtensionalValue> it = o_cast
-											.getExtensionalValues().iterator();
-									for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue aPreviousValue : previousValue
-											.getExtensionalValues()) {
-										fumlConfiguration.Classes.Kernel.ExtensionalValue aCurrentValue = it.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.Locus_extensionalValues_Value lastValue = tracedObject
-										.getExtensionalValuesSequence()
-										.get(tracedObject.getExtensionalValuesSequence().size() - 1);
-								newState.getLocus_extensionalValues_Values().remove(lastValue);
-								// And we create a proper new value							
-								umlTrace.States.Locus_extensionalValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createLocus_extensionalValues_Value();
-								newValue.getExtensionalValues()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue>) getExeToTraced(
-												o_cast.getExtensionalValues()));
-								tracedObject.getExtensionalValuesSequence().add(newValue);
-								newState.getLocus_extensionalValues_Values().add(newValue);
-							}
-						}
-					} else if (o instanceof fumlConfiguration.Input.InputParameterValues) {
-						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
-						umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues tracedObject = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
-								.getInputParameterValues_ParameterValues().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.InputParameterValues_parameterValues_Value> valueSequence = tracedObject
+							List<umlTrace.States.Execution_parameterValues_Value> valueSequence = tracedObject
 									.getParameterValuesSequence();
-							umlTrace.States.InputParameterValues_parameterValues_Value previousValue = null;
+							umlTrace.States.Execution_parameterValues_Value previousValue = null;
 							if (!valueSequence.isEmpty()) {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
 							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast
 									.getParameterValues()) {
-								storeAsTracedObject(aValue);
+								addNewObjectToState(aValue, newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
@@ -2201,18 +8273,1289 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							if (change) {
 								stateChanged = true;
 								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.InputParameterValues_parameterValues_Value lastValue = tracedObject
+								umlTrace.States.Execution_parameterValues_Value lastValue = tracedObject
 										.getParameterValuesSequence()
 										.get(tracedObject.getParameterValuesSequence().size() - 1);
-								newState.getInputParameterValues_parameterValues_Values().remove(lastValue);
+								newState.getExecution_parameterValues_Values().remove(lastValue);
 								// And we create a proper new value							
-								umlTrace.States.InputParameterValues_parameterValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createInputParameterValues_parameterValues_Value();
+								umlTrace.States.Execution_parameterValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createExecution_parameterValues_Value();
 								newValue.getParameterValues()
 										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
-												o_cast.getParameterValues()));
+												o_cast.getParameterValues(), newState));
 								tracedObject.getParameterValuesSequence().add(newValue);
-								newState.getInputParameterValues_parameterValues_Values().add(newValue);
+								newState.getExecution_parameterValues_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivationGroup_EdgeInstances().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value> valueSequence = tracedObject
+									.getEdgeInstancesSequence();
+							umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getEdgeInstances()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getEdgeInstances().size() == o_cast.getEdgeInstances().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getEdgeInstances().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getEdgeInstances()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value lastValue = tracedObject
+										.getEdgeInstancesSequence()
+										.get(tracedObject.getEdgeInstancesSequence().size() - 1);
+								newState.getActivityNodeActivationGroup_edgeInstances_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivationGroup_edgeInstances_Value();
+								newValue.getEdgeInstances()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getEdgeInstances(), newState));
+								tracedObject.getEdgeInstancesSequence().add(newValue);
+								newState.getActivityNodeActivationGroup_edgeInstances_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivationGroup_NodeActivations().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value> valueSequence = tracedObject
+									.getNodeActivationsSequence();
+							umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation aValue : o_cast
+									.getNodeActivations()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getNodeActivations().size() == o_cast.getNodeActivations().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation> it = o_cast
+											.getNodeActivations().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation aPreviousValue : previousValue
+											.getNodeActivations()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value lastValue = tracedObject
+										.getNodeActivationsSequence()
+										.get(tracedObject.getNodeActivationsSequence().size() - 1);
+								newState.getActivityNodeActivationGroup_nodeActivations_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivationGroup_nodeActivations_Value();
+								newValue.getNodeActivations()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation>) getExeToTraced(
+												o_cast.getNodeActivations(), newState));
+								tracedObject.getNodeActivationsSequence().add(newValue);
+								newState.getActivityNodeActivationGroup_nodeActivations_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityParameterNodeActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation tracedObject = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedAddStructuralFeatureValueActionActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_PinActivations().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActionActivation_pinActivations_Value> valueSequence = tracedObject
+									.getPinActivationsSequence();
+							umlTrace.States.ActionActivation_pinActivations_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast
+									.getPinActivations()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getPinActivations().size() == o_cast.getPinActivations().size()) {
+									java.util.Iterator<fumlConfiguration.Actions.BasicActions.PinActivation> it = o_cast
+											.getPinActivations().iterator();
+									for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation aPreviousValue : previousValue
+											.getPinActivations()) {
+										fumlConfiguration.Actions.BasicActions.PinActivation aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActionActivation_pinActivations_Value lastValue = tracedObject
+										.getPinActivationsSequence()
+										.get(tracedObject.getPinActivationsSequence().size() - 1);
+								newState.getActionActivation_pinActivations_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActionActivation_pinActivations_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActionActivation_pinActivations_Value();
+								newValue.getPinActivations()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+												o_cast.getPinActivations(), newState));
+								tracedObject.getPinActivationsSequence().add(newValue);
+								newState.getActionActivation_pinActivations_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) {
+						fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.CallBehaviorActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation tracedObject = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getCallActionActivation_CallExecutions().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.CallActionActivation_callExecutions_Value> valueSequence = tracedObject
+									.getCallExecutionsSequence();
+							umlTrace.States.CallActionActivation_callExecutions_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution aValue : o_cast
+									.getCallExecutions()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getCallExecutions().size() == o_cast.getCallExecutions().size()) {
+									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution> it = o_cast
+											.getCallExecutions().iterator();
+									for (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution aPreviousValue : previousValue
+											.getCallExecutions()) {
+										fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.CallActionActivation_callExecutions_Value lastValue = tracedObject
+										.getCallExecutionsSequence()
+										.get(tracedObject.getCallExecutionsSequence().size() - 1);
+								newState.getCallActionActivation_callExecutions_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.CallActionActivation_callExecutions_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createCallActionActivation_callExecutions_Value();
+								newValue.getCallExecutions()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution>) getExeToTraced(
+												o_cast.getCallExecutions(), newState));
+								tracedObject.getCallExecutionsSequence().add(newValue);
+								newState.getCallActionActivation_callExecutions_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_PinActivations().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActionActivation_pinActivations_Value> valueSequence = tracedObject
+									.getPinActivationsSequence();
+							umlTrace.States.ActionActivation_pinActivations_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast
+									.getPinActivations()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getPinActivations().size() == o_cast.getPinActivations().size()) {
+									java.util.Iterator<fumlConfiguration.Actions.BasicActions.PinActivation> it = o_cast
+											.getPinActivations().iterator();
+									for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation aPreviousValue : previousValue
+											.getPinActivations()) {
+										fumlConfiguration.Actions.BasicActions.PinActivation aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActionActivation_pinActivations_Value lastValue = tracedObject
+										.getPinActivationsSequence()
+										.get(tracedObject.getPinActivationsSequence().size() - 1);
+								newState.getActionActivation_pinActivations_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActionActivation_pinActivations_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActionActivation_pinActivations_Value();
+								newValue.getPinActivations()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+												o_cast.getPinActivations(), newState));
+								tracedObject.getPinActivationsSequence().add(newValue);
+								newState.getActionActivation_pinActivations_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation tracedObject = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedCreateObjectActionActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_PinActivations().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActionActivation_pinActivations_Value> valueSequence = tracedObject
+									.getPinActivationsSequence();
+							umlTrace.States.ActionActivation_pinActivations_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast
+									.getPinActivations()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getPinActivations().size() == o_cast.getPinActivations().size()) {
+									java.util.Iterator<fumlConfiguration.Actions.BasicActions.PinActivation> it = o_cast
+											.getPinActivations().iterator();
+									for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation aPreviousValue : previousValue
+											.getPinActivations()) {
+										fumlConfiguration.Actions.BasicActions.PinActivation aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActionActivation_pinActivations_Value lastValue = tracedObject
+										.getPinActivationsSequence()
+										.get(tracedObject.getPinActivationsSequence().size() - 1);
+								newState.getActionActivation_pinActivations_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActionActivation_pinActivations_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActionActivation_pinActivations_Value();
+								newValue.getPinActivations()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+												o_cast.getPinActivations(), newState));
+								tracedObject.getPinActivationsSequence().add(newValue);
+								newState.getActionActivation_pinActivations_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedDecisionNodeActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.ElementConfiguration) {
+						fumlConfiguration.ElementConfiguration o_cast = (fumlConfiguration.ElementConfiguration) o;
+						umlTrace.States.fumlConfiguration.TracedElementConfiguration tracedObject = (umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.FumlConfigurationPackage.eINSTANCE
+								.getElementConfiguration_SemanticVisitor().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ElementConfiguration_semanticVisitor_Value> valueSequence = tracedObject
+									.getSemanticVisitorSequence();
+							umlTrace.States.ElementConfiguration_semanticVisitor_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Loci.SemanticVisitor aValue : o_cast.getSemanticVisitor()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getSemanticVisitor().size() == o_cast.getSemanticVisitor().size()) {
+									java.util.Iterator<fumlConfiguration.Loci.SemanticVisitor> it = o_cast
+											.getSemanticVisitor().iterator();
+									for (umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor aPreviousValue : previousValue
+											.getSemanticVisitor()) {
+										fumlConfiguration.Loci.SemanticVisitor aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ElementConfiguration_semanticVisitor_Value lastValue = tracedObject
+										.getSemanticVisitorSequence()
+										.get(tracedObject.getSemanticVisitorSequence().size() - 1);
+								newState.getElementConfiguration_semanticVisitor_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ElementConfiguration_semanticVisitor_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createElementConfiguration_semanticVisitor_Value();
+								newValue.getSemanticVisitor()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor>) getExeToTraced(
+												o_cast.getSemanticVisitor(), newState));
+								tracedObject.getSemanticVisitorSequence().add(newValue);
+								newState.getElementConfiguration_semanticVisitor_Values().add(newValue);
 							}
 						}
 					} else if (o instanceof fumlConfiguration.Loci.ExecutionFactory) {
@@ -2230,7 +9573,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							}
 							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution aValue : o_cast
 									.getPrimitiveBehaviorPrototypes()) {
-								storeAsTracedObject(aValue);
+								addNewObjectToState(aValue, newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
@@ -2265,7 +9608,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 										.createExecutionFactory_primitiveBehaviorPrototypes_Value();
 								newValue.getPrimitiveBehaviorPrototypes()
 										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedOpaqueBehaviorExecution>) getExeToTraced(
-												o_cast.getPrimitiveBehaviorPrototypes()));
+												o_cast.getPrimitiveBehaviorPrototypes(), newState));
 								tracedObject.getPrimitiveBehaviorPrototypesSequence().add(newValue);
 								newState.getExecutionFactory_primitiveBehaviorPrototypes_Values().add(newValue);
 							}
@@ -2279,15 +9622,12 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							if (!valueSequence.isEmpty()) {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
-							for (org.eclipse.uml2.uml.PrimitiveType aValue : o_cast.getBuiltInTypes()) {
-								storeAsTracedObject(aValue);
-							}
 							boolean change = false;
 							if (previousValue != null) {
 								if (previousValue.getBuiltInTypes().size() == o_cast.getBuiltInTypes().size()) {
 									java.util.Iterator<org.eclipse.uml2.uml.PrimitiveType> it = o_cast.getBuiltInTypes()
 											.iterator();
-									for (umlTrace.States.uml.TracedPrimitiveType aPreviousValue : previousValue
+									for (org.eclipse.uml2.uml.PrimitiveType aPreviousValue : previousValue
 											.getBuiltInTypes()) {
 										org.eclipse.uml2.uml.PrimitiveType aCurrentValue = it.next();
 										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
@@ -2312,171 +9652,15 @@ public class UmlTraceConstructor implements ITraceConstructor {
 								umlTrace.States.ExecutionFactory_builtInTypes_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 										.createExecutionFactory_builtInTypes_Value();
 								newValue.getBuiltInTypes()
-										.addAll((Collection<? extends umlTrace.States.uml.TracedPrimitiveType>) getExeToTraced(
-												o_cast.getBuiltInTypes()));
+										.addAll((Collection<? extends org.eclipse.uml2.uml.PrimitiveType>) getExeToTraced(
+												o_cast.getBuiltInTypes(), newState));
 								tracedObject.getBuiltInTypesSequence().add(newValue);
 								newState.getExecutionFactory_builtInTypes_Values().add(newValue);
 							}
 						}
-					} else if (o instanceof fumlConfiguration.ElementConfiguration) {
-						fumlConfiguration.ElementConfiguration o_cast = (fumlConfiguration.ElementConfiguration) o;
-						umlTrace.States.fumlConfiguration.TracedElementConfiguration tracedObject = (umlTrace.States.fumlConfiguration.TracedElementConfiguration) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.FumlConfigurationPackage.eINSTANCE
-								.getElementConfiguration_SemanticVisitor().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.ElementConfiguration_semanticVisitor_Value> valueSequence = tracedObject
-									.getSemanticVisitorSequence();
-							umlTrace.States.ElementConfiguration_semanticVisitor_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Loci.SemanticVisitor aValue : o_cast.getSemanticVisitor()) {
-								storeAsTracedObject(aValue);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getSemanticVisitor().size() == o_cast.getSemanticVisitor().size()) {
-									java.util.Iterator<fumlConfiguration.Loci.SemanticVisitor> it = o_cast
-											.getSemanticVisitor().iterator();
-									for (umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor aPreviousValue : previousValue
-											.getSemanticVisitor()) {
-										fumlConfiguration.Loci.SemanticVisitor aCurrentValue = it.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.ElementConfiguration_semanticVisitor_Value lastValue = tracedObject
-										.getSemanticVisitorSequence()
-										.get(tracedObject.getSemanticVisitorSequence().size() - 1);
-								newState.getElementConfiguration_semanticVisitor_Values().remove(lastValue);
-								// And we create a proper new value							
-								umlTrace.States.ElementConfiguration_semanticVisitor_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createElementConfiguration_semanticVisitor_Value();
-								newValue.getSemanticVisitor()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor>) getExeToTraced(
-												o_cast.getSemanticVisitor()));
-								tracedObject.getSemanticVisitorSequence().add(newValue);
-								newState.getElementConfiguration_semanticVisitor_Values().add(newValue);
-							}
-						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
-						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivationGroup_EdgeInstances().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value> valueSequence = tracedObject
-									.getEdgeInstancesSequence();
-							umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
-									.getEdgeInstances()) {
-								storeAsTracedObject(aValue);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getEdgeInstances().size() == o_cast.getEdgeInstances().size()) {
-									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
-											.getEdgeInstances().iterator();
-									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
-											.getEdgeInstances()) {
-										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
-												.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value lastValue = tracedObject
-										.getEdgeInstancesSequence()
-										.get(tracedObject.getEdgeInstancesSequence().size() - 1);
-								newState.getActivityNodeActivationGroup_edgeInstances_Values().remove(lastValue);
-								// And we create a proper new value							
-								umlTrace.States.ActivityNodeActivationGroup_edgeInstances_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createActivityNodeActivationGroup_edgeInstances_Value();
-								newValue.getEdgeInstances()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
-												o_cast.getEdgeInstances()));
-								tracedObject.getEdgeInstancesSequence().add(newValue);
-								newState.getActivityNodeActivationGroup_edgeInstances_Values().add(newValue);
-							}
-						}
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivationGroup_NodeActivations().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value> valueSequence = tracedObject
-									.getNodeActivationsSequence();
-							umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation aValue : o_cast
-									.getNodeActivations()) {
-								storeAsTracedObject(aValue);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getNodeActivations().size() == o_cast.getNodeActivations().size()) {
-									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation> it = o_cast
-											.getNodeActivations().iterator();
-									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation aPreviousValue : previousValue
-											.getNodeActivations()) {
-										fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation aCurrentValue = it
-												.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value lastValue = tracedObject
-										.getNodeActivationsSequence()
-										.get(tracedObject.getNodeActivationsSequence().size() - 1);
-								newState.getActivityNodeActivationGroup_nodeActivations_Values().remove(lastValue);
-								// And we create a proper new value							
-								umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createActivityNodeActivationGroup_nodeActivations_Value();
-								newValue.getNodeActivations()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation>) getExeToTraced(
-												o_cast.getNodeActivations()));
-								tracedObject.getNodeActivationsSequence().add(newValue);
-								newState.getActivityNodeActivationGroup_nodeActivations_Values().add(newValue);
-							}
-						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
-						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation) exeToTraced
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
@@ -2489,7 +9673,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							}
 							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
 									.getHeldTokens()) {
-								storeAsTracedObject(aValue);
+								addNewObjectToState(aValue, newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
@@ -2522,59 +9706,9 @@ public class UmlTraceConstructor implements ITraceConstructor {
 										.createActivityNodeActivation_heldTokens_Value();
 								newValue.getHeldTokens()
 										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
-												o_cast.getHeldTokens()));
+												o_cast.getHeldTokens(), newState));
 								tracedObject.getHeldTokensSequence().add(newValue);
 								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
-							}
-						}
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
-									.getOutgoingEdgesSequence();
-							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
-									.getOutgoingEdges()) {
-								storeAsTracedObject(aValue);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
-									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
-											.getOutgoingEdges().iterator();
-									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
-											.getOutgoingEdges()) {
-										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
-												.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
-										.getOutgoingEdgesSequence()
-										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
-								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
-								// And we create a proper new value							
-								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createActivityNodeActivation_outgoingEdges_Value();
-								newValue.getOutgoingEdges()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
-												o_cast.getOutgoingEdges()));
-								tracedObject.getOutgoingEdgesSequence().add(newValue);
-								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
 							}
 						}
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
@@ -2588,7 +9722,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							}
 							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
 									.getIncomingEdges()) {
-								storeAsTracedObject(aValue);
+								addNewObjectToState(aValue, newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
@@ -2622,15 +9756,514 @@ public class UmlTraceConstructor implements ITraceConstructor {
 										.createActivityNodeActivation_incomingEdges_Value();
 								newValue.getIncomingEdges()
 										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
-												o_cast.getIncomingEdges()));
+												o_cast.getIncomingEdges(), newState));
 								tracedObject.getIncomingEdgesSequence().add(newValue);
 								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
 							}
 						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o;
-						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedInitialNodeActivation) exeToTraced
 								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Input.InputParameterValues) {
+						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+						umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues tracedObject = (umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
+								.getInputParameterValues_ParameterValues().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.InputParameterValues_parameterValues_Value> valueSequence = tracedObject
+									.getParameterValuesSequence();
+							umlTrace.States.InputParameterValues_parameterValues_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast
+									.getParameterValues()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getParameterValues().size() == o_cast.getParameterValues().size()) {
+									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue> it = o_cast
+											.getParameterValues().iterator();
+									for (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue aPreviousValue : previousValue
+											.getParameterValues()) {
+										fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.InputParameterValues_parameterValues_Value lastValue = tracedObject
+										.getParameterValuesSequence()
+										.get(tracedObject.getParameterValuesSequence().size() - 1);
+								newState.getInputParameterValues_parameterValues_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.InputParameterValues_parameterValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createInputParameterValues_parameterValues_Value();
+								newValue.getParameterValues()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+												o_cast.getParameterValues(), newState));
+								tracedObject.getParameterValuesSequence().add(newValue);
+								newState.getInputParameterValues_parameterValues_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Actions.BasicActions.InputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.InputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.InputPinActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation tracedObject = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedInputPinActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o;
+						umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution tracedObject = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerGreaterFunctionBehaviorExecution) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getObject_Types().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.Object_types_Value> valueSequence = tracedObject.getTypesSequence();
+							umlTrace.States.Object_types_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getTypes().size() == o_cast.getTypes().size()) {
+									java.util.Iterator<org.eclipse.uml2.uml.Class> it = o_cast.getTypes().iterator();
+									for (org.eclipse.uml2.uml.Class aPreviousValue : previousValue.getTypes()) {
+										org.eclipse.uml2.uml.Class aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.Object_types_Value lastValue = tracedObject.getTypesSequence()
+										.get(tracedObject.getTypesSequence().size() - 1);
+								newState.getObject_types_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.Object_types_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createObject_types_Value();
+								newValue.getTypes()
+										.addAll((Collection<? extends org.eclipse.uml2.uml.Class>) getExeToTraced(
+												o_cast.getTypes(), newState));
+								tracedObject.getTypesSequence().add(newValue);
+								newState.getObject_types_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getCompoundValue_FeatureValues().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.CompoundValue_featureValues_Value> valueSequence = tracedObject
+									.getFeatureValuesSequence();
+							umlTrace.States.CompoundValue_featureValues_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getFeatureValues().size() == o_cast.getFeatureValues().size()) {
+									java.util.Iterator<fumlConfiguration.Classes.Kernel.FeatureValue> it = o_cast
+											.getFeatureValues().iterator();
+									for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue aPreviousValue : previousValue
+											.getFeatureValues()) {
+										fumlConfiguration.Classes.Kernel.FeatureValue aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.CompoundValue_featureValues_Value lastValue = tracedObject
+										.getFeatureValuesSequence()
+										.get(tracedObject.getFeatureValuesSequence().size() - 1);
+								newState.getCompoundValue_featureValues_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.CompoundValue_featureValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createCompoundValue_featureValues_Value();
+								newValue.getFeatureValues()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
+												o_cast.getFeatureValues(), newState));
+								tracedObject.getFeatureValuesSequence().add(newValue);
+								newState.getCompoundValue_featureValues_Values().add(newValue);
+							}
+						}
 						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
 								.getExecution_ParameterValues().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
@@ -2642,7 +10275,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							}
 							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast
 									.getParameterValues()) {
-								storeAsTracedObject(aValue);
+								addNewObjectToState(aValue, newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
@@ -2676,11 +10309,15 @@ public class UmlTraceConstructor implements ITraceConstructor {
 										.createExecution_parameterValues_Value();
 								newValue.getParameterValues()
 										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
-												o_cast.getParameterValues()));
+												o_cast.getParameterValues(), newState));
 								tracedObject.getParameterValuesSequence().add(newValue);
 								newState.getExecution_parameterValues_Values().add(newValue);
 							}
 						}
+					} else if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o;
+						umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution tracedObject = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerLessFunctionBehaviorExecution) exeToTraced
+								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getObject_Types().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
@@ -2689,14 +10326,11 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							if (!valueSequence.isEmpty()) {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
-							for (org.eclipse.uml2.uml.Class aValue : o_cast.getTypes()) {
-								storeAsTracedObject(aValue);
-							}
 							boolean change = false;
 							if (previousValue != null) {
 								if (previousValue.getTypes().size() == o_cast.getTypes().size()) {
 									java.util.Iterator<org.eclipse.uml2.uml.Class> it = o_cast.getTypes().iterator();
-									for (umlTrace.States.uml.TracedClass aPreviousValue : previousValue.getTypes()) {
+									for (org.eclipse.uml2.uml.Class aPreviousValue : previousValue.getTypes()) {
 										org.eclipse.uml2.uml.Class aCurrentValue = it.next();
 										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
 											change = true;
@@ -2719,8 +10353,8 @@ public class UmlTraceConstructor implements ITraceConstructor {
 								umlTrace.States.Object_types_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
 										.createObject_types_Value();
 								newValue.getTypes()
-										.addAll((Collection<? extends umlTrace.States.uml.TracedClass>) getExeToTraced(
-												o_cast.getTypes()));
+										.addAll((Collection<? extends org.eclipse.uml2.uml.Class>) getExeToTraced(
+												o_cast.getTypes(), newState));
 								tracedObject.getTypesSequence().add(newValue);
 								newState.getObject_types_Values().add(newValue);
 							}
@@ -2735,7 +10369,7 @@ public class UmlTraceConstructor implements ITraceConstructor {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
 							for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
-								storeAsTracedObject(aValue);
+								addNewObjectToState(aValue, newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
@@ -2768,36 +10402,32 @@ public class UmlTraceConstructor implements ITraceConstructor {
 										.createCompoundValue_featureValues_Value();
 								newValue.getFeatureValues()
 										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
-												o_cast.getFeatureValues()));
+												o_cast.getFeatureValues(), newState));
 								tracedObject.getFeatureValuesSequence().add(newValue);
 								newState.getCompoundValue_featureValues_Values().add(newValue);
 							}
 						}
-					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
-						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Offers().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getExecution_ParameterValues().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<umlTrace.States.ActivityEdgeInstance_offers_Value> valueSequence = tracedObject
-									.getOffersSequence();
-							umlTrace.States.ActivityEdgeInstance_offers_Value previousValue = null;
+							List<umlTrace.States.Execution_parameterValues_Value> valueSequence = tracedObject
+									.getParameterValuesSequence();
+							umlTrace.States.Execution_parameterValues_Value previousValue = null;
 							if (!valueSequence.isEmpty()) {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
-							for (fumlConfiguration.Activities.IntermediateActivities.Offer aValue : o_cast
-									.getOffers()) {
-								storeAsTracedObject(aValue);
+							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast
+									.getParameterValues()) {
+								addNewObjectToState(aValue, newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
-								if (previousValue.getOffers().size() == o_cast.getOffers().size()) {
-									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Offer> it = o_cast
-											.getOffers().iterator();
-									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer aPreviousValue : previousValue
-											.getOffers()) {
-										fumlConfiguration.Activities.IntermediateActivities.Offer aCurrentValue = it
+								if (previousValue.getParameterValues().size() == o_cast.getParameterValues().size()) {
+									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue> it = o_cast
+											.getParameterValues().iterator();
+									for (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue aPreviousValue : previousValue
+											.getParameterValues()) {
+										fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aCurrentValue = it
 												.next();
 										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
 											change = true;
@@ -2813,17 +10443,1633 @@ public class UmlTraceConstructor implements ITraceConstructor {
 							if (change) {
 								stateChanged = true;
 								// Rollback: we remove the last value of this field from the new state
-								umlTrace.States.ActivityEdgeInstance_offers_Value lastValue = tracedObject
-										.getOffersSequence().get(tracedObject.getOffersSequence().size() - 1);
-								newState.getActivityEdgeInstance_offers_Values().remove(lastValue);
+								umlTrace.States.Execution_parameterValues_Value lastValue = tracedObject
+										.getParameterValuesSequence()
+										.get(tracedObject.getParameterValuesSequence().size() - 1);
+								newState.getExecution_parameterValues_Values().remove(lastValue);
 								// And we create a proper new value							
-								umlTrace.States.ActivityEdgeInstance_offers_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
-										.createActivityEdgeInstance_offers_Value();
-								newValue.getOffers()
-										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer>) getExeToTraced(
-												o_cast.getOffers()));
-								tracedObject.getOffersSequence().add(newValue);
-								newState.getActivityEdgeInstance_offers_Values().add(newValue);
+								umlTrace.States.Execution_parameterValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createExecution_parameterValues_Value();
+								newValue.getParameterValues()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+												o_cast.getParameterValues(), newState));
+								tracedObject.getParameterValuesSequence().add(newValue);
+								newState.getExecution_parameterValues_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
+						fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution o_cast = (fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o;
+						umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution tracedObject = (umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.TracedIntegerPlusFunctionBehaviorExecution) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getObject_Types().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.Object_types_Value> valueSequence = tracedObject.getTypesSequence();
+							umlTrace.States.Object_types_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getTypes().size() == o_cast.getTypes().size()) {
+									java.util.Iterator<org.eclipse.uml2.uml.Class> it = o_cast.getTypes().iterator();
+									for (org.eclipse.uml2.uml.Class aPreviousValue : previousValue.getTypes()) {
+										org.eclipse.uml2.uml.Class aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.Object_types_Value lastValue = tracedObject.getTypesSequence()
+										.get(tracedObject.getTypesSequence().size() - 1);
+								newState.getObject_types_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.Object_types_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createObject_types_Value();
+								newValue.getTypes()
+										.addAll((Collection<? extends org.eclipse.uml2.uml.Class>) getExeToTraced(
+												o_cast.getTypes(), newState));
+								tracedObject.getTypesSequence().add(newValue);
+								newState.getObject_types_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getCompoundValue_FeatureValues().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.CompoundValue_featureValues_Value> valueSequence = tracedObject
+									.getFeatureValuesSequence();
+							umlTrace.States.CompoundValue_featureValues_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getFeatureValues().size() == o_cast.getFeatureValues().size()) {
+									java.util.Iterator<fumlConfiguration.Classes.Kernel.FeatureValue> it = o_cast
+											.getFeatureValues().iterator();
+									for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue aPreviousValue : previousValue
+											.getFeatureValues()) {
+										fumlConfiguration.Classes.Kernel.FeatureValue aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.CompoundValue_featureValues_Value lastValue = tracedObject
+										.getFeatureValuesSequence()
+										.get(tracedObject.getFeatureValuesSequence().size() - 1);
+								newState.getCompoundValue_featureValues_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.CompoundValue_featureValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createCompoundValue_featureValues_Value();
+								newValue.getFeatureValues()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
+												o_cast.getFeatureValues(), newState));
+								tracedObject.getFeatureValuesSequence().add(newValue);
+								newState.getCompoundValue_featureValues_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getExecution_ParameterValues().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.Execution_parameterValues_Value> valueSequence = tracedObject
+									.getParameterValuesSequence();
+							umlTrace.States.Execution_parameterValues_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast
+									.getParameterValues()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getParameterValues().size() == o_cast.getParameterValues().size()) {
+									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue> it = o_cast
+											.getParameterValues().iterator();
+									for (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue aPreviousValue : previousValue
+											.getParameterValues()) {
+										fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.Execution_parameterValues_Value lastValue = tracedObject
+										.getParameterValuesSequence()
+										.get(tracedObject.getParameterValuesSequence().size() - 1);
+								newState.getExecution_parameterValues_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.Execution_parameterValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createExecution_parameterValues_Value();
+								newValue.getParameterValues()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+												o_cast.getParameterValues(), newState));
+								tracedObject.getParameterValuesSequence().add(newValue);
+								newState.getExecution_parameterValues_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
+						fumlConfiguration.Classes.Kernel.Object o_cast = (fumlConfiguration.Classes.Kernel.Object) o;
+						umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject tracedObject = (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getObject_Types().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.Object_types_Value> valueSequence = tracedObject.getTypesSequence();
+							umlTrace.States.Object_types_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getTypes().size() == o_cast.getTypes().size()) {
+									java.util.Iterator<org.eclipse.uml2.uml.Class> it = o_cast.getTypes().iterator();
+									for (org.eclipse.uml2.uml.Class aPreviousValue : previousValue.getTypes()) {
+										org.eclipse.uml2.uml.Class aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.Object_types_Value lastValue = tracedObject.getTypesSequence()
+										.get(tracedObject.getTypesSequence().size() - 1);
+								newState.getObject_types_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.Object_types_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createObject_types_Value();
+								newValue.getTypes()
+										.addAll((Collection<? extends org.eclipse.uml2.uml.Class>) getExeToTraced(
+												o_cast.getTypes(), newState));
+								tracedObject.getTypesSequence().add(newValue);
+								newState.getObject_types_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getCompoundValue_FeatureValues().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.CompoundValue_featureValues_Value> valueSequence = tracedObject
+									.getFeatureValuesSequence();
+							umlTrace.States.CompoundValue_featureValues_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Classes.Kernel.FeatureValue aValue : o_cast.getFeatureValues()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getFeatureValues().size() == o_cast.getFeatureValues().size()) {
+									java.util.Iterator<fumlConfiguration.Classes.Kernel.FeatureValue> it = o_cast
+											.getFeatureValues().iterator();
+									for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue aPreviousValue : previousValue
+											.getFeatureValues()) {
+										fumlConfiguration.Classes.Kernel.FeatureValue aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.CompoundValue_featureValues_Value lastValue = tracedObject
+										.getFeatureValuesSequence()
+										.get(tracedObject.getFeatureValuesSequence().size() - 1);
+								newState.getCompoundValue_featureValues_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.CompoundValue_featureValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createCompoundValue_featureValues_Value();
+								newValue.getFeatureValues()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue>) getExeToTraced(
+												o_cast.getFeatureValues(), newState));
+								tracedObject.getFeatureValuesSequence().add(newValue);
+								newState.getCompoundValue_featureValues_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedJoinNodeActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Loci.Locus) {
+						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
+						umlTrace.States.fumlConfiguration.Loci.TracedLocus tracedObject = (umlTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getLocus_ExtensionalValues().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.Locus_extensionalValues_Value> valueSequence = tracedObject
+									.getExtensionalValuesSequence();
+							umlTrace.States.Locus_extensionalValues_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Classes.Kernel.ExtensionalValue aValue : o_cast
+									.getExtensionalValues()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getExtensionalValues().size() == o_cast.getExtensionalValues()
+										.size()) {
+									java.util.Iterator<fumlConfiguration.Classes.Kernel.ExtensionalValue> it = o_cast
+											.getExtensionalValues().iterator();
+									for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue aPreviousValue : previousValue
+											.getExtensionalValues()) {
+										fumlConfiguration.Classes.Kernel.ExtensionalValue aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.Locus_extensionalValues_Value lastValue = tracedObject
+										.getExtensionalValuesSequence()
+										.get(tracedObject.getExtensionalValuesSequence().size() - 1);
+								newState.getLocus_extensionalValues_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.Locus_extensionalValues_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createLocus_extensionalValues_Value();
+								newValue.getExtensionalValues()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue>) getExeToTraced(
+												o_cast.getExtensionalValues(), newState));
+								tracedObject.getExtensionalValuesSequence().add(newValue);
+								newState.getLocus_extensionalValues_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedMergeNodeActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
+						fumlConfiguration.Activities.IntermediateActivities.Offer o_cast = (fumlConfiguration.Activities.IntermediateActivities.Offer) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getOffer_OfferedTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.Offer_offeredTokens_Value> valueSequence = tracedObject
+									.getOfferedTokensSequence();
+							umlTrace.States.Offer_offeredTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getOfferedTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOfferedTokens().size() == o_cast.getOfferedTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getOfferedTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getOfferedTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.Offer_offeredTokens_Value lastValue = tracedObject
+										.getOfferedTokensSequence()
+										.get(tracedObject.getOfferedTokensSequence().size() - 1);
+								newState.getOffer_offeredTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.Offer_offeredTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createOffer_offeredTokens_Value();
+								newValue.getOfferedTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getOfferedTokens(), newState));
+								tracedObject.getOfferedTokensSequence().add(newValue);
+								newState.getOffer_offeredTokens_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) {
+						fumlConfiguration.Actions.BasicActions.OpaqueActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation tracedObject = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOpaqueActionActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_PinActivations().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActionActivation_pinActivations_Value> valueSequence = tracedObject
+									.getPinActivationsSequence();
+							umlTrace.States.ActionActivation_pinActivations_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast
+									.getPinActivations()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getPinActivations().size() == o_cast.getPinActivations().size()) {
+									java.util.Iterator<fumlConfiguration.Actions.BasicActions.PinActivation> it = o_cast
+											.getPinActivations().iterator();
+									for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation aPreviousValue : previousValue
+											.getPinActivations()) {
+										fumlConfiguration.Actions.BasicActions.PinActivation aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActionActivation_pinActivations_Value lastValue = tracedObject
+										.getPinActivationsSequence()
+										.get(tracedObject.getPinActivationsSequence().size() - 1);
+								newState.getActionActivation_pinActivations_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActionActivation_pinActivations_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActionActivation_pinActivations_Value();
+								newValue.getPinActivations()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+												o_cast.getPinActivations(), newState));
+								tracedObject.getPinActivationsSequence().add(newValue);
+								newState.getActionActivation_pinActivations_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Actions.BasicActions.OutputPinActivation) {
+						fumlConfiguration.Actions.BasicActions.OutputPinActivation o_cast = (fumlConfiguration.Actions.BasicActions.OutputPinActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation tracedObject = (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedOutputPinActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
+						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+						umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue tracedObject = (umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getParameterValue_Values_ParameterValue().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ParameterValue_values_ParameterValue_Value> valueSequence = tracedObject
+									.getValues_ParameterValueSequence();
+							umlTrace.States.ParameterValue_values_ParameterValue_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Classes.Kernel.Value aValue : o_cast.getValues_ParameterValue()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getValues_ParameterValue().size() == o_cast.getValues_ParameterValue()
+										.size()) {
+									java.util.Iterator<fumlConfiguration.Classes.Kernel.Value> it = o_cast
+											.getValues_ParameterValue().iterator();
+									for (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue aPreviousValue : previousValue
+											.getValues_ParameterValue()) {
+										fumlConfiguration.Classes.Kernel.Value aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ParameterValue_values_ParameterValue_Value lastValue = tracedObject
+										.getValues_ParameterValueSequence()
+										.get(tracedObject.getValues_ParameterValueSequence().size() - 1);
+								newState.getParameterValue_values_ParameterValue_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ParameterValue_values_ParameterValue_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createParameterValue_values_ParameterValue_Value();
+								newValue.getValues_ParameterValue()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Classes.Kernel.TracedValue>) getExeToTraced(
+												o_cast.getValues_ParameterValue(), newState));
+								tracedObject.getValues_ParameterValueSequence().add(newValue);
+								newState.getParameterValue_values_ParameterValue_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ReadStructuralFeatureActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation tracedObject = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedReadStructuralFeatureActionActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_PinActivations().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActionActivation_pinActivations_Value> valueSequence = tracedObject
+									.getPinActivationsSequence();
+							umlTrace.States.ActionActivation_pinActivations_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast
+									.getPinActivations()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getPinActivations().size() == o_cast.getPinActivations().size()) {
+									java.util.Iterator<fumlConfiguration.Actions.BasicActions.PinActivation> it = o_cast
+											.getPinActivations().iterator();
+									for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation aPreviousValue : previousValue
+											.getPinActivations()) {
+										fumlConfiguration.Actions.BasicActions.PinActivation aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActionActivation_pinActivations_Value lastValue = tracedObject
+										.getPinActivationsSequence()
+										.get(tracedObject.getPinActivationsSequence().size() - 1);
+								newState.getActionActivation_pinActivations_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActionActivation_pinActivations_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActionActivation_pinActivations_Value();
+								newValue.getPinActivations()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+												o_cast.getPinActivations(), newState));
+								tracedObject.getPinActivationsSequence().add(newValue);
+								newState.getActionActivation_pinActivations_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
+						fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation o_cast = (fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o;
+						umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation tracedObject = (umlTrace.States.fumlConfiguration.Actions.IntermediateActions.TracedValueSpecificationActionActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_PinActivations().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActionActivation_pinActivations_Value> valueSequence = tracedObject
+									.getPinActivationsSequence();
+							umlTrace.States.ActionActivation_pinActivations_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast
+									.getPinActivations()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getPinActivations().size() == o_cast.getPinActivations().size()) {
+									java.util.Iterator<fumlConfiguration.Actions.BasicActions.PinActivation> it = o_cast
+											.getPinActivations().iterator();
+									for (umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation aPreviousValue : previousValue
+											.getPinActivations()) {
+										fumlConfiguration.Actions.BasicActions.PinActivation aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActionActivation_pinActivations_Value lastValue = tracedObject
+										.getPinActivationsSequence()
+										.get(tracedObject.getPinActivationsSequence().size() - 1);
+								newState.getActionActivation_pinActivations_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActionActivation_pinActivations_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActionActivation_pinActivations_Value();
+								newValue.getPinActivations()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+												o_cast.getPinActivations(), newState));
+								tracedObject.getPinActivationsSequence().add(newValue);
+								newState.getActionActivation_pinActivations_Values().add(newValue);
+							}
+						}
+					} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
+						umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation tracedObject = (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
+									.getHeldTokensSequence();
+							umlTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.Token aValue : o_cast
+									.getHeldTokens()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getHeldTokens().size() == o_cast.getHeldTokens().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Token> it = o_cast
+											.getHeldTokens().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken aPreviousValue : previousValue
+											.getHeldTokens()) {
+										fumlConfiguration.Activities.IntermediateActivities.Token aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
+										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
+								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_heldTokens_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_heldTokens_Value();
+								newValue.getHeldTokens()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken>) getExeToTraced(
+												o_cast.getHeldTokens(), newState));
+								tracedObject.getHeldTokensSequence().add(newValue);
+								newState.getActivityNodeActivation_heldTokens_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
+									.getIncomingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getIncomingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getIncomingEdges().size() == o_cast.getIncomingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getIncomingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getIncomingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
+										.getIncomingEdgesSequence()
+										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_incomingEdges_Value();
+								newValue.getIncomingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getIncomingEdges(), newState));
+								tracedObject.getIncomingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
+							}
+						}
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<umlTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							umlTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								umlTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = umlTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
 							}
 						}
 					}
@@ -4111,326 +13357,6 @@ public class UmlTraceConstructor implements ITraceConstructor {
 		}
 	}
 
-	private void storeAsTracedObject(fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
-					.createTracedActivityEdgeInstance();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getIntermediateActivities_tracedActivityEdgeInstances().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
-					.createTracedActivityExecution();
-			tracedObject.setOriginalObject_SemanticVisitor(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getIntermediateActivities_tracedActivityExecutions().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
-					.createTracedActivityNodeActivation();
-			tracedObject.setOriginalObject_SemanticVisitor(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getIntermediateActivities_tracedActivityNodeActivations().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(
-			fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
-					.createTracedActivityNodeActivationGroup();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getIntermediateActivities_tracedActivityNodeActivationGroups().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Classes.Kernel.BooleanValue o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
-					.createTracedBooleanValue();
-			tracedObject.setOriginalObject_SemanticVisitor(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getKernel_tracedBooleanValues().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(org.eclipse.uml2.uml.Class o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.uml.TracedClass tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.uml.UmlFactory.eINSTANCE.createTracedClass();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getUml_tracedClasss().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.ElementConfiguration o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.TracedElementConfiguration tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.FumlConfigurationFactory.eINSTANCE
-					.createTracedElementConfiguration();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getFumlConfiguration_tracedElementConfigurations().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Loci.ExecutionEnvironment o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE
-					.createTracedExecutionEnvironment();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getLoci_tracedExecutionEnvironments().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Loci.ExecutionFactory o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Loci.TracedExecutionFactory tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE.createTracedExecutionFactory();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getLoci_tracedExecutionFactorys().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Loci.Executor o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Loci.TracedExecutor tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE.createTracedExecutor();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getLoci_tracedExecutors().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Activities.IntermediateActivities.ForkedToken o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
-					.createTracedForkedToken();
-			tracedObject.setOriginalObject_Token(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getIntermediateActivities_tracedForkedTokens().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Input.InputParameterValues o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Input.TracedInputParameterValues tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Input.InputFactory.eINSTANCE
-					.createTracedInputParameterValues();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getInput_tracedInputParameterValuess().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Classes.Kernel.IntegerValue o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
-					.createTracedIntegerValue();
-			tracedObject.setOriginalObject_SemanticVisitor(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getKernel_tracedIntegerValues().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Loci.Locus o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Loci.TracedLocus tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE.createTracedLocus();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getLoci_tracedLocuss().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Classes.Kernel.Object o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
-					.createTracedObject();
-			tracedObject.setOriginalObject_SemanticVisitor(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getKernel_tracedObjects().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Activities.IntermediateActivities.ObjectToken o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
-					.createTracedObjectToken();
-			tracedObject.setOriginalObject_Token(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getIntermediateActivities_tracedObjectTokens().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Activities.IntermediateActivities.Offer o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
-					.createTracedOffer();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getIntermediateActivities_tracedOffers().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(org.eclipse.uml2.uml.Parameter o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.uml.TracedParameter tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.uml.UmlFactory.eINSTANCE.createTracedParameter();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getUml_tracedParameters().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsFactory.eINSTANCE
-					.createTracedParameterValue();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getBasicBehaviors_tracedParameterValues().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(org.eclipse.uml2.uml.PrimitiveType o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.uml.TracedPrimitiveType tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.uml.UmlFactory.eINSTANCE.createTracedPrimitiveType();
-			tracedObject.setOriginalObject(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getUml_tracedPrimitiveTypes().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Classes.Kernel.Reference o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Classes.Kernel.TracedReference tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Classes.Kernel.KernelFactory.eINSTANCE
-					.createTracedReference();
-			tracedObject.setOriginalObject_SemanticVisitor(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getKernel_tracedReferences().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Loci.SemanticVisitor o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Loci.LociFactory.eINSTANCE.createTracedSemanticVisitor();
-			tracedObject.setOriginalObject_SemanticVisitor(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getLoci_tracedSemanticVisitors().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(fumlConfiguration.Activities.IntermediateActivities.Token o) {
-		// First we find the traced object, and we create it if required
-		umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken tracedObject;
-		if (!exeToTraced.containsKey(o)) {
-			tracedObject = umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesFactory.eINSTANCE
-					.createTracedToken();
-			tracedObject.setOriginalObject_Token(o);
-			exeToTraced.put(o, tracedObject);
-			traceRoot.getIntermediateActivities_tracedTokens().add(tracedObject);
-		}
-	}
-
-	private void storeAsTracedObject(EObject o) {
-		if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
-			storeAsTracedObject((fumlConfiguration.Activities.IntermediateActivities.Token) o);
-		} else if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
-			storeAsTracedObject((fumlConfiguration.Loci.SemanticVisitor) o);
-		} else if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
-			storeAsTracedObject((fumlConfiguration.Classes.Kernel.Reference) o);
-		} else if (o instanceof org.eclipse.uml2.uml.PrimitiveType) {
-			storeAsTracedObject((org.eclipse.uml2.uml.PrimitiveType) o);
-		} else if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
-			storeAsTracedObject((fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o);
-		} else if (o instanceof org.eclipse.uml2.uml.Parameter) {
-			storeAsTracedObject((org.eclipse.uml2.uml.Parameter) o);
-		} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
-			storeAsTracedObject((fumlConfiguration.Activities.IntermediateActivities.Offer) o);
-		} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
-			storeAsTracedObject((fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o);
-		} else if (o instanceof fumlConfiguration.Classes.Kernel.Object) {
-			storeAsTracedObject((fumlConfiguration.Classes.Kernel.Object) o);
-		} else if (o instanceof fumlConfiguration.Loci.Locus) {
-			storeAsTracedObject((fumlConfiguration.Loci.Locus) o);
-		} else if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
-			storeAsTracedObject((fumlConfiguration.Classes.Kernel.IntegerValue) o);
-		} else if (o instanceof fumlConfiguration.Input.InputParameterValues) {
-			storeAsTracedObject((fumlConfiguration.Input.InputParameterValues) o);
-		} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
-			storeAsTracedObject((fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o);
-		} else if (o instanceof fumlConfiguration.Loci.Executor) {
-			storeAsTracedObject((fumlConfiguration.Loci.Executor) o);
-		} else if (o instanceof fumlConfiguration.Loci.ExecutionFactory) {
-			storeAsTracedObject((fumlConfiguration.Loci.ExecutionFactory) o);
-		} else if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
-			storeAsTracedObject((fumlConfiguration.Loci.ExecutionEnvironment) o);
-		} else if (o instanceof fumlConfiguration.ElementConfiguration) {
-			storeAsTracedObject((fumlConfiguration.ElementConfiguration) o);
-		} else if (o instanceof org.eclipse.uml2.uml.Class) {
-			storeAsTracedObject((org.eclipse.uml2.uml.Class) o);
-		} else if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
-			storeAsTracedObject((fumlConfiguration.Classes.Kernel.BooleanValue) o);
-		} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
-			storeAsTracedObject((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o);
-		} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
-			storeAsTracedObject((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o);
-		} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
-			storeAsTracedObject((fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o);
-		} else if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
-			storeAsTracedObject((fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o);
-		}
-	}
-
 	private Set<Resource> getAllExecutedModelResources() {
 		Set<Resource> allResources = new HashSet<>();
 		allResources.add(executedModel);
@@ -4438,10 +13364,10 @@ public class UmlTraceConstructor implements ITraceConstructor {
 		return allResources;
 	}
 
-	private Collection<? extends EObject> getExeToTraced(Collection<? extends EObject> exeObjects) {
+	private Collection<? extends EObject> getExeToTraced(Collection<? extends EObject> exeObjects,
+			umlTrace.States.State newState) {
 		Collection<EObject> result = new ArrayList<EObject>();
 		for (EObject exeObject : exeObjects) {
-			storeAsTracedObject(exeObject);
 			result.add(exeToTraced.get(exeObject));
 		}
 		return result;

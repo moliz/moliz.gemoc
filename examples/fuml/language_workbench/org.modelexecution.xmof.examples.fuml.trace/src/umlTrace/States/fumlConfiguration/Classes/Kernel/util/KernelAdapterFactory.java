@@ -94,6 +94,18 @@ public class KernelAdapterFactory extends AdapterFactoryImpl {
 				return createTracedIntegerValueAdapter();
 			}
 			@Override
+			public Adapter caseTracedLiteralBooleanEvaluation(TracedLiteralBooleanEvaluation object) {
+				return createTracedLiteralBooleanEvaluationAdapter();
+			}
+			@Override
+			public Adapter caseTracedLiteralEvaluation(TracedLiteralEvaluation object) {
+				return createTracedLiteralEvaluationAdapter();
+			}
+			@Override
+			public Adapter caseTracedLiteralIntegerEvaluation(TracedLiteralIntegerEvaluation object) {
+				return createTracedLiteralIntegerEvaluationAdapter();
+			}
+			@Override
 			public Adapter caseTracedObject(TracedObject object) {
 				return createTracedObjectAdapter();
 			}
@@ -218,6 +230,48 @@ public class KernelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTracedIntegerValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation <em>Traced Literal Boolean Evaluation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralBooleanEvaluation
+	 * @generated
+	 */
+	public Adapter createTracedLiteralBooleanEvaluationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralEvaluation <em>Traced Literal Evaluation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralEvaluation
+	 * @generated
+	 */
+	public Adapter createTracedLiteralEvaluationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation <em>Traced Literal Integer Evaluation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see umlTrace.States.fumlConfiguration.Classes.Kernel.TracedLiteralIntegerEvaluation
+	 * @generated
+	 */
+	public Adapter createTracedLiteralIntegerEvaluationAdapter() {
 		return null;
 	}
 

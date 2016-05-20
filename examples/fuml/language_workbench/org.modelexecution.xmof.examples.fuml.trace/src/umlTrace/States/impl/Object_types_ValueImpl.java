@@ -27,8 +27,6 @@ import umlTrace.States.StatesPackage;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject;
 
-import umlTrace.States.uml.TracedClass;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Object types Value</b></em>'.
@@ -64,7 +62,7 @@ public class Object_types_ValueImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TracedClass> types;
+	protected EList<org.eclipse.uml2.uml.Class> types;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,9 +150,9 @@ public class Object_types_ValueImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TracedClass> getTypes() {
+	public EList<org.eclipse.uml2.uml.Class> getTypes() {
 		if (types == null) {
-			types = new EObjectResolvingEList<TracedClass>(TracedClass.class, this, StatesPackage.OBJECT_TYPES_VALUE__TYPES);
+			types = new EObjectResolvingEList<org.eclipse.uml2.uml.Class>(org.eclipse.uml2.uml.Class.class, this, StatesPackage.OBJECT_TYPES_VALUE__TYPES);
 		}
 		return types;
 	}
@@ -246,7 +244,7 @@ public class Object_types_ValueImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case StatesPackage.OBJECT_TYPES_VALUE__TYPES:
 				getTypes().clear();
-				getTypes().addAll((Collection<? extends TracedClass>)newValue);
+				getTypes().addAll((Collection<? extends org.eclipse.uml2.uml.Class>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -95,6 +95,15 @@ public class IntermediateActivitiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case IntermediateActivitiesPackage.TRACED_ACTIVITY_FINAL_NODE_ACTIVATION: {
+				TracedActivityFinalNodeActivation tracedActivityFinalNodeActivation = (TracedActivityFinalNodeActivation)theEObject;
+				T result = caseTracedActivityFinalNodeActivation(tracedActivityFinalNodeActivation);
+				if (result == null) result = caseTracedControlNodeActivation(tracedActivityFinalNodeActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedActivityFinalNodeActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedActivityFinalNodeActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case IntermediateActivitiesPackage.TRACED_ACTIVITY_NODE_ACTIVATION: {
 				TracedActivityNodeActivation tracedActivityNodeActivation = (TracedActivityNodeActivation)theEObject;
 				T result = caseTracedActivityNodeActivation(tracedActivityNodeActivation);
@@ -108,10 +117,79 @@ public class IntermediateActivitiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case IntermediateActivitiesPackage.TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION: {
+				TracedActivityParameterNodeActivation tracedActivityParameterNodeActivation = (TracedActivityParameterNodeActivation)theEObject;
+				T result = caseTracedActivityParameterNodeActivation(tracedActivityParameterNodeActivation);
+				if (result == null) result = caseTracedObjectNodeActivation(tracedActivityParameterNodeActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedActivityParameterNodeActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedActivityParameterNodeActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntermediateActivitiesPackage.TRACED_CONTROL_NODE_ACTIVATION: {
+				TracedControlNodeActivation tracedControlNodeActivation = (TracedControlNodeActivation)theEObject;
+				T result = caseTracedControlNodeActivation(tracedControlNodeActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedControlNodeActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedControlNodeActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntermediateActivitiesPackage.TRACED_CONTROL_TOKEN: {
+				TracedControlToken tracedControlToken = (TracedControlToken)theEObject;
+				T result = caseTracedControlToken(tracedControlToken);
+				if (result == null) result = caseTracedToken(tracedControlToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntermediateActivitiesPackage.TRACED_DECISION_NODE_ACTIVATION: {
+				TracedDecisionNodeActivation tracedDecisionNodeActivation = (TracedDecisionNodeActivation)theEObject;
+				T result = caseTracedDecisionNodeActivation(tracedDecisionNodeActivation);
+				if (result == null) result = caseTracedControlNodeActivation(tracedDecisionNodeActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedDecisionNodeActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedDecisionNodeActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntermediateActivitiesPackage.TRACED_FORK_NODE_ACTIVATION: {
+				TracedForkNodeActivation tracedForkNodeActivation = (TracedForkNodeActivation)theEObject;
+				T result = caseTracedForkNodeActivation(tracedForkNodeActivation);
+				if (result == null) result = caseTracedControlNodeActivation(tracedForkNodeActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedForkNodeActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedForkNodeActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case IntermediateActivitiesPackage.TRACED_FORKED_TOKEN: {
 				TracedForkedToken tracedForkedToken = (TracedForkedToken)theEObject;
 				T result = caseTracedForkedToken(tracedForkedToken);
 				if (result == null) result = caseTracedToken(tracedForkedToken);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntermediateActivitiesPackage.TRACED_INITIAL_NODE_ACTIVATION: {
+				TracedInitialNodeActivation tracedInitialNodeActivation = (TracedInitialNodeActivation)theEObject;
+				T result = caseTracedInitialNodeActivation(tracedInitialNodeActivation);
+				if (result == null) result = caseTracedControlNodeActivation(tracedInitialNodeActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedInitialNodeActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedInitialNodeActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntermediateActivitiesPackage.TRACED_JOIN_NODE_ACTIVATION: {
+				TracedJoinNodeActivation tracedJoinNodeActivation = (TracedJoinNodeActivation)theEObject;
+				T result = caseTracedJoinNodeActivation(tracedJoinNodeActivation);
+				if (result == null) result = caseTracedControlNodeActivation(tracedJoinNodeActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedJoinNodeActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedJoinNodeActivation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IntermediateActivitiesPackage.TRACED_MERGE_NODE_ACTIVATION: {
+				TracedMergeNodeActivation tracedMergeNodeActivation = (TracedMergeNodeActivation)theEObject;
+				T result = caseTracedMergeNodeActivation(tracedMergeNodeActivation);
+				if (result == null) result = caseTracedControlNodeActivation(tracedMergeNodeActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedMergeNodeActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedMergeNodeActivation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -177,6 +255,21 @@ public class IntermediateActivitiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Activity Final Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Activity Final Node Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedActivityFinalNodeActivation(TracedActivityFinalNodeActivation object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Traced Activity Node Activation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -207,6 +300,81 @@ public class IntermediateActivitiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Activity Parameter Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Activity Parameter Node Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedActivityParameterNodeActivation(TracedActivityParameterNodeActivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Control Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Control Node Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedControlNodeActivation(TracedControlNodeActivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Control Token</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Control Token</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedControlToken(TracedControlToken object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Decision Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Decision Node Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedDecisionNodeActivation(TracedDecisionNodeActivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Fork Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Fork Node Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedForkNodeActivation(TracedForkNodeActivation object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Traced Forked Token</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -218,6 +386,51 @@ public class IntermediateActivitiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTracedForkedToken(TracedForkedToken object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Initial Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Initial Node Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedInitialNodeActivation(TracedInitialNodeActivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Join Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Join Node Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedJoinNodeActivation(TracedJoinNodeActivation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traced Merge Node Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traced Merge Node Activation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTracedMergeNodeActivation(TracedMergeNodeActivation object) {
 		return null;
 	}
 

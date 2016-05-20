@@ -2,8 +2,6 @@
  */
 package umlTrace.States.fumlConfiguration.Activities.IntermediateActivities;
 
-import fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -24,11 +22,10 @@ import umlTrace.States.ActivityNodeActivationGroup_nodeActivations_Value;
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup#getActivityExecutionSequence <em>Activity Execution Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup#getEdgeInstancesSequence <em>Edge Instances Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup#getNodeActivationsSequence <em>Node Activations Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup#getOriginalObject <em>Original Object</em>}</li>
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getTracedActivityNodeActivationGroup()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Activities/IntermediateActivities/ActivityNodeActivationGroup'"
+ * @model
  * @generated
  */
 public interface TracedActivityNodeActivationGroup extends EObject {
@@ -85,31 +82,5 @@ public interface TracedActivityNodeActivationGroup extends EObject {
 	 * @generated
 	 */
 	EList<ActivityNodeActivationGroup_nodeActivations_Value> getNodeActivationsSequence();
-
-	/**
-	 * Returns the value of the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Original Object</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Original Object</em>' reference.
-	 * @see #setOriginalObject(ActivityNodeActivationGroup)
-	 * @see umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage#getTracedActivityNodeActivationGroup_OriginalObject()
-	 * @model
-	 * @generated
-	 */
-	ActivityNodeActivationGroup getOriginalObject();
-
-	/**
-	 * Sets the value of the '{@link umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup#getOriginalObject <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Original Object</em>' reference.
-	 * @see #getOriginalObject()
-	 * @generated
-	 */
-	void setOriginalObject(ActivityNodeActivationGroup value);
 
 } // TracedActivityNodeActivationGroup

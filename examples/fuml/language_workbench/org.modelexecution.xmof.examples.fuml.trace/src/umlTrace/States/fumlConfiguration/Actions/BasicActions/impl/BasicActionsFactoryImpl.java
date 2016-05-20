@@ -56,9 +56,53 @@ public class BasicActionsFactoryImpl extends EFactoryImpl implements BasicAction
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case BasicActionsPackage.TRACED_CALL_BEHAVIOR_ACTION_ACTIVATION: return createTracedCallBehaviorActionActivation();
+			case BasicActionsPackage.TRACED_INPUT_PIN_ACTIVATION: return createTracedInputPinActivation();
+			case BasicActionsPackage.TRACED_OPAQUE_ACTION_ACTIVATION: return createTracedOpaqueActionActivation();
+			case BasicActionsPackage.TRACED_OUTPUT_PIN_ACTIVATION: return createTracedOutputPinActivation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracedCallBehaviorActionActivation createTracedCallBehaviorActionActivation() {
+		TracedCallBehaviorActionActivationImpl tracedCallBehaviorActionActivation = new TracedCallBehaviorActionActivationImpl();
+		return tracedCallBehaviorActionActivation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracedInputPinActivation createTracedInputPinActivation() {
+		TracedInputPinActivationImpl tracedInputPinActivation = new TracedInputPinActivationImpl();
+		return tracedInputPinActivation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracedOpaqueActionActivation createTracedOpaqueActionActivation() {
+		TracedOpaqueActionActivationImpl tracedOpaqueActionActivation = new TracedOpaqueActionActivationImpl();
+		return tracedOpaqueActionActivation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracedOutputPinActivation createTracedOutputPinActivation() {
+		TracedOutputPinActivationImpl tracedOutputPinActivation = new TracedOutputPinActivationImpl();
+		return tracedOutputPinActivation;
 	}
 
 	/**

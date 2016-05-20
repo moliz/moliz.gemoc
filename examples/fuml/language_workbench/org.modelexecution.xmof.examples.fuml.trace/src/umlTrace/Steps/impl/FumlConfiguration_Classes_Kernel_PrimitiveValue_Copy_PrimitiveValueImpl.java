@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Classes.Kernel.PrimitiveValue;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue;
 
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue_AbstractSubStep;
@@ -241,8 +241,8 @@ public class FumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValue
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PrimitiveValue getCaller() {
-		return (fumlConfiguration.Classes.Kernel.PrimitiveValue) this.getMseoccurrence().getMse().getCaller();
+	public TracedPrimitiveValue getCaller() {
+		return (umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

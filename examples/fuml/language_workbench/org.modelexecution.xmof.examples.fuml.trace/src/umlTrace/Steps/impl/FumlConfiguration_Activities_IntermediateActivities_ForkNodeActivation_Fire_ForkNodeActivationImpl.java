@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation;
 
 import umlTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivation;
@@ -237,8 +237,8 @@ public class FumlConfiguration_Activities_IntermediateActivities_ForkNodeActivat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ForkNodeActivation getCaller() {
-		return (fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) this.getMseoccurrence().getMse().getCaller();
+	public TracedForkNodeActivation getCaller() {
+		return (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkNodeActivation) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**

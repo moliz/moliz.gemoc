@@ -24,7 +24,6 @@ import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedObject;
  *
  * @see umlTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage#getTracedExecution()
  * @model abstract="true"
- *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//CommonBehaviors/BasicBehaviors/Execution'"
  * @generated
  */
 public interface TracedExecution extends TracedObject {

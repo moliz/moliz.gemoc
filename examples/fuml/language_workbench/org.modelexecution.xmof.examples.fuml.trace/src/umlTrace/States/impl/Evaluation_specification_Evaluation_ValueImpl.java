@@ -19,14 +19,14 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.uml2.uml.ValueSpecification;
+
 import umlTrace.States.Evaluation_specification_Evaluation_Value;
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
 
 import umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation;
-
-import umlTrace.States.uml.TracedValueSpecification;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public class Evaluation_specification_Evaluation_ValueImpl extends MinimalEObjec
 	 * @generated
 	 * @ordered
 	 */
-	protected TracedValueSpecification specification_Evaluation;
+	protected ValueSpecification specification_Evaluation;
 
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
@@ -139,10 +139,10 @@ public class Evaluation_specification_Evaluation_ValueImpl extends MinimalEObjec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedValueSpecification getSpecification_Evaluation() {
+	public ValueSpecification getSpecification_Evaluation() {
 		if (specification_Evaluation != null && specification_Evaluation.eIsProxy()) {
 			InternalEObject oldSpecification_Evaluation = (InternalEObject)specification_Evaluation;
-			specification_Evaluation = (TracedValueSpecification)eResolveProxy(oldSpecification_Evaluation);
+			specification_Evaluation = (ValueSpecification)eResolveProxy(oldSpecification_Evaluation);
 			if (specification_Evaluation != oldSpecification_Evaluation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatesPackage.EVALUATION_SPECIFICATION_EVALUATION_VALUE__SPECIFICATION_EVALUATION, oldSpecification_Evaluation, specification_Evaluation));
@@ -156,7 +156,7 @@ public class Evaluation_specification_Evaluation_ValueImpl extends MinimalEObjec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedValueSpecification basicGetSpecification_Evaluation() {
+	public ValueSpecification basicGetSpecification_Evaluation() {
 		return specification_Evaluation;
 	}
 
@@ -165,8 +165,8 @@ public class Evaluation_specification_Evaluation_ValueImpl extends MinimalEObjec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSpecification_Evaluation(TracedValueSpecification newSpecification_Evaluation) {
-		TracedValueSpecification oldSpecification_Evaluation = specification_Evaluation;
+	public void setSpecification_Evaluation(ValueSpecification newSpecification_Evaluation) {
+		ValueSpecification oldSpecification_Evaluation = specification_Evaluation;
 		specification_Evaluation = newSpecification_Evaluation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatesPackage.EVALUATION_SPECIFICATION_EVALUATION_VALUE__SPECIFICATION_EVALUATION, oldSpecification_Evaluation, specification_Evaluation));
@@ -267,7 +267,7 @@ public class Evaluation_specification_Evaluation_ValueImpl extends MinimalEObjec
 				setParent((TracedEvaluation)newValue);
 				return;
 			case StatesPackage.EVALUATION_SPECIFICATION_EVALUATION_VALUE__SPECIFICATION_EVALUATION:
-				setSpecification_Evaluation((TracedValueSpecification)newValue);
+				setSpecification_Evaluation((ValueSpecification)newValue);
 				return;
 			case StatesPackage.EVALUATION_SPECIFICATION_EVALUATION_VALUE__STATES:
 				getStates().clear();
@@ -289,7 +289,7 @@ public class Evaluation_specification_Evaluation_ValueImpl extends MinimalEObjec
 				setParent((TracedEvaluation)null);
 				return;
 			case StatesPackage.EVALUATION_SPECIFICATION_EVALUATION_VALUE__SPECIFICATION_EVALUATION:
-				setSpecification_Evaluation((TracedValueSpecification)null);
+				setSpecification_Evaluation((ValueSpecification)null);
 				return;
 			case StatesPackage.EVALUATION_SPECIFICATION_EVALUATION_VALUE__STATES:
 				getStates().clear();

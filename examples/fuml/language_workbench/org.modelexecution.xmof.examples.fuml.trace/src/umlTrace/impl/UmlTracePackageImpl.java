@@ -34,6 +34,10 @@ import umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackag
 
 import umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
 
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
+
+import umlTrace.States.fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
@@ -54,13 +58,13 @@ import umlTrace.States.fumlConfiguration.Loci.LociPackage;
 
 import umlTrace.States.fumlConfiguration.Loci.impl.LociPackageImpl;
 
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import umlTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
+
 import umlTrace.States.fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import umlTrace.States.impl.StatesPackageImpl;
-
-import umlTrace.States.uml.UmlPackage;
-
-import umlTrace.States.uml.impl.UmlPackageImpl;
 
 import umlTrace.Steps.StepsPackage;
 
@@ -147,8 +151,9 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) instanceof KernelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) : KernelPackage.eINSTANCE);
 		BasicBehaviorsPackageImpl theBasicBehaviorsPackage = (BasicBehaviorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) instanceof BasicBehaviorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) : BasicBehaviorsPackage.eINSTANCE);
 		BasicActionsPackageImpl theBasicActionsPackage = (BasicActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) instanceof BasicActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) : BasicActionsPackage.eINSTANCE);
+		IntermediateActionsPackageImpl theIntermediateActionsPackage = (IntermediateActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) instanceof IntermediateActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) : IntermediateActionsPackage.eINSTANCE);
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
-		UmlPackageImpl theUmlPackage = (UmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) instanceof UmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UmlPackage.eNS_URI) : UmlPackage.eINSTANCE);
+		IntegerFunctionsPackageImpl theIntegerFunctionsPackage = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) : IntegerFunctionsPackage.eINSTANCE);
 		EcorePackageImpl theEcorePackage = (EcorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) instanceof EcorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI) : EcorePackage.eINSTANCE);
 
 		// Load packages
@@ -164,8 +169,9 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 		theKernelPackage.fixPackageContents();
 		theBasicBehaviorsPackage.fixPackageContents();
 		theBasicActionsPackage.fixPackageContents();
+		theIntermediateActionsPackage.fixPackageContents();
 		theInputPackage.fixPackageContents();
-		theUmlPackage.fixPackageContents();
+		theIntegerFunctionsPackage.fixPackageContents();
 		theEcorePackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -1778,7 +1784,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_BasicBehaviors_tracedParameterValues() {
+	public EReference getSpecificTrace_BasicActions_tracedCallBehaviorActionActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(176);
 	}
 
@@ -1787,7 +1793,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_FumlConfiguration_tracedElementConfigurations() {
+	public EReference getSpecificTrace_BasicActions_tracedInputPinActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(177);
 	}
 
@@ -1796,7 +1802,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Input_tracedInputParameterValuess() {
+	public EReference getSpecificTrace_BasicActions_tracedOpaqueActionActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(178);
 	}
 
@@ -1805,7 +1811,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivities_tracedActivityEdgeInstances() {
+	public EReference getSpecificTrace_BasicActions_tracedOutputPinActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(179);
 	}
 
@@ -1814,7 +1820,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivities_tracedActivityExecutions() {
+	public EReference getSpecificTrace_BasicBehaviors_tracedParameterValues() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(180);
 	}
 
@@ -1823,7 +1829,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivities_tracedActivityNodeActivationGroups() {
+	public EReference getSpecificTrace_FumlConfiguration_tracedElementConfigurations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(181);
 	}
 
@@ -1832,7 +1838,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivities_tracedActivityNodeActivations() {
+	public EReference getSpecificTrace_Input_tracedInputParameterValuess() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(182);
 	}
 
@@ -1841,7 +1847,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivities_tracedForkedTokens() {
+	public EReference getSpecificTrace_IntegerFunctions_tracedIntegerGreaterFunctionBehaviorExecutions() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(183);
 	}
 
@@ -1850,7 +1856,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivities_tracedObjectTokens() {
+	public EReference getSpecificTrace_IntegerFunctions_tracedIntegerLessFunctionBehaviorExecutions() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(184);
 	}
 
@@ -1859,7 +1865,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivities_tracedOffers() {
+	public EReference getSpecificTrace_IntegerFunctions_tracedIntegerPlusFunctionBehaviorExecutions() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(185);
 	}
 
@@ -1868,7 +1874,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivities_tracedTokens() {
+	public EReference getSpecificTrace_IntermediateActions_tracedAddStructuralFeatureValueActionActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(186);
 	}
 
@@ -1877,7 +1883,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Kernel_tracedBooleanValues() {
+	public EReference getSpecificTrace_IntermediateActions_tracedCreateObjectActionActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(187);
 	}
 
@@ -1886,7 +1892,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Kernel_tracedIntegerValues() {
+	public EReference getSpecificTrace_IntermediateActions_tracedReadStructuralFeatureActionActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(188);
 	}
 
@@ -1895,7 +1901,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Kernel_tracedObjects() {
+	public EReference getSpecificTrace_IntermediateActions_tracedValueSpecificationActionActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(189);
 	}
 
@@ -1904,7 +1910,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Kernel_tracedReferences() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedActivityEdgeInstances() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(190);
 	}
 
@@ -1913,7 +1919,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Loci_tracedExecutionEnvironments() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedActivityExecutions() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(191);
 	}
 
@@ -1922,7 +1928,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Loci_tracedExecutionFactorys() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedActivityFinalNodeActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(192);
 	}
 
@@ -1931,7 +1937,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Loci_tracedExecutors() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedActivityNodeActivationGroups() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(193);
 	}
 
@@ -1940,7 +1946,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Loci_tracedLocuss() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedActivityNodeActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(194);
 	}
 
@@ -1949,7 +1955,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Loci_tracedSemanticVisitors() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedActivityParameterNodeActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(195);
 	}
 
@@ -1958,7 +1964,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_StatesTrace() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedControlTokens() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(196);
 	}
 
@@ -1967,7 +1973,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Uml_tracedClasss() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedDecisionNodeActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(197);
 	}
 
@@ -1976,7 +1982,7 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Uml_tracedParameters() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedForkNodeActivations() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(198);
 	}
 
@@ -1985,8 +1991,170 @@ public class UmlTracePackageImpl extends EPackageImpl implements UmlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Uml_tracedPrimitiveTypes() {
+	public EReference getSpecificTrace_IntermediateActivities_tracedForkedTokens() {
         return (EReference)getSpecificTrace().getEStructuralFeatures().get(199);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_IntermediateActivities_tracedInitialNodeActivations() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(200);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_IntermediateActivities_tracedJoinNodeActivations() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(201);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_IntermediateActivities_tracedMergeNodeActivations() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(202);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_IntermediateActivities_tracedObjectTokens() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(203);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_IntermediateActivities_tracedOffers() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(204);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_IntermediateActivities_tracedTokens() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(205);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Kernel_tracedBooleanValues() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(206);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Kernel_tracedIntegerValues() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(207);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Kernel_tracedLiteralBooleanEvaluations() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(208);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Kernel_tracedLiteralIntegerEvaluations() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(209);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Kernel_tracedObjects() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(210);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Kernel_tracedReferences() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(211);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Loci_tracedExecutionEnvironments() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(212);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Loci_tracedExecutionFactorys() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(213);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Loci_tracedExecutors() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(214);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Loci_tracedLocuss() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(215);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Loci_tracedSemanticVisitors() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(216);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_StatesTrace() {
+        return (EReference)getSpecificTrace().getEStructuralFeatures().get(217);
 	}
 
 	/**

@@ -2,8 +2,6 @@
  */
 package umlTrace.States.fumlConfiguration.Loci;
 
-import fumlConfiguration.Loci.Locus;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -24,11 +22,10 @@ import umlTrace.States.Locus_factory_Value;
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedLocus#getExecutorSequence <em>Executor Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedLocus#getExtensionalValuesSequence <em>Extensional Values Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedLocus#getFactorySequence <em>Factory Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Loci.TracedLocus#getOriginalObject <em>Original Object</em>}</li>
  * </ul>
  *
  * @see umlTrace.States.fumlConfiguration.Loci.LociPackage#getTracedLocus()
- * @model annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Loci/Locus'"
+ * @model
  * @generated
  */
 public interface TracedLocus extends EObject {
@@ -85,31 +82,5 @@ public interface TracedLocus extends EObject {
 	 * @generated
 	 */
 	EList<Locus_factory_Value> getFactorySequence();
-
-	/**
-	 * Returns the value of the '<em><b>Original Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Original Object</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Original Object</em>' reference.
-	 * @see #setOriginalObject(Locus)
-	 * @see umlTrace.States.fumlConfiguration.Loci.LociPackage#getTracedLocus_OriginalObject()
-	 * @model
-	 * @generated
-	 */
-	Locus getOriginalObject();
-
-	/**
-	 * Sets the value of the '{@link umlTrace.States.fumlConfiguration.Loci.TracedLocus#getOriginalObject <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Original Object</em>' reference.
-	 * @see #getOriginalObject()
-	 * @generated
-	 */
-	void setOriginalObject(Locus value);
 
 } // TracedLocus

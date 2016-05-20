@@ -2,11 +2,8 @@
  */
 package umlTrace.States.fumlConfiguration.Loci.impl;
 
-import fumlConfiguration.Loci.Locus;
-
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -39,7 +35,6 @@ import umlTrace.States.fumlConfiguration.Loci.TracedLocus;
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedLocusImpl#getExecutorSequence <em>Executor Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedLocusImpl#getExtensionalValuesSequence <em>Extensional Values Sequence</em>}</li>
  *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedLocusImpl#getFactorySequence <em>Factory Sequence</em>}</li>
- *   <li>{@link umlTrace.States.fumlConfiguration.Loci.impl.TracedLocusImpl#getOriginalObject <em>Original Object</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,16 +69,6 @@ public class TracedLocusImpl extends MinimalEObjectImpl.Container implements Tra
 	 * @ordered
 	 */
 	protected EList<Locus_factory_Value> factorySequence;
-
-	/**
-	 * The cached value of the '{@link #getOriginalObject() <em>Original Object</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOriginalObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected Locus originalObject;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,44 +130,6 @@ public class TracedLocusImpl extends MinimalEObjectImpl.Container implements Tra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Locus getOriginalObject() {
-		if (originalObject != null && originalObject.eIsProxy()) {
-			InternalEObject oldOriginalObject = (InternalEObject)originalObject;
-			originalObject = (Locus)eResolveProxy(oldOriginalObject);
-			if (originalObject != oldOriginalObject) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LociPackage.TRACED_LOCUS__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-			}
-		}
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Locus basicGetOriginalObject() {
-		return originalObject;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOriginalObject(Locus newOriginalObject) {
-		Locus oldOriginalObject = originalObject;
-		originalObject = newOriginalObject;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LociPackage.TRACED_LOCUS__ORIGINAL_OBJECT, oldOriginalObject, originalObject));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -229,9 +176,6 @@ public class TracedLocusImpl extends MinimalEObjectImpl.Container implements Tra
 				return getExtensionalValuesSequence();
 			case LociPackage.TRACED_LOCUS__FACTORY_SEQUENCE:
 				return getFactorySequence();
-			case LociPackage.TRACED_LOCUS__ORIGINAL_OBJECT:
-				if (resolve) return getOriginalObject();
-				return basicGetOriginalObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,9 +201,6 @@ public class TracedLocusImpl extends MinimalEObjectImpl.Container implements Tra
 				getFactorySequence().clear();
 				getFactorySequence().addAll((Collection<? extends Locus_factory_Value>)newValue);
 				return;
-			case LociPackage.TRACED_LOCUS__ORIGINAL_OBJECT:
-				setOriginalObject((Locus)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -281,9 +222,6 @@ public class TracedLocusImpl extends MinimalEObjectImpl.Container implements Tra
 			case LociPackage.TRACED_LOCUS__FACTORY_SEQUENCE:
 				getFactorySequence().clear();
 				return;
-			case LociPackage.TRACED_LOCUS__ORIGINAL_OBJECT:
-				setOriginalObject((Locus)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -302,8 +240,6 @@ public class TracedLocusImpl extends MinimalEObjectImpl.Container implements Tra
 				return extensionalValuesSequence != null && !extensionalValuesSequence.isEmpty();
 			case LociPackage.TRACED_LOCUS__FACTORY_SEQUENCE:
 				return factorySequence != null && !factorySequence.isEmpty();
-			case LociPackage.TRACED_LOCUS__ORIGINAL_OBJECT:
-				return originalObject != null;
 		}
 		return super.eIsSet(featureID);
 	}

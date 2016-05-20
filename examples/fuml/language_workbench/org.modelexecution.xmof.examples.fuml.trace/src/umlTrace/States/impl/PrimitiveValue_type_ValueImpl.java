@@ -19,14 +19,14 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.uml2.uml.PrimitiveType;
+
 import umlTrace.States.PrimitiveValue_type_Value;
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
 
 import umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage;
 import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue;
-
-import umlTrace.States.uml.TracedPrimitiveType;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class PrimitiveValue_type_ValueImpl extends MinimalEObjectImpl.Container 
 	 * @generated
 	 * @ordered
 	 */
-	protected TracedPrimitiveType type;
+	protected PrimitiveType type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,10 +151,10 @@ public class PrimitiveValue_type_ValueImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedPrimitiveType getType() {
+	public PrimitiveType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (TracedPrimitiveType)eResolveProxy(oldType);
+			type = (PrimitiveType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatesPackage.PRIMITIVE_VALUE_TYPE_VALUE__TYPE, oldType, type));
@@ -168,7 +168,7 @@ public class PrimitiveValue_type_ValueImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedPrimitiveType basicGetType() {
+	public PrimitiveType basicGetType() {
 		return type;
 	}
 
@@ -177,8 +177,8 @@ public class PrimitiveValue_type_ValueImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(TracedPrimitiveType newType) {
-		TracedPrimitiveType oldType = type;
+	public void setType(PrimitiveType newType) {
+		PrimitiveType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatesPackage.PRIMITIVE_VALUE_TYPE_VALUE__TYPE, oldType, type));
@@ -271,7 +271,7 @@ public class PrimitiveValue_type_ValueImpl extends MinimalEObjectImpl.Container 
 				getStates().addAll((Collection<? extends State>)newValue);
 				return;
 			case StatesPackage.PRIMITIVE_VALUE_TYPE_VALUE__TYPE:
-				setType((TracedPrimitiveType)newValue);
+				setType((PrimitiveType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -292,7 +292,7 @@ public class PrimitiveValue_type_ValueImpl extends MinimalEObjectImpl.Container 
 				getStates().clear();
 				return;
 			case StatesPackage.PRIMITIVE_VALUE_TYPE_VALUE__TYPE:
-				setType((TracedPrimitiveType)null);
+				setType((PrimitiveType)null);
 				return;
 		}
 		super.eUnset(featureID);

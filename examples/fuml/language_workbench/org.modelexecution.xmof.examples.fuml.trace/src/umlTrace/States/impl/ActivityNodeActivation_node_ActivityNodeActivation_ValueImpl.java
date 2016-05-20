@@ -19,14 +19,14 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.uml2.uml.ActivityNode;
+
 import umlTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value;
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
 
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation;
-
-import umlTrace.States.uml.TracedActivityNode;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public class ActivityNodeActivation_node_ActivityNodeActivation_ValueImpl extend
 	 * @generated
 	 * @ordered
 	 */
-	protected TracedActivityNode node_ActivityNodeActivation;
+	protected ActivityNode node_ActivityNodeActivation;
 
 	/**
 	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
@@ -98,10 +98,10 @@ public class ActivityNodeActivation_node_ActivityNodeActivation_ValueImpl extend
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedActivityNode getNode_ActivityNodeActivation() {
+	public ActivityNode getNode_ActivityNodeActivation() {
 		if (node_ActivityNodeActivation != null && node_ActivityNodeActivation.eIsProxy()) {
 			InternalEObject oldNode_ActivityNodeActivation = (InternalEObject)node_ActivityNodeActivation;
-			node_ActivityNodeActivation = (TracedActivityNode)eResolveProxy(oldNode_ActivityNodeActivation);
+			node_ActivityNodeActivation = (ActivityNode)eResolveProxy(oldNode_ActivityNodeActivation);
 			if (node_ActivityNodeActivation != oldNode_ActivityNodeActivation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StatesPackage.ACTIVITY_NODE_ACTIVATION_NODE_ACTIVITY_NODE_ACTIVATION_VALUE__NODE_ACTIVITY_NODE_ACTIVATION, oldNode_ActivityNodeActivation, node_ActivityNodeActivation));
@@ -115,7 +115,7 @@ public class ActivityNodeActivation_node_ActivityNodeActivation_ValueImpl extend
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracedActivityNode basicGetNode_ActivityNodeActivation() {
+	public ActivityNode basicGetNode_ActivityNodeActivation() {
 		return node_ActivityNodeActivation;
 	}
 
@@ -124,8 +124,8 @@ public class ActivityNodeActivation_node_ActivityNodeActivation_ValueImpl extend
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNode_ActivityNodeActivation(TracedActivityNode newNode_ActivityNodeActivation) {
-		TracedActivityNode oldNode_ActivityNodeActivation = node_ActivityNodeActivation;
+	public void setNode_ActivityNodeActivation(ActivityNode newNode_ActivityNodeActivation) {
+		ActivityNode oldNode_ActivityNodeActivation = node_ActivityNodeActivation;
 		node_ActivityNodeActivation = newNode_ActivityNodeActivation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StatesPackage.ACTIVITY_NODE_ACTIVATION_NODE_ACTIVITY_NODE_ACTIVATION_VALUE__NODE_ACTIVITY_NODE_ACTIVATION, oldNode_ActivityNodeActivation, node_ActivityNodeActivation));
@@ -264,7 +264,7 @@ public class ActivityNodeActivation_node_ActivityNodeActivation_ValueImpl extend
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case StatesPackage.ACTIVITY_NODE_ACTIVATION_NODE_ACTIVITY_NODE_ACTIVATION_VALUE__NODE_ACTIVITY_NODE_ACTIVATION:
-				setNode_ActivityNodeActivation((TracedActivityNode)newValue);
+				setNode_ActivityNodeActivation((ActivityNode)newValue);
 				return;
 			case StatesPackage.ACTIVITY_NODE_ACTIVATION_NODE_ACTIVITY_NODE_ACTIVATION_VALUE__PARENT:
 				setParent((TracedActivityNodeActivation)newValue);
@@ -286,7 +286,7 @@ public class ActivityNodeActivation_node_ActivityNodeActivation_ValueImpl extend
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case StatesPackage.ACTIVITY_NODE_ACTIVATION_NODE_ACTIVITY_NODE_ACTIVATION_VALUE__NODE_ACTIVITY_NODE_ACTIVATION:
-				setNode_ActivityNodeActivation((TracedActivityNode)null);
+				setNode_ActivityNodeActivation((ActivityNode)null);
 				return;
 			case StatesPackage.ACTIVITY_NODE_ACTIVATION_NODE_ACTIVITY_NODE_ACTIVATION_VALUE__PARENT:
 				setParent((TracedActivityNodeActivation)null);

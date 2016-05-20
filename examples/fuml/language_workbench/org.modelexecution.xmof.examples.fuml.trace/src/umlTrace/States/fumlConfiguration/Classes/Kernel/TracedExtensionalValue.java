@@ -20,7 +20,6 @@ import umlTrace.States.ExtensionalValue_locus_ExtensionalValue_Value;
  *
  * @see umlTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage#getTracedExtensionalValue()
  * @model abstract="true"
- *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/ExtensionalValue'"
  * @generated
  */
 public interface TracedExtensionalValue extends TracedCompoundValue {

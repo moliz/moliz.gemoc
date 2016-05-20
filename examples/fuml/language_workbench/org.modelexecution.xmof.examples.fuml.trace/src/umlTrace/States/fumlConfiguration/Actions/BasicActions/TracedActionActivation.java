@@ -24,7 +24,6 @@ import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.Trace
  *
  * @see umlTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackage#getTracedActionActivation()
  * @model abstract="true"
- *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Actions/BasicActions/ActionActivation'"
  * @generated
  */
 public interface TracedActionActivation extends TracedActivityNodeActivation {

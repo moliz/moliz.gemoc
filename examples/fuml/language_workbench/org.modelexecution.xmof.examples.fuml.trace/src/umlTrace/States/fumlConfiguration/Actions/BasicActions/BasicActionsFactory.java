@@ -22,6 +22,42 @@ public interface BasicActionsFactory extends EFactory {
 	BasicActionsFactory eINSTANCE = umlTrace.States.fumlConfiguration.Actions.BasicActions.impl.BasicActionsFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Traced Call Behavior Action Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Call Behavior Action Activation</em>'.
+	 * @generated
+	 */
+	TracedCallBehaviorActionActivation createTracedCallBehaviorActionActivation();
+
+	/**
+	 * Returns a new object of class '<em>Traced Input Pin Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Input Pin Activation</em>'.
+	 * @generated
+	 */
+	TracedInputPinActivation createTracedInputPinActivation();
+
+	/**
+	 * Returns a new object of class '<em>Traced Opaque Action Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Opaque Action Activation</em>'.
+	 * @generated
+	 */
+	TracedOpaqueActionActivation createTracedOpaqueActionActivation();
+
+	/**
+	 * Returns a new object of class '<em>Traced Output Pin Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Output Pin Activation</em>'.
+	 * @generated
+	 */
+	TracedOutputPinActivation createTracedOutputPinActivation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

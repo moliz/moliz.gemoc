@@ -4,9 +4,9 @@ package umlTrace.States;
 
 import org.eclipse.emf.common.util.EList;
 
-import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation;
+import org.eclipse.uml2.uml.ValueSpecification;
 
-import umlTrace.States.uml.TracedValueSpecification;
+import umlTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,13 +64,13 @@ public interface Evaluation_specification_Evaluation_Value extends Value {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Specification Evaluation</em>' reference.
-	 * @see #setSpecification_Evaluation(TracedValueSpecification)
+	 * @see #setSpecification_Evaluation(ValueSpecification)
 	 * @see umlTrace.States.StatesPackage#getEvaluation_specification_Evaluation_Value_Specification_Evaluation()
 	 * @model required="true"
 	 *        annotation="http://www.modelexecution.org/trace/XMOF executionMetamodelElement='//Classes/Kernel/Evaluation/specification_Evaluation'"
 	 * @generated
 	 */
-	TracedValueSpecification getSpecification_Evaluation();
+	ValueSpecification getSpecification_Evaluation();
 
 	/**
 	 * Sets the value of the '{@link umlTrace.States.Evaluation_specification_Evaluation_Value#getSpecification_Evaluation <em>Specification Evaluation</em>}' reference.
@@ -80,7 +80,7 @@ public interface Evaluation_specification_Evaluation_Value extends Value {
 	 * @see #getSpecification_Evaluation()
 	 * @generated
 	 */
-	void setSpecification_Evaluation(TracedValueSpecification value);
+	void setSpecification_Evaluation(ValueSpecification value);
 
 	/**
 	 * Returns the value of the '<em><b>States</b></em>' reference list.

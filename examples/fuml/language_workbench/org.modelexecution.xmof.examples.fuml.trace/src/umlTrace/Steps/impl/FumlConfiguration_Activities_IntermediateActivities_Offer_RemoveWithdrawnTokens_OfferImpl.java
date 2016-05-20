@@ -2,8 +2,6 @@
  */
 package umlTrace.Steps.impl;
 
-import fumlConfiguration.Activities.IntermediateActivities.Offer;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,6 +27,8 @@ import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 import umlTrace.States.State;
 import umlTrace.States.StatesPackage;
+
+import umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer;
 
 import umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_Offer_AbstractSubStep;
 import umlTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_Offer_AbstractSubStep;
@@ -238,8 +238,8 @@ public class FumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Offer getCaller() {
-		return (fumlConfiguration.Activities.IntermediateActivities.Offer) this.getMseoccurrence().getMse().getCaller();
+	public TracedOffer getCaller() {
+		return (umlTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) this.getMseoccurrence().getMse().getCaller();
 	}
 
 	/**
