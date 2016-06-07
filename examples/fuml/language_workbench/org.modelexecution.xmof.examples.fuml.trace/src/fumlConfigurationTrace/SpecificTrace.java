@@ -2,6 +2,9 @@
  */
 package fumlConfigurationTrace;
 
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.Trace;
+
 import fumlConfigurationTrace.States.State;
 
 import fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallBehaviorActionActivation;
@@ -475,9 +478,6 @@ import fumlConfigurationTrace.Steps.FumlConfiguration_PrimitiveBehaviors_Integer
 import fumlConfigurationTrace.Steps.SpecificStep;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.gemoc.executionframework.engine.mse.SequentialStep;
-import org.gemoc.executionframework.engine.mse.Trace;
 
 /**
  * <!-- begin-user-doc -->

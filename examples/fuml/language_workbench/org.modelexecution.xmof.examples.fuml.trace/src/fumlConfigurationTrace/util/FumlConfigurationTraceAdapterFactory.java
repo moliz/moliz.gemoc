@@ -2,6 +2,8 @@
  */
 package fumlConfigurationTrace.util;
 
+import fr.inria.diverse.trace.commons.model.trace.Trace;
+
 import fumlConfigurationTrace.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -10,8 +12,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
-import org.gemoc.executionframework.engine.mse.Trace;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,13 +112,13 @@ public class FumlConfigurationTraceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.executionframework.engine.mse.Trace <em>Trace</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.inria.diverse.trace.commons.model.trace.Trace <em>Trace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gemoc.executionframework.engine.mse.Trace
+	 * @see fr.inria.diverse.trace.commons.model.trace.Trace
 	 * @generated
 	 */
 	public Adapter createTraceAdapter() {

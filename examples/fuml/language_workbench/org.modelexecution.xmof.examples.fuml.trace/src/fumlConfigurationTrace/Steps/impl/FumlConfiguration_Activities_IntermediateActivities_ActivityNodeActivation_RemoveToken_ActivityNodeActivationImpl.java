@@ -2,6 +2,8 @@
  */
 package fumlConfigurationTrace.Steps.impl;
 
+import fr.inria.diverse.trace.commons.model.trace.impl.StepImpl;
+
 import fumlConfigurationTrace.States.State;
 import fumlConfigurationTrace.States.StatesPackage;
 
@@ -21,8 +23,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 /**
  * <!-- begin-user-doc -->

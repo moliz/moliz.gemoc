@@ -2,6 +2,12 @@
  */
 package fumlConfigurationTrace.Steps.impl;
 
+import fr.inria.diverse.trace.commons.model.trace.BigStep;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.TracePackage;
+
+import fr.inria.diverse.trace.commons.model.trace.impl.StepImpl;
+
 import fumlConfigurationTrace.States.State;
 import fumlConfigurationTrace.States.StatesPackage;
 
@@ -31,12 +37,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.gemoc.executionframework.engine.mse.BigStep;
-import org.gemoc.executionframework.engine.mse.MsePackage;
-import org.gemoc.executionframework.engine.mse.SequentialStep;
-
-import org.gemoc.executionframework.engine.mse.impl.StepImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -373,7 +373,7 @@ public class FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_Exe
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BigStep.class) {
 			switch (derivedFeatureID) {
-				case StepsPackage.FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_COPY_EXECUTION__SUB_STEPS: return MsePackage.BIG_STEP__SUB_STEPS;
+				case StepsPackage.FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_COPY_EXECUTION__SUB_STEPS: return TracePackage.BIG_STEP__SUB_STEPS;
 				default: return -1;
 			}
 		}
@@ -414,7 +414,7 @@ public class FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_Exe
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BigStep.class) {
 			switch (baseFeatureID) {
-				case MsePackage.BIG_STEP__SUB_STEPS: return StepsPackage.FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_COPY_EXECUTION__SUB_STEPS;
+				case TracePackage.BIG_STEP__SUB_STEPS: return StepsPackage.FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_COPY_EXECUTION__SUB_STEPS;
 				default: return -1;
 			}
 		}

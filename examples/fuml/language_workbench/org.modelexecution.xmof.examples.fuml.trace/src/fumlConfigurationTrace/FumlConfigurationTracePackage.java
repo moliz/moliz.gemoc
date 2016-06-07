@@ -2,11 +2,11 @@
  */
 package fumlConfigurationTrace;
 
+import fr.inria.diverse.trace.commons.model.trace.TracePackage;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import org.gemoc.executionframework.engine.mse.MsePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__ROOT_STEP = MsePackage.TRACE__ROOT_STEP;
+	int SPECIFIC_TRACE__ROOT_STEP = TracePackage.TRACE__ROOT_STEP;
 
 	/**
 	 * The feature id for the '<em><b>Launchconfiguration</b></em>' containment reference.
@@ -83,7 +83,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LAUNCHCONFIGURATION = MsePackage.TRACE__LAUNCHCONFIGURATION;
+	int SPECIFIC_TRACE__LAUNCHCONFIGURATION = TracePackage.TRACE__LAUNCHCONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Create Node Activations Action Activation Sequence</b></em>' reference list.
@@ -92,7 +92,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_CREATE_NODE_ACTIVATIONS_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 0;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_CREATE_NODE_ACTIVATIONS_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Do Action Action Activation Sequence</b></em>' reference list.
@@ -101,7 +101,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_DO_ACTION_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 1;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_DO_ACTION_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Fire Action Activation Sequence</b></em>' reference list.
@@ -110,7 +110,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_FIRE_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 2;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_FIRE_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Get Pin Activation Action Activation Sequence</b></em>' reference list.
@@ -119,7 +119,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_GET_PIN_ACTIVATION_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 3;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_GET_PIN_ACTIVATION_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Has Offers Action Activation Sequence</b></em>' reference list.
@@ -128,7 +128,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_HAS_OFFERS_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 4;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_HAS_OFFERS_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Inisitalize Action Activation Sequence</b></em>' reference list.
@@ -137,7 +137,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_INISITALIZE_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 5;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_INISITALIZE_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Is Ready Action Activation Sequence</b></em>' reference list.
@@ -146,7 +146,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_IS_READY_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 6;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_IS_READY_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Put Token Action Activation Sequence</b></em>' reference list.
@@ -155,7 +155,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_PUT_TOKEN_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 7;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_PUT_TOKEN_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Put Tokens Action Activation Sequence</b></em>' reference list.
@@ -164,7 +164,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_PUT_TOKENS_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 8;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_PUT_TOKENS_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Send Offers Action Activation Sequence</b></em>' reference list.
@@ -173,7 +173,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_SEND_OFFERS_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 9;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_SEND_OFFERS_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Should Fire Again Action Activation Sequence</b></em>' reference list.
@@ -182,7 +182,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_SHOULD_FIRE_AGAIN_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 10;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_SHOULD_FIRE_AGAIN_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Take Offered Tokens Action Activation Sequence</b></em>' reference list.
@@ -191,7 +191,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_TAKE_OFFERED_TOKENS_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 11;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_TAKE_OFFERED_TOKENS_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Take Tokens Action Activation Sequence</b></em>' reference list.
@@ -200,7 +200,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_TAKE_TOKENS_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 12;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_TAKE_TOKENS_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Action Activation Terminate Action Activation Sequence</b></em>' reference list.
@@ -209,7 +209,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_TERMINATE_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 13;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_ACTION_ACTIVATION_TERMINATE_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Call Action Activation Collect Output Parameter Values Call Action Activation Sequence</b></em>' reference list.
@@ -218,7 +218,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_COLLECT_OUTPUT_PARAMETER_VALUES_CALL_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 14;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_COLLECT_OUTPUT_PARAMETER_VALUES_CALL_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Call Action Activation Do Action Call Action Activation Sequence</b></em>' reference list.
@@ -227,7 +227,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_DO_ACTION_CALL_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 15;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_DO_ACTION_CALL_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Call Action Activation Get Call Execution Call Action Activation Sequence</b></em>' reference list.
@@ -236,7 +236,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_GET_CALL_EXECUTION_CALL_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 16;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_GET_CALL_EXECUTION_CALL_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Call Action Activation Initialize Input Parameter Values Call Action Activation Sequence</b></em>' reference list.
@@ -245,7 +245,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_INITIALIZE_INPUT_PARAMETER_VALUES_CALL_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 17;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_INITIALIZE_INPUT_PARAMETER_VALUES_CALL_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Call Action Activation Remove Call Execution Call Action Activation Sequence</b></em>' reference list.
@@ -254,7 +254,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_REMOVE_CALL_EXECUTION_CALL_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 18;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_REMOVE_CALL_EXECUTION_CALL_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Call Action Activation Terminate Call Action Activation Sequence</b></em>' reference list.
@@ -263,7 +263,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_TERMINATE_CALL_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 19;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_ACTION_ACTIVATION_TERMINATE_CALL_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Call Behavior Action Activation Get Call Execution Call Behavior Action Activation Sequence</b></em>' reference list.
@@ -272,7 +272,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_BEHAVIOR_ACTION_ACTIVATION_GET_CALL_EXECUTION_CALL_BEHAVIOR_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 20;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_CALL_BEHAVIOR_ACTION_ACTIVATION_GET_CALL_EXECUTION_CALL_BEHAVIOR_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Input Pin Activation Is Ready Input Pin Activation Sequence</b></em>' reference list.
@@ -281,7 +281,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_INPUT_PIN_ACTIVATION_IS_READY_INPUT_PIN_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 21;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_INPUT_PIN_ACTIVATION_IS_READY_INPUT_PIN_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Input Pin Activation Receive Offer Input Pin Activation Sequence</b></em>' reference list.
@@ -290,7 +290,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_INPUT_PIN_ACTIVATION_RECEIVE_OFFER_INPUT_PIN_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 22;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_INPUT_PIN_ACTIVATION_RECEIVE_OFFER_INPUT_PIN_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Opaque Action Activation Do Action Opaque Action Sequence</b></em>' reference list.
@@ -299,7 +299,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_OPAQUE_ACTION_ACTIVATION_DO_ACTION_OPAQUE_ACTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 23;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_OPAQUE_ACTION_ACTIVATION_DO_ACTION_OPAQUE_ACTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Pin Activation Fire Pin Activation Sequence</b></em>' reference list.
@@ -308,7 +308,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_PIN_ACTIVATION_FIRE_PIN_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 24;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_PIN_ACTIVATION_FIRE_PIN_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Basic Actions Pin Activation Take Offered Tokens Pin Activation Sequence</b></em>' reference list.
@@ -317,7 +317,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_PIN_ACTIVATION_TAKE_OFFERED_TOKENS_PIN_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 25;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_BASIC_ACTIONS_PIN_ACTIVATION_TAKE_OFFERED_TOKENS_PIN_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Intermediate Actions Add Structural Feature Value Action Activation Do Action Add Structural Feature Value Action Activation Sequence</b></em>' reference list.
@@ -326,7 +326,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_INTERMEDIATE_ACTIONS_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATION_DO_ACTION_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 26;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_INTERMEDIATE_ACTIONS_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATION_DO_ACTION_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Intermediate Actions Create Object Action Activation Do Action Create Object Action Activation Sequence</b></em>' reference list.
@@ -335,7 +335,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_INTERMEDIATE_ACTIONS_CREATE_OBJECT_ACTION_ACTIVATION_DO_ACTION_CREATE_OBJECT_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 27;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_INTERMEDIATE_ACTIONS_CREATE_OBJECT_ACTION_ACTIVATION_DO_ACTION_CREATE_OBJECT_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Intermediate Actions Read Structural Feature Action Activation Do Action Read Structural Feature Action Activation Sequence</b></em>' reference list.
@@ -344,7 +344,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_INTERMEDIATE_ACTIONS_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATION_DO_ACTION_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 28;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_INTERMEDIATE_ACTIONS_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATION_DO_ACTION_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Actions Intermediate Actions Value Specification Action Activation Do Action Value Specification Action Activation Sequence</b></em>' reference list.
@@ -353,7 +353,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_INTERMEDIATE_ACTIONS_VALUE_SPECIFICATION_ACTION_ACTIVATION_DO_ACTION_VALUE_SPECIFICATION_ACTION_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 29;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIONS_INTERMEDIATE_ACTIONS_VALUE_SPECIFICATION_ACTION_ACTIVATION_DO_ACTION_VALUE_SPECIFICATION_ACTION_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Edge Instance Count Offered Values Activity Edge Instance Sequence</b></em>' reference list.
@@ -362,7 +362,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_COUNT_OFFERED_VALUES_ACTIVITY_EDGE_INSTANCE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 30;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_COUNT_OFFERED_VALUES_ACTIVITY_EDGE_INSTANCE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Edge Instance Has Offer Activity Edge Instance Sequence</b></em>' reference list.
@@ -371,7 +371,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_HAS_OFFER_ACTIVITY_EDGE_INSTANCE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 31;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_HAS_OFFER_ACTIVITY_EDGE_INSTANCE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Edge Instance Send Offer Activity Edge Instance Sequence</b></em>' reference list.
@@ -380,7 +380,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_SEND_OFFER_ACTIVITY_EDGE_INSTANCE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 32;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_SEND_OFFER_ACTIVITY_EDGE_INSTANCE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Edge Instance Take Offered Tokens Activity Edge Instance Sequence</b></em>' reference list.
@@ -389,7 +389,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_TAKE_OFFERED_TOKENS_ACTIVITY_EDGE_INSTANCE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 33;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_TAKE_OFFERED_TOKENS_ACTIVITY_EDGE_INSTANCE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Edge Instance Take Offered Tokens int Activity Edge Instance Sequence</b></em>' reference list.
@@ -398,7 +398,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_TAKE_OFFERED_TOKENS_INT_ACTIVITY_EDGE_INSTANCE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 34;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EDGE_INSTANCE_TAKE_OFFERED_TOKENS_INT_ACTIVITY_EDGE_INSTANCE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Execution Collect Output Parameter Values Activity Execution Sequence</b></em>' reference list.
@@ -407,7 +407,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EXECUTION_COLLECT_OUTPUT_PARAMETER_VALUES_ACTIVITY_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 35;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EXECUTION_COLLECT_OUTPUT_PARAMETER_VALUES_ACTIVITY_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Execution Execute Activity Execution Sequence</b></em>' reference list.
@@ -416,7 +416,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EXECUTION_EXECUTE_ACTIVITY_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 36;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EXECUTION_EXECUTE_ACTIVITY_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Execution Set Parameter Value Values Activity Execution Sequence</b></em>' reference list.
@@ -425,7 +425,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EXECUTION_SET_PARAMETER_VALUE_VALUES_ACTIVITY_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 37;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EXECUTION_SET_PARAMETER_VALUE_VALUES_ACTIVITY_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Execution Terminate Activity Execution Sequence</b></em>' reference list.
@@ -434,7 +434,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EXECUTION_TERMINATE_ACTIVITY_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 38;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_EXECUTION_TERMINATE_ACTIVITY_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Final Node Activation Fire Activity Final Node Activation Sequence</b></em>' reference list.
@@ -443,7 +443,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_FINAL_NODE_ACTIVATION_FIRE_ACTIVITY_FINAL_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 39;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_FINAL_NODE_ACTIVATION_FIRE_ACTIVITY_FINAL_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Activate Activity Node Activation Group Sequence</b></em>' reference list.
@@ -452,7 +452,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_ACTIVATE_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 40;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_ACTIVATE_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Check Incoming Edges Activity Node Activation Group Sequence</b></em>' reference list.
@@ -461,7 +461,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_CHECK_INCOMING_EDGES_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 41;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_CHECK_INCOMING_EDGES_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Create Edge Instances Activity Node Activation Group Sequence</b></em>' reference list.
@@ -470,7 +470,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_CREATE_EDGE_INSTANCES_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 42;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_CREATE_EDGE_INSTANCES_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Create Node Activation Activity Node Activation Group Sequence</b></em>' reference list.
@@ -479,7 +479,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_CREATE_NODE_ACTIVATION_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 43;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_CREATE_NODE_ACTIVATION_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Create Node Activations Activity Node Activation Group Sequence</b></em>' reference list.
@@ -488,7 +488,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_CREATE_NODE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 44;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_CREATE_NODE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Get Activity Execution Activity Node Activation Group Sequence</b></em>' reference list.
@@ -497,7 +497,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_ACTIVITY_EXECUTION_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 45;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_ACTIVITY_EXECUTION_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Get Initially Enabled Node Activations Activity Node Activation Group Sequence</b></em>' reference list.
@@ -506,7 +506,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_INITIALLY_ENABLED_NODE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 46;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_INITIALLY_ENABLED_NODE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Get Node Activation Activity Node Activation Group Sequence</b></em>' reference list.
@@ -515,7 +515,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_NODE_ACTIVATION_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 47;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_NODE_ACTIVATION_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Get Output Parameter Node Activations Activity Node Activation Group Sequence</b></em>' reference list.
@@ -524,7 +524,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_OUTPUT_PARAMETER_NODE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 48;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_OUTPUT_PARAMETER_NODE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Get Source Activations Activity Node Activation Group Sequence</b></em>' reference list.
@@ -533,7 +533,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_SOURCE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 49;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_GET_SOURCE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Run Nodes Activity Node Activation Group Sequence</b></em>' reference list.
@@ -542,7 +542,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_RUN_NODES_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 50;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_RUN_NODES_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Run Activity Node Activation Group Sequence</b></em>' reference list.
@@ -551,7 +551,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_RUN_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 51;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_RUN_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Group Terminate All Activity Node Activation Group Sequence</b></em>' reference list.
@@ -560,7 +560,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_TERMINATE_ALL_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 52;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GROUP_TERMINATE_ALL_ACTIVITY_NODE_ACTIVATION_GROUP_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Add Token Activity Node Activation Sequence</b></em>' reference list.
@@ -569,7 +569,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_ADD_TOKEN_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 53;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_ADD_TOKEN_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Add Tokens Activity Node Activation Sequence</b></em>' reference list.
@@ -578,7 +578,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_ADD_TOKENS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 54;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_ADD_TOKENS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Clear Tokens Activity Node Activation Sequence</b></em>' reference list.
@@ -587,7 +587,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_CLEAR_TOKENS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 55;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_CLEAR_TOKENS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Create Edge Instances Activity Node Activation Sequence</b></em>' reference list.
@@ -596,7 +596,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_CREATE_EDGE_INSTANCES_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 56;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_CREATE_EDGE_INSTANCES_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Create Node Activations Activity Node Activation Sequence</b></em>' reference list.
@@ -605,7 +605,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_CREATE_NODE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 57;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_CREATE_NODE_ACTIVATIONS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Fire Activity Node Activation Sequence</b></em>' reference list.
@@ -614,7 +614,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_FIRE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 58;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_FIRE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Get Activity Execution Activity Node Activation Sequence</b></em>' reference list.
@@ -623,7 +623,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_ACTIVITY_EXECUTION_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 59;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_ACTIVITY_EXECUTION_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Get Execution Context Activity Node Activation Sequence</b></em>' reference list.
@@ -632,7 +632,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_EXECUTION_CONTEXT_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 60;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_EXECUTION_CONTEXT_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Get Execution Locus Activity Node Activation Sequence</b></em>' reference list.
@@ -641,7 +641,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_EXECUTION_LOCUS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 61;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_EXECUTION_LOCUS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Get Node Activation Activity Node Activation Sequence</b></em>' reference list.
@@ -650,7 +650,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_NODE_ACTIVATION_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 62;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_NODE_ACTIVATION_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Get Tokens Activity Node Activation Sequence</b></em>' reference list.
@@ -659,7 +659,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_TOKENS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 63;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_GET_TOKENS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Has Offers Activity Node Activation Sequence</b></em>' reference list.
@@ -668,7 +668,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_HAS_OFFERS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 64;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_HAS_OFFERS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Initialize Activity Node Activation Sequence</b></em>' reference list.
@@ -677,7 +677,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_INITIALIZE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 65;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_INITIALIZE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Is Ready Activity Node Activation Sequence</b></em>' reference list.
@@ -686,7 +686,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_IS_READY_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 66;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_IS_READY_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Is Running Activity Node Activation Sequence</b></em>' reference list.
@@ -695,7 +695,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_IS_RUNNING_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 67;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_IS_RUNNING_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Is Source For Activity Node Activation Sequence</b></em>' reference list.
@@ -704,7 +704,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_IS_SOURCE_FOR_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 68;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_IS_SOURCE_FOR_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Receive Offer Activity Node Activation Sequence</b></em>' reference list.
@@ -713,7 +713,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_RECEIVE_OFFER_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 69;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_RECEIVE_OFFER_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Remove Token Activity Node Activation Sequence</b></em>' reference list.
@@ -722,7 +722,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_REMOVE_TOKEN_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 70;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_REMOVE_TOKEN_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Run Activity Node Activation Sequence</b></em>' reference list.
@@ -731,7 +731,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_RUN_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 71;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_RUN_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Send Offers Activity Node Activation Sequence</b></em>' reference list.
@@ -740,7 +740,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_SEND_OFFERS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 72;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_SEND_OFFERS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Take Offered Tokens Activity Node Activation Sequence</b></em>' reference list.
@@ -749,7 +749,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_TAKE_OFFERED_TOKENS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 73;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_TAKE_OFFERED_TOKENS_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Node Activation Terminate Activity Node Activation Sequence</b></em>' reference list.
@@ -758,7 +758,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_TERMINATE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 74;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_NODE_ACTIVATION_TERMINATE_ACTIVITY_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Parameter Node Activation Clear Tokens Activity Parameter Node Activation Sequence</b></em>' reference list.
@@ -767,7 +767,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_PARAMETER_NODE_ACTIVATION_CLEAR_TOKENS_ACTIVITY_PARAMETER_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 75;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_PARAMETER_NODE_ACTIVATION_CLEAR_TOKENS_ACTIVITY_PARAMETER_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Activity Parameter Node Activation Fire Activity Parameter Node Activation Sequence</b></em>' reference list.
@@ -776,7 +776,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_PARAMETER_NODE_ACTIVATION_FIRE_ACTIVITY_PARAMETER_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 76;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_ACTIVITY_PARAMETER_NODE_ACTIVATION_FIRE_ACTIVITY_PARAMETER_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Control Node Activation Fire Control Node Activation Sequence</b></em>' reference list.
@@ -785,7 +785,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_CONTROL_NODE_ACTIVATION_FIRE_CONTROL_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 77;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_CONTROL_NODE_ACTIVATION_FIRE_CONTROL_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Control Token Is Control Control Token Sequence</b></em>' reference list.
@@ -794,7 +794,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_CONTROL_TOKEN_IS_CONTROL_CONTROL_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 78;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_CONTROL_TOKEN_IS_CONTROL_CONTROL_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Determine Offered Tokens Decision Node Activation Sequence</b></em>' reference list.
@@ -803,7 +803,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_DETERMINE_OFFERED_TOKENS_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 79;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_DETERMINE_OFFERED_TOKENS_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 79;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Execute Decision Input Behavior Decision Node Activation Sequence</b></em>' reference list.
@@ -812,7 +812,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_EXECUTE_DECISION_INPUT_BEHAVIOR_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 80;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_EXECUTE_DECISION_INPUT_BEHAVIOR_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 80;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Fire Decision Node Activation Sequence</b></em>' reference list.
@@ -821,7 +821,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_FIRE_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 81;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_FIRE_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 81;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Get Decision Input Flow Instance Decision Node Activation Sequence</b></em>' reference list.
@@ -830,7 +830,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_GET_DECISION_INPUT_FLOW_INSTANCE_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 82;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_GET_DECISION_INPUT_FLOW_INSTANCE_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 82;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Get Decision Input Flow Value Decision Node Activation Sequence</b></em>' reference list.
@@ -839,7 +839,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_GET_DECISION_INPUT_FLOW_VALUE_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 83;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_GET_DECISION_INPUT_FLOW_VALUE_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 83;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Get Decision Values Decision Node Activation Sequence</b></em>' reference list.
@@ -848,7 +848,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_GET_DECISION_VALUES_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 84;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_GET_DECISION_VALUES_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 84;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Has Object Flow Input Decision Node Activation Sequence</b></em>' reference list.
@@ -857,7 +857,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_HAS_OBJECT_FLOW_INPUT_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 85;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_HAS_OBJECT_FLOW_INPUT_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 85;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Is Ready Decision Node Activation Sequence</b></em>' reference list.
@@ -866,7 +866,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_IS_READY_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 86;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_IS_READY_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 86;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Remove Joined Control Tokens Decision Node Activation Sequence</b></em>' reference list.
@@ -875,7 +875,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_REMOVE_JOINED_CONTROL_TOKENS_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 87;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_REMOVE_JOINED_CONTROL_TOKENS_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 87;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Take Offered Tokens Decision Node Activation Sequence</b></em>' reference list.
@@ -884,7 +884,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_TAKE_OFFERED_TOKENS_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 88;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_TAKE_OFFERED_TOKENS_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 88;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Decision Node Activation Test Decision Node Activation Sequence</b></em>' reference list.
@@ -893,7 +893,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_TEST_DECISION_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 89;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_DECISION_NODE_ACTIVATION_TEST_DECISION_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 89;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Fork Node Activation Fire Fork Node Activation Sequence</b></em>' reference list.
@@ -902,7 +902,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORK_NODE_ACTIVATION_FIRE_FORK_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 90;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORK_NODE_ACTIVATION_FIRE_FORK_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 90;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Forked Token Get Value Forked Token Sequence</b></em>' reference list.
@@ -911,7 +911,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORKED_TOKEN_GET_VALUE_FORKED_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 91;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORKED_TOKEN_GET_VALUE_FORKED_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 91;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Forked Token Initialize Forked Token Sequence</b></em>' reference list.
@@ -920,7 +920,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORKED_TOKEN_INITIALIZE_FORKED_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 92;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORKED_TOKEN_INITIALIZE_FORKED_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 92;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Forked Token Is Control Forked Token Sequence</b></em>' reference list.
@@ -929,7 +929,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORKED_TOKEN_IS_CONTROL_FORKED_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 93;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORKED_TOKEN_IS_CONTROL_FORKED_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 93;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Forked Token Withdraw Forked Token Sequence</b></em>' reference list.
@@ -938,7 +938,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORKED_TOKEN_WITHDRAW_FORKED_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 94;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_FORKED_TOKEN_WITHDRAW_FORKED_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 94;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Initial Node Activation Fire Initial Node Activation Sequence</b></em>' reference list.
@@ -947,7 +947,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_INITIAL_NODE_ACTIVATION_FIRE_INITIAL_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 95;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_INITIAL_NODE_ACTIVATION_FIRE_INITIAL_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 95;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Join Node Activation Is Ready Join Node Activation Sequence</b></em>' reference list.
@@ -956,7 +956,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_JOIN_NODE_ACTIVATION_IS_READY_JOIN_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 96;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_JOIN_NODE_ACTIVATION_IS_READY_JOIN_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 96;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Add Token Object Node Activation Sequence</b></em>' reference list.
@@ -965,7 +965,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_ADD_TOKEN_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 97;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_ADD_TOKEN_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 97;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Clear Tokens Object Node Activation Sequence</b></em>' reference list.
@@ -974,7 +974,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_CLEAR_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 98;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_CLEAR_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 98;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Count Offered Values Object Node Activation Sequence</b></em>' reference list.
@@ -983,7 +983,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_COUNT_OFFERED_VALUES_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 99;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_COUNT_OFFERED_VALUES_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 99;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Count Unoffered Tokens Object Node Activation Sequence</b></em>' reference list.
@@ -992,7 +992,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_COUNT_UNOFFERED_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 100;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_COUNT_UNOFFERED_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 100;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Get Unoffered Tokens Object Node Activation Sequence</b></em>' reference list.
@@ -1001,7 +1001,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_GET_UNOFFERED_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 101;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_GET_UNOFFERED_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 101;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Initialize Object Node Activation Sequence</b></em>' reference list.
@@ -1010,7 +1010,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_INITIALIZE_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 102;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_INITIALIZE_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 102;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Send Offers Object Node Activation Sequence</b></em>' reference list.
@@ -1019,7 +1019,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_SEND_OFFERS_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 103;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_SEND_OFFERS_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 103;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Send Unoffered Tokens Object Node Activation Sequence</b></em>' reference list.
@@ -1028,7 +1028,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_SEND_UNOFFERED_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 104;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_SEND_UNOFFERED_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 104;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Take Unoffered Tokens Object Node Activation Sequence</b></em>' reference list.
@@ -1037,7 +1037,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_TAKE_UNOFFERED_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 105;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_TAKE_UNOFFERED_TOKENS_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 105;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Node Activation Terminate Object Node Activation Sequence</b></em>' reference list.
@@ -1046,7 +1046,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_TERMINATE_OBJECT_NODE_ACTIVATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 106;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_NODE_ACTIVATION_TERMINATE_OBJECT_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 106;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Token Get Value Object Token Sequence</b></em>' reference list.
@@ -1055,7 +1055,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_TOKEN_GET_VALUE_OBJECT_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 107;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_TOKEN_GET_VALUE_OBJECT_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 107;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Object Token Is Control Object Token Sequence</b></em>' reference list.
@@ -1064,7 +1064,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_TOKEN_IS_CONTROL_OBJECT_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 108;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OBJECT_TOKEN_IS_CONTROL_OBJECT_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 108;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Offer Count Offered Values Offer Sequence</b></em>' reference list.
@@ -1073,7 +1073,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OFFER_COUNT_OFFERED_VALUES_OFFER_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 109;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OFFER_COUNT_OFFERED_VALUES_OFFER_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 109;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Offer Get Offered Tokens Offer Sequence</b></em>' reference list.
@@ -1082,7 +1082,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OFFER_GET_OFFERED_TOKENS_OFFER_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 110;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OFFER_GET_OFFERED_TOKENS_OFFER_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 110;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Offer Has Tokens Offer Sequence</b></em>' reference list.
@@ -1091,7 +1091,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OFFER_HAS_TOKENS_OFFER_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 111;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OFFER_HAS_TOKENS_OFFER_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 111;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Offer Remove Withdrawn Tokens Offer Sequence</b></em>' reference list.
@@ -1100,7 +1100,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OFFER_REMOVE_WITHDRAWN_TOKENS_OFFER_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 112;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_OFFER_REMOVE_WITHDRAWN_TOKENS_OFFER_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 112;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Token Get Value Token Sequence</b></em>' reference list.
@@ -1109,7 +1109,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_GET_VALUE_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 113;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_GET_VALUE_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 113;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Token Is Control Token Sequence</b></em>' reference list.
@@ -1118,7 +1118,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_IS_CONTROL_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 114;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_IS_CONTROL_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 114;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Token Is Withdrawn Token Sequence</b></em>' reference list.
@@ -1127,7 +1127,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_IS_WITHDRAWN_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 115;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_IS_WITHDRAWN_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 115;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Token Transfer Token Sequence</b></em>' reference list.
@@ -1136,7 +1136,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_TRANSFER_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 116;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_TRANSFER_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 116;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Activities Intermediate Activities Token Withdraw Token Sequence</b></em>' reference list.
@@ -1145,7 +1145,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_WITHDRAW_TOKEN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 117;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_ACTIVITIES_INTERMEDIATE_ACTIVITIES_TOKEN_WITHDRAW_TOKEN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 117;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Boolean Value Copy Boolean Value Sequence</b></em>' reference list.
@@ -1154,7 +1154,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_BOOLEAN_VALUE_COPY_BOOLEAN_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 118;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_BOOLEAN_VALUE_COPY_BOOLEAN_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 118;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Boolean Value Equals Boolean Value Sequence</b></em>' reference list.
@@ -1163,7 +1163,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_BOOLEAN_VALUE_EQUALS_BOOLEAN_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 119;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_BOOLEAN_VALUE_EQUALS_BOOLEAN_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 119;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Boolean Value New Boolean Value Sequence</b></em>' reference list.
@@ -1172,7 +1172,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_BOOLEAN_VALUE_NEW_BOOLEAN_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 120;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_BOOLEAN_VALUE_NEW_BOOLEAN_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 120;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Compound Value Copy Compound Value Sequence</b></em>' reference list.
@@ -1181,7 +1181,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_COMPOUND_VALUE_COPY_COMPOUND_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 121;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_COMPOUND_VALUE_COPY_COMPOUND_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 121;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Compound Value Get Feature Value Compound Value Sequence</b></em>' reference list.
@@ -1190,7 +1190,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_COMPOUND_VALUE_GET_FEATURE_VALUE_COMPOUND_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 122;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_COMPOUND_VALUE_GET_FEATURE_VALUE_COMPOUND_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 122;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Compound Value Set Feature Value Compound Value Sequence</b></em>' reference list.
@@ -1199,7 +1199,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_COMPOUND_VALUE_SET_FEATURE_VALUE_COMPOUND_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 123;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_COMPOUND_VALUE_SET_FEATURE_VALUE_COMPOUND_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 123;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Evaluation Evaluate Evaluation Sequence</b></em>' reference list.
@@ -1208,7 +1208,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_EVALUATION_EVALUATE_EVALUATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 124;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_EVALUATION_EVALUATE_EVALUATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 124;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Extensional Value Copy Extensional Value Sequence</b></em>' reference list.
@@ -1217,7 +1217,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_EXTENSIONAL_VALUE_COPY_EXTENSIONAL_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 125;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_EXTENSIONAL_VALUE_COPY_EXTENSIONAL_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 125;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Extensional Value Destroy Extensional Value Sequence</b></em>' reference list.
@@ -1226,7 +1226,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_EXTENSIONAL_VALUE_DESTROY_EXTENSIONAL_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 126;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_EXTENSIONAL_VALUE_DESTROY_EXTENSIONAL_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 126;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Feature Value Copy Feature Value Sequence</b></em>' reference list.
@@ -1235,7 +1235,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_FEATURE_VALUE_COPY_FEATURE_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 127;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_FEATURE_VALUE_COPY_FEATURE_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 127;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Integer Value Copy Integer Value Sequence</b></em>' reference list.
@@ -1244,7 +1244,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_INTEGER_VALUE_COPY_INTEGER_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 128;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_INTEGER_VALUE_COPY_INTEGER_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 128;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Integer Value Equals Integer Value Sequence</b></em>' reference list.
@@ -1253,7 +1253,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_INTEGER_VALUE_EQUALS_INTEGER_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 129;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_INTEGER_VALUE_EQUALS_INTEGER_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 129;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Integer Value New Integer Value Sequence</b></em>' reference list.
@@ -1262,7 +1262,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_INTEGER_VALUE_NEW_INTEGER_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 130;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_INTEGER_VALUE_NEW_INTEGER_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 130;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Literal Boolean Evaluation Evaluate Literal Boolean Evaluation Sequence</b></em>' reference list.
@@ -1271,7 +1271,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_LITERAL_BOOLEAN_EVALUATION_EVALUATE_LITERAL_BOOLEAN_EVALUATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 131;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_LITERAL_BOOLEAN_EVALUATION_EVALUATE_LITERAL_BOOLEAN_EVALUATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 131;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Literal Evaluation Get Type Literal Evaluation Sequence</b></em>' reference list.
@@ -1280,7 +1280,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_LITERAL_EVALUATION_GET_TYPE_LITERAL_EVALUATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 132;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_LITERAL_EVALUATION_GET_TYPE_LITERAL_EVALUATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 132;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Literal Integer Evaluation Evaluate Literal Integer Evaluation Sequence</b></em>' reference list.
@@ -1289,7 +1289,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_LITERAL_INTEGER_EVALUATION_EVALUATE_LITERAL_INTEGER_EVALUATION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 133;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_LITERAL_INTEGER_EVALUATION_EVALUATE_LITERAL_INTEGER_EVALUATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 133;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Object Copy Object Sequence</b></em>' reference list.
@@ -1298,7 +1298,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_OBJECT_COPY_OBJECT_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 134;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_OBJECT_COPY_OBJECT_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 134;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Object Destroy Object Sequence</b></em>' reference list.
@@ -1307,7 +1307,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_OBJECT_DESTROY_OBJECT_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 135;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_OBJECT_DESTROY_OBJECT_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 135;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Object Get Types Object Sequence</b></em>' reference list.
@@ -1316,7 +1316,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_OBJECT_GET_TYPES_OBJECT_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 136;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_OBJECT_GET_TYPES_OBJECT_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 136;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Object New Object Sequence</b></em>' reference list.
@@ -1325,7 +1325,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_OBJECT_NEW_OBJECT_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 137;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_OBJECT_NEW_OBJECT_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 137;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Primitive Value Copy Primitive Value Sequence</b></em>' reference list.
@@ -1334,7 +1334,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_PRIMITIVE_VALUE_COPY_PRIMITIVE_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 138;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_PRIMITIVE_VALUE_COPY_PRIMITIVE_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 138;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Primitive Value Get Types Primitive Value Sequence</b></em>' reference list.
@@ -1343,7 +1343,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_PRIMITIVE_VALUE_GET_TYPES_PRIMITIVE_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 139;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_PRIMITIVE_VALUE_GET_TYPES_PRIMITIVE_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 139;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Reference Get Feature Value Reference Sequence</b></em>' reference list.
@@ -1352,7 +1352,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_REFERENCE_GET_FEATURE_VALUE_REFERENCE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 140;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_REFERENCE_GET_FEATURE_VALUE_REFERENCE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 140;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Reference Set Feature Value Reference Sequence</b></em>' reference list.
@@ -1361,7 +1361,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_REFERENCE_SET_FEATURE_VALUE_REFERENCE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 141;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_REFERENCE_SET_FEATURE_VALUE_REFERENCE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 141;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Structured Value Create Feature Values Structured Value Sequence</b></em>' reference list.
@@ -1370,7 +1370,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_STRUCTURED_VALUE_CREATE_FEATURE_VALUES_STRUCTURED_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 142;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_STRUCTURED_VALUE_CREATE_FEATURE_VALUES_STRUCTURED_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 142;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Value Copy Value Sequence</b></em>' reference list.
@@ -1379,7 +1379,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_COPY_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 143;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_COPY_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 143;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Value Equals Value Sequence</b></em>' reference list.
@@ -1388,7 +1388,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_EQUALS_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 144;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_EQUALS_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 144;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Value Get Types Value Sequence</b></em>' reference list.
@@ -1397,7 +1397,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_GET_TYPES_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 145;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_GET_TYPES_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 145;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Value Has Type Value Sequence</b></em>' reference list.
@@ -1406,7 +1406,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_HAS_TYPE_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 146;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_HAS_TYPE_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 146;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Classes Kernel Value New Value Sequence</b></em>' reference list.
@@ -1415,7 +1415,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_NEW_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 147;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_CLASSES_KERNEL_VALUE_NEW_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 147;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Execution Copy Execution Sequence</b></em>' reference list.
@@ -1424,7 +1424,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_COPY_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 148;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_COPY_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 148;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Execution Execute Execution Sequence</b></em>' reference list.
@@ -1433,7 +1433,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_EXECUTE_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 149;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_EXECUTE_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 149;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Execution Get Behavior Execution Sequence</b></em>' reference list.
@@ -1442,7 +1442,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_GET_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 150;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_GET_BEHAVIOR_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 150;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Execution Get Output Parameter Values Execution Sequence</b></em>' reference list.
@@ -1451,7 +1451,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_GET_OUTPUT_PARAMETER_VALUES_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 151;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_GET_OUTPUT_PARAMETER_VALUES_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 151;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Execution Get Parameter Value Execution Sequence</b></em>' reference list.
@@ -1460,7 +1460,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_GET_PARAMETER_VALUE_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 152;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_GET_PARAMETER_VALUE_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 152;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Execution Set Parameter Value Execution Sequence</b></em>' reference list.
@@ -1469,7 +1469,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_SET_PARAMETER_VALUE_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 153;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_SET_PARAMETER_VALUE_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 153;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Execution Terminate Execution Sequence</b></em>' reference list.
@@ -1478,7 +1478,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_TERMINATE_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 154;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_EXECUTION_TERMINATE_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 154;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Opaque Behavior Execution Do Body Opaque Behavior Execution Sequence</b></em>' reference list.
@@ -1487,7 +1487,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_OPAQUE_BEHAVIOR_EXECUTION_DO_BODY_OPAQUE_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 155;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_OPAQUE_BEHAVIOR_EXECUTION_DO_BODY_OPAQUE_BEHAVIOR_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 155;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Opaque Behavior Execution Execute Opaque Behavior Execution Sequence</b></em>' reference list.
@@ -1496,7 +1496,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_OPAQUE_BEHAVIOR_EXECUTION_EXECUTE_OPAQUE_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 156;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_OPAQUE_BEHAVIOR_EXECUTION_EXECUTE_OPAQUE_BEHAVIOR_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 156;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Common Behaviors Basic Behaviors Parameter Value Copy Parameter Value Sequence</b></em>' reference list.
@@ -1505,7 +1505,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_PARAMETER_VALUE_COPY_PARAMETER_VALUE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 157;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_COMMON_BEHAVIORS_BASIC_BEHAVIORS_PARAMETER_VALUE_COPY_PARAMETER_VALUE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 157;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Execution Factory Create Evaluation Execution Factory Sequence</b></em>' reference list.
@@ -1514,7 +1514,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_CREATE_EVALUATION_EXECUTION_FACTORY_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 158;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_CREATE_EVALUATION_EXECUTION_FACTORY_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 158;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Execution Factory Create Execution Execution Factory Sequence</b></em>' reference list.
@@ -1523,7 +1523,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_CREATE_EXECUTION_EXECUTION_FACTORY_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 159;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_CREATE_EXECUTION_EXECUTION_FACTORY_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 159;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Execution Factory Get Built In Type Execution Factory Sequence</b></em>' reference list.
@@ -1532,7 +1532,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_GET_BUILT_IN_TYPE_EXECUTION_FACTORY_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 160;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_GET_BUILT_IN_TYPE_EXECUTION_FACTORY_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 160;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Execution Factory Instantiate Opaque Behavior Execution Execution Factory Sequence</b></em>' reference list.
@@ -1541,7 +1541,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_INSTANTIATE_OPAQUE_BEHAVIOR_EXECUTION_EXECUTION_FACTORY_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 161;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_INSTANTIATE_OPAQUE_BEHAVIOR_EXECUTION_EXECUTION_FACTORY_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 161;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Execution Factory Instantiate Visitor Execution Factory Sequence</b></em>' reference list.
@@ -1550,7 +1550,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_INSTANTIATE_VISITOR_EXECUTION_FACTORY_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 162;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTION_FACTORY_INSTANTIATE_VISITOR_EXECUTION_FACTORY_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 162;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Executor Evaluate Executor Sequence</b></em>' reference list.
@@ -1559,7 +1559,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTOR_EVALUATE_EXECUTOR_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 163;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTOR_EVALUATE_EXECUTOR_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 163;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Executor Execute Executor Sequence</b></em>' reference list.
@@ -1568,7 +1568,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTOR_EXECUTE_EXECUTOR_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 164;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_EXECUTOR_EXECUTE_EXECUTOR_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 164;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Locus Add Locus Sequence</b></em>' reference list.
@@ -1577,7 +1577,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_LOCUS_ADD_LOCUS_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 165;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_LOCUS_ADD_LOCUS_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 165;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Locus Instantiate Locus Sequence</b></em>' reference list.
@@ -1586,7 +1586,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_LOCUS_INSTANTIATE_LOCUS_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 166;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_LOCUS_INSTANTIATE_LOCUS_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 166;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Locus Remove Locus Sequence</b></em>' reference list.
@@ -1595,7 +1595,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_LOCUS_REMOVE_LOCUS_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 167;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_LOCUS_REMOVE_LOCUS_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 167;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Loci Semantic Visitor Initialize Semantic Visitor Sequence</b></em>' reference list.
@@ -1604,7 +1604,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_SEMANTIC_VISITOR_INITIALIZE_SEMANTIC_VISITOR_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 168;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_LOCI_SEMANTIC_VISITOR_INITIALIZE_SEMANTIC_VISITOR_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 168;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Model Configuration Main Sequence</b></em>' reference list.
@@ -1613,7 +1613,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_MODEL_CONFIGURATION_MAIN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 169;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_MODEL_CONFIGURATION_MAIN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 169;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Primitive Behaviors Integer Functions Integer Greater Function Behavior Execution Do Body Integer Greater Function Behavior Execution Sequence</b></em>' reference list.
@@ -1622,7 +1622,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTION_DO_BODY_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 170;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTION_DO_BODY_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 170;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Primitive Behaviors Integer Functions Integer Greater Function Behavior Execution New Integer Greater Function Behavior Execution Sequence</b></em>' reference list.
@@ -1631,7 +1631,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 171;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 171;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Primitive Behaviors Integer Functions Integer Less Function Behavior Execution Do Body Integer Less Function Behavior Execution Sequence</b></em>' reference list.
@@ -1640,7 +1640,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTION_DO_BODY_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 172;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTION_DO_BODY_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 172;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Primitive Behaviors Integer Functions Integer Less Function Behavior Execution New Integer Less Function Behavior Execution Sequence</b></em>' reference list.
@@ -1649,7 +1649,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 173;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 173;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Primitive Behaviors Integer Functions Integer Plus Function Behavior Execution Do Body Integer Plus Function Behavior Execution Sequence</b></em>' reference list.
@@ -1658,7 +1658,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_DO_BODY_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 174;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_DO_BODY_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 174;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration Primitive Behaviors Integer Functions Integer Plus Function Behavior Execution New Integer Plus Function Behavior Execution Sequence</b></em>' reference list.
@@ -1667,7 +1667,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 175;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_PRIMITIVE_BEHAVIORS_INTEGER_FUNCTIONS_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_NEW_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 175;
 
 	/**
 	 * The feature id for the '<em><b>Basic Actions traced Call Behavior Action Activations</b></em>' containment reference list.
@@ -1676,7 +1676,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 176;
+	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_CALL_BEHAVIOR_ACTION_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 176;
 
 	/**
 	 * The feature id for the '<em><b>Basic Actions traced Input Pin Activations</b></em>' containment reference list.
@@ -1685,7 +1685,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 177;
+	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_INPUT_PIN_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 177;
 
 	/**
 	 * The feature id for the '<em><b>Basic Actions traced Opaque Action Activations</b></em>' containment reference list.
@@ -1694,7 +1694,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 178;
+	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OPAQUE_ACTION_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 178;
 
 	/**
 	 * The feature id for the '<em><b>Basic Actions traced Output Pin Activations</b></em>' containment reference list.
@@ -1703,7 +1703,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 179;
+	int SPECIFIC_TRACE__BASIC_ACTIONS_TRACED_OUTPUT_PIN_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 179;
 
 	/**
 	 * The feature id for the '<em><b>Basic Behaviors traced Parameter Values</b></em>' containment reference list.
@@ -1712,7 +1712,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES = MsePackage.TRACE_FEATURE_COUNT + 180;
+	int SPECIFIC_TRACE__BASIC_BEHAVIORS_TRACED_PARAMETER_VALUES = TracePackage.TRACE_FEATURE_COUNT + 180;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Abstraction Configurations</b></em>' containment reference list.
@@ -1721,7 +1721,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ABSTRACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 181;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ABSTRACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 181;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Accept Call Action Configurations</b></em>' containment reference list.
@@ -1730,7 +1730,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACCEPT_CALL_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 182;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACCEPT_CALL_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 182;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Accept Event Action Configurations</b></em>' containment reference list.
@@ -1739,7 +1739,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACCEPT_EVENT_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 183;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACCEPT_EVENT_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 183;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Action Configurations</b></em>' containment reference list.
@@ -1748,7 +1748,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 184;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 184;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Action Execution Specification Configurations</b></em>' containment reference list.
@@ -1757,7 +1757,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTION_EXECUTION_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 185;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTION_EXECUTION_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 185;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Action Input Pin Configurations</b></em>' containment reference list.
@@ -1766,7 +1766,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTION_INPUT_PIN_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 186;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTION_INPUT_PIN_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 186;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Activity Configurations</b></em>' containment reference list.
@@ -1775,7 +1775,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 187;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 187;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Activity Content Configurations</b></em>' containment reference list.
@@ -1784,7 +1784,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_CONTENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 188;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_CONTENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 188;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Activity Edge Configurations</b></em>' containment reference list.
@@ -1793,7 +1793,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_EDGE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 189;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_EDGE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 189;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Activity Final Node Configurations</b></em>' containment reference list.
@@ -1802,7 +1802,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_FINAL_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 190;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_FINAL_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 190;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Activity Group Configurations</b></em>' containment reference list.
@@ -1811,7 +1811,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_GROUP_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 191;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_GROUP_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 191;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Activity Node Configurations</b></em>' containment reference list.
@@ -1820,7 +1820,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 192;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 192;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Activity Parameter Node Configurations</b></em>' containment reference list.
@@ -1829,7 +1829,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_PARAMETER_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 193;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_PARAMETER_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 193;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Activity Partition Configurations</b></em>' containment reference list.
@@ -1838,7 +1838,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_PARTITION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 194;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTIVITY_PARTITION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 194;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Actor Configurations</b></em>' containment reference list.
@@ -1847,7 +1847,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTOR_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 195;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ACTOR_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 195;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Add Structural Feature Value Action Configurations</b></em>' containment reference list.
@@ -1856,7 +1856,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 196;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 196;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Add Variable Value Action Configurations</b></em>' containment reference list.
@@ -1865,7 +1865,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ADD_VARIABLE_VALUE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 197;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ADD_VARIABLE_VALUE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 197;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Any Receive Event Configurations</b></em>' containment reference list.
@@ -1874,7 +1874,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ANY_RECEIVE_EVENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 198;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ANY_RECEIVE_EVENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 198;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Artifact Configurations</b></em>' containment reference list.
@@ -1883,7 +1883,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ARTIFACT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 199;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ARTIFACT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 199;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Association Class Configurations</b></em>' containment reference list.
@@ -1892,7 +1892,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ASSOCIATION_CLASS_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 200;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ASSOCIATION_CLASS_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 200;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Association Configurations</b></em>' containment reference list.
@@ -1901,7 +1901,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ASSOCIATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 201;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ASSOCIATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 201;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Behavior Configurations</b></em>' containment reference list.
@@ -1910,7 +1910,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BEHAVIOR_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 202;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BEHAVIOR_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 202;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Behavior Execution Specification Configurations</b></em>' containment reference list.
@@ -1919,7 +1919,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BEHAVIOR_EXECUTION_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 203;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BEHAVIOR_EXECUTION_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 203;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Behavioral Feature Configurations</b></em>' containment reference list.
@@ -1928,7 +1928,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BEHAVIORAL_FEATURE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 204;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BEHAVIORAL_FEATURE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 204;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Behaviored Classifier Configurations</b></em>' containment reference list.
@@ -1937,7 +1937,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BEHAVIORED_CLASSIFIER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 205;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BEHAVIORED_CLASSIFIER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 205;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Broadcast Signal Action Configurations</b></em>' containment reference list.
@@ -1946,7 +1946,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BROADCAST_SIGNAL_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 206;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_BROADCAST_SIGNAL_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 206;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Call Action Configurations</b></em>' containment reference list.
@@ -1955,7 +1955,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CALL_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 207;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CALL_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 207;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Call Behavior Action Configurations</b></em>' containment reference list.
@@ -1964,7 +1964,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CALL_BEHAVIOR_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 208;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CALL_BEHAVIOR_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 208;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Call Event Configurations</b></em>' containment reference list.
@@ -1973,7 +1973,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CALL_EVENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 209;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CALL_EVENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 209;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Call Operation Action Configurations</b></em>' containment reference list.
@@ -1982,7 +1982,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CALL_OPERATION_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 210;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CALL_OPERATION_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 210;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Central Buffer Node Configurations</b></em>' containment reference list.
@@ -1991,7 +1991,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CENTRAL_BUFFER_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 211;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CENTRAL_BUFFER_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 211;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Change Event Configurations</b></em>' containment reference list.
@@ -2000,7 +2000,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CHANGE_EVENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 212;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CHANGE_EVENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 212;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Class Configurations</b></em>' containment reference list.
@@ -2009,7 +2009,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLASS_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 213;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLASS_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 213;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Classifier Configurations</b></em>' containment reference list.
@@ -2018,7 +2018,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLASSIFIER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 214;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLASSIFIER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 214;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Classifier Template Parameter Configurations</b></em>' containment reference list.
@@ -2027,7 +2027,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLASSIFIER_TEMPLATE_PARAMETER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 215;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLASSIFIER_TEMPLATE_PARAMETER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 215;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Clause Configurations</b></em>' containment reference list.
@@ -2036,7 +2036,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLAUSE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 216;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLAUSE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 216;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Clear Association Action Configurations</b></em>' containment reference list.
@@ -2045,7 +2045,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLEAR_ASSOCIATION_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 217;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLEAR_ASSOCIATION_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 217;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Clear Structural Feature Action Configurations</b></em>' containment reference list.
@@ -2054,7 +2054,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLEAR_STRUCTURAL_FEATURE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 218;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLEAR_STRUCTURAL_FEATURE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 218;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Clear Variable Action Configurations</b></em>' containment reference list.
@@ -2063,7 +2063,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLEAR_VARIABLE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 219;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CLEAR_VARIABLE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 219;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Collaboration Configurations</b></em>' containment reference list.
@@ -2072,7 +2072,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COLLABORATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 220;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COLLABORATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 220;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Collaboration Use Configurations</b></em>' containment reference list.
@@ -2081,7 +2081,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COLLABORATION_USE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 221;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COLLABORATION_USE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 221;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Combined Fragment Configurations</b></em>' containment reference list.
@@ -2090,7 +2090,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMBINED_FRAGMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 222;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMBINED_FRAGMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 222;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Comment Configurations</b></em>' containment reference list.
@@ -2099,7 +2099,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 223;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 223;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Communication Path Configurations</b></em>' containment reference list.
@@ -2108,7 +2108,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMMUNICATION_PATH_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 224;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMMUNICATION_PATH_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 224;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Component Configurations</b></em>' containment reference list.
@@ -2117,7 +2117,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMPONENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 225;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMPONENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 225;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Component Realization Configurations</b></em>' containment reference list.
@@ -2126,7 +2126,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMPONENT_REALIZATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 226;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_COMPONENT_REALIZATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 226;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Conditional Node Configurations</b></em>' containment reference list.
@@ -2135,7 +2135,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONDITIONAL_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 227;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONDITIONAL_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 227;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Connectable Element Configurations</b></em>' containment reference list.
@@ -2144,7 +2144,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTABLE_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 228;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTABLE_ELEMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 228;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Connectable Element Template Parameter Configurations</b></em>' containment reference list.
@@ -2153,7 +2153,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTABLE_ELEMENT_TEMPLATE_PARAMETER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 229;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTABLE_ELEMENT_TEMPLATE_PARAMETER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 229;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Connection Point Reference Configurations</b></em>' containment reference list.
@@ -2162,7 +2162,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTION_POINT_REFERENCE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 230;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTION_POINT_REFERENCE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 230;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Connector Configurations</b></em>' containment reference list.
@@ -2171,7 +2171,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTOR_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 231;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTOR_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 231;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Connector End Configurations</b></em>' containment reference list.
@@ -2180,7 +2180,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTOR_END_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 232;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONNECTOR_END_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 232;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Consider Ignore Fragment Configurations</b></em>' containment reference list.
@@ -2189,7 +2189,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONSIDER_IGNORE_FRAGMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 233;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONSIDER_IGNORE_FRAGMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 233;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Constraint Configurations</b></em>' containment reference list.
@@ -2198,7 +2198,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONSTRAINT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 234;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONSTRAINT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 234;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Continuation Configurations</b></em>' containment reference list.
@@ -2207,7 +2207,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONTINUATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 235;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONTINUATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 235;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Control Flow Configurations</b></em>' containment reference list.
@@ -2216,7 +2216,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONTROL_FLOW_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 236;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONTROL_FLOW_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 236;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Control Node Configurations</b></em>' containment reference list.
@@ -2225,7 +2225,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONTROL_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 237;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CONTROL_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 237;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Create Link Action Configurations</b></em>' containment reference list.
@@ -2234,7 +2234,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CREATE_LINK_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 238;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CREATE_LINK_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 238;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Create Link Object Action Configurations</b></em>' containment reference list.
@@ -2243,7 +2243,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CREATE_LINK_OBJECT_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 239;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CREATE_LINK_OBJECT_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 239;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Create Object Action Configurations</b></em>' containment reference list.
@@ -2252,7 +2252,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CREATE_OBJECT_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 240;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_CREATE_OBJECT_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 240;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Data Store Node Configurations</b></em>' containment reference list.
@@ -2261,7 +2261,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DATA_STORE_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 241;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DATA_STORE_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 241;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Data Type Configurations</b></em>' containment reference list.
@@ -2270,7 +2270,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DATA_TYPE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 242;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DATA_TYPE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 242;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Decision Node Configurations</b></em>' containment reference list.
@@ -2279,7 +2279,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DECISION_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 243;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DECISION_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 243;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Dependency Configurations</b></em>' containment reference list.
@@ -2288,7 +2288,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPENDENCY_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 244;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPENDENCY_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 244;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Deployed Artifact Configurations</b></em>' containment reference list.
@@ -2297,7 +2297,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPLOYED_ARTIFACT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 245;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPLOYED_ARTIFACT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 245;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Deployment Configurations</b></em>' containment reference list.
@@ -2306,7 +2306,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPLOYMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 246;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPLOYMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 246;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Deployment Specification Configurations</b></em>' containment reference list.
@@ -2315,7 +2315,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPLOYMENT_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 247;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPLOYMENT_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 247;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Deployment Target Configurations</b></em>' containment reference list.
@@ -2324,7 +2324,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPLOYMENT_TARGET_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 248;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEPLOYMENT_TARGET_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 248;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Destroy Link Action Configurations</b></em>' containment reference list.
@@ -2333,7 +2333,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DESTROY_LINK_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 249;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DESTROY_LINK_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 249;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Destroy Object Action Configurations</b></em>' containment reference list.
@@ -2342,7 +2342,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DESTROY_OBJECT_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 250;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DESTROY_OBJECT_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 250;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Destruction Occurrence Specification Configurations</b></em>' containment reference list.
@@ -2351,7 +2351,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DESTRUCTION_OCCURRENCE_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 251;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DESTRUCTION_OCCURRENCE_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 251;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Device Configurations</b></em>' containment reference list.
@@ -2360,7 +2360,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEVICE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 252;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DEVICE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 252;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Directed Relationship Configurations</b></em>' containment reference list.
@@ -2369,7 +2369,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DIRECTED_RELATIONSHIP_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 253;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DIRECTED_RELATIONSHIP_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 253;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Duration Configurations</b></em>' containment reference list.
@@ -2378,7 +2378,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DURATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 254;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DURATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 254;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Duration Constraint Configurations</b></em>' containment reference list.
@@ -2387,7 +2387,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DURATION_CONSTRAINT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 255;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DURATION_CONSTRAINT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 255;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Duration Interval Configurations</b></em>' containment reference list.
@@ -2396,7 +2396,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DURATION_INTERVAL_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 256;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DURATION_INTERVAL_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 256;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Duration Observation Configurations</b></em>' containment reference list.
@@ -2405,7 +2405,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DURATION_OBSERVATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 257;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_DURATION_OBSERVATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 257;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Element Configurations</b></em>' containment reference list.
@@ -2414,7 +2414,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 258;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ELEMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 258;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Element Import Configurations</b></em>' containment reference list.
@@ -2423,7 +2423,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ELEMENT_IMPORT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 259;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ELEMENT_IMPORT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 259;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Encapsulated Classifier Configurations</b></em>' containment reference list.
@@ -2432,7 +2432,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ENCAPSULATED_CLASSIFIER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 260;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ENCAPSULATED_CLASSIFIER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 260;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Enumeration Configurations</b></em>' containment reference list.
@@ -2441,7 +2441,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ENUMERATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 261;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ENUMERATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 261;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Enumeration Literal Configurations</b></em>' containment reference list.
@@ -2450,7 +2450,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ENUMERATION_LITERAL_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 262;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_ENUMERATION_LITERAL_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 262;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Event Configurations</b></em>' containment reference list.
@@ -2459,7 +2459,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EVENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 263;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EVENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 263;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Exception Handler Configurations</b></em>' containment reference list.
@@ -2468,7 +2468,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXCEPTION_HANDLER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 264;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXCEPTION_HANDLER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 264;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Executable Node Configurations</b></em>' containment reference list.
@@ -2477,7 +2477,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXECUTABLE_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 265;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXECUTABLE_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 265;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Execution Environment Configurations</b></em>' containment reference list.
@@ -2486,7 +2486,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXECUTION_ENVIRONMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 266;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXECUTION_ENVIRONMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 266;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Execution Occurrence Specification Configurations</b></em>' containment reference list.
@@ -2495,7 +2495,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXECUTION_OCCURRENCE_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 267;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXECUTION_OCCURRENCE_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 267;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Execution Specification Configurations</b></em>' containment reference list.
@@ -2504,7 +2504,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXECUTION_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 268;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXECUTION_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 268;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Expansion Node Configurations</b></em>' containment reference list.
@@ -2513,7 +2513,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXPANSION_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 269;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXPANSION_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 269;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Expansion Region Configurations</b></em>' containment reference list.
@@ -2522,7 +2522,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXPANSION_REGION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 270;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXPANSION_REGION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 270;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Expression Configurations</b></em>' containment reference list.
@@ -2531,7 +2531,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXPRESSION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 271;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXPRESSION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 271;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Extend Configurations</b></em>' containment reference list.
@@ -2540,7 +2540,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXTEND_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 272;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXTEND_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 272;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Extension Configurations</b></em>' containment reference list.
@@ -2549,7 +2549,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXTENSION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 273;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXTENSION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 273;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Extension End Configurations</b></em>' containment reference list.
@@ -2558,7 +2558,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXTENSION_END_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 274;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXTENSION_END_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 274;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Extension Point Configurations</b></em>' containment reference list.
@@ -2567,7 +2567,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXTENSION_POINT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 275;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_EXTENSION_POINT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 275;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Feature Configurations</b></em>' containment reference list.
@@ -2576,7 +2576,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FEATURE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 276;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FEATURE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 276;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Final Node Configurations</b></em>' containment reference list.
@@ -2585,7 +2585,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FINAL_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 277;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FINAL_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 277;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Final State Configurations</b></em>' containment reference list.
@@ -2594,7 +2594,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FINAL_STATE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 278;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FINAL_STATE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 278;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Flow Final Node Configurations</b></em>' containment reference list.
@@ -2603,7 +2603,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FLOW_FINAL_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 279;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FLOW_FINAL_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 279;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Fork Node Configurations</b></em>' containment reference list.
@@ -2612,7 +2612,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FORK_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 280;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FORK_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 280;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Function Behavior Configurations</b></em>' containment reference list.
@@ -2621,7 +2621,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FUNCTION_BEHAVIOR_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 281;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_FUNCTION_BEHAVIOR_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 281;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Gate Configurations</b></em>' containment reference list.
@@ -2630,7 +2630,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_GATE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 282;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_GATE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 282;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced General Ordering Configurations</b></em>' containment reference list.
@@ -2639,7 +2639,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_GENERAL_ORDERING_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 283;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_GENERAL_ORDERING_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 283;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Generalization Configurations</b></em>' containment reference list.
@@ -2648,7 +2648,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_GENERALIZATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 284;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_GENERALIZATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 284;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Generalization Set Configurations</b></em>' containment reference list.
@@ -2657,7 +2657,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_GENERALIZATION_SET_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 285;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_GENERALIZATION_SET_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 285;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Image Configurations</b></em>' containment reference list.
@@ -2666,7 +2666,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_IMAGE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 286;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_IMAGE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 286;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Include Configurations</b></em>' containment reference list.
@@ -2675,7 +2675,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INCLUDE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 287;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INCLUDE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 287;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Information Flow Configurations</b></em>' containment reference list.
@@ -2684,7 +2684,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INFORMATION_FLOW_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 288;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INFORMATION_FLOW_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 288;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Information Item Configurations</b></em>' containment reference list.
@@ -2693,7 +2693,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INFORMATION_ITEM_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 289;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INFORMATION_ITEM_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 289;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Initial Node Configurations</b></em>' containment reference list.
@@ -2702,7 +2702,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INITIAL_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 290;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INITIAL_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 290;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Input Pin Configurations</b></em>' containment reference list.
@@ -2711,7 +2711,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INPUT_PIN_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 291;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INPUT_PIN_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 291;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Instance Specification Configurations</b></em>' containment reference list.
@@ -2720,7 +2720,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INSTANCE_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 292;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INSTANCE_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 292;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Instance Value Configurations</b></em>' containment reference list.
@@ -2729,7 +2729,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INSTANCE_VALUE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 293;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INSTANCE_VALUE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 293;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interaction Configurations</b></em>' containment reference list.
@@ -2738,7 +2738,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 294;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 294;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interaction Constraint Configurations</b></em>' containment reference list.
@@ -2747,7 +2747,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_CONSTRAINT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 295;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_CONSTRAINT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 295;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interaction Fragment Configurations</b></em>' containment reference list.
@@ -2756,7 +2756,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_FRAGMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 296;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_FRAGMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 296;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interaction Operand Configurations</b></em>' containment reference list.
@@ -2765,7 +2765,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_OPERAND_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 297;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_OPERAND_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 297;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interaction Use Configurations</b></em>' containment reference list.
@@ -2774,7 +2774,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_USE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 298;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERACTION_USE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 298;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interface Configurations</b></em>' containment reference list.
@@ -2783,7 +2783,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERFACE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 299;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERFACE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 299;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interface Realization Configurations</b></em>' containment reference list.
@@ -2792,7 +2792,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERFACE_REALIZATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 300;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERFACE_REALIZATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 300;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interruptible Activity Region Configurations</b></em>' containment reference list.
@@ -2801,7 +2801,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERRUPTIBLE_ACTIVITY_REGION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 301;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERRUPTIBLE_ACTIVITY_REGION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 301;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interval Configurations</b></em>' containment reference list.
@@ -2810,7 +2810,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERVAL_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 302;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERVAL_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 302;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Interval Constraint Configurations</b></em>' containment reference list.
@@ -2819,7 +2819,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERVAL_CONSTRAINT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 303;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INTERVAL_CONSTRAINT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 303;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Invocation Action Configurations</b></em>' containment reference list.
@@ -2828,7 +2828,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INVOCATION_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 304;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_INVOCATION_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 304;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Join Node Configurations</b></em>' containment reference list.
@@ -2837,7 +2837,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_JOIN_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 305;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_JOIN_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 305;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Lifeline Configurations</b></em>' containment reference list.
@@ -2846,7 +2846,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LIFELINE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 306;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LIFELINE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 306;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Link Action Configurations</b></em>' containment reference list.
@@ -2855,7 +2855,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LINK_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 307;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LINK_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 307;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Link End Creation Data Configurations</b></em>' containment reference list.
@@ -2864,7 +2864,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LINK_END_CREATION_DATA_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 308;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LINK_END_CREATION_DATA_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 308;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Link End Data Configurations</b></em>' containment reference list.
@@ -2873,7 +2873,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LINK_END_DATA_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 309;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LINK_END_DATA_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 309;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Link End Destruction Data Configurations</b></em>' containment reference list.
@@ -2882,7 +2882,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LINK_END_DESTRUCTION_DATA_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 310;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LINK_END_DESTRUCTION_DATA_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 310;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Literal Boolean Configurations</b></em>' containment reference list.
@@ -2891,7 +2891,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_BOOLEAN_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 311;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_BOOLEAN_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 311;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Literal Integer Configurations</b></em>' containment reference list.
@@ -2900,7 +2900,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_INTEGER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 312;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_INTEGER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 312;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Literal Null Configurations</b></em>' containment reference list.
@@ -2909,7 +2909,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_NULL_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 313;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_NULL_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 313;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Literal Real Configurations</b></em>' containment reference list.
@@ -2918,7 +2918,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_REAL_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 314;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_REAL_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 314;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Literal Specification Configurations</b></em>' containment reference list.
@@ -2927,7 +2927,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 315;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 315;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Literal String Configurations</b></em>' containment reference list.
@@ -2936,7 +2936,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_STRING_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 316;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_STRING_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 316;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Literal Unlimited Natural Configurations</b></em>' containment reference list.
@@ -2945,7 +2945,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_UNLIMITED_NATURAL_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 317;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LITERAL_UNLIMITED_NATURAL_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 317;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Loop Node Configurations</b></em>' containment reference list.
@@ -2954,7 +2954,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LOOP_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 318;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_LOOP_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 318;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Manifestation Configurations</b></em>' containment reference list.
@@ -2963,7 +2963,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MANIFESTATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 319;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MANIFESTATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 319;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Merge Node Configurations</b></em>' containment reference list.
@@ -2972,7 +2972,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MERGE_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 320;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MERGE_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 320;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Message Configurations</b></em>' containment reference list.
@@ -2981,7 +2981,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MESSAGE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 321;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MESSAGE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 321;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Message End Configurations</b></em>' containment reference list.
@@ -2990,7 +2990,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MESSAGE_END_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 322;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MESSAGE_END_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 322;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Message Event Configurations</b></em>' containment reference list.
@@ -2999,7 +2999,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MESSAGE_EVENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 323;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MESSAGE_EVENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 323;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Message Occurrence Specification Configurations</b></em>' containment reference list.
@@ -3008,7 +3008,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MESSAGE_OCCURRENCE_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 324;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MESSAGE_OCCURRENCE_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 324;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Model Configurations</b></em>' containment reference list.
@@ -3017,7 +3017,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MODEL_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 325;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MODEL_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 325;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Multiplicity Element Configurations</b></em>' containment reference list.
@@ -3026,7 +3026,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MULTIPLICITY_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 326;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_MULTIPLICITY_ELEMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 326;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Named Element Configurations</b></em>' containment reference list.
@@ -3035,7 +3035,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_NAMED_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 327;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_NAMED_ELEMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 327;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Namespace Configurations</b></em>' containment reference list.
@@ -3044,7 +3044,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_NAMESPACE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 328;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_NAMESPACE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 328;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Node Configurations</b></em>' containment reference list.
@@ -3053,7 +3053,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 329;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 329;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Object Flow Configurations</b></em>' containment reference list.
@@ -3062,7 +3062,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OBJECT_FLOW_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 330;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OBJECT_FLOW_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 330;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Object Node Configurations</b></em>' containment reference list.
@@ -3071,7 +3071,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OBJECT_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 331;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OBJECT_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 331;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Observation Configurations</b></em>' containment reference list.
@@ -3080,7 +3080,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OBSERVATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 332;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OBSERVATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 332;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Occurrence Specification Configurations</b></em>' containment reference list.
@@ -3089,7 +3089,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OCCURRENCE_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 333;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OCCURRENCE_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 333;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Opaque Action Configurations</b></em>' containment reference list.
@@ -3098,7 +3098,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPAQUE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 334;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPAQUE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 334;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Opaque Behavior Configurations</b></em>' containment reference list.
@@ -3107,7 +3107,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPAQUE_BEHAVIOR_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 335;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPAQUE_BEHAVIOR_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 335;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Opaque Expression Configurations</b></em>' containment reference list.
@@ -3116,7 +3116,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPAQUE_EXPRESSION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 336;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPAQUE_EXPRESSION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 336;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Operation Configurations</b></em>' containment reference list.
@@ -3125,7 +3125,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPERATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 337;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPERATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 337;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Operation Template Parameter Configurations</b></em>' containment reference list.
@@ -3134,7 +3134,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPERATION_TEMPLATE_PARAMETER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 338;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OPERATION_TEMPLATE_PARAMETER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 338;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Output Pin Configurations</b></em>' containment reference list.
@@ -3143,7 +3143,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OUTPUT_PIN_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 339;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_OUTPUT_PIN_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 339;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Package Configurations</b></em>' containment reference list.
@@ -3152,7 +3152,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PACKAGE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 340;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PACKAGE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 340;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Package Import Configurations</b></em>' containment reference list.
@@ -3161,7 +3161,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PACKAGE_IMPORT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 341;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PACKAGE_IMPORT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 341;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Package Merge Configurations</b></em>' containment reference list.
@@ -3170,7 +3170,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PACKAGE_MERGE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 342;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PACKAGE_MERGE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 342;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Packageable Element Configurations</b></em>' containment reference list.
@@ -3179,7 +3179,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PACKAGEABLE_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 343;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PACKAGEABLE_ELEMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 343;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Parameter Configurations</b></em>' containment reference list.
@@ -3188,7 +3188,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PARAMETER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 344;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PARAMETER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 344;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Parameter Set Configurations</b></em>' containment reference list.
@@ -3197,7 +3197,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PARAMETER_SET_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 345;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PARAMETER_SET_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 345;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Parameterable Element Configurations</b></em>' containment reference list.
@@ -3206,7 +3206,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PARAMETERABLE_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 346;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PARAMETERABLE_ELEMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 346;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Part Decomposition Configurations</b></em>' containment reference list.
@@ -3215,7 +3215,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PART_DECOMPOSITION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 347;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PART_DECOMPOSITION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 347;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Pin Configurations</b></em>' containment reference list.
@@ -3224,7 +3224,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PIN_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 348;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PIN_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 348;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Port Configurations</b></em>' containment reference list.
@@ -3233,7 +3233,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PORT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 349;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PORT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 349;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Primitive Type Configurations</b></em>' containment reference list.
@@ -3242,7 +3242,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PRIMITIVE_TYPE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 350;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PRIMITIVE_TYPE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 350;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Profile Application Configurations</b></em>' containment reference list.
@@ -3251,7 +3251,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROFILE_APPLICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 351;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROFILE_APPLICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 351;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Profile Configurations</b></em>' containment reference list.
@@ -3260,7 +3260,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROFILE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 352;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROFILE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 352;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Property Configurations</b></em>' containment reference list.
@@ -3269,7 +3269,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROPERTY_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 353;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROPERTY_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 353;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Protocol Conformance Configurations</b></em>' containment reference list.
@@ -3278,7 +3278,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROTOCOL_CONFORMANCE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 354;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROTOCOL_CONFORMANCE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 354;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Protocol State Machine Configurations</b></em>' containment reference list.
@@ -3287,7 +3287,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROTOCOL_STATE_MACHINE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 355;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROTOCOL_STATE_MACHINE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 355;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Protocol Transition Configurations</b></em>' containment reference list.
@@ -3296,7 +3296,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROTOCOL_TRANSITION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 356;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PROTOCOL_TRANSITION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 356;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Pseudostate Configurations</b></em>' containment reference list.
@@ -3305,7 +3305,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PSEUDOSTATE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 357;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_PSEUDOSTATE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 357;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Qualifier Value Configurations</b></em>' containment reference list.
@@ -3314,7 +3314,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_QUALIFIER_VALUE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 358;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_QUALIFIER_VALUE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 358;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Raise Exception Action Configurations</b></em>' containment reference list.
@@ -3323,7 +3323,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_RAISE_EXCEPTION_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 359;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_RAISE_EXCEPTION_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 359;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Read Extent Action Configurations</b></em>' containment reference list.
@@ -3332,7 +3332,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_EXTENT_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 360;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_EXTENT_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 360;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Read Is Classified Object Action Configurations</b></em>' containment reference list.
@@ -3341,7 +3341,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_IS_CLASSIFIED_OBJECT_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 361;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_IS_CLASSIFIED_OBJECT_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 361;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Read Link Action Configurations</b></em>' containment reference list.
@@ -3350,7 +3350,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_LINK_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 362;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_LINK_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 362;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Read Link Object End Action Configurations</b></em>' containment reference list.
@@ -3359,7 +3359,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_LINK_OBJECT_END_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 363;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_LINK_OBJECT_END_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 363;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Read Link Object End Qualifier Action Configurations</b></em>' containment reference list.
@@ -3368,7 +3368,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_LINK_OBJECT_END_QUALIFIER_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 364;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_LINK_OBJECT_END_QUALIFIER_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 364;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Read Self Action Configurations</b></em>' containment reference list.
@@ -3377,7 +3377,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_SELF_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 365;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_SELF_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 365;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Read Structural Feature Action Configurations</b></em>' containment reference list.
@@ -3386,7 +3386,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_STRUCTURAL_FEATURE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 366;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_STRUCTURAL_FEATURE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 366;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Read Variable Action Configurations</b></em>' containment reference list.
@@ -3395,7 +3395,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_VARIABLE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 367;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_READ_VARIABLE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 367;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Realization Configurations</b></em>' containment reference list.
@@ -3404,7 +3404,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REALIZATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 368;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REALIZATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 368;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Reception Configurations</b></em>' containment reference list.
@@ -3413,7 +3413,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_RECEPTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 369;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_RECEPTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 369;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Reclassify Object Action Configurations</b></em>' containment reference list.
@@ -3422,7 +3422,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_RECLASSIFY_OBJECT_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 370;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_RECLASSIFY_OBJECT_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 370;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Redefinable Element Configurations</b></em>' containment reference list.
@@ -3431,7 +3431,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REDEFINABLE_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 371;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REDEFINABLE_ELEMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 371;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Redefinable Template Signature Configurations</b></em>' containment reference list.
@@ -3440,7 +3440,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REDEFINABLE_TEMPLATE_SIGNATURE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 372;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REDEFINABLE_TEMPLATE_SIGNATURE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 372;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Reduce Action Configurations</b></em>' containment reference list.
@@ -3449,7 +3449,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REDUCE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 373;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REDUCE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 373;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Region Configurations</b></em>' containment reference list.
@@ -3458,7 +3458,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REGION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 374;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REGION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 374;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Relationship Configurations</b></em>' containment reference list.
@@ -3467,7 +3467,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_RELATIONSHIP_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 375;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_RELATIONSHIP_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 375;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Remove Structural Feature Value Action Configurations</b></em>' containment reference list.
@@ -3476,7 +3476,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REMOVE_STRUCTURAL_FEATURE_VALUE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 376;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REMOVE_STRUCTURAL_FEATURE_VALUE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 376;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Remove Variable Value Action Configurations</b></em>' containment reference list.
@@ -3485,7 +3485,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REMOVE_VARIABLE_VALUE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 377;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REMOVE_VARIABLE_VALUE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 377;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Reply Action Configurations</b></em>' containment reference list.
@@ -3494,7 +3494,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REPLY_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 378;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_REPLY_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 378;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Send Object Action Configurations</b></em>' containment reference list.
@@ -3503,7 +3503,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SEND_OBJECT_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 379;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SEND_OBJECT_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 379;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Send Signal Action Configurations</b></em>' containment reference list.
@@ -3512,7 +3512,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SEND_SIGNAL_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 380;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SEND_SIGNAL_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 380;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Sequence Node Configurations</b></em>' containment reference list.
@@ -3521,7 +3521,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SEQUENCE_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 381;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SEQUENCE_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 381;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Signal Configurations</b></em>' containment reference list.
@@ -3530,7 +3530,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SIGNAL_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 382;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SIGNAL_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 382;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Signal Event Configurations</b></em>' containment reference list.
@@ -3539,7 +3539,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SIGNAL_EVENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 383;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SIGNAL_EVENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 383;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Slot Configurations</b></em>' containment reference list.
@@ -3548,7 +3548,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SLOT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 384;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SLOT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 384;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Start Classifier Behavior Action Configurations</b></em>' containment reference list.
@@ -3557,7 +3557,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_START_CLASSIFIER_BEHAVIOR_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 385;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_START_CLASSIFIER_BEHAVIOR_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 385;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Start Object Behavior Action Configurations</b></em>' containment reference list.
@@ -3566,7 +3566,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_START_OBJECT_BEHAVIOR_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 386;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_START_OBJECT_BEHAVIOR_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 386;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced State Configurations</b></em>' containment reference list.
@@ -3575,7 +3575,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STATE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 387;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STATE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 387;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced State Invariant Configurations</b></em>' containment reference list.
@@ -3584,7 +3584,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STATE_INVARIANT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 388;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STATE_INVARIANT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 388;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced State Machine Configurations</b></em>' containment reference list.
@@ -3593,7 +3593,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STATE_MACHINE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 389;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STATE_MACHINE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 389;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Stereotype Configurations</b></em>' containment reference list.
@@ -3602,7 +3602,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STEREOTYPE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 390;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STEREOTYPE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 390;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced String Expression Configurations</b></em>' containment reference list.
@@ -3611,7 +3611,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRING_EXPRESSION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 391;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRING_EXPRESSION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 391;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Structural Feature Action Configurations</b></em>' containment reference list.
@@ -3620,7 +3620,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRUCTURAL_FEATURE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 392;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRUCTURAL_FEATURE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 392;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Structural Feature Configurations</b></em>' containment reference list.
@@ -3629,7 +3629,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRUCTURAL_FEATURE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 393;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRUCTURAL_FEATURE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 393;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Structured Activity Node Configurations</b></em>' containment reference list.
@@ -3638,7 +3638,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRUCTURED_ACTIVITY_NODE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 394;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRUCTURED_ACTIVITY_NODE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 394;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Structured Classifier Configurations</b></em>' containment reference list.
@@ -3647,7 +3647,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRUCTURED_CLASSIFIER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 395;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_STRUCTURED_CLASSIFIER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 395;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Substitution Configurations</b></em>' containment reference list.
@@ -3656,7 +3656,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SUBSTITUTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 396;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_SUBSTITUTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 396;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Template Binding Configurations</b></em>' containment reference list.
@@ -3665,7 +3665,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATE_BINDING_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 397;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATE_BINDING_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 397;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Template Parameter Configurations</b></em>' containment reference list.
@@ -3674,7 +3674,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATE_PARAMETER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 398;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATE_PARAMETER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 398;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Template Parameter Substitution Configurations</b></em>' containment reference list.
@@ -3683,7 +3683,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATE_PARAMETER_SUBSTITUTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 399;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATE_PARAMETER_SUBSTITUTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 399;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Template Signature Configurations</b></em>' containment reference list.
@@ -3692,7 +3692,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATE_SIGNATURE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 400;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATE_SIGNATURE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 400;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Templateable Element Configurations</b></em>' containment reference list.
@@ -3701,7 +3701,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATEABLE_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 401;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEMPLATEABLE_ELEMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 401;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Test Identity Action Configurations</b></em>' containment reference list.
@@ -3710,7 +3710,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEST_IDENTITY_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 402;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TEST_IDENTITY_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 402;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Time Constraint Configurations</b></em>' containment reference list.
@@ -3719,7 +3719,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_CONSTRAINT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 403;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_CONSTRAINT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 403;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Time Event Configurations</b></em>' containment reference list.
@@ -3728,7 +3728,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_EVENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 404;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_EVENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 404;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Time Expression Configurations</b></em>' containment reference list.
@@ -3737,7 +3737,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_EXPRESSION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 405;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_EXPRESSION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 405;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Time Interval Configurations</b></em>' containment reference list.
@@ -3746,7 +3746,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_INTERVAL_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 406;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_INTERVAL_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 406;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Time Observation Configurations</b></em>' containment reference list.
@@ -3755,7 +3755,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_OBSERVATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 407;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TIME_OBSERVATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 407;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Transition Configurations</b></em>' containment reference list.
@@ -3764,7 +3764,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TRANSITION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 408;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TRANSITION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 408;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Trigger Configurations</b></em>' containment reference list.
@@ -3773,7 +3773,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TRIGGER_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 409;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TRIGGER_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 409;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Type Configurations</b></em>' containment reference list.
@@ -3782,7 +3782,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TYPE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 410;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TYPE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 410;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Typed Element Configurations</b></em>' containment reference list.
@@ -3791,7 +3791,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TYPED_ELEMENT_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 411;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_TYPED_ELEMENT_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 411;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Unmarshall Action Configurations</b></em>' containment reference list.
@@ -3800,7 +3800,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_UNMARSHALL_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 412;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_UNMARSHALL_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 412;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Usage Configurations</b></em>' containment reference list.
@@ -3809,7 +3809,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_USAGE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 413;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_USAGE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 413;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Use Case Configurations</b></em>' containment reference list.
@@ -3818,7 +3818,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_USE_CASE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 414;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_USE_CASE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 414;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Value Pin Configurations</b></em>' containment reference list.
@@ -3827,7 +3827,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VALUE_PIN_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 415;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VALUE_PIN_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 415;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Value Specification Action Configurations</b></em>' containment reference list.
@@ -3836,7 +3836,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VALUE_SPECIFICATION_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 416;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VALUE_SPECIFICATION_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 416;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Value Specification Configurations</b></em>' containment reference list.
@@ -3845,7 +3845,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VALUE_SPECIFICATION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 417;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VALUE_SPECIFICATION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 417;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Variable Action Configurations</b></em>' containment reference list.
@@ -3854,7 +3854,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VARIABLE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 418;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VARIABLE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 418;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Variable Configurations</b></em>' containment reference list.
@@ -3863,7 +3863,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VARIABLE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 419;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VARIABLE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 419;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Vertex Configurations</b></em>' containment reference list.
@@ -3872,7 +3872,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VERTEX_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 420;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_VERTEX_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 420;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Write Link Action Configurations</b></em>' containment reference list.
@@ -3881,7 +3881,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_WRITE_LINK_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 421;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_WRITE_LINK_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 421;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Write Structural Feature Action Configurations</b></em>' containment reference list.
@@ -3890,7 +3890,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_WRITE_STRUCTURAL_FEATURE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 422;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_WRITE_STRUCTURAL_FEATURE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 422;
 
 	/**
 	 * The feature id for the '<em><b>Fuml Configuration traced Write Variable Action Configurations</b></em>' containment reference list.
@@ -3899,7 +3899,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_WRITE_VARIABLE_ACTION_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 423;
+	int SPECIFIC_TRACE__FUML_CONFIGURATION_TRACED_WRITE_VARIABLE_ACTION_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 423;
 
 	/**
 	 * The feature id for the '<em><b>Input traced Input Parameter Valuess</b></em>' containment reference list.
@@ -3908,7 +3908,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INPUT_TRACED_INPUT_PARAMETER_VALUESS = MsePackage.TRACE_FEATURE_COUNT + 424;
+	int SPECIFIC_TRACE__INPUT_TRACED_INPUT_PARAMETER_VALUESS = TracePackage.TRACE_FEATURE_COUNT + 424;
 
 	/**
 	 * The feature id for the '<em><b>Integer Functions traced Integer Greater Function Behavior Executions</b></em>' containment reference list.
@@ -3917,7 +3917,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS = MsePackage.TRACE_FEATURE_COUNT + 425;
+	int SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_GREATER_FUNCTION_BEHAVIOR_EXECUTIONS = TracePackage.TRACE_FEATURE_COUNT + 425;
 
 	/**
 	 * The feature id for the '<em><b>Integer Functions traced Integer Less Function Behavior Executions</b></em>' containment reference list.
@@ -3926,7 +3926,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS = MsePackage.TRACE_FEATURE_COUNT + 426;
+	int SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_LESS_FUNCTION_BEHAVIOR_EXECUTIONS = TracePackage.TRACE_FEATURE_COUNT + 426;
 
 	/**
 	 * The feature id for the '<em><b>Integer Functions traced Integer Plus Function Behavior Executions</b></em>' containment reference list.
@@ -3935,7 +3935,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS = MsePackage.TRACE_FEATURE_COUNT + 427;
+	int SPECIFIC_TRACE__INTEGER_FUNCTIONS_TRACED_INTEGER_PLUS_FUNCTION_BEHAVIOR_EXECUTIONS = TracePackage.TRACE_FEATURE_COUNT + 427;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Actions traced Add Structural Feature Value Action Activations</b></em>' containment reference list.
@@ -3944,7 +3944,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 428;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_ADD_STRUCTURAL_FEATURE_VALUE_ACTION_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 428;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Actions traced Create Object Action Activations</b></em>' containment reference list.
@@ -3953,7 +3953,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 429;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_CREATE_OBJECT_ACTION_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 429;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Actions traced Read Structural Feature Action Activations</b></em>' containment reference list.
@@ -3962,7 +3962,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 430;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_READ_STRUCTURAL_FEATURE_ACTION_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 430;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Actions traced Value Specification Action Activations</b></em>' containment reference list.
@@ -3971,7 +3971,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 431;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIONS_TRACED_VALUE_SPECIFICATION_ACTION_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 431;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Edge Instances</b></em>' containment reference list.
@@ -3980,7 +3980,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES = MsePackage.TRACE_FEATURE_COUNT + 432;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EDGE_INSTANCES = TracePackage.TRACE_FEATURE_COUNT + 432;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Executions</b></em>' containment reference list.
@@ -3989,7 +3989,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS = MsePackage.TRACE_FEATURE_COUNT + 433;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_EXECUTIONS = TracePackage.TRACE_FEATURE_COUNT + 433;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Final Node Activations</b></em>' containment reference list.
@@ -3998,7 +3998,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 434;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 434;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Node Activation Groups</b></em>' containment reference list.
@@ -4007,7 +4007,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATION_GROUPS = MsePackage.TRACE_FEATURE_COUNT + 435;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATION_GROUPS = TracePackage.TRACE_FEATURE_COUNT + 435;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Node Activations</b></em>' containment reference list.
@@ -4016,7 +4016,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 436;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 436;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Activity Parameter Node Activations</b></em>' containment reference list.
@@ -4025,7 +4025,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 437;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 437;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Control Tokens</b></em>' containment reference list.
@@ -4034,7 +4034,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 438;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_CONTROL_TOKENS = TracePackage.TRACE_FEATURE_COUNT + 438;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Decision Node Activations</b></em>' containment reference list.
@@ -4043,7 +4043,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 439;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_DECISION_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 439;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Fork Node Activations</b></em>' containment reference list.
@@ -4052,7 +4052,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 440;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORK_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 440;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Forked Tokens</b></em>' containment reference list.
@@ -4061,7 +4061,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 441;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_FORKED_TOKENS = TracePackage.TRACE_FEATURE_COUNT + 441;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Initial Node Activations</b></em>' containment reference list.
@@ -4070,7 +4070,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 442;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_INITIAL_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 442;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Join Node Activations</b></em>' containment reference list.
@@ -4079,7 +4079,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 443;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_JOIN_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 443;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Merge Node Activations</b></em>' containment reference list.
@@ -4088,7 +4088,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS = MsePackage.TRACE_FEATURE_COUNT + 444;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_MERGE_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 444;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Object Tokens</b></em>' containment reference list.
@@ -4097,7 +4097,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OBJECT_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 445;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OBJECT_TOKENS = TracePackage.TRACE_FEATURE_COUNT + 445;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Offers</b></em>' containment reference list.
@@ -4106,7 +4106,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OFFERS = MsePackage.TRACE_FEATURE_COUNT + 446;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_OFFERS = TracePackage.TRACE_FEATURE_COUNT + 446;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities traced Tokens</b></em>' containment reference list.
@@ -4115,7 +4115,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_TOKENS = MsePackage.TRACE_FEATURE_COUNT + 447;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_TRACED_TOKENS = TracePackage.TRACE_FEATURE_COUNT + 447;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced Boolean Values</b></em>' containment reference list.
@@ -4124,7 +4124,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_BOOLEAN_VALUES = MsePackage.TRACE_FEATURE_COUNT + 448;
+	int SPECIFIC_TRACE__KERNEL_TRACED_BOOLEAN_VALUES = TracePackage.TRACE_FEATURE_COUNT + 448;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced Integer Values</b></em>' containment reference list.
@@ -4133,7 +4133,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES = MsePackage.TRACE_FEATURE_COUNT + 449;
+	int SPECIFIC_TRACE__KERNEL_TRACED_INTEGER_VALUES = TracePackage.TRACE_FEATURE_COUNT + 449;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced Literal Boolean Evaluations</b></em>' containment reference list.
@@ -4142,7 +4142,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS = MsePackage.TRACE_FEATURE_COUNT + 450;
+	int SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_BOOLEAN_EVALUATIONS = TracePackage.TRACE_FEATURE_COUNT + 450;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced Literal Integer Evaluations</b></em>' containment reference list.
@@ -4151,7 +4151,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS = MsePackage.TRACE_FEATURE_COUNT + 451;
+	int SPECIFIC_TRACE__KERNEL_TRACED_LITERAL_INTEGER_EVALUATIONS = TracePackage.TRACE_FEATURE_COUNT + 451;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced Objects</b></em>' containment reference list.
@@ -4160,7 +4160,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_OBJECTS = MsePackage.TRACE_FEATURE_COUNT + 452;
+	int SPECIFIC_TRACE__KERNEL_TRACED_OBJECTS = TracePackage.TRACE_FEATURE_COUNT + 452;
 
 	/**
 	 * The feature id for the '<em><b>Kernel traced References</b></em>' containment reference list.
@@ -4169,7 +4169,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__KERNEL_TRACED_REFERENCES = MsePackage.TRACE_FEATURE_COUNT + 453;
+	int SPECIFIC_TRACE__KERNEL_TRACED_REFERENCES = TracePackage.TRACE_FEATURE_COUNT + 453;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Execution Environments</b></em>' containment reference list.
@@ -4178,7 +4178,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTION_ENVIRONMENTS = MsePackage.TRACE_FEATURE_COUNT + 454;
+	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTION_ENVIRONMENTS = TracePackage.TRACE_FEATURE_COUNT + 454;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Execution Factorys</b></em>' containment reference list.
@@ -4187,7 +4187,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTION_FACTORYS = MsePackage.TRACE_FEATURE_COUNT + 455;
+	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTION_FACTORYS = TracePackage.TRACE_FEATURE_COUNT + 455;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Executors</b></em>' containment reference list.
@@ -4196,7 +4196,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTORS = MsePackage.TRACE_FEATURE_COUNT + 456;
+	int SPECIFIC_TRACE__LOCI_TRACED_EXECUTORS = TracePackage.TRACE_FEATURE_COUNT + 456;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Locuss</b></em>' containment reference list.
@@ -4205,7 +4205,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_LOCUSS = MsePackage.TRACE_FEATURE_COUNT + 457;
+	int SPECIFIC_TRACE__LOCI_TRACED_LOCUSS = TracePackage.TRACE_FEATURE_COUNT + 457;
 
 	/**
 	 * The feature id for the '<em><b>Loci traced Semantic Visitors</b></em>' containment reference list.
@@ -4214,7 +4214,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_TRACED_SEMANTIC_VISITORS = MsePackage.TRACE_FEATURE_COUNT + 458;
+	int SPECIFIC_TRACE__LOCI_TRACED_SEMANTIC_VISITORS = TracePackage.TRACE_FEATURE_COUNT + 458;
 
 	/**
 	 * The feature id for the '<em><b>States Trace</b></em>' containment reference list.
@@ -4223,7 +4223,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__STATES_TRACE = MsePackage.TRACE_FEATURE_COUNT + 459;
+	int SPECIFIC_TRACE__STATES_TRACE = TracePackage.TRACE_FEATURE_COUNT + 459;
 
 	/**
 	 * The number of structural features of the '<em>Specific Trace</em>' class.
@@ -4232,7 +4232,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE_FEATURE_COUNT = MsePackage.TRACE_FEATURE_COUNT + 460;
+	int SPECIFIC_TRACE_FEATURE_COUNT = TracePackage.TRACE_FEATURE_COUNT + 460;
 
 	/**
 	 * The number of operations of the '<em>Specific Trace</em>' class.
@@ -4241,7 +4241,7 @@ public interface FumlConfigurationTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE_OPERATION_COUNT = MsePackage.TRACE_OPERATION_COUNT + 0;
+	int SPECIFIC_TRACE_OPERATION_COUNT = TracePackage.TRACE_OPERATION_COUNT + 0;
 
 
 	/**

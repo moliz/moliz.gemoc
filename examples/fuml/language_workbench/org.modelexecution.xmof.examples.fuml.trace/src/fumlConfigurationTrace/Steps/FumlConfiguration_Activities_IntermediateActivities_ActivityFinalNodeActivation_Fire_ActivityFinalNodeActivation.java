@@ -2,9 +2,9 @@
  */
 package fumlConfigurationTrace.Steps;
 
-import fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
 
-import org.gemoc.executionframework.engine.mse.SequentialStep;
+import fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityFinalNodeActivation;
 
 /**
  * <!-- begin-user-doc -->

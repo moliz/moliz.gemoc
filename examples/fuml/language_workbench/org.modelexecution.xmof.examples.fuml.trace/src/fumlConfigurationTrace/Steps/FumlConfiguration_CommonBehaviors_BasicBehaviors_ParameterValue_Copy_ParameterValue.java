@@ -2,9 +2,9 @@
  */
 package fumlConfigurationTrace.Steps;
 
-import fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
 
-import org.gemoc.executionframework.engine.mse.SequentialStep;
+import fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue;
 
 /**
  * <!-- begin-user-doc -->

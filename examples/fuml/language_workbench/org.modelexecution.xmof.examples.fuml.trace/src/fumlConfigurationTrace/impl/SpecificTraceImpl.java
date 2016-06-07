@@ -2,6 +2,10 @@
  */
 package fumlConfigurationTrace.impl;
 
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+
+import fr.inria.diverse.trace.commons.model.trace.impl.TraceImpl;
+
 import fumlConfigurationTrace.FumlConfigurationTracePackage;
 import fumlConfigurationTrace.SpecificTrace;
 
@@ -489,10 +493,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.gemoc.executionframework.engine.mse.SequentialStep;
-
-import org.gemoc.executionframework.engine.mse.impl.TraceImpl;
 
 /**
  * <!-- begin-user-doc -->

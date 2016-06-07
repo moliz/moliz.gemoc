@@ -19,9 +19,9 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.gemoc.executionframework.engine.core.CommandExecution;
-import org.gemoc.executionframework.engine.mse.LaunchConfiguration;
-import org.gemoc.executionframework.engine.mse.SequentialStep;
-import org.gemoc.executionframework.engine.mse.Step;
+import fr.inria.diverse.trace.commons.model.trace.LaunchConfiguration;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.Step;
 
 import fr.inria.diverse.trace.gemoc.api.ITraceExplorer;
 import fr.inria.diverse.trace.gemoc.api.ITraceListener;
@@ -4982,10 +4982,138 @@ public class FumlConfigurationTraceExplorer implements ITraceExplorer {
 		return traceRoot.getRootStep().getSubSteps().stream().filter(predicate).collect(Collectors.toList());
 	}
 
+	private boolean isStateBreakable(fumlConfigurationTrace.States.State state) {
+		final boolean b = state.getStartedSteps().size() == 1;
+		if (b) {
+			fumlConfigurationTrace.Steps.SpecificStep s = state.getStartedSteps().get(0);
+			return !(s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_CreateNodeActivations_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Fire_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_HasOffers_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_IsReady_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutToken_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_PutTokens_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_SendOffers_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_ShouldFireAgain_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeOfferedTokens_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_TakeTokens_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_ActionActivation_Terminate_ActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_CollectOutputParameterValues_CallActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_DoAction_CallActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_InitializeInputParameterValues_CallActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_CallActionActivation_Terminate_CallActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_CallBehaviorActionActivation_GetCallExecution_CallBehaviorActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_IsReady_InputPinActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_InputPinActivation_ReceiveOffer_InputPinActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_Fire_PinActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_BasicActions_PinActivation_TakeOfferedTokens_PinActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_IntermediateActions_AddStructuralFeatureValueActionActivation_DoAction_AddStructuralFeatureValueActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_IntermediateActions_CreateObjectActionActivation_DoAction_CreateObjectActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ReadStructuralFeatureActionActivation_DoAction_ReadStructuralFeatureActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Actions_IntermediateActions_ValueSpecificationActionActivation_DoAction_ValueSpecificationActionActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_CountOfferedValues_ActivityEdgeInstance_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_HasOffer_ActivityEdgeInstance_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_SendOffer_ActivityEdgeInstance_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_CollectOutputParameterValues_ActivityExecution_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Execute_ActivityExecution_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_SetParameterValueValues_ActivityExecution_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityExecution_Terminate_ActivityExecution_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Activate_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CheckIncomingEdges_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateEdgeInstances_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivation_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_CreateNodeActivations_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetInitiallyEnabledNodeActivations_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetNodeActivation_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_GetSourceActivations_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_RunNodes_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_Run_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivationGroup_TerminateAll_ActivityNodeActivationGroup_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddToken_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_AddTokens_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ClearTokens_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetActivityExecution_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionContext_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_GetExecutionLocus_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_HasOffers_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_IsReady_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_ReceiveOffer_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_SendOffers_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_ClearTokens_ActivityParameterNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ControlNodeActivation_Fire_ControlNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_DetermineOfferedTokens_DecisionNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Fire_DecisionNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionInputFlowValue_DecisionNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_GetDecisionValues_DecisionNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_IsReady_DecisionNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_RemoveJoinedControlTokens_DecisionNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_DecisionNodeActivation_Test_DecisionNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkNodeActivation_Fire_ForkNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_GetValue_ForkedToken_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_IsControl_ForkedToken_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ForkedToken_Withdraw_ForkedToken_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_InitialNodeActivation_Fire_InitialNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_JoinNodeActivation_IsReady_JoinNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_AddToken_ObjectNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_ClearTokens_ObjectNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_CountOfferedValues_ObjectNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_GetUnofferedTokens_ObjectNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendOffers_ObjectNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_SendUnofferedTokens_ObjectNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_TakeUnofferedTokens_ObjectNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_ObjectNodeActivation_Terminate_ObjectNodeActivation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_CountOfferedValues_Offer_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_GetOfferedTokens_Offer_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_HasTokens_Offer_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Offer_RemoveWithdrawnTokens_Offer_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Transfer_Token_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Activities_IntermediateActivities_Token_Withdraw_Token_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_BooleanValue_Copy_BooleanValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_Copy_CompoundValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_CompoundValue_SetFeatureValue_CompoundValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Copy_ExtensionalValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_ExtensionalValue_Destroy_ExtensionalValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_FeatureValue_Copy_FeatureValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_IntegerValue_Copy_IntegerValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralBooleanEvaluation_Evaluate_LiteralBooleanEvaluation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralEvaluation_GetType_LiteralEvaluation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_LiteralIntegerEvaluation_Evaluate_LiteralIntegerEvaluation_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Copy_Object_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_Object_Destroy_Object_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_PrimitiveValue_Copy_PrimitiveValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_GetFeatureValue_Reference_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_Reference_SetFeatureValue_Reference_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_StructuredValue_CreateFeatureValues_StructuredValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Copy_Value_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_Value_Equals_Value_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Classes_Kernel_Value_HasType_Value_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_Copy_Execution_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_GetBehavior_Execution_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_Execution_SetParameterValue_Execution_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_OpaqueBehaviorExecution_Execute_OpaqueBehaviorExecution_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_CommonBehaviors_BasicBehaviors_ParameterValue_Copy_ParameterValue_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateEvaluation_ExecutionFactory_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_CreateExecution_ExecutionFactory_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateOpaqueBehaviorExecution_ExecutionFactory_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Loci_ExecutionFactory_InstantiateVisitor_ExecutionFactory_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Loci_Executor_Evaluate_Executor_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Loci_Executor_Execute_Executor_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_Loci_Locus_Instantiate_Locus_ImplicitStep
+					|| s instanceof fumlConfigurationTrace.Steps.FumlConfiguration_ModelConfiguration_Main_ImplicitStep);
+		}
+		return true;
+	}
+
 	@Override
 	public StateWrapper getStateWrapper(int stateIndex) {
 		if (stateIndex > -1 && stateIndex < statesTrace.size()) {
-			return new StateWrapper(statesTrace.get(stateIndex), stateIndex);
+			final fumlConfigurationTrace.States.State state = statesTrace.get(stateIndex);
+			return new StateWrapper(state, stateIndex, isStateBreakable(state));
 		}
 		return null;
 	}
@@ -4997,7 +5125,8 @@ public class FumlConfigurationTraceExplorer implements ITraceExplorer {
 		final int endStateIndex = Math.min(statesTrace.size() - 1, end);
 
 		for (int i = startStateIndex; i < endStateIndex + 1; i++) {
-			result.add(new StateWrapper(statesTrace.get(i), i));
+			final fumlConfigurationTrace.States.State state = statesTrace.get(i);
+			result.add(new StateWrapper(state, i, isStateBreakable(state)));
 		}
 
 		return result;

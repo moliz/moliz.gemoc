@@ -2,6 +2,8 @@
  */
 package fumlConfigurationTrace.States.fumlConfiguration.impl;
 
+import fr.inria.diverse.trace.commons.model.trace.TracePackage;
+
 import fumlConfigurationTrace.FumlConfigurationTracePackage;
 
 import fumlConfigurationTrace.States.StatesPackage;
@@ -55,8 +57,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.gemoc.executionframework.engine.mse.MsePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -1812,7 +1812,7 @@ public class FumlConfigurationPackageImpl extends EPackageImpl implements FumlCo
 
 		// Initialize simple dependencies
 		fumlConfiguration.FumlConfigurationPackage.eINSTANCE.eClass();
-		MsePackage.eINSTANCE.eClass();
+		TracePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		FumlConfigurationTracePackageImpl theFumlConfigurationTracePackage = (FumlConfigurationTracePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationTracePackage.eNS_URI) instanceof FumlConfigurationTracePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationTracePackage.eNS_URI) : FumlConfigurationTracePackage.eINSTANCE);

@@ -2,9 +2,9 @@
  */
 package fumlConfigurationTrace.Steps;
 
-import fumlConfigurationTrace.States.State;
+import fr.inria.diverse.trace.commons.model.trace.Step;
 
-import org.gemoc.executionframework.engine.mse.Step;
+import fumlConfigurationTrace.States.State;
 
 /**
  * <!-- begin-user-doc -->

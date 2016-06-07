@@ -2,9 +2,9 @@
  */
 package fumlConfigurationTrace.Steps;
 
-import fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken;
+import fr.inria.diverse.trace.commons.model.trace.SmallStep;
 
-import org.gemoc.executionframework.engine.mse.SmallStep;
+import fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedControlToken;
 
 /**
  * <!-- begin-user-doc -->

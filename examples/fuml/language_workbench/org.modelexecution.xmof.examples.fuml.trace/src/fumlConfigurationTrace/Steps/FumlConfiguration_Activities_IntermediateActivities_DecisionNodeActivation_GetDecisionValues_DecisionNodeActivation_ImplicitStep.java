@@ -2,7 +2,7 @@
  */
 package fumlConfigurationTrace.Steps;
 
-import org.gemoc.executionframework.engine.mse.SmallStep;
+import fr.inria.diverse.trace.commons.model.trace.SmallStep;
 
 /**
  * <!-- begin-user-doc -->

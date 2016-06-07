@@ -14,9 +14,9 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.gemoc.executionframework.engine.mse.LaunchConfiguration;
-import org.gemoc.executionframework.engine.mse.MSEModel;
-import org.gemoc.executionframework.engine.mse.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.LaunchConfiguration;
+import fr.inria.diverse.trace.commons.model.trace.MSEModel;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
 
 import fr.inria.diverse.trace.gemoc.api.ITraceConstructor;
 
@@ -47,8 +47,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 				for (TreeIterator<EObject> i = r.getAllContents(); i.hasNext();) {
 					EObject o = i.next();
 
-					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
-						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+					if (o instanceof fumlConfiguration.Loci.Locus) {
+						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
@@ -57,33 +57,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						addNewObjectToState(o_cast, lastState);
 					} else
 
-					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
-						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
-						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof fumlConfiguration.Loci.Locus) {
-						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof fumlConfiguration.Loci.Executor) {
-						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
 					if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
 						fumlConfiguration.Loci.SemanticVisitor o_cast = (fumlConfiguration.Loci.SemanticVisitor) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
+						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
@@ -97,8 +77,28 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						addNewObjectToState(o_cast, lastState);
 					} else
 
+					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
+						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
+						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Loci.Executor) {
+						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
 						addNewObjectToState(o_cast, lastState);
 					}
 				}
@@ -111,10 +111,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.AbstractionConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.RealizationConfiguration) {
-			addNewObjectToState((fumlConfiguration.RealizationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ManifestationConfiguration) {
+		if (o_cast instanceof fumlConfiguration.ManifestationConfiguration) {
 			addNewObjectToState((fumlConfiguration.ManifestationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.RealizationConfiguration) {
+			addNewObjectToState((fumlConfiguration.RealizationConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -214,15 +214,15 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 		if (o_cast instanceof fumlConfiguration.Actions.BasicActions.InvocationActionActivation) {
 			addNewObjectToState((fumlConfiguration.Actions.BasicActions.InvocationActionActivation) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
-			addNewObjectToState(
-					(fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o_cast,
-					newState);
 		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) {
 			addNewObjectToState((fumlConfiguration.Actions.IntermediateActions.CreateObjectActionActivation) o_cast,
 					newState);
 		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) {
 			addNewObjectToState((fumlConfiguration.Actions.BasicActions.OpaqueActionActivation) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Actions.IntermediateActions.ValueSpecificationActionActivation) o_cast,
+					newState);
 		} else if (o_cast instanceof fumlConfiguration.Actions.IntermediateActions.StructuralFeatureActionActivation) {
 			addNewObjectToState(
 					(fumlConfiguration.Actions.IntermediateActions.StructuralFeatureActionActivation) o_cast, newState);
@@ -234,52 +234,52 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ActionConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ReduceActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ReduceActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ReclassifyObjectActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ReclassifyObjectActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.DestroyObjectActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.DestroyObjectActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.VariableActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.VariableActionConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.ReadSelfActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ReadSelfActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.StructuredActivityNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.StructuredActivityNodeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ReadLinkObjectEndActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ReadLinkObjectEndActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.TestIdentityActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.TestIdentityActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.AcceptEventActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.AcceptEventActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ReadLinkObjectEndQualifierActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ReadLinkObjectEndQualifierActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ReplyActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ReplyActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ClearAssociationActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ClearAssociationActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ReadIsClassifiedObjectActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.ReadIsClassifiedObjectActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ReadExtentActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ReadExtentActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.OpaqueActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.OpaqueActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.LinkActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.LinkActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.UnmarshallActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.UnmarshallActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ReclassifyObjectActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ReclassifyObjectActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ReduceActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ReduceActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.CreateObjectActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.CreateObjectActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.TestIdentityActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.TestIdentityActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ReadLinkObjectEndActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ReadLinkObjectEndActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ReplyActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ReplyActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.OpaqueActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.OpaqueActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ClearAssociationActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ClearAssociationActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.DestroyObjectActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.DestroyObjectActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.StructuralFeatureActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.StructuralFeatureActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InvocationActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.InvocationActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.RaiseExceptionActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.RaiseExceptionActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ValueSpecificationActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.ValueSpecificationActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InvocationActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.InvocationActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.AcceptEventActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.AcceptEventActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.UnmarshallActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.UnmarshallActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.StartClassifierBehaviorActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.StartClassifierBehaviorActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ReadSelfActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ReadSelfActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.StructuralFeatureActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.StructuralFeatureActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ReadLinkObjectEndQualifierActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ReadLinkObjectEndQualifierActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.VariableActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.VariableActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ReadExtentActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ReadExtentActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.LinkActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.LinkActionConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -401,10 +401,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ActivityContentConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ActivityGroupConfiguration) {
-			addNewObjectToState((fumlConfiguration.ActivityGroupConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ActivityNodeConfiguration) {
+		if (o_cast instanceof fumlConfiguration.ActivityNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.ActivityNodeConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ActivityGroupConfiguration) {
+			addNewObjectToState((fumlConfiguration.ActivityGroupConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -899,11 +899,11 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ControlNodeActivation) {
-			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ControlNodeActivation) o_cast,
-					newState);
-		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) {
+		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) {
 			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ControlNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ControlNodeActivation) o_cast,
 					newState);
 		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.ActionActivation) {
 			addNewObjectToState((fumlConfiguration.Actions.BasicActions.ActionActivation) o_cast, newState);
@@ -1111,12 +1111,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ActivityNodeConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ExecutableNodeConfiguration) {
-			addNewObjectToState((fumlConfiguration.ExecutableNodeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ObjectNodeConfiguration) {
+		if (o_cast instanceof fumlConfiguration.ObjectNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.ObjectNodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ControlNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.ControlNodeConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ExecutableNodeConfiguration) {
+			addNewObjectToState((fumlConfiguration.ExecutableNodeConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -1699,12 +1699,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.AssociationConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ExtensionConfiguration) {
+		if (o_cast instanceof fumlConfiguration.AssociationClassConfiguration) {
+			addNewObjectToState((fumlConfiguration.AssociationClassConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ExtensionConfiguration) {
 			addNewObjectToState((fumlConfiguration.ExtensionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.CommunicationPathConfiguration) {
 			addNewObjectToState((fumlConfiguration.CommunicationPathConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.AssociationClassConfiguration) {
-			addNewObjectToState((fumlConfiguration.AssociationClassConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -1736,14 +1736,14 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.BehaviorConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.StateMachineConfiguration) {
+		if (o_cast instanceof fumlConfiguration.InteractionConfiguration) {
+			addNewObjectToState((fumlConfiguration.InteractionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.StateMachineConfiguration) {
 			addNewObjectToState((fumlConfiguration.StateMachineConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ActivityConfiguration) {
 			addNewObjectToState((fumlConfiguration.ActivityConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.OpaqueBehaviorConfiguration) {
 			addNewObjectToState((fumlConfiguration.OpaqueBehaviorConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InteractionConfiguration) {
-			addNewObjectToState((fumlConfiguration.InteractionConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -1804,10 +1804,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.BehavioralFeatureConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.OperationConfiguration) {
-			addNewObjectToState((fumlConfiguration.OperationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ReceptionConfiguration) {
+		if (o_cast instanceof fumlConfiguration.ReceptionConfiguration) {
 			addNewObjectToState((fumlConfiguration.ReceptionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.OperationConfiguration) {
+			addNewObjectToState((fumlConfiguration.OperationConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -1839,14 +1839,14 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.BehavioredClassifierConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ClassConfiguration) {
-			addNewObjectToState((fumlConfiguration.ClassConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ActorConfiguration) {
-			addNewObjectToState((fumlConfiguration.ActorConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.UseCaseConfiguration) {
+			addNewObjectToState((fumlConfiguration.UseCaseConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.CollaborationConfiguration) {
 			addNewObjectToState((fumlConfiguration.CollaborationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.UseCaseConfiguration) {
-			addNewObjectToState((fumlConfiguration.UseCaseConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ActorConfiguration) {
+			addNewObjectToState((fumlConfiguration.ActorConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ClassConfiguration) {
+			addNewObjectToState((fumlConfiguration.ClassConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -1973,12 +1973,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.CallActionConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.CallBehaviorActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.CallBehaviorActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.StartObjectBehaviorActionConfiguration) {
+		if (o_cast instanceof fumlConfiguration.StartObjectBehaviorActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.StartObjectBehaviorActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.CallOperationActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.CallOperationActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.CallBehaviorActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.CallBehaviorActionConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -2341,16 +2341,16 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ClassConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ComponentConfiguration) {
-			addNewObjectToState((fumlConfiguration.ComponentConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.StereotypeConfiguration) {
-			addNewObjectToState((fumlConfiguration.StereotypeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.BehaviorConfiguration) {
-			addNewObjectToState((fumlConfiguration.BehaviorConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.NodeConfiguration) {
+		if (o_cast instanceof fumlConfiguration.NodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.NodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.AssociationClassConfiguration) {
 			addNewObjectToState((fumlConfiguration.AssociationClassConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ComponentConfiguration) {
+			addNewObjectToState((fumlConfiguration.ComponentConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.BehaviorConfiguration) {
+			addNewObjectToState((fumlConfiguration.BehaviorConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.StereotypeConfiguration) {
+			addNewObjectToState((fumlConfiguration.StereotypeConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -2382,22 +2382,22 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ClassifierConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.SignalConfiguration) {
-			addNewObjectToState((fumlConfiguration.SignalConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.InformationItemConfiguration) {
+			addNewObjectToState((fumlConfiguration.InformationItemConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.DataTypeConfiguration) {
 			addNewObjectToState((fumlConfiguration.DataTypeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InformationItemConfiguration) {
-			addNewObjectToState((fumlConfiguration.InformationItemConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.AssociationConfiguration) {
 			addNewObjectToState((fumlConfiguration.AssociationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InterfaceConfiguration) {
-			addNewObjectToState((fumlConfiguration.InterfaceConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.StructuredClassifierConfiguration) {
-			addNewObjectToState((fumlConfiguration.StructuredClassifierConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ArtifactConfiguration) {
 			addNewObjectToState((fumlConfiguration.ArtifactConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InterfaceConfiguration) {
+			addNewObjectToState((fumlConfiguration.InterfaceConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.SignalConfiguration) {
+			addNewObjectToState((fumlConfiguration.SignalConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.BehavioredClassifierConfiguration) {
 			addNewObjectToState((fumlConfiguration.BehavioredClassifierConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.StructuredClassifierConfiguration) {
+			addNewObjectToState((fumlConfiguration.StructuredClassifierConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -2830,10 +2830,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 		if (o_cast instanceof fumlConfiguration.ParameterConfiguration) {
 			addNewObjectToState((fumlConfiguration.ParameterConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.PropertyConfiguration) {
-			addNewObjectToState((fumlConfiguration.PropertyConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.VariableConfiguration) {
 			addNewObjectToState((fumlConfiguration.VariableConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.PropertyConfiguration) {
+			addNewObjectToState((fumlConfiguration.PropertyConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -3010,10 +3010,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ConstraintConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.IntervalConstraintConfiguration) {
-			addNewObjectToState((fumlConfiguration.IntervalConstraintConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InteractionConstraintConfiguration) {
+		if (o_cast instanceof fumlConfiguration.InteractionConstraintConfiguration) {
 			addNewObjectToState((fumlConfiguration.InteractionConstraintConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.IntervalConstraintConfiguration) {
+			addNewObjectToState((fumlConfiguration.IntervalConstraintConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -3103,11 +3103,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ControlNodeActivation o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) {
-			addNewObjectToState(
-					(fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) {
-			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) o_cast,
+		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) o_cast,
 					newState);
 		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) {
 			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.DecisionNodeActivation) o_cast,
@@ -3115,11 +3112,14 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) {
 			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.InitialNodeActivation) o_cast,
 					newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) {
+			addNewObjectToState(
+					(fumlConfiguration.Activities.IntermediateActivities.ActivityFinalNodeActivation) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) {
 			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.JoinNodeActivation) o_cast,
 					newState);
-		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) {
-			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ForkNodeActivation) o_cast,
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.MergeNodeActivation) o_cast,
 					newState);
 		}
 
@@ -3129,18 +3129,18 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ControlNodeConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.InitialNodeConfiguration) {
-			addNewObjectToState((fumlConfiguration.InitialNodeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.FinalNodeConfiguration) {
-			addNewObjectToState((fumlConfiguration.FinalNodeConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.JoinNodeConfiguration) {
+			addNewObjectToState((fumlConfiguration.JoinNodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ForkNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.ForkNodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.DecisionNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.DecisionNodeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.JoinNodeConfiguration) {
-			addNewObjectToState((fumlConfiguration.JoinNodeConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.FinalNodeConfiguration) {
+			addNewObjectToState((fumlConfiguration.FinalNodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.MergeNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.MergeNodeConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InitialNodeConfiguration) {
+			addNewObjectToState((fumlConfiguration.InitialNodeConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -3694,12 +3694,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.DependencyConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.DeploymentConfiguration) {
-			addNewObjectToState((fumlConfiguration.DeploymentConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.AbstractionConfiguration) {
+		if (o_cast instanceof fumlConfiguration.AbstractionConfiguration) {
 			addNewObjectToState((fumlConfiguration.AbstractionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.UsageConfiguration) {
 			addNewObjectToState((fumlConfiguration.UsageConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.DeploymentConfiguration) {
+			addNewObjectToState((fumlConfiguration.DeploymentConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -3824,12 +3824,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.DeploymentTargetConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.PropertyConfiguration) {
-			addNewObjectToState((fumlConfiguration.PropertyConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.NodeConfiguration) {
+			addNewObjectToState((fumlConfiguration.NodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.InstanceSpecificationConfiguration) {
 			addNewObjectToState((fumlConfiguration.InstanceSpecificationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.NodeConfiguration) {
-			addNewObjectToState((fumlConfiguration.NodeConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.PropertyConfiguration) {
+			addNewObjectToState((fumlConfiguration.PropertyConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -3981,28 +3981,28 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.DirectedRelationshipConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ProfileApplicationConfiguration) {
+		if (o_cast instanceof fumlConfiguration.ProtocolConformanceConfiguration) {
+			addNewObjectToState((fumlConfiguration.ProtocolConformanceConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ElementImportConfiguration) {
+			addNewObjectToState((fumlConfiguration.ElementImportConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ProfileApplicationConfiguration) {
 			addNewObjectToState((fumlConfiguration.ProfileApplicationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InformationFlowConfiguration) {
-			addNewObjectToState((fumlConfiguration.InformationFlowConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.GeneralizationConfiguration) {
+			addNewObjectToState((fumlConfiguration.GeneralizationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.DependencyConfiguration) {
+			addNewObjectToState((fumlConfiguration.DependencyConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.TemplateBindingConfiguration) {
 			addNewObjectToState((fumlConfiguration.TemplateBindingConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.PackageMergeConfiguration) {
 			addNewObjectToState((fumlConfiguration.PackageMergeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ExtendConfiguration) {
 			addNewObjectToState((fumlConfiguration.ExtendConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.DependencyConfiguration) {
-			addNewObjectToState((fumlConfiguration.DependencyConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ElementImportConfiguration) {
-			addNewObjectToState((fumlConfiguration.ElementImportConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.IncludeConfiguration) {
-			addNewObjectToState((fumlConfiguration.IncludeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ProtocolConformanceConfiguration) {
-			addNewObjectToState((fumlConfiguration.ProtocolConformanceConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.GeneralizationConfiguration) {
-			addNewObjectToState((fumlConfiguration.GeneralizationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InformationFlowConfiguration) {
+			addNewObjectToState((fumlConfiguration.InformationFlowConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.PackageImportConfiguration) {
 			addNewObjectToState((fumlConfiguration.PackageImportConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.IncludeConfiguration) {
+			addNewObjectToState((fumlConfiguration.IncludeConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -4150,36 +4150,36 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ElementConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.QualifierValueConfiguration) {
-			addNewObjectToState((fumlConfiguration.QualifierValueConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ClauseConfiguration) {
-			addNewObjectToState((fumlConfiguration.ClauseConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.TemplateSignatureConfiguration) {
-			addNewObjectToState((fumlConfiguration.TemplateSignatureConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.TemplateParameterConfiguration) {
-			addNewObjectToState((fumlConfiguration.TemplateParameterConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.NamedElementConfiguration) {
-			addNewObjectToState((fumlConfiguration.NamedElementConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ExceptionHandlerConfiguration) {
-			addNewObjectToState((fumlConfiguration.ExceptionHandlerConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ImageConfiguration) {
-			addNewObjectToState((fumlConfiguration.ImageConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.TemplateParameterSubstitutionConfiguration) {
+		if (o_cast instanceof fumlConfiguration.TemplateParameterSubstitutionConfiguration) {
 			addNewObjectToState((fumlConfiguration.TemplateParameterSubstitutionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.SlotConfiguration) {
-			addNewObjectToState((fumlConfiguration.SlotConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ParameterableElementConfiguration) {
-			addNewObjectToState((fumlConfiguration.ParameterableElementConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.RelationshipConfiguration) {
-			addNewObjectToState((fumlConfiguration.RelationshipConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.LinkEndDataConfiguration) {
-			addNewObjectToState((fumlConfiguration.LinkEndDataConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.CommentConfiguration) {
-			addNewObjectToState((fumlConfiguration.CommentConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.MultiplicityElementConfiguration) {
-			addNewObjectToState((fumlConfiguration.MultiplicityElementConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.TemplateableElementConfiguration) {
 			addNewObjectToState((fumlConfiguration.TemplateableElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ParameterableElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.ParameterableElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.MultiplicityElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.MultiplicityElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.CommentConfiguration) {
+			addNewObjectToState((fumlConfiguration.CommentConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ClauseConfiguration) {
+			addNewObjectToState((fumlConfiguration.ClauseConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.LinkEndDataConfiguration) {
+			addNewObjectToState((fumlConfiguration.LinkEndDataConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.QualifierValueConfiguration) {
+			addNewObjectToState((fumlConfiguration.QualifierValueConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.TemplateSignatureConfiguration) {
+			addNewObjectToState((fumlConfiguration.TemplateSignatureConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.RelationshipConfiguration) {
+			addNewObjectToState((fumlConfiguration.RelationshipConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.SlotConfiguration) {
+			addNewObjectToState((fumlConfiguration.SlotConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ExceptionHandlerConfiguration) {
+			addNewObjectToState((fumlConfiguration.ExceptionHandlerConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.NamedElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.NamedElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ImageConfiguration) {
+			addNewObjectToState((fumlConfiguration.ImageConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.TemplateParameterConfiguration) {
+			addNewObjectToState((fumlConfiguration.TemplateParameterConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -4340,12 +4340,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.EventConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.TimeEventConfiguration) {
-			addNewObjectToState((fumlConfiguration.TimeEventConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.ChangeEventConfiguration) {
+			addNewObjectToState((fumlConfiguration.ChangeEventConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.MessageEventConfiguration) {
 			addNewObjectToState((fumlConfiguration.MessageEventConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ChangeEventConfiguration) {
-			addNewObjectToState((fumlConfiguration.ChangeEventConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.TimeEventConfiguration) {
+			addNewObjectToState((fumlConfiguration.TimeEventConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -4893,10 +4893,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 		if (o_cast instanceof fumlConfiguration.ConnectorConfiguration) {
 			addNewObjectToState((fumlConfiguration.ConnectorConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.BehavioralFeatureConfiguration) {
-			addNewObjectToState((fumlConfiguration.BehavioralFeatureConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.StructuralFeatureConfiguration) {
 			addNewObjectToState((fumlConfiguration.StructuralFeatureConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.BehavioralFeatureConfiguration) {
+			addNewObjectToState((fumlConfiguration.BehavioralFeatureConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -6439,22 +6439,22 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.InteractionFragmentConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.InteractionOperandConfiguration) {
-			addNewObjectToState((fumlConfiguration.InteractionOperandConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.CombinedFragmentConfiguration) {
+			addNewObjectToState((fumlConfiguration.CombinedFragmentConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ContinuationConfiguration) {
 			addNewObjectToState((fumlConfiguration.ContinuationConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.InteractionUseConfiguration) {
 			addNewObjectToState((fumlConfiguration.InteractionUseConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.CombinedFragmentConfiguration) {
-			addNewObjectToState((fumlConfiguration.CombinedFragmentConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.StateInvariantConfiguration) {
-			addNewObjectToState((fumlConfiguration.StateInvariantConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.OccurrenceSpecificationConfiguration) {
 			addNewObjectToState((fumlConfiguration.OccurrenceSpecificationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InteractionConfiguration) {
-			addNewObjectToState((fumlConfiguration.InteractionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ExecutionSpecificationConfiguration) {
 			addNewObjectToState((fumlConfiguration.ExecutionSpecificationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.StateInvariantConfiguration) {
+			addNewObjectToState((fumlConfiguration.StateInvariantConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InteractionConfiguration) {
+			addNewObjectToState((fumlConfiguration.InteractionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InteractionOperandConfiguration) {
+			addNewObjectToState((fumlConfiguration.InteractionOperandConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -6719,10 +6719,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 		if (o_cast instanceof fumlConfiguration.SendObjectActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.SendObjectActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.BroadcastSignalActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.BroadcastSignalActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.CallActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.CallActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.BroadcastSignalActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.BroadcastSignalActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.SendSignalActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.SendSignalActionConfiguration) o_cast, newState);
 		} else
@@ -7020,10 +7020,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.LinkEndDataConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.LinkEndDestructionDataConfiguration) {
-			addNewObjectToState((fumlConfiguration.LinkEndDestructionDataConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.LinkEndCreationDataConfiguration) {
+		if (o_cast instanceof fumlConfiguration.LinkEndCreationDataConfiguration) {
 			addNewObjectToState((fumlConfiguration.LinkEndCreationDataConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.LinkEndDestructionDataConfiguration) {
+			addNewObjectToState((fumlConfiguration.LinkEndDestructionDataConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -7341,16 +7341,16 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.LiteralSpecificationConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.LiteralBooleanConfiguration) {
+		if (o_cast instanceof fumlConfiguration.LiteralStringConfiguration) {
+			addNewObjectToState((fumlConfiguration.LiteralStringConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.LiteralUnlimitedNaturalConfiguration) {
+			addNewObjectToState((fumlConfiguration.LiteralUnlimitedNaturalConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.LiteralIntegerConfiguration) {
+			addNewObjectToState((fumlConfiguration.LiteralIntegerConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.LiteralBooleanConfiguration) {
 			addNewObjectToState((fumlConfiguration.LiteralBooleanConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.LiteralRealConfiguration) {
 			addNewObjectToState((fumlConfiguration.LiteralRealConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.LiteralStringConfiguration) {
-			addNewObjectToState((fumlConfiguration.LiteralStringConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.LiteralIntegerConfiguration) {
-			addNewObjectToState((fumlConfiguration.LiteralIntegerConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.LiteralUnlimitedNaturalConfiguration) {
-			addNewObjectToState((fumlConfiguration.LiteralUnlimitedNaturalConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.LiteralNullConfiguration) {
 			addNewObjectToState((fumlConfiguration.LiteralNullConfiguration) o_cast, newState);
 		} else
@@ -7760,10 +7760,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.MessageEndConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.GateConfiguration) {
-			addNewObjectToState((fumlConfiguration.GateConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.MessageOccurrenceSpecificationConfiguration) {
+		if (o_cast instanceof fumlConfiguration.MessageOccurrenceSpecificationConfiguration) {
 			addNewObjectToState((fumlConfiguration.MessageOccurrenceSpecificationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.GateConfiguration) {
+			addNewObjectToState((fumlConfiguration.GateConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -7795,12 +7795,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.MessageEventConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.CallEventConfiguration) {
-			addNewObjectToState((fumlConfiguration.CallEventConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.SignalEventConfiguration) {
+			addNewObjectToState((fumlConfiguration.SignalEventConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.AnyReceiveEventConfiguration) {
 			addNewObjectToState((fumlConfiguration.AnyReceiveEventConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.SignalEventConfiguration) {
-			addNewObjectToState((fumlConfiguration.SignalEventConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.CallEventConfiguration) {
+			addNewObjectToState((fumlConfiguration.CallEventConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -7894,16 +7894,16 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.MultiplicityElementConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ConnectorEndConfiguration) {
+		if (o_cast instanceof fumlConfiguration.PinConfiguration) {
+			addNewObjectToState((fumlConfiguration.PinConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.StructuralFeatureConfiguration) {
+			addNewObjectToState((fumlConfiguration.StructuralFeatureConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ConnectorEndConfiguration) {
 			addNewObjectToState((fumlConfiguration.ConnectorEndConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ParameterConfiguration) {
 			addNewObjectToState((fumlConfiguration.ParameterConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.StructuralFeatureConfiguration) {
-			addNewObjectToState((fumlConfiguration.StructuralFeatureConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.VariableConfiguration) {
 			addNewObjectToState((fumlConfiguration.VariableConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.PinConfiguration) {
-			addNewObjectToState((fumlConfiguration.PinConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -7935,42 +7935,42 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.NamedElementConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.LifelineConfiguration) {
-			addNewObjectToState((fumlConfiguration.LifelineConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.DeploymentTargetConfiguration) {
-			addNewObjectToState((fumlConfiguration.DeploymentTargetConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.RedefinableElementConfiguration) {
-			addNewObjectToState((fumlConfiguration.RedefinableElementConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ActivityGroupConfiguration) {
-			addNewObjectToState((fumlConfiguration.ActivityGroupConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.PackageableElementConfiguration) {
-			addNewObjectToState((fumlConfiguration.PackageableElementConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.VertexConfiguration) {
-			addNewObjectToState((fumlConfiguration.VertexConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.MessageEndConfiguration) {
+			addNewObjectToState((fumlConfiguration.MessageEndConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.MessageConfiguration) {
 			addNewObjectToState((fumlConfiguration.MessageConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.GeneralOrderingConfiguration) {
-			addNewObjectToState((fumlConfiguration.GeneralOrderingConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.NamespaceConfiguration) {
-			addNewObjectToState((fumlConfiguration.NamespaceConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ExtendConfiguration) {
-			addNewObjectToState((fumlConfiguration.ExtendConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ParameterSetConfiguration) {
-			addNewObjectToState((fumlConfiguration.ParameterSetConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.TriggerConfiguration) {
-			addNewObjectToState((fumlConfiguration.TriggerConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.IncludeConfiguration) {
-			addNewObjectToState((fumlConfiguration.IncludeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.TypedElementConfiguration) {
-			addNewObjectToState((fumlConfiguration.TypedElementConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.DeployedArtifactConfiguration) {
-			addNewObjectToState((fumlConfiguration.DeployedArtifactConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InteractionFragmentConfiguration) {
-			addNewObjectToState((fumlConfiguration.InteractionFragmentConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.MessageEndConfiguration) {
-			addNewObjectToState((fumlConfiguration.MessageEndConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.CollaborationUseConfiguration) {
 			addNewObjectToState((fumlConfiguration.CollaborationUseConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.NamespaceConfiguration) {
+			addNewObjectToState((fumlConfiguration.NamespaceConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.TriggerConfiguration) {
+			addNewObjectToState((fumlConfiguration.TriggerConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ParameterSetConfiguration) {
+			addNewObjectToState((fumlConfiguration.ParameterSetConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.DeploymentTargetConfiguration) {
+			addNewObjectToState((fumlConfiguration.DeploymentTargetConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ActivityGroupConfiguration) {
+			addNewObjectToState((fumlConfiguration.ActivityGroupConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ExtendConfiguration) {
+			addNewObjectToState((fumlConfiguration.ExtendConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InteractionFragmentConfiguration) {
+			addNewObjectToState((fumlConfiguration.InteractionFragmentConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.DeployedArtifactConfiguration) {
+			addNewObjectToState((fumlConfiguration.DeployedArtifactConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.PackageableElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.PackageableElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.LifelineConfiguration) {
+			addNewObjectToState((fumlConfiguration.LifelineConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.TypedElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.TypedElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.RedefinableElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.RedefinableElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.IncludeConfiguration) {
+			addNewObjectToState((fumlConfiguration.IncludeConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.VertexConfiguration) {
+			addNewObjectToState((fumlConfiguration.VertexConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.GeneralOrderingConfiguration) {
+			addNewObjectToState((fumlConfiguration.GeneralOrderingConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -8002,22 +8002,22 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.NamespaceConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.InteractionOperandConfiguration) {
-			addNewObjectToState((fumlConfiguration.InteractionOperandConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.StateConfiguration) {
-			addNewObjectToState((fumlConfiguration.StateConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ClassifierConfiguration) {
-			addNewObjectToState((fumlConfiguration.ClassifierConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.PackageConfiguration) {
+			addNewObjectToState((fumlConfiguration.PackageConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.StructuredActivityNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.StructuredActivityNodeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.RegionConfiguration) {
-			addNewObjectToState((fumlConfiguration.RegionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.TransitionConfiguration) {
 			addNewObjectToState((fumlConfiguration.TransitionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ClassifierConfiguration) {
+			addNewObjectToState((fumlConfiguration.ClassifierConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.StateConfiguration) {
+			addNewObjectToState((fumlConfiguration.StateConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.RegionConfiguration) {
+			addNewObjectToState((fumlConfiguration.RegionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InteractionOperandConfiguration) {
+			addNewObjectToState((fumlConfiguration.InteractionOperandConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.BehavioralFeatureConfiguration) {
 			addNewObjectToState((fumlConfiguration.BehavioralFeatureConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.PackageConfiguration) {
-			addNewObjectToState((fumlConfiguration.PackageConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -8194,12 +8194,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.Actions.BasicActions.PinActivation) {
-			addNewObjectToState((fumlConfiguration.Actions.BasicActions.PinActivation) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
+		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) {
 			addNewObjectToState(
 					(fumlConfiguration.Activities.IntermediateActivities.ActivityParameterNodeActivation) o_cast,
 					newState);
+		} else if (o_cast instanceof fumlConfiguration.Actions.BasicActions.PinActivation) {
+			addNewObjectToState((fumlConfiguration.Actions.BasicActions.PinActivation) o_cast, newState);
 		}
 
 	}// end addNewObjectToState
@@ -8208,14 +8208,14 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ObjectNodeConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ExpansionNodeConfiguration) {
-			addNewObjectToState((fumlConfiguration.ExpansionNodeConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.CentralBufferNodeConfiguration) {
+			addNewObjectToState((fumlConfiguration.CentralBufferNodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.PinConfiguration) {
 			addNewObjectToState((fumlConfiguration.PinConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ExpansionNodeConfiguration) {
+			addNewObjectToState((fumlConfiguration.ExpansionNodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ActivityParameterNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.ActivityParameterNodeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.CentralBufferNodeConfiguration) {
-			addNewObjectToState((fumlConfiguration.CentralBufferNodeConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -8297,10 +8297,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ObservationConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.DurationObservationConfiguration) {
-			addNewObjectToState((fumlConfiguration.DurationObservationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.TimeObservationConfiguration) {
+		if (o_cast instanceof fumlConfiguration.TimeObservationConfiguration) {
 			addNewObjectToState((fumlConfiguration.TimeObservationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.DurationObservationConfiguration) {
+			addNewObjectToState((fumlConfiguration.DurationObservationConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -8618,17 +8618,17 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
+		if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
 			addNewObjectToState(
-					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
 					newState);
 		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) {
 			addNewObjectToState(
 					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerPlusFunctionBehaviorExecution) o_cast,
 					newState);
-		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) {
+		} else if (o_cast instanceof fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) {
 			addNewObjectToState(
-					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerGreaterFunctionBehaviorExecution) o_cast,
+					(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerLessFunctionBehaviorExecution) o_cast,
 					newState);
 		}
 
@@ -9020,26 +9020,26 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.PackageableElementConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.InformationFlowConfiguration) {
-			addNewObjectToState((fumlConfiguration.InformationFlowConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ObservationConfiguration) {
-			addNewObjectToState((fumlConfiguration.ObservationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.DependencyConfiguration) {
-			addNewObjectToState((fumlConfiguration.DependencyConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.PackageConfiguration) {
+			addNewObjectToState((fumlConfiguration.PackageConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ValueSpecificationConfiguration) {
 			addNewObjectToState((fumlConfiguration.ValueSpecificationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.TypeConfiguration) {
-			addNewObjectToState((fumlConfiguration.TypeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.EventConfiguration) {
 			addNewObjectToState((fumlConfiguration.EventConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.DependencyConfiguration) {
+			addNewObjectToState((fumlConfiguration.DependencyConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.GeneralizationSetConfiguration) {
 			addNewObjectToState((fumlConfiguration.GeneralizationSetConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.InstanceSpecificationConfiguration) {
 			addNewObjectToState((fumlConfiguration.InstanceSpecificationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InformationFlowConfiguration) {
+			addNewObjectToState((fumlConfiguration.InformationFlowConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ConstraintConfiguration) {
 			addNewObjectToState((fumlConfiguration.ConstraintConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.PackageConfiguration) {
-			addNewObjectToState((fumlConfiguration.PackageConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ObservationConfiguration) {
+			addNewObjectToState((fumlConfiguration.ObservationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.TypeConfiguration) {
+			addNewObjectToState((fumlConfiguration.TypeConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -9175,12 +9175,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ParameterableElementConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.PackageableElementConfiguration) {
-			addNewObjectToState((fumlConfiguration.PackageableElementConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.ConnectableElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.ConnectableElementConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.OperationConfiguration) {
 			addNewObjectToState((fumlConfiguration.OperationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ConnectableElementConfiguration) {
-			addNewObjectToState((fumlConfiguration.ConnectableElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.PackageableElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.PackageableElementConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -9253,10 +9253,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.PinConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.OutputPinConfiguration) {
-			addNewObjectToState((fumlConfiguration.OutputPinConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InputPinConfiguration) {
+		if (o_cast instanceof fumlConfiguration.InputPinConfiguration) {
 			addNewObjectToState((fumlConfiguration.InputPinConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.OutputPinConfiguration) {
+			addNewObjectToState((fumlConfiguration.OutputPinConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -9347,10 +9347,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.PrimitiveValue o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
-			addNewObjectToState((fumlConfiguration.Classes.Kernel.BooleanValue) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
+		if (o_cast instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
 			addNewObjectToState((fumlConfiguration.Classes.Kernel.IntegerValue) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.BooleanValue) o_cast, newState);
 		}
 
 	}// end addNewObjectToState
@@ -9417,10 +9417,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.PropertyConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.PortConfiguration) {
-			addNewObjectToState((fumlConfiguration.PortConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ExtensionEndConfiguration) {
+		if (o_cast instanceof fumlConfiguration.ExtensionEndConfiguration) {
 			addNewObjectToState((fumlConfiguration.ExtensionEndConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.PortConfiguration) {
+			addNewObjectToState((fumlConfiguration.PortConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -10038,10 +10038,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 		if (o_cast instanceof fumlConfiguration.SubstitutionConfiguration) {
 			addNewObjectToState((fumlConfiguration.SubstitutionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ComponentRealizationConfiguration) {
-			addNewObjectToState((fumlConfiguration.ComponentRealizationConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.InterfaceRealizationConfiguration) {
 			addNewObjectToState((fumlConfiguration.InterfaceRealizationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ComponentRealizationConfiguration) {
+			addNewObjectToState((fumlConfiguration.ComponentRealizationConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -10133,24 +10133,24 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.RedefinableElementConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ActivityNodeConfiguration) {
+		if (o_cast instanceof fumlConfiguration.TransitionConfiguration) {
+			addNewObjectToState((fumlConfiguration.TransitionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ActivityNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.ActivityNodeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.StateConfiguration) {
-			addNewObjectToState((fumlConfiguration.StateConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.RedefinableTemplateSignatureConfiguration) {
+			addNewObjectToState((fumlConfiguration.RedefinableTemplateSignatureConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ClassifierConfiguration) {
 			addNewObjectToState((fumlConfiguration.ClassifierConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.FeatureConfiguration) {
 			addNewObjectToState((fumlConfiguration.FeatureConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.RegionConfiguration) {
-			addNewObjectToState((fumlConfiguration.RegionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.TransitionConfiguration) {
-			addNewObjectToState((fumlConfiguration.TransitionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.RedefinableTemplateSignatureConfiguration) {
-			addNewObjectToState((fumlConfiguration.RedefinableTemplateSignatureConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ActivityEdgeConfiguration) {
-			addNewObjectToState((fumlConfiguration.ActivityEdgeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ExtensionPointConfiguration) {
 			addNewObjectToState((fumlConfiguration.ExtensionPointConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.StateConfiguration) {
+			addNewObjectToState((fumlConfiguration.StateConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.RegionConfiguration) {
+			addNewObjectToState((fumlConfiguration.RegionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ActivityEdgeConfiguration) {
+			addNewObjectToState((fumlConfiguration.ActivityEdgeConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -10444,13 +10444,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.Loci.SemanticVisitor o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.Classes.Kernel.Evaluation) {
-			addNewObjectToState((fumlConfiguration.Classes.Kernel.Evaluation) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
+		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
 			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o_cast,
 					newState);
 		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Value) {
 			addNewObjectToState((fumlConfiguration.Classes.Kernel.Value) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Evaluation) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.Evaluation) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -10895,12 +10895,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.StructuralFeatureActionConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.WriteStructuralFeatureActionConfiguration) {
+		if (o_cast instanceof fumlConfiguration.ReadStructuralFeatureActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ReadStructuralFeatureActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.WriteStructuralFeatureActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.WriteStructuralFeatureActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ClearStructuralFeatureActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.ClearStructuralFeatureActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ReadStructuralFeatureActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ReadStructuralFeatureActionConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -10971,10 +10971,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			addNewObjectToState((fumlConfiguration.ConditionalNodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.SequenceNodeConfiguration) {
 			addNewObjectToState((fumlConfiguration.SequenceNodeConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.LoopNodeConfiguration) {
-			addNewObjectToState((fumlConfiguration.LoopNodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ExpansionRegionConfiguration) {
 			addNewObjectToState((fumlConfiguration.ExpansionRegionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.LoopNodeConfiguration) {
+			addNewObjectToState((fumlConfiguration.LoopNodeConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -11008,10 +11008,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.StructuredClassifierConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.EncapsulatedClassifierConfiguration) {
-			addNewObjectToState((fumlConfiguration.EncapsulatedClassifierConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.CollaborationConfiguration) {
+		if (o_cast instanceof fumlConfiguration.CollaborationConfiguration) {
 			addNewObjectToState((fumlConfiguration.CollaborationConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.EncapsulatedClassifierConfiguration) {
+			addNewObjectToState((fumlConfiguration.EncapsulatedClassifierConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -11042,10 +11042,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.StructuredValue o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.Classes.Kernel.CompoundValue) {
-			addNewObjectToState((fumlConfiguration.Classes.Kernel.CompoundValue) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.Reference) {
+		if (o_cast instanceof fumlConfiguration.Classes.Kernel.Reference) {
 			addNewObjectToState((fumlConfiguration.Classes.Kernel.Reference) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.CompoundValue) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.CompoundValue) o_cast, newState);
 		}
 
 	}// end addNewObjectToState
@@ -11112,10 +11112,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.TemplateParameterConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ClassifierTemplateParameterConfiguration) {
-			addNewObjectToState((fumlConfiguration.ClassifierTemplateParameterConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ConnectableElementTemplateParameterConfiguration) {
+		if (o_cast instanceof fumlConfiguration.ConnectableElementTemplateParameterConfiguration) {
 			addNewObjectToState((fumlConfiguration.ConnectableElementTemplateParameterConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ClassifierTemplateParameterConfiguration) {
+			addNewObjectToState((fumlConfiguration.ClassifierTemplateParameterConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.OperationTemplateParameterConfiguration) {
 			addNewObjectToState((fumlConfiguration.OperationTemplateParameterConfiguration) o_cast, newState);
 		} else
@@ -11211,14 +11211,14 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.TemplateableElementConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ClassifierConfiguration) {
-			addNewObjectToState((fumlConfiguration.ClassifierConfiguration) o_cast, newState);
+		if (o_cast instanceof fumlConfiguration.PackageConfiguration) {
+			addNewObjectToState((fumlConfiguration.PackageConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.OperationConfiguration) {
 			addNewObjectToState((fumlConfiguration.OperationConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.StringExpressionConfiguration) {
 			addNewObjectToState((fumlConfiguration.StringExpressionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.PackageConfiguration) {
-			addNewObjectToState((fumlConfiguration.PackageConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ClassifierConfiguration) {
+			addNewObjectToState((fumlConfiguration.ClassifierConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -11425,12 +11425,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.Activities.IntermediateActivities.Token o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ControlToken) {
-			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ControlToken) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
+		if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
 			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
 			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Activities.IntermediateActivities.ControlToken) {
+			addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.ControlToken) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -11560,14 +11560,14 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.TypedElementConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ValueSpecificationConfiguration) {
+		if (o_cast instanceof fumlConfiguration.ConnectableElementConfiguration) {
+			addNewObjectToState((fumlConfiguration.ConnectableElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ValueSpecificationConfiguration) {
 			addNewObjectToState((fumlConfiguration.ValueSpecificationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ObjectNodeConfiguration) {
-			addNewObjectToState((fumlConfiguration.ObjectNodeConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.StructuralFeatureConfiguration) {
 			addNewObjectToState((fumlConfiguration.StructuralFeatureConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ConnectableElementConfiguration) {
-			addNewObjectToState((fumlConfiguration.ConnectableElementConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ObjectNodeConfiguration) {
+			addNewObjectToState((fumlConfiguration.ObjectNodeConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -11687,10 +11687,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.Classes.Kernel.Value o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.Classes.Kernel.PrimitiveValue) {
-			addNewObjectToState((fumlConfiguration.Classes.Kernel.PrimitiveValue) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.StructuredValue) {
+		if (o_cast instanceof fumlConfiguration.Classes.Kernel.StructuredValue) {
 			addNewObjectToState((fumlConfiguration.Classes.Kernel.StructuredValue) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.Classes.Kernel.PrimitiveValue) {
+			addNewObjectToState((fumlConfiguration.Classes.Kernel.PrimitiveValue) o_cast, newState);
 		}
 
 	}// end addNewObjectToState
@@ -11921,20 +11921,20 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.ValueSpecificationConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.DurationConfiguration) {
-			addNewObjectToState((fumlConfiguration.DurationConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.IntervalConfiguration) {
+		if (o_cast instanceof fumlConfiguration.IntervalConfiguration) {
 			addNewObjectToState((fumlConfiguration.IntervalConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.InstanceValueConfiguration) {
+			addNewObjectToState((fumlConfiguration.InstanceValueConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ExpressionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ExpressionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.OpaqueExpressionConfiguration) {
+			addNewObjectToState((fumlConfiguration.OpaqueExpressionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.LiteralSpecificationConfiguration) {
 			addNewObjectToState((fumlConfiguration.LiteralSpecificationConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.TimeExpressionConfiguration) {
 			addNewObjectToState((fumlConfiguration.TimeExpressionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.OpaqueExpressionConfiguration) {
-			addNewObjectToState((fumlConfiguration.OpaqueExpressionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.ExpressionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ExpressionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.InstanceValueConfiguration) {
-			addNewObjectToState((fumlConfiguration.InstanceValueConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.DurationConfiguration) {
+			addNewObjectToState((fumlConfiguration.DurationConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -11966,10 +11966,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.VariableActionConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.ReadVariableActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.ReadVariableActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.WriteVariableActionConfiguration) {
+		if (o_cast instanceof fumlConfiguration.WriteVariableActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.WriteVariableActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.ReadVariableActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.ReadVariableActionConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ClearVariableActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.ClearVariableActionConfiguration) o_cast, newState);
 		} else
@@ -12034,12 +12034,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.VertexConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.PseudostateConfiguration) {
-			addNewObjectToState((fumlConfiguration.PseudostateConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.StateConfiguration) {
+		if (o_cast instanceof fumlConfiguration.StateConfiguration) {
 			addNewObjectToState((fumlConfiguration.StateConfiguration) o_cast, newState);
 		} else if (o_cast instanceof fumlConfiguration.ConnectionPointReferenceConfiguration) {
 			addNewObjectToState((fumlConfiguration.ConnectionPointReferenceConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.PseudostateConfiguration) {
+			addNewObjectToState((fumlConfiguration.PseudostateConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -12071,10 +12071,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(fumlConfiguration.WriteLinkActionConfiguration o_cast,
 			fumlConfigurationTrace.States.State newState) {
 
-		if (o_cast instanceof fumlConfiguration.CreateLinkActionConfiguration) {
-			addNewObjectToState((fumlConfiguration.CreateLinkActionConfiguration) o_cast, newState);
-		} else if (o_cast instanceof fumlConfiguration.DestroyLinkActionConfiguration) {
+		if (o_cast instanceof fumlConfiguration.DestroyLinkActionConfiguration) {
 			addNewObjectToState((fumlConfiguration.DestroyLinkActionConfiguration) o_cast, newState);
+		} else if (o_cast instanceof fumlConfiguration.CreateLinkActionConfiguration) {
+			addNewObjectToState((fumlConfiguration.CreateLinkActionConfiguration) o_cast, newState);
 		} else
 
 		if (!exeToTraced.containsKey(o_cast)) {
@@ -12300,48 +12300,48 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 				// Here we have nothing to rollback, just a new object to add
 				if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NewObjectModelChange) {
 					stateChanged = true;
-					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
-						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+					if (o instanceof fumlConfiguration.Loci.Locus) {
+						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
 						addNewObjectToState(o_cast, newState);
 					}
 					if (o instanceof fumlConfiguration.Loci.ExecutionFactory) {
 						fumlConfiguration.Loci.ExecutionFactory o_cast = (fumlConfiguration.Loci.ExecutionFactory) o;
 						addNewObjectToState(o_cast, newState);
 					}
-					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
-						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
-						addNewObjectToState(o_cast, newState);
-					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
-						addNewObjectToState(o_cast, newState);
-					}
-					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
-						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
-						addNewObjectToState(o_cast, newState);
-					}
-					if (o instanceof fumlConfiguration.Loci.Locus) {
-						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
-						addNewObjectToState(o_cast, newState);
-					}
-					if (o instanceof fumlConfiguration.Loci.Executor) {
-						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
-						addNewObjectToState(o_cast, newState);
-					}
 					if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
 						fumlConfiguration.Loci.SemanticVisitor o_cast = (fumlConfiguration.Loci.SemanticVisitor) o;
 						addNewObjectToState(o_cast, newState);
 					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
+						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
+						fumlConfiguration.Activities.IntermediateActivities.Offer o_cast = (fumlConfiguration.Activities.IntermediateActivities.Offer) o;
 						addNewObjectToState(o_cast, newState);
 					}
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
 						fumlConfiguration.Activities.IntermediateActivities.Token o_cast = (fumlConfiguration.Activities.IntermediateActivities.Token) o;
 						addNewObjectToState(o_cast, newState);
 					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
-						fumlConfiguration.Activities.IntermediateActivities.Offer o_cast = (fumlConfiguration.Activities.IntermediateActivities.Offer) o;
+					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
+						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Loci.Executor) {
+						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
+						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+						addNewObjectToState(o_cast, newState);
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
 						addNewObjectToState(o_cast, newState);
 					}
 				}
@@ -12349,12 +12349,14 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 				// Here we must rollback to remove the values of the removed object from the copied state
 				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.RemovedObjectModelChange) {
 					stateChanged = true;
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
-						fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
+					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
+						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues traced = (fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
 								.get(o_cast);
-						newState.getObjectToken_value_Values()
-								.remove(traced.getValueSequence().get(traced.getValueSequence().size() - 1));
+						newState.getInputParameterValues_name_Values()
+								.remove(traced.getNameSequence().get(traced.getNameSequence().size() - 1));
+						newState.getInputParameterValues_parameterValues_Values().remove(traced
+								.getParameterValuesSequence().get(traced.getParameterValuesSequence().size() - 1));
 					}
 					if (o instanceof fumlConfiguration.Actions.BasicActions.PinActivation) {
 						fumlConfiguration.Actions.BasicActions.PinActivation o_cast = (fumlConfiguration.Actions.BasicActions.PinActivation) o;
@@ -12365,105 +12367,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						newState.getPinActivation_count_temp_Values()
 								.remove(traced.getCount_tempSequence().get(traced.getCount_tempSequence().size() - 1));
 					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) {
-						fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectNodeActivation) exeToTraced
+					if (o instanceof fumlConfiguration.Loci.Executor) {
+						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
 								.get(o_cast);
-						newState.getObjectNodeActivation_offeredTokenCount_Values().remove(traced
-								.getOfferedTokenCountSequence().get(traced.getOfferedTokenCountSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
-						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
-						fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue traced = (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
-								.get(o_cast);
-						newState.getParameterValue_parameter_ParameterValue_Values()
-								.remove(traced.getParameter_ParameterValueSequence()
-										.get(traced.getParameter_ParameterValueSequence().size() - 1));
-						newState.getParameterValue_values_ParameterValue_Values()
-								.remove(traced.getValues_ParameterValueSequence()
-										.get(traced.getValues_ParameterValueSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-								.get(o_cast);
-						newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values()
-								.remove(traced.getEdge_ActivityEdgeInstanceSequence()
-										.get(traced.getEdge_ActivityEdgeInstanceSequence().size() - 1));
-						newState.getActivityEdgeInstance_offers_Values()
-								.remove(traced.getOffersSequence().get(traced.getOffersSequence().size() - 1));
-						newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values()
-								.remove(traced.getGroup_ActivityEdgeInstanceSequence()
-										.get(traced.getGroup_ActivityEdgeInstanceSequence().size() - 1));
-						newState.getActivityEdgeInstance_target_Values()
-								.remove(traced.getTargetSequence().get(traced.getTargetSequence().size() - 1));
-						newState.getActivityEdgeInstance_source_Values()
-								.remove(traced.getSourceSequence().get(traced.getSourceSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
-						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) exeToTraced
-								.get(o_cast);
-						newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values()
-								.remove(traced.getLocus_ExecutionEnvironmentSequence()
-										.get(traced.getLocus_ExecutionEnvironmentSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Classes.Kernel.Evaluation) {
-						fumlConfiguration.Classes.Kernel.Evaluation o_cast = (fumlConfiguration.Classes.Kernel.Evaluation) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation) exeToTraced
-								.get(o_cast);
-						newState.getEvaluation_specification_Evaluation_Values()
-								.remove(traced.getSpecification_EvaluationSequence()
-										.get(traced.getSpecification_EvaluationSequence().size() - 1));
-						newState.getEvaluation_locus_Evaluation_Values().remove(traced.getLocus_EvaluationSequence()
-								.get(traced.getLocus_EvaluationSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
-						fumlConfiguration.Classes.Kernel.Reference o_cast = (fumlConfiguration.Classes.Kernel.Reference) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
-								.get(o_cast);
-						newState.getReference_referent_Values()
-								.remove(traced.getReferentSequence().get(traced.getReferentSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
-						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
-								.get(o_cast);
-						newState.getBooleanValue_value_BooleanValue_Values()
-								.remove(traced.getValue_BooleanValueSequence()
-										.get(traced.getValue_BooleanValueSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
-						fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
-								.get(o_cast);
-						newState.getForkedToken_baseTokenIsWithdrawn_Values()
-								.remove(traced.getBaseTokenIsWithdrawnSequence()
-										.get(traced.getBaseTokenIsWithdrawnSequence().size() - 1));
-						newState.getForkedToken_baseToken_Values()
-								.remove(traced.getBaseTokenSequence().get(traced.getBaseTokenSequence().size() - 1));
-						newState.getForkedToken_remainingOffersCount_Values()
-								.remove(traced.getRemainingOffersCountSequence()
-										.get(traced.getRemainingOffersCountSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
-						fumlConfiguration.Activities.IntermediateActivities.Token o_cast = (fumlConfiguration.Activities.IntermediateActivities.Token) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
-								.get(o_cast);
-						newState.getToken_holder_Values()
-								.remove(traced.getHolderSequence().get(traced.getHolderSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Classes.Kernel.FeatureValue) {
-						fumlConfiguration.Classes.Kernel.FeatureValue o_cast = (fumlConfiguration.Classes.Kernel.FeatureValue) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue) exeToTraced
-								.get(o_cast);
-						newState.getFeatureValue_position_Values()
-								.remove(traced.getPositionSequence().get(traced.getPositionSequence().size() - 1));
-						newState.getFeatureValue_values_FeatureValue_Values()
-								.remove(traced.getValues_FeatureValueSequence()
-										.get(traced.getValues_FeatureValueSequence().size() - 1));
-						newState.getFeatureValue_feature_Values()
-								.remove(traced.getFeatureSequence().get(traced.getFeatureSequence().size() - 1));
+						newState.getExecutor_locus_Executor_Values().remove(
+								traced.getLocus_ExecutorSequence().get(traced.getLocus_ExecutorSequence().size() - 1));
 					}
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
@@ -12476,36 +12385,37 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						newState.getActivityNodeActivationGroup_activityExecution_Values().remove(traced
 								.getActivityExecutionSequence().get(traced.getActivityExecutionSequence().size() - 1));
 					}
-					if (o instanceof fumlConfiguration.Loci.Executor) {
-						fumlConfiguration.Loci.Executor o_cast = (fumlConfiguration.Loci.Executor) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectNodeActivation) exeToTraced
 								.get(o_cast);
-						newState.getExecutor_locus_Executor_Values().remove(
-								traced.getLocus_ExecutorSequence().get(traced.getLocus_ExecutorSequence().size() - 1));
+						newState.getObjectNodeActivation_offeredTokenCount_Values().remove(traced
+								.getOfferedTokenCountSequence().get(traced.getOfferedTokenCountSequence().size() - 1));
 					}
-					if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
-						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
 								.get(o_cast);
-						newState.getIntegerValue_value_IntegerValue_Values()
-								.remove(traced.getValue_IntegerValueSequence()
-										.get(traced.getValue_IntegerValueSequence().size() - 1));
+						newState.getForkedToken_baseToken_Values()
+								.remove(traced.getBaseTokenSequence().get(traced.getBaseTokenSequence().size() - 1));
+						newState.getForkedToken_remainingOffersCount_Values()
+								.remove(traced.getRemainingOffersCountSequence()
+										.get(traced.getRemainingOffersCountSequence().size() - 1));
+						newState.getForkedToken_baseTokenIsWithdrawn_Values()
+								.remove(traced.getBaseTokenIsWithdrawnSequence()
+										.get(traced.getBaseTokenIsWithdrawnSequence().size() - 1));
 					}
-					if (o instanceof fumlConfiguration.Classes.Kernel.PrimitiveValue) {
-						fumlConfiguration.Classes.Kernel.PrimitiveValue o_cast = (fumlConfiguration.Classes.Kernel.PrimitiveValue) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue) exeToTraced
+					if (o instanceof fumlConfiguration.Classes.Kernel.FeatureValue) {
+						fumlConfiguration.Classes.Kernel.FeatureValue o_cast = (fumlConfiguration.Classes.Kernel.FeatureValue) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue) exeToTraced
 								.get(o_cast);
-						newState.getPrimitiveValue_type_Values()
-								.remove(traced.getTypeSequence().get(traced.getTypeSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
-						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues traced = (fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
-								.get(o_cast);
-						newState.getInputParameterValues_name_Values()
-								.remove(traced.getNameSequence().get(traced.getNameSequence().size() - 1));
-						newState.getInputParameterValues_parameterValues_Values().remove(traced
-								.getParameterValuesSequence().get(traced.getParameterValuesSequence().size() - 1));
+						newState.getFeatureValue_feature_Values()
+								.remove(traced.getFeatureSequence().get(traced.getFeatureSequence().size() - 1));
+						newState.getFeatureValue_position_Values()
+								.remove(traced.getPositionSequence().get(traced.getPositionSequence().size() - 1));
+						newState.getFeatureValue_values_FeatureValue_Values()
+								.remove(traced.getValues_FeatureValueSequence()
+										.get(traced.getValues_FeatureValueSequence().size() - 1));
 					}
 					if (o instanceof fumlConfiguration.Loci.ExecutionFactory) {
 						fumlConfiguration.Loci.ExecutionFactory o_cast = (fumlConfiguration.Loci.ExecutionFactory) o;
@@ -12520,42 +12430,31 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						newState.getExecutionFactory_builtInTypes_Values().remove(
 								traced.getBuiltInTypesSequence().get(traced.getBuiltInTypesSequence().size() - 1));
 					}
-					if (o instanceof fumlConfiguration.Actions.BasicActions.CallActionActivation) {
-						fumlConfiguration.Actions.BasicActions.CallActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.CallActionActivation) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation) exeToTraced
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
+						fumlConfiguration.Activities.IntermediateActivities.Offer o_cast = (fumlConfiguration.Activities.IntermediateActivities.Offer) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) exeToTraced
 								.get(o_cast);
-						newState.getCallActionActivation_callExecutions_Values().remove(
-								traced.getCallExecutionsSequence().get(traced.getCallExecutionsSequence().size() - 1));
+						newState.getOffer_offeredTokens_Values().remove(
+								traced.getOfferedTokensSequence().get(traced.getOfferedTokensSequence().size() - 1));
 					}
-					if (o instanceof fumlConfiguration.Actions.BasicActions.ActionActivation) {
-						fumlConfiguration.Actions.BasicActions.ActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.ActionActivation) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
+					if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
+						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
 								.get(o_cast);
-						newState.getActionActivation_pinActivations_Values().remove(
-								traced.getPinActivationsSequence().get(traced.getPinActivationsSequence().size() - 1));
-						newState.getActionActivation_firing_Values()
-								.remove(traced.getFiringSequence().get(traced.getFiringSequence().size() - 1));
+						newState.getBooleanValue_value_BooleanValue_Values()
+								.remove(traced.getValue_BooleanValueSequence()
+										.get(traced.getValue_BooleanValueSequence().size() - 1));
 					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+					if (o instanceof fumlConfiguration.Loci.Locus) {
+						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
 								.get(o_cast);
-						newState.getActivityNodeActivation_outgoingEdges_Values().remove(
-								traced.getOutgoingEdgesSequence().get(traced.getOutgoingEdgesSequence().size() - 1));
-						newState.getActivityNodeActivation_heldTokens_Values()
-								.remove(traced.getHeldTokensSequence().get(traced.getHeldTokensSequence().size() - 1));
-						newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
-								.remove(traced.getNode_ActivityNodeActivationSequence()
-										.get(traced.getNode_ActivityNodeActivationSequence().size() - 1));
-						newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
-								.remove(traced.getGroup_ActivityNodeActivationSequence()
-										.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1));
-						newState.getActivityNodeActivation_running_Values()
-								.remove(traced.getRunningSequence().get(traced.getRunningSequence().size() - 1));
-						newState.getActivityNodeActivation_isRunning_Values()
-								.remove(traced.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1));
-						newState.getActivityNodeActivation_incomingEdges_Values().remove(
-								traced.getIncomingEdgesSequence().get(traced.getIncomingEdgesSequence().size() - 1));
+						newState.getLocus_factory_Values()
+								.remove(traced.getFactorySequence().get(traced.getFactorySequence().size() - 1));
+						newState.getLocus_extensionalValues_Values().remove(traced.getExtensionalValuesSequence()
+								.get(traced.getExtensionalValuesSequence().size() - 1));
+						newState.getLocus_executor_Values()
+								.remove(traced.getExecutorSequence().get(traced.getExecutorSequence().size() - 1));
 					}
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityExecution o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityExecution) o;
@@ -12595,6 +12494,125 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						newState.getCompoundValue_featureValues_Values().remove(
 								traced.getFeatureValuesSequence().get(traced.getFeatureValuesSequence().size() - 1));
 					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
+						fumlConfiguration.Classes.Kernel.Reference o_cast = (fumlConfiguration.Classes.Kernel.Reference) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
+								.get(o_cast);
+						newState.getReference_referent_Values()
+								.remove(traced.getReferentSequence().get(traced.getReferentSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.CallActionActivation) {
+						fumlConfiguration.Actions.BasicActions.CallActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.CallActionActivation) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation) exeToTraced
+								.get(o_cast);
+						newState.getCallActionActivation_callExecutions_Values().remove(
+								traced.getCallExecutionsSequence().get(traced.getCallExecutionsSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
+						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) exeToTraced
+								.get(o_cast);
+						newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values()
+								.remove(traced.getLocus_ExecutionEnvironmentSequence()
+										.get(traced.getLocus_ExecutionEnvironmentSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
+						fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
+								.get(o_cast);
+						newState.getObjectToken_value_Values()
+								.remove(traced.getValueSequence().get(traced.getValueSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Token) {
+						fumlConfiguration.Activities.IntermediateActivities.Token o_cast = (fumlConfiguration.Activities.IntermediateActivities.Token) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
+								.get(o_cast);
+						newState.getToken_holder_Values()
+								.remove(traced.getHolderSequence().get(traced.getHolderSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
+						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+						fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue traced = (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
+								.get(o_cast);
+						newState.getParameterValue_values_ParameterValue_Values()
+								.remove(traced.getValues_ParameterValueSequence()
+										.get(traced.getValues_ParameterValueSequence().size() - 1));
+						newState.getParameterValue_parameter_ParameterValue_Values()
+								.remove(traced.getParameter_ParameterValueSequence()
+										.get(traced.getParameter_ParameterValueSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
+						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
+								.get(o_cast);
+						newState.getIntegerValue_value_IntegerValue_Values()
+								.remove(traced.getValue_IntegerValueSequence()
+										.get(traced.getValue_IntegerValueSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.PrimitiveValue) {
+						fumlConfiguration.Classes.Kernel.PrimitiveValue o_cast = (fumlConfiguration.Classes.Kernel.PrimitiveValue) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue) exeToTraced
+								.get(o_cast);
+						newState.getPrimitiveValue_type_Values()
+								.remove(traced.getTypeSequence().get(traced.getTypeSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+								.get(o_cast);
+						newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values()
+								.remove(traced.getGroup_ActivityEdgeInstanceSequence()
+										.get(traced.getGroup_ActivityEdgeInstanceSequence().size() - 1));
+						newState.getActivityEdgeInstance_source_Values()
+								.remove(traced.getSourceSequence().get(traced.getSourceSequence().size() - 1));
+						newState.getActivityEdgeInstance_target_Values()
+								.remove(traced.getTargetSequence().get(traced.getTargetSequence().size() - 1));
+						newState.getActivityEdgeInstance_offers_Values()
+								.remove(traced.getOffersSequence().get(traced.getOffersSequence().size() - 1));
+						newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values()
+								.remove(traced.getEdge_ActivityEdgeInstanceSequence()
+										.get(traced.getEdge_ActivityEdgeInstanceSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.ActionActivation) {
+						fumlConfiguration.Actions.BasicActions.ActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.ActionActivation) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
+								.get(o_cast);
+						newState.getActionActivation_firing_Values()
+								.remove(traced.getFiringSequence().get(traced.getFiringSequence().size() - 1));
+						newState.getActionActivation_pinActivations_Values().remove(
+								traced.getPinActivationsSequence().get(traced.getPinActivationsSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast);
+						newState.getActivityNodeActivation_node_ActivityNodeActivation_Values()
+								.remove(traced.getNode_ActivityNodeActivationSequence()
+										.get(traced.getNode_ActivityNodeActivationSequence().size() - 1));
+						newState.getActivityNodeActivation_heldTokens_Values()
+								.remove(traced.getHeldTokensSequence().get(traced.getHeldTokensSequence().size() - 1));
+						newState.getActivityNodeActivation_incomingEdges_Values().remove(
+								traced.getIncomingEdgesSequence().get(traced.getIncomingEdgesSequence().size() - 1));
+						newState.getActivityNodeActivation_isRunning_Values()
+								.remove(traced.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1));
+						newState.getActivityNodeActivation_running_Values()
+								.remove(traced.getRunningSequence().get(traced.getRunningSequence().size() - 1));
+						newState.getActivityNodeActivation_outgoingEdges_Values().remove(
+								traced.getOutgoingEdgesSequence().get(traced.getOutgoingEdgesSequence().size() - 1));
+						newState.getActivityNodeActivation_group_ActivityNodeActivation_Values()
+								.remove(traced.getGroup_ActivityNodeActivationSequence()
+										.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1));
+					}
+					if (o instanceof fumlConfiguration.Classes.Kernel.Evaluation) {
+						fumlConfiguration.Classes.Kernel.Evaluation o_cast = (fumlConfiguration.Classes.Kernel.Evaluation) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation) exeToTraced
+								.get(o_cast);
+						newState.getEvaluation_locus_Evaluation_Values().remove(traced.getLocus_EvaluationSequence()
+								.get(traced.getLocus_EvaluationSequence().size() - 1));
+						newState.getEvaluation_specification_Evaluation_Values()
+								.remove(traced.getSpecification_EvaluationSequence()
+										.get(traced.getSpecification_EvaluationSequence().size() - 1));
+					}
 					if (o instanceof fumlConfiguration.Loci.SemanticVisitor) {
 						fumlConfiguration.Loci.SemanticVisitor o_cast = (fumlConfiguration.Loci.SemanticVisitor) o;
 						fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) exeToTraced
@@ -12602,24 +12620,6 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						newState.getSemanticVisitor_runtimeModelElement_Values()
 								.remove(traced.getRuntimeModelElementSequence()
 										.get(traced.getRuntimeModelElementSequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Loci.Locus) {
-						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-								.get(o_cast);
-						newState.getLocus_extensionalValues_Values().remove(traced.getExtensionalValuesSequence()
-								.get(traced.getExtensionalValuesSequence().size() - 1));
-						newState.getLocus_executor_Values()
-								.remove(traced.getExecutorSequence().get(traced.getExecutorSequence().size() - 1));
-						newState.getLocus_factory_Values()
-								.remove(traced.getFactorySequence().get(traced.getFactorySequence().size() - 1));
-					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
-						fumlConfiguration.Activities.IntermediateActivities.Offer o_cast = (fumlConfiguration.Activities.IntermediateActivities.Offer) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) exeToTraced
-								.get(o_cast);
-						newState.getOffer_offeredTokens_Values().remove(
-								traced.getOfferedTokensSequence().get(traced.getOfferedTokensSequence().size() - 1));
 					}
 				}
 				// Here we must look at non-collection mutable fields
@@ -12684,177 +12684,40 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						}
 					}
 
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Edge_ActivityEdgeInstance().getFeatureID()) {
+								.getActivityNodeActivationGroup_ActivityExecution().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
 									.get(o);
-							fumlConfigurationTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value lastValue = traced
-									.getEdge_ActivityEdgeInstanceSequence()
-									.get(traced.getEdge_ActivityEdgeInstanceSequence().size() - 1);
-							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().remove(lastValue);
+							fumlConfigurationTrace.States.ActivityNodeActivationGroup_activityExecution_Value lastValue = traced
+									.getActivityExecutionSequence()
+									.get(traced.getActivityExecutionSequence().size() - 1);
+							newState.getActivityNodeActivationGroup_activityExecution_Values().remove(lastValue);
 
 							// And we create a proper new value
-							fumlConfigurationTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createActivityEdgeInstance_edge_ActivityEdgeInstance_Value();
+							fumlConfigurationTrace.States.ActivityNodeActivationGroup_activityExecution_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivationGroup_activityExecution_Value();
 
-							fumlConfigurationTrace.States.fumlConfiguration.TracedActivityEdgeConfiguration value = null;
-							if (o_cast.getEdge_ActivityEdgeInstance() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.TracedActivityEdgeConfiguration) exeToTraced
-										.get(o_cast.getEdge_ActivityEdgeInstance()));
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution value = null;
+							if (o_cast.getActivityExecution() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
+										.get(o_cast.getActivityExecution()));
 							}
 
-							newValue.setEdge_ActivityEdgeInstance(
-									(fumlConfigurationTrace.States.fumlConfiguration.TracedActivityEdgeConfiguration) value);
+							newValue.setActivityExecution(
+									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) value);
 
-							traced.getEdge_ActivityEdgeInstanceSequence().add(newValue);
-							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().add(newValue);
-						} else
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Group_ActivityEdgeInstance().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value lastValue = traced
-									.getGroup_ActivityEdgeInstanceSequence()
-									.get(traced.getGroup_ActivityEdgeInstanceSequence().size() - 1);
-							newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createActivityEdgeInstance_group_ActivityEdgeInstance_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup value = null;
-							if (o_cast.getGroup_ActivityEdgeInstance() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-										.get(o_cast.getGroup_ActivityEdgeInstance()));
-							}
-
-							newValue.setGroup_ActivityEdgeInstance(
-									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) value);
-
-							traced.getGroup_ActivityEdgeInstanceSequence().add(newValue);
-							newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().add(newValue);
-						} else
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Target().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.ActivityEdgeInstance_target_Value lastValue = traced
-									.getTargetSequence().get(traced.getTargetSequence().size() - 1);
-							newState.getActivityEdgeInstance_target_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.ActivityEdgeInstance_target_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createActivityEdgeInstance_target_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation value = null;
-							if (o_cast.getTarget() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-										.get(o_cast.getTarget()));
-							}
-
-							newValue.setTarget(
-									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value);
-
-							traced.getTargetSequence().add(newValue);
-							newState.getActivityEdgeInstance_target_Values().add(newValue);
-						} else
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Source().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.ActivityEdgeInstance_source_Value lastValue = traced
-									.getSourceSequence().get(traced.getSourceSequence().size() - 1);
-							newState.getActivityEdgeInstance_source_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.ActivityEdgeInstance_source_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createActivityEdgeInstance_source_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation value = null;
-							if (o_cast.getSource() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
-										.get(o_cast.getSource()));
-							}
-
-							newValue.setSource(
-									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value);
-
-							traced.getSourceSequence().add(newValue);
-							newState.getActivityEdgeInstance_source_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
-						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getExecutionEnvironment_Locus_ExecutionEnvironment().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value lastValue = traced
-									.getLocus_ExecutionEnvironmentSequence()
-									.get(traced.getLocus_ExecutionEnvironmentSequence().size() - 1);
-							newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createExecutionEnvironment_locus_ExecutionEnvironment_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus value = null;
-							if (o_cast.getLocus_ExecutionEnvironment() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-										.get(o_cast.getLocus_ExecutionEnvironment()));
-							}
-
-							newValue.setLocus_ExecutionEnvironment(
-									(fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) value);
-
-							traced.getLocus_ExecutionEnvironmentSequence().add(newValue);
-							newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values().add(newValue);
+							traced.getActivityExecutionSequence().add(newValue);
+							newState.getActivityNodeActivationGroup_activityExecution_Values().add(newValue);
 						}
 					}
 
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ForkedToken) {
 						fumlConfiguration.Activities.IntermediateActivities.ForkedToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ForkedToken) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getForkedToken_BaseTokenIsWithdrawn().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.ForkedToken_baseTokenIsWithdrawn_Value lastValue = traced
-									.getBaseTokenIsWithdrawnSequence()
-									.get(traced.getBaseTokenIsWithdrawnSequence().size() - 1);
-							newState.getForkedToken_baseTokenIsWithdrawn_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.ForkedToken_baseTokenIsWithdrawn_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createForkedToken_baseTokenIsWithdrawn_Value();
-
-							boolean value = o_cast.isBaseTokenIsWithdrawn();
-
-							newValue.setBaseTokenIsWithdrawn((boolean) value);
-
-							traced.getBaseTokenIsWithdrawnSequence().add(newValue);
-							newState.getForkedToken_baseTokenIsWithdrawn_Values().add(newValue);
-						} else
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getForkedToken_BaseToken().getFeatureID()) {
@@ -12904,177 +12767,34 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 							traced.getRemainingOffersCountSequence().add(newValue);
 							newState.getForkedToken_remainingOffersCount_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivationGroup_ActivityExecution().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.ActivityNodeActivationGroup_activityExecution_Value lastValue = traced
-									.getActivityExecutionSequence()
-									.get(traced.getActivityExecutionSequence().size() - 1);
-							newState.getActivityNodeActivationGroup_activityExecution_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.ActivityNodeActivationGroup_activityExecution_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createActivityNodeActivationGroup_activityExecution_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution value = null;
-							if (o_cast.getActivityExecution() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
-										.get(o_cast.getActivityExecution()));
-							}
-
-							newValue.setActivityExecution(
-									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) value);
-
-							traced.getActivityExecutionSequence().add(newValue);
-							newState.getActivityNodeActivationGroup_activityExecution_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
-						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
-								.getInputParameterValues_Name().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues traced = (fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.InputParameterValues_name_Value lastValue = traced
-									.getNameSequence().get(traced.getNameSequence().size() - 1);
-							newState.getInputParameterValues_name_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.InputParameterValues_name_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createInputParameterValues_name_Value();
-
-							java.lang.String value = o_cast.getName();
-
-							newValue.setName((java.lang.String) value);
-
-							traced.getNameSequence().add(newValue);
-							newState.getInputParameterValues_name_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof fumlConfiguration.Classes.Kernel.Evaluation) {
-						fumlConfiguration.Classes.Kernel.Evaluation o_cast = (fumlConfiguration.Classes.Kernel.Evaluation) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getEvaluation_Specification_Evaluation().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.Evaluation_specification_Evaluation_Value lastValue = traced
-									.getSpecification_EvaluationSequence()
-									.get(traced.getSpecification_EvaluationSequence().size() - 1);
-							newState.getEvaluation_specification_Evaluation_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.Evaluation_specification_Evaluation_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createEvaluation_specification_Evaluation_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.TracedValueSpecificationConfiguration value = null;
-							if (o_cast.getSpecification_Evaluation() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.TracedValueSpecificationConfiguration) exeToTraced
-										.get(o_cast.getSpecification_Evaluation()));
-							}
-
-							newValue.setSpecification_Evaluation(
-									(fumlConfigurationTrace.States.fumlConfiguration.TracedValueSpecificationConfiguration) value);
-
-							traced.getSpecification_EvaluationSequence().add(newValue);
-							newState.getEvaluation_specification_Evaluation_Values().add(newValue);
 						} else
 
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getEvaluation_Locus_Evaluation().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getForkedToken_BaseTokenIsWithdrawn().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation) exeToTraced
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
 									.get(o);
-							fumlConfigurationTrace.States.Evaluation_locus_Evaluation_Value lastValue = traced
-									.getLocus_EvaluationSequence().get(traced.getLocus_EvaluationSequence().size() - 1);
-							newState.getEvaluation_locus_Evaluation_Values().remove(lastValue);
+							fumlConfigurationTrace.States.ForkedToken_baseTokenIsWithdrawn_Value lastValue = traced
+									.getBaseTokenIsWithdrawnSequence()
+									.get(traced.getBaseTokenIsWithdrawnSequence().size() - 1);
+							newState.getForkedToken_baseTokenIsWithdrawn_Values().remove(lastValue);
 
 							// And we create a proper new value
-							fumlConfigurationTrace.States.Evaluation_locus_Evaluation_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createEvaluation_locus_Evaluation_Value();
+							fumlConfigurationTrace.States.ForkedToken_baseTokenIsWithdrawn_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createForkedToken_baseTokenIsWithdrawn_Value();
 
-							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus value = null;
-							if (o_cast.getLocus_Evaluation() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-										.get(o_cast.getLocus_Evaluation()));
-							}
+							boolean value = o_cast.isBaseTokenIsWithdrawn();
 
-							newValue.setLocus_Evaluation(
-									(fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) value);
+							newValue.setBaseTokenIsWithdrawn((boolean) value);
 
-							traced.getLocus_EvaluationSequence().add(newValue);
-							newState.getEvaluation_locus_Evaluation_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
-						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getBooleanValue_Value_BooleanValue().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.BooleanValue_value_BooleanValue_Value lastValue = traced
-									.getValue_BooleanValueSequence()
-									.get(traced.getValue_BooleanValueSequence().size() - 1);
-							newState.getBooleanValue_value_BooleanValue_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.BooleanValue_value_BooleanValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createBooleanValue_value_BooleanValue_Value();
-
-							boolean value = o_cast.isValue_BooleanValue();
-
-							newValue.setValue_BooleanValue((boolean) value);
-
-							traced.getValue_BooleanValueSequence().add(newValue);
-							newState.getBooleanValue_value_BooleanValue_Values().add(newValue);
+							traced.getBaseTokenIsWithdrawnSequence().add(newValue);
+							newState.getForkedToken_baseTokenIsWithdrawn_Values().add(newValue);
 						}
 					}
 
 					if (o instanceof fumlConfiguration.Classes.Kernel.FeatureValue) {
 						fumlConfiguration.Classes.Kernel.FeatureValue o_cast = (fumlConfiguration.Classes.Kernel.FeatureValue) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getFeatureValue_Position().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.FeatureValue_position_Value lastValue = traced
-									.getPositionSequence().get(traced.getPositionSequence().size() - 1);
-							newState.getFeatureValue_position_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.FeatureValue_position_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createFeatureValue_position_Value();
-
-							int value = o_cast.getPosition();
-
-							newValue.setPosition((int) value);
-
-							traced.getPositionSequence().add(newValue);
-							newState.getFeatureValue_position_Values().add(newValue);
-						} else
 
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getFeatureValue_Feature().getFeatureID()) {
@@ -13101,6 +12821,113 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 							traced.getFeatureSequence().add(newValue);
 							newState.getFeatureValue_feature_Values().add(newValue);
+						} else
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getFeatureValue_Position().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.FeatureValue_position_Value lastValue = traced
+									.getPositionSequence().get(traced.getPositionSequence().size() - 1);
+							newState.getFeatureValue_position_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.FeatureValue_position_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createFeatureValue_position_Value();
+
+							int value = o_cast.getPosition();
+
+							newValue.setPosition((int) value);
+
+							traced.getPositionSequence().add(newValue);
+							newState.getFeatureValue_position_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
+						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getIntegerValue_Value_IntegerValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.IntegerValue_value_IntegerValue_Value lastValue = traced
+									.getValue_IntegerValueSequence()
+									.get(traced.getValue_IntegerValueSequence().size() - 1);
+							newState.getIntegerValue_value_IntegerValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.IntegerValue_value_IntegerValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createIntegerValue_value_IntegerValue_Value();
+
+							int value = o_cast.getValue_IntegerValue();
+
+							newValue.setValue_IntegerValue((int) value);
+
+							traced.getValue_IntegerValueSequence().add(newValue);
+							newState.getIntegerValue_value_IntegerValue_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
+						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getParameterValue_Parameter_ParameterValue().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue traced = (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.ParameterValue_parameter_ParameterValue_Value lastValue = traced
+									.getParameter_ParameterValueSequence()
+									.get(traced.getParameter_ParameterValueSequence().size() - 1);
+							newState.getParameterValue_parameter_ParameterValue_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.ParameterValue_parameter_ParameterValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createParameterValue_parameter_ParameterValue_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.TracedParameterConfiguration value = null;
+							if (o_cast.getParameter_ParameterValue() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.TracedParameterConfiguration) exeToTraced
+										.get(o_cast.getParameter_ParameterValue()));
+							}
+
+							newValue.setParameter_ParameterValue(
+									(fumlConfigurationTrace.States.fumlConfiguration.TracedParameterConfiguration) value);
+
+							traced.getParameter_ParameterValueSequence().add(newValue);
+							newState.getParameterValue_parameter_ParameterValue_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
+						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
+								.getInputParameterValues_Name().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues traced = (fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.InputParameterValues_name_Value lastValue = traced
+									.getNameSequence().get(traced.getNameSequence().size() - 1);
+							newState.getInputParameterValues_name_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.InputParameterValues_name_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createInputParameterValues_name_Value();
+
+							java.lang.String value = o_cast.getName();
+
+							newValue.setName((java.lang.String) value);
+
+							traced.getNameSequence().add(newValue);
+							newState.getInputParameterValues_name_Values().add(newValue);
 						}
 					}
 
@@ -13135,64 +12962,6 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						}
 					}
 
-					if (o instanceof fumlConfiguration.Loci.Locus) {
-						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Executor()
-								.getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.Locus_executor_Value lastValue = traced.getExecutorSequence()
-									.get(traced.getExecutorSequence().size() - 1);
-							newState.getLocus_executor_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.Locus_executor_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createLocus_executor_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor value = null;
-							if (o_cast.getExecutor() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
-										.get(o_cast.getExecutor()));
-							}
-
-							newValue.setExecutor(
-									(fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor) value);
-
-							traced.getExecutorSequence().add(newValue);
-							newState.getLocus_executor_Values().add(newValue);
-						} else
-
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Factory()
-								.getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.Locus_factory_Value lastValue = traced.getFactorySequence()
-									.get(traced.getFactorySequence().size() - 1);
-							newState.getLocus_factory_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.Locus_factory_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createLocus_factory_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionFactory value = null;
-							if (o_cast.getFactory() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
-										.get(o_cast.getFactory()));
-							}
-
-							newValue.setFactory(
-									(fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) value);
-
-							traced.getFactorySequence().add(newValue);
-							newState.getLocus_factory_Values().add(newValue);
-						}
-					}
-
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) {
 						fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectNodeActivation) o;
 
@@ -13217,95 +12986,6 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 							traced.getOfferedTokenCountSequence().add(newValue);
 							newState.getObjectNodeActivation_offeredTokenCount_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
-						fumlConfiguration.Classes.Kernel.Reference o_cast = (fumlConfiguration.Classes.Kernel.Reference) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getReference_Referent().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.Reference_referent_Value lastValue = traced
-									.getReferentSequence().get(traced.getReferentSequence().size() - 1);
-							newState.getReference_referent_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.Reference_referent_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createReference_referent_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedObject value = null;
-							if (o_cast.getReferent() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
-										.get(o_cast.getReferent()));
-							}
-
-							newValue.setReferent(
-									(fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) value);
-
-							traced.getReferentSequence().add(newValue);
-							newState.getReference_referent_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof fumlConfiguration.Classes.Kernel.IntegerValue) {
-						fumlConfiguration.Classes.Kernel.IntegerValue o_cast = (fumlConfiguration.Classes.Kernel.IntegerValue) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getIntegerValue_Value_IntegerValue().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.IntegerValue_value_IntegerValue_Value lastValue = traced
-									.getValue_IntegerValueSequence()
-									.get(traced.getValue_IntegerValueSequence().size() - 1);
-							newState.getIntegerValue_value_IntegerValue_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.IntegerValue_value_IntegerValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createIntegerValue_value_IntegerValue_Value();
-
-							int value = o_cast.getValue_IntegerValue();
-
-							newValue.setValue_IntegerValue((int) value);
-
-							traced.getValue_IntegerValueSequence().add(newValue);
-							newState.getIntegerValue_value_IntegerValue_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof fumlConfiguration.Classes.Kernel.PrimitiveValue) {
-						fumlConfiguration.Classes.Kernel.PrimitiveValue o_cast = (fumlConfiguration.Classes.Kernel.PrimitiveValue) o;
-
-						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
-								.getPrimitiveValue_Type().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.PrimitiveValue_type_Value lastValue = traced.getTypeSequence()
-									.get(traced.getTypeSequence().size() - 1);
-							newState.getPrimitiveValue_type_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.PrimitiveValue_type_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createPrimitiveValue_type_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.TracedPrimitiveTypeConfiguration value = null;
-							if (o_cast.getType() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.TracedPrimitiveTypeConfiguration) exeToTraced
-										.get(o_cast.getType()));
-							}
-
-							newValue.setType(
-									(fumlConfigurationTrace.States.fumlConfiguration.TracedPrimitiveTypeConfiguration) value);
-
-							traced.getTypeSequence().add(newValue);
-							newState.getPrimitiveValue_type_Values().add(newValue);
 						}
 					}
 
@@ -13341,29 +13021,88 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						}
 					}
 
-					if (o instanceof fumlConfiguration.Actions.BasicActions.ActionActivation) {
-						fumlConfiguration.Actions.BasicActions.ActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.ActionActivation) o;
+					if (o instanceof fumlConfiguration.Classes.Kernel.BooleanValue) {
+						fumlConfiguration.Classes.Kernel.BooleanValue o_cast = (fumlConfiguration.Classes.Kernel.BooleanValue) o;
 
-						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
-								.getActionActivation_Firing().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getBooleanValue_Value_BooleanValue().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
+							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
 									.get(o);
-							fumlConfigurationTrace.States.ActionActivation_firing_Value lastValue = traced
-									.getFiringSequence().get(traced.getFiringSequence().size() - 1);
-							newState.getActionActivation_firing_Values().remove(lastValue);
+							fumlConfigurationTrace.States.BooleanValue_value_BooleanValue_Value lastValue = traced
+									.getValue_BooleanValueSequence()
+									.get(traced.getValue_BooleanValueSequence().size() - 1);
+							newState.getBooleanValue_value_BooleanValue_Values().remove(lastValue);
 
 							// And we create a proper new value
-							fumlConfigurationTrace.States.ActionActivation_firing_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createActionActivation_firing_Value();
+							fumlConfigurationTrace.States.BooleanValue_value_BooleanValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createBooleanValue_value_BooleanValue_Value();
 
-							boolean value = o_cast.isFiring();
+							boolean value = o_cast.isValue_BooleanValue();
 
-							newValue.setFiring((boolean) value);
+							newValue.setValue_BooleanValue((boolean) value);
 
-							traced.getFiringSequence().add(newValue);
-							newState.getActionActivation_firing_Values().add(newValue);
+							traced.getValue_BooleanValueSequence().add(newValue);
+							newState.getBooleanValue_value_BooleanValue_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof fumlConfiguration.Loci.Locus) {
+						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Factory()
+								.getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.Locus_factory_Value lastValue = traced.getFactorySequence()
+									.get(traced.getFactorySequence().size() - 1);
+							newState.getLocus_factory_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.Locus_factory_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createLocus_factory_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionFactory value = null;
+							if (o_cast.getFactory() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
+										.get(o_cast.getFactory()));
+							}
+
+							newValue.setFactory(
+									(fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) value);
+
+							traced.getFactorySequence().add(newValue);
+							newState.getLocus_factory_Values().add(newValue);
+						} else
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Executor()
+								.getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.Locus_executor_Value lastValue = traced.getExecutorSequence()
+									.get(traced.getExecutorSequence().size() - 1);
+							newState.getLocus_executor_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.Locus_executor_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createLocus_executor_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor value = null;
+							if (o_cast.getExecutor() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
+										.get(o_cast.getExecutor()));
+							}
+
+							newValue.setExecutor(
+									(fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor) value);
+
+							traced.getExecutorSequence().add(newValue);
+							newState.getLocus_executor_Values().add(newValue);
 						}
 					}
 
@@ -13398,6 +13137,37 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						}
 					}
 
+					if (o instanceof fumlConfiguration.Classes.Kernel.Reference) {
+						fumlConfiguration.Classes.Kernel.Reference o_cast = (fumlConfiguration.Classes.Kernel.Reference) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getReference_Referent().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.Reference_referent_Value lastValue = traced
+									.getReferentSequence().get(traced.getReferentSequence().size() - 1);
+							newState.getReference_referent_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.Reference_referent_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createReference_referent_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedObject value = null;
+							if (o_cast.getReferent() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) exeToTraced
+										.get(o_cast.getReferent()));
+							}
+
+							newValue.setReferent(
+									(fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedObject) value);
+
+							traced.getReferentSequence().add(newValue);
+							newState.getReference_referent_Values().add(newValue);
+						}
+					}
+
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ObjectToken) {
 						fumlConfiguration.Activities.IntermediateActivities.ObjectToken o_cast = (fumlConfiguration.Activities.IntermediateActivities.ObjectToken) o;
 
@@ -13426,38 +13196,6 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 							traced.getValueSequence().add(newValue);
 							newState.getObjectToken_value_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
-						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
-
-						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
-								.getParameterValue_Parameter_ParameterValue().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue traced = (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
-									.get(o);
-							fumlConfigurationTrace.States.ParameterValue_parameter_ParameterValue_Value lastValue = traced
-									.getParameter_ParameterValueSequence()
-									.get(traced.getParameter_ParameterValueSequence().size() - 1);
-							newState.getParameterValue_parameter_ParameterValue_Values().remove(lastValue);
-
-							// And we create a proper new value
-							fumlConfigurationTrace.States.ParameterValue_parameter_ParameterValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createParameterValue_parameter_ParameterValue_Value();
-
-							fumlConfigurationTrace.States.fumlConfiguration.TracedParameterConfiguration value = null;
-							if (o_cast.getParameter_ParameterValue() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.TracedParameterConfiguration) exeToTraced
-										.get(o_cast.getParameter_ParameterValue()));
-							}
-
-							newValue.setParameter_ParameterValue(
-									(fumlConfigurationTrace.States.fumlConfiguration.TracedParameterConfiguration) value);
-
-							traced.getParameter_ParameterValueSequence().add(newValue);
-							newState.getParameterValue_parameter_ParameterValue_Values().add(newValue);
 						}
 					}
 
@@ -13555,6 +13293,268 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						}
 					}
 
+					if (o instanceof fumlConfiguration.Classes.Kernel.PrimitiveValue) {
+						fumlConfiguration.Classes.Kernel.PrimitiveValue o_cast = (fumlConfiguration.Classes.Kernel.PrimitiveValue) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getPrimitiveValue_Type().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.PrimitiveValue_type_Value lastValue = traced.getTypeSequence()
+									.get(traced.getTypeSequence().size() - 1);
+							newState.getPrimitiveValue_type_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.PrimitiveValue_type_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createPrimitiveValue_type_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.TracedPrimitiveTypeConfiguration value = null;
+							if (o_cast.getType() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.TracedPrimitiveTypeConfiguration) exeToTraced
+										.get(o_cast.getType()));
+							}
+
+							newValue.setType(
+									(fumlConfigurationTrace.States.fumlConfiguration.TracedPrimitiveTypeConfiguration) value);
+
+							traced.getTypeSequence().add(newValue);
+							newState.getPrimitiveValue_type_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof fumlConfiguration.Loci.ExecutionEnvironment) {
+						fumlConfiguration.Loci.ExecutionEnvironment o_cast = (fumlConfiguration.Loci.ExecutionEnvironment) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getExecutionEnvironment_Locus_ExecutionEnvironment().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value lastValue = traced
+									.getLocus_ExecutionEnvironmentSequence()
+									.get(traced.getLocus_ExecutionEnvironmentSequence().size() - 1);
+							newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createExecutionEnvironment_locus_ExecutionEnvironment_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus value = null;
+							if (o_cast.getLocus_ExecutionEnvironment() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+										.get(o_cast.getLocus_ExecutionEnvironment()));
+							}
+
+							newValue.setLocus_ExecutionEnvironment(
+									(fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) value);
+
+							traced.getLocus_ExecutionEnvironmentSequence().add(newValue);
+							newState.getExecutionEnvironment_locus_ExecutionEnvironment_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityEdgeInstance_Group_ActivityEdgeInstance().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value lastValue = traced
+									.getGroup_ActivityEdgeInstanceSequence()
+									.get(traced.getGroup_ActivityEdgeInstanceSequence().size() - 1);
+							newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createActivityEdgeInstance_group_ActivityEdgeInstance_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup value = null;
+							if (o_cast.getGroup_ActivityEdgeInstance() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+										.get(o_cast.getGroup_ActivityEdgeInstance()));
+							}
+
+							newValue.setGroup_ActivityEdgeInstance(
+									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) value);
+
+							traced.getGroup_ActivityEdgeInstanceSequence().add(newValue);
+							newState.getActivityEdgeInstance_group_ActivityEdgeInstance_Values().add(newValue);
+						} else
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityEdgeInstance_Source().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.ActivityEdgeInstance_source_Value lastValue = traced
+									.getSourceSequence().get(traced.getSourceSequence().size() - 1);
+							newState.getActivityEdgeInstance_source_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.ActivityEdgeInstance_source_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createActivityEdgeInstance_source_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation value = null;
+							if (o_cast.getSource() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+										.get(o_cast.getSource()));
+							}
+
+							newValue.setSource(
+									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value);
+
+							traced.getSourceSequence().add(newValue);
+							newState.getActivityEdgeInstance_source_Values().add(newValue);
+						} else
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityEdgeInstance_Target().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.ActivityEdgeInstance_target_Value lastValue = traced
+									.getTargetSequence().get(traced.getTargetSequence().size() - 1);
+							newState.getActivityEdgeInstance_target_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.ActivityEdgeInstance_target_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createActivityEdgeInstance_target_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation value = null;
+							if (o_cast.getTarget() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+										.get(o_cast.getTarget()));
+							}
+
+							newValue.setTarget(
+									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) value);
+
+							traced.getTargetSequence().add(newValue);
+							newState.getActivityEdgeInstance_target_Values().add(newValue);
+						} else
+
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityEdgeInstance_Edge_ActivityEdgeInstance().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value lastValue = traced
+									.getEdge_ActivityEdgeInstanceSequence()
+									.get(traced.getEdge_ActivityEdgeInstanceSequence().size() - 1);
+							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createActivityEdgeInstance_edge_ActivityEdgeInstance_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.TracedActivityEdgeConfiguration value = null;
+							if (o_cast.getEdge_ActivityEdgeInstance() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.TracedActivityEdgeConfiguration) exeToTraced
+										.get(o_cast.getEdge_ActivityEdgeInstance()));
+							}
+
+							newValue.setEdge_ActivityEdgeInstance(
+									(fumlConfigurationTrace.States.fumlConfiguration.TracedActivityEdgeConfiguration) value);
+
+							traced.getEdge_ActivityEdgeInstanceSequence().add(newValue);
+							newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof fumlConfiguration.Classes.Kernel.Evaluation) {
+						fumlConfiguration.Classes.Kernel.Evaluation o_cast = (fumlConfiguration.Classes.Kernel.Evaluation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getEvaluation_Locus_Evaluation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.Evaluation_locus_Evaluation_Value lastValue = traced
+									.getLocus_EvaluationSequence().get(traced.getLocus_EvaluationSequence().size() - 1);
+							newState.getEvaluation_locus_Evaluation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.Evaluation_locus_Evaluation_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createEvaluation_locus_Evaluation_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus value = null;
+							if (o_cast.getLocus_Evaluation() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
+										.get(o_cast.getLocus_Evaluation()));
+							}
+
+							newValue.setLocus_Evaluation(
+									(fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) value);
+
+							traced.getLocus_EvaluationSequence().add(newValue);
+							newState.getEvaluation_locus_Evaluation_Values().add(newValue);
+						} else
+
+						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
+								.getEvaluation_Specification_Evaluation().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.Evaluation_specification_Evaluation_Value lastValue = traced
+									.getSpecification_EvaluationSequence()
+									.get(traced.getSpecification_EvaluationSequence().size() - 1);
+							newState.getEvaluation_specification_Evaluation_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.Evaluation_specification_Evaluation_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createEvaluation_specification_Evaluation_Value();
+
+							fumlConfigurationTrace.States.fumlConfiguration.TracedValueSpecificationConfiguration value = null;
+							if (o_cast.getSpecification_Evaluation() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.TracedValueSpecificationConfiguration) exeToTraced
+										.get(o_cast.getSpecification_Evaluation()));
+							}
+
+							newValue.setSpecification_Evaluation(
+									(fumlConfigurationTrace.States.fumlConfiguration.TracedValueSpecificationConfiguration) value);
+
+							traced.getSpecification_EvaluationSequence().add(newValue);
+							newState.getEvaluation_specification_Evaluation_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof fumlConfiguration.Actions.BasicActions.ActionActivation) {
+						fumlConfiguration.Actions.BasicActions.ActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.ActionActivation) o;
+
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_Firing().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
+									.get(o);
+							fumlConfigurationTrace.States.ActionActivation_firing_Value lastValue = traced
+									.getFiringSequence().get(traced.getFiringSequence().size() - 1);
+							newState.getActionActivation_firing_Values().remove(lastValue);
+
+							// And we create a proper new value
+							fumlConfigurationTrace.States.ActionActivation_firing_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createActionActivation_firing_Value();
+
+							boolean value = o_cast.isFiring();
+
+							newValue.setFiring((boolean) value);
+
+							traced.getFiringSequence().add(newValue);
+							newState.getActionActivation_firing_Values().add(newValue);
+						}
+					}
+
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
 
@@ -13587,31 +13587,25 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						} else
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
+								.getActivityNodeActivation_IsRunning().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
 									.get(o);
-							fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
-									.getGroup_ActivityNodeActivationSequence()
-									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
-							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
+							fumlConfigurationTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
+									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
+							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
 
 							// And we create a proper new value
-							fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
+							fumlConfigurationTrace.States.ActivityNodeActivation_isRunning_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_isRunning_Value();
 
-							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup value = null;
-							if (o_cast.getGroup_ActivityNodeActivation() != null) {
-								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
-										.get(o_cast.getGroup_ActivityNodeActivation()));
-							}
+							boolean value = o_cast.isIsRunning();
 
-							newValue.setGroup_ActivityNodeActivation(
-									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) value);
+							newValue.setIsRunning((boolean) value);
 
-							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
-							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
+							traced.getIsRunningSequence().add(newValue);
+							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
 						} else
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
@@ -13637,25 +13631,31 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						} else
 
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivation_IsRunning().getFeatureID()) {
+								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
 									.get(o);
-							fumlConfigurationTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
-									.getIsRunningSequence().get(traced.getIsRunningSequence().size() - 1);
-							newState.getActivityNodeActivation_isRunning_Values().remove(lastValue);
+							fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
+									.getGroup_ActivityNodeActivationSequence()
+									.get(traced.getGroup_ActivityNodeActivationSequence().size() - 1);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().remove(lastValue);
 
 							// And we create a proper new value
-							fumlConfigurationTrace.States.ActivityNodeActivation_isRunning_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-									.createActivityNodeActivation_isRunning_Value();
+							fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+									.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
-							boolean value = o_cast.isIsRunning();
+							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup value = null;
+							if (o_cast.getGroup_ActivityNodeActivation() != null) {
+								value = ((fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
+										.get(o_cast.getGroup_ActivityNodeActivation()));
+							}
 
-							newValue.setIsRunning((boolean) value);
+							newValue.setGroup_ActivityNodeActivation(
+									(fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) value);
 
-							traced.getIsRunningSequence().add(newValue);
-							newState.getActivityNodeActivation_isRunning_Values().add(newValue);
+							traced.getGroup_ActivityNodeActivationSequence().add(newValue);
+							newState.getActivityNodeActivation_group_ActivityNodeActivation_Values().add(newValue);
 						}
 					}
 
@@ -13697,61 +13697,6 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) {
 					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) modelChange;
 					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityEdgeInstance_Offers().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value> valueSequence = tracedObject
-									.getOffersSequence();
-							fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Activities.IntermediateActivities.Offer aValue : o_cast
-									.getOffers()) {
-								addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.Offer) aValue,
-										newState);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getOffers().size() == o_cast.getOffers().size()) {
-									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Offer> it = o_cast
-											.getOffers().iterator();
-									for (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer aPreviousValue : previousValue
-											.getOffers()) {
-										fumlConfiguration.Activities.IntermediateActivities.Offer aCurrentValue = it
-												.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value lastValue = tracedObject
-										.getOffersSequence().get(tracedObject.getOffersSequence().size() - 1);
-								newState.getActivityEdgeInstance_offers_Values().remove(lastValue);
-								// And we create a proper new value							
-								fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-										.createActivityEdgeInstance_offers_Value();
-								newValue.getOffers()
-										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer>) getExeToTraced(
-												o_cast.getOffers(), newState));
-								tracedObject.getOffersSequence().add(newValue);
-								newState.getActivityEdgeInstance_offers_Values().add(newValue);
-							}
-						}
-					}
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) {
 						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup) o;
 						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
@@ -13858,63 +13803,6 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 												o_cast.getNodeActivations(), newState));
 								tracedObject.getNodeActivationsSequence().add(newValue);
 								newState.getActivityNodeActivationGroup_nodeActivations_Values().add(newValue);
-							}
-						}
-					}
-					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
-						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
-								.getInputParameterValues_ParameterValues().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value> valueSequence = tracedObject
-									.getParameterValuesSequence();
-							fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast
-									.getParameterValues()) {
-								addNewObjectToState(
-										(fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) aValue,
-										newState);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getParameterValues().size() == o_cast.getParameterValues().size()) {
-									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue> it = o_cast
-											.getParameterValues().iterator();
-									for (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue aPreviousValue : previousValue
-											.getParameterValues()) {
-										fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aCurrentValue = it
-												.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value lastValue = tracedObject
-										.getParameterValuesSequence()
-										.get(tracedObject.getParameterValuesSequence().size() - 1);
-								newState.getInputParameterValues_parameterValues_Values().remove(lastValue);
-								// And we create a proper new value							
-								fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-										.createInputParameterValues_parameterValues_Value();
-								newValue.getParameterValues()
-										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
-												o_cast.getParameterValues(), newState));
-								tracedObject.getParameterValuesSequence().add(newValue);
-								newState.getInputParameterValues_parameterValues_Values().add(newValue);
 							}
 						}
 					}
@@ -14025,32 +13913,87 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 						}
 					}
-					if (o instanceof fumlConfiguration.Actions.BasicActions.CallActionActivation) {
-						fumlConfiguration.Actions.BasicActions.CallActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.CallActionActivation) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation) exeToTraced
+					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
+						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
+						fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
 								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
-								.getCallActionActivation_CallExecutions().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
+								.getParameterValue_Values_ParameterValue().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value> valueSequence = tracedObject
-									.getCallExecutionsSequence();
-							fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value previousValue = null;
+							List<fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value> valueSequence = tracedObject
+									.getValues_ParameterValueSequence();
+							fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value previousValue = null;
 							if (!valueSequence.isEmpty()) {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
-							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution aValue : o_cast
-									.getCallExecutions()) {
-								addNewObjectToState((fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) aValue,
+							for (fumlConfiguration.Classes.Kernel.Value aValue : o_cast.getValues_ParameterValue()) {
+								addNewObjectToState((fumlConfiguration.Classes.Kernel.Value) aValue, newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getValues_ParameterValue().size() == o_cast.getValues_ParameterValue()
+										.size()) {
+									java.util.Iterator<fumlConfiguration.Classes.Kernel.Value> it = o_cast
+											.getValues_ParameterValue().iterator();
+									for (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedValue aPreviousValue : previousValue
+											.getValues_ParameterValue()) {
+										fumlConfiguration.Classes.Kernel.Value aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value lastValue = tracedObject
+										.getValues_ParameterValueSequence()
+										.get(tracedObject.getValues_ParameterValueSequence().size() - 1);
+								newState.getParameterValue_values_ParameterValue_Values().remove(lastValue);
+								// And we create a proper new value							
+								fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+										.createParameterValue_values_ParameterValue_Value();
+								newValue.getValues_ParameterValue()
+										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedValue>) getExeToTraced(
+												o_cast.getValues_ParameterValue(), newState));
+								tracedObject.getValues_ParameterValueSequence().add(newValue);
+								newState.getParameterValue_values_ParameterValue_Values().add(newValue);
+							}
+						}
+					}
+					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
+						fumlConfiguration.Input.InputParameterValues o_cast = (fumlConfiguration.Input.InputParameterValues) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
+								.getInputParameterValues_ParameterValues().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value> valueSequence = tracedObject
+									.getParameterValuesSequence();
+							fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aValue : o_cast
+									.getParameterValues()) {
+								addNewObjectToState(
+										(fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) aValue,
 										newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
-								if (previousValue.getCallExecutions().size() == o_cast.getCallExecutions().size()) {
-									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution> it = o_cast
-											.getCallExecutions().iterator();
-									for (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution aPreviousValue : previousValue
-											.getCallExecutions()) {
-										fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution aCurrentValue = it
+								if (previousValue.getParameterValues().size() == o_cast.getParameterValues().size()) {
+									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue> it = o_cast
+											.getParameterValues().iterator();
+									for (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue aPreviousValue : previousValue
+											.getParameterValues()) {
+										fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue aCurrentValue = it
 												.next();
 										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
 											change = true;
@@ -14066,74 +14009,18 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							if (change) {
 								stateChanged = true;
 								// Rollback: we remove the last value of this field from the new state
-								fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value lastValue = tracedObject
-										.getCallExecutionsSequence()
-										.get(tracedObject.getCallExecutionsSequence().size() - 1);
-								newState.getCallActionActivation_callExecutions_Values().remove(lastValue);
+								fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value lastValue = tracedObject
+										.getParameterValuesSequence()
+										.get(tracedObject.getParameterValuesSequence().size() - 1);
+								newState.getInputParameterValues_parameterValues_Values().remove(lastValue);
 								// And we create a proper new value							
-								fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-										.createCallActionActivation_callExecutions_Value();
-								newValue.getCallExecutions()
-										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution>) getExeToTraced(
-												o_cast.getCallExecutions(), newState));
-								tracedObject.getCallExecutionsSequence().add(newValue);
-								newState.getCallActionActivation_callExecutions_Values().add(newValue);
-							}
-						}
-					}
-					if (o instanceof fumlConfiguration.Loci.Locus) {
-						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
-								.getLocus_ExtensionalValues().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<fumlConfigurationTrace.States.Locus_extensionalValues_Value> valueSequence = tracedObject
-									.getExtensionalValuesSequence();
-							fumlConfigurationTrace.States.Locus_extensionalValues_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Classes.Kernel.ExtensionalValue aValue : o_cast
-									.getExtensionalValues()) {
-								addNewObjectToState((fumlConfiguration.Classes.Kernel.ExtensionalValue) aValue,
-										newState);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getExtensionalValues().size() == o_cast.getExtensionalValues()
-										.size()) {
-									java.util.Iterator<fumlConfiguration.Classes.Kernel.ExtensionalValue> it = o_cast
-											.getExtensionalValues().iterator();
-									for (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue aPreviousValue : previousValue
-											.getExtensionalValues()) {
-										fumlConfiguration.Classes.Kernel.ExtensionalValue aCurrentValue = it.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								fumlConfigurationTrace.States.Locus_extensionalValues_Value lastValue = tracedObject
-										.getExtensionalValuesSequence()
-										.get(tracedObject.getExtensionalValuesSequence().size() - 1);
-								newState.getLocus_extensionalValues_Values().remove(lastValue);
-								// And we create a proper new value							
-								fumlConfigurationTrace.States.Locus_extensionalValues_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-										.createLocus_extensionalValues_Value();
-								newValue.getExtensionalValues()
-										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue>) getExeToTraced(
-												o_cast.getExtensionalValues(), newState));
-								tracedObject.getExtensionalValuesSequence().add(newValue);
-								newState.getLocus_extensionalValues_Values().add(newValue);
+								fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+										.createInputParameterValues_parameterValues_Value();
+								newValue.getParameterValues()
+										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue>) getExeToTraced(
+												o_cast.getParameterValues(), newState));
+								tracedObject.getParameterValuesSequence().add(newValue);
+								newState.getInputParameterValues_parameterValues_Values().add(newValue);
 							}
 						}
 					}
@@ -14242,61 +14129,6 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 						}
 					}
-					if (o instanceof fumlConfiguration.Actions.BasicActions.ActionActivation) {
-						fumlConfiguration.Actions.BasicActions.ActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.ActionActivation) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
-								.getActionActivation_PinActivations().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<fumlConfigurationTrace.States.ActionActivation_pinActivations_Value> valueSequence = tracedObject
-									.getPinActivationsSequence();
-							fumlConfigurationTrace.States.ActionActivation_pinActivations_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast
-									.getPinActivations()) {
-								addNewObjectToState((fumlConfiguration.Actions.BasicActions.PinActivation) aValue,
-										newState);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getPinActivations().size() == o_cast.getPinActivations().size()) {
-									java.util.Iterator<fumlConfiguration.Actions.BasicActions.PinActivation> it = o_cast
-											.getPinActivations().iterator();
-									for (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation aPreviousValue : previousValue
-											.getPinActivations()) {
-										fumlConfiguration.Actions.BasicActions.PinActivation aCurrentValue = it.next();
-										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								fumlConfigurationTrace.States.ActionActivation_pinActivations_Value lastValue = tracedObject
-										.getPinActivationsSequence()
-										.get(tracedObject.getPinActivationsSequence().size() - 1);
-								newState.getActionActivation_pinActivations_Values().remove(lastValue);
-								// And we create a proper new value							
-								fumlConfigurationTrace.States.ActionActivation_pinActivations_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-										.createActionActivation_pinActivations_Value();
-								newValue.getPinActivations()
-										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
-												o_cast.getPinActivations(), newState));
-								tracedObject.getPinActivationsSequence().add(newValue);
-								newState.getActionActivation_pinActivations_Values().add(newValue);
-							}
-						}
-					}
 					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.Offer) {
 						fumlConfiguration.Activities.IntermediateActivities.Offer o_cast = (fumlConfiguration.Activities.IntermediateActivities.Offer) o;
 						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer) exeToTraced
@@ -14353,31 +14185,33 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 						}
 					}
-					if (o instanceof fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) {
-						fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue o_cast = (fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) o;
-						fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
+					if (o instanceof fumlConfiguration.Loci.Locus) {
+						fumlConfiguration.Loci.Locus o_cast = (fumlConfiguration.Loci.Locus) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
 								.get(o_cast);
-						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
-								.getParameterValue_Values_ParameterValue().getFeatureID()) {
+						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
+								.getLocus_ExtensionalValues().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value> valueSequence = tracedObject
-									.getValues_ParameterValueSequence();
-							fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value previousValue = null;
+							List<fumlConfigurationTrace.States.Locus_extensionalValues_Value> valueSequence = tracedObject
+									.getExtensionalValuesSequence();
+							fumlConfigurationTrace.States.Locus_extensionalValues_Value previousValue = null;
 							if (!valueSequence.isEmpty()) {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
-							for (fumlConfiguration.Classes.Kernel.Value aValue : o_cast.getValues_ParameterValue()) {
-								addNewObjectToState((fumlConfiguration.Classes.Kernel.Value) aValue, newState);
+							for (fumlConfiguration.Classes.Kernel.ExtensionalValue aValue : o_cast
+									.getExtensionalValues()) {
+								addNewObjectToState((fumlConfiguration.Classes.Kernel.ExtensionalValue) aValue,
+										newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
-								if (previousValue.getValues_ParameterValue().size() == o_cast.getValues_ParameterValue()
+								if (previousValue.getExtensionalValues().size() == o_cast.getExtensionalValues()
 										.size()) {
-									java.util.Iterator<fumlConfiguration.Classes.Kernel.Value> it = o_cast
-											.getValues_ParameterValue().iterator();
-									for (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedValue aPreviousValue : previousValue
-											.getValues_ParameterValue()) {
-										fumlConfiguration.Classes.Kernel.Value aCurrentValue = it.next();
+									java.util.Iterator<fumlConfiguration.Classes.Kernel.ExtensionalValue> it = o_cast
+											.getExtensionalValues().iterator();
+									for (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue aPreviousValue : previousValue
+											.getExtensionalValues()) {
+										fumlConfiguration.Classes.Kernel.ExtensionalValue aCurrentValue = it.next();
 										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
 											change = true;
 											break;
@@ -14392,18 +14226,74 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							if (change) {
 								stateChanged = true;
 								// Rollback: we remove the last value of this field from the new state
-								fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value lastValue = tracedObject
-										.getValues_ParameterValueSequence()
-										.get(tracedObject.getValues_ParameterValueSequence().size() - 1);
-								newState.getParameterValue_values_ParameterValue_Values().remove(lastValue);
+								fumlConfigurationTrace.States.Locus_extensionalValues_Value lastValue = tracedObject
+										.getExtensionalValuesSequence()
+										.get(tracedObject.getExtensionalValuesSequence().size() - 1);
+								newState.getLocus_extensionalValues_Values().remove(lastValue);
 								// And we create a proper new value							
-								fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-										.createParameterValue_values_ParameterValue_Value();
-								newValue.getValues_ParameterValue()
-										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedValue>) getExeToTraced(
-												o_cast.getValues_ParameterValue(), newState));
-								tracedObject.getValues_ParameterValueSequence().add(newValue);
-								newState.getParameterValue_values_ParameterValue_Values().add(newValue);
+								fumlConfigurationTrace.States.Locus_extensionalValues_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+										.createLocus_extensionalValues_Value();
+								newValue.getExtensionalValues()
+										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue>) getExeToTraced(
+												o_cast.getExtensionalValues(), newState));
+								tracedObject.getExtensionalValuesSequence().add(newValue);
+								newState.getLocus_extensionalValues_Values().add(newValue);
+							}
+						}
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.CallActionActivation) {
+						fumlConfiguration.Actions.BasicActions.CallActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.CallActionActivation) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedCallActionActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getCallActionActivation_CallExecutions().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value> valueSequence = tracedObject
+									.getCallExecutionsSequence();
+							fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution aValue : o_cast
+									.getCallExecutions()) {
+								addNewObjectToState((fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) aValue,
+										newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getCallExecutions().size() == o_cast.getCallExecutions().size()) {
+									java.util.Iterator<fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution> it = o_cast
+											.getCallExecutions().iterator();
+									for (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution aPreviousValue : previousValue
+											.getCallExecutions()) {
+										fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value lastValue = tracedObject
+										.getCallExecutionsSequence()
+										.get(tracedObject.getCallExecutionsSequence().size() - 1);
+								newState.getCallActionActivation_callExecutions_Values().remove(lastValue);
+								// And we create a proper new value							
+								fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+										.createCallActionActivation_callExecutions_Value();
+								newValue.getCallExecutions()
+										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution>) getExeToTraced(
+												o_cast.getCallExecutions(), newState));
+								tracedObject.getCallExecutionsSequence().add(newValue);
+								newState.getCallActionActivation_callExecutions_Values().add(newValue);
 							}
 						}
 					}
@@ -14568,33 +14458,32 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 						}
 					}
-					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
-						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
-						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-								.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+								.getActivityEdgeInstance_Offers().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
-									.getOutgoingEdgesSequence();
-							fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							List<fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value> valueSequence = tracedObject
+									.getOffersSequence();
+							fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value previousValue = null;
 							if (!valueSequence.isEmpty()) {
 								previousValue = valueSequence.get(valueSequence.size() - 1);
 							}
-							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
-									.getOutgoingEdges()) {
-								addNewObjectToState(
-										(fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) aValue,
+							for (fumlConfiguration.Activities.IntermediateActivities.Offer aValue : o_cast
+									.getOffers()) {
+								addNewObjectToState((fumlConfiguration.Activities.IntermediateActivities.Offer) aValue,
 										newState);
 							}
 							boolean change = false;
 							if (previousValue != null) {
-								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
-									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
-											.getOutgoingEdges().iterator();
-									for (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
-											.getOutgoingEdges()) {
-										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+								if (previousValue.getOffers().size() == o_cast.getOffers().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.Offer> it = o_cast
+											.getOffers().iterator();
+									for (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer aPreviousValue : previousValue
+											.getOffers()) {
+										fumlConfiguration.Activities.IntermediateActivities.Offer aCurrentValue = it
 												.next();
 										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
 											change = true;
@@ -14610,22 +14499,81 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							if (change) {
 								stateChanged = true;
 								// Rollback: we remove the last value of this field from the new state
-								fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
-										.getOutgoingEdgesSequence()
-										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
-								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value lastValue = tracedObject
+										.getOffersSequence().get(tracedObject.getOffersSequence().size() - 1);
+								newState.getActivityEdgeInstance_offers_Values().remove(lastValue);
 								// And we create a proper new value							
-								fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
-										.createActivityNodeActivation_outgoingEdges_Value();
-								newValue.getOutgoingEdges()
-										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
-												o_cast.getOutgoingEdges(), newState));
-								tracedObject.getOutgoingEdgesSequence().add(newValue);
-								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+								fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+										.createActivityEdgeInstance_offers_Value();
+								newValue.getOffers()
+										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedOffer>) getExeToTraced(
+												o_cast.getOffers(), newState));
+								tracedObject.getOffersSequence().add(newValue);
+								newState.getActivityEdgeInstance_offers_Values().add(newValue);
 							}
-						} else if (p
-								.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
-										.getActivityNodeActivation_HeldTokens().getFeatureID()) {
+						}
+					}
+					if (o instanceof fumlConfiguration.Actions.BasicActions.ActionActivation) {
+						fumlConfiguration.Actions.BasicActions.ActionActivation o_cast = (fumlConfiguration.Actions.BasicActions.ActionActivation) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
+								.getActionActivation_PinActivations().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<fumlConfigurationTrace.States.ActionActivation_pinActivations_Value> valueSequence = tracedObject
+									.getPinActivationsSequence();
+							fumlConfigurationTrace.States.ActionActivation_pinActivations_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Actions.BasicActions.PinActivation aValue : o_cast
+									.getPinActivations()) {
+								addNewObjectToState((fumlConfiguration.Actions.BasicActions.PinActivation) aValue,
+										newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getPinActivations().size() == o_cast.getPinActivations().size()) {
+									java.util.Iterator<fumlConfiguration.Actions.BasicActions.PinActivation> it = o_cast
+											.getPinActivations().iterator();
+									for (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation aPreviousValue : previousValue
+											.getPinActivations()) {
+										fumlConfiguration.Actions.BasicActions.PinActivation aCurrentValue = it.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								fumlConfigurationTrace.States.ActionActivation_pinActivations_Value lastValue = tracedObject
+										.getPinActivationsSequence()
+										.get(tracedObject.getPinActivationsSequence().size() - 1);
+								newState.getActionActivation_pinActivations_Values().remove(lastValue);
+								// And we create a proper new value							
+								fumlConfigurationTrace.States.ActionActivation_pinActivations_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+										.createActionActivation_pinActivations_Value();
+								newValue.getPinActivations()
+										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation>) getExeToTraced(
+												o_cast.getPinActivations(), newState));
+								tracedObject.getPinActivationsSequence().add(newValue);
+								newState.getActionActivation_pinActivations_Values().add(newValue);
+							}
+						}
+					}
+					if (o instanceof fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) {
+						fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation o_cast = (fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivation) o;
+						fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation tracedObject = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
 							List<fumlConfigurationTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
 									.getHeldTokensSequence();
@@ -14725,13 +14673,65 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								tracedObject.getIncomingEdgesSequence().add(newValue);
 								newState.getActivityNodeActivation_incomingEdges_Values().add(newValue);
 							}
+						} else if (p
+								.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
+										.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
+									.getOutgoingEdgesSequence();
+							fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							for (fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aValue : o_cast
+									.getOutgoingEdges()) {
+								addNewObjectToState(
+										(fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance) aValue,
+										newState);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getOutgoingEdges().size() == o_cast.getOutgoingEdges().size()) {
+									java.util.Iterator<fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance> it = o_cast
+											.getOutgoingEdges().iterator();
+									for (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance aPreviousValue : previousValue
+											.getOutgoingEdges()) {
+										fumlConfiguration.Activities.IntermediateActivities.ActivityEdgeInstance aCurrentValue = it
+												.next();
+										if (aPreviousValue != exeToTraced.get(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
+										.getOutgoingEdgesSequence()
+										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
+								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
+								// And we create a proper new value							
+								fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
+										.createActivityNodeActivation_outgoingEdges_Value();
+								newValue.getOutgoingEdges()
+										.addAll((Collection<? extends fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance>) getExeToTraced(
+												o_cast.getOutgoingEdges(), newState));
+								tracedObject.getOutgoingEdgesSequence().add(newValue);
+								newState.getActivityNodeActivation_outgoingEdges_Values().add(newValue);
+							}
 						}
 					}
 				}
 			}
 			if (stateChanged) {
 				final fumlConfigurationTrace.Steps.SpecificStep currentStep = context.peekFirst();
-				if (currentStep != null && currentStep instanceof org.gemoc.executionframework.engine.mse.BigStep) {
+				if (currentStep != null && currentStep instanceof fr.inria.diverse.trace.commons.model.trace.BigStep) {
 					final fumlConfigurationTrace.States.State startingState = lastState;
 					final fumlConfigurationTrace.States.State endingState = newState;
 					addImplicitStep(currentStep, startingState, endingState);
@@ -14744,12 +14744,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void addStep(org.gemoc.executionframework.engine.mse.Step step) {
+	public void addStep(fr.inria.diverse.trace.commons.model.trace.Step step) {
 		fumlConfigurationTrace.Steps.SpecificStep step_cast = null;
 		if (step != null && step instanceof fumlConfigurationTrace.Steps.SpecificStep) {
 			step_cast = (fumlConfigurationTrace.Steps.SpecificStep) step;
 			if (mseModel == null) {
-				mseModel = org.gemoc.executionframework.engine.mse.MseFactory.eINSTANCE.createMSEModel();
+				mseModel = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE.createMSEModel();
 				traceResource.getContents().add(mseModel);
 			}
 			mseModel.getOwnedMSEs().add(step_cast.getMseoccurrence().getMse());
@@ -15971,7 +15971,7 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 	}
 
 	@Override
-	public void endStep(org.gemoc.executionframework.engine.mse.Step step) {
+	public void endStep(fr.inria.diverse.trace.commons.model.trace.Step step) {
 		fumlConfigurationTrace.Steps.SpecificStep popped = context.pop();
 		if (popped != null)
 			popped.setEndingState(lastState);
@@ -15984,7 +15984,7 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 		traceRoot.setLaunchconfiguration(launchConfiguration);
 
 		// Create root sequential step
-		org.gemoc.executionframework.engine.mse.SequentialStep<fumlConfigurationTrace.Steps.SpecificStep> rootStep = org.gemoc.executionframework.engine.mse.MseFactory.eINSTANCE
+		fr.inria.diverse.trace.commons.model.trace.SequentialStep<fumlConfigurationTrace.Steps.SpecificStep> rootStep = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE
 				.createSequentialStep();
 		traceRoot.setRootStep(rootStep);
 

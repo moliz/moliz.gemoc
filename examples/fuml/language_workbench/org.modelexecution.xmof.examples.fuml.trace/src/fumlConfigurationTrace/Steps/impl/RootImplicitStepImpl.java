@@ -2,12 +2,12 @@
  */
 package fumlConfigurationTrace.Steps.impl;
 
+import fr.inria.diverse.trace.commons.model.trace.impl.SmallStepImpl;
+
 import fumlConfigurationTrace.Steps.RootImplicitStep;
 import fumlConfigurationTrace.Steps.StepsPackage;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.gemoc.executionframework.engine.mse.impl.SmallStepImpl;
 
 /**
  * <!-- begin-user-doc -->
