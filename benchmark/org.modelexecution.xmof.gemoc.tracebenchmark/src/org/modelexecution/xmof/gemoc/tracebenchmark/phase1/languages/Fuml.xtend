@@ -1,9 +1,9 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages
 
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
-import org.modelexecution.xmof.examples.fuml.trace.tracemanager.UmlTraceEngineAddon
 import java.util.Map
 import java.util.List
+import org.modelexecution.xmof.examples.fuml.trace.tracemanager.FumlConfigurationTraceEngineAddon
 
 class Fuml extends BenchmarkLanguage {
 
@@ -20,7 +20,7 @@ class Fuml extends BenchmarkLanguage {
 	}
 
 	override getFullTraceAddon() {
-		new UmlTraceEngineAddon()
+		new FumlConfigurationTraceEngineAddon()
 	}
 
 	override getPartialTraceAddon() {

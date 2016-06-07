@@ -2,7 +2,6 @@ package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages
 
 import java.util.List
 import java.util.Map
-import org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetTraceEngineAddon
 
 class PetriNetLanguage extends BenchmarkLanguage {
 
@@ -19,7 +18,7 @@ class PetriNetLanguage extends BenchmarkLanguage {
 	}
 
 	override getFullTraceAddon() {
-		new PetrinetTraceEngineAddon
+		new org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetConfigurationTraceEngineAddon()
 	}
 
 	override getPartialTraceAddon() {
