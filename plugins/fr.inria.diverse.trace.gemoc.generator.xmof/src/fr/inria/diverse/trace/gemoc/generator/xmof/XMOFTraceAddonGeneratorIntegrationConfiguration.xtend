@@ -9,13 +9,21 @@ import fr.inria.diverse.melange.metamodel.melange.Language
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.util.EcoreUtil
 import fr.inria.diverse.trace.gemoc.generator.TraceAddonGeneratorIntegrationConfiguration
+import ecorext.Ecorext
 
 /**
  * Plenty of ways to call the generator in an eclipse context
  */
 class XMOFTraceAddonGeneratorIntegrationConfiguration implements TraceAddonGeneratorIntegrationConfiguration {
 
-	override getExecutionExtension(Language melangeLanguage, String languageName, IProject melangeProject,
+	private var Ecorext result
+	private var Set<EPackage> executionMetamodel
+
+	override canWorkWith(Language melangeLanguage, IProject melangeProject) {
+		return melangeLanguage.xmof != null && melangeLanguage.xmof != ""
+	}
+
+	override compute(Language melangeLanguage, String languageName, IProject melangeProject,
 		Set<EPackage> abstractSyntax, ResourceSet rs) {
 
 		val xmofStringURI = melangeLanguage.getXmof();
@@ -23,28 +31,32 @@ class XMOFTraceAddonGeneratorIntegrationConfiguration implements TraceAddonGener
 		val xmofModel = rs.createResource(xmofURI)
 		xmofModel.load(null)
 		EcoreUtil.resolveAll(rs)
-		
-		val rootPackages = xmofModel.contents.filter(EPackage).toSet
-		
+
+		this.executionMetamodel = xmofModel.contents.filter(EPackage).toSet
+
 		// Register all packages in registry
 		// TODO remove them afterwards?
 		for (p : xmofModel.allContents.filter(EPackage).toSet)
 			EPackage.Registry.INSTANCE.put(p.getNsURI(), p);
-		
-		val fakeURIGeneratedEcore = URI.createURI('''platform:/«xmofModel.URI.segment(0)»/«xmofModel.URI.segment(1)»/model-gen/«xmofModel.URI.lastSegment».ecore''')
-		
+
+		val fakeURIGeneratedEcore = URI.
+			createURI('''platform:/«xmofModel.URI.segment(0)»/«xmofModel.URI.segment(1)»/model-gen/«xmofModel.URI.lastSegment».ecore''')
+
 		xmofModel.URI = fakeURIGeneratedEcore
 
 		val XmofExecutionExtensionExtractor extractor = new XmofExecutionExtensionExtractor(abstractSyntax,
-			rootPackages, false)
+			executionMetamodel, false)
 		extractor.computeMMExtension
 
-		return extractor.mmextensionResult
-
+		this.result = extractor.mmextensionResult
 	}
-	
-	override canWorkWith(Language melangeLanguage, IProject melangeProject) {
-		return melangeLanguage.xmof != null && melangeLanguage.xmof != ""
+
+	override getExecutionExtension() {
+		return result
+	}
+
+	override getExecutionMetamodel() {
+		return executionMetamodel
 	}
 
 }
