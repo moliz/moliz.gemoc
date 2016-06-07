@@ -31,7 +31,7 @@ class DSTraceCase implements BenchmarkTracingCase {
 	static val String queryEndSimple = '''.*" a'''
 	static val String queryEndUtil = '''.*(PackageImpl|FactoryImpl|AdapterFactory|Switch)$" a'''
 
-	static val String msePackageName = "org.gemoc.executionframework.engine.mse"
+	static val String msePackageName = "fr.inria.diverse.trace.commons.model"
 
 	static def String createQuerySimple(String packageName) {
 		'''«queryStart»«packageName»«queryEndSimple»'''
