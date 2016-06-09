@@ -1213,68 +1213,50 @@
         <ownedParameter name="context" eType="//Classes/Kernel/Object"/>
         <ownedParameter name="inputs" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue"/>
         <ownedParameter name="outputs" upperBound="-1" eType="//CommonBehaviors/BasicBehaviors/ParameterValue" direction="RETURN"/>
-        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ActivityParameterNode" name="behavior" outgoing="//Loci/Executor/execute_Executor/%.8" lowerBound="1" parameter="//Loci/Executor/execute_Executor/behavior">
+        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ActivityParameterNode" name="behavior" outgoing="//Loci/Executor/execute_Executor/%.6" lowerBound="1" parameter="//Loci/Executor/execute_Executor/behavior">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
         </node>
-        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ActivityParameterNode" name="context" outgoing="//Loci/Executor/execute_Executor/%.7" parameter="//Loci/Executor/execute_Executor/context"/>
+        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ActivityParameterNode" name="context" outgoing="//Loci/Executor/execute_Executor/%.5" parameter="//Loci/Executor/execute_Executor/context"/>
         <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ActivityParameterNode" name="inputs" outgoing="//Loci/Executor/execute_Executor/%.15" upperBound="-1" parameter="//Loci/Executor/execute_Executor/inputs"/>
-        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ActivityParameterNode" name="outputs" incoming="//Loci/Executor/execute_Executor/%.14" upperBound="-1" parameter="//Loci/Executor/execute_Executor/outputs"/>
+        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ActivityParameterNode" name="outputs" incoming="//Loci/Executor/execute_Executor/%.12" upperBound="-1" parameter="//Loci/Executor/execute_Executor/outputs"/>
         <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" name="self">
-          <result name="result" outgoing="//Loci/Executor/execute_Executor/%.4" lowerBound="1"/>
+          <result name="result" outgoing="//Loci/Executor/execute_Executor/%.2" lowerBound="1"/>
         </node>
         <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="read locus" structuralFeature="//Loci/Executor/locus_Executor">
-          <object name="object" incoming="//Loci/Executor/execute_Executor/%.4" lowerBound="1"/>
-          <result name="result" outgoing="//Loci/Executor/execute_Executor/%.5" upperBound="0"/>
+          <object name="object" incoming="//Loci/Executor/execute_Executor/%.2" lowerBound="1"/>
+          <result name="result" outgoing="//Loci/Executor/execute_Executor/%.3" upperBound="0"/>
         </node>
         <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="read factory" structuralFeature="//Loci/Locus/factory">
-          <object name="object" incoming="//Loci/Executor/execute_Executor/%.5" lowerBound="1"/>
-          <result name="result" outgoing="//Loci/Executor/execute_Executor/%.6" upperBound="0"/>
+          <object name="object" incoming="//Loci/Executor/execute_Executor/%.3" lowerBound="1"/>
+          <result name="result" outgoing="//Loci/Executor/execute_Executor/%.4" upperBound="0"/>
         </node>
-        <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call createExecution" outgoing="//Loci/Executor/execute_Executor/%.25" operation="//Loci/ExecutionFactory/createExecution">
-          <argument name="behavior" incoming="//Loci/Executor/execute_Executor/%.8" lowerBound="1"/>
-          <argument name="context" incoming="//Loci/Executor/execute_Executor/%.7"/>
-          <result name="execution" outgoing="//Loci/Executor/execute_Executor/%.9"/>
-          <target name="target" incoming="//Loci/Executor/execute_Executor/%.6" lowerBound="1"/>
+        <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call createExecution" operation="//Loci/ExecutionFactory/createExecution">
+          <argument name="behavior" incoming="//Loci/Executor/execute_Executor/%.6" lowerBound="1"/>
+          <argument name="context" incoming="//Loci/Executor/execute_Executor/%.5"/>
+          <result name="execution" outgoing="//Loci/Executor/execute_Executor/%.7"/>
+          <target name="target" incoming="//Loci/Executor/execute_Executor/%.4" lowerBound="1"/>
         </node>
-        <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call execute" outgoing="//Loci/Executor/execute_Executor/%.22" incoming="//Loci/Executor/execute_Executor/%.24" operation="//CommonBehaviors/BasicBehaviors/Execution/execute">
+        <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call execute" outgoing="//Loci/Executor/execute_Executor/%.13" incoming="//Loci/Executor/execute_Executor/%.16" operation="//CommonBehaviors/BasicBehaviors/Execution/execute">
+          <target name="target" incoming="//Loci/Executor/execute_Executor/%.9" lowerBound="1"/>
+        </node>
+        <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call getOutputParameterValues" outgoing="//Loci/Executor/execute_Executor/%.14" incoming="//Loci/Executor/execute_Executor/%.13" operation="//CommonBehaviors/BasicBehaviors/Execution/getOutputParameterValues">
+          <result name="outputParameterValues" outgoing="//Loci/Executor/execute_Executor/%.12"/>
+          <target name="target" incoming="//Loci/Executor/execute_Executor/%.10" lowerBound="1"/>
+        </node>
+        <node xsi:type="fUML.Syntax.Actions.IntermediateActions:DestroyObjectAction" name="destroy execution" incoming="//Loci/Executor/execute_Executor/%.14" destroyLinks="true" destroyOwnedObjects="true">
           <target name="target" incoming="//Loci/Executor/execute_Executor/%.11" lowerBound="1"/>
         </node>
-        <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call getOutputParameterValues" outgoing="//Loci/Executor/execute_Executor/%.23" incoming="//Loci/Executor/execute_Executor/%.22" operation="//CommonBehaviors/BasicBehaviors/Execution/getOutputParameterValues">
-          <result name="outputParameterValues" outgoing="//Loci/Executor/execute_Executor/%.14"/>
-          <target name="target" incoming="//Loci/Executor/execute_Executor/%.12" lowerBound="1"/>
-        </node>
-        <node xsi:type="fUML.Syntax.Actions.IntermediateActions:DestroyObjectAction" name="destroy execution" incoming="//Loci/Executor/execute_Executor/%.23" destroyLinks="true" destroyOwnedObjects="true">
-          <target name="target" incoming="//Loci/Executor/execute_Executor/%.13" lowerBound="1"/>
-        </node>
-        <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" name="set inputs" outgoing="//Loci/Executor/execute_Executor/%.21" incoming="//Loci/Executor/execute_Executor/inputExists_true" inputElement="//Loci/Executor/execute_Executor/%">
+        <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" name="set inputs" outgoing="//Loci/Executor/execute_Executor/%.16" inputElement="//Loci/Executor/execute_Executor/%">
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call setParameterValue" operation="//CommonBehaviors/BasicBehaviors/Execution/setParameterValue">
             <argument name="parameterValue" incoming="//Loci/Executor/execute_Executor/set%20inputs/%" lowerBound="1"/>
             <target name="target" incoming="//Loci/Executor/execute_Executor/set%20inputs/%.1" lowerBound="1"/>
           </node>
           <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/%" target="//Loci/Executor/execute_Executor/set%20inputs/call%20setParameterValue/parameterValue"/>
           <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/set%20inputs/input1" target="//Loci/Executor/execute_Executor/set%20inputs/call%20setParameterValue/target"/>
-          <structuredNodeInput name="input1" outgoing="//Loci/Executor/execute_Executor/set%20inputs/%.1" incoming="//Loci/Executor/execute_Executor/%.10"/>
+          <structuredNodeInput name="input1" outgoing="//Loci/Executor/execute_Executor/set%20inputs/%.1" incoming="//Loci/Executor/execute_Executor/%.8" lowerBound="1"/>
         </node>
-        <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" outgoing="//Loci/Executor/execute_Executor/set%20inputs/%" incoming="//Loci/Executor/execute_Executor/%.17" regionAsInput="//Loci/Executor/execute_Executor/set%20inputs"/>
-        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" outgoing="//Loci/Executor/execute_Executor/%.10 //Loci/Executor/execute_Executor/%.11 //Loci/Executor/execute_Executor/%.12 //Loci/Executor/execute_Executor/%.13" incoming="//Loci/Executor/execute_Executor/%.9"/>
-        <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call greater">
-          <argument name="x" incoming="//Loci/Executor/execute_Executor/%.18" lowerBound="1"/>
-          <argument name="y" incoming="//Loci/Executor/execute_Executor/%.19" lowerBound="1"/>
-          <result name="result" outgoing="//Loci/Executor/execute_Executor/%.20"/>
-          <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
-        </node>
-        <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
-          <value xsi:type="kernel:LiteralInteger"/>
-          <result name="result" outgoing="//Loci/Executor/execute_Executor/%.19" lowerBound="1"/>
-        </node>
-        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="inputExists" outgoing="//Loci/Executor/execute_Executor/inputExists_true //Loci/Executor/execute_Executor/inputExistsFalse" incoming="//Loci/Executor/execute_Executor/%.20"/>
-        <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call size" incoming="//Loci/Executor/execute_Executor/%.25">
-          <argument name="list" incoming="//Loci/Executor/execute_Executor/%.16" upperBound="-1"/>
-          <result name="result" outgoing="//Loci/Executor/execute_Executor/%.18"/>
-          <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
-        </node>
-        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" outgoing="//Loci/Executor/execute_Executor/%.16 //Loci/Executor/execute_Executor/%.17" incoming="//Loci/Executor/execute_Executor/%.15"/>
-        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:MergeNode" outgoing="//Loci/Executor/execute_Executor/%.24" incoming="//Loci/Executor/execute_Executor/inputExistsFalse //Loci/Executor/execute_Executor/%.21"/>
+        <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" outgoing="//Loci/Executor/execute_Executor/set%20inputs/%" incoming="//Loci/Executor/execute_Executor/%.15" upperBound="-1" regionAsInput="//Loci/Executor/execute_Executor/set%20inputs"/>
+        <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" outgoing="//Loci/Executor/execute_Executor/%.8 //Loci/Executor/execute_Executor/%.9 //Loci/Executor/execute_Executor/%.10 //Loci/Executor/execute_Executor/%.11" incoming="//Loci/Executor/execute_Executor/%.7"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/self/result" target="//Loci/Executor/execute_Executor/read%20locus/object"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/read%20locus/result" target="//Loci/Executor/execute_Executor/read%20factory/object"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/read%20factory/result" target="//Loci/Executor/execute_Executor/call%20createExecution/target"/>
@@ -1286,23 +1268,10 @@
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/%.1" target="//Loci/Executor/execute_Executor/call%20getOutputParameterValues/target"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/%.1" target="//Loci/Executor/execute_Executor/destroy%20execution/target"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/call%20getOutputParameterValues/outputParameterValues" target="//Loci/Executor/execute_Executor/outputs.1"/>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/inputs.1" target="//Loci/Executor/execute_Executor/%.2"/>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/%.2" target="//Loci/Executor/execute_Executor/call%20size/list"/>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/%.2" target="//Loci/Executor/execute_Executor/%"/>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/call%20size/result" target="//Loci/Executor/execute_Executor/call%20greater/x"/>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/specify%200/result" target="//Loci/Executor/execute_Executor/call%20greater/y"/>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/call%20greater/result" target="//Loci/Executor/execute_Executor/inputExists"/>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" name="inputExists_true" source="//Loci/Executor/execute_Executor/inputExists" target="//Loci/Executor/execute_Executor/set%20inputs">
-          <guard xsi:type="kernel:LiteralBoolean" value="true"/>
-        </edge>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" name="inputExistsFalse" source="//Loci/Executor/execute_Executor/inputExists" target="//Loci/Executor/execute_Executor/%.3">
-          <guard xsi:type="kernel:LiteralBoolean" name="false"/>
-        </edge>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" source="//Loci/Executor/execute_Executor/set%20inputs" target="//Loci/Executor/execute_Executor/%.3"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" source="//Loci/Executor/execute_Executor/call%20execute" target="//Loci/Executor/execute_Executor/call%20getOutputParameterValues"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" source="//Loci/Executor/execute_Executor/call%20getOutputParameterValues" target="//Loci/Executor/execute_Executor/destroy%20execution"/>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" source="//Loci/Executor/execute_Executor/%.3" target="//Loci/Executor/execute_Executor/call%20execute"/>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" source="//Loci/Executor/execute_Executor/call%20createExecution" target="//Loci/Executor/execute_Executor/call%20size"/>
+        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Loci/Executor/execute_Executor/inputs.1" target="//Loci/Executor/execute_Executor/%"/>
+        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" source="//Loci/Executor/execute_Executor/set%20inputs" target="//Loci/Executor/execute_Executor/call%20execute"/>
       </ownedBehavior>
       <ownedBehavior xsi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" name="evaluate_Executor" specification="//Loci/Executor/evaluate">
         <ownedParameter name="specification" lowerBound="1">
