@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.uml2.common.util.CacheAdapter;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
@@ -63,14 +64,12 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	@Override
 	protected void prepareEntryPoint(IExecutionContext executionContext) {
-		suspendForNodes = ((IXMOFRunConfiguration) executionContext
-				.getRunConfiguration()).getNodewiseStepping();
-		ignoreSteps = ((IXMOFRunConfiguration) executionContext
-				.getRunConfiguration()).getIgnoreSteps() || suspendForNodes;
+		suspendForNodes = ((IXMOFRunConfiguration) executionContext.getRunConfiguration()).getNodewiseStepping();
+		ignoreSteps = ((IXMOFRunConfiguration) executionContext.getRunConfiguration()).getIgnoreSteps()
+				|| suspendForNodes;
 
 		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
-		GemocXMOFBasedModel model = (GemocXMOFBasedModel) loader
-				.loadXMOFBasedModel();
+		GemocXMOFBasedModel model = (GemocXMOFBasedModel) loader.loadXMOFBasedModel();
 
 		// If we are in basic run mode, we replace the static objects of the
 		// context model by dynamic configuration objects.
@@ -83,8 +82,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				@Override
 				protected void doExecute() {
 					executionContext.getResourceModel().getContents().clear();
-					executionContext.getResourceModel().getContents()
-							.addAll(model.getModelResource().getContents());
+					executionContext.getResourceModel().getContents().addAll(model.getModelResource().getContents());
 				}
 			};
 			editingDomain.getCommandStack().execute(cmd);
@@ -98,8 +96,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private XMOFVirtualMachine setupVirtualMachine(GemocXMOFBasedModel model) {
 		XMOFVirtualMachine vm = new GemocXMOFVirtualMachine(model);
 
-		XMOFBasedModelSynchronizer modelSynchronizer = createModelSynchronizer(
-				vm.getInstanceMap(), model);
+		XMOFBasedModelSynchronizer modelSynchronizer = createModelSynchronizer(vm.getInstanceMap(), model);
 		vm.setSynchronizeModel(modelSynchronizer);
 
 		NodeSelectionStrategy nodeSelectionStrategy = new SequentialNodeSelectionStrategy();
@@ -111,10 +108,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		return vm;
 	}
 
-	private XMOFBasedModelSynchronizer createModelSynchronizer(
-			XMOFInstanceMap instanceMap, XMOFBasedModel model) {
-		XMOFBasedModelSynchronizer modelSynchronizer = new GemocModelSynchronizer(
-				instanceMap, model.getEditingDomain());
+	private XMOFBasedModelSynchronizer createModelSynchronizer(XMOFInstanceMap instanceMap, XMOFBasedModel model) {
+		XMOFBasedModelSynchronizer modelSynchronizer = new GemocModelSynchronizer(instanceMap,
+				model.getEditingDomain());
 		modelSynchronizer.setModelResource(model.getModelResource());
 		return modelSynchronizer;
 	}
@@ -155,17 +151,13 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		}
 	}
 
-	private boolean isStep(
-			fUML.Syntax.Activities.IntermediateActivities.Activity activityFUML) {
+	private boolean isStep(fUML.Syntax.Activities.IntermediateActivities.Activity activityFUML) {
 		boolean isStep = false;
-		Activity activity = (Activity) vm.getxMOFConversionResult()
-				.getInputObject(activityFUML);
+		Activity activity = (Activity) vm.getxMOFConversionResult().getInputObject(activityFUML);
 		BehavioredEOperation operation = activity.getSpecification();
-		EAnnotation stepAnnotation = operation
-				.getEAnnotation(STEP_ANNOTATION_SOURCE);
+		EAnnotation stepAnnotation = operation.getEAnnotation(STEP_ANNOTATION_SOURCE);
 		if (stepAnnotation != null) {
-			isStep = stepAnnotation.getDetails().containsKey(
-					STEP_ANNOTATION_KEY);
+			isStep = stepAnnotation.getDetails().containsKey(STEP_ANNOTATION_KEY);
 		}
 		return isStep;
 	}
@@ -173,8 +165,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private void processActivityEntry(ActivityEntryEvent event) {
 		ActivityExecution activityExecution = vm.getExecutionTrace()
 				.getActivityExecutionByID(event.getActivityExecutionID());
-		Activity activity = (Activity) vm.getxMOFConversionResult()
-				.getInputObject(event.getActivity());
+		Activity activity = (Activity) vm.getxMOFConversionResult().getInputObject(event.getActivity());
 		EObject caller = getActivityContextObject(activityExecution);
 		String className = caller.eClass().getName();
 		String methodName = activity.getName();
@@ -184,14 +175,12 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private void processActivityNodeEntry(ActivityNodeEntryEvent event) {
 		ActivityExecution activityExecution = vm.getExecutionTrace()
 				.getActivityExecutionByID(event.getActivityExecutionID());
-		ActivityNode activityNode = (ActivityNode) vm.getxMOFConversionResult()
-				.getInputObject(event.getNode());
+		ActivityNode activityNode = (ActivityNode) vm.getxMOFConversionResult().getInputObject(event.getNode());
 		EObject caller = getActivityContextObject(activityExecution);
 		String className = caller.eClass().getName();
 		String methodName = "";
 		if (activityNode.getName() != null) {
-			methodName = activityNode.getName() + " :"
-					+ activityNode.eClass().getName();
+			methodName = activityNode.getName() + " :" + activityNode.eClass().getName();
 		} else {
 			methodName = ":" + activityNode.eClass().getName();
 		}
@@ -202,11 +191,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		EObject activityContextObject = null;
 		ValueSnapshot context = activityExecution.getContextValueSnapshot();
 		if (context != null) {
-			fUML.Semantics.Classes.Kernel.Value contextRuntimeValue = context
-					.getRuntimeValue();
+			fUML.Semantics.Classes.Kernel.Value contextRuntimeValue = context.getRuntimeValue();
 			if (contextRuntimeValue instanceof Object_) {
-				activityContextObject = vm.getInstanceMap().getEObject(
-						(Object_) contextRuntimeValue);
+				activityContextObject = vm.getInstanceMap().getEObject((Object_) contextRuntimeValue);
 			}
 		}
 		return activityContextObject;
@@ -233,7 +220,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	public ConfigurationObjectMap getConfigurationMap() {
 		return configurationMap;
 	}
-	
+
 	public XMOFBasedModel getXMOFBasedModel() {
 		return vm.getModel();
 	}
@@ -241,4 +228,29 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	public XMOFVirtualMachine getRawVirtualMachine() {
 		return vm;
 	}
+
+	public void cleanUp() {
+		for (EObject o : this.configurationMap.getConfigurationObjects()) {
+			o.eAdapters().clear();
+		}
+		for (EObject o : this.configurationMap.getOriginalObjects()) {
+			o.eAdapters().clear();
+		}
+		if (CacheAdapter.getInstance() != null) {
+			if (CacheAdapter.getInstance().getTarget() != null) {
+				CacheAdapter.getInstance().getTarget().eAdapters().clear();
+				CacheAdapter.getInstance().setTarget(null);
+			}
+			CacheAdapter.getInstance().clear();
+		}
+		configurationMap = null;
+	}
+	
+	@Override
+	public void dispose() {
+		super.dispose();
+		this.configurationMap = null;
+		this.vm = null;
+	}
+
 }

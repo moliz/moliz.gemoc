@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.transaction.RecordingCommand
 import org.eclipse.emf.transaction.TransactionalEditingDomain
 import org.eclipse.emf.transaction.util.TransactionUtil
-import org.gemoc.executionframework.engine.Activator
 import org.junit.AfterClass
 import org.junit.BeforeClass
 import org.junit.Rule
@@ -39,7 +38,6 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecut
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkRunConfiguration
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.PetriNetLanguage
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
@@ -47,27 +45,33 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.Fuml
 import fr.inria.diverse.trace.commons.testutil.Investigation
 import java.util.HashSet
 import org.eclipse.emf.ecore.EObject
+import java.io.IOException
+import java.io.PrintStream
+import org.modelexecution.xmof.gemoc.generictraceconstructor.GenericTraceConstructor
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.GenericTraceCase
+import java.util.Random
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
 
-	@Rule
-	public TemporaryFolder tmpFolderCreator = new TemporaryFolder();
+//	@Rule
+//	public TemporaryFolder tmpFolderCreator = new TemporaryFolder(new File("/home/ebousse/tmp/yay"));
+	static val File tmpFolderContainer = new File("/home/ebousse/tmp/yay")
 
 	// Constants
 	static val String modelFolderName = "model"
 	static val String outputFolderName = "output"
-	static val int WARMUPS = 3
-	static val int NBMEASURES = 3
+	static val int WARMUPS = 1
+	static val int NBMEASURES = 1
 	static val String projectName = "benchmark-project"
-	static val petriNet = new PetriNetLanguage(
-		#{"net1.petrinet" -> #[""], "net1bis.petrinet" -> #[""]}
-	)
+//	static val petriNet = new PetriNetLanguage(
+//		#{"net1.petrinet" -> #[""], "net1bis.petrinet" -> #[""]}
+//	)
 	static val fuml = new Fuml(#{
 		"testmodel.uml" -> #[
-//			"test1parameter.xmi",
-			"test2parameter.xmi"
-//			"test3parameter.xmi"
+			"test1parameter.xmi"
+			//,"test2parameter.xmi"
+		// ,"test3parameter.xmi"
 		] // ,
 //		"Nokia/ExampleA/ExampleAV1.uml" -> #[
 //			"ExampleAV1_parameter_1_1.xmi"
@@ -76,8 +80,9 @@ class BenchmarkPhase1 {
 
 	// Input data for all tests
 	static val tracingCases = #{
-		//new NoTraceCase, 
 		new DSTraceCase
+		,new GenericTraceCase
+	    ,new NoTraceCase
 	}
 	static val languages = #{fuml}
 	// static val languages = #{petriNet}
@@ -113,10 +118,21 @@ class BenchmarkPhase1 {
 	}
 
 	private def File createTmpFolder() {
-		return tmpFolderCreator.newFolder
+		// return tmpFolderCreator.newFolder
+		val rand = new Random
+		val id = rand.nextInt(1000)
+		val fileFriendlyTestCaseName = this.testCaseName.replaceAll(",", "-")
+		val folder = new File(tmpFolderContainer, fileFriendlyTestCaseName + "_" + id)
+		folder.mkdirs
+		return folder
+
 	// val file = File.createTempFile("yay","")
 	// val file = new File("/home/zerwan/tmp/dumps")
 	// return file
+	}
+
+	private def void log(String s) {
+		println("### [" + testCaseName + "] " + s)
 	}
 
 	private def void copyFromWS(IFile fileInWS, File destination) {
@@ -128,6 +144,7 @@ class BenchmarkPhase1 {
 	private def long execute(boolean wait, IProgressMonitor m) {
 
 		// Create engine parameterized with inputs
+		log("Preparing engine")
 		val XMOFExecutionEngine engine = new XMOFExecutionEngine();
 		val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI, inputModelURIString)
 		val executioncontext = new BenchmarkExecutionModelContext(runConf);
@@ -137,8 +154,13 @@ class BenchmarkPhase1 {
 		tracingCase.initialize();
 
 		// Execution
-		if (wait)
-			Thread.sleep(500)
+		// TODO test more sleep + GC call?
+		if (wait) {
+			System.gc
+			Thread.sleep(2000)
+		}
+
+		log("Running engine")
 		val timeStart = System.nanoTime
 		engine.start
 		engine.joinThread
@@ -149,6 +171,7 @@ class BenchmarkPhase1 {
 		// So if we are finished with the model, we can erase the input model with that
 		// But we save to a separate file to keep the original model safe for further executions
 		if (!confModelSaved) {
+			log("Saving conf model")
 			val Resource confModel = executioncontext.resourceModel
 			val res = new HashSet<EObject>
 			val pointed = new HashSet<EObject>
@@ -182,30 +205,43 @@ class BenchmarkPhase1 {
 			confModelSaved = true
 		}
 
+		log("Cleanup memory")
+
 		// Clean command stack
 		val rs = engine.executionContext.resourceModel.resourceSet
 		val ed = TransactionUtil.getEditingDomain(rs)
 		ed.commandStack.flush
 
 		// Remove engine(s) from registry
-		val registry = Activator.^default.gemocRunningEngineRegistry
+		val registry = org.gemoc.executionframework.engine.Activator.^default.gemocRunningEngineRegistry
 		for (engineName : registry.runningEngines.keySet)
 			registry.unregisterEngine(engineName)
 
 		// Clean resourceSet
 		clearResourceSet(rs)
+		
+		engine.cleanUp
 
-		// If any trace created and we must measure memory
-		if (tracingCaseOutputFolder != null && line.traceMemoryFootprint == 0) {
+		// If any trace created and  not yet measured, we must measure memory
+		if (tracingCase.createsTrace && line.traceMemoryFootprint == 0) {
 
 			// Read trace
 			line.traceNbStates = tracingCase.numberOfStates
+			
+			tracingCase.preCleanUp
 
 			// Dump memory and compute memory usage of the trace
 			val heapFolder = createTmpFolder
 			val heap = new File(heapFolder, model + "_" + tracingCase.simpleName)
+			log("START DUMP CREATION")
 			MemoryAnalyzer.dumpHeap(heap)
+			log("FINISHED DUMP CREATION")
+			log("START DUMP ANALYSIS ")
 			line.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
+			log("FINISHED DUMP ANALYSIS ")
+			//line.traceMemoryFootprint = 12
+
+			log("Serialize trace")
 
 			// Create trace folder
 			if (!tracingCaseOutputFolder.exists)
@@ -232,22 +268,25 @@ class BenchmarkPhase1 {
 				modelURI.lastSegment + inputSuffix + ".trace")
 			copyFromWS(traceFileInProject, executionTraceTargetFile)
 		}
+		log("Destroy engine")
+
+		tracingCase.cleanUp
 
 		// Destroy engine
 		engine.dispose
+		
 		return time
 
 	}
 
 	@Test
 	def void test() {
-			val job = new Job(testCaseName) {
+		val job = new Job(testCaseName) {
 
 			override protected run(IProgressMonitor m) {
-				
-				
 
 				try {
+					log("Start test case.")
 
 					// Create language output folder
 					val languageOutputFolder = new File(outputFolder, language.folderName)
@@ -284,14 +323,18 @@ class BenchmarkPhase1 {
 
 					// Warmups
 					for (i : 0 ..< WARMUPS) {
-						execute(false, m)
+						log("Run warmup " + i)
+						val res = execute(false, m)
+						line.timeWarms.add(res)
 					}
 
 					// Real executions
 					var long sum = 0
 					val range = 0 ..< NBMEASURES
 					for (i : range) {
+						log("Run execution " + i)
 						val time = execute(true, m)
+						line.timeExes.add(time)
 						sum = sum + time
 					}
 
@@ -299,6 +342,8 @@ class BenchmarkPhase1 {
 
 					// Store result in CSV
 					outputCSVWriter.println(line.toString)
+
+					log("Finished test case.")
 
 					// Done 
 					return Status.OK_STATUS
@@ -343,6 +388,80 @@ class BenchmarkPhase1 {
 			}
 		}
 		return folderCopy
+	}
+
+	// @BeforeClass
+	def static void disableLogs() {
+		val emptyOutStream = new java.io.OutputStream() {
+			override write(int b) throws IOException {}
+		}
+
+		val emptyPrintStream = new PrintStream(emptyOutStream) {
+			override flush() {}
+
+			override close() {}
+
+			override write(int b) {}
+
+			override write(byte[] b) {}
+
+			override write(byte[] buf, int off, int len) {}
+
+			override print(boolean b) {}
+
+			override print(char c) {}
+
+			override print(int i) {}
+
+			override print(long l) {}
+
+			override print(float f) {}
+
+			override print(double d) {}
+
+			override print(char[] s) {}
+
+			override print(String s) {}
+
+			override print(Object obj) {}
+
+			override println() {}
+
+			override println(boolean x) {}
+
+			override println(char x) {}
+
+			override println(int x) {}
+
+			override println(long x) {}
+
+			override println(float x) {}
+
+			override println(double x) {}
+
+			override println(char[] x) {}
+
+			override println(String x) {}
+
+			override println(Object x) {}
+
+			override printf(String format, Object... args) { return this; }
+
+			override printf(java.util.Locale l, String format, Object... args) { return this; }
+
+			override format(String format, Object... args) { return this; }
+
+			override format(java.util.Locale l, String format, Object... args) { return this; }
+
+			override append(CharSequence csq) { return this; }
+
+			override append(CharSequence csq, int start, int end) { return this; }
+
+			override append(char c) { return this; }
+
+		}
+		System.setOut(emptyPrintStream)
+		System.setErr(emptyPrintStream)
 	}
 
 	@BeforeClass
@@ -442,11 +561,12 @@ class BenchmarkPhase1 {
 		// Clean resource
 		val command = new RecordingCommand(ed, "Clean resources") {
 			override protected doExecute() {
-
 				for (c : rs.allContents.toSet)
 					c.eAdapters.clear
-
-				rs.resources.clear
+				for (r : rs.resources) {
+					r.eAdapters.clear
+				}
+				rs.eAdapters.clear
 			}
 		}
 		ed.commandStack.execute(command)
