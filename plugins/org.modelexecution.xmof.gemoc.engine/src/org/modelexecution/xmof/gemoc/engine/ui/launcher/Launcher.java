@@ -13,7 +13,6 @@ import org.gemoc.commons.eclipse.ui.ViewHelper;
 import org.gemoc.execution.sequential.javaengine.ui.debug.GenericSequentialModelDebugger;
 import org.gemoc.executionframework.engine.commons.EngineContextException;
 import org.gemoc.executionframework.engine.commons.ModelExecutionContext;
-import org.gemoc.executionframework.engine.mse.MSEOccurrence;
 import org.gemoc.executionframework.engine.ui.debug.AbstractGemocDebugger;
 import org.gemoc.executionframework.engine.ui.launcher.AbstractSequentialGemocLauncher;
 import org.gemoc.executionframework.ui.views.engine.EnginesStatusView;
@@ -28,6 +27,7 @@ import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 import org.modelexecution.xmof.gemoc.engine.ui.debug.XMOFMutableFieldExtractor;
 
 import fr.inria.diverse.commons.messagingsystem.api.MessagingSystem;
+import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 import fr.inria.diverse.trace.gemoc.api.IMultiDimensionalTraceAddon;
 import fr.obeo.dsl.debug.ide.IDSLDebugger;
 import fr.obeo.dsl.debug.ide.event.DSLDebugEventDispatcher;

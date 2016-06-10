@@ -2,11 +2,11 @@ package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases
 
 import fr.inria.diverse.trace.gemoc.traceaddon.AbstractTraceAddon
 import java.io.File
-import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
 import org.eclipse.emf.common.util.URI
+import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 
 class DSTraceCase implements BenchmarkTracingCase {
 
@@ -21,6 +21,7 @@ class DSTraceCase implements BenchmarkTracingCase {
 		}
 		this.traceAddon = language.fullTraceAddon
 		context.executionPlatform.addEngineAddon(traceAddon)
+		traceAddon.disableTraceSaving
 	}
 	
 	override initialize() {
@@ -31,7 +32,7 @@ class DSTraceCase implements BenchmarkTracingCase {
 	static val String queryEndSimple = '''.*" a'''
 	static val String queryEndUtil = '''.*(PackageImpl|FactoryImpl|AdapterFactory|Switch)$" a'''
 
-	static val String msePackageName = "org.gemoc.executionframework.engine.mse"
+	static val String msePackageName = "fr.inria.diverse.trace.commons.model"
 
 	static def String createQuerySimple(String packageName) {
 		'''«queryStart»«packageName»«queryEndSimple»'''
@@ -96,6 +97,13 @@ class DSTraceCase implements BenchmarkTracingCase {
 	override saveTrace(String pathInWS) {
 		val uri = URI.createPlatformResourceURI(pathInWS, true)
 		traceAddon.traceConstructor.save(uri)
+	}
+	
+	override cleanUp() {
+		
+	}
+	
+	override preCleanUp() {
 	}
 
 }
