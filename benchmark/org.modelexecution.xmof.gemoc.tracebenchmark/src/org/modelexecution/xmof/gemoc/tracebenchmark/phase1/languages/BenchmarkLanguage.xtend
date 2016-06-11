@@ -33,5 +33,7 @@ abstract class BenchmarkLanguage {
 	def AbstractTraceAddon getPartialTraceAddon()
 
 	def String getJavaTracePackageName()
+	
+	def String getJavaExePackageName() 
 
 }

@@ -28,7 +28,11 @@ class Fuml extends BenchmarkLanguage {
 	}
 
 	override getJavaTracePackageName() {
-		"umlTrace"
+		"fumlConfigurationTrace"
+	}
+	
+	override getJavaExePackageName() {
+		"fumlConfiguration"
 	}
 
 }
