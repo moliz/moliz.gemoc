@@ -37,6 +37,32 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 		this.executedModel = exeModel;
 		this.exeToTraced = exeToTraced;
 	}
+	
+	public Map<EObject, EObject> getExeToTraced() {
+		return exeToTraced;
+	}
+
+	public void preCleanUp() {
+		exeToTraced.clear();
+	}
+
+	public void cleanUp() {
+		this.executedModel.getContents().clear();
+		this.executedModel.unload();
+		this.traceResource.getContents().clear();
+		this.traceResource.unload();
+		this.executedModel = null;
+		this.traceResource = null;
+		this.traceRoot = null;
+	}
+
+	public Resource getTraceResource() {
+		return traceResource;
+	}
+
+	public int getStatesSize() {
+		return traceRoot.getStatesTrace().size();
+	}
 
 	private void addInitialState() {
 		if (lastState == null) {
@@ -463,7 +489,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivities_tracedActivityEdgeInstances().add(tracedObject);
 
-			// Creation of the first value of the field edge_ActivityEdgeInstance
+			// Creation of the first value of the field
+			// edge_ActivityEdgeInstance
 			fumlConfigurationTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value firstValue_edge_ActivityEdgeInstance = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityEdgeInstance_edge_ActivityEdgeInstance_Value();
 
@@ -482,7 +509,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			newState.getActivityEdgeInstance_edge_ActivityEdgeInstance_Values()
 					.add(firstValue_edge_ActivityEdgeInstance);
 
-			// Creation of the first value of the field group_ActivityEdgeInstance
+			// Creation of the first value of the field
+			// group_ActivityEdgeInstance
 			fumlConfigurationTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value firstValue_group_ActivityEdgeInstance = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityEdgeInstance_group_ActivityEdgeInstance_Value();
 
@@ -699,7 +727,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivities_tracedActivityFinalNodeActivations().add(tracedObject);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -760,7 +789,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -915,7 +945,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivities_tracedActivityNodeActivations().add(tracedObject);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -976,7 +1007,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -1157,7 +1189,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivities_tracedActivityParameterNodeActivations().add(tracedObject);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -1218,7 +1251,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -1416,7 +1450,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
 			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -1477,7 +1512,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -2056,7 +2092,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getCallExecutionsSequence().add(firstValue_callExecutions);
 			newState.getCallActionActivation_callExecutions_Values().add(firstValue_callExecutions);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -2117,7 +2154,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -3300,7 +3338,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
 			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -3361,7 +3400,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -3533,7 +3573,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivities_tracedDecisionNodeActivations().add(tracedObject);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -3594,7 +3635,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -4460,7 +4502,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getLoci_tracedExecutionEnvironments().add(tracedObject);
 
-			// Creation of the first value of the field locus_ExecutionEnvironment
+			// Creation of the first value of the field
+			// locus_ExecutionEnvironment
 			fumlConfigurationTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value firstValue_locus_ExecutionEnvironment = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createExecutionEnvironment_locus_ExecutionEnvironment_Value();
 
@@ -4552,7 +4595,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getLocus_ExecutionFactorySequence().add(firstValue_locus_ExecutionFactory);
 			newState.getExecutionFactory_locus_ExecutionFactory_Values().add(firstValue_locus_ExecutionFactory);
 
-			// Creation of the first value of the field primitiveBehaviorPrototypes
+			// Creation of the first value of the field
+			// primitiveBehaviorPrototypes
 			fumlConfigurationTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value firstValue_primitiveBehaviorPrototypes = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createExecutionFactory_primitiveBehaviorPrototypes_Value();
 
@@ -5037,7 +5081,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivities_tracedForkNodeActivations().add(tracedObject);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -5098,7 +5143,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -5530,7 +5576,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivities_tracedInitialNodeActivations().add(tracedObject);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -5591,7 +5638,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -5760,7 +5808,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getCount_tempSequence().add(firstValue_count_temp);
 			newState.getPinActivation_count_temp_Values().add(firstValue_count_temp);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -5821,7 +5870,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -6764,7 +6814,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivities_tracedJoinNodeActivations().add(tracedObject);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -6825,7 +6876,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -7570,7 +7622,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivities_tracedMergeNodeActivations().add(tracedObject);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -7631,7 +7684,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -8424,7 +8478,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
 			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -8485,7 +8540,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -8758,7 +8814,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getCount_tempSequence().add(firstValue_count_temp);
 			newState.getPinActivation_count_temp_Values().add(firstValue_count_temp);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -8819,7 +8876,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -9844,7 +9902,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
 			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -9905,7 +9964,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -11760,7 +11820,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getPinActivationsSequence().add(firstValue_pinActivations);
 			newState.getActionActivation_pinActivations_Values().add(firstValue_pinActivations);
 
-			// Creation of the first value of the field group_ActivityNodeActivation
+			// Creation of the first value of the field
+			// group_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value firstValue_group_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_group_ActivityNodeActivation_Value();
 
@@ -11821,7 +11882,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 			tracedObject.getIsRunningSequence().add(firstValue_isRunning);
 			newState.getActivityNodeActivation_isRunning_Values().add(firstValue_isRunning);
 
-			// Creation of the first value of the field node_ActivityNodeActivation
+			// Creation of the first value of the field
+			// node_ActivityNodeActivation
 			fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value firstValue_node_ActivityNodeActivation = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 					.createActivityNodeActivation_node_ActivityNodeActivation_Value();
 
@@ -12292,11 +12354,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 		if (!changes.isEmpty()) {
 			boolean stateChanged = false;
 			// We start by a (shallow) copy of the last state
-			// But we will have to rollback a little by replacing values that changed
+			// But we will have to rollback a little by replacing values that
+			// changed
 			fumlConfigurationTrace.States.State newState = copyState(lastState);
 			for (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange modelChange : changes) {
 				EObject o = modelChange.getChangedObject();
-				// We only look at constructable objects that have mutable fields
+				// We only look at constructable objects that have mutable
+				// fields
 				// Here we have nothing to rollback, just a new object to add
 				if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NewObjectModelChange) {
 					stateChanged = true;
@@ -12345,8 +12409,10 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						addNewObjectToState(o_cast, newState);
 					}
 				}
-				// We only look at constructable objects that have mutable fields
-				// Here we must rollback to remove the values of the removed object from the copied state
+				// We only look at constructable objects that have mutable
+				// fields
+				// Here we must rollback to remove the values of the removed
+				// object from the copied state
 				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.RemovedObjectModelChange) {
 					stateChanged = true;
 					if (o instanceof fumlConfiguration.Input.InputParameterValues) {
@@ -12623,7 +12689,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 					}
 				}
 				// Here we must look at non-collection mutable fields
-				// We must rollback the last values from the copied state, and add new values as well
+				// We must rollback the last values from the copied state, and
+				// add new values as well
 				// ie. mix of remove and new
 				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) {
 					stateChanged = true;
@@ -12637,7 +12704,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
 								.getPinActivation_ActionActivation().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.PinActivation_actionActivation_Value lastValue = traced
@@ -12664,7 +12732,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
 								.getPinActivation_Count_temp().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedPinActivation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.PinActivation_count_temp_Value lastValue = traced
@@ -12690,7 +12759,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivationGroup_ActivityExecution().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivationGroup) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityNodeActivationGroup_activityExecution_Value lastValue = traced
@@ -12722,7 +12792,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getForkedToken_BaseToken().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ForkedToken_baseToken_Value lastValue = traced
@@ -12749,7 +12820,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getForkedToken_RemainingOffersCount().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ForkedToken_remainingOffersCount_Value lastValue = traced
@@ -12772,7 +12844,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getForkedToken_BaseTokenIsWithdrawn().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedForkedToken) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ForkedToken_baseTokenIsWithdrawn_Value lastValue = traced
@@ -12799,7 +12872,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getFeatureValue_Feature().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.FeatureValue_feature_Value lastValue = traced
@@ -12826,7 +12900,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getFeatureValue_Position().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedFeatureValue) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.FeatureValue_position_Value lastValue = traced
@@ -12852,7 +12927,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getIntegerValue_Value_IntegerValue().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedIntegerValue) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.IntegerValue_value_IntegerValue_Value lastValue = traced
@@ -12879,7 +12955,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
 								.getParameterValue_Parameter_ParameterValue().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue traced = (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedParameterValue) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ParameterValue_parameter_ParameterValue_Value lastValue = traced
@@ -12911,7 +12988,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
 								.getInputParameterValues_Name().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues traced = (fumlConfigurationTrace.States.fumlConfiguration.Input.TracedInputParameterValues) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.InputParameterValues_name_Value lastValue = traced
@@ -12937,7 +13015,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getExecutor_Locus_Executor().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutor) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.Executor_locus_Executor_Value lastValue = traced
@@ -12968,7 +13047,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getObjectNodeActivation_OfferedTokenCount().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectNodeActivation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ObjectNodeActivation_offeredTokenCount_Value lastValue = traced
@@ -12995,7 +13075,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getExecutionFactory_Locus_ExecutionFactory().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionFactory traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionFactory) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ExecutionFactory_locus_ExecutionFactory_Value lastValue = traced
@@ -13027,7 +13108,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getBooleanValue_Value_BooleanValue().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedBooleanValue) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.BooleanValue_value_BooleanValue_Value lastValue = traced
@@ -13054,7 +13136,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Factory()
 								.getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.Locus_factory_Value lastValue = traced.getFactorySequence()
@@ -13081,7 +13164,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE.getLocus_Executor()
 								.getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedLocus) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.Locus_executor_Value lastValue = traced.getExecutorSequence()
@@ -13112,7 +13196,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityExecution_ActivationGroup().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityExecution) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityExecution_activationGroup_Value lastValue = traced
@@ -13143,7 +13228,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getReference_Referent().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedReference) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.Reference_referent_Value lastValue = traced
@@ -13174,7 +13260,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getObjectToken_Value().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedObjectToken) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ObjectToken_value_Value lastValue = traced.getValueSequence()
@@ -13205,7 +13292,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getToken_Holder().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedToken) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.Token_holder_Value lastValue = traced.getHolderSequence()
@@ -13236,7 +13324,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
 								.getExecution_Context().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution traced = (fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.TracedExecution) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.Execution_context_Value lastValue = traced
@@ -13267,7 +13356,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getExtensionalValue_Locus_ExtensionalValue().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedExtensionalValue) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ExtensionalValue_locus_ExtensionalValue_Value lastValue = traced
@@ -13299,7 +13389,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getPrimitiveValue_Type().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedPrimitiveValue) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.PrimitiveValue_type_Value lastValue = traced.getTypeSequence()
@@ -13330,7 +13421,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getExecutionEnvironment_Locus_ExecutionEnvironment().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedExecutionEnvironment) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ExecutionEnvironment_locus_ExecutionEnvironment_Value lastValue = traced
@@ -13362,7 +13454,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityEdgeInstance_Group_ActivityEdgeInstance().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityEdgeInstance_group_ActivityEdgeInstance_Value lastValue = traced
@@ -13390,7 +13483,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityEdgeInstance_Source().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityEdgeInstance_source_Value lastValue = traced
@@ -13417,7 +13511,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityEdgeInstance_Target().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityEdgeInstance_target_Value lastValue = traced
@@ -13444,7 +13539,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityEdgeInstance_Edge_ActivityEdgeInstance().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityEdgeInstance) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityEdgeInstance_edge_ActivityEdgeInstance_Value lastValue = traced
@@ -13476,7 +13572,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getEvaluation_Locus_Evaluation().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.Evaluation_locus_Evaluation_Value lastValue = traced
@@ -13503,7 +13600,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getEvaluation_Specification_Evaluation().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation traced = (fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.TracedEvaluation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.Evaluation_specification_Evaluation_Value lastValue = traced
@@ -13535,7 +13633,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
 								.getActionActivation_Firing().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.TracedActionActivation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActionActivation_firing_Value lastValue = traced
@@ -13561,7 +13660,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_Node_ActivityNodeActivation().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityNodeActivation_node_ActivityNodeActivation_Value lastValue = traced
@@ -13589,7 +13689,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_IsRunning().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityNodeActivation_isRunning_Value lastValue = traced
@@ -13611,7 +13712,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_Running().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityNodeActivation_running_Value lastValue = traced
@@ -13633,7 +13735,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_Group_ActivityNodeActivation().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation traced = (fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.TracedActivityNodeActivation) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.ActivityNodeActivation_group_ActivityNodeActivation_Value lastValue = traced
@@ -13665,7 +13768,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getSemanticVisitor_RuntimeModelElement().getFeatureID()) {
 
-							// Rollback: we remove the last value of this field from the new state
+							// Rollback: we remove the last value of this field
+							// from the new state
 							fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor traced = (fumlConfigurationTrace.States.fumlConfiguration.Loci.TracedSemanticVisitor) exeToTraced
 									.get(o);
 							fumlConfigurationTrace.States.SemanticVisitor_runtimeModelElement_Value lastValue = traced
@@ -13693,7 +13797,8 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 				}
 				// Here we look at collection mutable fields
 				// We must first manually find out if the collection changed...
-				// If it changed we must rollback the last values from the copied state, and add new values as well
+				// If it changed we must rollback the last values from the
+				// copied state, and add new values as well
 				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) {
 					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) modelChange;
 					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
@@ -13703,7 +13808,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivationGroup_EdgeInstances().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ActivityNodeActivationGroup_edgeInstances_Value> valueSequence = tracedObject
 									.getEdgeInstancesSequence();
 							fumlConfigurationTrace.States.ActivityNodeActivationGroup_edgeInstances_Value previousValue = null;
@@ -13738,12 +13845,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ActivityNodeActivationGroup_edgeInstances_Value lastValue = tracedObject
 										.getEdgeInstancesSequence()
 										.get(tracedObject.getEdgeInstancesSequence().size() - 1);
 								newState.getActivityNodeActivationGroup_edgeInstances_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ActivityNodeActivationGroup_edgeInstances_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createActivityNodeActivationGroup_edgeInstances_Value();
 								newValue.getEdgeInstances()
@@ -13755,7 +13863,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						} else if (p
 								.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 										.getActivityNodeActivationGroup_NodeActivations().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ActivityNodeActivationGroup_nodeActivations_Value> valueSequence = tracedObject
 									.getNodeActivationsSequence();
 							fumlConfigurationTrace.States.ActivityNodeActivationGroup_nodeActivations_Value previousValue = null;
@@ -13790,12 +13900,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ActivityNodeActivationGroup_nodeActivations_Value lastValue = tracedObject
 										.getNodeActivationsSequence()
 										.get(tracedObject.getNodeActivationsSequence().size() - 1);
 								newState.getActivityNodeActivationGroup_nodeActivations_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ActivityNodeActivationGroup_nodeActivations_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createActivityNodeActivationGroup_nodeActivations_Value();
 								newValue.getNodeActivations()
@@ -13812,7 +13923,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.FumlConfigurationPackage.eINSTANCE
 								.getElementConfiguration_SemanticVisitor().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ElementConfiguration_semanticVisitor_Value> valueSequence = tracedObject
 									.getSemanticVisitorSequence();
 							fumlConfigurationTrace.States.ElementConfiguration_semanticVisitor_Value previousValue = null;
@@ -13843,12 +13956,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ElementConfiguration_semanticVisitor_Value lastValue = tracedObject
 										.getSemanticVisitorSequence()
 										.get(tracedObject.getSemanticVisitorSequence().size() - 1);
 								newState.getElementConfiguration_semanticVisitor_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ElementConfiguration_semanticVisitor_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createElementConfiguration_semanticVisitor_Value();
 								newValue.getSemanticVisitor()
@@ -13865,7 +13979,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getFeatureValue_Values_FeatureValue().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.FeatureValue_values_FeatureValue_Value> valueSequence = tracedObject
 									.getValues_FeatureValueSequence();
 							fumlConfigurationTrace.States.FeatureValue_values_FeatureValue_Value previousValue = null;
@@ -13897,12 +14013,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.FeatureValue_values_FeatureValue_Value lastValue = tracedObject
 										.getValues_FeatureValueSequence()
 										.get(tracedObject.getValues_FeatureValueSequence().size() - 1);
 								newState.getFeatureValue_values_FeatureValue_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.FeatureValue_values_FeatureValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createFeatureValue_values_FeatureValue_Value();
 								newValue.getValues_FeatureValue()
@@ -13919,7 +14036,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
 								.getParameterValue_Values_ParameterValue().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value> valueSequence = tracedObject
 									.getValues_ParameterValueSequence();
 							fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value previousValue = null;
@@ -13951,12 +14070,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value lastValue = tracedObject
 										.getValues_ParameterValueSequence()
 										.get(tracedObject.getValues_ParameterValueSequence().size() - 1);
 								newState.getParameterValue_values_ParameterValue_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ParameterValue_values_ParameterValue_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createParameterValue_values_ParameterValue_Value();
 								newValue.getValues_ParameterValue()
@@ -13973,7 +14093,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Input.InputPackage.eINSTANCE
 								.getInputParameterValues_ParameterValues().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value> valueSequence = tracedObject
 									.getParameterValuesSequence();
 							fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value previousValue = null;
@@ -14008,12 +14130,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value lastValue = tracedObject
 										.getParameterValuesSequence()
 										.get(tracedObject.getParameterValuesSequence().size() - 1);
 								newState.getInputParameterValues_parameterValues_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.InputParameterValues_parameterValues_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createInputParameterValues_parameterValues_Value();
 								newValue.getParameterValues()
@@ -14030,7 +14153,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getExecutionFactory_PrimitiveBehaviorPrototypes().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value> valueSequence = tracedObject
 									.getPrimitiveBehaviorPrototypesSequence();
 							fumlConfigurationTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value previousValue = null;
@@ -14066,12 +14191,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value lastValue = tracedObject
 										.getPrimitiveBehaviorPrototypesSequence()
 										.get(tracedObject.getPrimitiveBehaviorPrototypesSequence().size() - 1);
 								newState.getExecutionFactory_primitiveBehaviorPrototypes_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ExecutionFactory_primitiveBehaviorPrototypes_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createExecutionFactory_primitiveBehaviorPrototypes_Value();
 								newValue.getPrimitiveBehaviorPrototypes()
@@ -14082,7 +14208,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 						} else if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getExecutionFactory_BuiltInTypes().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ExecutionFactory_builtInTypes_Value> valueSequence = tracedObject
 									.getBuiltInTypesSequence();
 							fumlConfigurationTrace.States.ExecutionFactory_builtInTypes_Value previousValue = null;
@@ -14113,12 +14241,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ExecutionFactory_builtInTypes_Value lastValue = tracedObject
 										.getBuiltInTypesSequence()
 										.get(tracedObject.getBuiltInTypesSequence().size() - 1);
 								newState.getExecutionFactory_builtInTypes_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ExecutionFactory_builtInTypes_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createExecutionFactory_builtInTypes_Value();
 								newValue.getBuiltInTypes()
@@ -14135,7 +14264,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getOffer_OfferedTokens().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.Offer_offeredTokens_Value> valueSequence = tracedObject
 									.getOfferedTokensSequence();
 							fumlConfigurationTrace.States.Offer_offeredTokens_Value previousValue = null;
@@ -14169,12 +14300,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.Offer_offeredTokens_Value lastValue = tracedObject
 										.getOfferedTokensSequence()
 										.get(tracedObject.getOfferedTokensSequence().size() - 1);
 								newState.getOffer_offeredTokens_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.Offer_offeredTokens_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createOffer_offeredTokens_Value();
 								newValue.getOfferedTokens()
@@ -14191,7 +14323,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Loci.LociPackage.eINSTANCE
 								.getLocus_ExtensionalValues().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.Locus_extensionalValues_Value> valueSequence = tracedObject
 									.getExtensionalValuesSequence();
 							fumlConfigurationTrace.States.Locus_extensionalValues_Value previousValue = null;
@@ -14225,12 +14359,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.Locus_extensionalValues_Value lastValue = tracedObject
 										.getExtensionalValuesSequence()
 										.get(tracedObject.getExtensionalValuesSequence().size() - 1);
 								newState.getLocus_extensionalValues_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.Locus_extensionalValues_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createLocus_extensionalValues_Value();
 								newValue.getExtensionalValues()
@@ -14247,7 +14382,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
 								.getCallActionActivation_CallExecutions().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value> valueSequence = tracedObject
 									.getCallExecutionsSequence();
 							fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value previousValue = null;
@@ -14281,12 +14418,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value lastValue = tracedObject
 										.getCallExecutionsSequence()
 										.get(tracedObject.getCallExecutionsSequence().size() - 1);
 								newState.getCallActionActivation_callExecutions_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.CallActionActivation_callExecutions_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createCallActionActivation_callExecutions_Value();
 								newValue.getCallExecutions()
@@ -14303,7 +14441,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage.eINSTANCE
 								.getExecution_ParameterValues().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.Execution_parameterValues_Value> valueSequence = tracedObject
 									.getParameterValuesSequence();
 							fumlConfigurationTrace.States.Execution_parameterValues_Value previousValue = null;
@@ -14338,12 +14478,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.Execution_parameterValues_Value lastValue = tracedObject
 										.getParameterValuesSequence()
 										.get(tracedObject.getParameterValuesSequence().size() - 1);
 								newState.getExecution_parameterValues_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.Execution_parameterValues_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createExecution_parameterValues_Value();
 								newValue.getParameterValues()
@@ -14360,7 +14501,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getObject_Types().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.Object_types_Value> valueSequence = tracedObject
 									.getTypesSequence();
 							fumlConfigurationTrace.States.Object_types_Value previousValue = null;
@@ -14390,11 +14533,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.Object_types_Value lastValue = tracedObject
 										.getTypesSequence().get(tracedObject.getTypesSequence().size() - 1);
 								newState.getObject_types_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.Object_types_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createObject_types_Value();
 								newValue.getTypes()
@@ -14411,7 +14555,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Classes.Kernel.KernelPackage.eINSTANCE
 								.getCompoundValue_FeatureValues().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.CompoundValue_featureValues_Value> valueSequence = tracedObject
 									.getFeatureValuesSequence();
 							fumlConfigurationTrace.States.CompoundValue_featureValues_Value previousValue = null;
@@ -14442,12 +14588,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.CompoundValue_featureValues_Value lastValue = tracedObject
 										.getFeatureValuesSequence()
 										.get(tracedObject.getFeatureValuesSequence().size() - 1);
 								newState.getCompoundValue_featureValues_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.CompoundValue_featureValues_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createCompoundValue_featureValues_Value();
 								newValue.getFeatureValues()
@@ -14464,7 +14611,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityEdgeInstance_Offers().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value> valueSequence = tracedObject
 									.getOffersSequence();
 							fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value previousValue = null;
@@ -14498,11 +14647,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value lastValue = tracedObject
 										.getOffersSequence().get(tracedObject.getOffersSequence().size() - 1);
 								newState.getActivityEdgeInstance_offers_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ActivityEdgeInstance_offers_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createActivityEdgeInstance_offers_Value();
 								newValue.getOffers()
@@ -14519,7 +14669,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Actions.BasicActions.BasicActionsPackage.eINSTANCE
 								.getActionActivation_PinActivations().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ActionActivation_pinActivations_Value> valueSequence = tracedObject
 									.getPinActivationsSequence();
 							fumlConfigurationTrace.States.ActionActivation_pinActivations_Value previousValue = null;
@@ -14552,12 +14704,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ActionActivation_pinActivations_Value lastValue = tracedObject
 										.getPinActivationsSequence()
 										.get(tracedObject.getPinActivationsSequence().size() - 1);
 								newState.getActionActivation_pinActivations_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ActionActivation_pinActivations_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createActionActivation_pinActivations_Value();
 								newValue.getPinActivations()
@@ -14574,7 +14727,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 								.get(o_cast);
 						if (p.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 								.getActivityNodeActivation_HeldTokens().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ActivityNodeActivation_heldTokens_Value> valueSequence = tracedObject
 									.getHeldTokensSequence();
 							fumlConfigurationTrace.States.ActivityNodeActivation_heldTokens_Value previousValue = null;
@@ -14608,11 +14763,12 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ActivityNodeActivation_heldTokens_Value lastValue = tracedObject
 										.getHeldTokensSequence().get(tracedObject.getHeldTokensSequence().size() - 1);
 								newState.getActivityNodeActivation_heldTokens_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ActivityNodeActivation_heldTokens_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createActivityNodeActivation_heldTokens_Value();
 								newValue.getHeldTokens()
@@ -14624,7 +14780,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						} else if (p
 								.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 										.getActivityNodeActivation_IncomingEdges().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ActivityNodeActivation_incomingEdges_Value> valueSequence = tracedObject
 									.getIncomingEdgesSequence();
 							fumlConfigurationTrace.States.ActivityNodeActivation_incomingEdges_Value previousValue = null;
@@ -14659,12 +14817,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ActivityNodeActivation_incomingEdges_Value lastValue = tracedObject
 										.getIncomingEdgesSequence()
 										.get(tracedObject.getIncomingEdgesSequence().size() - 1);
 								newState.getActivityNodeActivation_incomingEdges_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ActivityNodeActivation_incomingEdges_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createActivityNodeActivation_incomingEdges_Value();
 								newValue.getIncomingEdges()
@@ -14676,7 +14835,9 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 						} else if (p
 								.getFeatureID() == fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage.eINSTANCE
 										.getActivityNodeActivation_OutgoingEdges().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							// We compare the last collection in the value
+							// sequence, and the current one in the potentially
+							// changed object
 							List<fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value> valueSequence = tracedObject
 									.getOutgoingEdgesSequence();
 							fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value previousValue = null;
@@ -14711,12 +14872,13 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 							}
 							if (change) {
 								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
+								// Rollback: we remove the last value of this
+								// field from the new state
 								fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value lastValue = tracedObject
 										.getOutgoingEdgesSequence()
 										.get(tracedObject.getOutgoingEdgesSequence().size() - 1);
 								newState.getActivityNodeActivation_outgoingEdges_Values().remove(lastValue);
-								// And we create a proper new value							
+								// And we create a proper new value
 								fumlConfigurationTrace.States.ActivityNodeActivation_outgoingEdges_Value newValue = fumlConfigurationTrace.States.StatesFactory.eINSTANCE
 										.createActivityNodeActivation_outgoingEdges_Value();
 								newValue.getOutgoingEdges()
@@ -15999,18 +16161,14 @@ public class FumlConfigurationTraceConstructor implements ITraceConstructor {
 		try {
 			traceResource.save(null);
 		} catch (java.io.IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 
 	@Override
 	public void save(URI uri) {
-		try {
-			traceResource.setURI(uri);
-			traceResource.save(null);
-		} catch (java.io.IOException e) {
-			e.printStackTrace();
-		}
+		traceResource.setURI(uri);
+		save();
 	}
 
 	private Set<Resource> getAllExecutedModelResources() {
