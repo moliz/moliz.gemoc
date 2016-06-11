@@ -35,7 +35,7 @@ public class MemoryAnalyzer {
 
 	public static class QueryResult {
 		public int nbElements;
-		public int memorySum;
+		public long memorySum;
 	}
 
 	public ISnapshot snapshot;
@@ -50,7 +50,7 @@ public class MemoryAnalyzer {
 		assert (snapshot != null);
 	}
 
-	public QueryResult computeRetainedSizeWithOQLQuery(String query, File dumpFile) throws Exception {
+	public QueryResult computeRetainedSizeWithOQLQuery(String query) throws Exception {
 		// We open the dump with Eclipse Memory Analyzer, and obtain a snapshot
 		// object
 		QueryResult res = new QueryResult();
@@ -62,6 +62,7 @@ public class MemoryAnalyzer {
 			// System.out.println("OQL class: " +
 			// result.getClass().getCanonicalName());
 
+			// Case list of amounts
 			if (result instanceof IOQLQuery.Result) {
 				IResultTable castResult2 = (IResultTable) result;
 				int sum = 0;
@@ -70,14 +71,18 @@ public class MemoryAnalyzer {
 				}
 				res.memorySum = sum;
 				res.nbElements = castResult2.getRowCount();
-			} else if (result instanceof int[]) {
+			} 
+			// Case list of objects
+			else if (result instanceof int[]) {
 				int[] castResult = (int[]) result;
 				res.nbElements = castResult.length;
+				int[] retainedSet = snapshot.getRetainedSet(castResult, progressListener);
+				long heapSizeOfRetainedSet = snapshot.getHeapSize(retainedSet);
+				res.memorySum = heapSizeOfRetainedSet;				
 			}
 
 		} catch (OQLParseException e) {
-			String message = "Error: parsing of the OQL query failed. " + e.getMessage()
-					+ ".";
+			String message = "Error: parsing of the OQL query failed. " + e.getMessage() + ".";
 			throw new Exception(message, e);
 		} catch (SnapshotException e) {
 			String message = "Error while computing memory consumption! " + e.getMessage();
@@ -86,7 +91,7 @@ public class MemoryAnalyzer {
 		return res;
 	}
 
-	public int computeRetainedSizeOfClass(String className, File dumpFile) {
+	public int computeRetainedSizeOfClass(String className) {
 
 		// We open the dump with Eclipse Memory Analyzer, and obtain a snapshot
 		// object
@@ -109,14 +114,16 @@ public class MemoryAnalyzer {
 				}
 			}
 
-			SnapshotFactory.dispose(snapshot);
-
 		} catch (SnapshotException e) {
 			System.err.println("Error while computing memory consumption!");
 			e.printStackTrace();
 		}
 		return sum;
 
+	}
+
+	public void cleanUp() {
+		SnapshotFactory.dispose(snapshot);
 	}
 
 	public static void dumpHeap(File dumpFile) throws SnapshotException {
