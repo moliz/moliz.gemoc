@@ -1,8 +1,12 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 
 import fr.inria.diverse.trace.commons.testutil.EclipseTestUtil
+import fr.inria.diverse.trace.commons.testutil.Investigation
 import java.io.File
 import java.io.FileInputStream
+import java.io.IOException
+import java.io.OutputStream
+import java.io.PrintStream
 import java.io.PrintWriter
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
@@ -10,6 +14,9 @@ import java.text.SimpleDateFormat
 import java.util.ArrayList
 import java.util.Calendar
 import java.util.Collection
+import java.util.HashSet
+import java.util.List
+import java.util.Locale
 import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IFolder
 import org.eclipse.core.resources.IProject
@@ -20,11 +27,14 @@ import org.eclipse.core.runtime.Status
 import org.eclipse.core.runtime.jobs.Job
 import org.eclipse.emf.common.command.Command
 import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.transaction.RecordingCommand
 import org.eclipse.emf.transaction.TransactionalEditingDomain
 import org.eclipse.emf.transaction.util.TransactionUtil
+import org.gemoc.executionframework.engine.Activator
 import org.junit.AfterClass
 import org.junit.BeforeClass
 import org.junit.Rule
@@ -38,54 +48,46 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecut
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkRunConfiguration
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.Fuml
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.Fuml
-import fr.inria.diverse.trace.commons.testutil.Investigation
-import java.util.HashSet
-import org.eclipse.emf.ecore.EObject
-import java.io.IOException
-import java.io.PrintStream
-import org.modelexecution.xmof.gemoc.generictraceconstructor.GenericTraceConstructor
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.GenericTraceCase
-import java.util.Random
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
 
-//	@Rule
-//	public TemporaryFolder tmpFolderCreator = new TemporaryFolder(new File("/home/ebousse/tmp/yay"));
-	static val File tmpFolderContainer = new File("/home/ebousse/tmp/yay")
+	@Rule
+	public TemporaryFolder tmpFolderCreator = new TemporaryFolder(new File("/home/ebousse/tmp/yay"));
+	//static val File tmpFolderContainer = new File("/home/ebousse/tmp/yay")
 
 	// Constants
 	static val String modelFolderName = "model"
 	static val String outputFolderName = "output"
 	static val int WARMUPS = 1
-	static val int NBMEASURES = 1
+	static val int NBMEASURES = 2
 	static val String projectName = "benchmark-project"
-//	static val petriNet = new PetriNetLanguage(
-//		#{"net1.petrinet" -> #[""], "net1bis.petrinet" -> #[""]}
-//	)
 	static val fuml = new Fuml(#{
 		"testmodel.uml" -> #[
-			"test1parameter.xmi"
-			//,"test2parameter.xmi"
-		// ,"test3parameter.xmi"
+			// "test1parameter.xmi"
+			// "test2parameter.xmi",
+			"test3parameter.xmi"
 		] // ,
 //		"Nokia/ExampleA/ExampleAV1.uml" -> #[
 //			"ExampleAV1_parameter_1_1.xmi"
 //		]
 	})
+	static val boolean measureMemory = true
+	static val boolean measureTime = false
+	static val boolean tryToSaveMemory = measureMemory
 
 	// Input data for all tests
-	static val tracingCases = #{
+	static val tracingCases = #[
+		new GenericTraceCase,
 		new DSTraceCase
-		,new GenericTraceCase
-	    ,new NoTraceCase
-	}
+	// new NoTraceCase
+	]
 	static val languages = #{fuml}
-	// static val languages = #{petriNet}
+
 	// Common to all tests (used by @BeforeClass and @AfterClass)
 	static var IProject eclipseProject
 	static var File outputFolder
@@ -118,17 +120,14 @@ class BenchmarkPhase1 {
 	}
 
 	private def File createTmpFolder() {
-		// return tmpFolderCreator.newFolder
-		val rand = new Random
-		val id = rand.nextInt(1000)
-		val fileFriendlyTestCaseName = this.testCaseName.replaceAll(",", "-")
-		val folder = new File(tmpFolderContainer, fileFriendlyTestCaseName + "_" + id)
-		folder.mkdirs
-		return folder
+		 return tmpFolderCreator.newFolder
+//		val rand = new Random
+//		val id = rand.nextInt(1000)
+//		val fileFriendlyTestCaseName = this.testCaseName.replaceAll(",", "-")
+//		val folder = new File(tmpFolderContainer, fileFriendlyTestCaseName + "_" + id)
+//		folder.mkdirs
+		//return folder
 
-	// val file = File.createTempFile("yay","")
-	// val file = new File("/home/zerwan/tmp/dumps")
-	// return file
 	}
 
 	private def void log(String s) {
@@ -146,6 +145,7 @@ class BenchmarkPhase1 {
 		// Create engine parameterized with inputs
 		log("Preparing engine")
 		val XMOFExecutionEngine engine = new XMOFExecutionEngine();
+		engine.silentAddonsErrors = false
 		val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI, inputModelURIString)
 		val executioncontext = new BenchmarkExecutionModelContext(runConf);
 		executioncontext.initializeResourceModel();
@@ -154,10 +154,9 @@ class BenchmarkPhase1 {
 		tracingCase.initialize();
 
 		// Execution
-		// TODO test more sleep + GC call?
 		if (wait) {
 			System.gc
-			Thread.sleep(2000)
+			Thread.sleep(5000)
 		}
 
 		log("Running engine")
@@ -173,11 +172,9 @@ class BenchmarkPhase1 {
 		if (!confModelSaved) {
 			log("Saving conf model")
 			val Resource confModel = executioncontext.resourceModel
-			val res = new HashSet<EObject>
 			val pointed = new HashSet<EObject>
-			for (c : confModel.contents) {
-				res.addAll(Investigation::findObjectsThatPointToObjectsWithoutResource(c, pointed))
-			}
+			Investigation::findObjectsThatPointToObjectsWithoutResource(confModel, pointed)
+
 			val newRoots = new HashSet<EObject>
 			for (p : pointed) {
 				val root = Investigation::findRoot(p)
@@ -205,41 +202,30 @@ class BenchmarkPhase1 {
 			confModelSaved = true
 		}
 
-		log("Cleanup memory")
+		if (tryToSaveMemory) {
+			log("Cleanup memory")
 
-		// Clean command stack
-		val rs = engine.executionContext.resourceModel.resourceSet
-		val ed = TransactionUtil.getEditingDomain(rs)
-		ed.commandStack.flush
+			// Clean command stack
+			val rs = engine.executionContext.resourceModel.resourceSet
+			val ed = TransactionUtil.getEditingDomain(rs)
+			ed.commandStack.flush
 
-		// Remove engine(s) from registry
-		val registry = org.gemoc.executionframework.engine.Activator.^default.gemocRunningEngineRegistry
-		for (engineName : registry.runningEngines.keySet)
-			registry.unregisterEngine(engineName)
+			// Remove engine(s) from registry
+			val registry = Activator.^default.gemocRunningEngineRegistry
+			for (engineName : registry.runningEngines.keySet)
+				registry.unregisterEngine(engineName)
 
-		// Clean resourceSet
-		clearResourceSet(rs)
-		
-		engine.cleanUp
+			// Clean resourceSet
+			clearResourceSet(rs)
+
+			engine.cleanUp
+
+		}
 
 		// If any trace created and  not yet measured, we must measure memory
-		if (tracingCase.createsTrace && line.traceMemoryFootprint == 0) {
+		if (tracingCase.createsTrace && line.traceMemoryFootprint == 0 && measureMemory) {
 
-			// Read trace
 			line.traceNbStates = tracingCase.numberOfStates
-			
-			tracingCase.preCleanUp
-
-			// Dump memory and compute memory usage of the trace
-			val heapFolder = createTmpFolder
-			val heap = new File(heapFolder, model + "_" + tracingCase.simpleName)
-			log("START DUMP CREATION")
-			MemoryAnalyzer.dumpHeap(heap)
-			log("FINISHED DUMP CREATION")
-			log("START DUMP ANALYSIS ")
-			line.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
-			log("FINISHED DUMP ANALYSIS ")
-			//line.traceMemoryFootprint = 12
 
 			log("Serialize trace")
 
@@ -267,14 +253,41 @@ class BenchmarkPhase1 {
 			val executionTraceTargetFile = new File(tracingCaseOutputFolder,
 				modelURI.lastSegment + inputSuffix + ".trace")
 			copyFromWS(traceFileInProject, executionTraceTargetFile)
+
+			if (tryToSaveMemory) {
+				tracingCase.preCleanUp
+			}
+
+			// Confuse the memory by preserving refs to all EClasses
+			val List<EClass> allEClasses = new ArrayList
+
+			executioncontext.resourceModel.allContents.forEach [ o |
+				allEClasses.add(o.eClass)
+			]
+
+			tracingCase.traceResource.allContents.forEach [ o |
+				allEClasses.add(o.eClass)
+			]
+
+			// Dump memory and compute memory usage of the trace
+			val heapFolder = createTmpFolder
+			val heap = new File(heapFolder, model + "_" + tracingCase.simpleName)
+			log("Dumping memory")
+			MemoryAnalyzer.dumpHeap(heap)
+			log("Analyzing dump")
+			line.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
+		// line.traceMemoryFootprint = 12
 		}
 		log("Destroy engine")
 
-		tracingCase.cleanUp
+		if (tryToSaveMemory) {
+			tracingCase.cleanUp
 
-		// Destroy engine
-		engine.dispose
-		
+			// Destroy engine
+			engine.dispose
+
+		}
+
 		return time
 
 	}
@@ -322,23 +335,28 @@ class BenchmarkPhase1 {
 					}
 
 					// Warmups
-					for (i : 0 ..< WARMUPS) {
-						log("Run warmup " + i)
-						val res = execute(false, m)
-						line.timeWarms.add(res)
-					}
+					if (measureTime) {
+						for (i : 0 ..< WARMUPS) {
+							log("Run warmup " + i)
+							val res = execute(false, m)
+							line.timeWarms.add(res)
+						}
 
-					// Real executions
-					var long sum = 0
-					val range = 0 ..< NBMEASURES
-					for (i : range) {
-						log("Run execution " + i)
-						val time = execute(true, m)
-						line.timeExes.add(time)
-						sum = sum + time
-					}
+						// Real executions
+						var long sum = 0
+						val range = 0 ..< NBMEASURES
+						for (i : range) {
+							log("Run execution " + i)
+							val time = execute(true, m)
+							line.timeExes.add(time)
+							sum = sum + time
+						}
 
-					line.timeExe = sum / NBMEASURES
+						line.timeExe = sum / NBMEASURES
+
+					} else {
+						execute(false, m)
+					}
 
 					// Store result in CSV
 					outputCSVWriter.println(line.toString)
@@ -392,7 +410,7 @@ class BenchmarkPhase1 {
 
 	// @BeforeClass
 	def static void disableLogs() {
-		val emptyOutStream = new java.io.OutputStream() {
+		val emptyOutStream = new OutputStream() {
 			override write(int b) throws IOException {}
 		}
 
@@ -447,11 +465,11 @@ class BenchmarkPhase1 {
 
 			override printf(String format, Object... args) { return this; }
 
-			override printf(java.util.Locale l, String format, Object... args) { return this; }
+			override printf(Locale l, String format, Object... args) { return this; }
 
 			override format(String format, Object... args) { return this; }
 
-			override format(java.util.Locale l, String format, Object... args) { return this; }
+			override format(Locale l, String format, Object... args) { return this; }
 
 			override append(CharSequence csq) { return this; }
 
