@@ -14,7 +14,7 @@ class CSVLine {
 	public List<Long> timeWarms = new ArrayList()
 	public List<Long> timeExes = new ArrayList()
 	public Integer traceNbStates = 0
-	public Integer traceMemoryFootprint = 0
+	public Long traceMemoryFootprint = new Long(0)
 	public Integer nbWarmups = 0
 	public Integer nbMeasurements = 0
 
