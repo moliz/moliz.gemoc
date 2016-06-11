@@ -35,48 +35,38 @@ class GenericTraceCase implements BenchmarkTracingCase {
 		engine.rawVirtualMachine.addRawExecutionEventListener(genericTraceConstructor);
 	}
 
-	static val String queryStart = '''select a.@retainedHeapSize from ".*'''
-	static val String queryEndSimple = '''.*" a'''
-	static val String queryEndUtil = '''.*(PackageImpl|FactoryImpl|AdapterFactory|Switch)$" a'''
-
 	static val String traceRoot = "StateSystemImpl"
 	static val String tracePackage = "org.modelexecution.xmof.states"
 
-	static def String createQuerySimple(String packageName) {
-		'''«queryStart»«packageName»«queryEndSimple»'''
-	}
+	static val String queryStart = '''SELECT * FROM ".*('''
+	static val String queryEndWithoutUtil = ''').*[^(PackageImpl|FactoryImpl|AdapterFactory|Switch)]?$" '''
 
-	static def String createQueryUtil(String packageName) {
-		'''«queryStart»«packageName»«queryEndUtil»'''
+	static def String createQueryWithoutUtil(String... packagesNames) {
+		'''«queryStart»«packagesNames.join("|")»«queryEndWithoutUtil»'''
 	}
 
 	override computeMemoryUsage(File dumpFile) {
-		
-		
-		genericTraceConstructor.stateSystem.eAdapters.clear
 
 		val analyzer = new MemoryAnalyzer(dumpFile);
 
 		// First we make sure that there is only one trace
 		val String queryCheck = '''SELECT * FROM ".*«traceRoot».*"''';
-		val resCheck = analyzer.computeRetainedSizeWithOQLQuery(queryCheck, dumpFile);
+		val resCheck = analyzer.computeRetainedSizeWithOQLQuery(queryCheck);
 		if (resCheck.nbElements != 1) {
 			throw new Exception("Wrong number of traces: " + resCheck.nbElements);
 		}
 
-		val querySpecific = createQuerySimple(tracePackage)
-		val querySpecificRemove = createQueryUtil(tracePackage)
+		val query = createQueryWithoutUtil(tracePackage)
 
-		println("querySpecific: " + querySpecific)
-		println("querySpecificRemove: " + querySpecificRemove)
+		println("query: " + query)
 
-		val resquerySpecific = analyzer.computeRetainedSizeWithOQLQuery(querySpecific, dumpFile);
-		val resquerySpecificRemove = analyzer.computeRetainedSizeWithOQLQuery(querySpecificRemove, dumpFile);
+		val resquery = analyzer.computeRetainedSizeWithOQLQuery(query);
 
-		println("Memory package specific: " + resquerySpecific.memorySum)
-		println("Memory to remove specific: " + resquerySpecificRemove.memorySum)
+		println("Memory: " + resquery.memorySum)
 
-		return resquerySpecific.memorySum - resquerySpecificRemove.memorySum
+		analyzer.cleanUp
+
+		return resquery.memorySum
 	}
 
 	override setLanguage(BenchmarkLanguage language) {
@@ -102,11 +92,7 @@ class GenericTraceCase implements BenchmarkTracingCase {
 		val Resource traceResource = createTraceResource(pathString)
 		addTraceToResource(traceResource, trace);
 
-		try {
-			traceResource.save(null);
-		} catch (java.io.IOException e) {
-			e.printStackTrace();
-		}
+		traceResource.save(null);
 
 	}
 
@@ -125,8 +111,7 @@ class GenericTraceCase implements BenchmarkTracingCase {
 		else
 			cmd.execute
 	}
-	
-	
+
 	override preCleanUp() {
 		for (a : genericTraceConstructor.stateSystem.eAllContents.toSet) {
 			a.eAdapters.clear
@@ -139,6 +124,10 @@ class GenericTraceCase implements BenchmarkTracingCase {
 		this.genericTraceConstructor.dispose()
 		this.resourceSet.resources.clear
 		this.resourceSet = null
+	}
+	
+	override getTraceResource() {
+		return genericTraceConstructor.stateSystem.eResource
 	}
 
 }

@@ -47,4 +47,8 @@ class NoTraceCase implements BenchmarkTracingCase {
 		
 	}
 	
+	override getTraceResource() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
 }

@@ -4,6 +4,7 @@ import java.io.File
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
+import org.eclipse.emf.ecore.resource.Resource
 
 interface BenchmarkTracingCase {
 
@@ -11,7 +12,7 @@ interface BenchmarkTracingCase {
 	
 	def void initialize();
 
-	def int computeMemoryUsage(File dumpFile)
+	def long computeMemoryUsage(File dumpFile)
 
 	def void setLanguage(BenchmarkLanguage language)
 
@@ -26,6 +27,8 @@ interface BenchmarkTracingCase {
 	def void preCleanUp()
 	
 	def void cleanUp()
+	
+	def Resource getTraceResource()
 
 }
 
