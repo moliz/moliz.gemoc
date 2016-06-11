@@ -87,7 +87,7 @@ public class XMOFBasedModelLoader {
 	}
 
 	private Collection<EObject> getParameterValueObjects(
-			Collection<ParameterValue> inputParameterValues) {
+			Collection<ParameterValue> inputParameterValues) { 
 		Collection<EObject> parameterValueObjects = new BasicEList<EObject>();
 		for (ParameterValue parameterValue : inputParameterValues) {
 			for (Value value : parameterValue.getValues()) {
@@ -100,6 +100,17 @@ public class XMOFBasedModelLoader {
 				}
 			}
 		}
+		
+		// add referenced objects that reside in different resources
+		if(parameterValueObjects.size() > 0) {
+			EObject parameterValueObject = parameterValueObjects.iterator().next();
+			Resource parameterValueObjectResource = parameterValueObject.eResource();
+			for (Resource relatedResource : EMFResource.getRelatedResources(parameterValueObjectResource)) {
+				if (relatedResource != null && relatedResource != parameterValueObjectResource)
+					parameterValueObjects.addAll(relatedResource.getContents());
+			}
+		}
+		
 		return parameterValueObjects;
 	}
 
