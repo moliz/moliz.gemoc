@@ -64,26 +64,88 @@ class BenchmarkPhase1 {
 	static val String modelFolderName = "model"
 	static val String outputFolderName = "output"
 	static val int WARMUPS = 1
-	static val int NBMEASURES = 2
+	static val int NBMEASURES = 5
 	static val String projectName = "benchmark-project"
 	static val fuml = new Fuml(#{
 		"testmodel.uml" -> #[
-			// "test1parameter.xmi"
-			// "test2parameter.xmi",
-			"test3parameter.xmi"
-		] // ,
-//		"Nokia/ExampleA/ExampleAV1.uml" -> #[
-//			"ExampleAV1_parameter_1_1.xmi"
-//		]
+			"test1parameter.xmi",
+			"test2parameter.xmi",
+			"test4parameter.xmi",
+			"test5parameter.xmi",
+			"test6parameter.xmi",
+			"test7parameter.xmi",
+			"test8parameter.xmi",
+			"test9parameter.xmi",
+			"test10parameter.xmi",
+			"test11parameter.xmi",
+			"test12parameter.xmi"
+		]  ,
+		"Nokia/ExampleA/ExampleAV1.uml" -> #[
+			"ExampleAV1_parameter_1_1.xmi",
+			"ExampleAV1_parameter_1_2.xmi",
+			"ExampleAV1_parameter_2_1.xmi",
+			"ExampleAV1_parameter_2_2.xmi"
+			], 
+		"Nokia/ExampleA/ExampleAV2.uml" -> #[
+			"ExampleAV2_parameter_1_1.xmi",
+			"ExampleAV2_parameter_1_2.xmi",
+			"ExampleAV2_parameter_2_1.xmi",
+			"ExampleAV2_parameter_2_2.xmi"
+			], 
+		"Nokia/ExampleA/ExampleAV3.uml" -> #[
+			"ExampleAV3_parameter_1_1.xmi",
+			"ExampleAV3_parameter_1_2.xmi",
+			"ExampleAV3_parameter_2_1.xmi",
+			"ExampleAV3_parameter_2_2.xmi"
+			], 
+		"Nokia/ExampleA/ExampleAV4.uml" -> #[
+			"ExampleAV4_parameter_1_1.xmi",
+			"ExampleAV4_parameter_1_2.xmi",
+			"ExampleAV4_parameter_2_1.xmi",
+			"ExampleAV4_parameter_2_2.xmi"
+		],
+		"IBM/2557-1.uml" -> #[
+			"2557-1_parameter_1.xmi",
+			"2557-1_parameter_2.xmi",
+			"2557-1_parameter_3.xmi"
+		],
+		"IBM/2557-2.uml" -> #[
+			"2557-2_parameter_1.xmi",
+			"2557-2_parameter_2.xmi",
+			"2557-2_parameter_3.xmi"
+		],
+		"anonCompany/ExampleB/ExampleBV1.uml" -> #[
+			"ExampleBV1_parameter_false_false.xmi",
+			"ExampleBV1_parameter_false_true.xmi",
+			"ExampleBV1_parameter_true_false.xmi",
+			"ExampleBV1_parameter_true_true.xmi"
+		],
+		"anonCompany/ExampleB/ExampleBV2.uml" -> #[
+			"ExampleBV2_parameter_false_false.xmi",
+			"ExampleBV2_parameter_false_true.xmi",
+			"ExampleBV2_parameter_true_false.xmi",
+			"ExampleBV2_parameter_true_true.xmi"
+		],
+		"anonCompany/ExampleB/ExampleBV3.uml" -> #[
+			"ExampleBV3_parameter_false_false_false.xmi",
+			"ExampleBV3_parameter_false_false_true.xmi",
+			"ExampleBV3_parameter_false_true_false.xmi",
+			"ExampleBV3_parameter_false_true_true.xmi",
+			"ExampleBV3_parameter_true_false_false.xmi",
+			"ExampleBV3_parameter_true_false_true.xmi",
+			"ExampleBV3_parameter_true_true_false.xmi",
+			"ExampleBV3_parameter_true_true_true.xmi"
+		]
 	})
 	static val boolean measureMemory = true
 	static val boolean measureTime = false
-	static val boolean tryToSaveMemory = measureMemory
+	static val boolean tryToSaveMemory = true
 
 	// Input data for all tests
 	static val tracingCases = #[
 		new GenericTraceCase,
 		new DSTraceCase
+		
 	// new NoTraceCase
 	]
 	static val languages = #{fuml}
@@ -408,7 +470,7 @@ class BenchmarkPhase1 {
 		return folderCopy
 	}
 
-	// @BeforeClass
+	@BeforeClass
 	def static void disableLogs() {
 		val emptyOutStream = new OutputStream() {
 			override write(int b) throws IOException {}
