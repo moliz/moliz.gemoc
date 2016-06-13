@@ -1,20 +1,23 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases
 
+import fr.inria.diverse.trace.commons.testutil.Investigation
 import java.io.File
-import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
-import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
-import org.modelexecution.xmof.gemoc.generictraceconstructor.GenericTraceConstructor
-import org.modelexecution.xmof.states.states.StateSystem
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.emf.common.util.URI
+import java.util.HashSet
 import org.eclipse.emf.common.command.Command
-import org.eclipse.emf.edit.command.AddCommand
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eclipse.emf.transaction.util.TransactionUtil
-import org.eclipse.emf.edit.domain.EditingDomain
-import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.emf.edit.command.AddCommand
+import org.eclipse.emf.edit.domain.EditingDomain
+import org.eclipse.emf.transaction.util.TransactionUtil
+import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
+import org.modelexecution.xmof.gemoc.generictraceconstructor.GenericTraceConstructor
+import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
+import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
+import org.modelexecution.xmof.states.states.StateSystem
 
 class GenericTraceCase implements BenchmarkTracingCase {
 
@@ -38,11 +41,13 @@ class GenericTraceCase implements BenchmarkTracingCase {
 	static val String traceRoot = "StateSystemImpl"
 	static val String tracePackage = "org.modelexecution.xmof.states"
 
-	static val String queryStart = '''SELECT * FROM ".*('''
-	static val String queryEndWithoutUtil = ''').*[^(PackageImpl|FactoryImpl|AdapterFactory|Switch)]?$" '''
+	static val String queryStart = '''SELECT * FROM ".*'''
+	static val String queryEnd = '''.*"'''
 
-	static def String createQueryWithoutUtil(String... packagesNames) {
-		'''«queryStart»«packagesNames.join("|")»«queryEndWithoutUtil»'''
+	static val String queryAllUtil = '''SELECT * FROM ".*(PackageImpl|FactoryImpl|AdapterFactory|Switch)$"'''
+
+	static def String createQuery(String... packagesNames) {
+		'''«queryStart»«packagesNames.join("|")»«queryEnd»'''
 	}
 
 	override computeMemoryUsage(File dumpFile) {
@@ -56,11 +61,11 @@ class GenericTraceCase implements BenchmarkTracingCase {
 			throw new Exception("Wrong number of traces: " + resCheck.nbElements);
 		}
 
-		val query = createQueryWithoutUtil(tracePackage)
+		val query = createQuery(tracePackage)
 
 		println("query: " + query)
 
-		val resquery = analyzer.computeRetainedSizeWithOQLQuery(query);
+		val resquery = analyzer.computeRetainedSizeWithOQLQuery(query, queryAllUtil);
 
 		println("Memory: " + resquery.memorySum)
 
@@ -86,11 +91,17 @@ class GenericTraceCase implements BenchmarkTracingCase {
 		true
 	}
 
+	val pointedObjectsNotContained = new HashSet<EObject>();
+
 	override saveTrace(String pathString) {
 		val StateSystem trace = genericTraceConstructor.stateSystem
 
 		val Resource traceResource = createTraceResource(pathString)
 		addTraceToResource(traceResource, trace);
+
+		// Hack to find referenced objects that are not contained, to put them at the root of the resource before saving 
+		Investigation::findObjectsThatPointToObjectsWithoutResource(traceResource, pointedObjectsNotContained)
+		traceResource.contents.addAll(pointedObjectsNotContained)
 
 		traceResource.save(null);
 
@@ -116,16 +127,24 @@ class GenericTraceCase implements BenchmarkTracingCase {
 		for (a : genericTraceConstructor.stateSystem.eAllContents.toSet) {
 			a.eAdapters.clear
 		}
+		for (a : pointedObjectsNotContained) {
+			a.eAdapters.clear
+		}
 		this.genericTraceConstructor.preCleanUp
 	}
 
 	override cleanUp() {
 		preCleanUp
+		if (traceResource != null && traceResource.contents != null){
+			traceResource.contents.clear
+			if (traceResource != null)
+				traceResource.unload
+		}
 		this.genericTraceConstructor.dispose()
 		this.resourceSet.resources.clear
 		this.resourceSet = null
 	}
-	
+
 	override getTraceResource() {
 		return genericTraceConstructor.stateSystem.eResource
 	}
