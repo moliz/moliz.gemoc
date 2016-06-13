@@ -4,6 +4,7 @@ import fr.inria.diverse.trace.commons.testutil.EclipseTestUtil
 import fr.inria.diverse.trace.commons.testutil.Investigation
 import java.io.File
 import java.io.FileInputStream
+import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
 import java.io.PrintStream
@@ -17,6 +18,7 @@ import java.util.Collection
 import java.util.HashSet
 import java.util.List
 import java.util.Locale
+import java.util.Random
 import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IFolder
 import org.eclipse.core.resources.IProject
@@ -37,9 +39,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil
 import org.gemoc.executionframework.engine.Activator
 import org.junit.AfterClass
 import org.junit.BeforeClass
-import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TemporaryFolder
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameters
@@ -48,113 +48,26 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecut
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkRunConfiguration
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.Fuml
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.GenericTraceCase
+
+import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1Data.*
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
 
-	@Rule
-	public TemporaryFolder tmpFolderCreator = new TemporaryFolder(new File("/home/ebousse/tmp/yay"));
-	//static val File tmpFolderContainer = new File("/home/ebousse/tmp/yay")
-
-	// Constants
-	static val String modelFolderName = "model"
-	static val String outputFolderName = "output"
-	static val int WARMUPS = 1
-	static val int NBMEASURES = 5
-	static val String projectName = "benchmark-project"
-	static val fuml = new Fuml(#{
-		"testmodel.uml" -> #[
-			"test1parameter.xmi",
-			"test2parameter.xmi",
-			"test4parameter.xmi",
-			"test5parameter.xmi",
-			"test6parameter.xmi",
-			"test7parameter.xmi",
-			"test8parameter.xmi",
-			"test9parameter.xmi",
-			"test10parameter.xmi",
-			"test11parameter.xmi",
-			"test12parameter.xmi"
-		]  ,
-		"Nokia/ExampleA/ExampleAV1.uml" -> #[
-			"ExampleAV1_parameter_1_1.xmi",
-			"ExampleAV1_parameter_1_2.xmi",
-			"ExampleAV1_parameter_2_1.xmi",
-			"ExampleAV1_parameter_2_2.xmi"
-			], 
-		"Nokia/ExampleA/ExampleAV2.uml" -> #[
-			"ExampleAV2_parameter_1_1.xmi",
-			"ExampleAV2_parameter_1_2.xmi",
-			"ExampleAV2_parameter_2_1.xmi",
-			"ExampleAV2_parameter_2_2.xmi"
-			], 
-		"Nokia/ExampleA/ExampleAV3.uml" -> #[
-			"ExampleAV3_parameter_1_1.xmi",
-			"ExampleAV3_parameter_1_2.xmi",
-			"ExampleAV3_parameter_2_1.xmi",
-			"ExampleAV3_parameter_2_2.xmi"
-			], 
-		"Nokia/ExampleA/ExampleAV4.uml" -> #[
-			"ExampleAV4_parameter_1_1.xmi",
-			"ExampleAV4_parameter_1_2.xmi",
-			"ExampleAV4_parameter_2_1.xmi",
-			"ExampleAV4_parameter_2_2.xmi"
-		],
-		"IBM/2557-1.uml" -> #[
-			"2557-1_parameter_1.xmi",
-			"2557-1_parameter_2.xmi",
-			"2557-1_parameter_3.xmi"
-		],
-		"IBM/2557-2.uml" -> #[
-			"2557-2_parameter_1.xmi",
-			"2557-2_parameter_2.xmi",
-			"2557-2_parameter_3.xmi"
-		],
-		"anonCompany/ExampleB/ExampleBV1.uml" -> #[
-			"ExampleBV1_parameter_false_false.xmi",
-			"ExampleBV1_parameter_false_true.xmi",
-			"ExampleBV1_parameter_true_false.xmi",
-			"ExampleBV1_parameter_true_true.xmi"
-		],
-		"anonCompany/ExampleB/ExampleBV2.uml" -> #[
-			"ExampleBV2_parameter_false_false.xmi",
-			"ExampleBV2_parameter_false_true.xmi",
-			"ExampleBV2_parameter_true_false.xmi",
-			"ExampleBV2_parameter_true_true.xmi"
-		],
-		"anonCompany/ExampleB/ExampleBV3.uml" -> #[
-			"ExampleBV3_parameter_false_false_false.xmi",
-			"ExampleBV3_parameter_false_false_true.xmi",
-			"ExampleBV3_parameter_false_true_false.xmi",
-			"ExampleBV3_parameter_false_true_true.xmi",
-			"ExampleBV3_parameter_true_false_false.xmi",
-			"ExampleBV3_parameter_true_false_true.xmi",
-			"ExampleBV3_parameter_true_true_false.xmi",
-			"ExampleBV3_parameter_true_true_true.xmi"
-		]
-	})
-	static val boolean measureMemory = true
-	static val boolean measureTime = false
-	static val boolean tryToSaveMemory = true
-
-	// Input data for all tests
-	static val tracingCases = #[
-		new GenericTraceCase,
-		new DSTraceCase
-		
-	// new NoTraceCase
-	]
-	static val languages = #{fuml}
+	
+	
+	
+	// @Rule public TemporaryFolder tmpFolderCreator = new TemporaryFolder(new File("/home/ebousse/tmp/yay"));
+	static val File tmpFolderContainer = new File(dumpsFolder)
+	
 
 	// Common to all tests (used by @BeforeClass and @AfterClass)
 	static var IProject eclipseProject
 	static var File outputFolder
 	static var File outputCSV
 	static var PrintWriter outputCSVWriter
+	static var FileOutputStream outputCSVStream
 	static var IFolder modelFolderInWS
 
 	// Parameters specific to each test
@@ -182,14 +95,13 @@ class BenchmarkPhase1 {
 	}
 
 	private def File createTmpFolder() {
-		 return tmpFolderCreator.newFolder
-//		val rand = new Random
-//		val id = rand.nextInt(1000)
-//		val fileFriendlyTestCaseName = this.testCaseName.replaceAll(",", "-")
-//		val folder = new File(tmpFolderContainer, fileFriendlyTestCaseName + "_" + id)
-//		folder.mkdirs
-		//return folder
-
+		// return tmpFolderCreator.newFolder
+		val rand = new Random
+		val id = rand.nextInt(1000)
+		val fileFriendlyTestCaseName = this.testCaseName.replaceAll(",", "-").replaceAll("/", "_")
+		val folder = new File(tmpFolderContainer, fileFriendlyTestCaseName + "_" + id)
+		folder.mkdirs
+		return folder
 	}
 
 	private def void log(String s) {
@@ -284,12 +196,7 @@ class BenchmarkPhase1 {
 
 		}
 
-		// If any trace created and  not yet measured, we must measure memory
-		if (tracingCase.createsTrace && line.traceMemoryFootprint == 0 && measureMemory) {
-
-			line.traceNbStates = tracingCase.numberOfStates
-
-			log("Serialize trace")
+		if (tracingCase.createsTrace) {
 
 			// Create trace folder
 			if (!tracingCaseOutputFolder.exists)
@@ -309,12 +216,22 @@ class BenchmarkPhase1 {
 			val traceFileName = modelURI.lastSegment + inputSuffix + ".trace"
 			val traceFileInProject = traceFolderInProject.getFile(traceFileName)
 			val path = traceFileInProject.fullPath.toString
-			tracingCase.saveTrace(path)
 
-			// Copy trace in output folder
-			val executionTraceTargetFile = new File(tracingCaseOutputFolder,
-				modelURI.lastSegment + inputSuffix + ".trace")
-			copyFromWS(traceFileInProject, executionTraceTargetFile)
+			if (!traceFileInProject.exists) {
+				log("Serialize trace")
+				tracingCase.saveTrace(path)
+
+				// Copy trace in output folder
+				val executionTraceTargetFile = new File(tracingCaseOutputFolder,
+					modelURI.lastSegment + inputSuffix + ".trace")
+				copyFromWS(traceFileInProject, executionTraceTargetFile)
+			}
+
+		}
+		// If any trace created and  not yet measured, we must measure memory
+		if (tracingCase.createsTrace && line.traceMemoryFootprint == 0 && measureMemory) {
+
+			line.traceNbStates = tracingCase.numberOfStates
 
 			if (tryToSaveMemory) {
 				tracingCase.preCleanUp
@@ -333,17 +250,21 @@ class BenchmarkPhase1 {
 
 			// Dump memory and compute memory usage of the trace
 			val heapFolder = createTmpFolder
-			val heap = new File(heapFolder, model + "_" + tracingCase.simpleName)
+			val heap = new File(heapFolder, tracingCase.simpleName)
 			log("Dumping memory")
 			MemoryAnalyzer.dumpHeap(heap)
 			log("Analyzing dump")
 			line.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
+
 		// line.traceMemoryFootprint = 12
 		}
 		log("Destroy engine")
 
 		if (tryToSaveMemory) {
 			tracingCase.cleanUp
+
+			executioncontext.resourceModel.contents.clear
+			executioncontext.resourceModel.unload
 
 			// Destroy engine
 			engine.dispose
@@ -421,7 +342,7 @@ class BenchmarkPhase1 {
 					}
 
 					// Store result in CSV
-					outputCSVWriter.println(line.toString)
+					outputCSVWriter.println(line.customToString)
 
 					log("Finished test case.")
 
@@ -472,76 +393,79 @@ class BenchmarkPhase1 {
 
 	@BeforeClass
 	def static void disableLogs() {
-		val emptyOutStream = new OutputStream() {
-			override write(int b) throws IOException {}
+		if (disableLogs) {
+			val emptyOutStream = new OutputStream() {
+				override write(int b) throws IOException {}
+			}
+
+			val emptyPrintStream = new PrintStream(emptyOutStream) {
+				override flush() {}
+
+				override close() {}
+
+				override write(int b) {}
+
+				override write(byte[] b) {}
+
+				override write(byte[] buf, int off, int len) {}
+
+				override print(boolean b) {}
+
+				override print(char c) {}
+
+				override print(int i) {}
+
+				override print(long l) {}
+
+				override print(float f) {}
+
+				override print(double d) {}
+
+				override print(char[] s) {}
+
+				override print(String s) {}
+
+				override print(Object obj) {}
+
+				override println() {}
+
+				override println(boolean x) {}
+
+				override println(char x) {}
+
+				override println(int x) {}
+
+				override println(long x) {}
+
+				override println(float x) {}
+
+				override println(double x) {}
+
+				override println(char[] x) {}
+
+				override println(String x) {}
+
+				override println(Object x) {}
+
+				override printf(String format, Object... args) { return this; }
+
+				override printf(Locale l, String format, Object... args) { return this; }
+
+				override format(String format, Object... args) { return this; }
+
+				override format(Locale l, String format, Object... args) { return this; }
+
+				override append(CharSequence csq) { return this; }
+
+				override append(CharSequence csq, int start, int end) { return this; }
+
+				override append(char c) { return this; }
+
+			}
+			System.setOut(emptyPrintStream)
+			System.setErr(emptyPrintStream)
+
 		}
-
-		val emptyPrintStream = new PrintStream(emptyOutStream) {
-			override flush() {}
-
-			override close() {}
-
-			override write(int b) {}
-
-			override write(byte[] b) {}
-
-			override write(byte[] buf, int off, int len) {}
-
-			override print(boolean b) {}
-
-			override print(char c) {}
-
-			override print(int i) {}
-
-			override print(long l) {}
-
-			override print(float f) {}
-
-			override print(double d) {}
-
-			override print(char[] s) {}
-
-			override print(String s) {}
-
-			override print(Object obj) {}
-
-			override println() {}
-
-			override println(boolean x) {}
-
-			override println(char x) {}
-
-			override println(int x) {}
-
-			override println(long x) {}
-
-			override println(float x) {}
-
-			override println(double x) {}
-
-			override println(char[] x) {}
-
-			override println(String x) {}
-
-			override println(Object x) {}
-
-			override printf(String format, Object... args) { return this; }
-
-			override printf(Locale l, String format, Object... args) { return this; }
-
-			override format(String format, Object... args) { return this; }
-
-			override format(Locale l, String format, Object... args) { return this; }
-
-			override append(CharSequence csq) { return this; }
-
-			override append(CharSequence csq, int start, int end) { return this; }
-
-			override append(char c) { return this; }
-
-		}
-		System.setOut(emptyPrintStream)
-		System.setErr(emptyPrintStream)
 	}
 
 	@BeforeClass
@@ -561,7 +485,8 @@ class BenchmarkPhase1 {
 
 				// Prepare CSV file in output folder
 				outputCSV = new File(outputFolder, "results.csv")
-				outputCSVWriter = new PrintWriter(outputCSV)
+				outputCSVStream = new FileOutputStream(outputCSV)
+				outputCSVWriter = new PrintWriter(new FileOutputStream(outputCSV), true)
 				outputCSVWriter.println(CSVLine::getColumnNames)
 
 				// Create eclipse project in test WS
@@ -588,6 +513,7 @@ class BenchmarkPhase1 {
 
 	@AfterClass
 	def static void closeCSV() {
+		BenchmarkPhase1.outputCSVStream.close
 		outputCSVWriter.close
 		EclipseTestUtil.waitForJobs
 	// EclipseTestUtil.waitForJobsThenWindowClosed
