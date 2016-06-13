@@ -18,19 +18,19 @@ class CSVLine {
 	public Integer nbWarmups = 0
 	public Integer nbMeasurements = 0
 
-	def static String getColumnNames() {
-		val allNames = CSVLine.declaredFields.map[f|f.name]
-		return allNames.join(";")
+	private static val separator = ";";
+
+	private static def getAllFields() {
+		CSVLine.declaredFields.filter[f|!f.name.contentEquals("separator")]
 	}
 
-	override toString() {
-		return CSVLine.declaredFields.map[f|
-			try {
-				f.get(this)
-			} catch(IllegalAccessException exc) {
-				throw new RuntimeException("auto-generated try/catch", exc)
-			}].join(";")
+	def static String getColumnNames() {
+		val allNames = getAllFields.map[f|f.name]
+		return allNames.join(separator)
+	}
 
+	def String customToString() {
+		return getAllFields.map[f|f.get(this)].join(separator)
 	}
 
 }
