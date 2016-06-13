@@ -12,9 +12,12 @@ package org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers;
 
 import java.io.File;
 import java.lang.management.ManagementFactory;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.eclipse.mat.SnapshotException;
 import org.eclipse.mat.internal.acquire.HeapDumpProviderRegistry;
@@ -29,6 +32,7 @@ import org.eclipse.mat.snapshot.model.IClass;
 import org.eclipse.mat.util.IProgressListener;
 import org.eclipse.mat.util.VoidProgressListener;
 
+@SuppressWarnings("restriction")
 public class MemoryAnalyzer {
 
 	public static final IProgressListener progressListener = new VoidProgressListener();
@@ -46,8 +50,45 @@ public class MemoryAnalyzer {
 		} catch (SnapshotException e) {
 			System.err.println("Error while parsing dump!");
 			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 		assert (snapshot != null);
+	}
+
+	public QueryResult computeRetainedSizeWithOQLQuery(String queryWith, String queryWithout) throws Exception {
+		QueryResult res = new QueryResult();
+
+		IOQLQuery queryWithObj = SnapshotFactory.createQuery(queryWith);
+		Object resultWith = queryWithObj.execute(snapshot, new VoidProgressListener());
+
+		IOQLQuery queryWithoutObj = SnapshotFactory.createQuery(queryWithout);
+		Object resultWithout = queryWithoutObj.execute(snapshot, new VoidProgressListener());
+
+		if (resultWith instanceof int[] && resultWithout instanceof int[]) {
+
+			// Getting real collections
+			int[] resultWith_array = (int[]) resultWith;
+			int[] resultWithout_array = (int[]) resultWithout;
+			Set<Integer> resultWith_set = Arrays.stream(resultWith_array).boxed().collect(Collectors.toSet());
+			Set<Integer> resultWithout_set = Arrays.stream(resultWithout_array).boxed().collect(Collectors.toSet());
+
+			// Doing the operation and getting size
+			resultWith_set.removeAll(resultWithout_set);
+			res.nbElements = resultWith_set.size();
+
+			// Going back to int array
+			int[] resultWith_array_final = resultWith_set.stream().mapToInt(Integer::intValue).toArray();
+
+			// Finally computing retained set
+			int[] retainedSet = snapshot.getRetainedSet(resultWith_array_final, progressListener);
+			long heapSizeOfRetainedSet = snapshot.getHeapSize(retainedSet);
+			res.memorySum = heapSizeOfRetainedSet;
+
+		} else {
+			throw new Exception("Results are not lists of objects!");
+		}
+
+		return res;
 	}
 
 	public QueryResult computeRetainedSizeWithOQLQuery(String query) throws Exception {
@@ -71,14 +112,14 @@ public class MemoryAnalyzer {
 				}
 				res.memorySum = sum;
 				res.nbElements = castResult2.getRowCount();
-			} 
+			}
 			// Case list of objects
 			else if (result instanceof int[]) {
 				int[] castResult = (int[]) result;
 				res.nbElements = castResult.length;
 				int[] retainedSet = snapshot.getRetainedSet(castResult, progressListener);
 				long heapSizeOfRetainedSet = snapshot.getHeapSize(retainedSet);
-				res.memorySum = heapSizeOfRetainedSet;				
+				res.memorySum = heapSizeOfRetainedSet;
 			}
 
 		} catch (OQLParseException e) {
@@ -117,6 +158,7 @@ public class MemoryAnalyzer {
 		} catch (SnapshotException e) {
 			System.err.println("Error while computing memory consumption!");
 			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 		return sum;
 
