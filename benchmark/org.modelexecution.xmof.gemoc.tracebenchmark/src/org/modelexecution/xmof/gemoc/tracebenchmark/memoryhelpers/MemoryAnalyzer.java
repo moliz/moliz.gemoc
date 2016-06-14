@@ -12,9 +12,11 @@ package org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers;
 
 import java.io.File;
 import java.lang.management.ManagementFactory;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -56,37 +58,54 @@ public class MemoryAnalyzer {
 	}
 
 	public QueryResult computeRetainedSizeWithOQLQuery(String queryWith, String queryWithout) throws Exception {
+		List<String> queryWithList = Arrays.asList(queryWith);
+		List<String> queryWithoutList = Arrays.asList(queryWith);
+		return computeRetainedSizeWithOQLQuery(queryWithList, queryWithoutList);
+
+	}
+	
+	private  Object executeQuery( String q) throws Exception  {
+		IOQLQuery queryWithObj = SnapshotFactory.createQuery(q);
+		return queryWithObj.execute(snapshot, new VoidProgressListener());
+	}
+	
+	private Set<Integer> arrayToSet(int[] array) {
+		return Arrays.stream(array).boxed().collect(Collectors.toSet());
+	}
+	
+	private int[] setToArray(Set<Integer> set) {
+		return set.stream().mapToInt(Integer::intValue).toArray();
+	}
+
+	public QueryResult computeRetainedSizeWithOQLQuery(List<String> queryWith, List<String> queryWithout)
+			throws Exception {
 		QueryResult res = new QueryResult();
 
-		IOQLQuery queryWithObj = SnapshotFactory.createQuery(queryWith);
-		Object resultWith = queryWithObj.execute(snapshot, new VoidProgressListener());
+		List<int[]> resultsWith = new ArrayList<int[]>();
+		List<int[]> resultsWithout = new ArrayList<int[]>();
 
-		IOQLQuery queryWithoutObj = SnapshotFactory.createQuery(queryWithout);
-		Object resultWithout = queryWithoutObj.execute(snapshot, new VoidProgressListener());
-
-		if (resultWith instanceof int[] && resultWithout instanceof int[]) {
-
-			// Getting real collections
-			int[] resultWith_array = (int[]) resultWith;
-			int[] resultWithout_array = (int[]) resultWithout;
-			Set<Integer> resultWith_set = Arrays.stream(resultWith_array).boxed().collect(Collectors.toSet());
-			Set<Integer> resultWithout_set = Arrays.stream(resultWithout_array).boxed().collect(Collectors.toSet());
-
-			// Doing the operation and getting size
-			resultWith_set.removeAll(resultWithout_set);
-			res.nbElements = resultWith_set.size();
-
-			// Going back to int array
-			int[] resultWith_array_final = resultWith_set.stream().mapToInt(Integer::intValue).toArray();
-
-			// Finally computing retained set
-			int[] retainedSet = snapshot.getRetainedSet(resultWith_array_final, progressListener);
-			long heapSizeOfRetainedSet = snapshot.getHeapSize(retainedSet);
-			res.memorySum = heapSizeOfRetainedSet;
-
-		} else {
-			throw new Exception("Results are not lists of objects!");
+		for (String q : queryWith) {
+			resultsWith.add((int[]) executeQuery(q));
 		}
+
+		for (String q : queryWithout) {
+			resultsWithout.add((int[]) executeQuery(q));
+		}
+
+		Set<Integer> allResults_set = new HashSet<Integer>();
+
+		// Note: could probably be replaced efficiently by:
+		// select * from <QUERY1> union ( select * from <QUERY2> )
+		for (int[] resultWith : resultsWith) {
+			allResults_set.addAll(arrayToSet(resultWith));
+		}
+		for (int[] resultWithout : resultsWithout) {
+			allResults_set.removeAll(arrayToSet(resultWithout));
+		}
+
+		int[] retainedSet = snapshot.getRetainedSet(setToArray(allResults_set), progressListener);
+		long heapSizeOfRetainedSet = snapshot.getHeapSize(retainedSet);
+		res.memorySum = heapSizeOfRetainedSet;
 
 		return res;
 	}
