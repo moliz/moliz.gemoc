@@ -19,6 +19,7 @@ import java.util.HashSet
 import java.util.List
 import java.util.Locale
 import java.util.Random
+import java.util.Set
 import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IFolder
 import org.eclipse.core.resources.IProject
@@ -27,14 +28,12 @@ import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.runtime.Status
 import org.eclipse.core.runtime.jobs.Job
-import org.eclipse.emf.common.command.Command
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.transaction.RecordingCommand
-import org.eclipse.emf.transaction.TransactionalEditingDomain
 import org.eclipse.emf.transaction.util.TransactionUtil
 import org.gemoc.executionframework.engine.Activator
 import org.junit.AfterClass
@@ -51,7 +50,6 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLa
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 
 import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1Data.*
-import java.util.Set
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
@@ -79,7 +77,6 @@ class BenchmarkPhase1 {
 	var String inputModelURIString
 	var CSVLine line
 	var File tracingCaseOutputFolder
-	var boolean confModelSaved
 
 	// Test case constructor
 	new(String testCaseName, BenchmarkLanguage language, BenchmarkTracingCase tracingCase, String model,
@@ -137,52 +134,6 @@ class BenchmarkPhase1 {
 		val timeEnd = System.nanoTime
 		val time = timeEnd - timeStart
 
-		// Xmof engine must have replaced the objects of the model resource by conf objects
-		// So if we are finished with the model, we can erase the input model with that
-		// But we save to a separate file to keep the original model safe for further executions
-		if (!confModelSaved) {
-			log("Saving conf model")
-			val Resource confModel = executioncontext.resourceModel
-
-			val formerURI = confModel.URI
-			val newURI = formerURI.appendFileExtension("tmp")
-			val TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(confModel);
-
-			val Command changeUriCmd = new RecordingCommand(editingDomain) {
-				override protected doExecute() {
-					confModel.URI = newURI
-				}
-			}
-			
-			val Set<EObject> newRoots = new HashSet<EObject>
-			val Command fixModelCmd = new RecordingCommand(editingDomain) {
-				override protected doExecute() {
-					confModel.contents.addAll(newRoots)
-				}
-
-			}
-
-			editingDomain.getCommandStack().execute(changeUriCmd);
-			try {
-				confModel.save(null)
-			} catch (Throwable t) {
-				log("Failed to serialize conf model, attempt to fix the conf model")
-				val pointed = new HashSet<EObject>
-				Investigation::findObjectsThatPointToObjectsWithoutResource(confModel, pointed)
-				newRoots.addAll(Investigation::findRoots(pointed))
-				editingDomain.getCommandStack().execute(fixModelCmd);
-				confModel.save(null)
-			}
-
-			val confModelFileInProject = eclipseProject.getFile(
-				newURI.segmentsList.subList(2, newURI.segmentsList.size).join("/"))
-			val modelFolderInOutput = new File(outputFolder, modelFolderName)
-			val languageFolderInOutput = new File(modelFolderInOutput, language.folderName)
-			val confModelFileInOutput = new File(languageFolderInOutput, model)
-			copyFromWS(confModelFileInProject, confModelFileInOutput)
-			confModelSaved = true
-		}
-
 		if (tryToSaveMemory) {
 			log("Cleanup memory")
 
@@ -203,7 +154,25 @@ class BenchmarkPhase1 {
 
 		}
 
+		// Trace serialization
 		if (tracingCase.createsTrace) {
+
+			if (tracingCase.needsConfModelInTrace) {
+
+				log("Fixing conf model")
+				val Resource confModel = executioncontext.resourceModel
+				val Set<EObject> confModelRoots = new HashSet<EObject>
+				confModelRoots.addAll(confModel.contents)
+				val pointed = new HashSet<EObject>
+				Investigation::findObjectsThatPointToObjectsWithoutResource(confModel, pointed)
+				confModelRoots.addAll(Investigation::findRoots(pointed))
+
+				log("Add conf model to trace resource")
+				tracingCase.traceResource.contents.addAll(confModelRoots)
+
+			}
+
+			log("Serialize trace")
 
 			// Create trace folder
 			if (!tracingCaseOutputFolder.exists)
@@ -225,8 +194,6 @@ class BenchmarkPhase1 {
 			val path = traceFileInProject.fullPath.toString
 
 			if (!traceFileInProject.exists) {
-				log("Serialize trace")
-
 				tracingCase.saveTrace(path)
 
 				// Copy trace in output folder
@@ -236,7 +203,7 @@ class BenchmarkPhase1 {
 			}
 
 		}
-		// If any trace created and  not yet measured, we must measure memory
+// If any trace created and  not yet measured, we must measure memory
 		if (tracingCase.createsTrace && line.traceMemoryFootprint == 0 && measureMemory) {
 
 			line.traceNbStates = tracingCase.numberOfStates
@@ -248,11 +215,14 @@ class BenchmarkPhase1 {
 			// Confuse the memory by preserving refs to all EClasses
 			val List<EClass> allEClasses = new ArrayList
 
-			executioncontext.resourceModel.allContents.forEach [ o |
+			executioncontext.resourceModel.allContents.filter[o|o != null].forEach [ o |
 				allEClasses.add(o.eClass)
 			]
 
-			tracingCase.traceResource.allContents.forEach [ o |
+			if (tracingCase.traceResource.contents.empty)
+				throw new Exception("Empty trace resource ?!")
+
+			tracingCase.traceResource.allContents.filter[o|o != null].forEach [ o |
 				allEClasses.add(o.eClass)
 			]
 
@@ -263,8 +233,6 @@ class BenchmarkPhase1 {
 			MemoryAnalyzer.dumpHeap(heap)
 			log("Analyzing dump")
 			line.traceMemoryFootprint = tracingCase.computeMemoryUsage(heap)
-
-		// line.traceMemoryFootprint = 12
 		}
 		log("Destroy engine")
 
@@ -291,7 +259,7 @@ class BenchmarkPhase1 {
 
 				try {
 					log("Start test case.")
-					
+
 					tracingCase.logOperation = [s|log(s)]
 
 					// Create language output folder
@@ -533,6 +501,7 @@ class BenchmarkPhase1 {
 	public def static Collection<Object[]> data() {
 
 		val Collection<Object[]> data = new ArrayList<Object[]>();
+		var int i = 1;
 
 		// For each language
 		for (language : languages) {
@@ -549,7 +518,8 @@ class BenchmarkPhase1 {
 
 						// Preparing test case name
 						val testCaseNameElements = new ArrayList
-						testCaseNameElements.addAll(#[language.folderName, tracingCase.class.simpleName, model])
+						testCaseNameElements.addAll(#[i, language.folderName, tracingCase.class.simpleName, model])
+						i++
 						if (inputModel != null && inputModel != "")
 							testCaseNameElements.add(inputModel)
 						val testCaseName = testCaseNameElements.join(",")

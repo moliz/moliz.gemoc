@@ -1,12 +1,11 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases
 
 import java.io.File
+import java.util.function.Consumer
+import org.eclipse.emf.ecore.resource.Resource
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
-import org.eclipse.emf.ecore.resource.Resource
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1
-import java.util.function.Consumer
 
 interface BenchmarkTracingCase {
 
@@ -33,6 +32,10 @@ interface BenchmarkTracingCase {
 	def Resource getTraceResource()
 	
 	def void setLogOperation(Consumer<String> logOperation)
+	
+	def void log(String s)
+	
+	def boolean needsConfModelInTrace()
 
 }
 
