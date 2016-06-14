@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BasicActionsConf="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/basicactions" xmlns:IntegerFunctionsConf="http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors/integerfunctions" xmlns:IntermediateActivitiesConf="http://www.modelexecution.org/xmof/example/fuml/configuration/activities/intermediateactivities" xmlns:KernelConf="http://www.modelexecution.org/xmof/example/fuml/configuration/classes/kernel" xmlns:LociConf="http://www.modelexecution.org/xmof/example/fuml/configuration/loci" xmlns:fumlConf="http://www.modelexecution.org/xmof/example/fuml/configuration" xsi:schemaLocation="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/basicactions http://www.modelexecution.org/xmof/example/fuml/configuration#//BasicActions http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors/integerfunctions http://www.modelexecution.org/xmof/example/fuml/configuration#//IntegerFunctions http://www.modelexecution.org/xmof/example/fuml/configuration/activities/intermediateactivities http://www.modelexecution.org/xmof/example/fuml/configuration#//IntermediateActivities http://www.modelexecution.org/xmof/example/fuml/configuration/classes/kernel http://www.modelexecution.org/xmof/example/fuml/configuration#//Kernel http://www.modelexecution.org/xmof/example/fuml/configuration/loci http://www.modelexecution.org/xmof/example/fuml/configuration#//Loci">
+  <LociConf:ExecutionEnvironment xmi:id="_WgmXsjIcEeaQRaU4TngKBQ">
+    <locus_ExecutionEnvironment xmi:id="_WgmXszIcEeaQRaU4TngKBQ">
+      <factory xmi:id="_WgmXtDIcEeaQRaU4TngKBQ" primitiveBehaviorPrototypes="_WgmXtjIcEeaQRaU4TngKBQ _WgmXtzIcEeaQRaU4TngKBQ" builtInTypes="_WgmX9zIcEeaQRaU4TngKBQ _WgmX-DIcEeaQRaU4TngKBQ"/>
+      <executor xmi:id="_WgmXtTIcEeaQRaU4TngKBQ"/>
+      <extensionalValues xmi:type="IntegerFunctionsConf:IntegerPlusFunctionBehaviorExecution" xmi:id="_WgmXtjIcEeaQRaU4TngKBQ" types="_WgmX6jIcEeaQRaU4TngKBQ"/>
+      <extensionalValues xmi:type="IntegerFunctionsConf:IntegerGreaterFunctionBehaviorExecution" xmi:id="_WgmXtzIcEeaQRaU4TngKBQ" types="_WgmX7jIcEeaQRaU4TngKBQ"/>
+      <extensionalValues xmi:type="IntegerFunctionsConf:IntegerLessFunctionBehaviorExecution" xmi:id="_WgmXuDIcEeaQRaU4TngKBQ" types="_WgmX8jIcEeaQRaU4TngKBQ"/>
+    </locus_ExecutionEnvironment>
+  </LociConf:ExecutionEnvironment>
+  <fumlConf:ModelConfiguration xmi:id="_WgmXuTIcEeaQRaU4TngKBQ" name="model">
+    <packagedElement xmi:type="fumlConf:ActivityConfiguration" xmi:id="_WgmXujIcEeaQRaU4TngKBQ" name="ExampleBV2" node="_WgmX0zIcEeaQRaU4TngKBQ _WgmX1TIcEeaQRaU4TngKBQ _WgmX1zIcEeaQRaU4TngKBQ _WgmX2DIcEeaQRaU4TngKBQ _WgmX2TIcEeaQRaU4TngKBQ _WgmX2jIcEeaQRaU4TngKBQ _WgmX2zIcEeaQRaU4TngKBQ _WgmX3DIcEeaQRaU4TngKBQ _WgmX3TIcEeaQRaU4TngKBQ _WgmX3jIcEeaQRaU4TngKBQ _WgmX3zIcEeaQRaU4TngKBQ _WgmX4DIcEeaQRaU4TngKBQ _WgmX4TIcEeaQRaU4TngKBQ _WgmX4jIcEeaQRaU4TngKBQ _WgmX4zIcEeaQRaU4TngKBQ _WgmX5DIcEeaQRaU4TngKBQ _WgmX5TIcEeaQRaU4TngKBQ">
+      <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmXuzIcEeaQRaU4TngKBQ" name="exists" type="_WgmX-DIcEeaQRaU4TngKBQ"/>
+      <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmXvDIcEeaQRaU4TngKBQ" name="found" type="_WgmX-DIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXvTIcEeaQRaU4TngKBQ" name="cf1" target="_WgmX2DIcEeaQRaU4TngKBQ" source="_WgmX1zIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXvjIcEeaQRaU4TngKBQ" name="cf2" target="_WgmX2TIcEeaQRaU4TngKBQ" source="_WgmX2DIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXvzIcEeaQRaU4TngKBQ" name="cf3" target="_WgmX2jIcEeaQRaU4TngKBQ" source="_WgmX2TIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXwDIcEeaQRaU4TngKBQ" name="cf4" target="_WgmX2zIcEeaQRaU4TngKBQ" source="_WgmX2jIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXwTIcEeaQRaU4TngKBQ" name="cf5" target="_WgmX3DIcEeaQRaU4TngKBQ" source="_WgmX2zIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXwjIcEeaQRaU4TngKBQ" name="cf6" target="_WgmX3TIcEeaQRaU4TngKBQ" source="_WgmX3DIcEeaQRaU4TngKBQ">
+        <guard xmi:type="fumlConf:LiteralBooleanConfiguration" xmi:id="_WgmXwzIcEeaQRaU4TngKBQ" semanticVisitor="_cgQNADIcEeaQRaU4TngKBQ"/>
+      </edge>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXxDIcEeaQRaU4TngKBQ" name="cf7" target="_WgmX3jIcEeaQRaU4TngKBQ" source="_WgmX3TIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXxTIcEeaQRaU4TngKBQ" name="cf8" target="_WgmX3zIcEeaQRaU4TngKBQ" source="_WgmX3jIcEeaQRaU4TngKBQ">
+        <guard xmi:type="fumlConf:LiteralBooleanConfiguration" xmi:id="_WgmXxjIcEeaQRaU4TngKBQ"/>
+      </edge>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXxzIcEeaQRaU4TngKBQ" name="cf9" target="_WgmX4TIcEeaQRaU4TngKBQ" source="_WgmX3zIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXyDIcEeaQRaU4TngKBQ" name="cf10" target="_WgmX5DIcEeaQRaU4TngKBQ" source="_WgmX4TIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXyTIcEeaQRaU4TngKBQ" name="cf11" target="_WgmX4DIcEeaQRaU4TngKBQ" source="_WgmX3jIcEeaQRaU4TngKBQ">
+        <guard xmi:type="fumlConf:LiteralBooleanConfiguration" xmi:id="_WgmXyjIcEeaQRaU4TngKBQ" value="true"/>
+      </edge>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXyzIcEeaQRaU4TngKBQ" name="cf12" target="_WgmX4jIcEeaQRaU4TngKBQ" source="_WgmX4DIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXzDIcEeaQRaU4TngKBQ" name="cf13" target="_WgmX4zIcEeaQRaU4TngKBQ" source="_WgmX4jIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXzTIcEeaQRaU4TngKBQ" name="cf14" target="_WgmX4TIcEeaQRaU4TngKBQ" source="_WgmX4zIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmXzjIcEeaQRaU4TngKBQ" name="cf15" target="_WgmX5TIcEeaQRaU4TngKBQ" source="_WgmX3DIcEeaQRaU4TngKBQ">
+        <guard xmi:type="fumlConf:LiteralBooleanConfiguration" xmi:id="_WgmXzzIcEeaQRaU4TngKBQ" value="true" semanticVisitor="_caVyQDIcEeaQRaU4TngKBQ"/>
+      </edge>
+      <edge xmi:type="fumlConf:ControlFlowConfiguration" xmi:id="_WgmX0DIcEeaQRaU4TngKBQ" name="cf16" target="_WgmX4jIcEeaQRaU4TngKBQ" source="_WgmX5TIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ObjectFlowConfiguration" xmi:id="_WgmX0TIcEeaQRaU4TngKBQ" name="of2" target="_WgmX3jIcEeaQRaU4TngKBQ" source="_WgmX1TIcEeaQRaU4TngKBQ"/>
+      <edge xmi:type="fumlConf:ObjectFlowConfiguration" xmi:id="_WgmX0jIcEeaQRaU4TngKBQ" name="of1" target="_WgmX3DIcEeaQRaU4TngKBQ" source="_WgmX0zIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:ActivityParameterNodeConfiguration" xmi:id="_WgmX0zIcEeaQRaU4TngKBQ" name="exists" outgoing="_WgmX0jIcEeaQRaU4TngKBQ" type="_WgmX-DIcEeaQRaU4TngKBQ" parameter="_WgmXuzIcEeaQRaU4TngKBQ" semanticVisitor="_X75RADIcEeaQRaU4TngKBQ">
+        <upperBound xmi:type="fumlConf:LiteralIntegerConfiguration" xmi:id="_WgmX1DIcEeaQRaU4TngKBQ" value="1"/>
+      </node>
+      <node xmi:type="fumlConf:ActivityParameterNodeConfiguration" xmi:id="_WgmX1TIcEeaQRaU4TngKBQ" name="found" outgoing="_WgmX0TIcEeaQRaU4TngKBQ" type="_WgmX-DIcEeaQRaU4TngKBQ" parameter="_WgmXvDIcEeaQRaU4TngKBQ" semanticVisitor="_Xcv24DIcEeaQRaU4TngKBQ">
+        <upperBound xmi:type="fumlConf:LiteralIntegerConfiguration" xmi:id="_WgmX1jIcEeaQRaU4TngKBQ" value="1"/>
+      </node>
+      <node xmi:type="fumlConf:InitialNodeConfiguration" xmi:id="_WgmX1zIcEeaQRaU4TngKBQ" name="initial" outgoing="_WgmXvTIcEeaQRaU4TngKBQ" semanticVisitor="_YBEE4DIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:OpaqueActionConfiguration" xmi:id="_WgmX2DIcEeaQRaU4TngKBQ" name="req" incoming="_WgmXvTIcEeaQRaU4TngKBQ" outgoing="_WgmXvjIcEeaQRaU4TngKBQ" semanticVisitor="_YD5WcDIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:OpaqueActionConfiguration" xmi:id="_WgmX2TIcEeaQRaU4TngKBQ" name="n code" incoming="_WgmXvjIcEeaQRaU4TngKBQ" outgoing="_WgmXvzIcEeaQRaU4TngKBQ" semanticVisitor="_YGjo4DIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:OpaqueActionConfiguration" xmi:id="_WgmX2jIcEeaQRaU4TngKBQ" name="def" incoming="_WgmXvzIcEeaQRaU4TngKBQ" outgoing="_WgmXwDIcEeaQRaU4TngKBQ" semanticVisitor="_XiSeMDIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:OpaqueActionConfiguration" xmi:id="_WgmX2zIcEeaQRaU4TngKBQ" name="cont int" incoming="_WgmXwDIcEeaQRaU4TngKBQ" outgoing="_WgmXwTIcEeaQRaU4TngKBQ" semanticVisitor="_XaJ14DIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:DecisionNodeConfiguration" xmi:id="_WgmX3DIcEeaQRaU4TngKBQ" name="exists" incoming="_WgmXwTIcEeaQRaU4TngKBQ _WgmX0jIcEeaQRaU4TngKBQ" outgoing="_WgmXwjIcEeaQRaU4TngKBQ _WgmXzjIcEeaQRaU4TngKBQ" decisionInputFlow="_WgmX0jIcEeaQRaU4TngKBQ" semanticVisitor="_XlyeIDIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:OpaqueActionConfiguration" xmi:id="_WgmX3TIcEeaQRaU4TngKBQ" name="search" incoming="_WgmXwjIcEeaQRaU4TngKBQ" outgoing="_WgmXxDIcEeaQRaU4TngKBQ" semanticVisitor="_XtKRcDIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:DecisionNodeConfiguration" xmi:id="_WgmX3jIcEeaQRaU4TngKBQ" name="found" incoming="_WgmXxDIcEeaQRaU4TngKBQ _WgmX0TIcEeaQRaU4TngKBQ" outgoing="_WgmXxTIcEeaQRaU4TngKBQ _WgmXyTIcEeaQRaU4TngKBQ" decisionInputFlow="_WgmX0TIcEeaQRaU4TngKBQ" semanticVisitor="_X0nkUDIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:OpaqueActionConfiguration" xmi:id="_WgmX3zIcEeaQRaU4TngKBQ" name="cont ext" incoming="_WgmXxTIcEeaQRaU4TngKBQ" outgoing="_WgmXxzIcEeaQRaU4TngKBQ" semanticVisitor="_X3pqMDIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:OpaqueActionConfiguration" xmi:id="_WgmX4DIcEeaQRaU4TngKBQ" name="cont" incoming="_WgmXyTIcEeaQRaU4TngKBQ" outgoing="_WgmXyzIcEeaQRaU4TngKBQ" semanticVisitor="_XfgP8DIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:MergeNodeConfiguration" xmi:id="_WgmX4TIcEeaQRaU4TngKBQ" name="merge final" incoming="_WgmXxzIcEeaQRaU4TngKBQ _WgmXzTIcEeaQRaU4TngKBQ" outgoing="_WgmXyDIcEeaQRaU4TngKBQ" semanticVisitor="_XpkK4DIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:MergeNodeConfiguration" xmi:id="_WgmX4jIcEeaQRaU4TngKBQ" name="merge do req" incoming="_WgmXyzIcEeaQRaU4TngKBQ _WgmX0DIcEeaQRaU4TngKBQ" outgoing="_WgmXzDIcEeaQRaU4TngKBQ" semanticVisitor="_XULJsDIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:OpaqueActionConfiguration" xmi:id="_WgmX4zIcEeaQRaU4TngKBQ" name="do req" incoming="_WgmXzDIcEeaQRaU4TngKBQ" outgoing="_WgmXzTIcEeaQRaU4TngKBQ" semanticVisitor="_Xw_okDIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:ActivityFinalNodeConfiguration" xmi:id="_WgmX5DIcEeaQRaU4TngKBQ" name="final" incoming="_WgmXyDIcEeaQRaU4TngKBQ" semanticVisitor="_YJqnQDIcEeaQRaU4TngKBQ"/>
+      <node xmi:type="fumlConf:OpaqueActionConfiguration" xmi:id="_WgmX5TIcEeaQRaU4TngKBQ" name="ord" incoming="_WgmXzjIcEeaQRaU4TngKBQ" outgoing="_WgmX0DIcEeaQRaU4TngKBQ" semanticVisitor="_XXZc0DIcEeaQRaU4TngKBQ"/>
+    </packagedElement>
+  </fumlConf:ModelConfiguration>
+  <fumlConf:PackageConfiguration xmi:id="_WgmX6DIcEeaQRaU4TngKBQ" name="PrimitiveBehaviors">
+    <packagedElement xmi:type="fumlConf:PackageConfiguration" xmi:id="_WgmX6TIcEeaQRaU4TngKBQ" name="IntegerFunctions">
+      <packagedElement xmi:type="fumlConf:FunctionBehaviorConfiguration" xmi:id="_WgmX6jIcEeaQRaU4TngKBQ" name="IntegerPlusFunctionBehavior">
+        <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmX6zIcEeaQRaU4TngKBQ" name="x" type="_WgmX9zIcEeaQRaU4TngKBQ"/>
+        <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmX7DIcEeaQRaU4TngKBQ" name="y" type="_WgmX9zIcEeaQRaU4TngKBQ"/>
+        <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmX7TIcEeaQRaU4TngKBQ" name="result" type="_WgmX9zIcEeaQRaU4TngKBQ" direction="out"/>
+      </packagedElement>
+      <packagedElement xmi:type="fumlConf:FunctionBehaviorConfiguration" xmi:id="_WgmX7jIcEeaQRaU4TngKBQ" name="IntegerGreaterFunctionBehavior">
+        <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmX7zIcEeaQRaU4TngKBQ" name="x" type="_WgmX9zIcEeaQRaU4TngKBQ"/>
+        <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmX8DIcEeaQRaU4TngKBQ" name="y" type="_WgmX9zIcEeaQRaU4TngKBQ"/>
+        <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmX8TIcEeaQRaU4TngKBQ" name="result" type="_WgmX9zIcEeaQRaU4TngKBQ" direction="out"/>
+      </packagedElement>
+      <packagedElement xmi:type="fumlConf:FunctionBehaviorConfiguration" xmi:id="_WgmX8jIcEeaQRaU4TngKBQ" name="IntegerLessFunctionBehavior">
+        <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmX8zIcEeaQRaU4TngKBQ" name="x" type="_WgmX9zIcEeaQRaU4TngKBQ"/>
+        <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmX9DIcEeaQRaU4TngKBQ" name="y" type="_WgmX9zIcEeaQRaU4TngKBQ"/>
+        <ownedParameter xmi:type="fumlConf:ParameterConfiguration" xmi:id="_WgmX9TIcEeaQRaU4TngKBQ" name="result" type="_WgmX9zIcEeaQRaU4TngKBQ" direction="out"/>
+      </packagedElement>
+    </packagedElement>
+  </fumlConf:PackageConfiguration>
+  <fumlConf:PackageConfiguration xmi:id="_WgmX9jIcEeaQRaU4TngKBQ" name="PrimitiveTypes">
+    <packagedElement xmi:type="fumlConf:PrimitiveTypeConfiguration" xmi:id="_WgmX9zIcEeaQRaU4TngKBQ" name="Integer"/>
+    <packagedElement xmi:type="fumlConf:PrimitiveTypeConfiguration" xmi:id="_WgmX-DIcEeaQRaU4TngKBQ" name="Boolean"/>
+  </fumlConf:PackageConfiguration>
+  <IntermediateActivitiesConf:Offer xmi:id="_bUXBoDIcEeaQRaU4TngKBQ" offeredTokens="_bO7vEDIcEeaQRaU4TngKBQ"/>
+  <KernelConf:LiteralBooleanEvaluation xmi:id="_caVyQDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmXzzIcEeaQRaU4TngKBQ" specification_Evaluation="_WgmXzzIcEeaQRaU4TngKBQ" locus_Evaluation="_WgmXszIcEeaQRaU4TngKBQ"/>
+  <KernelConf:BooleanValue xmi:id="_cdcJkDIcEeaQRaU4TngKBQ" type="_WgmX9zIcEeaQRaU4TngKBQ" value_BooleanValue="true"/>
+  <KernelConf:LiteralBooleanEvaluation xmi:id="_cgQNADIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmXwzIcEeaQRaU4TngKBQ" specification_Evaluation="_WgmXwzIcEeaQRaU4TngKBQ" locus_Evaluation="_WgmXszIcEeaQRaU4TngKBQ"/>
+  <KernelConf:BooleanValue xmi:id="_cj4IwDIcEeaQRaU4TngKBQ" type="_WgmX9zIcEeaQRaU4TngKBQ"/>
+  <IntermediateActivitiesConf:ObjectToken xmi:id="_bO7vEDIcEeaQRaU4TngKBQ">
+    <value xmi:type="KernelConf:BooleanValue" xmi:id="_WgmX5zIcEeaQRaU4TngKBQ" value_BooleanValue="true"/>
+  </IntermediateActivitiesConf:ObjectToken>
+  <IntermediateActivitiesConf:ActivityNodeActivationGroup xmi:id="_XRwH0DIcEeaQRaU4TngKBQ">
+    <edgeInstances xmi:id="_YQK34DIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXwTIcEeaQRaU4TngKBQ" source="_XaJ14DIcEeaQRaU4TngKBQ" target="_XlyeIDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_YW1gkDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXxDIcEeaQRaU4TngKBQ" source="_XtKRcDIcEeaQRaU4TngKBQ" target="_X0nkUDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_YcyXkDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXvzIcEeaQRaU4TngKBQ" source="_YGjo4DIcEeaQRaU4TngKBQ" target="_XiSeMDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_YjKsYDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmX0DIcEeaQRaU4TngKBQ" source="_XXZc0DIcEeaQRaU4TngKBQ" target="_XULJsDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_Yo0BYDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXyTIcEeaQRaU4TngKBQ" source="_X0nkUDIcEeaQRaU4TngKBQ" target="_XfgP8DIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_YugZsDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXyDIcEeaQRaU4TngKBQ" source="_XpkK4DIcEeaQRaU4TngKBQ" target="_YJqnQDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_Y0lMgDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXwDIcEeaQRaU4TngKBQ" source="_XiSeMDIcEeaQRaU4TngKBQ" target="_XaJ14DIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_Y6tCoDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXzTIcEeaQRaU4TngKBQ" source="_Xw_okDIcEeaQRaU4TngKBQ" target="_XpkK4DIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_ZA1f0DIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXxzIcEeaQRaU4TngKBQ" source="_X3pqMDIcEeaQRaU4TngKBQ" target="_XpkK4DIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_ZJ6jUDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXzjIcEeaQRaU4TngKBQ" source="_XlyeIDIcEeaQRaU4TngKBQ" target="_XXZc0DIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_ZRBQ4DIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXvjIcEeaQRaU4TngKBQ" source="_YD5WcDIcEeaQRaU4TngKBQ" target="_YGjo4DIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_ZY2-QDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXzDIcEeaQRaU4TngKBQ" source="_XULJsDIcEeaQRaU4TngKBQ" target="_Xw_okDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_Zf9EwDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXwjIcEeaQRaU4TngKBQ" source="_XlyeIDIcEeaQRaU4TngKBQ" target="_XtKRcDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_ZoShYDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXyzIcEeaQRaU4TngKBQ" source="_XfgP8DIcEeaQRaU4TngKBQ" target="_XULJsDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_Zu-YMDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmX0TIcEeaQRaU4TngKBQ" source="_Xcv24DIcEeaQRaU4TngKBQ" target="_X0nkUDIcEeaQRaU4TngKBQ" offers="_bUXBoDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_Z3GZcDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXvTIcEeaQRaU4TngKBQ" source="_YBEE4DIcEeaQRaU4TngKBQ" target="_YD5WcDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_Z-3OUDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmX0jIcEeaQRaU4TngKBQ" source="_X75RADIcEeaQRaU4TngKBQ" target="_XlyeIDIcEeaQRaU4TngKBQ"/>
+    <edgeInstances xmi:id="_aH6coDIcEeaQRaU4TngKBQ" edge_ActivityEdgeInstance="_WgmXxTIcEeaQRaU4TngKBQ" source="_X0nkUDIcEeaQRaU4TngKBQ" target="_X3pqMDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="IntermediateActivitiesConf:MergeNodeActivation" xmi:id="_XULJsDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX4jIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX4jIcEeaQRaU4TngKBQ" incomingEdges="_YjKsYDIcEeaQRaU4TngKBQ _ZoShYDIcEeaQRaU4TngKBQ" outgoingEdges="_ZY2-QDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="BasicActionsConf:OpaqueActionActivation" xmi:id="_XXZc0DIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX5TIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX5TIcEeaQRaU4TngKBQ" incomingEdges="_ZJ6jUDIcEeaQRaU4TngKBQ" outgoingEdges="_YjKsYDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="BasicActionsConf:OpaqueActionActivation" xmi:id="_XaJ14DIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX2zIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX2zIcEeaQRaU4TngKBQ" incomingEdges="_Y0lMgDIcEeaQRaU4TngKBQ" outgoingEdges="_YQK34DIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="IntermediateActivitiesConf:ActivityParameterNodeActivation" xmi:id="_Xcv24DIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX1TIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX1TIcEeaQRaU4TngKBQ" outgoingEdges="_Zu-YMDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="BasicActionsConf:OpaqueActionActivation" xmi:id="_XfgP8DIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX4DIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX4DIcEeaQRaU4TngKBQ" incomingEdges="_Yo0BYDIcEeaQRaU4TngKBQ" outgoingEdges="_ZoShYDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="BasicActionsConf:OpaqueActionActivation" xmi:id="_XiSeMDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX2jIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX2jIcEeaQRaU4TngKBQ" incomingEdges="_YcyXkDIcEeaQRaU4TngKBQ" outgoingEdges="_Y0lMgDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="IntermediateActivitiesConf:DecisionNodeActivation" xmi:id="_XlyeIDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX3DIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX3DIcEeaQRaU4TngKBQ" incomingEdges="_YQK34DIcEeaQRaU4TngKBQ _Z-3OUDIcEeaQRaU4TngKBQ" outgoingEdges="_ZJ6jUDIcEeaQRaU4TngKBQ _Zf9EwDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="IntermediateActivitiesConf:MergeNodeActivation" xmi:id="_XpkK4DIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX4TIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX4TIcEeaQRaU4TngKBQ" incomingEdges="_Y6tCoDIcEeaQRaU4TngKBQ _ZA1f0DIcEeaQRaU4TngKBQ" outgoingEdges="_YugZsDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="BasicActionsConf:OpaqueActionActivation" xmi:id="_XtKRcDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX3TIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX3TIcEeaQRaU4TngKBQ" incomingEdges="_Zf9EwDIcEeaQRaU4TngKBQ" outgoingEdges="_YW1gkDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="BasicActionsConf:OpaqueActionActivation" xmi:id="_Xw_okDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX4zIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX4zIcEeaQRaU4TngKBQ" incomingEdges="_ZY2-QDIcEeaQRaU4TngKBQ" outgoingEdges="_Y6tCoDIcEeaQRaU4TngKBQ">
+      <heldTokens xmi:type="IntermediateActivitiesConf:ControlToken" xmi:id="_c8TP0DIcEeaQRaU4TngKBQ"/>
+    </nodeActivations>
+    <nodeActivations xmi:type="IntermediateActivitiesConf:DecisionNodeActivation" xmi:id="_X0nkUDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX3jIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX3jIcEeaQRaU4TngKBQ" incomingEdges="_YW1gkDIcEeaQRaU4TngKBQ _Zu-YMDIcEeaQRaU4TngKBQ" outgoingEdges="_Yo0BYDIcEeaQRaU4TngKBQ _aH6coDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="BasicActionsConf:OpaqueActionActivation" xmi:id="_X3pqMDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX3zIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX3zIcEeaQRaU4TngKBQ" incomingEdges="_aH6coDIcEeaQRaU4TngKBQ" outgoingEdges="_ZA1f0DIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="IntermediateActivitiesConf:ActivityParameterNodeActivation" xmi:id="_X75RADIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX0zIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX0zIcEeaQRaU4TngKBQ" outgoingEdges="_Z-3OUDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="IntermediateActivitiesConf:InitialNodeActivation" xmi:id="_YBEE4DIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX1zIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX1zIcEeaQRaU4TngKBQ" outgoingEdges="_Z3GZcDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="BasicActionsConf:OpaqueActionActivation" xmi:id="_YD5WcDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX2DIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX2DIcEeaQRaU4TngKBQ" incomingEdges="_Z3GZcDIcEeaQRaU4TngKBQ" outgoingEdges="_ZRBQ4DIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="BasicActionsConf:OpaqueActionActivation" xmi:id="_YGjo4DIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX2TIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX2TIcEeaQRaU4TngKBQ" incomingEdges="_ZRBQ4DIcEeaQRaU4TngKBQ" outgoingEdges="_YcyXkDIcEeaQRaU4TngKBQ"/>
+    <nodeActivations xmi:type="IntermediateActivitiesConf:ActivityFinalNodeActivation" xmi:id="_YJqnQDIcEeaQRaU4TngKBQ" runtimeModelElement="_WgmX5DIcEeaQRaU4TngKBQ" node_ActivityNodeActivation="_WgmX5DIcEeaQRaU4TngKBQ" incomingEdges="_YugZsDIcEeaQRaU4TngKBQ"/>
+  </IntermediateActivitiesConf:ActivityNodeActivationGroup>
+</xmi:XMI>
