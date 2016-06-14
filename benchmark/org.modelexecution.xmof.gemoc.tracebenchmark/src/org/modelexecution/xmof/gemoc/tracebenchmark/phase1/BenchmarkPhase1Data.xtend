@@ -4,14 +4,12 @@ import java.util.HashMap
 import java.util.Map
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.Fuml
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.GenericTraceCase
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
 
 class BenchmarkPhase1Data {
-	
-	
+
 	public static val String dumpsFolder = "/home/ebousse/tmp/yay"
-	
-	
-	
+
 	// Constants
 	public static val String modelFolderName = "model"
 	public static val String outputFolderName = "output"
@@ -111,25 +109,33 @@ class BenchmarkPhase1Data {
 		return result
 	}
 
+	static val allNokia = mergeMaps(fumlNokia1, fumlNokia2, fumlNokia3, fumlNokia4)
+
+	static val allIBM = mergeMaps(fumlIBM1, fumlIBM2)
+
+	static val allAnon = mergeMaps(fumlAnon1, fumlAnon2, fumlAnon3)
+
+	static val allModels = mergeMaps(
+		allNokia,
+		allIBM,
+		allAnon
+	)
+
 	static val fuml = new Fuml(mergeMaps(
-		fumlNokia1,fumlNokia2,fumlNokia3,fumlNokia4,
-		fumlIBM1,fumlIBM1,
-		fumlAnon1,fumlAnon2,fumlAnon3
+		fumlIBM2
 	))
 
 	public static val boolean measureMemory = false
 	public static val boolean measureTime = false
-	public static val boolean tryToSaveMemory = measureMemory
+	public static val boolean tryToSaveMemory = true
 	public static val boolean disableLogs = measureTime
-	
-	
 
 	// Input data for all tests
 	public static val tracingCases = #[
-		new GenericTraceCase
-	// new DSTraceCase
+		new GenericTraceCase,
+		new DSTraceCase
 	// new NoTraceCase
 	]
 	public static val languages = #{fuml}
-	
+
 }
