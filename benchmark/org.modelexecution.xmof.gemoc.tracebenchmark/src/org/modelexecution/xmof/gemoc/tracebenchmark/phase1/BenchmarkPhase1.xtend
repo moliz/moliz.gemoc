@@ -218,10 +218,6 @@ class BenchmarkPhase1 {
 			executioncontext.resourceModel.allContents.filter[o|o != null].forEach [ o |
 				allEClasses.add(o.eClass)
 			]
-
-			if (tracingCase.traceResource.contents.empty)
-				throw new Exception("Empty trace resource ?!")
-
 			tracingCase.traceResource.allContents.filter[o|o != null].forEach [ o |
 				allEClasses.add(o.eClass)
 			]
