@@ -101,7 +101,8 @@ class GenericTraceCase implements BenchmarkTracingCase {
 
 		// Hack to find referenced objects that are not contained, to put them at the root of the resource before saving 
 		Investigation::findObjectsThatPointToObjectsWithoutResource(traceResource, pointedObjectsNotContained)
-		traceResource.contents.addAll(pointedObjectsNotContained)
+		val newRoots = Investigation::findRoots(pointedObjectsNotContained)
+		traceResource.contents.addAll(newRoots)
 
 		traceResource.save(null);
 

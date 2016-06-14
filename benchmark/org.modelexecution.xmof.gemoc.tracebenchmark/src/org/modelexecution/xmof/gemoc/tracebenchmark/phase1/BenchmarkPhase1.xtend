@@ -55,12 +55,8 @@ import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
 
-	
-	
-	
 	// @Rule public TemporaryFolder tmpFolderCreator = new TemporaryFolder(new File("/home/ebousse/tmp/yay"));
 	static val File tmpFolderContainer = new File(dumpsFolder)
-	
 
 	// Common to all tests (used by @BeforeClass and @AfterClass)
 	static var IProject eclipseProject
@@ -148,12 +144,7 @@ class BenchmarkPhase1 {
 			val Resource confModel = executioncontext.resourceModel
 			val pointed = new HashSet<EObject>
 			Investigation::findObjectsThatPointToObjectsWithoutResource(confModel, pointed)
-
-			val newRoots = new HashSet<EObject>
-			for (p : pointed) {
-				val root = Investigation::findRoot(p)
-				newRoots.add(root)
-			}
+			val newRoots = Investigation::findRoots(pointed)
 
 			val formerURI = confModel.URI
 			val newURI = formerURI.appendFileExtension("tmp")
@@ -219,6 +210,7 @@ class BenchmarkPhase1 {
 
 			if (!traceFileInProject.exists) {
 				log("Serialize trace")
+
 				tracingCase.saveTrace(path)
 
 				// Copy trace in output folder
