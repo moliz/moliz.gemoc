@@ -51,6 +51,7 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLa
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 
 import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1Data.*
+import java.util.Set
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
@@ -100,7 +101,7 @@ class BenchmarkPhase1 {
 		return folder
 	}
 
-	private def void log(String s) {
+	public def void log(String s) {
 		println("### [" + testCaseName + "] " + s)
 	}
 
@@ -142,22 +143,37 @@ class BenchmarkPhase1 {
 		if (!confModelSaved) {
 			log("Saving conf model")
 			val Resource confModel = executioncontext.resourceModel
-			val pointed = new HashSet<EObject>
-			Investigation::findObjectsThatPointToObjectsWithoutResource(confModel, pointed)
-			val newRoots = Investigation::findRoots(pointed)
 
 			val formerURI = confModel.URI
 			val newURI = formerURI.appendFileExtension("tmp")
 			val TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(confModel);
-			val Command cmd = new RecordingCommand(editingDomain) {
-				override doExecute() {
-					confModel.contents.addAll(newRoots)
+
+			val Command changeUriCmd = new RecordingCommand(editingDomain) {
+				override protected doExecute() {
 					confModel.URI = newURI
-					confModel.save(null)
-					confModel.URI = formerURI
 				}
-			};
-			editingDomain.getCommandStack().execute(cmd);
+			}
+			
+			val Set<EObject> newRoots = new HashSet<EObject>
+			val Command fixModelCmd = new RecordingCommand(editingDomain) {
+				override protected doExecute() {
+					confModel.contents.addAll(newRoots)
+				}
+
+			}
+
+			editingDomain.getCommandStack().execute(changeUriCmd);
+			try {
+				confModel.save(null)
+			} catch (Throwable t) {
+				log("Failed to serialize conf model, attempt to fix the conf model")
+				val pointed = new HashSet<EObject>
+				Investigation::findObjectsThatPointToObjectsWithoutResource(confModel, pointed)
+				newRoots.addAll(Investigation::findRoots(pointed))
+				editingDomain.getCommandStack().execute(fixModelCmd);
+				confModel.save(null)
+			}
+
 			val confModelFileInProject = eclipseProject.getFile(
 				newURI.segmentsList.subList(2, newURI.segmentsList.size).join("/"))
 			val modelFolderInOutput = new File(outputFolder, modelFolderName)
@@ -275,6 +291,8 @@ class BenchmarkPhase1 {
 
 				try {
 					log("Start test case.")
+					
+					tracingCase.logOperation = [s|log(s)]
 
 					// Create language output folder
 					val languageOutputFolder = new File(outputFolder, language.folderName)

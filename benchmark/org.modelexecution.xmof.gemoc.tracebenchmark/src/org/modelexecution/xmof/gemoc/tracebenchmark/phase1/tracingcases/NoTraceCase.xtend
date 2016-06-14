@@ -4,6 +4,7 @@ import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
 import java.io.File
+import java.util.function.Consumer
 
 class NoTraceCase implements BenchmarkTracingCase {
 
@@ -50,5 +51,16 @@ class NoTraceCase implements BenchmarkTracingCase {
 	override getTraceResource() {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
+	
+		
+	private var Consumer<String> logOperation
+	private def void log(String s) {
+		logOperation.accept(s);
+	}
+	
+	override setLogOperation(Consumer<String> logOperation) {
+		this.logOperation = logOperation
+	}
+	
 	
 }

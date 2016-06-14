@@ -13,6 +13,7 @@ import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
+import java.util.function.Consumer
 
 class DSTraceCase implements BenchmarkTracingCase {
 
@@ -58,11 +59,11 @@ class DSTraceCase implements BenchmarkTracingCase {
 
 		val query = createQueryWithoutUtil(language.javaTracePackageName, msePackageName)
 
-		println("query: " + query)
+		log("query: " + query)
 
 		val resquery = analyzer.computeRetainedSizeWithOQLQuery(query);
 
-		println("Memory: " + resquery.memorySum)
+		log("Memory: " + resquery.memorySum)
 
 		analyzer.cleanUp
 
@@ -103,15 +104,20 @@ class DSTraceCase implements BenchmarkTracingCase {
 					mse.callerReference = traced
 				}
 			}
-			
+		}
+
+		try {
+			traceAddon.traceConstructor.save(uri)
+		} catch (Throwable t) {
+			log("Failed to serialize trace, attempt to fix the trace model")
 			// Hack to find referenced objects that are not contained, to put them at the root of the resource before saving
 			val pointed2 = new HashSet<EObject>
 			Investigation::findObjectsThatPointToObjectsWithoutResource(traceResource, pointed2)
 			val newRoots = Investigation::findRoots(pointed2)
 			traceResource.contents.addAll(newRoots)
+			traceAddon.traceConstructor.save(uri)
 		}
 
-		traceAddon.traceConstructor.save(uri)
 	}
 
 	override preCleanUp() {
@@ -163,5 +169,15 @@ class DSTraceCase implements BenchmarkTracingCase {
 		}
 		return null
 	}
+	
+	private var Consumer<String> logOperation
+	private def void log(String s) {
+		logOperation.accept(s);
+	}
+	
+	override setLogOperation(Consumer<String> logOperation) {
+		this.logOperation = logOperation
+	}
+	
 
 }

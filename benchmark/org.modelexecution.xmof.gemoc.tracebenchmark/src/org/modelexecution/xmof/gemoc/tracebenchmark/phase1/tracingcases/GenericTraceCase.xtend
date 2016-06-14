@@ -18,6 +18,7 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecut
 import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
 import org.modelexecution.xmof.states.states.StateSystem
+import java.util.function.Consumer
 
 class GenericTraceCase implements BenchmarkTracingCase {
 
@@ -63,11 +64,11 @@ class GenericTraceCase implements BenchmarkTracingCase {
 
 		val query = createQuery(tracePackage)
 
-		println("query: " + query)
+		log("query: " + query)
 
 		val resquery = analyzer.computeRetainedSizeWithOQLQuery(query, queryAllUtil);
 
-		println("Memory: " + resquery.memorySum)
+		log("Memory: " + resquery.memorySum)
 
 		analyzer.cleanUp
 
@@ -99,12 +100,16 @@ class GenericTraceCase implements BenchmarkTracingCase {
 		val Resource traceResource = createTraceResource(pathString)
 		addTraceToResource(traceResource, trace);
 
-		// Hack to find referenced objects that are not contained, to put them at the root of the resource before saving 
-		Investigation::findObjectsThatPointToObjectsWithoutResource(traceResource, pointedObjectsNotContained)
-		val newRoots = Investigation::findRoots(pointedObjectsNotContained)
-		traceResource.contents.addAll(newRoots)
-
-		traceResource.save(null);
+		try {
+			traceResource.save(null);
+		} catch (Throwable t) {
+			log("Failed to serialize trace, attempt to fix the trace model")
+			// Hack to find referenced objects that are not contained, to put them at the root of the resource before saving
+			Investigation::findObjectsThatPointToObjectsWithoutResource(traceResource, pointedObjectsNotContained)
+			val newRoots = Investigation::findRoots(pointedObjectsNotContained)
+			traceResource.contents.addAll(newRoots)
+			traceResource.save(null);
+		}
 
 	}
 
@@ -136,7 +141,7 @@ class GenericTraceCase implements BenchmarkTracingCase {
 
 	override cleanUp() {
 		preCleanUp
-		if (traceResource != null && traceResource.contents != null){
+		if (traceResource != null && traceResource.contents != null) {
 			traceResource.contents.clear
 			if (traceResource != null)
 				traceResource.unload
@@ -149,5 +154,16 @@ class GenericTraceCase implements BenchmarkTracingCase {
 	override getTraceResource() {
 		return genericTraceConstructor.stateSystem.eResource
 	}
+	
+		
+	private var Consumer<String> logOperation
+	private def void log(String s) {
+		logOperation.accept(s);
+	}
+	
+	override setLogOperation(Consumer<String> logOperation) {
+		this.logOperation = logOperation
+	}
+	
 
 }
