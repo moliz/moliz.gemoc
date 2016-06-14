@@ -96,13 +96,19 @@ class DSTraceCase implements BenchmarkTracingCase {
 		if (this.traceAddon.traceConstructor instanceof FumlConfigurationTraceConstructor) {
 			val cast = this.traceAddon.traceConstructor as FumlConfigurationTraceConstructor
 			val pointed = new HashSet<EObject>
-			val pointers = Investigation::findObjectsThatPointToObjectsWithoutResource(cast.traceResource, pointed)
+			val pointers = Investigation::findObjectsThatPointToObjectsWithoutResource(traceResource, pointed)
 			for (mse : pointers.filter(GenericMSE)) {
 				if (pointed.contains(mse.caller)) {
 					val traced = cast.exeToTraced.get(mse.caller)
 					mse.callerReference = traced
 				}
 			}
+			
+			// Hack to find referenced objects that are not contained, to put them at the root of the resource before saving
+			val pointed2 = new HashSet<EObject>
+			Investigation::findObjectsThatPointToObjectsWithoutResource(traceResource, pointed2)
+			val newRoots = Investigation::findRoots(pointed2)
+			traceResource.contents.addAll(newRoots)
 		}
 
 		traceAddon.traceConstructor.save(uri)
@@ -149,7 +155,7 @@ class DSTraceCase implements BenchmarkTracingCase {
 		this.engine = null
 		this.traceAddon = null
 	}
-	
+
 	override getTraceResource() {
 		if (this.traceAddon.traceConstructor instanceof FumlConfigurationTraceConstructor) {
 			val cast = this.traceAddon.traceConstructor as FumlConfigurationTraceConstructor
