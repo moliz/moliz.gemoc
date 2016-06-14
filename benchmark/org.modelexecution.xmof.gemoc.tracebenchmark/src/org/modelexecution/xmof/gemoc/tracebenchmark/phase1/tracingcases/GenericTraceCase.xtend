@@ -20,19 +20,34 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLa
 import org.modelexecution.xmof.states.states.StateSystem
 import java.util.function.Consumer
 
-class GenericTraceCase implements BenchmarkTracingCase {
+class GenericTraceCase extends AbstractWithTraceCase {
 
 	private var XMOFExecutionEngine engine;
 	private var BenchmarkExecutionModelContext context;
 	private var GenericTraceConstructor genericTraceConstructor;
 	private var ResourceSet resourceSet;
 
+	var BenchmarkLanguage language
+
+	val pointedObjectsNotContained = new HashSet<EObject>();
+	var Resource traceResource
+	
+
 	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
+
+		this.engine = null
+		this.context = null
+		this.genericTraceConstructor = null
+		this.resourceSet = null
+		this.pointedObjectsNotContained.clear
+		this.traceResource = null
+
 		this.engine = engine;
 		this.context = context;
 	}
 
 	override initialize() {
+
 		// resourceSet = context.resourceModel.resourceSet;
 		resourceSet = new ResourceSetImpl
 		genericTraceConstructor = new GenericTraceConstructor(engine.getXMOFBasedModel().modelResource);
@@ -42,41 +57,8 @@ class GenericTraceCase implements BenchmarkTracingCase {
 	static val String traceRoot = "StateSystemImpl"
 	static val String tracePackage = "org.modelexecution.xmof.states"
 
-	static val String queryStart = '''SELECT * FROM ".*'''
-	static val String queryEnd = '''.*"'''
-
-	static val String queryAllUtil = '''SELECT * FROM ".*(PackageImpl|FactoryImpl|AdapterFactory|Switch)$"'''
-
-	static def String createQuery(String... packagesNames) {
-		'''«queryStart»«packagesNames.join("|")»«queryEnd»'''
-	}
-
-	override computeMemoryUsage(File dumpFile) {
-
-		val analyzer = new MemoryAnalyzer(dumpFile);
-
-		// First we make sure that there is only one trace
-		val String queryCheck = '''SELECT * FROM ".*«traceRoot».*"''';
-		val resCheck = analyzer.computeRetainedSizeWithOQLQuery(queryCheck);
-		if (resCheck.nbElements != 1) {
-			throw new Exception("Wrong number of traces: " + resCheck.nbElements);
-		}
-
-		val query = createQuery(tracePackage)
-
-		log("query: " + query)
-
-		val resquery = analyzer.computeRetainedSizeWithOQLQuery(query, queryAllUtil);
-
-		log("Memory: " + resquery.memorySum)
-
-		analyzer.cleanUp
-
-		return resquery.memorySum
-	}
-
 	override setLanguage(BenchmarkLanguage language) {
-		// Nothing to do
+		this.language = language
 	}
 
 	override getSimpleName() {
@@ -92,14 +74,9 @@ class GenericTraceCase implements BenchmarkTracingCase {
 		true
 	}
 
-	val pointedObjectsNotContained = new HashSet<EObject>();
-
 	override saveTrace(String pathString) {
-		val StateSystem trace = genericTraceConstructor.stateSystem
-
-		val Resource traceResource = createTraceResource(pathString)
-		addTraceToResource(traceResource, trace);
-
+		getTraceResource
+		traceResource.URI = URI.createPlatformResourceURI(pathString, true)
 		try {
 			traceResource.save(null);
 		} catch (Throwable t) {
@@ -130,6 +107,7 @@ class GenericTraceCase implements BenchmarkTracingCase {
 	}
 
 	override preCleanUp() {
+		genericTraceConstructor.stateSystem.eAdapters.clear
 		for (a : genericTraceConstructor.stateSystem.eAllContents.toSet) {
 			a.eAdapters.clear
 		}
@@ -152,18 +130,34 @@ class GenericTraceCase implements BenchmarkTracingCase {
 	}
 
 	override getTraceResource() {
-		return genericTraceConstructor.stateSystem.eResource
+		if (traceResource == null) {
+			val StateSystem trace = genericTraceConstructor.stateSystem
+			traceResource = createTraceResource("file://tmp/test.xmi")
+			addTraceToResource(traceResource, trace);
+		}
+		return traceResource
 	}
-	
-		
+
 	private var Consumer<String> logOperation
-	private def void log(String s) {
+
+	override log(String s) {
 		logOperation.accept(s);
 	}
-	
+
 	override setLogOperation(Consumer<String> logOperation) {
 		this.logOperation = logOperation
 	}
+
+	override getTraceRoot() {
+		return traceRoot
+	}
+
+	override getTracePackages() {
+		return #{tracePackage,language.javaExePackageName}
+	}
 	
+	override needsConfModelInTrace() {
+		false
+	}
 
 }

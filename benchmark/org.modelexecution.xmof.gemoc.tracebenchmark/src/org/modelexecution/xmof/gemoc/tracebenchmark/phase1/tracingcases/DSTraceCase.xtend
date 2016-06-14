@@ -15,13 +15,17 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
 import java.util.function.Consumer
 
-class DSTraceCase implements BenchmarkTracingCase {
+class DSTraceCase extends AbstractWithTraceCase{ 
 
 	protected var BenchmarkLanguage language
 	protected var AbstractTraceAddon traceAddon
 	protected var XMOFExecutionEngine engine
 
 	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
+		
+		this.engine = null
+		this.traceAddon = null
+		
 		if (engine.executionContext != null && engine.executionContext.executionPlatform != null) {
 			for (addon : engine.executionContext.executionPlatform.engineAddons) {
 				engine.executionContext.executionPlatform.removeEngineAddon(addon)
@@ -37,38 +41,9 @@ class DSTraceCase implements BenchmarkTracingCase {
 	override initialize() {
 	}
 
-	static val String queryStart = '''SELECT * FROM ".*('''
-	static val String queryEndWithoutUtil = ''').*[^(PackageImpl|FactoryImpl|AdapterFactory|Switch)]?$" '''
 
 	static val String msePackageName = "fr.inria.diverse.trace.commons.model"
 
-	static def String createQueryWithoutUtil(String... packagesNames) {
-		'''«queryStart»«packagesNames.join("|")»«queryEndWithoutUtil»'''
-	}
-
-	override computeMemoryUsage(File dumpFile) {
-
-		val analyzer = new MemoryAnalyzer(dumpFile);
-
-		// First we make sure that there is only one trace
-		val String queryCheck = '''SELECT * FROM ".*«language.javaTraceRootName».*"''';
-		val resCheck = analyzer.computeRetainedSizeWithOQLQuery(queryCheck);
-		if (resCheck.nbElements != 1) {
-			throw new Exception("Wrong number of traces: " + resCheck.nbElements);
-		}
-
-		val query = createQueryWithoutUtil(language.javaTracePackageName, msePackageName)
-
-		log("query: " + query)
-
-		val resquery = analyzer.computeRetainedSizeWithOQLQuery(query);
-
-		log("Memory: " + resquery.memorySum)
-
-		analyzer.cleanUp
-
-		return resquery.memorySum
-	}
 
 	override setLanguage(BenchmarkLanguage language) {
 		this.language = language
@@ -171,12 +146,24 @@ class DSTraceCase implements BenchmarkTracingCase {
 	}
 	
 	private var Consumer<String> logOperation
-	private def void log(String s) {
+	override log(String s) {
 		logOperation.accept(s);
 	}
 	
 	override setLogOperation(Consumer<String> logOperation) {
 		this.logOperation = logOperation
+	}
+	
+	override getTraceRoot() {
+		language.javaTraceRootName
+	}
+	
+	override getTracePackages() {
+		return #{language.javaTracePackageName,msePackageName,language.javaExePackageName}
+	}
+	
+	override needsConfModelInTrace() {
+		true
 	}
 	
 

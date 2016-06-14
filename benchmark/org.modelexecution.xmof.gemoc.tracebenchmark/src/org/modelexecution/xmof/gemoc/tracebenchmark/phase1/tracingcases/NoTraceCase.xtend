@@ -11,9 +11,8 @@ class NoTraceCase implements BenchmarkTracingCase {
 	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
 		// Nothing to do, no trace addon
 	}
-	
+
 	override initialize() {
-		
 	}
 
 	override computeMemoryUsage(File dumpFile) {
@@ -35,32 +34,33 @@ class NoTraceCase implements BenchmarkTracingCase {
 	override createsTrace() {
 		false
 	}
-	
+
 	override saveTrace(String string) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 
 	override cleanUp() {
-		
 	}
-	
+
 	override preCleanUp() {
-		
 	}
-	
+
 	override getTraceResource() {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
-	
-		
+
 	private var Consumer<String> logOperation
-	private def void log(String s) {
+
+	override log(String s) {
 		logOperation.accept(s);
 	}
-	
+
 	override setLogOperation(Consumer<String> logOperation) {
 		this.logOperation = logOperation
 	}
 	
-	
+	override needsConfModelInTrace() {
+		false
+	}
+
 }
