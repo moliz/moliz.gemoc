@@ -1,10 +1,10 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 
-import java.util.HashMap
-import java.util.Map
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.Fuml
-import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.GenericTraceCase
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceCase
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.GenericTraceCase
+
+import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1Helpers.*
 
 class BenchmarkPhase1Data {
 
@@ -102,12 +102,10 @@ class BenchmarkPhase1Data {
 		"anonCompany/ExampleB/ExampleBV3_parameter_true_true_true.xmi"
 	]}
 
-	static def <T, V> Map<T, V> mergeMaps(Map<T, V>... maps) {
-		val result = new HashMap<T, V>()
-		for (m : maps)
-			result.putAll(m)
-		return result
-	}
+	static val fumlAnon1_test_redun = #{"anonCompany/ExampleB/ExampleBV1.uml" -> #[
+		"anonCompany/ExampleB/ExampleBV1_parameter_false_false.xmi",
+		"anonCompany/ExampleB/ExampleBV1_parameter_false_false.xmi"
+	]}
 
 	static val allNokia = mergeMaps(fumlNokia1, fumlNokia2, fumlNokia3, fumlNokia4)
 
@@ -122,11 +120,12 @@ class BenchmarkPhase1Data {
 	)
 
 	static val fuml = new Fuml(mergeMaps(
-		fumlIBM2
+		fumlNokia2
 	))
 
 	public static val boolean measureMemory = false
-	public static val boolean measureTime = false
+	public static val boolean measureTime = true
+	public static val boolean serializeTrace = false
 	public static val boolean tryToSaveMemory = true
 	public static val boolean disableLogs = measureTime
 

@@ -153,7 +153,7 @@ class BenchmarkPhase1Memory {
 
 		for (language : BenchmarkPhase1Data::languages) {
 
-			val File traceFolder = new File("model_traces_test")
+			val File traceFolder = new File("model_traces")
 			if (traceFolder.exists) {
 				val File languageFolder = new File(traceFolder, language.folderName)
 				if (languageFolder.exists) {

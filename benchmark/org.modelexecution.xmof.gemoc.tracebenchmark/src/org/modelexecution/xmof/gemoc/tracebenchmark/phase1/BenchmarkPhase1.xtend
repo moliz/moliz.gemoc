@@ -3,11 +3,7 @@ package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 import fr.inria.diverse.trace.commons.testutil.EclipseTestUtil
 import fr.inria.diverse.trace.commons.testutil.Investigation
 import java.io.File
-import java.io.FileInputStream
 import java.io.FileOutputStream
-import java.io.IOException
-import java.io.OutputStream
-import java.io.PrintStream
 import java.io.PrintWriter
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
@@ -17,13 +13,11 @@ import java.util.Calendar
 import java.util.Collection
 import java.util.HashSet
 import java.util.List
-import java.util.Locale
 import java.util.Random
 import java.util.Set
 import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IFolder
 import org.eclipse.core.resources.IProject
-import org.eclipse.core.resources.IResource
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.runtime.Status
@@ -32,8 +26,6 @@ import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eclipse.emf.transaction.RecordingCommand
 import org.eclipse.emf.transaction.util.TransactionUtil
 import org.gemoc.executionframework.engine.Activator
 import org.junit.AfterClass
@@ -50,6 +42,7 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLa
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 
 import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1Data.*
+import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1Helpers.*
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
@@ -123,8 +116,8 @@ class BenchmarkPhase1 {
 
 		// Execution
 		if (wait) {
-			System.gc
-			Thread.sleep(5000)
+			System.gc // To clean memory if possible
+			Thread.sleep(5000) // To make sure the JVM is fully ready
 		}
 
 		log("Running engine")
@@ -155,7 +148,7 @@ class BenchmarkPhase1 {
 		}
 
 		// Trace serialization
-		if (tracingCase.createsTrace) {
+		if (tracingCase.createsTrace && serializeTrace) {
 
 			if (tracingCase.needsConfModelInTrace) {
 
@@ -203,7 +196,7 @@ class BenchmarkPhase1 {
 			}
 
 		}
-// If any trace created and  not yet measured, we must measure memory
+		// If any trace created and  not yet measured, we must measure memory
 		if (tracingCase.createsTrace && line.traceMemoryFootprint == 0 && measureMemory) {
 
 			line.traceNbStates = tracingCase.numberOfStates
@@ -339,103 +332,10 @@ class BenchmarkPhase1 {
 
 	}
 
-	private static def void copyFileInWS(File file, IFolder destination, IProgressMonitor m) {
-		val fileInProject = destination.getFile(file.name)
-		if (!fileInProject.exists)
-			fileInProject.create(new FileInputStream(file), true, m);
-	}
-
-	private static def IFolder copyFolderInWS(File folder, IResource destination, IProgressMonitor m) {
-		val folderCopy = if (destination instanceof IProject) {
-				destination.getFolder(folder.name)
-			} else if (destination instanceof IFolder) {
-				destination.getFolder(folder.name)
-			} else
-				null
-
-		if (!folderCopy.exists)
-			folderCopy.create(true, true, m)
-		for (File f : folder.listFiles) {
-			if (f.isFile) {
-				copyFileInWS(f, folderCopy, m)
-			} else if (f.isDirectory) {
-				copyFolderInWS(f, folderCopy, m)
-			}
-		}
-		return folderCopy
-	}
-
 	@BeforeClass
 	def static void disableLogs() {
 		if (disableLogs) {
-			val emptyOutStream = new OutputStream() {
-				override write(int b) throws IOException {}
-			}
-
-			val emptyPrintStream = new PrintStream(emptyOutStream) {
-				override flush() {}
-
-				override close() {}
-
-				override write(int b) {}
-
-				override write(byte[] b) {}
-
-				override write(byte[] buf, int off, int len) {}
-
-				override print(boolean b) {}
-
-				override print(char c) {}
-
-				override print(int i) {}
-
-				override print(long l) {}
-
-				override print(float f) {}
-
-				override print(double d) {}
-
-				override print(char[] s) {}
-
-				override print(String s) {}
-
-				override print(Object obj) {}
-
-				override println() {}
-
-				override println(boolean x) {}
-
-				override println(char x) {}
-
-				override println(int x) {}
-
-				override println(long x) {}
-
-				override println(float x) {}
-
-				override println(double x) {}
-
-				override println(char[] x) {}
-
-				override println(String x) {}
-
-				override println(Object x) {}
-
-				override printf(String format, Object... args) { return this; }
-
-				override printf(Locale l, String format, Object... args) { return this; }
-
-				override format(String format, Object... args) { return this; }
-
-				override format(Locale l, String format, Object... args) { return this; }
-
-				override append(CharSequence csq) { return this; }
-
-				override append(CharSequence csq, int start, int end) { return this; }
-
-				override append(char c) { return this; }
-
-			}
+			val emptyPrintStream = createEmptyPrintStream
 			System.setOut(emptyPrintStream)
 			System.setErr(emptyPrintStream)
 
@@ -536,22 +436,6 @@ class BenchmarkPhase1 {
 		}
 		return data
 
-	}
-
-	private static def void clearResourceSet(ResourceSet rs) {
-		val ed = TransactionUtil.getEditingDomain(rs)
-		// Clean resource
-		val command = new RecordingCommand(ed, "Clean resources") {
-			override protected doExecute() {
-				for (c : rs.allContents.toSet)
-					c.eAdapters.clear
-				for (r : rs.resources) {
-					r.eAdapters.clear
-				}
-				rs.eAdapters.clear
-			}
-		}
-		ed.commandStack.execute(command)
 	}
 
 }
