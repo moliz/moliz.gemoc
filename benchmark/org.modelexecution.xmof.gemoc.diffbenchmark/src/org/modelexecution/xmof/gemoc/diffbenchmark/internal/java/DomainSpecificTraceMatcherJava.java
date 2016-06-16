@@ -68,10 +68,6 @@ public class DomainSpecificTraceMatcherJava extends TraceMatcherJava {
 
 	private boolean compareActions(OpaqueActionConfiguration left, OpaqueActionConfiguration right) {
 		return left.getName().equals(right.getName());
-
-//		String leftActionName = (String)left.eGet(left.eClass().getEStructuralFeature("name"));
-//		String rightActionName = (String)right.eGet(right.eClass().getEStructuralFeature("name"));
-//		return leftActionName.equals(rightActionName);
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////
