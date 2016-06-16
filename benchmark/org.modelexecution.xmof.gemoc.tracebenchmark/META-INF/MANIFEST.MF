@@ -26,8 +26,8 @@ Require-Bundle: org.eclipse.xtend.lib,
  org.eclipse.jdt.junit.core,
  org.eclipse.jdt.junit,
  org.eclipse.core.runtime,
- org.modelexecution.xmof.examples.fuml.fumlfewsteps.trace;bundle-version="1.0.0",
- org.modelexecution.xmof.gemoc.tracebenchmark.api;bundle-version="1.0.0"
+ org.modelexecution.xmof.gemoc.tracebenchmark.api;bundle-version="1.0.0",
+ org.gemoc.execution.sequential.javaengine
 Export-Package: org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers,
  org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases,
  pde.test.utils
