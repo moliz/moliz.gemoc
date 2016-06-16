@@ -10,6 +10,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.emf.ecore.EObject;
 import org.gemoc.commons.eclipse.ui.ViewHelper;
+import org.gemoc.execution.sequential.javaengine.SequentialModelExecutionContext;
 import org.gemoc.execution.sequential.javaengine.ui.debug.GenericSequentialModelDebugger;
 import org.gemoc.executionframework.engine.commons.EngineContextException;
 import org.gemoc.executionframework.engine.commons.ModelExecutionContext;
@@ -21,7 +22,6 @@ import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.core.ISequentialExecutionEngine;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
-import org.modelexecution.xmof.gemoc.engine.XMOFExecutionModelContext;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 import org.modelexecution.xmof.gemoc.engine.ui.debug.XMOFMutableFieldExtractor;
@@ -41,7 +41,8 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 			org.gemoc.executionframework.engine.ui.commons.RunConfiguration runConfiguration,
 			ExecutionMode executionMode) throws CoreException, EngineContextException {
 		IBasicExecutionEngine executionEngine = new XMOFExecutionEngine();
-		ModelExecutionContext executioncontext = new XMOFExecutionModelContext(runConfiguration, executionMode);
+		ModelExecutionContext executioncontext = new SequentialModelExecutionContext(runConfiguration, executionMode);
+		//new//new XMOFExecutionModelContext(runConfiguration, executionMode);
 		executioncontext.initializeResourceModel();
 		executionEngine.initialize(executioncontext);
 		return executionEngine;
