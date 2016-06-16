@@ -46,6 +46,13 @@ import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase
 
 @RunWith(Parameterized)
 class BenchmarkPhase1 {
+	
+	
+	public static val boolean measureMemory = false
+	public static val boolean measureTime = true
+	public static val boolean serializeTrace = false
+	public static val boolean tryToSaveMemory = true
+	public static val boolean disableLogs = measureTime
 
 	// @Rule public TemporaryFolder tmpFolderCreator = new TemporaryFolder(new File("/home/ebousse/tmp/yay"));
 	static val File tmpFolderContainer = new File(dumpsFolder)
@@ -126,6 +133,9 @@ class BenchmarkPhase1 {
 		engine.joinThread
 		val timeEnd = System.nanoTime
 		val time = timeEnd - timeStart
+		
+		
+		line.traceNbStates = tracingCase.numberOfStates
 
 		if (tryToSaveMemory) {
 			log("Cleanup memory")
@@ -199,7 +209,6 @@ class BenchmarkPhase1 {
 		// If any trace created and  not yet measured, we must measure memory
 		if (tracingCase.createsTrace && line.traceMemoryFootprint == 0 && measureMemory) {
 
-			line.traceNbStates = tracingCase.numberOfStates
 
 			if (tryToSaveMemory) {
 				tracingCase.preCleanUp

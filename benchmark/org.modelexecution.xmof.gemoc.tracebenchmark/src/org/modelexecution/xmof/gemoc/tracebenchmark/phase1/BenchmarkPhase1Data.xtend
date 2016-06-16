@@ -5,6 +5,7 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.DSTraceC
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.GenericTraceCase
 
 import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1Helpers.*
+import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.NoTraceCase
 
 class BenchmarkPhase1Data {
 
@@ -290,21 +291,14 @@ class BenchmarkPhase1Data {
 		allAnon
 	)
 
-	static val fuml = new Fuml(mergeMaps(
-		fumlNokia1_1
-	))
+	static val fuml = new Fuml(fumlAnon3_6)
 
-	public static val boolean measureMemory = false
-	public static val boolean measureTime = true
-	public static val boolean serializeTrace = false
-	public static val boolean tryToSaveMemory = true
-	public static val boolean disableLogs = measureTime
 
 	// Input data for all tests
 	public static val tracingCases = #[
-		 new GenericTraceCase
-		//new DSTraceCase
-	// new NoTraceCase
+		new GenericTraceCase,
+		new DSTraceCase,
+		new NoTraceCase
 	]
 	public static val languages = #{fuml}
 
