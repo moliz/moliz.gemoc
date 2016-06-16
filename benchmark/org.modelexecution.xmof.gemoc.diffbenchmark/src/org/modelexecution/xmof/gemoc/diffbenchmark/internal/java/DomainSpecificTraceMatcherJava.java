@@ -54,7 +54,7 @@ public class DomainSpecificTraceMatcherJava extends TraceMatcherJava {
 		OpaqueActionConfiguration action = null;
 		for (SemanticVisitor_runtimeModelElement_Value runtimeModelElementState : self.getRuntimeModelElementSequence()) {
 			TracedElementConfiguration runtimeModelElement = runtimeModelElementState.getRuntimeModelElement();
-			if(runtimeModelElement != null && runtimeModelElement instanceof TracedOpaqueActionConfiguration) {
+			if(runtimeModelElement != null) {
 				TracedOpaqueActionConfiguration tracedOpaqueActionConfiguration = (TracedOpaqueActionConfiguration) runtimeModelElement;
 				action = (OpaqueActionConfiguration)tracedOpaqueActionConfiguration.getOriginalObject_ActivityContentConfiguration();
 			}
