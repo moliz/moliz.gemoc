@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.MatchResult;
@@ -36,6 +37,13 @@ public abstract class TraceMatching extends Evaluation implements
 	@AfterClass
 	public static void printReport() {
 		report.printReportToFile();
+	}
+	
+	@Before
+	public void setReportDomainSpecific() {
+		if (domainSpecific()) {
+			report.setDomainSpecificMatching();
+		}
 	}
 	
 	@Override
@@ -240,7 +248,7 @@ public abstract class TraceMatching extends Evaluation implements
 		assertFalse(result.matches());
 	}
 
-	protected abstract boolean domainSpecific();
+	abstract protected boolean domainSpecific();
 
 	protected MatchResult matchAnonExampleB(int version1, int version2,
 			boolean exists, boolean found) {
@@ -278,36 +286,35 @@ public abstract class TraceMatching extends Evaluation implements
 		return matchResult;
 	}
 	
-	private MatchResult matchFumlTraces(String leftTracemodelPath,
-			String rightTracemodelPath) {
-System.out.print("left: " + leftTracemodelPath + " - " + "right: " + rightTracemodelPath);
-		if (domainSpecific()) 
-			report.setDomainSpecificMatching();
-		setTracemodelPaths(leftTracemodelPath, rightTracemodelPath);
+	private MatchResult matchFumlTraces(String leftTracemodelPath, String rightTracemodelPath) {
+		System.out.print("left: " + leftTracemodelPath + " - " + "right: " + rightTracemodelPath);
 		MatchResult matchResult = null;
 		for (int i = 0; i < getIterationNumber(); ++i) {
-//			System.out.println(i);
-			TraceMatcherJava matcher;
-			if(domainSpecific()) {
-				matcher = new DomainSpecificTraceMatcherJava();
-			} else {
-				matcher = new GenericTraceMatcherJava();
-			}
-			matcher.registerListener(this);
-			boolean match = matcher.match(leftTracemodelPath,
-					rightTracemodelPath);
-			matchResult = updateMatchResult(matchResult, match,
-					matcher.matchedWithoutErrors());
+			System.out.println(i);
+			TraceMatcherJava matcher = createMatcher();
+			boolean match = matcher.match(leftTracemodelPath, rightTracemodelPath);
+			report.addReportEntry(new MatchingReportEntry(leftTracemodelPath, rightTracemodelPath,
+					matcher.getTimeEnd() - matcher.getTimeStart()));
+			matchResult = updateMatchResult(matchResult, match, matcher.matchedWithoutErrors());
 		}
-		unsetTracemodelPaths();
 		return matchResult;
 	}
+
+	private TraceMatcherJava createMatcher() {
+		TraceMatcherJava matcher;
+		if(domainSpecific()) {
+			matcher = new DomainSpecificTraceMatcherJava();
+		} else {
+			matcher = new GenericTraceMatcherJava();
+		}
+		return matcher;
+	}
 	
+	@SuppressWarnings("unused")
 	private MatchResult matchFumlTracesECL(String leftTracemodelPath,
 			String rightTracemodelPath) {
-System.out.print("left: " + leftTracemodelPath + " - " + "right: " + rightTracemodelPath);
-		if (domainSpecific()) 
-			report.setDomainSpecificMatching();
+//		System.out.print("left: " + leftTracemodelPath + " - " + "right: " + rightTracemodelPath);
+		
 		setTracemodelPaths(leftTracemodelPath, rightTracemodelPath);
 		MatchResult matchResult = null;
 		for (int i = 0; i < getIterationNumber(); ++i) {
