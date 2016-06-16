@@ -22,4 +22,8 @@ Require-Bundle: org.eclipse.xtend.lib,
  org.modelexecution.xmof.examples.fuml.trace;bundle-version="1.0.0",
  org.modelexecution.xmof.gemoc.generictraceconstructor;bundle-version="1.0.0",
  org.modelexecution.xmof.gemoc.engine;bundle-version="1.0.0",
- fr.inria.diverse.commons.eclipse.messagingsystem.api;bundle-version="1.0.0"
+ fr.inria.diverse.commons.eclipse.messagingsystem.api;bundle-version="1.0.0",
+ org.eclipse.jdt.junit.core,
+ org.eclipse.jdt.junit,
+ org.apache.ant,
+ org.eclipse.core.runtime
