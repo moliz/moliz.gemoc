@@ -3,7 +3,6 @@ package org.modelexecution.xmof.examples.fuml.trace.tracemanager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,13 +13,15 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+
 import fr.inria.diverse.trace.commons.model.trace.LaunchConfiguration;
 import fr.inria.diverse.trace.commons.model.trace.MSEModel;
 import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import org.modelexecution.xmof.gemoc.tracebenchmark.api.BenchmarkTraceConstructor;
 
 import fr.inria.diverse.trace.gemoc.api.ITraceConstructor;
 
-public class FumlConfigurationTraceConstructor implements ITraceConstructor {
+public class FumlConfigurationTraceConstructor implements ITraceConstructor, BenchmarkTraceConstructor {
 	private fumlConfigurationTrace.SpecificTrace traceRoot;
 	private MSEModel mseModel;
 	private Resource executedModel;

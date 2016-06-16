@@ -61,6 +61,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gemoc.xdsmlframework.api,
  org.gemoc.sequential_addons.multidimensional.timeline,
  fr.obeo.timeline,
- fr.inria.diverse.trace.commons
+ fr.inria.diverse.trace.commons,
+ org.modelexecution.xmof.gemoc.tracebenchmark.api;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 

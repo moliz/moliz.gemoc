@@ -14,7 +14,7 @@ class BenchmarkPhase1Data {
 	// Constants
 	public static val String modelFolderName = "model"
 	public static val String outputFolderName = "output"
-	public static val int WARMUPS = 1
+	public static val int WARMUPS = 0
 	public static val int NBMEASURES = 5
 	public static val String projectName = "benchmark-project"
 
@@ -291,7 +291,7 @@ class BenchmarkPhase1Data {
 		allAnon
 	)
 
-	static val fuml = new Fuml(fumlAnon3_6)
+	static val fuml = new Fuml(fumlNokia3_1)
 
 
 	// Input data for all tests

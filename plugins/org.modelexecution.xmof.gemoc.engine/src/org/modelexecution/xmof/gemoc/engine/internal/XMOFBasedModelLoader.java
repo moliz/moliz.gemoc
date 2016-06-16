@@ -163,13 +163,18 @@ public class XMOFBasedModelLoader {
 
 	private String getXMOFModelFilePath() {
 		String xmofModelFilePath = "";
-		Resource xdsmlFileResource = loadPluginResource(getXDSMLModelPath());
+		String xdsmlModelPath = getXDSMLModelPath();
+		Resource xdsmlFileResource = loadPluginResource(xdsmlModelPath);
 		ModelTypingSpace modelTypingSpace = (ModelTypingSpace) xdsmlFileResource
 				.getContents().get(0);
+		String languageFQN = executionContext.getLanguageDefinitionExtension().getName();
 		for (Element element : modelTypingSpace.getElements()) {
 			if (element instanceof Language) {
 				Language language = (Language) element;
-				xmofModelFilePath = language.getXmof();
+				if (languageFQN.endsWith(language.getName())) {
+					xmofModelFilePath = language.getXmof();
+					break;
+				}
 			}
 		}
 		return xmofModelFilePath.replace("platform:/resource/", "");

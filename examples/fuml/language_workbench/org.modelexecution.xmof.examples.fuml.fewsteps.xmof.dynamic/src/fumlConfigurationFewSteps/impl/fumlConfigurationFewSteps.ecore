@@ -1,0 +1,1211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:kernel="http://www.modelexecution.org/xmof/syntax/classes/mykernel"
+    name="fumlConfigurationFewSteps" nsURI="http://www.modelexecution.org/xmof/example/fuml/configurationFewSteps"
+    nsPrefix="fumlConfFewSteps">
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ModelConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Model #//PackageConfiguration">
+    <eOperations xsi:type="kernel:BehavioredEOperation" name="main">
+      <eParameters xsi:type="kernel:DirectedParameter" name="executionEnvironment"
+          lowerBound="1" eType="#//LociFewSteps/ExecutionEnvironment"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+          eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="context" eType="#//KernelFewSteps/Object"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="inputs" upperBound="-1"
+          eType="#//BasicBehaviorsFewSteps/ParameterValue"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="outputs" upperBound="-1"
+          eType="#//BasicBehaviorsFewSteps/ParameterValue" direction="RETURN"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ElementConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticVisitor" upperBound="-1"
+        eType="#//LociFewSteps/SemanticVisitor" eOpposite="#//LociFewSteps/SemanticVisitor/runtimeModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityContentConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ActivityContent"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Activity #//BehaviorConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="BehaviorConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Behavior #//ClassConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ClassConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Class #//EncapsulatedClassifierConfiguration #//BehavioredClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="BehavioredClassifierConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier #//ClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ClassifierConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier #//NamespaceConfiguration #//RedefinableElementConfiguration #//TypeConfiguration #//TemplateableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="NamespaceConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Namespace #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="NamedElementConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CommentConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Comment #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StereotypeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Stereotype #//ClassConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ImageConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Image #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ProfileConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Profile #//PackageConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PackageConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Package #//NamespaceConfiguration #//PackageableElementConfiguration #//TemplateableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PackageableElementConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//PackageableElement #//NamedElementConfiguration #//ParameterableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ParameterableElementConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ParameterableElement #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TemplateParameterConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateParameter #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TemplateSignatureConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateSignature #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TemplateableElementConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateableElement #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TemplateBindingConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateBinding #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DirectedRelationshipConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship #//RelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="RelationshipConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Relationship #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TemplateParameterSubstitutionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TemplateParameterSubstitution #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TypeConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Type #//PackageableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="AssociationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Association #//ClassifierConfiguration #//RelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PropertyConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Property #//StructuralFeatureConfiguration #//ConnectableElementConfiguration #//DeploymentTargetConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ConnectableElementConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ConnectableElement #//TypedElementConfiguration #//ParameterableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TypedElementConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TypedElement #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ConnectorEndConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ConnectorEnd #//MultiplicityElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="MultiplicityElementConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//MultiplicityElement #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ValueSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification #//PackageableElementConfiguration #//TypedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ConnectableElementTemplateParameterConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ConnectableElementTemplateParameter #//TemplateParameterConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DeploymentTargetConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DeploymentTarget #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DeploymentConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Deployment #//DependencyConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DependencyConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Dependency #//PackageableElementConfiguration #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DeploymentSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DeploymentSpecification #//ArtifactConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ArtifactConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Artifact #//ClassifierConfiguration #//DeployedArtifactConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DeployedArtifactConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DeployedArtifact #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ManifestationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Manifestation #//AbstractionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="AbstractionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Abstraction #//DependencyConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="OpaqueExpressionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueExpression #//ValueSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ParameterConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Parameter #//ConnectableElementConfiguration #//MultiplicityElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="OperationConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Operation #//BehavioralFeatureConfiguration #//ParameterableElementConfiguration #//TemplateableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="BehavioralFeatureConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioralFeature #//NamespaceConfiguration #//FeatureConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="FeatureConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Feature #//RedefinableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="RedefinableElementConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//RedefinableElement #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ParameterSetConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ParameterSet #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ConstraintConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Constraint #//PackageableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DataTypeConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DataType #//ClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InterfaceConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Interface #//ClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReceptionConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Reception #//BehavioralFeatureConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="SignalConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Signal #//ClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ProtocolStateMachineConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ProtocolStateMachine #//StateMachineConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StateMachineConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//StateMachine #//BehaviorConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PseudostateConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Pseudostate #//VertexConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="VertexConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Vertex #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="RegionConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Region #//NamespaceConfiguration #//RedefinableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StateConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//State #//NamespaceConfiguration #//RedefinableElementConfiguration #//VertexConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ConnectionPointReferenceConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ConnectionPointReference #//VertexConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TriggerConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Trigger #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="EventConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Event #//PackageableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PortConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Port #//PropertyConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TransitionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Transition #//NamespaceConfiguration #//RedefinableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ProtocolConformanceConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ProtocolConformance #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="OperationTemplateParameterConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//OperationTemplateParameter #//TemplateParameterConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StructuralFeatureConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeature #//FeatureConfiguration #//TypedElementConfiguration #//MultiplicityElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PackageMergeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//PackageMerge #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ProfileApplicationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ProfileApplication #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="EnumerationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration #//DataTypeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="EnumerationLiteralConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//EnumerationLiteral #//InstanceSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InstanceSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InstanceSpecification #//DeploymentTargetConfiguration #//PackageableElementConfiguration #//DeployedArtifactConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="SlotConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Slot #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PrimitiveTypeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType #//DataTypeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ElementImportConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ElementImport #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PackageImportConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//PackageImport #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExtensionConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Extension #//AssociationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExtensionEndConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ExtensionEnd #//PropertyConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StringExpressionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//StringExpression #//ExpressionConfiguration #//TemplateableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExpressionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Expression #//ValueSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="UsageConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Usage #//DependencyConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CollaborationUseConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CollaborationUse #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CollaborationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Collaboration #//StructuredClassifierConfiguration #//BehavioredClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StructuredClassifierConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier #//ClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ConnectorConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Connector #//FeatureConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="GeneralizationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Generalization #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="GeneralizationSetConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//GeneralizationSet #//PackageableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="RedefinableTemplateSignatureConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//RedefinableTemplateSignature #//RedefinableElementConfiguration #//TemplateSignatureConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="UseCaseConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//UseCase #//BehavioredClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExtendConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Extend #//NamedElementConfiguration #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExtensionPointConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ExtensionPoint #//RedefinableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="IncludeConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Include #//NamedElementConfiguration #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="SubstitutionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Substitution #//RealizationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="RealizationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Realization #//AbstractionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ClassifierTemplateParameterConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ClassifierTemplateParameter #//TemplateParameterConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InterfaceRealizationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InterfaceRealization #//RealizationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="EncapsulatedClassifierConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//EncapsulatedClassifier #//StructuredClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityGroupConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ActivityGroup #//NamedElementConfiguration #//ActivityContentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityEdgeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ActivityEdge #//RedefinableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityPartitionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ActivityPartition #//ActivityGroupConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode #//RedefinableElementConfiguration #//ActivityContentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InterruptibleActivityRegionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InterruptibleActivityRegion #//ActivityGroupConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StructuredActivityNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredActivityNode #//ActionConfiguration #//NamespaceConfiguration #//ActivityGroupConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActionConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Action #//ExecutableNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExecutableNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ExecutableNode #//ActivityNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExceptionHandlerConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ExceptionHandler #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ObjectNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ObjectNode #//ActivityNodeConfiguration #//TypedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InputPinConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InputPin #//PinConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PinConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Pin #//ObjectNodeConfiguration #//MultiplicityElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="OutputPinConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//OutputPin #//PinConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="VariableConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Variable #//ConnectableElementConfiguration #//MultiplicityElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ValueSpecificationActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecificationAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="VariableActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//VariableAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="WriteLinkActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//WriteLinkAction #//LinkActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LinkActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LinkAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LinkEndDataConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LinkEndData #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="QualifierValueConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//QualifierValue #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="WriteStructuralFeatureActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//WriteStructuralFeatureAction #//StructuralFeatureActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StructuralFeatureActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeatureAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="WriteVariableActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//WriteVariableAction #//VariableActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="AcceptCallActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptCallAction #//AcceptEventActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="AcceptEventActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//AcceptEventAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActionInputPinConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ActionInputPin #//InputPinConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="AddStructuralFeatureValueActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//AddStructuralFeatureValueAction #//WriteStructuralFeatureActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="AddVariableValueActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//AddVariableValueAction #//WriteVariableActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="BroadcastSignalActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//BroadcastSignalAction #//InvocationActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InvocationActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InvocationAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CallActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CallAction #//InvocationActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CallBehaviorActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CallBehaviorAction #//CallActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CallOperationActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CallOperationAction #//CallActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ClauseConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Clause #//ElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ClearAssociationActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ClearAssociationAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ClearStructuralFeatureActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ClearStructuralFeatureAction #//StructuralFeatureActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ClearVariableActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ClearVariableAction #//VariableActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ConditionalNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ConditionalNode #//StructuredActivityNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CreateLinkActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CreateLinkAction #//WriteLinkActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LinkEndCreationDataConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LinkEndCreationData #//LinkEndDataConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CreateLinkObjectActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CreateLinkObjectAction #//CreateLinkActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CreateObjectActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CreateObjectAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DestroyLinkActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DestroyLinkAction #//WriteLinkActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LinkEndDestructionDataConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LinkEndDestructionData #//LinkEndDataConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DestroyObjectActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DestroyObjectAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExpansionNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ExpansionNode #//ObjectNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExpansionRegionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ExpansionRegion #//StructuredActivityNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LoopNodeConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LoopNode #//StructuredActivityNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="OpaqueActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="RaiseExceptionActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//RaiseExceptionAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReadExtentActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReadExtentAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReadIsClassifiedObjectActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReadIsClassifiedObjectAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReadLinkActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReadLinkAction #//LinkActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReadLinkObjectEndActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReadLinkObjectEndAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReadLinkObjectEndQualifierActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReadLinkObjectEndQualifierAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReadSelfActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReadSelfAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReadStructuralFeatureActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReadStructuralFeatureAction #//StructuralFeatureActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReadVariableActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReadVariableAction #//VariableActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReclassifyObjectActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReclassifyObjectAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReduceActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReduceAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="RemoveStructuralFeatureValueActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//RemoveStructuralFeatureValueAction #//WriteStructuralFeatureActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="RemoveVariableValueActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//RemoveVariableValueAction #//WriteVariableActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReplyActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ReplyAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="SendObjectActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//SendObjectAction #//InvocationActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="SendSignalActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//SendSignalAction #//InvocationActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="SequenceNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//SequenceNode #//StructuredActivityNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StartClassifierBehaviorActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//StartClassifierBehaviorAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StartObjectBehaviorActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//StartObjectBehaviorAction #//CallActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TestIdentityActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TestIdentityAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="UnmarshallActionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//UnmarshallAction #//ActionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ValuePinConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ValuePin #//InputPinConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityFinalNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ActivityFinalNode #//FinalNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="FinalNodeConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//FinalNode #//ControlNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ControlNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ControlNode #//ActivityNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityParameterNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ActivityParameterNode #//ObjectNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CentralBufferNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CentralBufferNode #//ObjectNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ControlFlowConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ControlFlow #//ActivityEdgeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DataStoreNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DataStoreNode #//CentralBufferNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DecisionNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DecisionNode #//ControlNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ObjectFlowConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ObjectFlow #//ActivityEdgeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="FlowFinalNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//FlowFinalNode #//FinalNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ForkNodeConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ForkNode #//ControlNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InitialNodeConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InitialNode #//ControlNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="JoinNodeConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//JoinNode #//ControlNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="MergeNodeConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//MergeNode #//ControlNodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InstanceValueConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InstanceValue #//ValueSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="AnyReceiveEventConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//AnyReceiveEvent #//MessageEventConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="MessageEventConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//MessageEvent #//EventConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CallEventConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CallEvent #//MessageEventConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ChangeEventConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ChangeEvent #//EventConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="FunctionBehaviorConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//FunctionBehavior #//OpaqueBehaviorConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="OpaqueBehaviorConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior #//BehaviorConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="SignalEventConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//SignalEvent #//MessageEventConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TimeEventConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TimeEvent #//EventConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TimeExpressionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TimeExpression #//ValueSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ObservationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Observation #//PackageableElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CommunicationPathConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CommunicationPath #//AssociationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DeviceConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Device #//NodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="NodeConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Node #//ClassConfiguration #//DeploymentTargetConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExecutionEnvironmentConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ExecutionEnvironment #//NodeConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InformationFlowConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InformationFlow #//PackageableElementConfiguration #//DirectedRelationshipConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="MessageConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Message #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InteractionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Interaction #//BehaviorConfiguration #//InteractionFragmentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InteractionFragmentConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InteractionFragment #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LifelineConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Lifeline #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="PartDecompositionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//PartDecomposition #//InteractionUseConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InteractionUseConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InteractionUse #//InteractionFragmentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="GateConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Gate #//MessageEndConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="MessageEndConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//MessageEnd #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InteractionOperandConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InteractionOperand #//NamespaceConfiguration #//InteractionFragmentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InteractionConstraintConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InteractionConstraint #//ConstraintConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="GeneralOrderingConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//GeneralOrdering #//NamedElementConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="OccurrenceSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//OccurrenceSpecification #//InteractionFragmentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="InformationItemConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//InformationItem #//ClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActionExecutionSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ActionExecutionSpecification #//ExecutionSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExecutionSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ExecutionSpecification #//InteractionFragmentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="BehaviorExecutionSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//BehaviorExecutionSpecification #//ExecutionSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="CombinedFragmentConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//CombinedFragment #//InteractionFragmentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ConsiderIgnoreFragmentConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ConsiderIgnoreFragment #//CombinedFragmentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ContinuationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Continuation #//InteractionFragmentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DestructionOccurrenceSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DestructionOccurrenceSpecification #//MessageOccurrenceSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="MessageOccurrenceSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//MessageOccurrenceSpecification #//OccurrenceSpecificationConfiguration #//MessageEndConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExecutionOccurrenceSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ExecutionOccurrenceSpecification #//OccurrenceSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="StateInvariantConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//StateInvariant #//InteractionFragmentConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="FinalStateConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//FinalState #//StateConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ProtocolTransitionConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ProtocolTransition #//TransitionConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="AssociationClassConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//AssociationClass #//ClassConfiguration #//AssociationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ComponentConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Component #//ClassConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ComponentRealizationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//ComponentRealization #//RealizationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActorConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Actor #//BehavioredClassifierConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DurationConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Duration #//ValueSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DurationConstraintConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DurationConstraint #//IntervalConstraintConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="IntervalConstraintConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//IntervalConstraint #//ConstraintConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="IntervalConfiguration" eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//Interval #//ValueSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DurationIntervalConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DurationInterval #//IntervalConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="DurationObservationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//DurationObservation #//ObservationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralBooleanConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LiteralBoolean #//LiteralSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralSpecificationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LiteralSpecification #//ValueSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralIntegerConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LiteralInteger #//LiteralSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralNullConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LiteralNull #//LiteralSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralRealConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LiteralReal #//LiteralSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralStringConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LiteralString #//LiteralSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralUnlimitedNaturalConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//LiteralUnlimitedNatural #//LiteralSpecificationConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TimeConstraintConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TimeConstraint #//IntervalConstraintConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TimeIntervalConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TimeInterval #//IntervalConfiguration"/>
+  <eClassifiers xsi:type="kernel:BehavioredEClass" name="TimeObservationConfiguration"
+      eSuperTypes="http://www.eclipse.org/uml2/5.0.0/UML#//TimeObservation #//ObservationConfiguration"/>
+  <eSubpackages name="LociFewSteps" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/lociFewSteps"
+      nsPrefix="LociConfFewSteps">
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExecutionEnvironment">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutionEnvironment"
+          lowerBound="1" eType="#//LociFewSteps/Locus" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="Locus">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="remove">
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//KernelFewSteps/ExtensionalValue"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="add">
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//KernelFewSteps/ExtensionalValue"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="instantiate">
+        <eParameters xsi:type="kernel:DirectedParameter" name="type" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="object" lowerBound="1"
+            eType="#//KernelFewSteps/Object" direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="factory" eType="#//LociFewSteps/ExecutionFactory"
+          containment="true" eOpposite="#//LociFewSteps/ExecutionFactory/locus_ExecutionFactory"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executor" eType="#//LociFewSteps/Executor"
+          containment="true" eOpposite="#//LociFewSteps/Executor/locus_Executor"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extensionalValues" upperBound="-1"
+          eType="#//KernelFewSteps/ExtensionalValue" containment="true" eOpposite="#//KernelFewSteps/ExtensionalValue/locus_ExtensionalValue"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="Executor">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="execute">
+        <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="context" eType="#//KernelFewSteps/Object"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="inputs" upperBound="-1"
+            eType="#//BasicBehaviorsFewSteps/ParameterValue"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputs" upperBound="-1"
+            eType="#//BasicBehaviorsFewSteps/ParameterValue" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="evaluate">
+        <eParameters xsi:type="kernel:DirectedParameter" name="specification" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//KernelFewSteps/Value" direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_Executor" eType="#//LociFewSteps/Locus"
+          eOpposite="#//LociFewSteps/Locus/executor"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExecutionFactory">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createExecution">
+        <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="context" eType="#//KernelFewSteps/Object"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="execution" eType="#//BasicBehaviorsFewSteps/Execution"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="instantiateVisitor">
+        <eParameters xsi:type="kernel:DirectedParameter" name="element" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="visitor" eType="#//LociFewSteps/SemanticVisitor"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createEvaluation">
+        <eParameters xsi:type="kernel:DirectedParameter" name="evaluation" lowerBound="1"
+            eType="#//KernelFewSteps/Evaluation" direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="specification" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getBuiltInType">
+        <eParameters xsi:type="kernel:DirectedParameter" name="name" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="type" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="instantiateOpaqueBehaviorExecution">
+        <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//OpaqueBehavior"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="execution" eType="#//BasicBehaviorsFewSteps/OpaqueBehaviorExecution"
+            direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExecutionFactory"
+          eType="#//LociFewSteps/Locus" eOpposite="#//LociFewSteps/Locus/factory"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="primitiveBehaviorPrototypes"
+          upperBound="-1" eType="#//BasicBehaviorsFewSteps/OpaqueBehaviorExecution"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="builtInTypes" upperBound="-1"
+          eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="SemanticVisitor">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="initialize"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeModelElement"
+          eType="#//ElementConfiguration" eOpposite="#//ElementConfiguration/semanticVisitor"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="KernelFewSteps" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/classes/kernelFewSteps"
+      nsPrefix="KernelConfFewSteps">
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ExtensionalValue" abstract="true"
+        eSuperTypes="#//KernelFewSteps/CompoundValue">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="destroy"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_ExtensionalValue"
+          eType="#//LociFewSteps/Locus" eOpposite="#//LociFewSteps/Locus/extensionalValues"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="Object" eSuperTypes="#//KernelFewSteps/ExtensionalValue">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+          eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="StructuredValue" abstract="true"
+        eSuperTypes="#//KernelFewSteps/Value">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createFeatureValues"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getFeatureValue">
+        <eParameters xsi:type="kernel:DirectedParameter" name="feature" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeature"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="featureValue" eType="#//KernelFewSteps/FeatureValue"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="setFeatureValue">
+        <eParameters xsi:type="kernel:DirectedParameter" name="feature" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeature"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="values" upperBound="-1"
+            eType="#//KernelFewSteps/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="position" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="CompoundValue" abstract="true"
+        eSuperTypes="#//KernelFewSteps/StructuredValue">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="featureValues" upperBound="-1"
+          eType="#//KernelFewSteps/FeatureValue" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="Value" abstract="true"
+        eSuperTypes="#//LociFewSteps/SemanticVisitor">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getTypes">
+        <eParameters xsi:type="kernel:DirectedParameter" name="types" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="copy">
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//KernelFewSteps/Value" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="new">
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//KernelFewSteps/Value" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="equals">
+        <eParameters xsi:type="kernel:DirectedParameter" name="otherValue" lowerBound="1"
+            eType="#//KernelFewSteps/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="return" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="hasType">
+        <eParameters xsi:type="kernel:DirectedParameter" name="type" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="hasType" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="Evaluation" abstract="true"
+        eSuperTypes="#//LociFewSteps/SemanticVisitor">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="evaluate">
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//KernelFewSteps/Value" direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="specification_Evaluation"
+          lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="locus_Evaluation" lowerBound="1"
+          eType="#//LociFewSteps/Locus"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralIntegerEvaluation"
+        eSuperTypes="#//KernelFewSteps/LiteralEvaluation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralEvaluation" abstract="true"
+        eSuperTypes="#//KernelFewSteps/Evaluation">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getType">
+        <eParameters xsi:type="kernel:DirectedParameter" name="builtInTypeName" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="type" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"
+            direction="RETURN"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="PrimitiveValue" abstract="true"
+        eSuperTypes="#//KernelFewSteps/Value">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//PrimitiveType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="IntegerValue" eSuperTypes="#//KernelFewSteps/PrimitiveValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value_IntegerValue" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="FeatureValue" abstract="true">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="copy">
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//KernelFewSteps/FeatureValue" direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+          eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//StructuralFeature"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="values_FeatureValue"
+          upperBound="-1" eType="#//KernelFewSteps/Value" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="BooleanValue" eSuperTypes="#//KernelFewSteps/PrimitiveValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value_BooleanValue" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="LiteralBooleanEvaluation"
+        eSuperTypes="#//KernelFewSteps/LiteralEvaluation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="Reference" eSuperTypes="#//KernelFewSteps/StructuredValue">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referent" lowerBound="1"
+          eType="#//KernelFewSteps/Object"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="BasicBehaviorsFewSteps" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/commonbehaviors/basicbehaviorsFewSteps"
+      nsPrefix="BasicBehaviorsConfFewSteps">
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="Execution" abstract="true"
+        eSuperTypes="#//KernelFewSteps/Object">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="setParameterValue">
+        <eParameters xsi:type="kernel:DirectedParameter" name="parameterValue" lowerBound="1"
+            eType="#//BasicBehaviorsFewSteps/ParameterValue"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="execute"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getOutputParameterValues">
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputParameterValues"
+            upperBound="-1" eType="#//BasicBehaviorsFewSteps/ParameterValue" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getParameterValue">
+        <eParameters xsi:type="kernel:DirectedParameter" name="parameter" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="parameterValue" eType="#//BasicBehaviorsFewSteps/ParameterValue"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="terminate"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getBehavior">
+        <eParameters xsi:type="kernel:DirectedParameter" name="behavior" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Behavior"
+            direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
+          eType="#//KernelFewSteps/Object"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValues" upperBound="-1"
+          eType="#//BasicBehaviorsFewSteps/ParameterValue" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="OpaqueBehaviorExecution"
+        abstract="true" eSuperTypes="#//BasicBehaviorsFewSteps/Execution">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="doBody">
+        <eParameters xsi:type="kernel:DirectedParameter" name="inputParameters" upperBound="-1"
+            eType="#//BasicBehaviorsFewSteps/ParameterValue"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputParameters" upperBound="-1"
+            eType="#//BasicBehaviorsFewSteps/ParameterValue"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ParameterValue">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="copy">
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//BasicBehaviorsFewSteps/ParameterValue" direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter_ParameterValue"
+          lowerBound="1" eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Parameter"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="values_ParameterValue"
+          upperBound="-1" eType="#//KernelFewSteps/Value" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="IntegerFunctionsFewSteps" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors/integerfunctionsFewSteps"
+      nsPrefix="IntegerFunctionsConfFewSteps">
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="IntegerPlusFunctionBehaviorExecution"
+        eSuperTypes="#//BasicBehaviorsFewSteps/OpaqueBehaviorExecution"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="IntegerGreaterFunctionBehaviorExecution"
+        eSuperTypes="#//BasicBehaviorsFewSteps/OpaqueBehaviorExecution"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="IntegerLessFunctionBehaviorExecution"
+        eSuperTypes="#//BasicBehaviorsFewSteps/OpaqueBehaviorExecution"/>
+  </eSubpackages>
+  <eSubpackages name="IntermediateActivitiesFewSteps" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/activities/intermediateactivitiesFewSteps"
+      nsPrefix="IntermediateActivitiesConfFewSteps">
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityExecution" eSuperTypes="#//BasicBehaviorsFewSteps/Execution">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="collectOutputParameterValues"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="setParameterValueValues">
+        <eParameters xsi:type="kernel:DirectedParameter" name="parameterValue" lowerBound="1"
+            eType="#//BasicBehaviorsFewSteps/ParameterValue"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputActivation" lowerBound="1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityParameterNodeActivation"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activationGroup" lowerBound="1"
+          eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivationGroup" containment="true"
+          eOpposite="#//IntermediateActivitiesFewSteps/ActivityNodeActivationGroup/activityExecution"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityNodeActivationGroup">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="activate">
+        <eParameters xsi:type="kernel:DirectedParameter" name="nodes" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="edges" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityEdge"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getOutputParameterNodeActivations"
+          eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject">
+        <eParameters xsi:type="kernel:DirectedParameter" name="outputParameterNodeActivations"
+            upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createNodeActivations">
+        <eParameters xsi:type="kernel:DirectedParameter" name="nodes" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createEdgeInstances">
+        <eParameters xsi:type="kernel:DirectedParameter" name="edges" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityEdge"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="run">
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createNodeActivation">
+        <eParameters xsi:type="kernel:DirectedParameter" name="node" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activation" eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getActivityExecution">
+        <eParameters xsi:type="kernel:DirectedParameter" name="activityExecution"
+            eType="#//IntermediateActivitiesFewSteps/ActivityExecution" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getNodeActivation">
+        <eParameters xsi:type="kernel:DirectedParameter" name="node" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activation" eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="runNodes">
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getInitiallyEnabledNodeActivations">
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="enabledActivations"
+            upperBound="-1" eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="checkIncomingEdges">
+        <eParameters xsi:type="kernel:DirectedParameter" name="activation" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="return" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getSourceActivations">
+        <eParameters xsi:type="kernel:DirectedParameter" name="activations" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingEdge" lowerBound="1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="sourceActivations"
+            upperBound="-1" eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="terminateAll"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activityExecution" eType="#//IntermediateActivitiesFewSteps/ActivityExecution"
+          eOpposite="#//IntermediateActivitiesFewSteps/ActivityExecution/activationGroup"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="edgeInstances" upperBound="-1"
+          eType="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance" containment="true"
+          eOpposite="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance/group_ActivityEdgeInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodeActivations" upperBound="-1"
+          eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation" containment="true"
+          eOpposite="#//IntermediateActivitiesFewSteps/ActivityNodeActivation/group_ActivityNodeActivation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityParameterNodeActivation"
+        eSuperTypes="#//IntermediateActivitiesFewSteps/ObjectNodeActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityNodeActivation"
+        eSuperTypes="#//LociFewSteps/SemanticVisitor">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createNodeActivations"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="createEdgeInstances"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="run"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="receiveOffer"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="isReady">
+        <eParameters xsi:type="kernel:DirectedParameter" name="isReady" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="takeOfferedTokens">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="fire">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="isRunning">
+        <eParameters xsi:type="kernel:DirectedParameter" name="isRunning" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="hasOffers">
+        <eParameters xsi:type="kernel:DirectedParameter" name="hasOffers" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="removeToken">
+        <eParameters xsi:type="kernel:DirectedParameter" name="token" lowerBound="1"
+            eType="#//IntermediateActivitiesFewSteps/Token"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="position" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="addTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="sendOffers">
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="addToken">
+        <eParameters xsi:type="kernel:DirectedParameter" name="token" lowerBound="1"
+            eType="#//IntermediateActivitiesFewSteps/Token"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="isSourceFor">
+        <eParameters xsi:type="kernel:DirectedParameter" name="isSourceFor" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="edgeInstance" lowerBound="1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getNodeActivation">
+        <eParameters xsi:type="kernel:DirectedParameter" name="node" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="activation" eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="terminate"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="clearTokens"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getExecutionLocus">
+        <eParameters xsi:type="kernel:DirectedParameter" name="locus" lowerBound="1"
+            eType="#//LociFewSteps/Locus" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getActivityExecution">
+        <eParameters xsi:type="kernel:DirectedParameter" name="activityExecution"
+            lowerBound="1" eType="#//IntermediateActivitiesFewSteps/ActivityExecution"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getExecutionContext">
+        <eParameters xsi:type="kernel:DirectedParameter" name="context" eType="#//KernelFewSteps/Object"
+            direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityNodeActivation"
+          eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivationGroup" eOpposite="#//IntermediateActivitiesFewSteps/ActivityNodeActivationGroup/nodeActivations"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="node_ActivityNodeActivation"
+          eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="running" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="incomingEdges" upperBound="-1"
+          eType="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance" eOpposite="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance/target"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingEdges" upperBound="-1"
+          eType="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance" eOpposite="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance/source"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRunning" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="heldTokens" upperBound="-1"
+          eType="#//IntermediateActivitiesFewSteps/Token" containment="true" eOpposite="#//IntermediateActivitiesFewSteps/Token/holder"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="Token">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="withdraw"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="isWithdrawn">
+        <eParameters xsi:type="kernel:DirectedParameter" name="isWithdrawn" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="transfer">
+        <eParameters xsi:type="kernel:DirectedParameter" name="holder" lowerBound="1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="token" lowerBound="1"
+            eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getValue">
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" eType="#//KernelFewSteps/Value"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="isControl">
+        <eParameters xsi:type="kernel:DirectedParameter" name="isControl" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="holder" eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"
+          eOpposite="#//IntermediateActivitiesFewSteps/ActivityNodeActivation/heldTokens"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityEdgeInstance">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="hasOffer">
+        <eParameters xsi:type="kernel:DirectedParameter" name="hasOffer" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="takeOfferedTokens">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="offeredTokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="countOfferedValues">
+        <eParameters xsi:type="kernel:DirectedParameter" name="count" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="takeOfferedTokens">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="offeredTokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="maxCount" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="sendOffer">
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="group_ActivityEdgeInstance"
+          lowerBound="1" eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivationGroup"
+          eOpposite="#//IntermediateActivitiesFewSteps/ActivityNodeActivationGroup/edgeInstances"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="edge_ActivityEdgeInstance"
+          eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ActivityEdge"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+          eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation" eOpposite="#//IntermediateActivitiesFewSteps/ActivityNodeActivation/outgoingEdges"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+          eType="#//IntermediateActivitiesFewSteps/ActivityNodeActivation" eOpposite="#//IntermediateActivitiesFewSteps/ActivityNodeActivation/incomingEdges"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="offers" upperBound="-1"
+          eType="#//IntermediateActivitiesFewSteps/Offer"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ControlNodeActivation"
+        abstract="true" eSuperTypes="#//IntermediateActivitiesFewSteps/ActivityNodeActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ObjectNodeActivation" abstract="true"
+        eSuperTypes="#//IntermediateActivitiesFewSteps/ActivityNodeActivation">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="countUnofferedTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="count" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="sendUnofferedTokens"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getUnofferedTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="unofferedTokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="countOfferedValues">
+        <eParameters xsi:type="kernel:DirectedParameter" name="count" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="takeUnofferedTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="tokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="offeredTokenCount" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="Offer">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="hasTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="hasTokens" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getOfferedTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="offeredTokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="countOfferedValues">
+        <eParameters xsi:type="kernel:DirectedParameter" name="count" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="removeWithdrawnTokens"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="offeredTokens" upperBound="-1"
+          eType="#//IntermediateActivitiesFewSteps/Token"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="DecisionNodeActivation"
+        eSuperTypes="#//IntermediateActivitiesFewSteps/ControlNodeActivation">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="removeJoinedControlTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="removedControlTokens"
+            upperBound="-1" eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens_joinedControlTokensRemoved"
+            upperBound="-1" eType="#//IntermediateActivitiesFewSteps/Token" direction="OUT"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getDecisionValues">
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="decisionValues" upperBound="-1"
+            eType="#//KernelFewSteps/Value" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="determineOfferedTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="incomingTokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="decisionValues" upperBound="-1"
+            eType="#//KernelFewSteps/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="edgeInstance" lowerBound="1"
+            eType="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="offeredTokens" upperBound="-1"
+            eType="#//IntermediateActivitiesFewSteps/Token" direction="RETURN"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="receivesOffer" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="OUT"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="test">
+        <eParameters xsi:type="kernel:DirectedParameter" name="guard" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//ValueSpecification"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//KernelFewSteps/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="result" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="hasObjectFlowInput">
+        <eParameters xsi:type="kernel:DirectedParameter" name="return" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getDecisionInputFlowValue">
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" eType="#//KernelFewSteps/Value"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="executeDecisionInputBehavior">
+        <eParameters xsi:type="kernel:DirectedParameter" name="inputValue" lowerBound="1"
+            eType="#//KernelFewSteps/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="decisionInputValue"
+            eType="#//KernelFewSteps/Value"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="decisionInputResult"
+            lowerBound="1" eType="#//KernelFewSteps/Value" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getDecisionInputFlowInstance">
+        <eParameters xsi:type="kernel:DirectedParameter" name="edgeInstance" eType="#//IntermediateActivitiesFewSteps/ActivityEdgeInstance"
+            direction="RETURN"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ControlToken" eSuperTypes="#//IntermediateActivitiesFewSteps/Token"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ObjectToken" eSuperTypes="#//IntermediateActivitiesFewSteps/Token">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//KernelFewSteps/Value"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ForkedToken" eSuperTypes="#//IntermediateActivitiesFewSteps/Token">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="initialize"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="baseToken" lowerBound="1"
+          eType="#//IntermediateActivitiesFewSteps/Token"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="remainingOffersCount"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseTokenIsWithdrawn"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="InitialNodeActivation"
+        eSuperTypes="#//IntermediateActivitiesFewSteps/ControlNodeActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="MergeNodeActivation" eSuperTypes="#//IntermediateActivitiesFewSteps/ControlNodeActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="JoinNodeActivation" eSuperTypes="#//IntermediateActivitiesFewSteps/ControlNodeActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ForkNodeActivation" eSuperTypes="#//IntermediateActivitiesFewSteps/ControlNodeActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActivityFinalNodeActivation"
+        eSuperTypes="#//IntermediateActivitiesFewSteps/ControlNodeActivation"/>
+  </eSubpackages>
+  <eSubpackages name="BasicActionsFewSteps" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/basicactionsFewSteps"
+      nsPrefix="BasicActionsConfFewSteps">
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ActionActivation" abstract="true"
+        eSuperTypes="#//IntermediateActivitiesFewSteps/ActivityNodeActivation">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getPinActivation">
+        <eParameters xsi:type="kernel:DirectedParameter" name="pin" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//Pin"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="return" eType="#//BasicActionsFewSteps/PinActivation"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="sendOffers"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="doAction"/>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="shouldFireAgain">
+        <eAnnotations source="http://www.modelexecution.org/xmof">
+          <details key="Step" value="true"/>
+        </eAnnotations>
+        <eParameters xsi:type="kernel:DirectedParameter" name="fireAgain" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="putToken">
+        <eParameters xsi:type="kernel:DirectedParameter" name="pin" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//OutputPin"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="value" lowerBound="1"
+            eType="#//KernelFewSteps/Value"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="takeTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="pin" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//InputPin"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="values" upperBound="-1"
+            eType="#//KernelFewSteps/Value" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="putTokens">
+        <eParameters xsi:type="kernel:DirectedParameter" name="pin" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/uml2/5.0.0/UML#//OutputPin"/>
+        <eParameters xsi:type="kernel:DirectedParameter" name="values" lowerBound="1"
+            upperBound="-1" eType="#//KernelFewSteps/Value"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pinActivations" upperBound="-1"
+          eType="#//BasicActionsFewSteps/PinActivation" eOpposite="#//BasicActionsFewSteps/PinActivation/actionActivation"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="firing" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="PinActivation" abstract="true"
+        eSuperTypes="#//IntermediateActivitiesFewSteps/ObjectNodeActivation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actionActivation" eType="#//BasicActionsFewSteps/ActionActivation"
+          eOpposite="#//BasicActionsFewSteps/ActionActivation/pinActivations"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="count_temp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="InputPinActivation" eSuperTypes="#//BasicActionsFewSteps/PinActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="OpaqueActionActivation"
+        eSuperTypes="#//BasicActionsFewSteps/ActionActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="OutputPinActivation" eSuperTypes="#//BasicActionsFewSteps/PinActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="CallActionActivation" abstract="true"
+        eSuperTypes="#//BasicActionsFewSteps/InvocationActionActivation">
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="getCallExecution">
+        <eParameters xsi:type="kernel:DirectedParameter" name="execution" lowerBound="1"
+            eType="#//BasicBehaviorsFewSteps/Execution" direction="RETURN"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="removeCallExecution">
+        <eParameters xsi:type="kernel:DirectedParameter" name="execution" lowerBound="1"
+            eType="#//BasicBehaviorsFewSteps/Execution"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="initializeInputParameterValues">
+        <eParameters xsi:type="kernel:DirectedParameter" name="callExecution" lowerBound="1"
+            eType="#//BasicBehaviorsFewSteps/Execution"/>
+      </eOperations>
+      <eOperations xsi:type="kernel:BehavioredEOperation" name="collectOutputParameterValues">
+        <eParameters xsi:type="kernel:DirectedParameter" name="callExecution" lowerBound="1"
+            eType="#//BasicBehaviorsFewSteps/Execution"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callExecutions" upperBound="-1"
+          eType="#//BasicBehaviorsFewSteps/Execution" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="InvocationActionActivation"
+        abstract="true" eSuperTypes="#//BasicActionsFewSteps/ActionActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="CallBehaviorActionActivation"
+        eSuperTypes="#//BasicActionsFewSteps/CallActionActivation"/>
+  </eSubpackages>
+  <eSubpackages name="IntermediateActionsFewSteps" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/intermediateactionsFewSteps"
+      nsPrefix="IntermediateActionsConfFewSteps">
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ValueSpecificationActionActivation"
+        eSuperTypes="#//BasicActionsFewSteps/ActionActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="CreateObjectActionActivation"
+        eSuperTypes="#//BasicActionsFewSteps/ActionActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="StructuralFeatureActionActivation"
+        abstract="true" eSuperTypes="#//BasicActionsFewSteps/ActionActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="ReadStructuralFeatureActionActivation"
+        eSuperTypes="#//IntermediateActionsFewSteps/StructuralFeatureActionActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="WriteStructuralFeatureActionActivation"
+        abstract="true" eSuperTypes="#//IntermediateActionsFewSteps/StructuralFeatureActionActivation"/>
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="AddStructuralFeatureValueActionActivation"
+        eSuperTypes="#//IntermediateActionsFewSteps/WriteStructuralFeatureActionActivation"/>
+  </eSubpackages>
+  <eSubpackages name="InputFewSteps" nsURI="http://www.modelexecution.org/xmof/example/fuml/configuration/inputFewSteps"
+      nsPrefix="InputConfFewSteps">
+    <eClassifiers xsi:type="kernel:BehavioredEClass" name="InputParameterValues">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterValues" upperBound="-1"
+          eType="#//BasicBehaviorsFewSteps/ParameterValue" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

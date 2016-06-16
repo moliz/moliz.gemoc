@@ -1,11 +1,11 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers
 
-import org.modelexecution.xmof.gemoc.engine.XMOFExecutionModelContext
-import org.gemoc.xdsmlframework.api.core.IRunConfiguration
-import org.gemoc.xdsmlframework.api.core.ExecutionMode
+import org.gemoc.execution.sequential.javaengine.SequentialModelExecutionContext
 import org.gemoc.executionframework.engine.commons.EngineContextException
+import org.gemoc.xdsmlframework.api.core.ExecutionMode
+import org.gemoc.xdsmlframework.api.core.IRunConfiguration
 
-class BenchmarkExecutionModelContext extends XMOFExecutionModelContext {
+class BenchmarkExecutionModelContext extends SequentialModelExecutionContext {
 	
 	new(IRunConfiguration runConfiguration) throws EngineContextException {
 		super(runConfiguration, ExecutionMode.Run)
