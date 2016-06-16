@@ -33,7 +33,7 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLa
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.BenchmarkTracingCase
 
 @RunWith(Parameterized)
-class BenchmarkPhase1Memory {
+class BenchmarkPhase1MemoryTestSuite {
 
 	val String tmpFolderContainer = "/home/ebousse/tmp/yay"
 
