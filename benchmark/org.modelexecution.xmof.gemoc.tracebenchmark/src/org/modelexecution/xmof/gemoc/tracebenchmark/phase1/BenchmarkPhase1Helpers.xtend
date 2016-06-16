@@ -15,6 +15,9 @@ import org.eclipse.emf.transaction.RecordingCommand
 import org.eclipse.emf.ecore.resource.ResourceSet
 import java.util.HashMap
 import java.util.Map
+import java.util.Collection
+import java.util.ArrayList
+import java.util.List
 
 class BenchmarkPhase1Helpers {
 
@@ -131,11 +134,23 @@ class BenchmarkPhase1Helpers {
 		}
 		ed.commandStack.execute(command)
 	}
-	
-	public static def <T, V> Map<T, V> mergeMaps(Map<T, V>... maps) {
+
+	public static def <T,U, V extends Collection<U>> Map<T, V> mergeMaps(Map<T, V>... maps) {
 		val result = new HashMap<T, V>()
-		for (m : maps)
-			result.putAll(m)
+		for (m : maps) {
+			for (k : m.keySet) {
+				if (result.containsKey(k)) {
+					val Collection<U> value = result.get(k)
+					val Collection<U> test = m.get(k)
+					value.addAll(test)
+				} else {
+					val List<U> value = new ArrayList<U>
+					value.addAll(m.get(k))
+					result.put(k, value as V)
+				}
+			}
+
+		}
 		return result
 	}
 }
