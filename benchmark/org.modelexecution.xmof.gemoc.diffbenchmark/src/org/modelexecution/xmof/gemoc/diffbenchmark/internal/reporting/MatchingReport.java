@@ -1,5 +1,7 @@
 package org.modelexecution.xmof.gemoc.diffbenchmark.internal.reporting;
 
+import org.modelexecution.xmof.gemoc.diffbenchmark.Evaluation.TraceType;
+
 public class MatchingReport extends Report {
 
 	private static final String MATCHING_REPORT_FOLDER = "/matching/";
@@ -7,11 +9,13 @@ public class MatchingReport extends Report {
 			+ "/trace_generic/";
 	private static final String DOMAINSPECIFIC_MATCHING_REPORT_FOLDER = MATCHING_REPORT_FOLDER
 			+ "/trace_domainspecific/";
+	private static final String PARTIAL_MATCHING_REPORT_FOLDER = MATCHING_REPORT_FOLDER
+			+ "/trace_partial/";
 
-	private boolean domainSpecificMatching = false;
+	private TraceType traceType = null;
 
-	public void setDomainSpecificMatching() {
-		this.domainSpecificMatching = true;
+	public void setTraceType(TraceType traceType) {
+		this.traceType = traceType;
 	}
 	
 	@Override
@@ -22,8 +26,20 @@ public class MatchingReport extends Report {
 
 	@Override
 	protected String getReportFolder() {
-		return REPORT_FOLDER
-				+ (domainSpecificMatching ? DOMAINSPECIFIC_MATCHING_REPORT_FOLDER
-						: GENERIC_MATCHING_REPORT_FOLDER);
+		String folder = "";
+		switch (traceType) {
+		case DOMAIN_SPECIFIC:
+			folder = DOMAINSPECIFIC_MATCHING_REPORT_FOLDER;
+			break;
+		case PARTIAL:
+			folder = PARTIAL_MATCHING_REPORT_FOLDER;
+			break;
+		case GENERIC:
+			folder = GENERIC_MATCHING_REPORT_FOLDER;
+			break;
+		default:
+			break;
+		}
+		return REPORT_FOLDER + folder;
 	}
 }
