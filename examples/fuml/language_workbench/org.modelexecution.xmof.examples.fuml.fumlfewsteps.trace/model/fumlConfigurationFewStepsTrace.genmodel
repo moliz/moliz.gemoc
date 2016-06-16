@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.fuml.fumlfewsteps.trace/src" modelPluginID="org.modelexecution.xmof.examples.fuml.fumlfewsteps.trace" modelName="FumlConfigurationFewStepsTrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>file:/tmp/diverse1906170211680052798tracemmgeneration/fumlConfigurationFewStepsTrace.ecore</foreignModel>
+  <genPackages prefix="FumlConfigurationFewStepsTrace" disposableProviderFactory="true">
+    <ecorePackage href="fumlConfigurationFewStepsTrace.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_Fire_PinActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_Fire_ActivityNodeActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/intermediateActivitiesFewSteps_tracedActivityEdgeInstances"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/intermediateActivitiesFewSteps_tracedActivityFinalNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/intermediateActivitiesFewSteps_tracedActivityNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/intermediateActivitiesFewSteps_tracedActivityParameterNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/intermediateActivitiesFewSteps_tracedDecisionNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/intermediateActivitiesFewSteps_tracedForkNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/intermediateActivitiesFewSteps_tracedInitialNodeActivations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/intermediateActivitiesFewSteps_tracedTokens"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/lociFewSteps_tracedSemanticVisitors"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//SpecificTrace/statesTrace"/>
+      </genFeatures>
+    </genClasses>
+    <nestedGenPackages prefix="Steps" disposableProviderFactory="true">
+      <ecorePackage href="fumlConfigurationFewStepsTrace.ecore#//Steps"/>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_Fire_PinActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_Fire_PinActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityFinalNodeActivation_Fire_ActivityFinalNodeActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_Fire_ActivityNodeActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_Fire_ActivityNodeActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation"/>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/RootImplicitStep"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//Steps/SpecificStep"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//Steps/SpecificStep/endingState"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//Steps/SpecificStep/startingState"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="States" disposableProviderFactory="true">
+      <ecorePackage href="fumlConfigurationFewStepsTrace.ecore#//States"/>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/ActionActivation_firing_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="fumlConfigurationFewStepsTrace.ecore#//States/ActionActivation_firing_Value/firing"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/ActionActivation_firing_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/ActionActivation_firing_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//States/ActionActivation_firing_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value/runtimeModelElement"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="fumlConfigurationFewStepsTrace.ecore#//States/SemanticVisitor_runtimeModelElement_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/State"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/State/actionActivation_firing_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/State/endedSteps"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/State/semanticVisitor_runtimeModelElement_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/State/startedSteps"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/Value"/>
+        <genFeatures property="Readonly" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/Value/statesNoOpposite"/>
+        </genFeatures>
+      </genClasses>
+      <nestedGenPackages prefix="FumlConfigurationFewSteps" disposableProviderFactory="true">
+        <ecorePackage href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps"/>
+        <nestedGenPackages prefix="LociFewSteps" disposableProviderFactory="true">
+          <ecorePackage href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/LociFewSteps"/>
+          <genClasses>
+            <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/LociFewSteps/TracedSemanticVisitor"/>
+            <genFeatures property="None" children="true" createChild="true">
+              <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/LociFewSteps/TracedSemanticVisitor/runtimeModelElementSequence"/>
+            </genFeatures>
+          </genClasses>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="ActivitiesFewSteps" disposableProviderFactory="true">
+          <ecorePackage href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps"/>
+          <nestedGenPackages prefix="IntermediateActivitiesFewSteps" disposableProviderFactory="true">
+            <ecorePackage href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps"/>
+            <genClasses>
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedActivityEdgeInstance"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedActivityFinalNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedActivityNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedActivityParameterNodeActivation"/>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedControlNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedDecisionNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedForkNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedInitialNodeActivation"/>
+            </genClasses>
+            <genClasses>
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedToken"/>
+            </genClasses>
+          </nestedGenPackages>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="ActionsFewSteps" disposableProviderFactory="true">
+          <ecorePackage href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActionsFewSteps"/>
+          <nestedGenPackages prefix="BasicActionsFewSteps" disposableProviderFactory="true">
+            <ecorePackage href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActionsFewSteps/BasicActionsFewSteps"/>
+            <genClasses image="false">
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActionsFewSteps/BasicActionsFewSteps/TracedActionActivation"/>
+              <genFeatures property="None" children="true" createChild="true">
+                <ecoreFeature xsi:type="ecore:EReference" href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActionsFewSteps/BasicActionsFewSteps/TracedActionActivation/firingSequence"/>
+              </genFeatures>
+            </genClasses>
+            <genClasses image="false">
+              <ecoreClass href="fumlConfigurationFewStepsTrace.ecore#//States/fumlConfigurationFewSteps/ActionsFewSteps/BasicActionsFewSteps/TracedPinActivation"/>
+            </genClasses>
+          </nestedGenPackages>
+        </nestedGenPackages>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+  <usedGenPackages href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic.fewsteps/model-gen/fuml.xmof.genmodel#//fumlConfigurationFewSteps"/>
+  <usedGenPackages href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.genmodel#//trace"/>
+  <usedGenPackages href="../../org.eclipse.uml2.types/model/Types.genmodel#//types"/>
+  <usedGenPackages href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"/>
+</genmodel:GenModel>

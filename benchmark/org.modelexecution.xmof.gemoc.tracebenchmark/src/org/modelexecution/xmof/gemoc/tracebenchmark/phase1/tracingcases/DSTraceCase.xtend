@@ -3,17 +3,15 @@ package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases
 import fr.inria.diverse.trace.commons.model.trace.GenericMSE
 import fr.inria.diverse.trace.commons.testutil.Investigation
 import fr.inria.diverse.trace.gemoc.traceaddon.AbstractTraceAddon
-import java.io.File
 import java.util.HashSet
+import java.util.function.Consumer
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.transaction.util.TransactionUtil
-import org.modelexecution.xmof.examples.fuml.trace.tracemanager.FumlConfigurationTraceConstructor
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine
 import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecutionModelContext
-import org.modelexecution.xmof.gemoc.tracebenchmark.memoryhelpers.MemoryAnalyzer
 import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages.BenchmarkLanguage
-import java.util.function.Consumer
+import org.modelexecution.xmof.gemoc.tracebenchmark.api.BenchmarkTraceConstructor
 
 class DSTraceCase extends AbstractWithTraceCase{ 
 
@@ -54,8 +52,8 @@ class DSTraceCase extends AbstractWithTraceCase{
 	}
 
 	override getNumberOfStates() {
-		if (this.traceAddon.traceConstructor instanceof FumlConfigurationTraceConstructor) {
-			val cast = this.traceAddon.traceConstructor as FumlConfigurationTraceConstructor
+		if (this.traceAddon.traceConstructor instanceof BenchmarkTraceConstructor) {
+			val cast = this.traceAddon.traceConstructor as BenchmarkTraceConstructor
 			return cast.statesSize
 		}
 		return -12
@@ -69,8 +67,8 @@ class DSTraceCase extends AbstractWithTraceCase{
 		val uri = URI.createPlatformResourceURI(pathInWS, true)
 
 		// Hack to replace references to regular objects in MSEs by traced objects (which are always serializable)
-		if (this.traceAddon.traceConstructor instanceof FumlConfigurationTraceConstructor) {
-			val cast = this.traceAddon.traceConstructor as FumlConfigurationTraceConstructor
+		if (this.traceAddon.traceConstructor instanceof BenchmarkTraceConstructor) {
+			val cast = this.traceAddon.traceConstructor as BenchmarkTraceConstructor
 			val pointed = new HashSet<EObject>
 			val pointers = Investigation::findObjectsThatPointToObjectsWithoutResource(traceResource, pointed)
 			for (mse : pointers.filter(GenericMSE)) {
@@ -108,8 +106,8 @@ class DSTraceCase extends AbstractWithTraceCase{
 
 		}
 
-		if (this.traceAddon.traceConstructor instanceof FumlConfigurationTraceConstructor) {
-			val cast = this.traceAddon.traceConstructor as FumlConfigurationTraceConstructor
+		if (this.traceAddon.traceConstructor instanceof BenchmarkTraceConstructor) {
+			val cast = this.traceAddon.traceConstructor as BenchmarkTraceConstructor
 
 			val ed = TransactionUtil.getEditingDomain(cast.traceResource)
 			if (ed != null)
@@ -128,8 +126,8 @@ class DSTraceCase extends AbstractWithTraceCase{
 	override cleanUp() {
 		preCleanUp
 
-		if (this.traceAddon.traceConstructor instanceof FumlConfigurationTraceConstructor) {
-			val cast = this.traceAddon.traceConstructor as FumlConfigurationTraceConstructor
+		if (this.traceAddon.traceConstructor instanceof BenchmarkTraceConstructor) {
+			val cast = this.traceAddon.traceConstructor as BenchmarkTraceConstructor
 			cast.cleanUp
 		}
 
@@ -138,8 +136,8 @@ class DSTraceCase extends AbstractWithTraceCase{
 	}
 
 	override getTraceResource() {
-		if (this.traceAddon.traceConstructor instanceof FumlConfigurationTraceConstructor) {
-			val cast = this.traceAddon.traceConstructor as FumlConfigurationTraceConstructor
+		if (this.traceAddon.traceConstructor instanceof BenchmarkTraceConstructor) {
+			val cast = this.traceAddon.traceConstructor as BenchmarkTraceConstructor
 			return cast.traceResource
 		}
 		return null
