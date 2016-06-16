@@ -10,13 +10,14 @@ class CSVLine {
 	public String traceMetamodel = ""
 	public String modelName = ""
 	public String inputName = ""
+	public Integer modelID = -1
 	public Long timeExe = new Long(0)
 	public List<Long> timeWarms = new ArrayList()
 	public List<Long> timeExes = new ArrayList()
 	public Integer traceNbStates = 0
 	public Long traceMemoryFootprint = new Long(0)
-	public Integer nbWarmups = 0
-	public Integer nbMeasurements = 0
+	public Integer nbWarmups = -1
+	public Integer nbMeasurements = -1
 
 	private static val separator = ";";
 

@@ -39,13 +39,13 @@ class BenchmarkPhase1SingleJVMTestSuite {
 	var URI modelURI
 	var String inputModelURIString
 	var BenchmarkTracingCase tracingCase
-	var CSVLine line
 
+	// var CSVLine line
 	public def void log(String s) {
 		println("### [single test case] " + s)
 	}
 
-	private def long execute(boolean wait, IProgressMonitor m) {
+	private def long execute(IProgressMonitor m) {
 
 		// Create engine parameterized with inputs
 		log("Preparing engine")
@@ -58,12 +58,10 @@ class BenchmarkPhase1SingleJVMTestSuite {
 		engine.initialize(executioncontext);
 		tracingCase.initialize();
 
-		// Execution
-		if (wait) {
-			System.gc // To clean memory if possible
-			Thread.sleep(2000) // To make sure the JVM is fully ready
-		}
-
+		System.gc // To clean memory if possible
+		Thread.sleep(3000) // To make sure the JVM is fully ready
+		// Preloading everything we can
+		// val allObjects = Investigation::findAllReachableObjects(executioncontext.resourceModel)
 		log("Running engine")
 		val timeStart = System.nanoTime
 		engine.start
@@ -71,10 +69,7 @@ class BenchmarkPhase1SingleJVMTestSuite {
 		val timeEnd = System.nanoTime
 		val time = timeEnd - timeStart
 
-		line.traceNbStates = tracingCase.numberOfStates
-
 		return time
-
 	}
 
 	@Test
@@ -115,7 +110,7 @@ class BenchmarkPhase1SingleJVMTestSuite {
 					// Create eclipse project in test WS
 					val eclipseProject = ResourcesPlugin::getWorkspace().getRoot().getProject(projectName);
 					if (eclipseProject.exists)
-						eclipseProject.delete(true,m)
+						eclipseProject.delete(true, m)
 					eclipseProject.create(m)
 					eclipseProject.open(m)
 
@@ -129,15 +124,6 @@ class BenchmarkPhase1SingleJVMTestSuite {
 					tracingCase.logOperation = [s|log(s)]
 					tracingCase.language = language
 
-					// Prepare csv line
-					line = new CSVLine
-					line.inputName = inputModel
-					line.languageName = language.folderName
-					line.modelName = model
-					line.traceMetamodel = tracingCase.simpleName
-					line.nbWarmups = WARMUPS
-					line.nbMeasurements = NBMEASURES
-
 					// Create model URI
 					val modelFileInProject = modelFolderInWS.getFolder(language.folderName).getFile(model)
 					modelURI = URI.createPlatformResourceURI(modelFileInProject.fullPath.toString, true)
@@ -150,27 +136,10 @@ class BenchmarkPhase1SingleJVMTestSuite {
 						""
 					}
 
-					// Warmups
-					for (i : 0 ..< WARMUPS) {
-						log("Run warmup " + i)
-						val res = execute(false, m)
-						line.timeWarms.add(res)
-					}
-
-					// Real executions
-					var long sum = 0
-					val range = 0 ..< NBMEASURES
-					for (i : range) {
-						log("Run execution " + i)
-						val time = execute(true, m)
-						line.timeExes.add(time)
-						sum = sum + time
-					}
-
-					line.timeExe = sum / NBMEASURES
+					val time = execute(m)
 
 					// Store result in tmp file
-					outputTmpWriter.println(line.customToString)
+					outputTmpWriter.println(time)
 
 					log("Result written in " + outputTmp)
 
