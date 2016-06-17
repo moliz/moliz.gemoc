@@ -22,7 +22,7 @@ public abstract class Evaluation {
 	// Trace folders
 	private static final String GENERIC_TRACE_FOLDER = "platform:/plugin/org.modelexecution.xmof.gemoc.tracebenchmark/model_traces/fuml/generic_traces/";
 	private static final String DOMAIN_SPECIFIC_TRACE_FOLDER = "platform:/plugin/org.modelexecution.xmof.gemoc.tracebenchmark/model_traces/fuml/ds_traces/";
-	private static final String PARTIAL_TRACE_FOLDER = "platform:/plugin/org.modelexecution.xmof.gemoc.tracebenchmark/model_traces/fuml/partial_traces/";
+	private static final String PARTIAL_TRACE_FOLDER = "platform:/plugin/org.modelexecution.xmof.gemoc.tracebenchmark/model_traces/fumlFewSteps/partial_ds_traces/";
 
 	// Examples
 	private static final String FUML_ANON_COMPANY_NAME = "anonCompany";

@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.modelexecution.xmof.gemoc.diffbenchmark.Evaluation.TraceType;
+
 public abstract class Report {
 
 	public static final String LINE_SEPARATOR = System.getProperty("line.separator");
@@ -19,6 +21,12 @@ public abstract class Report {
 	private static final String REPORT_FILEENDING = ".csv";
 	
 	private List<ReportEntry> entries = new ArrayList<ReportEntry>();
+	
+	protected TraceType traceType = null;
+
+	public void setTraceType(TraceType traceType) {
+		this.traceType = traceType;
+	}
 	
 	public void addReportEntry(ReportEntry entry) {
 		entries.add(entry);

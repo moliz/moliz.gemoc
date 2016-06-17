@@ -7,18 +7,29 @@ public class TraceReport extends Report {
 			+ "/trace_generic/";
 	private static final String DOMAINSPECIFIC_TRACE_REPORT_FOLDER = TRACE_REPORT_FOLDER
 			+ "/trace_domainspecific/";
-
-	private boolean domainSpecificMatching = false;
+	private static final String PARTIAL_TRACE_REPORT_FOLDER = TRACE_REPORT_FOLDER
+			+ "/trace_partial/";
 
 	public void setDomainSpecific() {
-		this.domainSpecificMatching = true;
 	}
-
+	
 	@Override
 	protected String getReportFolder() {
-		return REPORT_FOLDER
-				+ (domainSpecificMatching ? DOMAINSPECIFIC_TRACE_REPORT_FOLDER
-						: GENERIC_TRACE_REPORT_FOLDER);
+		String folder = "";
+		switch (traceType) {
+		case DOMAIN_SPECIFIC:
+			folder = DOMAINSPECIFIC_TRACE_REPORT_FOLDER;
+			break;
+		case PARTIAL:
+			folder = PARTIAL_TRACE_REPORT_FOLDER;
+			break;
+		case GENERIC:
+			folder = GENERIC_TRACE_REPORT_FOLDER;
+			break;
+		default:
+			break;
+		}
+		return REPORT_FOLDER + folder;
 	}
 
 	@Override

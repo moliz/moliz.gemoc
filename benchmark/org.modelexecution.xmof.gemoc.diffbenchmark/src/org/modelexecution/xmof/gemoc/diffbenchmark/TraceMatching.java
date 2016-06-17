@@ -11,12 +11,14 @@ import org.modelexecution.xmof.gemoc.diffbenchmark.internal.MatchResult;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.TraceMatcher;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.TraceMatchingEvent;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.TraceMatchingEvent.EventType;
+import org.modelexecution.xmof.gemoc.diffbenchmark.internal.TraceMatchingListener;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.java.DomainSpecificTraceMatcherJava;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.java.GenericTraceMatcherJava;
+import org.modelexecution.xmof.gemoc.diffbenchmark.internal.java.PartialTraceMatcherJava;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.java.TraceMatcherJava;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.reporting.MatchingReport;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.reporting.MatchingReportEntry;
-import org.modelexecution.xmof.gemoc.diffbenchmark.internal.TraceMatchingListener;
+import org.modelexecution.xmof.gemoc.diffbenchmark.internal.reporting.TraceReport;
 
 public abstract class TraceMatching extends Evaluation implements
 		TraceMatchingListener {
@@ -24,6 +26,7 @@ public abstract class TraceMatching extends Evaluation implements
 	private static final String ITERATIONS_PROGRAM_ARGUMENT = "iterations";
 
 	private static MatchingReport report;
+	private static TraceReport traceReport;
 	
 	private TraceMatchingEvent previousStartEvent = null;
 	private String currentLeftPath = null;
@@ -32,16 +35,19 @@ public abstract class TraceMatching extends Evaluation implements
 	@BeforeClass
 	public static void initializeReport() {
 		report = new MatchingReport();
+		traceReport = new TraceReport();
 	}
 
 	@AfterClass
 	public static void printReport() {
 		report.printReportToFile();
+		traceReport.printReportToFile();
 	}
 	
 	@Before
 	public void setReportTraceType() {
 		report.setTraceType(getTraceType());
+		traceReport.setTraceType(getTraceType());
 	}
 	
 	@Override
@@ -293,6 +299,9 @@ public abstract class TraceMatching extends Evaluation implements
 			boolean match = matcher.match(leftTracemodelPath, rightTracemodelPath);
 			report.addReportEntry(new MatchingReportEntry(leftTracemodelPath, rightTracemodelPath,
 					matcher.getTimeEnd() - matcher.getTimeStart()));
+			//TODO
+			traceReport.addReportEntry(matcher.getTraceReportEntryLeftModel());
+			traceReport.addReportEntry(matcher.getTraceReportEntryRightModel());
 			matchResult = updateMatchResult(matchResult, match, matcher.matchedWithoutErrors());
 		}
 		return matchResult;
@@ -306,8 +315,10 @@ public abstract class TraceMatching extends Evaluation implements
 			matcher = new GenericTraceMatcherJava();
 			break;
 		case DOMAIN_SPECIFIC:
-		case PARTIAL:
 			matcher = new DomainSpecificTraceMatcherJava();
+			break;
+		case PARTIAL:
+			matcher = new PartialTraceMatcherJava();
 		}
 		return matcher;
 	}
