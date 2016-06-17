@@ -9,12 +9,22 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.gemochelpers.BenchmarkExecut
 class PartialDSCase extends DSTraceCase {
 
 	override configureEngineForTracing(XMOFExecutionEngine engine, BenchmarkExecutionModelContext context) {
+		
+		
+		this.engine = null
+		this.traceAddon = null
+		
 		if (engine.executionContext != null && engine.executionContext.executionPlatform != null) {
 			for (addon : engine.executionContext.executionPlatform.engineAddons) {
 				engine.executionContext.executionPlatform.removeEngineAddon(addon)
 			}
 		}
-		engine.executionContext.executionPlatform.addEngineAddon(language.partialTraceAddon)
+		this.traceAddon = language.partialTraceAddon
+		this.traceAddon.disableTraceSaving
+		context.executionPlatform.addEngineAddon(traceAddon)
+		traceAddon.disableTraceSaving
+		this.engine = engine
+		
 	}
 
 	override getSimpleName() {
