@@ -1,10 +1,14 @@
 package org.modelexecution.xmof.gemoc.diffbenchmark.internal.java;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.modelexecution.xmof.gemoc.diffbenchmark.internal.reporting.TraceReportEntry;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.util.EMFUtil;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.util.Util;
+import org.modelexecution.xmof.states.states.StateSystem;
 
 public abstract class TraceMatcherJava {
 
@@ -17,6 +21,9 @@ public abstract class TraceMatcherJava {
 	
 	private long timeStart = -1;
 	private long timeEnd = -1;
+	
+	private TraceReportEntry leftTraceReportEntry;
+	private TraceReportEntry rightTraceReportEntry;
 	
 	public TraceMatcherJava() {
 		setupResourceSet();
@@ -33,7 +40,8 @@ public abstract class TraceMatcherJava {
 
 		EObject left = leftModelResource.getContents().get(0);
 		EObject right = rightModelResource.getContents().get(0);
-
+		computeTraceReportEntries();
+		
 		boolean match = false;
 		try {
 			match = doMatching(left, right);
@@ -82,5 +90,36 @@ public abstract class TraceMatcherJava {
 	
 	public long getTimeEnd() {
 		return timeEnd;
+	}
+	
+	public TraceReportEntry getTraceReportEntryLeftModel() {
+		return leftTraceReportEntry;
+	}
+	
+	public TraceReportEntry getTraceReportEntryRightModel() {
+		return rightTraceReportEntry;
+	}
+	
+	private void computeTraceReportEntries() {
+		leftTraceReportEntry = computeTraceReportEntry(leftModelResource);
+		rightTraceReportEntry = computeTraceReportEntry(rightModelResource);
+	}
+	
+	private TraceReportEntry computeTraceReportEntry(Resource modelResource) {
+		return new TraceReportEntry(modelResource.getURI().toString(), computeStateNumber(modelResource));
+	}
+
+	private int computeStateNumber(Resource modelResource) {
+		int statenumber = 0;
+		EObject trace = modelResource.getContents().get(0);
+		if (trace instanceof StateSystem) {
+			StateSystem stateSystem = (StateSystem) trace;
+			statenumber = stateSystem.getStates().size();
+		} else {
+			EStructuralFeature statesTraceFeature = trace.eClass().getEStructuralFeature("statesTrace");
+			EList<?> statesTrace = (EList<?>)trace.eGet(statesTraceFeature);
+			statenumber = statesTrace.size();
+		}
+		return statenumber;
 	}
 }
