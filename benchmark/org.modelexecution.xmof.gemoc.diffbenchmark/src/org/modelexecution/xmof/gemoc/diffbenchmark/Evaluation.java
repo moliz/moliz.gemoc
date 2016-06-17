@@ -22,6 +22,7 @@ public abstract class Evaluation {
 	// Trace folders
 	private static final String GENERIC_TRACE_FOLDER = "platform:/plugin/org.modelexecution.xmof.gemoc.tracebenchmark/model_traces/fuml/generic_traces/";
 	private static final String DOMAIN_SPECIFIC_TRACE_FOLDER = "platform:/plugin/org.modelexecution.xmof.gemoc.tracebenchmark/model_traces/fuml/ds_traces/";
+	private static final String PARTIAL_TRACE_FOLDER = "platform:/plugin/org.modelexecution.xmof.gemoc.tracebenchmark/model_traces/fuml/partial_traces/";
 
 	// Examples
 	private static final String FUML_ANON_COMPANY_NAME = "anonCompany";
@@ -45,9 +46,16 @@ public abstract class Evaluation {
 				"org.apache.commons.logging.impl.NoOpLog");
 	}
 		
-	private String getTracemodelFolder(boolean domainSpecific) {
-		return domainSpecific ? DOMAIN_SPECIFIC_TRACE_FOLDER
-				: GENERIC_TRACE_FOLDER;
+	private String getTracemodelFolder(TraceType traceType) {
+		switch (traceType) {
+		case GENERIC:
+			return GENERIC_TRACE_FOLDER;
+		case DOMAIN_SPECIFIC:
+			return DOMAIN_SPECIFIC_TRACE_FOLDER;
+		case PARTIAL:
+			return PARTIAL_TRACE_FOLDER;
+		}
+		return null;
 	}
 	
 	protected String getFumlTracemetamodelPath(boolean domainSpecific) {
@@ -60,10 +68,10 @@ public abstract class Evaluation {
 	}
 		
 	protected String deriveAnonExampleTracemodelPath(int version,
-			boolean exists, boolean found, boolean acc, boolean domainSpecific) {
+			boolean exists, boolean found, boolean acc, TraceType traceType) {
 		String parameterDefinitionFileName = deriveAnonExampleParameterDefinitionFileName(
 				version, exists, found, acc);
-		return getTracemodelFolder(domainSpecific)
+		return getTracemodelFolder(traceType)
 				+ FUML_ANON_EXAMPLEB_MODEL_FILENAME + version + UML_EXTENSION + "_" + FUML_ANON_COMPANY_NAME + "/"
 				+ FUML_ANON_EXAMPLEB_EXAMPLE_NAME + "/"
 				+ parameterDefinitionFileName;
@@ -78,10 +86,10 @@ public abstract class Evaluation {
 	}
 	
 	protected String deriveNokiaExampleATracemodelPath(int version,
-			int f, int d, boolean domainSpecific) {
+			int f, int d, TraceType traceType) {
 		String parameterDefinitionFileName = deriveNokiaExampleAParameterDefinitionFileName(
 				version, f, d);
-		return getTracemodelFolder(domainSpecific)
+		return getTracemodelFolder(traceType)
 				+ FUML_NOKIA_EXAMPLEA_MODEL_FILENAME + version + UML_EXTENSION + "_" + FUML_NOKIA_COMPANY_NAME + "/"
 				+ FUML_NOKIA_EXAMPLEA_EXAMPLE_NAME + "/"
 				+ parameterDefinitionFileName;
@@ -95,10 +103,10 @@ public abstract class Evaluation {
 	}
 	
 	protected String deriveIBM2557TracemodelPath(int version,
-			int var2558, boolean domainSpecific) {
+			int var2558, TraceType traceType) {
 		String parameterDefinitionFileName = deriveIBM2557ParameterDefinitionFileName(
 				version, var2558);
-		return getTracemodelFolder(domainSpecific)
+		return getTracemodelFolder(traceType)
 				+ FUML_IBM_2557_MODEL_FILENAME + "-" + version + UML_EXTENSION + "_" + FUML_IBM_COMPANY_NAME + "/"
 				+ parameterDefinitionFileName;
 	}
@@ -115,4 +123,7 @@ public abstract class Evaluation {
 		return new String[]{FUML_TYPE_LIBRARY_PATH, FUML_BEHAVIOR_LIBRARY_PATH};
 	}
 	
+	public enum TraceType {
+		GENERIC, DOMAIN_SPECIFIC, PARTIAL
+	}
 }

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.MatchResult;
@@ -36,6 +37,11 @@ public abstract class TraceMatching extends Evaluation implements
 	@AfterClass
 	public static void printReport() {
 		report.printReportToFile();
+	}
+	
+	@Before
+	public void setReportTraceType() {
+		report.setTraceType(getTraceType());
 	}
 	
 	@Override
@@ -240,7 +246,7 @@ public abstract class TraceMatching extends Evaluation implements
 		assertFalse(result.matches());
 	}
 
-	protected abstract boolean domainSpecific();
+	abstract protected TraceType getTraceType();
 
 	protected MatchResult matchAnonExampleB(int version1, int version2,
 			boolean exists, boolean found) {
@@ -250,17 +256,17 @@ public abstract class TraceMatching extends Evaluation implements
 	protected MatchResult matchAnonExampleB(int version1, int version2,
 			boolean exists, boolean found, boolean acc) {
 		String leftTracemodePath = deriveAnonExampleTracemodelPath(version1,
-				exists, found, acc, domainSpecific());
+				exists, found, acc, getTraceType());
 		String rightTracemodelPath = deriveAnonExampleTracemodelPath(version2,
-				exists, found, acc, domainSpecific());
+				exists, found, acc, getTraceType());
 		MatchResult matchResult = matchFumlTraces(leftTracemodePath,
 				rightTracemodelPath);
 		return matchResult;
 	}
 
 	private MatchResult matchNokiaExampleA(int version1, int version2, int f, int d) {
-		String leftTracemodelPath = deriveNokiaExampleATracemodelPath(version1, f, d, domainSpecific());
-		String rightTracemodelPath = deriveNokiaExampleATracemodelPath(version2, f, d, domainSpecific());
+		String leftTracemodelPath = deriveNokiaExampleATracemodelPath(version1, f, d, getTraceType());
+		String rightTracemodelPath = deriveNokiaExampleATracemodelPath(version2, f, d, getTraceType());
 		MatchResult matchResult = matchFumlTraces(leftTracemodelPath,
 				rightTracemodelPath);
 		assertTrue(matchResult.matchedWithoutErrors());
@@ -269,8 +275,8 @@ public abstract class TraceMatching extends Evaluation implements
 	}
 	
 	private MatchResult matchIBM2557(int version1, int version2, int var2558) {
-		String leftTracemodelPath = deriveIBM2557TracemodelPath(version1, var2558, domainSpecific());
-		String rightTracemodelPath = deriveIBM2557TracemodelPath(version2, var2558, domainSpecific());
+		String leftTracemodelPath = deriveIBM2557TracemodelPath(version1, var2558, getTraceType());
+		String rightTracemodelPath = deriveIBM2557TracemodelPath(version2, var2558, getTraceType());
 		MatchResult matchResult = matchFumlTraces(leftTracemodelPath,
 				rightTracemodelPath);
 		assertTrue(matchResult.matchedWithoutErrors());
@@ -278,48 +284,49 @@ public abstract class TraceMatching extends Evaluation implements
 		return matchResult;
 	}
 	
-	private MatchResult matchFumlTraces(String leftTracemodelPath,
-			String rightTracemodelPath) {
-System.out.print("left: " + leftTracemodelPath + " - " + "right: " + rightTracemodelPath);
-		if (domainSpecific()) 
-			report.setDomainSpecificMatching();
-		setTracemodelPaths(leftTracemodelPath, rightTracemodelPath);
+	private MatchResult matchFumlTraces(String leftTracemodelPath, String rightTracemodelPath) {
+		System.out.print("left: " + leftTracemodelPath + " - " + "right: " + rightTracemodelPath);
 		MatchResult matchResult = null;
 		for (int i = 0; i < getIterationNumber(); ++i) {
-//			System.out.println(i);
-			TraceMatcherJava matcher;
-			if(domainSpecific()) {
-				matcher = new DomainSpecificTraceMatcherJava();
-			} else {
-				matcher = new GenericTraceMatcherJava();
-			}
-			matcher.registerListener(this);
-			boolean match = matcher.match(leftTracemodelPath,
-					rightTracemodelPath);
-			matchResult = updateMatchResult(matchResult, match,
-					matcher.matchedWithoutErrors());
+			System.out.println(i);
+			TraceMatcherJava matcher = createMatcher();
+			boolean match = matcher.match(leftTracemodelPath, rightTracemodelPath);
+			report.addReportEntry(new MatchingReportEntry(leftTracemodelPath, rightTracemodelPath,
+					matcher.getTimeEnd() - matcher.getTimeStart()));
+			matchResult = updateMatchResult(matchResult, match, matcher.matchedWithoutErrors());
 		}
-		unsetTracemodelPaths();
 		return matchResult;
 	}
+
+	private TraceMatcherJava createMatcher() {
+		TraceMatcherJava matcher = null;
+		TraceType traceTyepe = getTraceType();
+		switch (traceTyepe) {
+		case GENERIC:
+			matcher = new GenericTraceMatcherJava();
+			break;
+		case DOMAIN_SPECIFIC:
+		case PARTIAL:
+			matcher = new DomainSpecificTraceMatcherJava();
+		}
+		return matcher;
+	}
 	
-	private MatchResult matchFumlTracesECL(String leftTracemodelPath,
-			String rightTracemodelPath) {
-System.out.print("left: " + leftTracemodelPath + " - " + "right: " + rightTracemodelPath);
-		if (domainSpecific()) 
-			report.setDomainSpecificMatching();
+	@SuppressWarnings("unused")
+	private MatchResult matchFumlTracesECL(String leftTracemodelPath, String rightTracemodelPath) {
+		// System.out.print("left: " + leftTracemodelPath + " - " + "right: " +
+		// rightTracemodelPath);
+
 		setTracemodelPaths(leftTracemodelPath, rightTracemodelPath);
 		MatchResult matchResult = null;
 		for (int i = 0; i < getIterationNumber(); ++i) {
-//			System.out.println(i);
+			// System.out.println(i);
 			TraceMatcher matcher = setupTraceMatcher();
-			boolean match = matcher.match(leftTracemodelPath,
-					rightTracemodelPath, FUML_METMODEL_PATH,
+			boolean match = matcher.match(leftTracemodelPath, rightTracemodelPath, FUML_METMODEL_PATH,
 					FUML_CONFIGURATION_PATH,
-					getFumlTracemetamodelPath(domainSpecific()),
-					getFumlMatchrules(domainSpecific()));
-			matchResult = updateMatchResult(matchResult, match,
-					matcher.matchedWithoutErrors());
+					getFumlTracemetamodelPath(getTraceType() == TraceType.DOMAIN_SPECIFIC ? true : false),
+					getFumlMatchrules(getTraceType() == TraceType.DOMAIN_SPECIFIC ? true : false));
+			matchResult = updateMatchResult(matchResult, match, matcher.matchedWithoutErrors());
 		}
 		unsetTracemodelPaths();
 		return matchResult;
