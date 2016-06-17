@@ -1,7 +1,5 @@
 package org.modelexecution.xmof.gemoc.diffbenchmark.internal.reporting;
 
-import org.modelexecution.xmof.gemoc.diffbenchmark.Evaluation.TraceType;
-
 public class MatchingReport extends Report {
 
 	private static final String MATCHING_REPORT_FOLDER = "/matching/";
@@ -11,12 +9,6 @@ public class MatchingReport extends Report {
 			+ "/trace_domainspecific/";
 	private static final String PARTIAL_MATCHING_REPORT_FOLDER = MATCHING_REPORT_FOLDER
 			+ "/trace_partial/";
-
-	private TraceType traceType = null;
-
-	public void setTraceType(TraceType traceType) {
-		this.traceType = traceType;
-	}
 	
 	@Override
 	protected String printHeader() {
