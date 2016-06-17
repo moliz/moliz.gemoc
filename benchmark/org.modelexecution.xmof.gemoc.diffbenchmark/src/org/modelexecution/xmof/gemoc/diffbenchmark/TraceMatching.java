@@ -13,6 +13,7 @@ import org.modelexecution.xmof.gemoc.diffbenchmark.internal.TraceMatchingEvent;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.TraceMatchingEvent.EventType;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.java.DomainSpecificTraceMatcherJava;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.java.GenericTraceMatcherJava;
+import org.modelexecution.xmof.gemoc.diffbenchmark.internal.java.PartialTraceMatcherJava;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.java.TraceMatcherJava;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.reporting.MatchingReport;
 import org.modelexecution.xmof.gemoc.diffbenchmark.internal.reporting.MatchingReportEntry;
@@ -306,8 +307,10 @@ public abstract class TraceMatching extends Evaluation implements
 			matcher = new GenericTraceMatcherJava();
 			break;
 		case DOMAIN_SPECIFIC:
-		case PARTIAL:
 			matcher = new DomainSpecificTraceMatcherJava();
+			break;
+		case PARTIAL:
+			matcher = new PartialTraceMatcherJava();
 		}
 		return matcher;
 	}
