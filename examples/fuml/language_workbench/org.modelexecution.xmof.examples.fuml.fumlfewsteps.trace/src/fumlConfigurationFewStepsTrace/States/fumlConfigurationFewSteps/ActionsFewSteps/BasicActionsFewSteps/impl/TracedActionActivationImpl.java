@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class TracedActionActivationImpl extends TracedActivityNodeActivationImpl implements TracedActionActivation {
+public class TracedActionActivationImpl extends TracedActivityNodeActivationImpl implements TracedActionActivation {
 	/**
 	 * The cached value of the '{@link #getFiringSequence() <em>Firing Sequence</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

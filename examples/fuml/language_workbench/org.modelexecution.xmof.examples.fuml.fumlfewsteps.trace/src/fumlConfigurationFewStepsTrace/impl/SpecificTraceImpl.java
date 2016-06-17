@@ -11,6 +11,9 @@ import fumlConfigurationFewStepsTrace.SpecificTrace;
 
 import fumlConfigurationFewStepsTrace.States.State;
 
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedActionActivation;
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedPinActivation;
+
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityEdgeInstance;
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityFinalNodeActivation;
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityNodeActivation;
@@ -77,6 +80,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fumlConfigurationFewStepsTrace.impl.SpecificTraceImpl#getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_Sequence <em>Fuml Configuration Few Steps Activities Few Steps Intermediate Activities Few Steps Decision Node Activation Take Offered Tokens Decision Node Activation Sequence</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.impl.SpecificTraceImpl#getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_Sequence <em>Fuml Configuration Few Steps Activities Few Steps Intermediate Activities Few Steps Fork Node Activation Fire Fork Node Activation Sequence</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.impl.SpecificTraceImpl#getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence <em>Fuml Configuration Few Steps Activities Few Steps Intermediate Activities Few Steps Initial Node Activation Fire Initial Node Activation Sequence</em>}</li>
+ *   <li>{@link fumlConfigurationFewStepsTrace.impl.SpecificTraceImpl#getBasicActionsFewSteps_tracedActionActivations <em>Basic Actions Few Steps traced Action Activations</em>}</li>
+ *   <li>{@link fumlConfigurationFewStepsTrace.impl.SpecificTraceImpl#getBasicActionsFewSteps_tracedPinActivations <em>Basic Actions Few Steps traced Pin Activations</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.impl.SpecificTraceImpl#getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances <em>Intermediate Activities Few Steps traced Activity Edge Instances</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.impl.SpecificTraceImpl#getIntermediateActivitiesFewSteps_tracedActivityFinalNodeActivations <em>Intermediate Activities Few Steps traced Activity Final Node Activations</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.impl.SpecificTraceImpl#getIntermediateActivitiesFewSteps_tracedActivityNodeActivations <em>Intermediate Activities Few Steps traced Activity Node Activations</em>}</li>
@@ -251,6 +256,26 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * @ordered
 	 */
 	protected EList<FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation> fumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence;
+
+	/**
+	 * The cached value of the '{@link #getBasicActionsFewSteps_tracedActionActivations() <em>Basic Actions Few Steps traced Action Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBasicActionsFewSteps_tracedActionActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedActionActivation> basicActionsFewSteps_tracedActionActivations;
+
+	/**
+	 * The cached value of the '{@link #getBasicActionsFewSteps_tracedPinActivations() <em>Basic Actions Few Steps traced Pin Activations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBasicActionsFewSteps_tracedPinActivations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TracedPinActivation> basicActionsFewSteps_tracedPinActivations;
 
 	/**
 	 * The cached value of the '{@link #getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances() <em>Intermediate Activities Few Steps traced Activity Edge Instances</em>}' containment reference list.
@@ -579,6 +604,30 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<TracedActionActivation> getBasicActionsFewSteps_tracedActionActivations() {
+		if (basicActionsFewSteps_tracedActionActivations == null) {
+			basicActionsFewSteps_tracedActionActivations = new EObjectContainmentEList<TracedActionActivation>(TracedActionActivation.class, this, FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_ACTION_ACTIVATIONS);
+		}
+		return basicActionsFewSteps_tracedActionActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TracedPinActivation> getBasicActionsFewSteps_tracedPinActivations() {
+		if (basicActionsFewSteps_tracedPinActivations == null) {
+			basicActionsFewSteps_tracedPinActivations = new EObjectContainmentEList<TracedPinActivation>(TracedPinActivation.class, this, FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_PIN_ACTIVATIONS);
+		}
+		return basicActionsFewSteps_tracedPinActivations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<TracedActivityEdgeInstance> getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances() {
 		if (intermediateActivitiesFewSteps_tracedActivityEdgeInstances == null) {
 			intermediateActivitiesFewSteps_tracedActivityEdgeInstances = new EObjectContainmentEList<TracedActivityEdgeInstance>(TracedActivityEdgeInstance.class, this, FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_EDGE_INSTANCES);
@@ -702,6 +751,10 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_ACTION_ACTIVATIONS:
+				return ((InternalEList<?>)getBasicActionsFewSteps_tracedActionActivations()).basicRemove(otherEnd, msgs);
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_PIN_ACTIVATIONS:
+				return ((InternalEList<?>)getBasicActionsFewSteps_tracedPinActivations()).basicRemove(otherEnd, msgs);
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_EDGE_INSTANCES:
 				return ((InternalEList<?>)getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances()).basicRemove(otherEnd, msgs);
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS:
@@ -766,6 +819,10 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_Sequence();
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_FEW_STEPS_ACTIVITIES_FEW_STEPS_INTERMEDIATE_ACTIVITIES_FEW_STEPS_INITIAL_NODE_ACTIVATION_FIRE_INITIAL_NODE_ACTIVATION_SEQUENCE:
 				return getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence();
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_ACTION_ACTIVATIONS:
+				return getBasicActionsFewSteps_tracedActionActivations();
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_PIN_ACTIVATIONS:
+				return getBasicActionsFewSteps_tracedPinActivations();
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_EDGE_INSTANCES:
 				return getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances();
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS:
@@ -862,6 +919,14 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_FEW_STEPS_ACTIVITIES_FEW_STEPS_INTERMEDIATE_ACTIVITIES_FEW_STEPS_INITIAL_NODE_ACTIVATION_FIRE_INITIAL_NODE_ACTIVATION_SEQUENCE:
 				getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence().clear();
 				getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence().addAll((Collection<? extends FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation>)newValue);
+				return;
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_ACTION_ACTIVATIONS:
+				getBasicActionsFewSteps_tracedActionActivations().clear();
+				getBasicActionsFewSteps_tracedActionActivations().addAll((Collection<? extends TracedActionActivation>)newValue);
+				return;
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_PIN_ACTIVATIONS:
+				getBasicActionsFewSteps_tracedPinActivations().clear();
+				getBasicActionsFewSteps_tracedPinActivations().addAll((Collection<? extends TracedPinActivation>)newValue);
 				return;
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_EDGE_INSTANCES:
 				getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances().clear();
@@ -963,6 +1028,12 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_FEW_STEPS_ACTIVITIES_FEW_STEPS_INTERMEDIATE_ACTIVITIES_FEW_STEPS_INITIAL_NODE_ACTIVATION_FIRE_INITIAL_NODE_ACTIVATION_SEQUENCE:
 				getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence().clear();
 				return;
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_ACTION_ACTIVATIONS:
+				getBasicActionsFewSteps_tracedActionActivations().clear();
+				return;
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_PIN_ACTIVATIONS:
+				getBasicActionsFewSteps_tracedPinActivations().clear();
+				return;
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_EDGE_INSTANCES:
 				getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances().clear();
 				return;
@@ -1037,6 +1108,10 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return fumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_Sequence != null && !fumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_Sequence.isEmpty();
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__FUML_CONFIGURATION_FEW_STEPS_ACTIVITIES_FEW_STEPS_INTERMEDIATE_ACTIVITIES_FEW_STEPS_INITIAL_NODE_ACTIVATION_FIRE_INITIAL_NODE_ACTIVATION_SEQUENCE:
 				return fumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence != null && !fumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence.isEmpty();
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_ACTION_ACTIVATIONS:
+				return basicActionsFewSteps_tracedActionActivations != null && !basicActionsFewSteps_tracedActionActivations.isEmpty();
+			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_PIN_ACTIVATIONS:
+				return basicActionsFewSteps_tracedPinActivations != null && !basicActionsFewSteps_tracedPinActivations.isEmpty();
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_EDGE_INSTANCES:
 				return intermediateActivitiesFewSteps_tracedActivityEdgeInstances != null && !intermediateActivitiesFewSteps_tracedActivityEdgeInstances.isEmpty();
 			case FumlConfigurationFewStepsTracePackage.SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS:

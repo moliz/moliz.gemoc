@@ -56,9 +56,31 @@ public class BasicActionsFewStepsFactoryImpl extends EFactoryImpl implements Bas
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case BasicActionsFewStepsPackage.TRACED_ACTION_ACTIVATION: return createTracedActionActivation();
+			case BasicActionsFewStepsPackage.TRACED_PIN_ACTIVATION: return createTracedPinActivation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracedActionActivation createTracedActionActivation() {
+		TracedActionActivationImpl tracedActionActivation = new TracedActionActivationImpl();
+		return tracedActionActivation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracedPinActivation createTracedPinActivation() {
+		TracedPinActivationImpl tracedPinActivation = new TracedPinActivationImpl();
+		return tracedPinActivation;
 	}
 
 	/**

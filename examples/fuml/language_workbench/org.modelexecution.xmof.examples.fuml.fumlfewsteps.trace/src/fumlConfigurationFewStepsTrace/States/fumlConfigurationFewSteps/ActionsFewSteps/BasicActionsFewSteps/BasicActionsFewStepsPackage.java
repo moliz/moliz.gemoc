@@ -4,6 +4,8 @@ package fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsF
 
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage;
 
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.LociFewSteps.LociFewStepsPackage;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -114,13 +116,22 @@ public interface BasicActionsFewStepsPackage extends EPackage {
 	int TRACED_PIN_ACTIVATION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_PIN_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = LociFewStepsPackage.TRACED_SEMANTIC_VISITOR__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
 	 * The number of structural features of the '<em>Traced Pin Activation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_PIN_ACTIVATION_FEATURE_COUNT = 0;
+	int TRACED_PIN_ACTIVATION_FEATURE_COUNT = LociFewStepsPackage.TRACED_SEMANTIC_VISITOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Traced Pin Activation</em>' class.
@@ -129,7 +140,7 @@ public interface BasicActionsFewStepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_PIN_ACTIVATION_OPERATION_COUNT = 0;
+	int TRACED_PIN_ACTIVATION_OPERATION_COUNT = LociFewStepsPackage.TRACED_SEMANTIC_VISITOR_OPERATION_COUNT + 0;
 
 
 	/**

@@ -227,6 +227,7 @@ public class BasicActionsFewStepsPackageImpl extends EPackageImpl implements Bas
 		// Obtain other dependent packages
 		IntermediateActivitiesFewStepsPackage theIntermediateActivitiesFewStepsPackage = (IntermediateActivitiesFewStepsPackage)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesFewStepsPackage.eNS_URI);
 		StatesPackage theStatesPackage = (StatesPackage)EPackage.Registry.INSTANCE.getEPackage(StatesPackage.eNS_URI);
+		LociFewStepsPackage theLociFewStepsPackage = (LociFewStepsPackage)EPackage.Registry.INSTANCE.getEPackage(LociFewStepsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -234,12 +235,14 @@ public class BasicActionsFewStepsPackageImpl extends EPackageImpl implements Bas
 
 		// Add supertypes to classes
 		tracedActionActivationEClass.getESuperTypes().add(theIntermediateActivitiesFewStepsPackage.getTracedActivityNodeActivation());
+		tracedPinActivationEClass.getESuperTypes().add(theLociFewStepsPackage.getTracedSemanticVisitor());
+		tracedPinActivationEClass.getESuperTypes().add(theIntermediateActivitiesFewStepsPackage.getTracedActivityNodeActivation());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(tracedActionActivationEClass, TracedActionActivation.class, "TracedActionActivation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(tracedActionActivationEClass, TracedActionActivation.class, "TracedActionActivation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTracedActionActivation_FiringSequence(), theStatesPackage.getActionActivation_firing_Value(), theStatesPackage.getActionActivation_firing_Value_Parent(), "firingSequence", null, 0, -1, TracedActionActivation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(tracedPinActivationEClass, TracedPinActivation.class, "TracedPinActivation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(tracedPinActivationEClass, TracedPinActivation.class, "TracedPinActivation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //BasicActionsFewStepsPackageImpl

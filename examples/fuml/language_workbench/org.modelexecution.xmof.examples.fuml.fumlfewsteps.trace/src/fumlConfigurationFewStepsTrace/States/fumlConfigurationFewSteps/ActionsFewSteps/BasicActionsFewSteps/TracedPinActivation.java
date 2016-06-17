@@ -2,7 +2,9 @@
  */
 package fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps;
 
-import org.eclipse.emf.ecore.EObject;
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityNodeActivation;
+
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.LociFewSteps.TracedSemanticVisitor;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.BasicActionsFewStepsPackage#getTracedPinActivation()
- * @model abstract="true"
+ * @model
  * @generated
  */
-public interface TracedPinActivation extends EObject {
+public interface TracedPinActivation extends TracedSemanticVisitor, TracedActivityNodeActivation {
 } // TracedPinActivation

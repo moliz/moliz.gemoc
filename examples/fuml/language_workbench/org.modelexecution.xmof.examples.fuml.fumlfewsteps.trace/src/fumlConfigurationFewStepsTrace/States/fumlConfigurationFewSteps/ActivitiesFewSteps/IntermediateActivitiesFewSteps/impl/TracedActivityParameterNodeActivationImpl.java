@@ -5,9 +5,9 @@ package fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.Activiti
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage;
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityParameterNodeActivation;
 
-import org.eclipse.emf.ecore.EClass;
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.LociFewSteps.impl.TracedSemanticVisitorImpl;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class TracedActivityParameterNodeActivationImpl extends MinimalEObjectImpl.Container implements TracedActivityParameterNodeActivation {
+public class TracedActivityParameterNodeActivationImpl extends TracedSemanticVisitorImpl implements TracedActivityParameterNodeActivation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

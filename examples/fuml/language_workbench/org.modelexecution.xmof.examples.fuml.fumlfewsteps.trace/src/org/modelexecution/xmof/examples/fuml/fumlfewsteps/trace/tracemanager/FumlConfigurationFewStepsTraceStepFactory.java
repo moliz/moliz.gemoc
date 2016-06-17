@@ -95,13 +95,17 @@ public class FumlConfigurationFewStepsTraceStepFactory implements IStepFactory {
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
 						.getActivityNodeActivation().getClassifierID()
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
+						.getActivityParameterNodeActivation().getClassifierID()
+				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
 						.getControlNodeActivation().getClassifierID()
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
 						.getDecisionNodeActivation().getClassifierID()
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
 						.getForkNodeActivation().getClassifierID()
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
-						.getInitialNodeActivation().getClassifierID()))
+						.getInitialNodeActivation().getClassifierID()
+				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.BasicActionsFewStepsPackage.eINSTANCE
+						.getPinActivation().getClassifierID()))
 
 		{
 			step = fumlConfigurationFewStepsTrace.Steps.StepsFactory.eINSTANCE
@@ -116,13 +120,17 @@ public class FumlConfigurationFewStepsTraceStepFactory implements IStepFactory {
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
 						.getActivityNodeActivation().getClassifierID()
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
+						.getActivityParameterNodeActivation().getClassifierID()
+				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
 						.getControlNodeActivation().getClassifierID()
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
 						.getDecisionNodeActivation().getClassifierID()
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
 						.getForkNodeActivation().getClassifierID()
 				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage.eINSTANCE
-						.getInitialNodeActivation().getClassifierID()))
+						.getInitialNodeActivation().getClassifierID()
+				|| ec.getClassifierID() == fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.BasicActionsFewStepsPackage.eINSTANCE
+						.getPinActivation().getClassifierID()))
 
 		{
 			step = fumlConfigurationFewStepsTrace.Steps.StepsFactory.eINSTANCE

@@ -5,9 +5,9 @@ package fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsF
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.BasicActionsFewStepsPackage;
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedPinActivation;
 
-import org.eclipse.emf.ecore.EClass;
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.LociFewSteps.impl.TracedSemanticVisitorImpl;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class TracedPinActivationImpl extends MinimalEObjectImpl.Container implements TracedPinActivation {
+public class TracedPinActivationImpl extends TracedSemanticVisitorImpl implements TracedPinActivation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

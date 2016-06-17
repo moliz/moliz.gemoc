@@ -49,6 +49,11 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 				for (TreeIterator<EObject> i = r.getAllContents(); i.hasNext();) {
 					EObject o = i.next();
 
+					if (o instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.Token) {
+						fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.Token o_cast = (fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.Token) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
 					if (o instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityEdgeInstance) {
 						fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityEdgeInstance o_cast = (fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityEdgeInstance) o;
 						addNewObjectToState(o_cast, lastState);
@@ -57,16 +62,6 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 					if (o instanceof fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor) {
 						fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor o_cast = (fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor) o;
 						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityParameterNodeActivation) {
-						fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityParameterNodeActivation o_cast = (fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityParameterNodeActivation) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.Token) {
-						fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.Token o_cast = (fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.Token) o;
-						addNewObjectToState(o_cast, lastState);
 					}
 				}
 			}
@@ -74,30 +69,65 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 		}
 	}
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.ActionActivation o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
+		boolean added = false;
 
+		if (!added && !exeToTraced.containsKey(o_cast)) {
+			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedActionActivation tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.BasicActionsFewStepsFactory.eINSTANCE
+					.createTracedActionActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getBasicActionsFewSteps_tracedActionActivations().add(tracedObject);
+
+			// Creation of the first value of the field firing
+			fumlConfigurationFewStepsTrace.States.ActionActivation_firing_Value firstValue_firing = fumlConfigurationFewStepsTrace.States.StatesFactory.eINSTANCE
+					.createActionActivation_firing_Value();
+
+			firstValue_firing.setFiring((boolean) o_cast.isFiring());
+			tracedObject.getFiringSequence().add(firstValue_firing);
+			newState.getActionActivation_firing_Values().add(firstValue_firing);
+
+			// Creation of the first value of the field runtimeModelElement
+			fumlConfigurationFewStepsTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = fumlConfigurationFewStepsTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						(fumlConfigurationFewSteps.ElementConfiguration) o_cast.getRuntimeModelElement());
+			} else {
+				firstValue_runtimeModelElement
+						.setRuntimeModelElement((fumlConfigurationFewSteps.ElementConfiguration) null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityEdgeInstance o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
+		boolean added = false;
 
-		if (!exeToTraced.containsKey(o_cast)) {
+		if (!added && !exeToTraced.containsKey(o_cast)) {
 			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityEdgeInstance tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsFactory.eINSTANCE
 					.createTracedActivityEdgeInstance();
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances().add(tracedObject);
 
 		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityFinalNodeActivation o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
+		boolean added = false;
 
-		if (!exeToTraced.containsKey(o_cast)) {
+		if (!added && !exeToTraced.containsKey(o_cast)) {
 			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityFinalNodeActivation tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsFactory.eINSTANCE
 					.createTracedActivityFinalNodeActivation();
 			exeToTraced.put(o_cast, tracedObject);
@@ -119,22 +149,31 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
 
 		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityNodeActivation o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
-
-		if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ControlNodeActivation) {
-			addNewObjectToState(
+		boolean added = false;
+		if (o_cast instanceof fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.PinActivation) {
+			added = addNewObjectToState(
+					(fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.PinActivation) o_cast, newState);
+		} else
+			if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityParameterNodeActivation) {
+			added = addNewObjectToState(
+					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityParameterNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ControlNodeActivation) {
+			added = addNewObjectToState(
 					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ControlNodeActivation) o_cast,
 					newState);
 		} else if (o_cast instanceof fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.ActionActivation) {
-			addNewObjectToState(
+			added = addNewObjectToState(
 					(fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.ActionActivation) o_cast, newState);
-		} else
+		}
 
-		if (!exeToTraced.containsKey(o_cast)) {
+		if (!added && !exeToTraced.containsKey(o_cast)) {
 			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityNodeActivation tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsFactory.eINSTANCE
 					.createTracedActivityNodeActivation();
 			exeToTraced.put(o_cast, tracedObject);
@@ -156,52 +195,72 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
 
 		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityParameterNodeActivation o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
+		boolean added = false;
 
-		if (!exeToTraced.containsKey(o_cast)) {
+		if (!added && !exeToTraced.containsKey(o_cast)) {
 			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityParameterNodeActivation tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsFactory.eINSTANCE
 					.createTracedActivityParameterNodeActivation();
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivitiesFewSteps_tracedActivityParameterNodeActivations().add(tracedObject);
 
+			// Creation of the first value of the field runtimeModelElement
+			fumlConfigurationFewStepsTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = fumlConfigurationFewStepsTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						(fumlConfigurationFewSteps.ElementConfiguration) o_cast.getRuntimeModelElement());
+			} else {
+				firstValue_runtimeModelElement
+						.setRuntimeModelElement((fumlConfigurationFewSteps.ElementConfiguration) null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
 		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ControlNodeActivation o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
-
-		if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.DecisionNodeActivation) {
-			addNewObjectToState(
-					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.DecisionNodeActivation) o_cast,
-					newState);
-		} else
-			if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ForkNodeActivation) {
-			addNewObjectToState(
-					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ForkNodeActivation) o_cast,
-					newState);
-		} else if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.InitialNodeActivation) {
-			addNewObjectToState(
+		boolean added = false;
+		if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.InitialNodeActivation) {
+			added = addNewObjectToState(
 					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.InitialNodeActivation) o_cast,
 					newState);
 		} else
-			if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityFinalNodeActivation) {
-			addNewObjectToState(
+			if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ForkNodeActivation) {
+			added = addNewObjectToState(
+					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ForkNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityFinalNodeActivation) {
+			added = addNewObjectToState(
 					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityFinalNodeActivation) o_cast,
+					newState);
+		} else
+			if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.DecisionNodeActivation) {
+			added = addNewObjectToState(
+					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.DecisionNodeActivation) o_cast,
 					newState);
 		}
 
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.DecisionNodeActivation o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
+		boolean added = false;
 
-		if (!exeToTraced.containsKey(o_cast)) {
+		if (!added && !exeToTraced.containsKey(o_cast)) {
 			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedDecisionNodeActivation tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsFactory.eINSTANCE
 					.createTracedDecisionNodeActivation();
 			exeToTraced.put(o_cast, tracedObject);
@@ -223,13 +282,15 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
 
 		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ForkNodeActivation o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
+		boolean added = false;
 
-		if (!exeToTraced.containsKey(o_cast)) {
+		if (!added && !exeToTraced.containsKey(o_cast)) {
 			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedForkNodeActivation tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsFactory.eINSTANCE
 					.createTracedForkNodeActivation();
 			exeToTraced.put(o_cast, tracedObject);
@@ -251,13 +312,15 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
 
 		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.InitialNodeActivation o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
+		boolean added = false;
 
-		if (!exeToTraced.containsKey(o_cast)) {
+		if (!added && !exeToTraced.containsKey(o_cast)) {
 			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedInitialNodeActivation tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsFactory.eINSTANCE
 					.createTracedInitialNodeActivation();
 			exeToTraced.put(o_cast, tracedObject);
@@ -279,24 +342,57 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
 
 		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.PinActivation o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
+		boolean added = false;
 
+		if (!added && !exeToTraced.containsKey(o_cast)) {
+			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedPinActivation tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.BasicActionsFewStepsFactory.eINSTANCE
+					.createTracedPinActivation();
+			exeToTraced.put(o_cast, tracedObject);
+			traceRoot.getBasicActionsFewSteps_tracedPinActivations().add(tracedObject);
+
+			// Creation of the first value of the field runtimeModelElement
+			fumlConfigurationFewStepsTrace.States.SemanticVisitor_runtimeModelElement_Value firstValue_runtimeModelElement = fumlConfigurationFewStepsTrace.States.StatesFactory.eINSTANCE
+					.createSemanticVisitor_runtimeModelElement_Value();
+
+			if (o_cast.getRuntimeModelElement() != null) {
+				firstValue_runtimeModelElement.setRuntimeModelElement(
+						(fumlConfigurationFewSteps.ElementConfiguration) o_cast.getRuntimeModelElement());
+			} else {
+				firstValue_runtimeModelElement
+						.setRuntimeModelElement((fumlConfigurationFewSteps.ElementConfiguration) null);
+			}
+
+			tracedObject.getRuntimeModelElementSequence().add(firstValue_runtimeModelElement);
+			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
+
+		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor o_cast,
+	private boolean addNewObjectToState(fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
-
-		if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityNodeActivation) {
-			addNewObjectToState(
+		boolean added = false;
+		if (o_cast instanceof fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.PinActivation) {
+			added = addNewObjectToState(
+					(fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.PinActivation) o_cast, newState);
+		} else
+			if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityParameterNodeActivation) {
+			added = addNewObjectToState(
+					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityParameterNodeActivation) o_cast,
+					newState);
+		} else if (o_cast instanceof fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityNodeActivation) {
+			added = addNewObjectToState(
 					(fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ActivityNodeActivation) o_cast,
 					newState);
-		} else
+		}
 
-		if (!exeToTraced.containsKey(o_cast)) {
+		if (!added && !exeToTraced.containsKey(o_cast)) {
 			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.LociFewSteps.TracedSemanticVisitor tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.LociFewSteps.LociFewStepsFactory.eINSTANCE
 					.createTracedSemanticVisitor();
 			exeToTraced.put(o_cast, tracedObject);
@@ -318,19 +414,22 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 			newState.getSemanticVisitor_runtimeModelElement_Values().add(firstValue_runtimeModelElement);
 
 		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
-	private void addNewObjectToState(
+	private boolean addNewObjectToState(
 			fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.Token o_cast,
 			fumlConfigurationFewStepsTrace.States.State newState) {
+		boolean added = false;
 
-		if (!exeToTraced.containsKey(o_cast)) {
+		if (!added && !exeToTraced.containsKey(o_cast)) {
 			fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedToken tracedObject = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsFactory.eINSTANCE
 					.createTracedToken();
 			exeToTraced.put(o_cast, tracedObject);
 			traceRoot.getIntermediateActivitiesFewSteps_tracedTokens().add(tracedObject);
 
 		} // end if (!exeToTraced.containsKey
+		return added;
 	}// end addNewObjectToState
 
 	private fumlConfigurationFewStepsTrace.States.State copyState(
@@ -612,9 +711,26 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 			implicitStep = fumlConfigurationFewStepsTrace.Steps.StepsFactory.eINSTANCE
 					.createFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_ImplicitStep();
 		} else
-			if (currentStep instanceof fumlConfigurationFewStepsTrace.Steps.FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation) {
+			if (currentStep instanceof fumlConfigurationFewStepsTrace.Steps.FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation) {
+			implicitStep = fumlConfigurationFewStepsTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof fumlConfigurationFewStepsTrace.Steps.FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation) {
+			implicitStep = fumlConfigurationFewStepsTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_ImplicitStep();
+		} else
+			if (currentStep instanceof fumlConfigurationFewStepsTrace.Steps.FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation) {
+			implicitStep = fumlConfigurationFewStepsTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof fumlConfigurationFewStepsTrace.Steps.FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation) {
 			implicitStep = fumlConfigurationFewStepsTrace.Steps.StepsFactory.eINSTANCE
 					.createFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_ImplicitStep();
+		} else
+			if (currentStep instanceof fumlConfigurationFewStepsTrace.Steps.FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation) {
+			implicitStep = fumlConfigurationFewStepsTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_ImplicitStep();
+		} else if (currentStep instanceof fumlConfigurationFewStepsTrace.Steps.FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation) {
+			implicitStep = fumlConfigurationFewStepsTrace.Steps.StepsFactory.eINSTANCE
+					.createFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_ImplicitStep();
 		}
 		if (implicitStep != null) {
 			implicitStep.setStartingState(startingState);

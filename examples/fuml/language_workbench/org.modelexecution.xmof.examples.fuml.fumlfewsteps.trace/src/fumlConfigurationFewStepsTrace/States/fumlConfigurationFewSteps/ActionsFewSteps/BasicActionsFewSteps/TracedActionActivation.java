@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.BasicActionsFewStepsPackage#getTracedActionActivation()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface TracedActionActivation extends TracedActivityNodeActivation {

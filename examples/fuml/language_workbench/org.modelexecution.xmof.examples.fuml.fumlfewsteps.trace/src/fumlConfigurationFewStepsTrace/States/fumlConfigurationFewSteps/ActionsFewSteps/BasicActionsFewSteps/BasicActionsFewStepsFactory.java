@@ -22,6 +22,24 @@ public interface BasicActionsFewStepsFactory extends EFactory {
 	BasicActionsFewStepsFactory eINSTANCE = fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.impl.BasicActionsFewStepsFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Traced Action Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Action Activation</em>'.
+	 * @generated
+	 */
+	TracedActionActivation createTracedActionActivation();
+
+	/**
+	 * Returns a new object of class '<em>Traced Pin Activation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traced Pin Activation</em>'.
+	 * @generated
+	 */
+	TracedPinActivation createTracedPinActivation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -291,7 +291,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityEdgeInstances() {
+	public EReference getSpecificTrace_BasicActionsFewSteps_tracedActionActivations() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -300,7 +300,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityFinalNodeActivations() {
+	public EReference getSpecificTrace_BasicActionsFewSteps_tracedPinActivations() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -309,7 +309,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityNodeActivations() {
+	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityEdgeInstances() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -318,7 +318,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityParameterNodeActivations() {
+	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityFinalNodeActivations() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -327,7 +327,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedDecisionNodeActivations() {
+	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityNodeActivations() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -336,7 +336,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedForkNodeActivations() {
+	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityParameterNodeActivations() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -345,7 +345,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedInitialNodeActivations() {
+	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedDecisionNodeActivations() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(22);
 	}
 
@@ -354,7 +354,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedTokens() {
+	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedForkNodeActivations() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(23);
 	}
 
@@ -363,7 +363,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_LociFewSteps_tracedSemanticVisitors() {
+	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedInitialNodeActivations() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(24);
 	}
 
@@ -372,8 +372,26 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_StatesTrace() {
+	public EReference getSpecificTrace_IntermediateActivitiesFewSteps_tracedTokens() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_LociFewSteps_tracedSemanticVisitors() {
+		return (EReference)specificTraceEClass.getEStructuralFeatures().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_StatesTrace() {
+		return (EReference)specificTraceEClass.getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -421,6 +439,8 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__FUML_CONFIGURATION_FEW_STEPS_ACTIVITIES_FEW_STEPS_INTERMEDIATE_ACTIVITIES_FEW_STEPS_DECISION_NODE_ACTIVATION_TAKE_OFFERED_TOKENS_DECISION_NODE_ACTIVATION_SEQUENCE);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__FUML_CONFIGURATION_FEW_STEPS_ACTIVITIES_FEW_STEPS_INTERMEDIATE_ACTIVITIES_FEW_STEPS_FORK_NODE_ACTIVATION_FIRE_FORK_NODE_ACTIVATION_SEQUENCE);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__FUML_CONFIGURATION_FEW_STEPS_ACTIVITIES_FEW_STEPS_INTERMEDIATE_ACTIVITIES_FEW_STEPS_INITIAL_NODE_ACTIVATION_FIRE_INITIAL_NODE_ACTIVATION_SEQUENCE);
+		createEReference(specificTraceEClass, SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_ACTION_ACTIVATIONS);
+		createEReference(specificTraceEClass, SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_PIN_ACTIVATIONS);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_EDGE_INSTANCES);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_NODE_ACTIVATIONS);
@@ -460,6 +480,7 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 		StepsPackage theStepsPackage = (StepsPackage)EPackage.Registry.INSTANCE.getEPackage(StepsPackage.eNS_URI);
 		StatesPackage theStatesPackage = (StatesPackage)EPackage.Registry.INSTANCE.getEPackage(StatesPackage.eNS_URI);
 		TracePackage theTracePackage = (TracePackage)EPackage.Registry.INSTANCE.getEPackage(TracePackage.eNS_URI);
+		BasicActionsFewStepsPackage theBasicActionsFewStepsPackage = (BasicActionsFewStepsPackage)EPackage.Registry.INSTANCE.getEPackage(BasicActionsFewStepsPackage.eNS_URI);
 		IntermediateActivitiesFewStepsPackage theIntermediateActivitiesFewStepsPackage = (IntermediateActivitiesFewStepsPackage)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesFewStepsPackage.eNS_URI);
 		LociFewStepsPackage theLociFewStepsPackage = (LociFewStepsPackage)EPackage.Registry.INSTANCE.getEPackage(LociFewStepsPackage.eNS_URI);
 
@@ -497,6 +518,8 @@ public class FumlConfigurationFewStepsTracePackageImpl extends EPackageImpl impl
 		initEReference(getSpecificTrace_FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_Sequence(), theStepsPackage.getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation(), null, "FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecificTrace_FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_Sequence(), theStepsPackage.getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation(), null, "FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecificTrace_FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence(), theStepsPackage.getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation(), null, "FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecificTrace_BasicActionsFewSteps_tracedActionActivations(), theBasicActionsFewStepsPackage.getTracedActionActivation(), null, "basicActionsFewSteps_tracedActionActivations", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSpecificTrace_BasicActionsFewSteps_tracedPinActivations(), theBasicActionsFewStepsPackage.getTracedPinActivation(), null, "basicActionsFewSteps_tracedPinActivations", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityEdgeInstances(), theIntermediateActivitiesFewStepsPackage.getTracedActivityEdgeInstance(), null, "intermediateActivitiesFewSteps_tracedActivityEdgeInstances", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityFinalNodeActivations(), theIntermediateActivitiesFewStepsPackage.getTracedActivityFinalNodeActivation(), null, "intermediateActivitiesFewSteps_tracedActivityFinalNodeActivations", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSpecificTrace_IntermediateActivitiesFewSteps_tracedActivityNodeActivations(), theIntermediateActivitiesFewStepsPackage.getTracedActivityNodeActivation(), null, "intermediateActivitiesFewSteps_tracedActivityNodeActivations", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

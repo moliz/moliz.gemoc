@@ -230,13 +230,31 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	int SPECIFIC_TRACE__FUML_CONFIGURATION_FEW_STEPS_ACTIVITIES_FEW_STEPS_INTERMEDIATE_ACTIVITIES_FEW_STEPS_INITIAL_NODE_ACTIVATION_FIRE_INITIAL_NODE_ACTIVATION_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 15;
 
 	/**
+	 * The feature id for the '<em><b>Basic Actions Few Steps traced Action Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_ACTION_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Basic Actions Few Steps traced Pin Activations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_PIN_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 17;
+
+	/**
 	 * The feature id for the '<em><b>Intermediate Activities Few Steps traced Activity Edge Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_EDGE_INSTANCES = TracePackage.TRACE_FEATURE_COUNT + 16;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_EDGE_INSTANCES = TracePackage.TRACE_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities Few Steps traced Activity Final Node Activations</b></em>' containment reference list.
@@ -245,7 +263,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 17;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_FINAL_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities Few Steps traced Activity Node Activations</b></em>' containment reference list.
@@ -254,7 +272,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 18;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities Few Steps traced Activity Parameter Node Activations</b></em>' containment reference list.
@@ -263,7 +281,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 19;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities Few Steps traced Decision Node Activations</b></em>' containment reference list.
@@ -272,7 +290,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_DECISION_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 20;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_DECISION_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities Few Steps traced Fork Node Activations</b></em>' containment reference list.
@@ -281,7 +299,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_FORK_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 21;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_FORK_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities Few Steps traced Initial Node Activations</b></em>' containment reference list.
@@ -290,7 +308,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_INITIAL_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 22;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_INITIAL_NODE_ACTIVATIONS = TracePackage.TRACE_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Intermediate Activities Few Steps traced Tokens</b></em>' containment reference list.
@@ -299,7 +317,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_TOKENS = TracePackage.TRACE_FEATURE_COUNT + 23;
+	int SPECIFIC_TRACE__INTERMEDIATE_ACTIVITIES_FEW_STEPS_TRACED_TOKENS = TracePackage.TRACE_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Loci Few Steps traced Semantic Visitors</b></em>' containment reference list.
@@ -308,7 +326,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LOCI_FEW_STEPS_TRACED_SEMANTIC_VISITORS = TracePackage.TRACE_FEATURE_COUNT + 24;
+	int SPECIFIC_TRACE__LOCI_FEW_STEPS_TRACED_SEMANTIC_VISITORS = TracePackage.TRACE_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>States Trace</b></em>' containment reference list.
@@ -317,7 +335,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__STATES_TRACE = TracePackage.TRACE_FEATURE_COUNT + 25;
+	int SPECIFIC_TRACE__STATES_TRACE = TracePackage.TRACE_FEATURE_COUNT + 27;
 
 	/**
 	 * The number of structural features of the '<em>Specific Trace</em>' class.
@@ -326,7 +344,7 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE_FEATURE_COUNT = TracePackage.TRACE_FEATURE_COUNT + 26;
+	int SPECIFIC_TRACE_FEATURE_COUNT = TracePackage.TRACE_FEATURE_COUNT + 28;
 
 	/**
 	 * The number of operations of the '<em>Specific Trace</em>' class.
@@ -523,6 +541,28 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSpecificTrace_FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fumlConfigurationFewStepsTrace.SpecificTrace#getBasicActionsFewSteps_tracedActionActivations <em>Basic Actions Few Steps traced Action Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Basic Actions Few Steps traced Action Activations</em>'.
+	 * @see fumlConfigurationFewStepsTrace.SpecificTrace#getBasicActionsFewSteps_tracedActionActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_BasicActionsFewSteps_tracedActionActivations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fumlConfigurationFewStepsTrace.SpecificTrace#getBasicActionsFewSteps_tracedPinActivations <em>Basic Actions Few Steps traced Pin Activations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Basic Actions Few Steps traced Pin Activations</em>'.
+	 * @see fumlConfigurationFewStepsTrace.SpecificTrace#getBasicActionsFewSteps_tracedPinActivations()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_BasicActionsFewSteps_tracedPinActivations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link fumlConfigurationFewStepsTrace.SpecificTrace#getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances <em>Intermediate Activities Few Steps traced Activity Edge Instances</em>}'.
@@ -794,6 +834,22 @@ public interface FumlConfigurationFewStepsTracePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SPECIFIC_TRACE__FUML_CONFIGURATION_FEW_STEPS_ACTIVITIES_FEW_STEPS_INTERMEDIATE_ACTIVITIES_FEW_STEPS_INITIAL_NODE_ACTIVATION_FIRE_INITIAL_NODE_ACTIVATION_SEQUENCE = eINSTANCE.getSpecificTrace_FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence();
+
+		/**
+		 * The meta object literal for the '<em><b>Basic Actions Few Steps traced Action Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_ACTION_ACTIVATIONS = eINSTANCE.getSpecificTrace_BasicActionsFewSteps_tracedActionActivations();
+
+		/**
+		 * The meta object literal for the '<em><b>Basic Actions Few Steps traced Pin Activations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__BASIC_ACTIONS_FEW_STEPS_TRACED_PIN_ACTIVATIONS = eINSTANCE.getSpecificTrace_BasicActionsFewSteps_tracedPinActivations();
 
 		/**
 		 * The meta object literal for the '<em><b>Intermediate Activities Few Steps traced Activity Edge Instances</b></em>' containment reference list feature.

@@ -206,13 +206,22 @@ public interface IntermediateActivitiesFewStepsPackage extends EPackage {
 	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Runtime Model Element Sequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION__RUNTIME_MODEL_ELEMENT_SEQUENCE = LociFewStepsPackage.TRACED_SEMANTIC_VISITOR__RUNTIME_MODEL_ELEMENT_SEQUENCE;
+
+	/**
 	 * The number of structural features of the '<em>Traced Activity Parameter Node Activation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION_FEATURE_COUNT = 0;
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION_FEATURE_COUNT = LociFewStepsPackage.TRACED_SEMANTIC_VISITOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Traced Activity Parameter Node Activation</em>' class.
@@ -221,7 +230,7 @@ public interface IntermediateActivitiesFewStepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION_OPERATION_COUNT = 0;
+	int TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION_OPERATION_COUNT = LociFewStepsPackage.TRACED_SEMANTIC_VISITOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.impl.TracedDecisionNodeActivationImpl <em>Traced Decision Node Activation</em>}' class.

@@ -356,6 +356,8 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 		// Add supertypes to classes
 		tracedActivityFinalNodeActivationEClass.getESuperTypes().add(this.getTracedControlNodeActivation());
 		tracedActivityNodeActivationEClass.getESuperTypes().add(theLociFewStepsPackage.getTracedSemanticVisitor());
+		tracedActivityParameterNodeActivationEClass.getESuperTypes().add(theLociFewStepsPackage.getTracedSemanticVisitor());
+		tracedActivityParameterNodeActivationEClass.getESuperTypes().add(this.getTracedActivityNodeActivation());
 		tracedControlNodeActivationEClass.getESuperTypes().add(this.getTracedActivityNodeActivation());
 		tracedDecisionNodeActivationEClass.getESuperTypes().add(this.getTracedControlNodeActivation());
 		tracedForkNodeActivationEClass.getESuperTypes().add(this.getTracedControlNodeActivation());

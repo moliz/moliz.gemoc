@@ -7,6 +7,9 @@ import fr.inria.diverse.trace.commons.model.trace.Trace;
 
 import fumlConfigurationFewStepsTrace.States.State;
 
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedActionActivation;
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedPinActivation;
+
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityEdgeInstance;
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityFinalNodeActivation;
 import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityNodeActivation;
@@ -63,6 +66,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fumlConfigurationFewStepsTrace.SpecificTrace#getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_Sequence <em>Fuml Configuration Few Steps Activities Few Steps Intermediate Activities Few Steps Decision Node Activation Take Offered Tokens Decision Node Activation Sequence</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.SpecificTrace#getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_Sequence <em>Fuml Configuration Few Steps Activities Few Steps Intermediate Activities Few Steps Fork Node Activation Fire Fork Node Activation Sequence</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.SpecificTrace#getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence <em>Fuml Configuration Few Steps Activities Few Steps Intermediate Activities Few Steps Initial Node Activation Fire Initial Node Activation Sequence</em>}</li>
+ *   <li>{@link fumlConfigurationFewStepsTrace.SpecificTrace#getBasicActionsFewSteps_tracedActionActivations <em>Basic Actions Few Steps traced Action Activations</em>}</li>
+ *   <li>{@link fumlConfigurationFewStepsTrace.SpecificTrace#getBasicActionsFewSteps_tracedPinActivations <em>Basic Actions Few Steps traced Pin Activations</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.SpecificTrace#getIntermediateActivitiesFewSteps_tracedActivityEdgeInstances <em>Intermediate Activities Few Steps traced Activity Edge Instances</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.SpecificTrace#getIntermediateActivitiesFewSteps_tracedActivityFinalNodeActivations <em>Intermediate Activities Few Steps traced Activity Final Node Activations</em>}</li>
  *   <li>{@link fumlConfigurationFewStepsTrace.SpecificTrace#getIntermediateActivitiesFewSteps_tracedActivityNodeActivations <em>Intermediate Activities Few Steps traced Activity Node Activations</em>}</li>
@@ -335,6 +340,38 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	 * @generated
 	 */
 	EList<FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation> getFumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_Sequence();
+
+	/**
+	 * Returns the value of the '<em><b>Basic Actions Few Steps traced Action Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedActionActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Basic Actions Few Steps traced Action Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Basic Actions Few Steps traced Action Activations</em>' containment reference list.
+	 * @see fumlConfigurationFewStepsTrace.FumlConfigurationFewStepsTracePackage#getSpecificTrace_BasicActionsFewSteps_tracedActionActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedActionActivation> getBasicActionsFewSteps_tracedActionActivations();
+
+	/**
+	 * Returns the value of the '<em><b>Basic Actions Few Steps traced Pin Activations</b></em>' containment reference list.
+	 * The list contents are of type {@link fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedPinActivation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Basic Actions Few Steps traced Pin Activations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Basic Actions Few Steps traced Pin Activations</em>' containment reference list.
+	 * @see fumlConfigurationFewStepsTrace.FumlConfigurationFewStepsTracePackage#getSpecificTrace_BasicActionsFewSteps_tracedPinActivations()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<TracedPinActivation> getBasicActionsFewSteps_tracedPinActivations();
 
 	/**
 	 * Returns the value of the '<em><b>Intermediate Activities Few Steps traced Activity Edge Instances</b></em>' containment reference list.

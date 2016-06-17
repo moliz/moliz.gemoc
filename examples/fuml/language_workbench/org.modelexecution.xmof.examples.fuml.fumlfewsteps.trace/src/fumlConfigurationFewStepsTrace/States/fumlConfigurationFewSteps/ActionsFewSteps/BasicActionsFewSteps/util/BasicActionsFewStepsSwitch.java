@@ -81,6 +81,8 @@ public class BasicActionsFewStepsSwitch<T> extends Switch<T> {
 			case BasicActionsFewStepsPackage.TRACED_PIN_ACTIVATION: {
 				TracedPinActivation tracedPinActivation = (TracedPinActivation)theEObject;
 				T result = caseTracedPinActivation(tracedPinActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedPinActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedPinActivation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

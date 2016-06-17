@@ -24,6 +24,7 @@ public class FumlConfigurationFewStepsTraceEngineAddon extends AbstractTraceAddo
 		return new FumlConfigurationFewStepsTraceConstructor(modelResource, traceResource, exeToTraced);
 	}
 
+
 	@Override
 	public ITraceExplorer loadTrace(Resource traceResource) {
 		return new ITraceExplorer() {
@@ -31,25 +32,25 @@ public class FumlConfigurationFewStepsTraceEngineAddon extends AbstractTraceAddo
 			@Override
 			public void notifyListeners() {
 				// TODO Auto-generated method stub
-
+				
 			}
 
 			@Override
 			public void addListener(ITraceListener listener) {
 				// TODO Auto-generated method stub
-
+				
 			}
 
 			@Override
 			public void removeListener(ITraceListener listener) {
 				// TODO Auto-generated method stub
-
+				
 			}
 
 			@Override
 			public void update() {
 				// TODO Auto-generated method stub
-
+				
 			}
 
 			@Override
@@ -157,19 +158,19 @@ public class FumlConfigurationFewStepsTraceEngineAddon extends AbstractTraceAddo
 			@Override
 			public void jump(EObject o) {
 				// TODO Auto-generated method stub
-
+				
 			}
 
 			@Override
 			public void jump(int i) {
 				// TODO Auto-generated method stub
-
+				
 			}
 
 			@Override
 			public void loadLastState() {
 				// TODO Auto-generated method stub
-
+				
 			}
 
 			@Override
@@ -229,13 +230,13 @@ public class FumlConfigurationFewStepsTraceEngineAddon extends AbstractTraceAddo
 			@Override
 			public void stepValue(int traceIndex) {
 				// TODO Auto-generated method stub
-
+				
 			}
 
 			@Override
 			public void backValue(int traceIndex) {
 				// TODO Auto-generated method stub
-
+				
 			}
 
 			@Override
@@ -265,14 +266,15 @@ public class FumlConfigurationFewStepsTraceEngineAddon extends AbstractTraceAddo
 			@Override
 			public void updateCallStack(Step step) {
 				// TODO Auto-generated method stub
-
+				
 			}
-
+			
 		};
 	}
 
 	@Override
 	public ITraceExplorer loadTrace(Resource modelResource, Resource traceResource, Map<EObject, EObject> tracedToExe) {
+		
 		return this.loadTrace(null);
 	}
 

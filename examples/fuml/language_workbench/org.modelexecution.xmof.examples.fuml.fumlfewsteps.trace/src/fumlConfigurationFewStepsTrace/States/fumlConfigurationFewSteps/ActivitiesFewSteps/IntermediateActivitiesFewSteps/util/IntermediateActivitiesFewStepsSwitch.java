@@ -93,6 +93,8 @@ public class IntermediateActivitiesFewStepsSwitch<T> extends Switch<T> {
 			case IntermediateActivitiesFewStepsPackage.TRACED_ACTIVITY_PARAMETER_NODE_ACTIVATION: {
 				TracedActivityParameterNodeActivation tracedActivityParameterNodeActivation = (TracedActivityParameterNodeActivation)theEObject;
 				T result = caseTracedActivityParameterNodeActivation(tracedActivityParameterNodeActivation);
+				if (result == null) result = caseTracedActivityNodeActivation(tracedActivityParameterNodeActivation);
+				if (result == null) result = caseTracedSemanticVisitor(tracedActivityParameterNodeActivation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

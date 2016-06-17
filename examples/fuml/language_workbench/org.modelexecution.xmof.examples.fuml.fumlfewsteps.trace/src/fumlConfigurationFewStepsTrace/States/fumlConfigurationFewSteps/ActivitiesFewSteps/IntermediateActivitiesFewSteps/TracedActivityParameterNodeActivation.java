@@ -2,7 +2,7 @@
  */
 package fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps;
 
-import org.eclipse.emf.ecore.EObject;
+import fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.LociFewSteps.TracedSemanticVisitor;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TracedActivityParameterNodeActivation extends EObject {
+public interface TracedActivityParameterNodeActivation extends TracedSemanticVisitor, TracedActivityNodeActivation {
 } // TracedActivityParameterNodeActivation
