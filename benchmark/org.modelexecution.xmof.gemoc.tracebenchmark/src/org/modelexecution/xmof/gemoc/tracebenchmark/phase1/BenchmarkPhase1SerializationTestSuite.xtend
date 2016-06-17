@@ -83,7 +83,7 @@ class BenchmarkPhase1SerializationTestSuite {
 		// Create engine parameterized with inputs
 		log("Preparing engine")
 		val XMOFExecutionEngine engine = new XMOFExecutionEngine();
-		engine.silentAddonsErrors = false
+		engine.stopOnAddonError = true
 		val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI, inputModelURIString)
 		val executioncontext = new BenchmarkExecutionModelContext(runConf);
 		executioncontext.initializeResourceModel();

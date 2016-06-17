@@ -50,7 +50,7 @@ class BenchmarkPhase1SingleJVMTestSuite {
 		// Create engine parameterized with inputs
 		log("Preparing engine")
 		val XMOFExecutionEngine engine = new XMOFExecutionEngine();
-		engine.silentAddonsErrors = false
+		engine.stopOnAddonError = true
 		val runConf = new BenchmarkRunConfiguration(language.languageFQN, modelURI, inputModelURIString)
 		val executioncontext = new BenchmarkExecutionModelContext(runConf);
 		executioncontext.initializeResourceModel();
@@ -66,6 +66,8 @@ class BenchmarkPhase1SingleJVMTestSuite {
 		val timeStart = System.nanoTime
 		engine.start
 		engine.joinThread
+		if (engine.error != null)
+			throw engine.error
 		val timeEnd = System.nanoTime
 		val time = timeEnd - timeStart
 
