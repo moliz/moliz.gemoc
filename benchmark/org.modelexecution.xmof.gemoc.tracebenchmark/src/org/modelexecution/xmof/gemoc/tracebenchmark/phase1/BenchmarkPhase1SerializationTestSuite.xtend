@@ -34,10 +34,11 @@ import org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases.Benchmar
 
 import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1Data.*
 import static org.modelexecution.xmof.gemoc.tracebenchmark.phase1.BenchmarkPhase1Helpers.*
+import org.eclipse.emf.transaction.util.TransactionUtil
+import org.eclipse.emf.transaction.RecordingCommand
 
 @RunWith(Parameterized)
 class BenchmarkPhase1SerializationTestSuite {
-
 
 	// Common to all tests (used by @BeforeClass and @AfterClass)
 	static var IProject eclipseProject
@@ -93,13 +94,14 @@ class BenchmarkPhase1SerializationTestSuite {
 		log("Running engine")
 		engine.start
 		engine.joinThread
+		if (engine.error != null)
+			throw engine.error
 
 		// Trace serialization
 		if (tracingCase.createsTrace) {
 
 			if (tracingCase.needsConfModelInTrace) {
 
-				log("Fixing conf model")
 				val Resource confModel = executioncontext.resourceModel
 				val Set<EObject> confModelRoots = new HashSet<EObject>
 				confModelRoots.addAll(confModel.contents)
@@ -107,8 +109,19 @@ class BenchmarkPhase1SerializationTestSuite {
 				Investigation::findObjectsThatPointToObjectsWithoutResource(confModel, pointed)
 				confModelRoots.addAll(Investigation::findRoots(pointed))
 
-				log("Add conf model to trace resource")
-				tracingCase.traceResource.contents.addAll(confModelRoots)
+				log("Add conf model elements to trace resource")
+				val Runnable run = [tracingCase.traceResource.contents.addAll(confModelRoots)]
+				val ed = TransactionUtil::getEditingDomain(confModel)
+				if (ed != null) {
+					val cmd = new RecordingCommand(ed) {
+						override protected doExecute() {
+							run.run
+						}
+					}
+					ed.commandStack.execute(cmd)
+				} else {
+					run.run
+				}
 
 			}
 
@@ -204,8 +217,8 @@ class BenchmarkPhase1SerializationTestSuite {
 			}
 		}
 		job.schedule
-		EclipseTestUtil.waitForJobs
-
+		EclipseTestUtil::waitForJobs
+		
 		if (job.result != Status.OK_STATUS) {
 			throw job.result.exception
 		}
