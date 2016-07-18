@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<iml:Header xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iml="http://cdlflex.tuwien.ac.at" id="00" name="simpleGantt">
+  <members xsi:type="iml:State" id="0" name="InitialStep_Gantt" init="true" current="true"/>
+  <members xsi:type="iml:StateTransition" id="11" name="01-02" booleanGuard="//@members.2"/>
+  <members xsi:type="iml:Variable" id="31" name="var_init" content="true" initialValue="true"/>
+  <members xsi:type="iml:State" id="02" name="S_InitialiseRobot1" activities="//@members.4"/>
+  <members xsi:type="iml:Activity" id="42" name="A_InitRobot1" sd="6"/>
+  <members xsi:type="iml:StateTransition" id="12" name="TA_InitRobot1" booleanGuard="//@members.6"/>
+  <members xsi:type="iml:Variable" id="32" name="var_initRobot1" content="false" initialValue="false"/>
+  <members xsi:type="iml:State" id="03" name="TerminalStep_Gantt" terminal="true"/>
+  <members xsi:type="iml:Connection" id="51" source="//@members.0" target="//@members.1"/>
+  <members xsi:type="iml:Connection" id="52" source="//@members.1" target="//@members.3"/>
+  <members xsi:type="iml:Connection" id="53" source="//@members.3" target="//@members.5"/>
+  <members xsi:type="iml:Connection" id="54" source="//@members.5" target="//@members.7"/>
+</iml:Header>

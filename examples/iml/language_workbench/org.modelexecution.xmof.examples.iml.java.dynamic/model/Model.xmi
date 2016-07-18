@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<iml:Header xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iml="http://cdlflex.tuwien.ac.at">
+  <members xsi:type="iml:State" name="1"/>
+  <members xsi:type="iml:State" name="2"/>
+  <members xsi:type="iml:SelectionDivergence" id="SelDiv"/>
+  <members xsi:type="iml:StateTransition"/>
+  <members xsi:type="iml:StateTransition"/>
+  <members xsi:type="iml:Connection" source="//@members.0" target="//@members.2"/>
+  <members xsi:type="iml:Connection" source="//@members.2" target="//@members.1"/>
+</iml:Header>
