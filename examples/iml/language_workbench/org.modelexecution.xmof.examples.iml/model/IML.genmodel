@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="org.modelexecution.xmof.examples.iml/src" modelPluginID="org.modelexecution.xmof.examples.iml" modelName="Iml" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false" language="">
+  <foreignModel>IML.ecore</foreignModel>
+  <genPackages prefix="Iml" basePackage="org.modelexecution.xmof.examples" disposableProviderFactory="true">
+    <ecorePackage href="IML.ecore#/"/>
+    <genClasses image="false">
+      <ecoreClass href="IML.ecore#//IdentifyableElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//IdentifyableElement/id"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//Header"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Header/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//Header/members"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="IML.ecore#//Element"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//Element/comment"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//Comment"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Comment/content"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//AddData"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//AddData/type"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//AddData/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//State"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//State/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//State/init"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//State/terminal"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//State/activities"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//StateTransition"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//StateTransition/name"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//StateTransition/booleanGuard"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//StateTransition/eventGuard"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//Jump"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//Jump/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//Activity"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Activity/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Activity/init"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Activity/terminal"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//Activity/firedEvents"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//Activity/time"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//Variable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Variable/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Variable/type"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Variable/content"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Variable/SIUnit"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Variable/initialValue"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Variable/address"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//Event"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Event/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//SimultaneousDivergence"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//SimultaneousConvergence"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//SelectionDivergence"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//SelectionConvergence"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="IML.ecore#//ConnectionPoint"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//Connection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//Connection/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="IML.ecore#//Connection/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="IML.ecore#//Time"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Time/earliestStart"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Time/latestStart"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Time/earliestEnd"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Time/latestEnd"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Time/duration"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="IML.ecore#//Time/delay"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

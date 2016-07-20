@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="iml" version="10.1.3.201511131800">
+  <ownedViewpoints name="IMLViewpoint" label="IML" modelFileExtension="iml">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="IMLDiagram" label="IML Diagram" initialisation="true" domainClass="iml.Header">
+      <defaultLayer name="Default">
+        <nodeMappings name="TransitionNode" semanticCandidatesExpression="feature:members" domainClass="iml.StateTransition">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="1" resizeKind="NSEW" arcWidth="0" arcHeight="0" roundedCorner="true" workspacePath="/org.modelexecution.xmof.examples.iml.design/img/StateTransition.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="SimultaneousDivergenceNode" semanticCandidatesExpression="feature:members" domainClass="iml.SimultaneousDivergence">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:id" sizeComputationExpression="1" resizeKind="NSEW" arcWidth="0" arcHeight="0" workspacePath="/org.modelexecution.xmof.examples.iml.design/img/SimultaneousConDivergence.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="SimultaneousConvergenceNode" semanticCandidatesExpression="feature:members" domainClass="iml.SimultaneousConvergence">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:id" sizeComputationExpression="1" resizeKind="NSEW" arcWidth="0" arcHeight="0" workspacePath="/org.modelexecution.xmof.examples.iml.design/img/SimultaneousConDivergence.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="ConnectionEdge" semanticCandidatesExpression="feature:members" sourceMapping="//@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='StateNode'] //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@nodeMappings[name='SimultaneousConvergenceNode'] //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@nodeMappings[name='SimultaneousDivergenceNode'] //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@nodeMappings[name='TransitionNode']" targetMapping="//@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@nodeMappings[name='TransitionNode'] //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@nodeMappings[name='SimultaneousConvergenceNode'] //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@nodeMappings[name='SimultaneousDivergenceNode'] //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='StateNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="iml.Connection" useDomainElement="true">
+          <style strokeColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_bordercolor']" targetArrow="NoDecoration" sizeComputationExpression="2"/>
+        </edgeMappings>
+        <edgeMappings name="ActivityEdge" sourceMapping="//@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='StateNode']" targetMapping="//@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='ActivityNode']" targetFinderExpression="feature:activities">
+          <style strokeColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_bordercolor']" targetArrow="NoDecoration" sizeComputationExpression="2"/>
+        </edgeMappings>
+        <containerMappings name="StateNode" semanticCandidatesExpression="feature:members" domainClass="iml.State">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="2" borderColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_bordercolor']" showIcon="false" backgroundColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_backgroundcolor']" foregroundColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_backgroundcolor']">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="feature:init">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="2" borderColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_bordercolor']" borderLineStyle="dash" showIcon="false" backgroundColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_backgroundcolor']" foregroundColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_backgroundcolor']">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="feature:terminal">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="2" borderColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_bordercolor']" borderLineStyle="dash" showIcon="false" backgroundColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_backgroundcolor']" foregroundColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_backgroundcolor']">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <containerMappings name="ActivityNode" semanticCandidatesExpression="feature:members" domainClass="iml.Activity">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_bordercolor']" showIcon="false" backgroundColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_backgroundcolor']" foregroundColor="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_backgroundcolor']">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+      </defaultLayer>
+      <additionalLayers name="Animation">
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="feature:current">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='StateNode']/@style //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='StateNode']/@conditionnalStyles.0/@style //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='StateNode']/@conditionnalStyles.1/@style //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='ActivityNode']/@style" referenceName="borderColor" value="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_bordercolor_highlight']"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='StateNode']/@style //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='ActivityNode']/@style //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='StateNode']/@conditionnalStyles.0/@style //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@containerMappings[name='StateNode']/@conditionnalStyles.1/@style" referenceName="backgroundColor" value="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_backgroundcolor_highlight']"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="feature:firing">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@nodeMappings[name='TransitionNode']/@style //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@nodeMappings[name='SimultaneousDivergenceNode']/@style //@ownedViewpoints[name='IMLViewpoint']/@ownedRepresentations[name='IMLDiagram']/@defaultLayer/@nodeMappings[name='SimultaneousConvergenceNode']/@style" referenceName="labelColor" value="//@userColorsPalettes[name='IMLColors']/@entries[name='iml_bordercolor_highlight']"/>
+          </vsmElementCustomizations>
+        </customization>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.examples.iml.design.services.IMLAnimationServices"/>
+  </ownedViewpoints>
+  <userColorsPalettes name="IMLColors">
+    <entries xsi:type="description:UserFixedColor" red="0" green="102" blue="255" name="iml_bordercolor"/>
+    <entries xsi:type="description:UserFixedColor" red="235" green="233" blue="217" name="iml_backgroundcolor"/>
+    <entries xsi:type="description:UserFixedColor" red="237" blue="49" name="iml_bordercolor_highlight"/>
+    <entries xsi:type="description:UserFixedColor" red="255" green="242" blue="204" name="iml_backgroundcolor_highlight"/>
+  </userColorsPalettes>
+</description:Group>

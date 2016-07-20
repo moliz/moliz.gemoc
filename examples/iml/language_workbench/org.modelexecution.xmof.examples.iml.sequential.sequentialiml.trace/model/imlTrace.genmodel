@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.iml.sequential.sequentialiml.trace/src" modelPluginID="org.modelexecution.xmof.examples.iml.sequential.sequentialiml.trace" modelName="ImlTrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>file:/C:/Users/tanjam/AppData/Local/Temp/diverse3986797532764230090tracemmgeneration/imlTrace.ecore</foreignModel>
+  <genPackages prefix="ImlTrace" disposableProviderFactory="true">
+    <ecorePackage href="imlTrace.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="imlTrace.ecore#//SpecificTrace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_Activity_DoExecute_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_Header_Execute_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_SimultaneousConvergence_DoFire_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_SimultaneousDivergence_DoFire_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_StateTransition_DoFire_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_State_ExecuteActivities_Sequence"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedActivitys"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedAddDatas"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedConnections"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedEvents"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedHeaders"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedJumps"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedSelectionConvergences"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedSelectionDivergences"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedSimultaneousConvergences"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedSimultaneousDivergences"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedStateTransitions"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedStates"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/iml_tracedVariables"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/statesTrace"/>
+      </genFeatures>
+    </genClasses>
+    <nestedGenPackages prefix="Steps" disposableProviderFactory="true">
+      <ecorePackage href="imlTrace.ecore#//Steps"/>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_Activity_DoExecute"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_Activity_DoExecute/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_Header_Execute"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_Header_Execute/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_Header_Execute_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_Header_Execute_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SimultaneousConvergence_DoFire"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_SimultaneousConvergence_DoFire/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SimultaneousConvergence_DoFire_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SimultaneousConvergence_DoFire_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SimultaneousDivergence_DoFire"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_SimultaneousDivergence_DoFire/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SimultaneousDivergence_DoFire_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SimultaneousDivergence_DoFire_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_StateTransition_DoFire"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_StateTransition_DoFire/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_StateTransition_DoFire_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_StateTransition_DoFire_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_State_ExecuteActivities"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_State_ExecuteActivities/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_State_ExecuteActivities_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_State_ExecuteActivities_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/RootImplicitStep"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//Steps/SpecificStep"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//Steps/SpecificStep/endingState"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//Steps/SpecificStep/startingState"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="States" disposableProviderFactory="true">
+      <ecorePackage href="imlTrace.ecore#//States"/>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//States/Activity_current_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="imlTrace.ecore#//States/Activity_current_Value/current"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/Activity_current_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/Activity_current_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//States/Activity_current_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//States/ConnectionPoint_firing_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="imlTrace.ecore#//States/ConnectionPoint_firing_Value/firing"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/ConnectionPoint_firing_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/ConnectionPoint_firing_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//States/ConnectionPoint_firing_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//States/State"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/State/activity_current_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/State/connectionPoint_firing_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/State/endedSteps"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/State/startedSteps"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/State/state_current_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/State/variable_value_Values"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//States/State_current_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="imlTrace.ecore#//States/State_current_Value/current"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/State_current_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/State_current_Value/states"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//States/State_current_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//States/Value"/>
+        <genFeatures property="Readonly" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/Value/statesNoOpposite"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//States/Variable_value_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/Variable_value_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/Variable_value_Value/states"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="imlTrace.ecore#//States/Variable_value_Value/value"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//States/Variable_value_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <nestedGenPackages prefix="Iml" disposableProviderFactory="true">
+        <ecorePackage href="imlTrace.ecore#//States/iml"/>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedActivity"/>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedActivity/currentSequence"/>
+          </genFeatures>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedActivity/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedAddData"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedAddData/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedConnection"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedConnection/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedConnectionPoint"/>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedConnectionPoint/firingSequence"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedElement"/>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedEvent"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedEvent/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedHeader"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedHeader/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses image="false">
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedIdentifyableElement"/>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedJump"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedJump/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedSelectionConvergence"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedSelectionConvergence/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedSelectionDivergence"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedSelectionDivergence/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedSimultaneousConvergence"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedSimultaneousConvergence/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedSimultaneousDivergence"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedSimultaneousDivergence/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedState"/>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedState/currentSequence"/>
+          </genFeatures>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedState/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedStateTransition"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedStateTransition/originalObject"/>
+          </genFeatures>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="imlTrace.ecore#//States/iml/TracedVariable"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedVariable/originalObject"/>
+          </genFeatures>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//States/iml/TracedVariable/valueSequence"/>
+          </genFeatures>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+  <usedGenPackages href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.genmodel#//trace"/>
+  <usedGenPackages href="../../org.modelexecution.xmof.examples.iml.sequentialiml/model/SequentialIML.genmodel#//iml"/>
+</genmodel:GenModel>
