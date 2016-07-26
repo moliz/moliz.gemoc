@@ -52,6 +52,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	private boolean suspendForNodes = false;
 	private boolean ignoreSteps = false;
+	private XMOFBasedModelLoader loader;
 
 	public XMOFExecutionEngine() {
 		super();
@@ -68,7 +69,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		ignoreSteps = ((IXMOFRunConfiguration) executionContext.getRunConfiguration()).getIgnoreSteps()
 				|| suspendForNodes;
 
-		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
+		 loader = new XMOFBasedModelLoader(executionContext);
 		GemocXMOFBasedModel model = (GemocXMOFBasedModel) loader.loadXMOFBasedModel();
 
 		// If we are in basic run mode, we replace the static objects of the
@@ -251,6 +252,10 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		super.dispose();
 		this.configurationMap = null;
 		this.vm = null;
+	}
+
+	public XMOFBasedModelLoader getLoader() {
+		return loader;
 	}
 
 }
