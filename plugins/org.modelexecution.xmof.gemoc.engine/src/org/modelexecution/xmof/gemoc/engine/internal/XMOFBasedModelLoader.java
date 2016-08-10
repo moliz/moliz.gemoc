@@ -269,7 +269,7 @@ public class XMOFBasedModelLoader {
 		ResourceSet resourceSet = getResourceSet();
 		return TransactionUtil.getEditingDomain(resourceSet);
 	}
-	
+
 	public Resource getXMOFModelResource() {
 		return loadPlatformResource(getXMOFModelFilePath());
 	}

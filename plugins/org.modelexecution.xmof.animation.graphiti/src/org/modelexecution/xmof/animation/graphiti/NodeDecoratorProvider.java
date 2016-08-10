@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.decorator.internal;
+package org.modelexecution.xmof.animation.graphiti;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.emf.ecore.EObject;

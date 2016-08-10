@@ -820,6 +820,7 @@
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.decorator.DecoratorService"/>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.representation.sirius.design.services.ActivityDiagramService"/>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.representation.sirius.design.services.DecoratorServiceFallback"/>
   </ownedViewpoints>
   <userColorsPalettes>
     <entries xsi:type="description:UserFixedColor" red="232" green="239" blue="247" name="lighter blue"/>

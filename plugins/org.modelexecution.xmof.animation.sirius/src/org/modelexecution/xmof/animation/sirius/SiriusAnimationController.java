@@ -6,15 +6,16 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.controller;
+package org.modelexecution.xmof.animation.sirius;
 
 import java.util.HashMap;
 
 import org.eclipse.emf.common.util.URI;
-import org.modelexecution.xmof.animation.decorator.SiriusDiagramDecorator;
-import org.modelexecution.xmof.animation.handler.SiriusDiagramHandler;
+import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.mapping.Match;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
+
+
 
 /**
  * Animation controller for Sirius implementation. It extends the Animation Controller.

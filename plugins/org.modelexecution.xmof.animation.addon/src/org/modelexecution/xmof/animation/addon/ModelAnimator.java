@@ -6,26 +6,28 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation;
+package org.modelexecution.xmof.animation.addon;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.controller.AnimationController;
-import org.modelexecution.xmof.animation.controller.GraphitiAnimationController;
-import org.modelexecution.xmof.animation.controller.SiriusAnimationController;
-import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
-import org.modelexecution.xmof.gemoc.engine.ui.commons.XMOFRepresentation;
+import org.modelexecution.xmof.animation.graphiti.GraphitiAnimationController;
+import org.modelexecution.xmof.animation.sirius.SiriusAnimationController;
+import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
+
 /**
- * ModelAnimator class which implements the AddonInterface for notifications of debug events.
+ * ModelAnimator class which implements the AddonInterface for notifications of
+ * debug events.
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
@@ -37,31 +39,44 @@ public class ModelAnimator implements IEngineAddon {
 	private AnimationController animationController;
 
 	/**
-	 * Initialization of graphical representation. Either Graphiti or Sirius will be used
-	 * @param model A xMOF-based Model
-	 * @param resource 
-	 * @param animConfig RunConfiguration where the representation should be
+	 * Initialization of graphical representation. Either Graphiti or Sirius
+	 * will be used
+	 * 
+	 * @param model
+	 *            A xMOF-based Model
+	 * @param resource
+	 * @param animConfig
+	 *            RunConfiguration where the representation should be
 	 */
-	public void initialize(XMOFBasedModel model, Resource resource, RunConfiguration animConfig) {
-		String representation = animConfig.getXMOFRepresentation();
-		if (representation.equals(XMOFRepresentation.REPRESENTATION_GRAPHITI)) {
+	private void initialize(XMOFBasedModel model, Resource resource) {
+		String siriusRepresentationPath = resource.getURI().segment(1) + "/representations.aird";
+		URI siriusURI = URI.createURI("platform:/resource/" + siriusRepresentationPath);
+
+		if (new ExtensibleURIConverterImpl().exists(siriusURI, null)) {
+			animationController = new SiriusAnimationController(model, siriusURI);
+		} else {
 			animationController = new GraphitiAnimationController(model, resource);
-		} else if (representation.equals(XMOFRepresentation.REPRESENTATION_SIRIUS)) {
-			String airdURIString = "platform:/resource"+animConfig.getSiriusRepresentationModelPath();
-			URI airdURI = URI.createURI(airdURIString);
-			animationController = new SiriusAnimationController(model, airdURI);
 		}
+
 	}
 
+	
 	@Override
-	public void engineAboutToStart(IBasicExecutionEngine engine) {
-		// TODO Auto-generated method stub
+	public void engineAboutToStart(IBasicExecutionEngine executionEngine) {
+		
 
 	}
-
+	/**
+	 * After successfully starting the engine, the the animation plugin will be initialized.s
+	 * @param executionEngine
+	 */
 	@Override
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
-		// TODO Auto-generated method stub
+		if (executionEngine instanceof XMOFExecutionEngine){
+			XMOFExecutionEngine xmofEngine= (XMOFExecutionEngine)executionEngine;
+			initialize(xmofEngine.getXMOFBasedModel(), xmofEngine.getModelLoader().getXMOFModelResource());
+			
+		}
 
 	}
 
@@ -79,9 +94,9 @@ public class ModelAnimator implements IEngineAddon {
 
 	@Override
 	public void engineAboutToDispose(IBasicExecutionEngine engine) {
-		if (animationController!=null){
+		if (animationController != null) {
 			animationController.dispose();
-			animationController=null;
+			animationController = null;
 		}
 
 	}

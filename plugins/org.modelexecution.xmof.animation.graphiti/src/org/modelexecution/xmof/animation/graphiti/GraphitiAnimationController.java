@@ -6,14 +6,13 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.controller;
+package org.modelexecution.xmof.animation.graphiti;
 
 import java.util.HashMap;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.decorator.GraphitiDiagramDecorator;
-import org.modelexecution.xmof.animation.handler.GraphitiDiagramHandler;
+import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 /**

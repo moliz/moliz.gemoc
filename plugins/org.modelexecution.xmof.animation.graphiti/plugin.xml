@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.modelexecution.xmof.diagram.DecorationProvider">
+      <decoratorProvider
+            decoratorProviderClass="org.modelexecution.xmof.animation.graphiti.NodeDecoratorProvider">
+      </decoratorProvider>
+   </extension>
+
+</plugin>

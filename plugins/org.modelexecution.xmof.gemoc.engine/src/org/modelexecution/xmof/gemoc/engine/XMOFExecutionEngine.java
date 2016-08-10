@@ -253,8 +253,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		this.configurationMap = null;
 		this.vm = null;
 	}
-
-	public XMOFBasedModelLoader getLoader() {
+	
+	public XMOFBasedModelLoader getModelLoader(){
 		return loader;
 	}
 

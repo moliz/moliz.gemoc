@@ -42,7 +42,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.modelexecution.xmof.gemoc.engine,
  org.modelexecution.xmof.gemoc.engine.internal,
- org.modelexecution.xmof.gemoc.engine.ui,
- org.modelexecution.xmof.gemoc.engine.ui.commons,
- org.modelexecution.xmof.gemoc.engine.ui.launcher,
- org.modelexecution.xmof.gemoc.engine.ui.launcher.tabs
+ org.modelexecution.xmof.gemoc.engine.ui.commons

@@ -4,44 +4,16 @@ Bundle-Name: Animation
 Bundle-SymbolicName: org.modelexecution.xmof.animation;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.modelexecution.xmof.animation.ui.Activator
-Require-Bundle: org.gemoc.xdsmlframework.api,
- org.gemoc.executionframework.engine;bundle-version="0.1.0",
- org.modelexecution.xmof.editor;bundle-version="1.0.0",
- org.modelexecution.xmof.vm;bundle-version="1.0.0",
+Require-Bundle: org.modelexecution.xmof.vm;bundle-version="1.0.0",
  org.eclipse.core.runtime;bundle-version="3.10.0",
- org.eclipse.emf.common,
- org.eclipse.graphiti;bundle-version="0.11.2",
- org.eclipse.gmf.runtime.diagram.ui,
- org.eclipse.graphiti.ui,
  fr.inria.diverse.commons.eclipse.messagingsystem.api,
  org.eclipse.ui,
- org.eclipse.debug.ui;bundle-version="3.10.2",
- org.gemoc.executionframework.engine.ui,
- fr.obeo.dsl.debug.ide.sirius.ui;bundle-version="1.0.0",
- fr.obeo.dsl.debug;bundle-version="1.0.0",
- fr.obeo.dsl.debug.ide;bundle-version="1.0.0",
- fr.obeo.dsl.debug.ide.ui;bundle-version="1.0.0",
- org.gemoc.xdsmlframework.api;bundle-version="0.1.0",
- org.gemoc.xdsmlframework.ui.utils,
- org.gemoc.executionframework.ui,
- org.gemoc.executionframework.extensions.sirius,
- fr.inria.diverse.trace.gemoc.api,
- org.gemoc.execution.sequential.javaengine.ui,
- org.modelexecution.xmof.gemoc.engine,
- org.eclipse.debug.ui;bundle-version="3.10.2",
  org.eclipse.emf.ecore,
- org.eclipse.ui.workbench,
- org.eclipse.e4.ui.workbench;bundle-version="1.3.1"
+ fr.inria.diverse.trace.commons.model
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.modelexecution.xmof.animation,
- org.modelexecution.xmof.animation.decorator
-Import-Package: org.eclipse.emf.ecore.presentation,
- org.eclipse.sirius.business.api.dialect.command;version="2.0.4",
- org.eclipse.sirius.business.api.session;version="3.0.0",
- org.eclipse.sirius.ui.business.api.dialect;version="3.1.0",
- org.eclipse.sirius.ui.business.api.session;version="3.1.0",
- org.eclipse.sirius.viewpoint;version="3.1.0",
- org.gemoc.commons.eclipse.emf,
- org.gemoc.commons.eclipse.ui.dialogs,
- org.modelexecution.xmof.diagram.decoration
+Export-Package: org.modelexecution.xmof.animation.controller,
+ org.modelexecution.xmof.animation.decorator,
+ org.modelexecution.xmof.animation.decorator.internal,
+ org.modelexecution.xmof.animation.handler,
+ org.modelexecution.xmof.animation.mapping
 Bundle-ActivationPolicy: lazy
