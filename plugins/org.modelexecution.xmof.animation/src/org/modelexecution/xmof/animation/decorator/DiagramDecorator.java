@@ -26,8 +26,8 @@ import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 import org.modelexecution.xmof.animation.mapping.Match;
 
 /**
- * The DiagramDecorator is capable of manipulating the graphical representation via
- * decorating of diagram elements
+ * The DiagramDecorator is capable of manipulating the graphical representation
+ * via decorating of diagram elements
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
@@ -62,9 +62,11 @@ public abstract class DiagramDecorator {
 	}
 
 	/**
-	 * Decorates activity node in different nodes depending of the status (traversed or active)
+	 * Decorates activity node in different nodes depending of the status
+	 * (traversed or active)
 	 * 
-	 * @param match matched debug event
+	 * @param match
+	 *            matched debug event
 	 * @return true if node has a xMOFName
 	 */
 	public boolean decorateActivityElement(Match match) {
@@ -81,8 +83,8 @@ public abstract class DiagramDecorator {
 			decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
 		}
 		if (inStructuredNode != null) {
-			
-			if (activeNode==null ||activeNode.getInStructuredNode() == null
+
+			if (activeNode == null || activeNode.getInStructuredNode() == null
 					|| !activeNode.getInStructuredNode().equals(inStructuredNode)) {
 				previouslyActiveNode = inStructuredNode;
 				decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
@@ -101,6 +103,9 @@ public abstract class DiagramDecorator {
 				inStructuredNode = (StructuredActivityNode) activeNode;
 			} else {
 				decorateElement(activeNode, ElementState.ACTIVE);
+				if (inStructuredNode != null) {
+					decorateElement(inStructuredNode, ElementState.ACTIVE);
+				}
 			}
 		}
 
@@ -151,9 +156,11 @@ public abstract class DiagramDecorator {
 	}
 
 	/**
-	 * Determines source and target nodes of a edge and puts the result in the edge map
+	 * Determines source and target nodes of a edge and puts the result in the
+	 * edge map
 	 * 
-	 * @param edge Edge of an activity diagram
+	 * @param edge
+	 *            Edge of an activity diagram
 	 */
 	private void processActivityEdge(ActivityEdge edge) {
 		EdgeID id = null;
@@ -202,7 +209,8 @@ public abstract class DiagramDecorator {
 	/**
 	 * Determines nodes that are linked with the node
 	 * 
-	 * @param node Node of an activity diagram
+	 * @param node
+	 *            Node of an activity diagram
 	 */
 	private void processActivityNode(ActivityNode node) {
 		if (node.getName() != null) {
@@ -230,7 +238,7 @@ public abstract class DiagramDecorator {
 	}
 
 	private ActivityEdge retrieveActiveEdge() {
-		if (activeNode==null||previouslyActiveNode == null)
+		if (activeNode == null || previouslyActiveNode == null)
 			return null;
 		EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
 		return activityEdgeMap.get(id);
