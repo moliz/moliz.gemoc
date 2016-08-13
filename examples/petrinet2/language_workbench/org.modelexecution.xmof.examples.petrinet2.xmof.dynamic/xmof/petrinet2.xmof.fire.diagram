@@ -287,7 +287,7 @@
     <children visible="true" active="true">
       <graphicsAlgorithm xsi:type="al:Ellipse" lineWidth="1" transparency="0.0" width="20" height="20" x="60" y="110"/>
       <link>
-        <businessObjects href="petrinet2.xmof#//TransitionConfiguration/fire.1/%"/>
+        <businessObjects href="petrinet2.xmof#//TransitionConfiguration/fire.1/i1"/>
       </link>
       <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.7"/>
     </children>
@@ -386,7 +386,7 @@
   <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.14/@anchors.0" end="//@children.0/@children.1/@anchors.0">
     <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
     <link>
-      <businessObjects href="petrinet2.xmof#//TransitionConfiguration/fire.1/%.1"/>
+      <businessObjects href="petrinet2.xmof#//TransitionConfiguration/fire.1/%"/>
     </link>
     <connectionDecorators visible="true" locationRelative="true" location="1.0">
       <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0">

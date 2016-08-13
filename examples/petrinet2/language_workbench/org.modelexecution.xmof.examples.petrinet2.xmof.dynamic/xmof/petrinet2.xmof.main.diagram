@@ -89,7 +89,7 @@
     <children visible="true" active="true">
       <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.2" foreground="//@colors.2" lineWidth="2" filled="true" transparency="0.0" width="5" height="30" x="190" y="70"/>
       <link>
-        <businessObjects href="petrinet2.xmof#//NetConfiguration/main.1/%"/>
+        <businessObjects href="petrinet2.xmof#//NetConfiguration/main.1/f1"/>
       </link>
       <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.1 //@connections.2" incomingConnections="//@connections.0"/>
     </children>
@@ -216,7 +216,7 @@
   <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.6/@anchors.0" end="//@children.0/@children.1/@anchors.0">
     <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
     <link>
-      <businessObjects href="petrinet2.xmof#//NetConfiguration/main.1/%.1"/>
+      <businessObjects href="petrinet2.xmof#//NetConfiguration/main.1/%"/>
     </link>
     <connectionDecorators visible="true" locationRelative="true" location="1.0">
       <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0">
