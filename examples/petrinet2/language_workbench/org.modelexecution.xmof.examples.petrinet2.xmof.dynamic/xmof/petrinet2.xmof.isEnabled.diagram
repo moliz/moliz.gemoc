@@ -340,21 +340,21 @@
         <properties key="behavior" value="ListSize"/>
         <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="101" height="50" x="327" y="10" cornerHeight="15" cornerWidth="15"/>
         <link>
-          <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize"/>
+          <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize1"/>
         </link>
         <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="//@connections.11"/>
         <children visible="true">
           <properties key="textkind" value="type"/>
           <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="91" height="20" x="5" font="//@fonts.1" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="ALIGNMENT_MIDDLE" value="CallBehaviorAction"/>
           <link>
-            <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize"/>
+            <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize1"/>
           </link>
         </children>
         <children visible="true">
           <properties key="textkind" value="name"/>
           <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="91" height="50" x="5" font="//@fonts.0" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_MIDDLE" value="call ListSize"/>
           <link>
-            <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize"/>
+            <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize1"/>
           </link>
         </children>
       </children>
@@ -363,12 +363,12 @@
           <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="42" height="15" x="15" font="//@fonts.1" value="result"/>
         </graphicsAlgorithm>
         <link>
-          <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize/result"/>
+          <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize1/result"/>
         </link>
         <children visible="true" active="true">
           <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="15" y="15"/>
           <link>
-            <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize/result"/>
+            <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize1/result"/>
           </link>
           <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.9"/>
         </children>
@@ -378,12 +378,12 @@
           <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="28" height="15" x="-15" font="//@fonts.1" horizontalAlignment="ALIGNMENT_RIGHT" value="list"/>
         </graphicsAlgorithm>
         <link>
-          <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize/list"/>
+          <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize1/list"/>
         </link>
         <children visible="true" active="true">
           <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="15" x="13" y="15"/>
           <link>
-            <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize/list"/>
+            <businessObjects href="petrinet2.xmof#//TransitionConfiguration/isEnabled.1/select%20input%20places%20with%20zero%20tokens/call%20ListSize1/list"/>
           </link>
           <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="//@connections.8"/>
         </children>

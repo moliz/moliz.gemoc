@@ -192,7 +192,7 @@
       <children visible="true" active="true">
         <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.2" foreground="//@colors.2" lineWidth="2" filled="true" transparency="0.0" width="5" height="30" x="60" y="40"/>
         <link>
-          <businessObjects href="petrinet2.xmof#//NetConfiguration/run.1/select%20enabled%20transitions/f1.1"/>
+          <businessObjects href="petrinet2.xmof#//NetConfiguration/run.1/select%20enabled%20transitions/f1"/>
         </link>
         <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.12 //@connections.13" incomingConnections="//@connections.11"/>
       </children>
