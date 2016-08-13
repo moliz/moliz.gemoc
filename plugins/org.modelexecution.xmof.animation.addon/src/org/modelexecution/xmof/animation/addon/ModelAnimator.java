@@ -37,6 +37,7 @@ import fr.inria.diverse.trace.commons.model.trace.Step;
 public class ModelAnimator implements IEngineAddon {
 
 	private AnimationController animationController;
+	private static String SIRIUS_SPECIFICATION_FILE = "representations.aird";
 
 	/**
 	 * Initialization of graphical representation. Either Graphiti or Sirius
@@ -49,33 +50,37 @@ public class ModelAnimator implements IEngineAddon {
 	 *            RunConfiguration where the representation should be
 	 */
 	private void initialize(XMOFBasedModel model, Resource resource) {
-		String siriusRepresentationPath = resource.getURI().segment(1) + "/representations.aird";
-		URI siriusURI = URI.createURI("platform:/resource/" + siriusRepresentationPath);
-
-		if (new ExtensibleURIConverterImpl().exists(siriusURI, null)) {
-			animationController = new SiriusAnimationController(model, siriusURI);
-		} else {
+		if (exisitsSiriusRepresentationFile(resource)){
+			animationController = new SiriusAnimationController(model, resource);
+		}else{
 			animationController = new GraphitiAnimationController(model, resource);
 		}
 
 	}
 
-	
+	private boolean exisitsSiriusRepresentationFile(Resource resource) {
+		URI siriusURI = URI
+				.createURI("platform:/resource/" + resource.getURI().segment(1) + "/" + SIRIUS_SPECIFICATION_FILE);
+		return new ExtensibleURIConverterImpl().exists(siriusURI, null);
+	}
+
 	@Override
 	public void engineAboutToStart(IBasicExecutionEngine executionEngine) {
-		
 
 	}
+
 	/**
-	 * After successfully starting the engine, the the animation plugin will be initialized.s
+	 * After successfully starting the engine, the the animation plugin will be
+	 * initialized.s
+	 * 
 	 * @param executionEngine
 	 */
 	@Override
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
-		if (executionEngine instanceof XMOFExecutionEngine){
-			XMOFExecutionEngine xmofEngine= (XMOFExecutionEngine)executionEngine;
+		if (executionEngine instanceof XMOFExecutionEngine) {
+			XMOFExecutionEngine xmofEngine = (XMOFExecutionEngine) executionEngine;
 			initialize(xmofEngine.getXMOFBasedModel(), xmofEngine.getModelLoader().getXMOFModelResource());
-			
+
 		}
 
 	}

@@ -15,6 +15,7 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.session.Session;
@@ -47,18 +48,27 @@ import org.modelexecution.xmof.animation.handler.DiagramHandler;
 public class SiriusDiagramHandler extends DiagramHandler {
 
 	private Map<String, IEditorPart> diagramEditorMap = new HashMap<>();
+	private static String SIRIUS_SPECIFICATION_FILE = "representations.aird";
 	private URI airdURI;
 
-	public SiriusDiagramHandler(URI airdURI) {
-		this.airdURI = airdURI;
+	public SiriusDiagramHandler(Resource resource) {
+		super(resource);
+		this.airdURI = createURI();
 		killPreviousSiriusSession(airdURI);
-		
+
+	}
+
+	private URI createURI() {
+		URI siriusURI = URI
+				.createURI("platform:/resource/" + modelResource.getURI().segment(1) + "/" + SIRIUS_SPECIFICATION_FILE);
+		return siriusURI;
 	}
 
 	/**
 	 * A previous session needs to be killed before the animation can take place
 	 * 
-	 * @param sessionResourceURI URI of session
+	 * @param sessionResourceURI
+	 *            URI of session
 	 */
 	private void killPreviousSiriusSession(URI sessionResourceURI) {
 		final Session session = SessionManager.INSTANCE.getExistingSession(sessionResourceURI);
@@ -163,7 +173,7 @@ public class SiriusDiagramHandler extends DiagramHandler {
 	@Override
 	public void dispose() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

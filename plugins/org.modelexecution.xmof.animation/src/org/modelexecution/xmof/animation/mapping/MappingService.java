@@ -8,15 +8,18 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.mapping;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Action;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.CallOperationAction;
 import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.ConditionalNode;
@@ -30,7 +33,8 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.InitialNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.JoinNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.MergeNode;
-import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
+import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEClass;
+import org.modelexecution.xmof.Syntax.CommonBehaviors.BasicBehaviors.Behavior;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 /**
@@ -48,6 +52,7 @@ public class MappingService {
 	private static final String[] CONTROLNODE_SUFFIX = { InitialNode.class.getSimpleName(),
 			ActivityFinalNode.class.getSimpleName(), ForkNode.class.getSimpleName(), JoinNode.class.getSimpleName(),
 			DecisionNode.class.getSimpleName(), MergeNode.class.getSimpleName() };
+	
 	private static final String[] STRUCTURED_ACTIVITY_NODE_SUFFIX = { StructuredActivityNode.class.getSimpleName(),
 			ExpansionRegion.class.getSimpleName(), LoopNode.class.getSimpleName(),
 			ConditionalNode.class.getSimpleName() };
@@ -56,9 +61,11 @@ public class MappingService {
 	private Set<String> allowedEObjects;
 	private Map<String, Activity> activityMap;
 	private Match lastMatchAttempt;
+	private Resource resource;
 
-	public MappingService(XMOFBasedModel model) {
+	public MappingService(XMOFBasedModel model, Resource resource) {
 		this.model = model;
+		this.resource=resource;
 		prepareMap();
 		obtainAllowedEObjects();
 	}
@@ -69,6 +76,10 @@ public class MappingService {
 
 	public XMOFBasedModel getModel() {
 		return model;
+	}
+	
+	public Resource getResource(){
+		return resource;
 	}
 
 	public Match matchDebugEvent(String debugevent) {
@@ -95,55 +106,59 @@ public class MappingService {
 		}
 	}
 
-	private Map<String, EObject> obtainDistinctModelElements() {
-		Map<String, EObject> elementMap = new HashMap<>();
-		for (EObject element : model.getModelElements()) {
-			if (!elementMap.containsKey(element.getClass().getName())) {
-				elementMap.put(element.getClass().getName(), element);
-			}
-		}
-		return elementMap;
-
-	}
+	
 
 	private void prepareMap() {
 		activityMap = new HashMap<>();
-
-		for (Activity activity : obtainActivities(obtainDistinctModelElements().values())) {
+		List<EPackage> epackages= getConfigurationPackages();
+		for (Activity activity: obtainActivities(epackages)){
 			String name = activity.getName();
 			activityMap.put(name, activity);
-
 		}
 
 		return;
 
 	}
 
-	private Set<Activity> obtainActivities(Collection<EObject> modelElements) {
-		Set<Activity> activities = new HashSet<>();
-		for (EObject element : modelElements) {
-			activities.addAll(obtainActivities(element));
-		}
-		return activities;
-	}
-
-	private Set<Activity> obtainActivities(EObject modelElement) {
-		Set<Activity> activities = new HashSet<>();
-		EClass eClass = modelElement.eClass();
-		for (EOperation eOperation : eClass.getEOperations()) {
-			if (eOperation instanceof BehavioredEOperation) {
-				activities.add(getActivity((BehavioredEOperation) eOperation));
+	private List<EPackage> getConfigurationPackages() {
+		List<EPackage> list= new ArrayList<>();
+		for (EObject eObj:resource.getContents()){
+			if (eObj instanceof EPackage){
+				list.add((EPackage)eObj);
 			}
-
 		}
-		return activities;
-
+		return list;
 	}
 
-	private Activity getActivity(BehavioredEOperation eOperation) {
-		if (!eOperation.getMethod().isEmpty())
-			return (Activity) eOperation.getMethod().get(0);
-		return null;
+	private Set<Activity> obtainActivities(List<EPackage> epackages) {
+		Set<Activity> activities = new HashSet<>();
+		for (EPackage epackage : epackages) {
+			activities.addAll(obtainActivities(epackage.eContents()));
+		}
+		return activities;
+	}
+
+	
+	private Collection<Activity> obtainActivities(EList<EObject> eContents) {
+		Set<Activity> activities = new HashSet<>();
+		for (EObject eObj:eContents){
+			if (eObj instanceof BehavioredEClass){
+				activities.addAll(getActivities((BehavioredEClass)eObj));
+			}
+		}
+		return activities;
+	}
+
+
+
+	private Set<Activity> getActivities(BehavioredEClass behavioredClass) {
+		Set<Activity> activities = new HashSet<>();
+		for (Behavior behavior:behavioredClass.getOwnedBehavior()){
+			if (behavior instanceof Activity){
+				activities.add((Activity)behavior);
+			}
+		}
+		return activities;
 	}
 
 	private void tryToFindMatch(String name) {

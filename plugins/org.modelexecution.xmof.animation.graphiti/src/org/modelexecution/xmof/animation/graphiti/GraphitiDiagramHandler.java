@@ -32,10 +32,10 @@ public class GraphitiDiagramHandler extends DiagramHandler {
 	private static final String KERNEL_EDITOR_ID = "org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditorID";
 
 	private KernelEditor activeEditor;
-	private Resource modelResource;
-
+	
+	
 	public GraphitiDiagramHandler(Resource modelResource) {
-		this.modelResource = modelResource;
+		super(modelResource);
 		PlatformUI.getWorkbench().getDisplay().asyncExec((new Runnable() {
 			@Override
 			public void run() {

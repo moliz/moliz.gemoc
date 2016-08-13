@@ -11,6 +11,7 @@ package org.modelexecution.xmof.animation.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.decorator.DecoratorService;
@@ -37,6 +38,7 @@ public abstract class AnimationController {
 
 	private MappingService mappingService;
 	private XMOFBasedModel model;
+	private Resource conigurationResource;
 	protected Map<String, DiagramDecorator> diagramDecoratorMap;
 	protected DiagramDecorator activeDecorator;
 	protected Map<String, String> activityCallerMap;
@@ -46,11 +48,13 @@ public abstract class AnimationController {
 	 * Constructor resets DecoratorService
 	 * 
 	 * @param model xMOF model that should be animated
+	 * @param resource that contains the configuration model
 	 * @param concreteHandler open or shows activity diagrams
 	 */
-	public AnimationController(XMOFBasedModel model, DiagramHandler concreteHandler) {
+	public AnimationController(XMOFBasedModel model,Resource resource, DiagramHandler concreteHandler) {
 		this.model = model;
-		mappingService = new MappingService(model);
+		conigurationResource=resource;
+		mappingService = new MappingService(model,resource);
 		diagramDecoratorMap = new HashMap<String, DiagramDecorator>();
 		activityCallerMap = new HashMap<>();
 		this.diagramHandler = concreteHandler;
@@ -151,16 +155,14 @@ public abstract class AnimationController {
 		return mappingService;
 	}
 
-	public void setModelProcessor(MappingService modelProcessor) {
-		this.mappingService = modelProcessor;
-	}
-
 	public XMOFBasedModel getModel() {
 		return model;
 	}
 
-	public void setModel(XMOFBasedModel model) {
-		this.model = model;
+	
+
+	public Resource getConigurationResource() {
+		return conigurationResource;
 	}
 
 	/**

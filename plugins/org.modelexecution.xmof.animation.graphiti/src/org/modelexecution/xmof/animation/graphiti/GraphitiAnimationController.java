@@ -27,7 +27,7 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 public class GraphitiAnimationController extends AnimationController {
 
 	public GraphitiAnimationController(XMOFBasedModel model, Resource modelResource) {
-		super(model, new GraphitiDiagramHandler(modelResource));
+		super(model,modelResource, new GraphitiDiagramHandler(modelResource));
 	}
 
 	@Override

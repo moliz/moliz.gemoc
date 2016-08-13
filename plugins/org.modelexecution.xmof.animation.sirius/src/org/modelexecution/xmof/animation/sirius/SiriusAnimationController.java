@@ -11,6 +11,7 @@ package org.modelexecution.xmof.animation.sirius;
 import java.util.HashMap;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.mapping.Match;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
@@ -27,10 +28,12 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
  *
  */
 public class SiriusAnimationController extends AnimationController {
-
-	public SiriusAnimationController(XMOFBasedModel model, URI airdURI) {
-		super(model, new SiriusDiagramHandler(airdURI));
+	
+	public SiriusAnimationController(XMOFBasedModel model, Resource resource) {
+		super(model, resource, new SiriusDiagramHandler(resource));
 	}
+
+
 
 	@Override
 	protected void initializeDecorators() {
