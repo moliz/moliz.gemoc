@@ -16,6 +16,7 @@ import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.decorator.DecoratorService;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.decorator.internal.Representation;
 import org.modelexecution.xmof.animation.handler.DiagramHandler;
 import org.modelexecution.xmof.animation.mapping.MappingService;
 import org.modelexecution.xmof.animation.mapping.Match;
@@ -43,7 +44,7 @@ public abstract class AnimationController {
 	protected DiagramDecorator activeDecorator;
 	protected Map<String, String> activityCallerMap;
 	protected DiagramHandler diagramHandler;
-
+	
 	/**
 	 * Constructor resets DecoratorService
 	 * 
@@ -209,5 +210,7 @@ public abstract class AnimationController {
 		});
 
 	}
+
+
 
 }

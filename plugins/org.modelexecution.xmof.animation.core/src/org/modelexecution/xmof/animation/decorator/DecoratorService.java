@@ -15,13 +15,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
+import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
 import org.modelexecution.xmof.animation.decorator.internal.ElementContainer;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
+import org.modelexecution.xmof.animation.decorator.internal.Representation;
 
 /**
- * DecoratorService class to specify which elements
- * need to be decorated (respectively animated).
+ * DecoratorService class to specify which elements need to be decorated
+ * (respectively animated).
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
@@ -31,6 +33,8 @@ import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 public class DecoratorService {
 
 	private static Map<String, ElementContainer> activityElementContainerMap = new HashMap<>();
+	private static Representation xmofRepresentation;
+	private static boolean running=false;
 
 	public static void addDecoratedElement(Activity activity, EObject element, ElementState state) {
 		if (element instanceof ActivityNode) {
@@ -43,10 +47,12 @@ public class DecoratorService {
 	/**
 	 * Determines if passed node is the active node in the current diagram
 	 * 
-	 * @param node Node of activity diagram
+	 * @param node
+	 *            Node of activity diagram
 	 * @return boolean active node or not
 	 */
 	public static boolean isActiveNode(ActivityNode node) {
+		if (!running) return false;
 		String key = getActivityName(node);
 		ElementContainer container = activityElementContainerMap.get(key);
 		if (container != null && container.getActiveNode() != null) {
@@ -60,10 +66,12 @@ public class DecoratorService {
 	/**
 	 * Determines if passed node was already used in diagram
 	 * 
-	 * @param node Node of activity diagram
+	 * @param node
+	 *            Node of activity diagram
 	 * @return boolean traversed node or not
 	 */
 	public static boolean isTraversedNode(ActivityNode node) {
+		if (!running) return false;
 		String key = getActivityName(node);
 		ElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
@@ -75,14 +83,16 @@ public class DecoratorService {
 	/**
 	 * Determines if passed edge is the active edge in the current diagram
 	 * 
-	 * @param edge Edge of activity diagram
+	 * @param edge
+	 *            Edge of activity diagram
 	 * @return boolean active edge or not
 	 */
 	public static boolean isActiveEdge(ActivityEdge edge) {
+		if (!running) return false;
 		String key = getActivityName(edge);
 		ElementContainer container = activityElementContainerMap.get(key);
-		if (container != null&&container.getActiveEdge()!=null) {
-	
+		if (container != null && container.getActiveEdge() != null) {
+
 			return container.getActiveEdge().equals(new EdgeID(edge));
 		}
 		return false;
@@ -91,10 +101,12 @@ public class DecoratorService {
 	/**
 	 * Determines if passed edge was already used in diagram
 	 * 
-	 * @param edge Edge of activity diagram
+	 * @param edge
+	 *            Edge of activity diagram
 	 * @return boolean traversed edge or not
 	 */
 	public static boolean isTraversedEdge(ActivityEdge edge) {
+		if (!running) return false;
 		String key = getActivityName(edge);
 		ElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
@@ -113,6 +125,7 @@ public class DecoratorService {
 
 	public static void reset() {
 		activityElementContainerMap = new HashMap<>();
+		running=false;
 
 	}
 
@@ -152,7 +165,8 @@ public class DecoratorService {
 	/**
 	 * Extracts name of node from the diagram
 	 * 
-	 * @param node Node of activity diagram
+	 * @param node
+	 *            Node of activity diagram
 	 * @return String name of node
 	 */
 	private static String getActivityName(ActivityNode node) {
@@ -169,7 +183,8 @@ public class DecoratorService {
 	/**
 	 * Extracts name of edge from the diagram
 	 * 
-	 * @param edge Edge of activity diagram
+	 * @param edge
+	 *            Edge of activity diagram
 	 * @return String name of edge
 	 */
 	private static String getActivityName(ActivityEdge edge) {
@@ -183,13 +198,15 @@ public class DecoratorService {
 		return "";
 	}
 
-	
 	/**
 	 * Sets the status of a node in a diagram to traversed or active
 	 * 
-	 * @param activity Activity diagram
-	 * @param node Node of activity diagram
-	 * @param state State of node
+	 * @param activity
+	 *            Activity diagram
+	 * @param node
+	 *            Node of activity diagram
+	 * @param state
+	 *            State of node
 	 */
 	private static void setNode(Activity activity, ActivityNode node, ElementState state) {
 		if (state == ElementState.ACTIVE) {
@@ -203,9 +220,12 @@ public class DecoratorService {
 	/**
 	 * Sets the status of a edge in a diagram to traversed or active
 	 * 
-	 * @param activity Activity diagram
-	 * @param edge Edge of activity diagram
-	 * @param state State of edge
+	 * @param activity
+	 *            Activity diagram
+	 * @param edge
+	 *            Edge of activity diagram
+	 * @param state
+	 *            State of edge
 	 */
 	private static void setEdge(Activity activity, ActivityEdge edge, ElementState state) {
 		if (state == ElementState.ACTIVE) {
@@ -214,5 +234,23 @@ public class DecoratorService {
 			addTraversedEdge(activity, edge);
 		}
 	}
+
+	public static void setActiveAnimator(Representation representation) {
+		xmofRepresentation = representation;
+
+	}
+
+	public static Representation getXMOFRepresentation() {
+		return xmofRepresentation;
+	}
+
+	public static boolean isRunning() {
+		return running;
+	}
+
+	public static void setRunning(boolean running) {
+		DecoratorService.running = running;
+	}
+	
 
 }

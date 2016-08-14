@@ -18,6 +18,8 @@ import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.controller.AnimationController;
+import org.modelexecution.xmof.animation.decorator.DecoratorService;
+import org.modelexecution.xmof.animation.decorator.internal.Representation;
 import org.modelexecution.xmof.animation.graphiti.GraphitiAnimationController;
 import org.modelexecution.xmof.animation.sirius.SiriusAnimationController;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
@@ -52,9 +54,12 @@ public class ModelAnimator implements IEngineAddon {
 	private void initialize(XMOFBasedModel model, Resource resource) {
 		if (exisitsSiriusRepresentationFile(resource)){
 			animationController = new SiriusAnimationController(model, resource);
+			DecoratorService.setActiveAnimator(Representation.SIRIUS);
 		}else{
 			animationController = new GraphitiAnimationController(model, resource);
+			DecoratorService.setActiveAnimator(Representation.GRAPHITI);
 		}
+		DecoratorService.setRunning(true);
 
 	}
 
