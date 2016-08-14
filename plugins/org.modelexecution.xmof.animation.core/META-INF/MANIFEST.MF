@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Animation
-Bundle-SymbolicName: org.modelexecution.xmof.animation;singleton:=true
+Bundle-SymbolicName: org.modelexecution.xmof.animation.core;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.modelexecution.xmof.animation.ui.Activator
 Require-Bundle: org.modelexecution.xmof.vm;bundle-version="1.0.0",
