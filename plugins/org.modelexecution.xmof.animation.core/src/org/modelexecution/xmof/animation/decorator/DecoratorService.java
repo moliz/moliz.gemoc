@@ -55,8 +55,8 @@ public class DecoratorService {
 		if (!running) return false;
 		String key = getActivityName(node);
 		ElementContainer container = activityElementContainerMap.get(key);
-		if (container != null && container.getActiveNode() != null) {
-			return container.getActiveNode().equals(node.getName());
+		if (container != null) {
+			return container.getActiveNodes().contains(node.getName());
 		}
 
 		return false;

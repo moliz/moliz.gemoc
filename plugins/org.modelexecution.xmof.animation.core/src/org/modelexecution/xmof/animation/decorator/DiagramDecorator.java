@@ -103,9 +103,7 @@ public abstract class DiagramDecorator {
 				inStructuredNode = (StructuredActivityNode) activeNode;
 			} else {
 				decorateElement(activeNode, ElementState.ACTIVE);
-				if (inStructuredNode != null) {
-					decorateElement(inStructuredNode, ElementState.ACTIVE);
-				}
+			
 			}
 		}
 

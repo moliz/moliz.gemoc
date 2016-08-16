@@ -22,15 +22,15 @@ import java.util.Set;
  */
 public class ElementContainer {
 
-	private String activeNode;
+	private Set<String> activeNodes=new HashSet<String>();
 	private EdgeID activeEdge;
 	private Set<String> traversedNodes = new HashSet<>();
 	private Set<EdgeID> traversedEdges = new HashSet<>();
 
 	public void setActiveNode(String nodeName) {
 		if (nodeName != null) {
-			activeNode = nodeName;
-			traversedNodes.remove(activeNode);
+			activeNodes.add(nodeName);
+			traversedNodes.remove(activeNodes);
 		}
 
 	}
@@ -55,8 +55,8 @@ public class ElementContainer {
 		}
 	}
 
-	public String getActiveNode() {
-		return activeNode;
+	public Set<String> getActiveNodes() {
+		return activeNodes;
 	}
 
 	public EdgeID getActiveEdge() {
