@@ -13,6 +13,8 @@ import java.util.HashMap;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.animation.controller.AnimationController;
+import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.handler.DiagramHandler;
 import org.modelexecution.xmof.animation.mapping.Match;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
@@ -49,13 +51,13 @@ public class SiriusAnimationController extends AnimationController {
 	@Override
 	protected void decorateActivityNode(Match match) {
 		super.decorateActivityNode(match);
-		refresh();
+		refresh(activeDecorator);
 	}
 
 	
 
-	public void refresh() {
-		((SiriusDiagramHandler) diagramHandler).refreshDiagram(activeDecorator.getActivity().getName());
+	public void refresh(DiagramDecorator decorator) {
+		((SiriusDiagramHandler) diagramHandler).refreshDiagram(decorator.getActivity().getName());
 	}
 
 }

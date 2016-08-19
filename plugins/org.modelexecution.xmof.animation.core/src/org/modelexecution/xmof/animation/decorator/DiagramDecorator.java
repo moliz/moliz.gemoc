@@ -154,6 +154,7 @@ public abstract class DiagramDecorator {
 	}
 
 	public void setActivityFinished(boolean activityFinished) {
+		refreshDiagram();
 		this.activityFinished = activityFinished;
 	}
 

@@ -42,7 +42,7 @@ public class SiriusDiagramDecorator extends DiagramDecorator {
 
 	@Override
 	protected void refreshDiagram() {
-		controller.refresh();
+		controller.refresh(this);
 		
 	}
 
