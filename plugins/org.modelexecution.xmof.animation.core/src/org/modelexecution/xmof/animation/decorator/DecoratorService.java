@@ -91,9 +91,9 @@ public class DecoratorService {
 		if (!running) return false;
 		String key = getActivityName(edge);
 		ElementContainer container = activityElementContainerMap.get(key);
-		if (container != null && container.getActiveEdge() != null) {
+		if (container != null && container.getActiveEdges() != null) {
 
-			return container.getActiveEdge().equals(new EdgeID(edge));
+			return container.getActiveEdges().contains(new EdgeID(edge));
 		}
 		return false;
 	}
@@ -136,7 +136,7 @@ public class DecoratorService {
 	private static void setActiveNode(Activity activity, ActivityNode node) {
 		ElementContainer container = activityElementContainerMap.get(activity.getName());
 		if (container != null) {
-			container.setActiveNode(node.getName());
+			container.addActiveNode(node.getName());
 		}
 	}
 
@@ -151,7 +151,7 @@ public class DecoratorService {
 		ElementContainer container = activityElementContainerMap.get(activity.getName());
 		if (container != null) {
 
-			container.setActiveEdge(new EdgeID(edge));
+			container.addActiveEdge(new EdgeID(edge));
 		}
 	}
 

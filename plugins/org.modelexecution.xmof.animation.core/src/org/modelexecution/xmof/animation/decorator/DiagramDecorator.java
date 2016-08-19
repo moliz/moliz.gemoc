@@ -9,7 +9,9 @@
 package org.modelexecution.xmof.animation.decorator;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
@@ -38,12 +40,12 @@ public abstract class DiagramDecorator {
 	private boolean activityFinished = false;
 	protected Activity activity;
 	protected Map<String, ActivityNode> activityNodeMap;
-	protected Map<EdgeID, ActivityEdge> activityEdgeMap;
+	protected Map<EdgeID, Set<ActivityEdge>> activityEdgeMap;
 	protected ActivityNode activeNode;
 	protected ActivityNode previouslyActiveNode;
 	protected StructuredActivityNode inStructuredNode = null;
-	protected ActivityEdge activeEdge;
-	protected ActivityEdge previouslyActiveEdge;
+	protected Set<ActivityEdge> activeEdges;
+	protected Set<ActivityEdge> previouslyActiveEdges;
 
 	public DiagramDecorator(Activity activity) {
 		this.activity = activity;
@@ -92,8 +94,11 @@ public abstract class DiagramDecorator {
 			}
 		}
 
-		if (previouslyActiveEdge != null) {
-			decorateElement(previouslyActiveEdge, ElementState.TRAVERSED);
+		if (previouslyActiveEdges != null) {
+			for (ActivityEdge edge:previouslyActiveEdges){
+				decorateElement(edge, ElementState.TRAVERSED);
+			}
+			
 		}
 
 		if (activeNode != null) {
@@ -107,13 +112,16 @@ public abstract class DiagramDecorator {
 			}
 		}
 
-		activeEdge = retrieveActiveEdge();
-		if (activeEdge != null) {
-			decorateElement(activeEdge, ElementState.ACTIVE);
+		activeEdges = retrieveActiveEdge();
+		if (activeEdges != null) {
+			for (ActivityEdge edge:activeEdges){
+				decorateElement(edge, ElementState.ACTIVE);
+			}
+			
 		}
 
 		previouslyActiveNode = activeNode;
-		previouslyActiveEdge = activeEdge;
+		previouslyActiveEdges = activeEdges;
 		return activeNode != null;
 
 	}
@@ -121,8 +129,8 @@ public abstract class DiagramDecorator {
 	private void resetDiagram() {
 		resetDecorations();
 		setActivityFinished(false);
-		activeEdge = null;
-		previouslyActiveEdge = null;
+		activeEdges = null;
+		previouslyActiveEdges = null;
 		inStructuredNode = null;
 		activeNode = null;
 		previouslyActiveNode = null;
@@ -172,7 +180,12 @@ public abstract class DiagramDecorator {
 		}
 		if (source != null && target != null) {
 			id = new EdgeID(source.getName(), target.getName());
-			activityEdgeMap.put(id, edge);
+			Set<ActivityEdge> edges= activityEdgeMap.get(id);
+			if (edges==null){
+				edges=new HashSet<>();
+			}
+			edges.add(edge);
+			activityEdgeMap.put(id, edges);
 		}
 
 	}
@@ -235,7 +248,7 @@ public abstract class DiagramDecorator {
 
 	}
 
-	private ActivityEdge retrieveActiveEdge() {
+	private Set<ActivityEdge> retrieveActiveEdge() {
 		if (activeNode == null || previouslyActiveNode == null)
 			return null;
 		EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());

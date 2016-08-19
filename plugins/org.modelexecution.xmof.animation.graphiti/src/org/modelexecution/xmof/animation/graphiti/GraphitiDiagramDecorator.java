@@ -10,6 +10,7 @@ package org.modelexecution.xmof.animation.graphiti;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
@@ -139,8 +140,11 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 		for (ActivityNode node : activityNodeMap.values()) {
 			refreshDecoration(node);
 		}
-		for (ActivityEdge edge : activityEdgeMap.values()) {
-			refreshDecoration(edge);
+		for (Set<ActivityEdge> edges : activityEdgeMap.values()) {
+			for (ActivityEdge edge :edges){
+				refreshDecoration(edge);
+			}
+			
 		}
 
 	}
