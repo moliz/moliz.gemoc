@@ -26,7 +26,6 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
-import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFBasedModel;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFVirtualMachine;
 import org.modelexecution.xmof.gemoc.engine.internal.SequentialNodeSelectionStrategy;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
@@ -47,8 +46,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private static String STEP_ANNOTATION_KEY = "Step";
 
 	private ConfigurationObjectMap configurationMap;
-
 	private XMOFVirtualMachine vm;
+	private XMOFBasedModelLoader loader;
 
 	private boolean suspendForNodes = false;
 	private boolean ignoreSteps = false;
@@ -68,8 +67,8 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		ignoreSteps = ((IXMOFRunConfiguration) executionContext.getRunConfiguration()).getIgnoreSteps()
 				|| suspendForNodes;
 
-		XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
-		GemocXMOFBasedModel model = (GemocXMOFBasedModel) loader.loadXMOFBasedModel();
+		loader = new XMOFBasedModelLoader(executionContext);
+		XMOFBasedModel model = loader.loadXMOFBasedModel();
 
 		// If we are in basic run mode, we replace the static objects of the
 		// context model by dynamic configuration objects.
@@ -93,7 +92,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		vm = setupVirtualMachine(model);
 	}
 
-	private XMOFVirtualMachine setupVirtualMachine(GemocXMOFBasedModel model) {
+	private XMOFVirtualMachine setupVirtualMachine(XMOFBasedModel model) {
 		XMOFVirtualMachine vm = new GemocXMOFVirtualMachine(model);
 
 		XMOFBasedModelSynchronizer modelSynchronizer = createModelSynchronizer(vm.getInstanceMap(), model);
@@ -253,4 +252,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		this.vm = null;
 	}
 
+	public XMOFBasedModelLoader getModelLoader() {
+		return loader;
+	}
 }

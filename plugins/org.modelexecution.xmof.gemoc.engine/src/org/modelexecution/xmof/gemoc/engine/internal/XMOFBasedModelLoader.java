@@ -64,10 +64,8 @@ public class XMOFBasedModelLoader {
 		GenericXMOFAnimationServices
 				.setConfigurationObjectMap(configurationMap);
 
-		return new GemocXMOFBasedModel(
-				configurationMap.getConfigurationObjects(),
-				getParameterValueConfiguration(inputParameterValues),
-				getEditingDomain(), xmofConfigurationMetamodelPackages);
+		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
+				getParameterValueConfiguration(inputParameterValues), getEditingDomain());
 	}
 
 	private Collection<EObject> loadInputModelElements() {
