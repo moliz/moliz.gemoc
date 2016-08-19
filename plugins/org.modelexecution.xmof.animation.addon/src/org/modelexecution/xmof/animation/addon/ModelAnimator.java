@@ -40,7 +40,7 @@ public class ModelAnimator implements IEngineAddon {
 
 	private AnimationController animationController;
 	private static String SIRIUS_SPECIFICATION_FILE = "representations.aird";
-
+	private static boolean FORCE_GRAPHITI=false;
 	/**
 	 * Initialization of graphical representation. Either Graphiti or Sirius
 	 * will be used
@@ -52,7 +52,7 @@ public class ModelAnimator implements IEngineAddon {
 	 *            RunConfiguration where the representation should be
 	 */
 	private void initialize(XMOFBasedModel model, Resource resource) {
-		if (exisitsSiriusRepresentationFile(resource)){
+		if (!FORCE_GRAPHITI&&exisitsSiriusRepresentationFile(resource)){
 			animationController = new SiriusAnimationController(model, resource);
 			DecoratorService.setActiveAnimator(Representation.SIRIUS);
 		}else{
