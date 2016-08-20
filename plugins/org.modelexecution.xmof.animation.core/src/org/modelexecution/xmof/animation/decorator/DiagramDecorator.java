@@ -13,6 +13,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import javax.print.attribute.standard.JobHoldUntil;
+
 import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
 import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
@@ -20,6 +22,7 @@ import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.Expan
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ControlFlow;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectFlow;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNode;
@@ -41,6 +44,7 @@ public abstract class DiagramDecorator {
 	protected Activity activity;
 	protected Map<String, ActivityNode> activityNodeMap;
 	protected Map<EdgeID, Set<ActivityEdge>> activityEdgeMap;
+	protected Map<ActivityNode, Set<ActivityParameterNode>> conncetedParameterNodeMap;
 	protected ActivityNode activeNode;
 	protected ActivityNode previouslyActiveNode;
 	protected StructuredActivityNode inStructuredNode = null;
@@ -54,6 +58,7 @@ public abstract class DiagramDecorator {
 	public void initializeMaps() {
 		activityNodeMap = new HashMap<>();
 		activityEdgeMap = new HashMap<>();
+		conncetedParameterNodeMap = new HashMap<>();
 		for (ActivityNode node : activity.getNode()) {
 			processActivityNode(node);
 		}
@@ -81,8 +86,17 @@ public abstract class DiagramDecorator {
 		}
 		activeNode = activityNodeMap.get(match.getXmofElementName());
 
-		if (previouslyActiveNode != null && !(previouslyActiveNode instanceof StructuredActivityNode)) {
-			decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
+		if (previouslyActiveNode != null) {
+			if (conncetedParameterNodeMap.containsKey(previouslyActiveNode)) {
+				for (ActivityNode node : conncetedParameterNodeMap.get(previouslyActiveNode)) {
+					decorateElement(node, ElementState.TRAVERSED);
+				}
+			}
+			if (!(previouslyActiveNode instanceof StructuredActivityNode)) {
+
+				decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
+			}
+
 		}
 		if (inStructuredNode != null) {
 
@@ -95,29 +109,30 @@ public abstract class DiagramDecorator {
 		}
 
 		if (previouslyActiveEdges != null) {
-			for (ActivityEdge edge:previouslyActiveEdges){
+			for (ActivityEdge edge : previouslyActiveEdges) {
 				decorateElement(edge, ElementState.TRAVERSED);
 			}
-			
+
 		}
 
 		if (activeNode != null) {
 			if (activeNode instanceof StructuredActivityNode) {
-				decorateElement(activeNode, ElementState.ACTIVE);
-
 				inStructuredNode = (StructuredActivityNode) activeNode;
-			} else {
-				decorateElement(activeNode, ElementState.ACTIVE);
-			
+			}
+			decorateElement(activeNode, ElementState.ACTIVE);
+			if (conncetedParameterNodeMap.containsKey(activeNode)) {
+				for (ActivityNode node : conncetedParameterNodeMap.get(activeNode)) {
+					decorateElement(node, ElementState.ACTIVE);
+				}
 			}
 		}
 
-		activeEdges = retrieveActiveEdge();
+		activeEdges = retrieveActiveEdges();
 		if (activeEdges != null) {
-			for (ActivityEdge edge:activeEdges){
+			for (ActivityEdge edge : activeEdges) {
 				decorateElement(edge, ElementState.ACTIVE);
 			}
-			
+
 		}
 
 		previouslyActiveNode = activeNode;
@@ -170,7 +185,6 @@ public abstract class DiagramDecorator {
 	 *            Edge of an activity diagram
 	 */
 	private void processActivityEdge(ActivityEdge edge) {
-		EdgeID id = null;
 		ActivityNode source = null, target = null;
 		if (edge instanceof ControlFlow) {
 			source = edge.getSource();
@@ -180,15 +194,33 @@ public abstract class DiagramDecorator {
 			target = retrieveConnectedNode(edge.getTarget());
 		}
 		if (source != null && target != null) {
-			id = new EdgeID(source.getName(), target.getName());
-			Set<ActivityEdge> edges= activityEdgeMap.get(id);
-			if (edges==null){
-				edges=new HashSet<>();
-			}
-			edges.add(edge);
-			activityEdgeMap.put(id, edges);
+			addToEdgeMap(edge, source, target);
+		}
+		if (source instanceof ActivityParameterNode) {
+			addToConnectedParameterNodeMap(target, (ActivityParameterNode) source);
+		} else if (target instanceof ActivityParameterNode) {
+			addToConnectedParameterNodeMap(source, (ActivityParameterNode) target);
 		}
 
+	}
+
+	private void addToConnectedParameterNodeMap(ActivityNode key, ActivityParameterNode paramteterNode) {
+		Set<ActivityParameterNode> paramNodes = conncetedParameterNodeMap.get(key);
+		if (paramNodes == null) {
+			paramNodes = new HashSet<>();
+		}
+		paramNodes.add(paramteterNode);
+		conncetedParameterNodeMap.put(key, paramNodes);
+	}
+
+	private void addToEdgeMap(ActivityEdge edge, ActivityNode source, ActivityNode target) {
+		EdgeID id = new EdgeID(source.getName(), target.getName());
+		Set<ActivityEdge> edges = activityEdgeMap.get(id);
+		if (edges == null) {
+			edges = new HashSet<>();
+		}
+		edges.add(edge);
+		activityEdgeMap.put(id, edges);
 	}
 
 	private ActivityNode retrieveConnectedNode(ActivityNode node) {
@@ -197,6 +229,8 @@ public abstract class DiagramDecorator {
 				return retrieveConnectedNode((Pin) node);
 			} else if (node instanceof ExpansionNode) {
 				return retrieveConnectedNode((ExpansionNode) node);
+			} else if (node instanceof ActivityParameterNode) {
+				return node;
 			}
 		}
 		return node;
@@ -249,11 +283,43 @@ public abstract class DiagramDecorator {
 
 	}
 
-	private Set<ActivityEdge> retrieveActiveEdge() {
-		if (activeNode == null || previouslyActiveNode == null)
+	private Set<ActivityEdge> retrieveActiveEdges() {
+
+		if (activeNode == null)
 			return null;
-		EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
-		return activityEdgeMap.get(id);
+		Set<ActivityEdge> edges = new HashSet<>();
+		if (conncetedParameterNodeMap.containsKey(activeNode)) {
+			edges.addAll(retrieveEdges(activeNode, conncetedParameterNodeMap.get(activeNode)));
+		}
+		if (previouslyActiveNode!=null){
+			EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
+			if (activityEdgeMap.get(id)!=null){
+				edges.addAll(activityEdgeMap.get(id));
+			}
+		
+		}
+		
+
+		return edges;
+	}
+
+	private Set<ActivityEdge> retrieveEdges(ActivityNode activityNode, Set<ActivityParameterNode> parameterNodes) {
+		Set<ActivityEdge> edges = new HashSet<>();
+		for (ActivityParameterNode paramNode : parameterNodes) {
+			edges.addAll(extractEdge(activityNode, paramNode));
+		}
+		return edges;
+	}
+
+	private Set<ActivityEdge> extractEdge(ActivityNode activityNode, ActivityParameterNode paramNode) {
+		EdgeID id = new EdgeID(activityNode.getName(), paramNode.getName());
+		if (activityEdgeMap.containsKey(id)) {
+			return activityEdgeMap.get(id);
+		} else {
+			id = new EdgeID(paramNode.getName(), activityNode.getName());
+			return activityEdgeMap.get(id);
+		}
+
 	}
 
 }
