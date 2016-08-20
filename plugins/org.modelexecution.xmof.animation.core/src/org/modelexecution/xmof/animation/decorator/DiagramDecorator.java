@@ -82,39 +82,32 @@ public abstract class DiagramDecorator {
 		}
 		if (isActivityFinished()) {
 			resetDiagram();
-
 		}
+
 		activeNode = activityNodeMap.get(match.getXmofElementName());
 
-		if (previouslyActiveNode != null) {
-			if (conncetedParameterNodeMap.containsKey(previouslyActiveNode)) {
-				for (ActivityNode node : conncetedParameterNodeMap.get(previouslyActiveNode)) {
-					decorateElement(node, ElementState.TRAVERSED);
-				}
-			}
-			if (!(previouslyActiveNode instanceof StructuredActivityNode)) {
+		decoratePreviouslyActiveNodes();
+		decoratePreviouslyActiveEdges();
+		decorateActiveNode();
+		decorateActiveEdges();
 
-				decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
-			}
+		previouslyActiveNode = activeNode;
+		previouslyActiveEdges = activeEdges;
+		return activeNode != null;
 
-		}
-		if (inStructuredNode != null) {
+	}
 
-			if (activeNode == null || activeNode.getInStructuredNode() == null
-					|| !activeNode.getInStructuredNode().equals(inStructuredNode)) {
-				previouslyActiveNode = inStructuredNode;
-				decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
-				inStructuredNode = null;
-			}
-		}
-
-		if (previouslyActiveEdges != null) {
-			for (ActivityEdge edge : previouslyActiveEdges) {
-				decorateElement(edge, ElementState.TRAVERSED);
+	private void decorateActiveEdges() {
+		activeEdges = retrieveActiveEdges();
+		if (activeEdges != null) {
+			for (ActivityEdge edge : activeEdges) {
+				decorateElement(edge, ElementState.ACTIVE);
 			}
 
 		}
+	}
 
+	private void decorateActiveNode() {
 		if (activeNode != null) {
 			if (activeNode instanceof StructuredActivityNode) {
 				inStructuredNode = (StructuredActivityNode) activeNode;
@@ -126,19 +119,41 @@ public abstract class DiagramDecorator {
 				}
 			}
 		}
+	}
 
-		activeEdges = retrieveActiveEdges();
-		if (activeEdges != null) {
-			for (ActivityEdge edge : activeEdges) {
-				decorateElement(edge, ElementState.ACTIVE);
+	private void decoratePreviouslyActiveEdges() {
+		if (previouslyActiveEdges != null) {
+			for (ActivityEdge edge : previouslyActiveEdges) {
+				decorateElement(edge, ElementState.TRAVERSED);
 			}
 
 		}
+	}
 
-		previouslyActiveNode = activeNode;
-		previouslyActiveEdges = activeEdges;
-		return activeNode != null;
+	private void decoratePreviouslyActiveNodes() {
+		if (previouslyActiveNode != null) {
+			if (conncetedParameterNodeMap.containsKey(previouslyActiveNode)) {
+				for (ActivityNode node : conncetedParameterNodeMap.get(previouslyActiveNode)) {
+					decorateElement(node, ElementState.TRAVERSED);
+				}
+			}
+			if (!(previouslyActiveNode instanceof StructuredActivityNode)) {
+				decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
+			}
 
+		}
+		if (inStructuredNode != null) {
+			if (executionOfStructuredNodeFinished()) {
+				previouslyActiveNode = inStructuredNode;
+				decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
+				inStructuredNode = null;
+			}
+		}
+	}
+
+	private boolean executionOfStructuredNodeFinished() {
+		return activeNode == null || activeNode.getInStructuredNode() == null
+				|| !activeNode.getInStructuredNode().equals(inStructuredNode);
 	}
 
 	private void resetDiagram() {
@@ -291,14 +306,13 @@ public abstract class DiagramDecorator {
 		if (conncetedParameterNodeMap.containsKey(activeNode)) {
 			edges.addAll(retrieveEdges(activeNode, conncetedParameterNodeMap.get(activeNode)));
 		}
-		if (previouslyActiveNode!=null){
+		if (previouslyActiveNode != null) {
 			EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
-			if (activityEdgeMap.get(id)!=null){
+			if (activityEdgeMap.get(id) != null) {
 				edges.addAll(activityEdgeMap.get(id));
 			}
-		
+
 		}
-		
 
 		return edges;
 	}
