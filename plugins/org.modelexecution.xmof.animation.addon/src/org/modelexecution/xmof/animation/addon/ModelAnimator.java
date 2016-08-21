@@ -92,8 +92,10 @@ public class ModelAnimator implements IEngineAddon {
 
 	@Override
 	public void engineAboutToStop(IBasicExecutionEngine engine) {
-		// TODO Auto-generated method stub
-
+		if (animationController != null) {
+			animationController.dispose();
+			animationController = null;
+		}
 	}
 
 	@Override
@@ -104,10 +106,7 @@ public class ModelAnimator implements IEngineAddon {
 
 	@Override
 	public void engineAboutToDispose(IBasicExecutionEngine engine) {
-		if (animationController != null) {
-			animationController.dispose();
-			animationController = null;
-		}
+		
 
 	}
 

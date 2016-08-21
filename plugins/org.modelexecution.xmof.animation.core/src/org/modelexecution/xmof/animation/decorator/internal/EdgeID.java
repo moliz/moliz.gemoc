@@ -9,6 +9,7 @@
 package org.modelexecution.xmof.animation.decorator.internal;
 
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 
 /**
  * Combined ID for activity edges that include the source and target node IDs
@@ -24,11 +25,13 @@ public class EdgeID {
 	private String targetNodeId;
 
 	public EdgeID(ActivityEdge edge) {
-		if (edge.getSource() != null) {
-			sourceNodeId = edge.getSource().getName();
+		ActivityNode source= DiagramUtil.retreiveSourceNode(edge);
+		ActivityNode target= DiagramUtil.retreiveTargetNode(edge);
+		if (source!= null) {
+			sourceNodeId = source.getName();
 		}
-		if (edge.getTarget() != null) {
-			targetNodeId = edge.getTarget().getName();
+		if (target!= null) {
+			targetNodeId = target.getName();
 		}
 	}
 

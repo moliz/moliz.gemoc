@@ -20,7 +20,7 @@ import java.util.Set;
  * @version 1.0
  *
  */
-public class ElementContainer {
+public class ActivityElementContainer {
 
 	private Set<String> activeNodes=new HashSet<>();
 	private Set<EdgeID> activeEdges= new HashSet<>();

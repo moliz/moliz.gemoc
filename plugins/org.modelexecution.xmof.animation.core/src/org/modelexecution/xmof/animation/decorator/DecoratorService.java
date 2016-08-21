@@ -17,7 +17,7 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
-import org.modelexecution.xmof.animation.decorator.internal.ElementContainer;
+import org.modelexecution.xmof.animation.decorator.internal.ActivityElementContainer;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 import org.modelexecution.xmof.animation.decorator.internal.Representation;
 
@@ -32,7 +32,7 @@ import org.modelexecution.xmof.animation.decorator.internal.Representation;
  */
 public class DecoratorService {
 
-	private static Map<String, ElementContainer> activityElementContainerMap = new HashMap<>();
+	private static Map<String, ActivityElementContainer> activityElementContainerMap = new HashMap<>();
 	private static Representation xmofRepresentation;
 	private static boolean running=false;
 
@@ -54,7 +54,7 @@ public class DecoratorService {
 	public static boolean isActiveNode(ActivityNode node) {
 		if (!running) return false;
 		String key = getActivityName(node);
-		ElementContainer container = activityElementContainerMap.get(key);
+		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
 			return container.getActiveNodes().contains(node.getName());
 		}
@@ -73,7 +73,7 @@ public class DecoratorService {
 	public static boolean isTraversedNode(ActivityNode node) {
 		if (!running) return false;
 		String key = getActivityName(node);
-		ElementContainer container = activityElementContainerMap.get(key);
+		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
 			return container.getTraversedNodes().contains(node.getName());
 		}
@@ -90,7 +90,7 @@ public class DecoratorService {
 	public static boolean isActiveEdge(ActivityEdge edge) {
 		if (!running) return false;
 		String key = getActivityName(edge);
-		ElementContainer container = activityElementContainerMap.get(key);
+		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null && container.getActiveEdges() != null) {
 
 			return container.getActiveEdges().contains(new EdgeID(edge));
@@ -108,7 +108,7 @@ public class DecoratorService {
 	public static boolean isTraversedEdge(ActivityEdge edge) {
 		if (!running) return false;
 		String key = getActivityName(edge);
-		ElementContainer container = activityElementContainerMap.get(key);
+		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
 
 			return container.getTraversedEdges().contains(new EdgeID(edge));
@@ -118,7 +118,7 @@ public class DecoratorService {
 
 	public static void intializeContainer(String activityName) {
 		if (!activityElementContainerMap.containsKey(activityName)) {
-			activityElementContainerMap.put(activityName, new ElementContainer());
+			activityElementContainerMap.put(activityName, new ActivityElementContainer());
 		}
 
 	}
@@ -130,25 +130,25 @@ public class DecoratorService {
 	}
 
 	public static void clear(String activityName) {
-		activityElementContainerMap.put(activityName, new ElementContainer());
+		activityElementContainerMap.put(activityName, new ActivityElementContainer());
 	}
 
 	private static void setActiveNode(Activity activity, ActivityNode node) {
-		ElementContainer container = activityElementContainerMap.get(activity.getName());
+		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
 		if (container != null) {
 			container.addActiveNode(node.getName());
 		}
 	}
 
 	private static void addTraversedNode(Activity activity, ActivityNode node) {
-		ElementContainer container = activityElementContainerMap.get(activity.getName());
+		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
 		if (container != null) {
 			container.addTraversedNode(node.getName());
 		}
 	}
 
 	private static void setActiveEdge(Activity activity, ActivityEdge edge) {
-		ElementContainer container = activityElementContainerMap.get(activity.getName());
+		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
 		if (container != null) {
 
 			container.addActiveEdge(new EdgeID(edge));
@@ -156,7 +156,7 @@ public class DecoratorService {
 	}
 
 	private static void addTraversedEdge(Activity activity, ActivityEdge edge) {
-		ElementContainer container = activityElementContainerMap.get(activity.getName());
+		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
 		if (container != null) {
 			container.addTraversedEdge(new EdgeID(edge));
 		}
