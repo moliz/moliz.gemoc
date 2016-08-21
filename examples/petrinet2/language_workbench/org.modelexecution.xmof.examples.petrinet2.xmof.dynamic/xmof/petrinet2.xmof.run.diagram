@@ -371,7 +371,7 @@
         <points y="15"/>
       </graphicsAlgorithm>
       <link>
-        <businessObjects href="petrinet2.xmof#//NetConfiguration/run.1/m2"/>
+        <businessObjects href="petrinet2.xmof#//NetConfiguration/run.1/m1"/>
       </link>
       <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.10" incomingConnections="//@connections.9 //@connections.11"/>
     </children>

@@ -295,38 +295,6 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nFRvomGrEea96JAZOEpPDQ" x="132" y="-36" width="747" height="459"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_nFQhgWGrEea96JAZOEpPDQ"/>
-          <edges xmi:type="notation:Edge" xmi:id="_nFytAGGrEea96JAZOEpPDQ" type="4001" element="_nFEUj2GrEea96JAZOEpPDQ" source="_nFbgoGGrEea96JAZOEpPDQ" target="_nFhAMGGrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nFz7IGGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nFz7IWGrEea96JAZOEpPDQ" x="16" y="-5"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF0iMGGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF0iMWGrEea96JAZOEpPDQ" x="21" y="4"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF1JQGGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF1JQWGrEea96JAZOEpPDQ" x="-8" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nFytAWGrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nFytAmGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nFytA2GrEea96JAZOEpPDQ" points="[14, 14, -70, -16]$[69, 14, -15, -16]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF2-cGGrEea96JAZOEpPDQ" id="(0.5,0.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF2-cWGrEea96JAZOEpPDQ" id="(0.5,1.0)"/>
-          </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_nF3lgGGrEea96JAZOEpPDQ" type="4001" element="_nFEUkmGrEea96JAZOEpPDQ" source="_nFhAMGGrEea96JAZOEpPDQ" target="_nFYdV2GrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nF4MkGGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF4MkWGrEea96JAZOEpPDQ" x="-217" y="13"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF4MkmGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF4Mk2GrEea96JAZOEpPDQ" x="72" y="-10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF4MlGGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF4MlWGrEea96JAZOEpPDQ" x="-426" y="15"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nF3lgWGrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nF3lgmGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nF3lg2GrEea96JAZOEpPDQ" points="[-1, 30, 5, -84]$[-1, 56, 5, -58]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF4MlmGrEea96JAZOEpPDQ" id="(0.5,0.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF4Ml2GrEea96JAZOEpPDQ" id="(0.5,1.0)"/>
-          </edges>
           <edges xmi:type="notation:Edge" xmi:id="_nF4zoGGrEea96JAZOEpPDQ" type="4001" element="_nFEUlWGrEea96JAZOEpPDQ" source="_nFZrdGGrEea96JAZOEpPDQ" target="_nFXPMGGrEea96JAZOEpPDQ">
             <children xmi:type="notation:Node" xmi:id="_nF4zpGGrEea96JAZOEpPDQ" type="6001">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF4zpWGrEea96JAZOEpPDQ" x="-17" y="-72"/>
@@ -342,22 +310,6 @@
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nF4zo2GrEea96JAZOEpPDQ" points="[-138, 109, -1, -117]$[-138, 168, -1, -58]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF5asGGrEea96JAZOEpPDQ" id="(0.4989648033126294,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF5asWGrEea96JAZOEpPDQ" id="(0.5,1.0)"/>
-          </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_nF5asmGrEea96JAZOEpPDQ" type="4001" element="_nFEUmGGrEea96JAZOEpPDQ" source="_nFZEa2GrEea96JAZOEpPDQ" target="_nFhAMGGrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nF5atmGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF5at2GrEea96JAZOEpPDQ" x="-100" y="-227"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF6BwGGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF6BwWGrEea96JAZOEpPDQ" x="-4" y="13"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF6BwmGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF6Bw2GrEea96JAZOEpPDQ" y="-10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nF5as2GrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nF5atGGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nF5atWGrEea96JAZOEpPDQ" points="[0, 0, 525, 282]$[0, -297, 525, -15]$[-510, -297, 15, -15]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF6BxGGrEea96JAZOEpPDQ" id="(0.4965986394557823,0.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF6BxWGrEea96JAZOEpPDQ" id="(0.5,1.0)"/>
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_nF6BxmGrEea96JAZOEpPDQ" type="4001" element="_nFEUm2GrEea96JAZOEpPDQ" source="_nFubkmGrEea96JAZOEpPDQ" target="_nFtNcGGrEea96JAZOEpPDQ">
             <children xmi:type="notation:Node" xmi:id="_nF6o0GGrEea96JAZOEpPDQ" type="6001">
@@ -455,22 +407,6 @@
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF-TMGGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF-TMWGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_nF-TMmGrEea96JAZOEpPDQ" type="4001" element="_nFEUrWGrEea96JAZOEpPDQ" source="_nFl4t2GrEea96JAZOEpPDQ" target="_nFnt5mGrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nF-TNmGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF-TN2GrEea96JAZOEpPDQ" x="6" y="-10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF-TOGGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF-TOWGrEea96JAZOEpPDQ" x="2" y="10"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF-TOmGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF-TO2GrEea96JAZOEpPDQ" x="10" y="10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nF-TM2GrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nF-TNGGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nF-TNWGrEea96JAZOEpPDQ" points="[10, 4, -82, 3]$[82, 4, -10, 3]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF-6QGGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF-6QWGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
-          </edges>
           <edges xmi:type="notation:Edge" xmi:id="_nF-6QmGrEea96JAZOEpPDQ" type="4001" element="_nFEUsGGrEea96JAZOEpPDQ" source="_nFhnQGGrEea96JAZOEpPDQ" target="_nFl4smGrEea96JAZOEpPDQ">
             <children xmi:type="notation:Node" xmi:id="_nF-6RmGrEea96JAZOEpPDQ" type="6001">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF-6R2GrEea96JAZOEpPDQ" x="-212" y="9"/>
@@ -487,22 +423,6 @@
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF-6TGGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF-6TWGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_nF_hUGGrEea96JAZOEpPDQ" type="4001" element="_nFEUs2GrEea96JAZOEpPDQ" source="_nFrYQGGrEea96JAZOEpPDQ" target="_nFlRqGGrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nF_hVGGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF_hVWGrEea96JAZOEpPDQ" x="-170" y="8"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF_hVmGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF_hV2GrEea96JAZOEpPDQ" x="-19" y="40"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_nF_hWGGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nF_hWWGrEea96JAZOEpPDQ" x="-48" y="-10"/>
-            </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nF_hUWGrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nF_hUmGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nF_hU2GrEea96JAZOEpPDQ" points="[4, 2, 228, -87]$[66, 2, 290, -87]$[66, 37, 290, -52]$[-246, 37, -22, -52]$[-246, 89, -22, 0]$[-234, 89, -10, 0]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF_hWmGrEea96JAZOEpPDQ" id="(0.5,0.4857142857142857)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nF_hW2GrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
-          </edges>
           <edges xmi:type="notation:Edge" xmi:id="_nGAIYGGrEea96JAZOEpPDQ" type="4001" element="_nFEUtmGrEea96JAZOEpPDQ" source="_nFkDgmGrEea96JAZOEpPDQ" target="_nFqxM2GrEea96JAZOEpPDQ">
             <children xmi:type="notation:Node" xmi:id="_nGAIZGGrEea96JAZOEpPDQ" type="6001">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nGAIZWGrEea96JAZOEpPDQ" x="-187" y="7"/>
@@ -518,6 +438,86 @@
             <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nGAIY2GrEea96JAZOEpPDQ" points="[10, -1, 343, -89]$[40, -1, 373, -89]$[40, 59, 373, -29]$[-356, 59, -23, -29]$[-356, 88, -23, 0]$[-338, 88, -5, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nGAvcGGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nGAvcWGrEea96JAZOEpPDQ" id="(0.5,0.4857142857142857)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_I8bCAGfHEea7Ft2hfWOPVg" type="4001" element="_I8IuIGfHEea7Ft2hfWOPVg" source="_nFbgoGGrEea96JAZOEpPDQ" target="_nFhAMGGrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_I8bCBGfHEea7Ft2hfWOPVg" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8bCBWfHEea7Ft2hfWOPVg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8bCBmfHEea7Ft2hfWOPVg" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8bCB2fHEea7Ft2hfWOPVg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8bCCGfHEea7Ft2hfWOPVg" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8bCCWfHEea7Ft2hfWOPVg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_I8bCAWfHEea7Ft2hfWOPVg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_I8bCAmfHEea7Ft2hfWOPVg" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I8bCA2fHEea7Ft2hfWOPVg" points="[139, 0, 139, 0]$[223, 0, 223, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8bpEGfHEea7Ft2hfWOPVg" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8bpEWfHEea7Ft2hfWOPVg" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_I8bpEmfHEea7Ft2hfWOPVg" type="4001" element="_I8JVMmfHEea7Ft2hfWOPVg" source="_nFhAMGGrEea96JAZOEpPDQ" target="_nFYdV2GrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_I8bpFmfHEea7Ft2hfWOPVg" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8bpF2fHEea7Ft2hfWOPVg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8bpGGfHEea7Ft2hfWOPVg" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8bpGWfHEea7Ft2hfWOPVg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8bpGmfHEea7Ft2hfWOPVg" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8bpG2fHEea7Ft2hfWOPVg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_I8bpE2fHEea7Ft2hfWOPVg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_I8bpFGfHEea7Ft2hfWOPVg" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I8bpFWfHEea7Ft2hfWOPVg" points="[-1, 15, 5, -55]$[-1, 41, 5, -29]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8cQIGfHEea7Ft2hfWOPVg" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8cQIWfHEea7Ft2hfWOPVg" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_I8cQImfHEea7Ft2hfWOPVg" type="4001" element="_I8JVNWfHEea7Ft2hfWOPVg" source="_nFZEa2GrEea96JAZOEpPDQ" target="_nFhAMGGrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_I8cQJmfHEea7Ft2hfWOPVg" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8cQJ2fHEea7Ft2hfWOPVg" x="5" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8cQKGfHEea7Ft2hfWOPVg" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8cQKWfHEea7Ft2hfWOPVg" x="-1" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8cQKmfHEea7Ft2hfWOPVg" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8cQK2fHEea7Ft2hfWOPVg" x="1" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_I8cQI2fHEea7Ft2hfWOPVg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_I8cQJGfHEea7Ft2hfWOPVg" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I8cQJWfHEea7Ft2hfWOPVg" points="[-46, -28, 479, 297]$[-46, -326, 479, -1]$[-510, -326, 15, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8c3MGfHEea7Ft2hfWOPVg" id="(0.4965986394557823,0.4883720930232558)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8c3MWfHEea7Ft2hfWOPVg" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_I8c3MmfHEea7Ft2hfWOPVg" type="4001" element="_I8U7YGfHEea7Ft2hfWOPVg" source="_nFrYQGGrEea96JAZOEpPDQ" target="_nFlRqGGrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_I8c3NmfHEea7Ft2hfWOPVg" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8c3N2fHEea7Ft2hfWOPVg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8c3OGfHEea7Ft2hfWOPVg" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8c3OWfHEea7Ft2hfWOPVg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8c3OmfHEea7Ft2hfWOPVg" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8c3O2fHEea7Ft2hfWOPVg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_I8c3M2fHEea7Ft2hfWOPVg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_I8c3NGfHEea7Ft2hfWOPVg" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I8c3NWfHEea7Ft2hfWOPVg" points="[669, 204, 669, 204]$[439, 300, 439, 300]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8c3PGfHEea7Ft2hfWOPVg" id="(0.5,0.4857142857142857)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8c3PWfHEea7Ft2hfWOPVg" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_I8c3PmfHEea7Ft2hfWOPVg" type="4001" element="_I8VicGfHEea7Ft2hfWOPVg" source="_nFl4t2GrEea96JAZOEpPDQ" target="_nFnt5mGrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_I8deQGfHEea7Ft2hfWOPVg" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8deQWfHEea7Ft2hfWOPVg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8deQmfHEea7Ft2hfWOPVg" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8deQ2fHEea7Ft2hfWOPVg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I8deRGfHEea7Ft2hfWOPVg" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I8deRWfHEea7Ft2hfWOPVg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_I8c3P2fHEea7Ft2hfWOPVg" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_I8c3QGfHEea7Ft2hfWOPVg" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I8c3QWfHEea7Ft2hfWOPVg" points="[588, 316, 588, 316]$[679, 317, 679, 317]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8deRmfHEea7Ft2hfWOPVg" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8deR2fHEea7Ft2hfWOPVg" id="(0.5,0.5)"/>
           </edges>
         </data>
       </ownedAnnotationEntries>
@@ -605,7 +605,7 @@
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@subNodeMappings[name='Info']"/>
           </ownedElements>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_nFEUWmGrEea96JAZOEpPDQ" name="ReadSelfAction" incomingEdges="_nFEUkmGrEea96JAZOEpPDQ" width="20" height="6">
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_nFEUWmGrEea96JAZOEpPDQ" name="ReadSelfAction" incomingEdges="_I8JVMmfHEea7Ft2hfWOPVg" width="20" height="6">
           <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/read%20self"/>
           <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/read%20self"/>
           <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nFEUW2GrEea96JAZOEpPDQ" name="result" outgoingEdges="_nFEUqmGrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
@@ -639,7 +639,7 @@
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_nFEUYGGrEea96JAZOEpPDQ" name="CallBehaviorAction" width="20" height="6">
           <target xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20ListGet"/>
           <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20ListGet"/>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nFEUYWGrEea96JAZOEpPDQ" name="list" incomingEdges="_nFEUs2GrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nFEUYWGrEea96JAZOEpPDQ" name="list" incomingEdges="_I8U7YGfHEea7Ft2hfWOPVg" width="2" height="2" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20ListGet/list"/>
             <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20ListGet/list"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -661,7 +661,7 @@
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_InputPin']"/>
           </ownedBorderedNodes>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nFEUZWGrEea96JAZOEpPDQ" name="result" outgoingEdges="_nFEUrWGrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nFEUZWGrEea96JAZOEpPDQ" name="result" outgoingEdges="_I8VicGfHEea7Ft2hfWOPVg" width="2" height="2" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20ListGet/result"/>
             <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20ListGet/result"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -689,10 +689,10 @@
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@subNodeMappings[name='Info']"/>
           </ownedElements>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_nFEUamGrEea96JAZOEpPDQ" name="CallOperationAction" outgoingEdges="_nFEUmGGrEea96JAZOEpPDQ" width="20" height="6">
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_nFEUamGrEea96JAZOEpPDQ" name="CallOperationAction" outgoingEdges="_I8JVNWfHEea7Ft2hfWOPVg" width="20" height="6">
           <target xmi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20fire()"/>
           <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20fire()"/>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nFEUa2GrEea96JAZOEpPDQ" name="target" incomingEdges="_nFEUrWGrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nFEUa2GrEea96JAZOEpPDQ" name="target" incomingEdges="_I8VicGfHEea7Ft2hfWOPVg" width="2" height="2" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20fire()/target"/>
             <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/call%20fire()/target"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -732,7 +732,7 @@
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_ExpansionRegion']/@borderedNodeMappings[name='ExpansionNode']"/>
           </ownedBorderedNodes>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nFEUdGGrEea96JAZOEpPDQ" outgoingEdges="_nFEUs2GrEea96JAZOEpPDQ" incomingEdges="_nFEUnmGrEea96JAZOEpPDQ" width="1" height="1" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nFEUdGGrEea96JAZOEpPDQ" outgoingEdges="_I8U7YGfHEea7Ft2hfWOPVg" incomingEdges="_nFEUnmGrEea96JAZOEpPDQ" width="1" height="1" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/en2"/>
             <semanticElements xmi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/en2"/>
             <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_nFEUdWGrEea96JAZOEpPDQ"/>
@@ -818,7 +818,7 @@
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
           </ownedDiagramElements>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_nFEUiWGrEea96JAZOEpPDQ" outgoingEdges="_nFEUj2GrEea96JAZOEpPDQ" width="3" height="3" resizeKind="NSEW">
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_nFEUiWGrEea96JAZOEpPDQ" outgoingEdges="_I8IuIGfHEea7Ft2hfWOPVg" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:InitialNode" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/i1"/>
           <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:InitialNode" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/i1"/>
           <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_nFEUimGrEea96JAZOEpPDQ"/>
@@ -830,7 +830,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_nFEUjGGrEea96JAZOEpPDQ" outgoingEdges="_nFEUkmGrEea96JAZOEpPDQ" incomingEdges="_nFEUj2GrEea96JAZOEpPDQ _nFEUmGGrEea96JAZOEpPDQ" width="3" height="3" resizeKind="NSEW">
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_nFEUjGGrEea96JAZOEpPDQ" outgoingEdges="_I8JVMmfHEea7Ft2hfWOPVg" incomingEdges="_I8IuIGfHEea7Ft2hfWOPVg _I8JVNWfHEea7Ft2hfWOPVg" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:MergeNode" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/m1"/>
           <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:MergeNode" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/m1"/>
           <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_nFEUjWGrEea96JAZOEpPDQ"/>
@@ -843,39 +843,12 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nFEUj2GrEea96JAZOEpPDQ" sourceNode="_nFEUiWGrEea96JAZOEpPDQ" targetNode="_nFEUjGGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e1"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e1"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_lGD3oGGwEea2S94zk2-nzA" size="2" routingStyle="manhattan">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_lGD3oWGwEea2S94zk2-nzA"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nFEUkmGrEea96JAZOEpPDQ" sourceNode="_nFEUjGGrEea96JAZOEpPDQ" targetNode="_nFEUWmGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e2"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e2"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nFEUk2GrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nFEUlGGrEea96JAZOEpPDQ"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
-      </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nFEUlWGrEea96JAZOEpPDQ" sourceNode="_nFEUcGGrEea96JAZOEpPDQ" targetNode="_nFEUTGGrEea96JAZOEpPDQ">
         <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e5"/>
         <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e5"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nFEUlmGrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nFEUl2GrEea96JAZOEpPDQ"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nFEUmGGrEea96JAZOEpPDQ" sourceNode="_nFEUamGrEea96JAZOEpPDQ" targetNode="_nFEUjGGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e3"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e3"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nFEUmWGrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nFEUmmGrEea96JAZOEpPDQ"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
       </ownedDiagramElements>
@@ -933,15 +906,6 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nFEUrWGrEea96JAZOEpPDQ" sourceNode="_nFEUZWGrEea96JAZOEpPDQ" targetNode="_nFEUa2GrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e7"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e7"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_lGLMYGGwEea2S94zk2-nzA" size="2" routingStyle="manhattan">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_lGLMYWGwEea2S94zk2-nzA"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
-      </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nFEUsGGrEea96JAZOEpPDQ" sourceNode="_nFEUTWGrEea96JAZOEpPDQ" targetNode="_nFEUY2GrEea96JAZOEpPDQ">
         <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e6"/>
         <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e6"/>
@@ -951,21 +915,57 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nFEUs2GrEea96JAZOEpPDQ" sourceNode="_nFEUdGGrEea96JAZOEpPDQ" targetNode="_nFEUYWGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e8"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e8"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nFEUtGGrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nFEUtWGrEea96JAZOEpPDQ"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
-      </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nFEUtmGrEea96JAZOEpPDQ" sourceNode="_nFEUVWGrEea96JAZOEpPDQ" targetNode="_nFEUcWGrEea96JAZOEpPDQ">
         <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e11"/>
         <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/e11"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nFEUt2GrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nFEUuGGrEea96JAZOEpPDQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_I8IuIGfHEea7Ft2hfWOPVg" sourceNode="_nFEUiWGrEea96JAZOEpPDQ" targetNode="_nFEUjGGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_I8JVMGfHEea7Ft2hfWOPVg" size="2" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_I8JVMWfHEea7Ft2hfWOPVg"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_I8JVMmfHEea7Ft2hfWOPVg" sourceNode="_nFEUjGGrEea96JAZOEpPDQ" targetNode="_nFEUWmGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%.1"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_I8JVM2fHEea7Ft2hfWOPVg" size="2" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_I8JVNGfHEea7Ft2hfWOPVg"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_I8JVNWfHEea7Ft2hfWOPVg" sourceNode="_nFEUamGrEea96JAZOEpPDQ" targetNode="_nFEUjGGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%.2"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_I8J8QGfHEea7Ft2hfWOPVg" size="2" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_I8J8QWfHEea7Ft2hfWOPVg"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ControlFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_I8U7YGfHEea7Ft2hfWOPVg" sourceNode="_nFEUdGGrEea96JAZOEpPDQ" targetNode="_nFEUYWGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%.3"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%.3"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_I8U7YWfHEea7Ft2hfWOPVg" size="2" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_I8U7YmfHEea7Ft2hfWOPVg"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_I8VicGfHEea7Ft2hfWOPVg" sourceNode="_nFEUZWGrEea96JAZOEpPDQ" targetNode="_nFEUa2GrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%.4"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//NetConfiguration/run.1/%.4"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_I8VicWfHEea7Ft2hfWOPVg" size="2" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_I8VicmfHEea7Ft2hfWOPVg"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
       </ownedDiagramElements>
@@ -2912,7 +2912,7 @@
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI0y5WGrEea96JAZOEpPDQ"/>
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_nIv6Y2GrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nIv6ZGGrEea96JAZOEpPDQ" x="303" y="146" width="10" height="30"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nIv6ZGGrEea96JAZOEpPDQ" x="271" y="146" width="10" height="30"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_nIuFMmGrEea96JAZOEpPDQ"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_nIuFM2GrEea96JAZOEpPDQ"/>
@@ -2921,101 +2921,101 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nIteJWGrEea96JAZOEpPDQ" width="711" height="243"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_nIteImGrEea96JAZOEpPDQ"/>
-          <edges xmi:type="notation:Edge" xmi:id="_nI0y5mGrEea96JAZOEpPDQ" type="4001" element="_nIs3O2GrEea96JAZOEpPDQ" source="_nIv6Z2GrEea96JAZOEpPDQ" target="_nIvTVGGrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nI1Z8GGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI1Z8WGrEea96JAZOEpPDQ" x="28" y="42"/>
+          <edges xmi:type="notation:Edge" xmi:id="_yRJ5EGfIEeaF2f1JT2ckbw" type="4001" element="_yQ9r0GfIEeaF2f1JT2ckbw" source="_nIv6Z2GrEea96JAZOEpPDQ" target="_nIvTVGGrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_yRRN0GfIEeaF2f1JT2ckbw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRRN0WfIEeaF2f1JT2ckbw" y="-10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI1Z8mGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI1Z82GrEea96JAZOEpPDQ" x="53" y="-31"/>
+            <children xmi:type="notation:Node" xmi:id="_yRSb8GfIEeaF2f1JT2ckbw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRSb8WfIEeaF2f1JT2ckbw" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI1Z9GGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI1Z9WGrEea96JAZOEpPDQ" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_yRTDAGfIEeaF2f1JT2ckbw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRTDAWfIEeaF2f1JT2ckbw" y="10"/>
             </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nI0y52GrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nI0y6GGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nI0y6WGrEea96JAZOEpPDQ" points="[10, 4, -75, -8]$[80, 4, -5, -8]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI1Z9mGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI1Z92GrEea96JAZOEpPDQ" id="(0.5,1.0)"/>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_yRJ5EWfIEeaF2f1JT2ckbw" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_yRJ5EmfIEeaF2f1JT2ckbw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yRJ5E2fIEeaF2f1JT2ckbw" points="[181, 28, 181, 28]$[271, 20, 271, 20]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRXUcGfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRXUcWfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_nI1Z-GGrEea96JAZOEpPDQ" type="4001" element="_nIs3PmGrEea96JAZOEpPDQ" source="_nIvTVGGrEea96JAZOEpPDQ" target="_nIy9tmGrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nI2BAGGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI2BAWGrEea96JAZOEpPDQ" x="-45" y="-9"/>
+          <edges xmi:type="notation:Edge" xmi:id="_yRX7gGfIEeaF2f1JT2ckbw" type="4001" element="_yRAIEGfIEeaF2f1JT2ckbw" source="_nIvTVGGrEea96JAZOEpPDQ" target="_nIy9tmGrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_yRX7hGfIEeaF2f1JT2ckbw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRX7hWfIEeaF2f1JT2ckbw" x="3" y="-10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI2BAmGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI2BA2GrEea96JAZOEpPDQ" x="15" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_yRX7hmfIEeaF2f1JT2ckbw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRX7h2fIEeaF2f1JT2ckbw" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI2BBGGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI2BBWGrEea96JAZOEpPDQ" x="-85" y="-10"/>
+            <children xmi:type="notation:Node" xmi:id="_yRX7iGfIEeaF2f1JT2ckbw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRX7iWfIEeaF2f1JT2ckbw" y="10"/>
             </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nI1Z-WGrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nI1Z-mGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nI1Z-2GrEea96JAZOEpPDQ" points="[5, 7, -152, -10]$[147, 7, -10, -10]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI2BBmGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI2BB2GrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_yRX7gWfIEeaF2f1JT2ckbw" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_yRX7gmfIEeaF2f1JT2ckbw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yRX7g2fIEeaF2f1JT2ckbw" points="[5, -5, -152, -22]$[76, -5, -81, -22]$[76, 15, -81, -2]$[147, 15, -10, -2]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRYikGfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRYikWfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_nI2BCGGrEea96JAZOEpPDQ" type="4001" element="_nIs3QWGrEea96JAZOEpPDQ" source="_nIyWqWGrEea96JAZOEpPDQ" target="_nIv6YmGrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nI2BDGGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI2BDWGrEea96JAZOEpPDQ" x="9" y="24"/>
+          <edges xmi:type="notation:Edge" xmi:id="_yRYikmfIEeaF2f1JT2ckbw" type="4001" element="_yRAvIGfIEeaF2f1JT2ckbw" source="_nIvTVGGrEea96JAZOEpPDQ" target="_nIxIgmGrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_yRYilmfIEeaF2f1JT2ckbw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRYil2fIEeaF2f1JT2ckbw" x="-29" y="-10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI2oEGGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI2oEWGrEea96JAZOEpPDQ" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_yRYimGfIEeaF2f1JT2ckbw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRYimWfIEeaF2f1JT2ckbw" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI2oEmGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI2oE2GrEea96JAZOEpPDQ" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_yRYimmfIEeaF2f1JT2ckbw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRYim2fIEeaF2f1JT2ckbw" y="10"/>
             </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nI2BCWGrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nI2BCmGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nI2BC2GrEea96JAZOEpPDQ" points="[10, -1, -94, -16]$[99, -1, -5, -16]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI2oFGGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI2oFWGrEea96JAZOEpPDQ" id="(0.5,1.0)"/>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_yRYik2fIEeaF2f1JT2ckbw" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_yRYilGfIEeaF2f1JT2ckbw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yRYilWfIEeaF2f1JT2ckbw" points="[5, 3, -168, -116]$[55, 3, -118, -116]$[55, 112, -118, -7]$[163, 112, -10, -7]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRZJoGfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRZJoWfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_nI2oFmGrEea96JAZOEpPDQ" type="4001" element="_nIs3RGGrEea96JAZOEpPDQ" source="_nIv6YmGrEea96JAZOEpPDQ" target="_nIy9u2GrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nI2oGmGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI2oG2GrEea96JAZOEpPDQ" x="7" y="45"/>
+          <edges xmi:type="notation:Edge" xmi:id="_yRZJomfIEeaF2f1JT2ckbw" type="4001" element="_yRAvI2fIEeaF2f1JT2ckbw" source="_nIyWqWGrEea96JAZOEpPDQ" target="_nIv6YmGrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_yRZJpmfIEeaF2f1JT2ckbw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRZJp2fIEeaF2f1JT2ckbw" x="16" y="-10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI2oHGGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI2oHWGrEea96JAZOEpPDQ" x="22"/>
+            <children xmi:type="notation:Node" xmi:id="_yRZJqGfIEeaF2f1JT2ckbw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRZJqWfIEeaF2f1JT2ckbw" x="4" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI2oHmGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI2oH2GrEea96JAZOEpPDQ" x="8" y="10"/>
+            <children xmi:type="notation:Node" xmi:id="_yRZJqmfIEeaF2f1JT2ckbw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRZJq2fIEeaF2f1JT2ckbw" y="10"/>
             </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nI2oF2GrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nI2oGGGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nI2oGWGrEea96JAZOEpPDQ" points="[5, 0, -120, 84]$[23, 0, -102, 84]$[23, -83, -102, 1]$[115, -83, -10, 1]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI3PIGGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI3PIWGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_yRZJo2fIEeaF2f1JT2ckbw" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_yRZJpGfIEeaF2f1JT2ckbw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yRZJpWfIEeaF2f1JT2ckbw" points="[10, 0, -62, 0]$[67, 0, -5, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRZwsGfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRZwsWfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_nI3PImGrEea96JAZOEpPDQ" type="4001" element="_nIs3R2GrEea96JAZOEpPDQ" source="_nIv6YmGrEea96JAZOEpPDQ" target="_nIwheGGrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nI3PJmGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI3PJ2GrEea96JAZOEpPDQ" x="-56" y="14"/>
+          <edges xmi:type="notation:Edge" xmi:id="_yRZwsmfIEeaF2f1JT2ckbw" type="4001" element="_yRBWMGfIEeaF2f1JT2ckbw" source="_nIv6YmGrEea96JAZOEpPDQ" target="_nIy9u2GrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_yRZwtmfIEeaF2f1JT2ckbw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRZwt2fIEeaF2f1JT2ckbw" x="-33" y="-10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI3PKGGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI3PKWGrEea96JAZOEpPDQ" x="-16" y="-10"/>
+            <children xmi:type="notation:Node" xmi:id="_yRaXwGfIEeaF2f1JT2ckbw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRaXwWfIEeaF2f1JT2ckbw" x="-2" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI3PKmGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI3PK2GrEea96JAZOEpPDQ" x="-195" y="1"/>
+            <children xmi:type="notation:Node" xmi:id="_yRaXwmfIEeaF2f1JT2ckbw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRaXw2fIEeaF2f1JT2ckbw" x="4" y="10"/>
             </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nI3PI2GrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nI3PJGGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nI3PJWGrEea96JAZOEpPDQ" points="[5, -11, -136, 26]$[68, -11, -73, 26]$[68, -35, -73, 2]$[131, -35, -10, 2]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI3PLGGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI3PLWGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_yRZws2fIEeaF2f1JT2ckbw" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_yRZwtGfIEeaF2f1JT2ckbw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yRZwtWfIEeaF2f1JT2ckbw" points="[5, -4, -152, 80]$[43, -4, -114, 80]$[43, -78, -114, 6]$[147, -78, -10, 6]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRaXxGfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRaXxWfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
           </edges>
-          <edges xmi:type="notation:Edge" xmi:id="_nI32MGGrEea96JAZOEpPDQ" type="4001" element="_nIs3SmGrEea96JAZOEpPDQ" source="_nIvTVGGrEea96JAZOEpPDQ" target="_nIxIgmGrEea96JAZOEpPDQ">
-            <children xmi:type="notation:Node" xmi:id="_nI32NGGrEea96JAZOEpPDQ" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI32NWGrEea96JAZOEpPDQ" x="-6" y="10"/>
+          <edges xmi:type="notation:Edge" xmi:id="_yRaXxmfIEeaF2f1JT2ckbw" type="4001" element="_yRBWM2fIEeaF2f1JT2ckbw" source="_nIv6YmGrEea96JAZOEpPDQ" target="_nIwheGGrEea96JAZOEpPDQ">
+            <children xmi:type="notation:Node" xmi:id="_yRaXymfIEeaF2f1JT2ckbw" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRaXy2fIEeaF2f1JT2ckbw" x="18" y="-10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI32NmGrEea96JAZOEpPDQ" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI32N2GrEea96JAZOEpPDQ" y="7"/>
+            <children xmi:type="notation:Node" xmi:id="_yRaXzGfIEeaF2f1JT2ckbw" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRaXzWfIEeaF2f1JT2ckbw" x="27" y="10"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_nI32OGGrEea96JAZOEpPDQ" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nI32OWGrEea96JAZOEpPDQ" x="-75" y="-13"/>
+            <children xmi:type="notation:Node" xmi:id="_yRaXzmfIEeaF2f1JT2ckbw" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yRaXz2fIEeaF2f1JT2ckbw" x="5" y="10"/>
             </children>
-            <styles xmi:type="notation:ConnectorStyle" xmi:id="_nI32MWGrEea96JAZOEpPDQ" routing="Rectilinear"/>
-            <styles xmi:type="notation:FontStyle" xmi:id="_nI32MmGrEea96JAZOEpPDQ" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nI32M2GrEea96JAZOEpPDQ" points="[5, 14, -168, -105]$[79, 14, -94, -105]$[79, 115, -94, -4]$[163, 115, -10, -4]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI32OmGrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nI32O2GrEea96JAZOEpPDQ" id="(0.5,0.5)"/>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_yRaXx2fIEeaF2f1JT2ckbw" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_yRaXyGfIEeaF2f1JT2ckbw" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yRaXyWfIEeaF2f1JT2ckbw" points="[5, 2, -168, 39]$[100, 2, -73, 39]$[100, -35, -73, 2]$[163, -35, -10, 2]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRa-0GfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yRa-0WfIEeaF2f1JT2ckbw" id="(0.5,0.5)"/>
           </edges>
         </data>
       </ownedAnnotationEntries>
@@ -3033,7 +3033,7 @@
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_nIs3FWGrEea96JAZOEpPDQ" name="ReadSelfAction" width="20" height="6">
           <target xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/read%20self"/>
           <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/read%20self"/>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3FmGrEea96JAZOEpPDQ" name="result" outgoingEdges="_nIs3O2GrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3FmGrEea96JAZOEpPDQ" name="result" outgoingEdges="_yQ9r0GfIEeaF2f1JT2ckbw" width="2" height="2" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/read%20self/result"/>
             <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/read%20self/result"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -3064,7 +3064,7 @@
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_nIs3G2GrEea96JAZOEpPDQ" name="AddStructuralFeatureValueAction" width="20" height="6">
           <target xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/set%20holdingPlace"/>
           <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/set%20holdingPlace"/>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3HGGrEea96JAZOEpPDQ" name="object" incomingEdges="_nIs3R2GrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3HGGrEea96JAZOEpPDQ" name="object" incomingEdges="_yRBWM2fIEeaF2f1JT2ckbw" width="2" height="2" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/set%20holdingPlace/object"/>
             <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/set%20holdingPlace/object"/>
             <ownedStyle xmi:type="diagram:Square" xmi:id="_nIs3HWGrEea96JAZOEpPDQ" showIcon="false" labelAlignment="RIGHT" borderColor="136,136,136" color="209,209,209">
@@ -3072,7 +3072,7 @@
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_InputPin']"/>
           </ownedBorderedNodes>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3HmGrEea96JAZOEpPDQ" name="value" incomingEdges="_nIs3SmGrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3HmGrEea96JAZOEpPDQ" name="value" incomingEdges="_yRAvIGfIEeaF2f1JT2ckbw" width="2" height="2" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/set%20holdingPlace/value"/>
             <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/set%20holdingPlace/value"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -3114,7 +3114,7 @@
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_nIs3JWGrEea96JAZOEpPDQ" name="CreateObjectAction" width="20" height="6">
           <target xmi:type="fUML.Syntax.Actions.IntermediateActions:CreateObjectAction" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/create%20Token"/>
           <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:CreateObjectAction" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/create%20Token"/>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3JmGrEea96JAZOEpPDQ" name="result" outgoingEdges="_nIs3QWGrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3JmGrEea96JAZOEpPDQ" name="result" outgoingEdges="_yRAvI2fIEeaF2f1JT2ckbw" width="2" height="2" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/create%20Token/result"/>
             <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:OutputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/create%20Token/result"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -3145,7 +3145,7 @@
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_nIs3K2GrEea96JAZOEpPDQ" name="AddStructuralFeatureValueAction" width="20" height="6">
           <target xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/add%20heldTokens"/>
           <semanticElements xmi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/add%20heldTokens"/>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3LGGrEea96JAZOEpPDQ" name="object" incomingEdges="_nIs3PmGrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3LGGrEea96JAZOEpPDQ" name="object" incomingEdges="_yRAIEGfIEeaF2f1JT2ckbw" width="2" height="2" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/add%20heldTokens/object"/>
             <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/add%20heldTokens/object"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -3156,7 +3156,7 @@
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@borderedNodeMappings[name='AD_InputPin']"/>
           </ownedBorderedNodes>
-          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3LmGrEea96JAZOEpPDQ" name="value" incomingEdges="_nIs3RGGrEea96JAZOEpPDQ" width="2" height="2" resizeKind="NSEW">
+          <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_nIs3LmGrEea96JAZOEpPDQ" name="value" incomingEdges="_yRBWMGfIEeaF2f1JT2ckbw" width="2" height="2" resizeKind="NSEW">
             <target xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/add%20heldTokens/value"/>
             <semanticElements xmi:type="fUML.Syntax.Actions.BasicActions:InputPin" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/add%20heldTokens/value"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -3195,7 +3195,7 @@
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subContainerMappings[name='AD_Action']/@subNodeMappings[name='Info']"/>
           </ownedElements>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_nIs3NWGrEea96JAZOEpPDQ" outgoingEdges="_nIs3PmGrEea96JAZOEpPDQ _nIs3SmGrEea96JAZOEpPDQ" incomingEdges="_nIs3O2GrEea96JAZOEpPDQ" width="1" height="3" resizeKind="NSEW">
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_nIs3NWGrEea96JAZOEpPDQ" outgoingEdges="_yRAIEGfIEeaF2f1JT2ckbw _yRAvIGfIEeaF2f1JT2ckbw" incomingEdges="_yQ9r0GfIEeaF2f1JT2ckbw" width="1" height="3" resizeKind="NSEW">
           <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/f4"/>
           <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/f4"/>
           <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_nIs3NmGrEea96JAZOEpPDQ"/>
@@ -3207,7 +3207,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_nIs3OGGrEea96JAZOEpPDQ" outgoingEdges="_nIs3RGGrEea96JAZOEpPDQ _nIs3R2GrEea96JAZOEpPDQ" incomingEdges="_nIs3QWGrEea96JAZOEpPDQ" width="1" height="3" resizeKind="NSEW">
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_nIs3OGGrEea96JAZOEpPDQ" outgoingEdges="_yRBWMGfIEeaF2f1JT2ckbw _yRBWM2fIEeaF2f1JT2ckbw" incomingEdges="_yRAvI2fIEeaF2f1JT2ckbw" width="1" height="3" resizeKind="NSEW">
           <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/f5"/>
           <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/f5"/>
           <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_nIs3OWGrEea96JAZOEpPDQ"/>
@@ -3220,57 +3220,57 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nIs3O2GrEea96JAZOEpPDQ" sourceNode="_nIs3FmGrEea96JAZOEpPDQ" targetNode="_nIs3NWGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o5"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o5"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nIs3PGGrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_yQ9r0GfIEeaF2f1JT2ckbw" sourceNode="_nIs3FmGrEea96JAZOEpPDQ" targetNode="_nIs3NWGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_yQ-58GfIEeaF2f1JT2ckbw" size="2" routingStyle="manhattan">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nIs3PWGrEea96JAZOEpPDQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_yQ-58WfIEeaF2f1JT2ckbw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nIs3PmGrEea96JAZOEpPDQ" sourceNode="_nIs3NWGrEea96JAZOEpPDQ" targetNode="_nIs3LGGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o6"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o6"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nIs3P2GrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_yRAIEGfIEeaF2f1JT2ckbw" sourceNode="_nIs3NWGrEea96JAZOEpPDQ" targetNode="_nIs3LGGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.1"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_yRAIEWfIEeaF2f1JT2ckbw" size="2" routingStyle="manhattan">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nIs3QGGrEea96JAZOEpPDQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_yRAIEmfIEeaF2f1JT2ckbw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nIs3QWGrEea96JAZOEpPDQ" sourceNode="_nIs3JmGrEea96JAZOEpPDQ" targetNode="_nIs3OGGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o7"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o7"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nIs3QmGrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_yRAvIGfIEeaF2f1JT2ckbw" sourceNode="_nIs3NWGrEea96JAZOEpPDQ" targetNode="_nIs3HmGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.2"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_yRAvIWfIEeaF2f1JT2ckbw" size="2" routingStyle="manhattan">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nIs3Q2GrEea96JAZOEpPDQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_yRAvImfIEeaF2f1JT2ckbw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nIs3RGGrEea96JAZOEpPDQ" sourceNode="_nIs3OGGrEea96JAZOEpPDQ" targetNode="_nIs3LmGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o8"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o8"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nIs3RWGrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_yRAvI2fIEeaF2f1JT2ckbw" sourceNode="_nIs3JmGrEea96JAZOEpPDQ" targetNode="_nIs3OGGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.3"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.3"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_yRAvJGfIEeaF2f1JT2ckbw" size="2" routingStyle="manhattan">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nIs3RmGrEea96JAZOEpPDQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_yRAvJWfIEeaF2f1JT2ckbw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nIs3R2GrEea96JAZOEpPDQ" sourceNode="_nIs3OGGrEea96JAZOEpPDQ" targetNode="_nIs3HGGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o9"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o9"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nIs3SGGrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_yRBWMGfIEeaF2f1JT2ckbw" sourceNode="_nIs3OGGrEea96JAZOEpPDQ" targetNode="_nIs3LmGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.4"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.4"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_yRBWMWfIEeaF2f1JT2ckbw" size="2" routingStyle="manhattan">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nIs3SWGrEea96JAZOEpPDQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_yRBWMmfIEeaF2f1JT2ckbw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_nIs3SmGrEea96JAZOEpPDQ" sourceNode="_nIs3NWGrEea96JAZOEpPDQ" targetNode="_nIs3HmGrEea96JAZOEpPDQ">
-        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o10"/>
-        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/o10"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_nIs3S2GrEea96JAZOEpPDQ" size="2" routingStyle="manhattan">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_yRBWM2fIEeaF2f1JT2ckbw" sourceNode="_nIs3OGGrEea96JAZOEpPDQ" targetNode="_nIs3HGGrEea96JAZOEpPDQ">
+        <target xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.5"/>
+        <semanticElements xmi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" href="xmof/petrinet2.xmof#//PlaceConfiguration/addToken.1/%.5"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_yRBWNGfIEeaF2f1JT2ckbw" size="2" routingStyle="manhattan">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']/@style"/>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_nIs3TGGrEea96JAZOEpPDQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_yRBWNWfIEeaF2f1JT2ckbw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.representation.sirius.design/description/xmof.odesign#//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@edgeMappings[name='AD_ObjectFlow']"/>
       </ownedDiagramElements>
