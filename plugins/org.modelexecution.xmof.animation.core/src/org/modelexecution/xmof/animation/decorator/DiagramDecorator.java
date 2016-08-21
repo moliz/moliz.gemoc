@@ -25,6 +25,7 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ControlFlow;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.DecisionNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectFlow;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNode;
 import org.modelexecution.xmof.animation.decorator.internal.DiagramUtil;
@@ -46,6 +47,7 @@ public abstract class DiagramDecorator {
 	protected Activity activity;
 	protected Map<String, ActivityNode> activityNodeMap;
 	protected Map<EdgeID, Set<ActivityEdge>> activityEdgeMap;
+	protected Map<ActivityNode, Set<ActivityEdge>> forkNodeEdges;
 	protected Map<ActivityNode, Set<ActivityParameterNode>> conncetedParameterNodeMap;
 	protected ActivityNode activeNode;
 	protected ActivityNode previouslyActiveNode;
@@ -60,6 +62,7 @@ public abstract class DiagramDecorator {
 	public void initializeMaps() {
 		activityNodeMap = new HashMap<>();
 		activityEdgeMap = new HashMap<>();
+		forkNodeEdges = new HashMap<>();
 		conncetedParameterNodeMap = new HashMap<>();
 		for (ActivityNode node : activity.getNode()) {
 			processActivityNode(node);
@@ -88,6 +91,7 @@ public abstract class DiagramDecorator {
 
 		activeNode = activityNodeMap.get(match.getXmofElementName());
 
+		
 		decoratePreviouslyActiveNodes();
 		decoratePreviouslyActiveEdges();
 		decorateActiveNode();
@@ -98,9 +102,19 @@ public abstract class DiagramDecorator {
 		return activeNode != null;
 
 	}
+	
+	private void findActiveForkEdges() {
+		if (forkNodeEdges.containsKey(activeNode)) {
+			for(ActivityEdge edge: forkNodeEdges.get(activeNode)) {
+				activeEdges.add(edge);
+			}
+			
+		}
+	}
 
 	private void decorateActiveEdges() {
 		activeEdges = retrieveActiveEdges();
+		findActiveForkEdges();
 		if (activeEdges != null) {
 			for (ActivityEdge edge : activeEdges) {
 				decorateElement(edge, ElementState.ACTIVE);
@@ -208,6 +222,9 @@ public abstract class DiagramDecorator {
 		if (source != null && target != null) {
 			addToEdgeMap(edge, source, target);
 		}
+		if(source instanceof ForkNode) {
+			addToForkNodeEdges(source);
+		}
 		if (source instanceof ActivityParameterNode) {
 			addToConnectedParameterNodeMap(target, (ActivityParameterNode) source);
 		} else if (target instanceof ActivityParameterNode) {
@@ -223,6 +240,21 @@ public abstract class DiagramDecorator {
 		}
 		paramNodes.add(paramteterNode);
 		conncetedParameterNodeMap.put(key, paramNodes);
+	}
+	
+	private void addToForkNodeEdges(ActivityNode key) {
+		Set<ActivityEdge> edges;
+		for(ActivityEdge edge: key.getOutgoing()) {
+			edges = new HashSet<ActivityEdge>();
+			if(forkNodeEdges.containsKey(DiagramUtil.retreiveTargetNode(edge))) {
+				edges = forkNodeEdges.get(DiagramUtil.retreiveTargetNode(edge));
+				edges.add(edge);
+				forkNodeEdges.put(DiagramUtil.retreiveTargetNode(edge), edges);
+			} else {
+				edges.add(edge);
+				forkNodeEdges.put(DiagramUtil.retreiveTargetNode(edge), edges);
+			}
+		}
 	}
 
 	private void addToEdgeMap(ActivityEdge edge, ActivityNode source, ActivityNode target) {
