@@ -40,7 +40,7 @@ public class ModelAnimator implements IEngineAddon {
 
 	private AnimationController animationController;
 	private static String SIRIUS_SPECIFICATION_FILE = "representations.aird";
-	private static boolean FORCE_GRAPHITI=false;
+	private static boolean FORCE_GRAPHITI=true;
 	/**
 	 * Initialization of graphical representation. Either Graphiti or Sirius
 	 * will be used

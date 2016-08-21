@@ -15,9 +15,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.animation.controller.AnimationController;
-import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
 import org.modelexecution.xmof.animation.decorator.internal.ActivityElementContainer;
+import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 import org.modelexecution.xmof.animation.decorator.internal.Representation;
 
@@ -33,7 +32,7 @@ import org.modelexecution.xmof.animation.decorator.internal.Representation;
 public class DecoratorService {
 
 	private static Map<String, ActivityElementContainer> activityElementContainerMap = new HashMap<>();
-	private static Representation xmofRepresentation;
+	private static Representation xmofRepresentation=Representation.NONE;
 	private static boolean running=false;
 
 	public static void addDecoratedElement(Activity activity, EObject element, ElementState state) {
