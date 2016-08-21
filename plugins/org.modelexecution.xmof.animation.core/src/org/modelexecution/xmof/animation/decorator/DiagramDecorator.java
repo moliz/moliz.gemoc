@@ -91,7 +91,6 @@ public abstract class DiagramDecorator {
 
 		activeNode = activityNodeMap.get(match.getXmofElementName());
 
-		
 		decoratePreviouslyActiveNodes();
 		decoratePreviouslyActiveEdges();
 		decorateActiveNode();
@@ -102,19 +101,9 @@ public abstract class DiagramDecorator {
 		return activeNode != null;
 
 	}
-	
-	private void findActiveForkEdges() {
-		if (forkNodeEdges.containsKey(activeNode)) {
-			for(ActivityEdge edge: forkNodeEdges.get(activeNode)) {
-				activeEdges.add(edge);
-			}
-			
-		}
-	}
 
 	private void decorateActiveEdges() {
 		activeEdges = retrieveActiveEdges();
-		findActiveForkEdges();
 		if (activeEdges != null) {
 			for (ActivityEdge edge : activeEdges) {
 				decorateElement(edge, ElementState.ACTIVE);
@@ -218,11 +207,11 @@ public abstract class DiagramDecorator {
 	private void processActivityEdge(ActivityEdge edge) {
 		ActivityNode source = DiagramUtil.retreiveSourceNode(edge);
 		ActivityNode target = DiagramUtil.retreiveTargetNode(edge);
-		
+
 		if (source != null && target != null) {
 			addToEdgeMap(edge, source, target);
 		}
-		if(source instanceof ForkNode) {
+		if (source instanceof ForkNode) {
 			addToForkNodeEdges(source);
 		}
 		if (source instanceof ActivityParameterNode) {
@@ -241,19 +230,16 @@ public abstract class DiagramDecorator {
 		paramNodes.add(paramteterNode);
 		conncetedParameterNodeMap.put(key, paramNodes);
 	}
-	
+
 	private void addToForkNodeEdges(ActivityNode key) {
-		Set<ActivityEdge> edges;
-		for(ActivityEdge edge: key.getOutgoing()) {
-			edges = new HashSet<ActivityEdge>();
-			if(forkNodeEdges.containsKey(DiagramUtil.retreiveTargetNode(edge))) {
-				edges = forkNodeEdges.get(DiagramUtil.retreiveTargetNode(edge));
-				edges.add(edge);
-				forkNodeEdges.put(DiagramUtil.retreiveTargetNode(edge), edges);
-			} else {
-				edges.add(edge);
-				forkNodeEdges.put(DiagramUtil.retreiveTargetNode(edge), edges);
+		Set<ActivityEdge> edges = new HashSet<>();
+		for (ActivityEdge edge : key.getOutgoing()) {
+			edges = forkNodeEdges.get(DiagramUtil.retreiveTargetNode(edge));
+			if (edges == null) {
+				edges = new HashSet<>();
 			}
+			edges.add(edge);
+			forkNodeEdges.put(DiagramUtil.retreiveTargetNode(edge), edges);
 		}
 	}
 
@@ -266,8 +252,6 @@ public abstract class DiagramDecorator {
 		edges.add(edge);
 		activityEdgeMap.put(id, edges);
 	}
-
-	
 
 	/**
 	 * Determines nodes that are linked with the node
@@ -307,6 +291,9 @@ public abstract class DiagramDecorator {
 		Set<ActivityEdge> edges = new HashSet<>();
 		if (conncetedParameterNodeMap.containsKey(activeNode)) {
 			edges.addAll(retrieveEdges(activeNode, conncetedParameterNodeMap.get(activeNode)));
+		}
+		if (forkNodeEdges.containsKey(activeNode)) {
+			edges.addAll(forkNodeEdges.get(activeNode));
 		}
 		if (previouslyActiveNode != null) {
 			EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
