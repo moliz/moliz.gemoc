@@ -19,6 +19,7 @@ import org.eclipse.graphiti.util.IColorConstant;
 import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
 import org.modelexecution.xmof.animation.decorator.DecoratorService;
 import org.modelexecution.xmof.animation.decorator.internal.Representation;
 import org.modelexecution.xmof.diagram.decoration.IXMOFDecoratorProvider;
@@ -63,12 +64,18 @@ public class NodeDecoratorProvider implements IXMOFDecoratorProvider {
 			if (node instanceof StructuredActivityNode) {
 				return new IDecorator[] {
 						new BorderDecorator(new ColorConstant(51, 205, 153), 1, Graphics.LINE_DASHDOTDOT) };
+			}else if(node instanceof ActivityParameterNode){
+				return new IDecorator[] {
+						new BorderDecorator(new ColorConstant(51, 205, 153), 1, Graphics.LINE_SOLID) };
 			}
 			return new IDecorator[] { new ColorDecorator(IColorConstant.GREEN, new ColorConstant(51, 205, 153)) };
 		} else if (DecoratorService.isActiveNode(node)) {
 			if (node instanceof StructuredActivityNode) {
 				return new IDecorator[] {
 						new BorderDecorator(new ColorConstant(255, 102, 102), 1, Graphics.LINE_DASHDOTDOT) };
+			}else if (node instanceof ActivityParameterNode){
+				return new IDecorator[] {
+						new BorderDecorator(new ColorConstant(255, 102, 102), 1, Graphics.LINE_SOLID) };
 			}
 			return new IDecorator[] { new ColorDecorator(IColorConstant.RED, new ColorConstant(255, 102, 102)) };
 		}
