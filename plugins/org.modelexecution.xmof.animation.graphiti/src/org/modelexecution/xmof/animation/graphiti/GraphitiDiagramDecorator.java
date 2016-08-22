@@ -25,6 +25,7 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.decorator.MapDecorator;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 
 /**
@@ -44,23 +45,17 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 	public GraphitiDiagramDecorator(Activity activity, KernelEditor kernelEditor) {
 		super(activity);
 		this.kernelEditor = kernelEditor;
+		diagramEditor = getActiveDiagramEditor();
+		if (diagramEditor != null) {
+			activity = getActivity(diagramEditor);
+
+		}
 	}
 
 	@Override
 	public void resetDecorations() {
 		super.resetDecorations();
 
-	}
-
-	@Override
-	public void initializeMaps() {
-		diagramEditor = getActiveDiagramEditor();
-		activityNodeMap = new HashMap<String, ActivityNode>();
-		if (diagramEditor != null) {
-			activity = getActivity(diagramEditor);
-			super.initializeMaps();
-
-		}
 	}
 
 	@Override
@@ -137,10 +132,10 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	@Override
 	protected void refreshDiagram() {
-		for (ActivityNode node : activityNodeMap.values()) {
+		for (ActivityNode node : super.mapDecorator.getActivityNodeMap().values()) {
 			refreshDecoration(node);
 		}
-		for (Set<ActivityEdge> edges : activityEdgeMap.values()) {
+		for (Set<ActivityEdge> edges : super.mapDecorator.getActivityEdgeMap().values()) {
 			for (ActivityEdge edge :edges){
 				refreshDecoration(edge);
 			}
