@@ -39,6 +39,9 @@ public abstract class DiagramDecorator {
 
 	public DiagramDecorator(Activity activity) {
 		this.activity = activity;
+	}
+	
+	public void initializeMaps() {
 		mapDecorator = new MapDecorator(activity);
 	}
 
@@ -51,6 +54,9 @@ public abstract class DiagramDecorator {
 	 * @return true if node has a xMOFName
 	 */
 	public boolean decorateActivityElement(Match match) {
+		if (mapDecorator == null) {
+			initializeMaps();
+		}
 		if (isActivityFinished()) {
 			resetDiagram();
 		}

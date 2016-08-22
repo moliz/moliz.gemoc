@@ -45,10 +45,14 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 	public GraphitiDiagramDecorator(Activity activity, KernelEditor kernelEditor) {
 		super(activity);
 		this.kernelEditor = kernelEditor;
+	}
+	
+	@Override
+	public void initializeMaps() {
 		diagramEditor = getActiveDiagramEditor();
 		if (diagramEditor != null) {
-			activity = getActivity(diagramEditor);
-
+				activity = getActivity(diagramEditor);
+				super.initializeMaps();
 		}
 	}
 
