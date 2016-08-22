@@ -8,28 +8,13 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.decorator;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
-import javax.print.attribute.standard.JobHoldUntil;
-
 import org.eclipse.emf.ecore.EObject;
-import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
 import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ControlFlow;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.DecisionNode;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectFlow;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNode;
-import org.modelexecution.xmof.animation.decorator.internal.DiagramUtil;
-import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 import org.modelexecution.xmof.animation.mapping.Match;
 
@@ -45,10 +30,7 @@ import org.modelexecution.xmof.animation.mapping.Match;
 public abstract class DiagramDecorator {
 	private boolean activityFinished = false;
 	protected Activity activity;
-	protected Map<String, ActivityNode> activityNodeMap;
-	protected Map<EdgeID, Set<ActivityEdge>> activityEdgeMap;
-	protected Map<ActivityNode, Set<ActivityEdge>> forkNodeEdges;
-	protected Map<ActivityNode, Set<ActivityParameterNode>> conncetedParameterNodeMap;
+	protected MapDecorator mapDecorator;
 	protected ActivityNode activeNode;
 	protected ActivityNode previouslyActiveNode;
 	protected StructuredActivityNode inStructuredNode = null;
@@ -57,20 +39,7 @@ public abstract class DiagramDecorator {
 
 	public DiagramDecorator(Activity activity) {
 		this.activity = activity;
-	}
-
-	public void initializeMaps() {
-		activityNodeMap = new HashMap<>();
-		activityEdgeMap = new HashMap<>();
-		forkNodeEdges = new HashMap<>();
-		conncetedParameterNodeMap = new HashMap<>();
-		for (ActivityNode node : activity.getNode()) {
-			processActivityNode(node);
-		}
-		for (ActivityEdge edge : activity.getEdge()) {
-			processActivityEdge(edge);
-		}
-
+		mapDecorator = new MapDecorator(activity);
 	}
 
 	/**
@@ -82,14 +51,11 @@ public abstract class DiagramDecorator {
 	 * @return true if node has a xMOFName
 	 */
 	public boolean decorateActivityElement(Match match) {
-		if (activityNodeMap == null) {
-			initializeMaps();
-		}
 		if (isActivityFinished()) {
 			resetDiagram();
 		}
 
-		activeNode = activityNodeMap.get(match.getXmofElementName());
+		activeNode = mapDecorator.getActivityNodeMap().get(match.getXmofElementName());
 
 		decoratePreviouslyActiveNodes();
 		decoratePreviouslyActiveEdges();
@@ -103,7 +69,7 @@ public abstract class DiagramDecorator {
 	}
 
 	private void decorateActiveEdges() {
-		activeEdges = retrieveActiveEdges();
+		activeEdges = mapDecorator.retrieveActiveEdges(activeNode, previouslyActiveNode);
 		if (activeEdges != null) {
 			for (ActivityEdge edge : activeEdges) {
 				decorateElement(edge, ElementState.ACTIVE);
@@ -118,8 +84,8 @@ public abstract class DiagramDecorator {
 				inStructuredNode = (StructuredActivityNode) activeNode;
 			}
 			decorateElement(activeNode, ElementState.ACTIVE);
-			if (conncetedParameterNodeMap.containsKey(activeNode)) {
-				for (ActivityNode node : conncetedParameterNodeMap.get(activeNode)) {
+			if (mapDecorator.getConncetedParameterNodeMap().containsKey(activeNode)) {
+				for (ActivityNode node : mapDecorator.getConncetedParameterNodeMap().get(activeNode)) {
 					decorateElement(node, ElementState.ACTIVE);
 				}
 			}
@@ -137,8 +103,8 @@ public abstract class DiagramDecorator {
 
 	private void decoratePreviouslyActiveNodes() {
 		if (previouslyActiveNode != null) {
-			if (conncetedParameterNodeMap.containsKey(previouslyActiveNode)) {
-				for (ActivityNode node : conncetedParameterNodeMap.get(previouslyActiveNode)) {
+			if (mapDecorator.getConncetedParameterNodeMap().containsKey(previouslyActiveNode)) {
+				for (ActivityNode node : mapDecorator.getConncetedParameterNodeMap().get(previouslyActiveNode)) {
 					decorateElement(node, ElementState.TRAVERSED);
 				}
 			}
@@ -195,134 +161,6 @@ public abstract class DiagramDecorator {
 
 	public Activity getActivity() {
 		return activity;
-	}
-
-	/**
-	 * Determines source and target nodes of a edge and puts the result in the
-	 * edge map
-	 * 
-	 * @param edge
-	 *            Edge of an activity diagram
-	 */
-	private void processActivityEdge(ActivityEdge edge) {
-		ActivityNode source = DiagramUtil.retreiveSourceNode(edge);
-		ActivityNode target = DiagramUtil.retreiveTargetNode(edge);
-
-		if (source != null && target != null) {
-			addToEdgeMap(edge, source, target);
-		}
-		if (source instanceof ForkNode) {
-			addToForkNodeEdges(source);
-		}
-		if (source instanceof ActivityParameterNode) {
-			addToConnectedParameterNodeMap(target, (ActivityParameterNode) source);
-		} else if (target instanceof ActivityParameterNode) {
-			addToConnectedParameterNodeMap(source, (ActivityParameterNode) target);
-		}
-
-	}
-
-	private void addToConnectedParameterNodeMap(ActivityNode key, ActivityParameterNode paramteterNode) {
-		Set<ActivityParameterNode> paramNodes = conncetedParameterNodeMap.get(key);
-		if (paramNodes == null) {
-			paramNodes = new HashSet<>();
-		}
-		paramNodes.add(paramteterNode);
-		conncetedParameterNodeMap.put(key, paramNodes);
-	}
-
-	private void addToForkNodeEdges(ActivityNode key) {
-		Set<ActivityEdge> edges = new HashSet<>();
-		for (ActivityEdge edge : key.getOutgoing()) {
-			edges = forkNodeEdges.get(DiagramUtil.retreiveTargetNode(edge));
-			if (edges == null) {
-				edges = new HashSet<>();
-			}
-			edges.add(edge);
-			forkNodeEdges.put(DiagramUtil.retreiveTargetNode(edge), edges);
-		}
-	}
-
-	private void addToEdgeMap(ActivityEdge edge, ActivityNode source, ActivityNode target) {
-		EdgeID id = new EdgeID(source.getName(), target.getName());
-		Set<ActivityEdge> edges = activityEdgeMap.get(id);
-		if (edges == null) {
-			edges = new HashSet<>();
-		}
-		edges.add(edge);
-		activityEdgeMap.put(id, edges);
-	}
-
-	/**
-	 * Determines nodes that are linked with the node
-	 * 
-	 * @param node
-	 *            Node of an activity diagram
-	 */
-	private void processActivityNode(ActivityNode node) {
-		if (node.getName() != null) {
-			if (node instanceof StructuredActivityNode) {
-
-				getActivityNodes((StructuredActivityNode) node);
-				getActivityEdges((StructuredActivityNode) node);
-			}
-			activityNodeMap.put(node.getName(), node);
-		}
-	}
-
-	private void getActivityEdges(StructuredActivityNode node) {
-		for (ActivityEdge edge : node.getEdge()) {
-			processActivityEdge(edge);
-		}
-
-	}
-
-	private void getActivityNodes(StructuredActivityNode expNode) {
-		for (ActivityNode actNode : expNode.getNode()) {
-			processActivityNode(actNode);
-		}
-
-	}
-
-	private Set<ActivityEdge> retrieveActiveEdges() {
-
-		if (activeNode == null)
-			return null;
-		Set<ActivityEdge> edges = new HashSet<>();
-		if (conncetedParameterNodeMap.containsKey(activeNode)) {
-			edges.addAll(retrieveEdges(activeNode, conncetedParameterNodeMap.get(activeNode)));
-		}
-		if (forkNodeEdges.containsKey(activeNode)) {
-			edges.addAll(forkNodeEdges.get(activeNode));
-		}
-		if (previouslyActiveNode != null) {
-			EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
-			if (activityEdgeMap.get(id) != null) {
-				edges.addAll(activityEdgeMap.get(id));
-			}
-
-		}
-
-		return edges;
-	}
-
-	private Set<ActivityEdge> retrieveEdges(ActivityNode activityNode, Set<ActivityParameterNode> parameterNodes) {
-		Set<ActivityEdge> edges = new HashSet<>();
-		for (ActivityParameterNode paramNode : parameterNodes) {
-			edges.addAll(extractEdge(activityNode, paramNode));
-		}
-		return edges;
-	}
-
-	private Set<ActivityEdge> extractEdge(ActivityNode activityNode, ActivityParameterNode paramNode) {
-		EdgeID id = new EdgeID(activityNode.getName(), paramNode.getName());
-		if (activityEdgeMap.containsKey(id)) {
-			return activityEdgeMap.get(id);
-		} else {
-			id = new EdgeID(paramNode.getName(), activityNode.getName());
-			return activityEdgeMap.get(id);
-		}
-
-	}
+	}	
 
 }
