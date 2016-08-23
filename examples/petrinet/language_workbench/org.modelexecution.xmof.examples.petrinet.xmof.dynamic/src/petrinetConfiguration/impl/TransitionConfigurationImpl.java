@@ -17,8 +17,6 @@ import petrinetConfiguration.TransitionConfiguration;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Transition Configuration</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

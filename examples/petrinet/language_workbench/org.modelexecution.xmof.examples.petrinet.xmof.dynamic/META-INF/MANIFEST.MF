@@ -13,6 +13,7 @@ Require-Bundle: org.junit,
  org.modelexecution.fumldebug,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.modelexecution.xmof.examples.petrinet;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

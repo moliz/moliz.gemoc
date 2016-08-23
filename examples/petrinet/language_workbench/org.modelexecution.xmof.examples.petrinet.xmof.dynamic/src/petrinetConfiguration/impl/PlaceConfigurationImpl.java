@@ -23,10 +23,10 @@ import petrinetConfiguration.PlaceConfiguration;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link petrinetConfiguration.impl.PlaceConfigurationImpl#getTokens <em>Tokens</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

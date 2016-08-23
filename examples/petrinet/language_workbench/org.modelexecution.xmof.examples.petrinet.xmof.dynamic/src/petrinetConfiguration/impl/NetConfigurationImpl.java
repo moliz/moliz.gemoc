@@ -17,8 +17,6 @@ import petrinetConfiguration.PetrinetConfigurationPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Net Configuration</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

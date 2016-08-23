@@ -108,7 +108,7 @@ public interface PetrinetConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Main</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	int NET_CONFIGURATION___MAIN = 0;
@@ -117,7 +117,7 @@ public interface PetrinetConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Run</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	int NET_CONFIGURATION___RUN = 1;
@@ -126,7 +126,7 @@ public interface PetrinetConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Net Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	int NET_CONFIGURATION_OPERATION_COUNT = 2;
@@ -181,7 +181,7 @@ public interface PetrinetConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Remove Token</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	int PLACE_CONFIGURATION___REMOVE_TOKEN = 0;
@@ -190,7 +190,7 @@ public interface PetrinetConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Add Token</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	int PLACE_CONFIGURATION___ADD_TOKEN = 1;
@@ -199,7 +199,7 @@ public interface PetrinetConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Place Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	int PLACE_CONFIGURATION_OPERATION_COUNT = 2;
@@ -254,7 +254,7 @@ public interface PetrinetConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Is Enabled</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	int TRANSITION_CONFIGURATION___IS_ENABLED = 0;
@@ -263,7 +263,7 @@ public interface PetrinetConfigurationPackage extends EPackage {
 	 * The operation id for the '<em>Fire</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	int TRANSITION_CONFIGURATION___FIRE = 1;
@@ -272,7 +272,7 @@ public interface PetrinetConfigurationPackage extends EPackage {
 	 * The number of operations of the '<em>Transition Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	int TRANSITION_CONFIGURATION_OPERATION_COUNT = 2;
