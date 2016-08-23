@@ -23,7 +23,7 @@ public class DecoratorMap {
 
 	private Map<String, ActivityNode> activityNodeMap;
 	private Map<EdgeID, Set<ActivityEdge>> activityEdgeMap;
-	private Map<ActivityNode, Set<ActivityParameterNode>> conncetedParameterNodeMap;
+	private Map<ActivityNode, Set<ActivityNode>> conncetedParameterNodeMap;
 	private Set<ActivityNode> entryPointNodes;
 
 	public DecoratorMap(Activity activity) {
@@ -99,8 +99,8 @@ public class DecoratorMap {
 		activityEdgeMap.put(id, edges);
 	}
 
-	private void addToConnectedParameterNodeMap(ActivityNode key, ActivityParameterNode paramteterNode) {
-		Set<ActivityParameterNode> paramNodes = conncetedParameterNodeMap.get(key);
+	private void addToConnectedParameterNodeMap(ActivityNode key, ActivityNode paramteterNode) {
+		Set<ActivityNode> paramNodes = conncetedParameterNodeMap.get(key);
 		if (paramNodes == null) {
 			paramNodes = new HashSet<>();
 		}
@@ -136,6 +136,14 @@ public class DecoratorMap {
 
 				getActivityNodes((StructuredActivityNode) node);
 				getActivityEdges((StructuredActivityNode) node);
+				if (node instanceof ExpansionRegion){
+					for(ActivityNode expNode:((ExpansionRegion)node).getOutputElement()){
+						addToConnectedParameterNodeMap(node, expNode);
+					}
+					for(ActivityNode expNode:((ExpansionRegion)node).getInputElement()){
+						addToConnectedParameterNodeMap(node, expNode);
+					}
+				}
 			}
 			activityNodeMap.put(node.getName(), node);
 		}
@@ -193,26 +201,29 @@ public class DecoratorMap {
 		return false;
 	}
 
-	private Set<ActivityEdge> retrieveEdges(ActivityNode activityNode, Set<ActivityParameterNode> parameterNodes) {
+	private Set<ActivityEdge> retrieveEdges(ActivityNode activityNode, Set<ActivityNode> nodes) {
 		Set<ActivityEdge> edges = new HashSet<>();
-		for (ActivityParameterNode paramNode : parameterNodes) {
+		for (ActivityNode paramNode : nodes) {
 			edges.addAll(extractEdge(activityNode, paramNode));
 		}
 		return edges;
 	}
 
-	private Set<ActivityEdge> extractEdge(ActivityNode activityNode, ActivityParameterNode paramNode) {
+	private Set<ActivityEdge> extractEdge(ActivityNode activityNode, ActivityNode paramNode) {
 		EdgeID id = new EdgeID(activityNode.getName(), paramNode.getName());
 		if (activityEdgeMap.containsKey(id)) {
 			return activityEdgeMap.get(id);
 		} else {
 			id = new EdgeID(paramNode.getName(), activityNode.getName());
-			return activityEdgeMap.get(id);
+			if (activityEdgeMap.containsKey(id)){
+				return activityEdgeMap.get(id);
+			}
+			return new HashSet<>();
 		}
 
 	}
 
-	public Set<ActivityParameterNode> getConnectedParameterNodes(ActivityNode activeNode) {
+	public Set<ActivityNode> getConnectedParameterNodes(ActivityNode activeNode) {
 		if (conncetedParameterNodeMap.containsKey(activeNode)) {
 			return conncetedParameterNodeMap.get(activeNode);
 		}
@@ -231,7 +242,7 @@ public class DecoratorMap {
 		return Collections.unmodifiableMap(activityEdgeMap);
 	}
 
-	public Map<ActivityNode, Set<ActivityParameterNode>> getConncetedParameterNodeMap() {
+	public Map<ActivityNode, Set<ActivityNode>> getConncetedParameterNodeMap() {
 		return Collections.unmodifiableMap(conncetedParameterNodeMap);
 	}
 
