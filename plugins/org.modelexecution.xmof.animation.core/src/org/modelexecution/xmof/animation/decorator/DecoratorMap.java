@@ -1,35 +1,36 @@
 package org.modelexecution.xmof.animation.decorator;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.Action;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.InputPin;
 import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
+import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
+import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.DecisionNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.MergeNode;
 import org.modelexecution.xmof.animation.decorator.internal.DiagramUtil;
 import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
 
 public class DecoratorMap {
 
-	protected Map<String, ActivityNode> activityNodeMap;
-	protected Map<EdgeID, Set<ActivityEdge>> activityEdgeMap;
-	protected Map<ActivityNode, Set<ActivityEdge>> forkNodeEdges;
-	protected Map<ActivityNode, Set<ActivityParameterNode>> conncetedParameterNodeMap;
+	private Map<String, ActivityNode> activityNodeMap;
+	private Map<EdgeID, Set<ActivityEdge>> activityEdgeMap;
+	private Map<ActivityNode, Set<ActivityParameterNode>> conncetedParameterNodeMap;
+	private Set<ActivityNode> entryPointNodes;
 
 	public DecoratorMap(Activity activity) {
 		activityNodeMap = new HashMap<>();
 		activityEdgeMap = new HashMap<>();
-		forkNodeEdges = new HashMap<>();
 		conncetedParameterNodeMap = new HashMap<>();
+		entryPointNodes = new HashSet<>();
 		for (ActivityNode node : activity.getNode()) {
 			processActivityNode(node);
 		}
@@ -47,18 +48,22 @@ public class DecoratorMap {
 		if (conncetedParameterNodeMap.containsKey(activeNode)) {
 			edges.addAll(retrieveEdges(activeNode, conncetedParameterNodeMap.get(activeNode)));
 		}
-		if (forkNodeEdges.containsKey(activeNode)) {
-			edges.addAll(forkNodeEdges.get(activeNode));
-		}
 		if (previouslyActiveNode != null) {
 			EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
-			if (activityEdgeMap.get(id) != null) {
+			if (activityEdgeMap.containsKey(id)) {
 				edges.addAll(activityEdgeMap.get(id));
 			}
+			for (ActivityNode entryPoint : entryPointNodes) {
+				id = new EdgeID(entryPoint.getName(), activeNode.getName());
+				if (activityEdgeMap.containsKey(id)) {
+					edges.addAll(activityEdgeMap.get(id));
+				}
 
+			}
 		}
 
 		return edges;
+
 	}
 
 	/**
@@ -75,9 +80,7 @@ public class DecoratorMap {
 		if (source != null && target != null) {
 			addToEdgeMap(edge, source, target);
 		}
-		if (source instanceof ForkNode) {
-			addToForkNodeEdges(source);
-		}
+
 		if (source instanceof ActivityParameterNode) {
 			addToConnectedParameterNodeMap(target, (ActivityParameterNode) source);
 		} else if (target instanceof ActivityParameterNode) {
@@ -94,18 +97,6 @@ public class DecoratorMap {
 		}
 		edges.add(edge);
 		activityEdgeMap.put(id, edges);
-	}
-
-	private void addToForkNodeEdges(ActivityNode key) {
-		Set<ActivityEdge> edges = new HashSet<>();
-		for (ActivityEdge edge : key.getOutgoing()) {
-			edges = forkNodeEdges.get(DiagramUtil.retreiveTargetNode(edge));
-			if (edges == null) {
-				edges = new HashSet<>();
-			}
-			edges.add(edge);
-			forkNodeEdges.put(DiagramUtil.retreiveTargetNode(edge), edges);
-		}
 	}
 
 	private void addToConnectedParameterNodeMap(ActivityNode key, ActivityParameterNode paramteterNode) {
@@ -139,6 +130,8 @@ public class DecoratorMap {
 	 */
 	private void processActivityNode(ActivityNode node) {
 		if (node.getName() != null) {
+			checkForEntryNodes(node);
+
 			if (node instanceof StructuredActivityNode) {
 
 				getActivityNodes((StructuredActivityNode) node);
@@ -146,6 +139,58 @@ public class DecoratorMap {
 			}
 			activityNodeMap.put(node.getName(), node);
 		}
+	}
+
+	private void checkForEntryNodes(ActivityNode node) {
+		if (node instanceof ActivityParameterNode) {
+			addTargetsToEntryPoints((ActivityParameterNode) node);
+		} else if (isEntryOrForkNode(node)) {
+			entryPointNodes.add(node);
+		}
+
+	}
+
+	private void addTargetsToEntryPoints(ActivityParameterNode paramNode) {
+		for (ActivityEdge edge : paramNode.getOutgoing()) {
+			ActivityNode node = DiagramUtil.retreiveTargetNode(edge);
+			if (node != null) {
+				entryPointNodes.add(node);
+			}
+		}
+
+	}
+
+	private boolean isEntryOrForkNode(ActivityNode node) {
+		if (node instanceof ForkNode) {
+			return true;
+		}
+		if (hasNoInputEdges(node)) {
+			return true;
+		}
+		return false;
+	}
+
+	private boolean hasNoInputEdges(ActivityNode node) {
+		if (node.getIncoming().isEmpty()) {
+			if (node instanceof ExpansionRegion) {
+				ExpansionRegion region = (ExpansionRegion) node;
+				for (ExpansionNode expansionNode : region.getInputElement()) {
+					if (!expansionNode.getIncoming().isEmpty()) {
+						return false;
+					}
+				}
+			}
+			if (node instanceof Action) {
+				Action action = (Action) node;
+				for (InputPin pin : action.getInput()) {
+					if (!pin.getIncoming().isEmpty()) {
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+		return false;
 	}
 
 	private Set<ActivityEdge> retrieveEdges(ActivityNode activityNode, Set<ActivityParameterNode> parameterNodes) {
@@ -186,10 +231,6 @@ public class DecoratorMap {
 		return Collections.unmodifiableMap(activityEdgeMap);
 	}
 
-	public Map<ActivityNode, Set<ActivityEdge>> getForkNodeEdges() {
-		return Collections.unmodifiableMap(forkNodeEdges);
-	}
-
 	public Map<ActivityNode, Set<ActivityParameterNode>> getConncetedParameterNodeMap() {
 		return Collections.unmodifiableMap(conncetedParameterNodeMap);
 	}
@@ -199,7 +240,6 @@ public class DecoratorMap {
 		if (conncetedParameterNodeMap.containsKey(node)) {
 			set.addAll(conncetedParameterNodeMap.get(node));
 
-			
 		}
 		set.add(node);
 		return set;
