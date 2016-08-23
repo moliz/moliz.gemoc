@@ -30,7 +30,7 @@ import org.modelexecution.xmof.animation.mapping.Match;
 public abstract class DiagramDecorator {
 	private boolean activityFinished = false;
 	protected Activity activity;
-	protected MapDecorator mapDecorator;
+	protected DecoratorMap decoratorMap;
 	protected ActivityNode activeNode;
 	protected ActivityNode previouslyActiveNode;
 	protected StructuredActivityNode inStructuredNode = null;
@@ -40,9 +40,9 @@ public abstract class DiagramDecorator {
 	public DiagramDecorator(Activity activity) {
 		this.activity = activity;
 	}
-	
+
 	public void initializeMaps() {
-		mapDecorator = new MapDecorator(activity);
+		decoratorMap = new DecoratorMap(activity);
 	}
 
 	/**
@@ -54,14 +54,14 @@ public abstract class DiagramDecorator {
 	 * @return true if node has a xMOFName
 	 */
 	public boolean decorateActivityElement(Match match) {
-		if (mapDecorator == null) {
+		if (decoratorMap == null) {
 			initializeMaps();
 		}
 		if (isActivityFinished()) {
 			resetDiagram();
 		}
 
-		activeNode = mapDecorator.getActivityNodeMap().get(match.getXmofElementName());
+		activeNode = decoratorMap.getActivityNode(match.getXmofElementName());
 
 		decoratePreviouslyActiveNodes();
 		decoratePreviouslyActiveEdges();
@@ -75,7 +75,7 @@ public abstract class DiagramDecorator {
 	}
 
 	private void decorateActiveEdges() {
-		activeEdges = mapDecorator.retrieveActiveEdges(activeNode, previouslyActiveNode);
+		activeEdges = decoratorMap.retrieveActiveEdges(activeNode, previouslyActiveNode);
 		if (activeEdges != null) {
 			for (ActivityEdge edge : activeEdges) {
 				decorateElement(edge, ElementState.ACTIVE);
@@ -89,11 +89,8 @@ public abstract class DiagramDecorator {
 			if (activeNode instanceof StructuredActivityNode) {
 				inStructuredNode = (StructuredActivityNode) activeNode;
 			}
-			decorateElement(activeNode, ElementState.ACTIVE);
-			if (mapDecorator.getConncetedParameterNodeMap().containsKey(activeNode)) {
-				for (ActivityNode node : mapDecorator.getConncetedParameterNodeMap().get(activeNode)) {
-					decorateElement(node, ElementState.ACTIVE);
-				}
+			for (ActivityNode node : decoratorMap.retrieveAllConnectedNodes(activeNode)) {
+				decorateElement(node, ElementState.ACTIVE);
 			}
 		}
 	}
@@ -109,15 +106,12 @@ public abstract class DiagramDecorator {
 
 	private void decoratePreviouslyActiveNodes() {
 		if (previouslyActiveNode != null) {
-			if (mapDecorator.getConncetedParameterNodeMap().containsKey(previouslyActiveNode)) {
-				for (ActivityNode node : mapDecorator.getConncetedParameterNodeMap().get(previouslyActiveNode)) {
+			for (ActivityNode node: decoratorMap.retrieveAllConnectedNodes(previouslyActiveNode)){
+				if (!(previouslyActiveNode instanceof StructuredActivityNode)) {
 					decorateElement(node, ElementState.TRAVERSED);
 				}
 			}
-			if (!(previouslyActiveNode instanceof StructuredActivityNode)) {
-				decorateElement(previouslyActiveNode, ElementState.TRAVERSED);
-			}
-
+			
 		}
 		if (inStructuredNode != null) {
 			if (executionOfStructuredNodeFinished()) {
@@ -167,6 +161,6 @@ public abstract class DiagramDecorator {
 
 	public Activity getActivity() {
 		return activity;
-	}	
+	}
 
 }

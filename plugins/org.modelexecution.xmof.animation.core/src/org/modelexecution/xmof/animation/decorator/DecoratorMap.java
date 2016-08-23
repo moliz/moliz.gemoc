@@ -1,5 +1,7 @@
 package org.modelexecution.xmof.animation.decorator;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -16,14 +18,14 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.MergeNod
 import org.modelexecution.xmof.animation.decorator.internal.DiagramUtil;
 import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
 
-public class MapDecorator {
-	
+public class DecoratorMap {
+
 	protected Map<String, ActivityNode> activityNodeMap;
 	protected Map<EdgeID, Set<ActivityEdge>> activityEdgeMap;
 	protected Map<ActivityNode, Set<ActivityEdge>> forkNodeEdges;
 	protected Map<ActivityNode, Set<ActivityParameterNode>> conncetedParameterNodeMap;
-	
-	public MapDecorator(Activity activity) {
+
+	public DecoratorMap(Activity activity) {
 		activityNodeMap = new HashMap<>();
 		activityEdgeMap = new HashMap<>();
 		forkNodeEdges = new HashMap<>();
@@ -36,7 +38,7 @@ public class MapDecorator {
 		}
 
 	}
-	
+
 	public Set<ActivityEdge> retrieveActiveEdges(ActivityNode activeNode, ActivityNode previouslyActiveNode) {
 
 		if (activeNode == null)
@@ -58,7 +60,7 @@ public class MapDecorator {
 
 		return edges;
 	}
-	
+
 	/**
 	 * Determines source and target nodes of a edge and puts the result in the
 	 * edge map
@@ -83,7 +85,7 @@ public class MapDecorator {
 		}
 
 	}
-	
+
 	private void addToEdgeMap(ActivityEdge edge, ActivityNode source, ActivityNode target) {
 		EdgeID id = new EdgeID(source.getName(), target.getName());
 		Set<ActivityEdge> edges = activityEdgeMap.get(id);
@@ -93,7 +95,7 @@ public class MapDecorator {
 		edges.add(edge);
 		activityEdgeMap.put(id, edges);
 	}
-	
+
 	private void addToForkNodeEdges(ActivityNode key) {
 		Set<ActivityEdge> edges = new HashSet<>();
 		for (ActivityEdge edge : key.getOutgoing()) {
@@ -105,7 +107,7 @@ public class MapDecorator {
 			forkNodeEdges.put(DiagramUtil.retreiveTargetNode(edge), edges);
 		}
 	}
-	
+
 	private void addToConnectedParameterNodeMap(ActivityNode key, ActivityParameterNode paramteterNode) {
 		Set<ActivityParameterNode> paramNodes = conncetedParameterNodeMap.get(key);
 		if (paramNodes == null) {
@@ -114,7 +116,7 @@ public class MapDecorator {
 		paramNodes.add(paramteterNode);
 		conncetedParameterNodeMap.put(key, paramNodes);
 	}
-	
+
 	private void getActivityEdges(StructuredActivityNode node) {
 		for (ActivityEdge edge : node.getEdge()) {
 			processActivityEdge(edge);
@@ -128,7 +130,7 @@ public class MapDecorator {
 		}
 
 	}
-	
+
 	/**
 	 * Determines nodes that are linked with the node
 	 * 
@@ -145,7 +147,7 @@ public class MapDecorator {
 			activityNodeMap.put(node.getName(), node);
 		}
 	}
-	
+
 	private Set<ActivityEdge> retrieveEdges(ActivityNode activityNode, Set<ActivityParameterNode> parameterNodes) {
 		Set<ActivityEdge> edges = new HashSet<>();
 		for (ActivityParameterNode paramNode : parameterNodes) {
@@ -153,7 +155,7 @@ public class MapDecorator {
 		}
 		return edges;
 	}
-	
+
 	private Set<ActivityEdge> extractEdge(ActivityNode activityNode, ActivityParameterNode paramNode) {
 		EdgeID id = new EdgeID(activityNode.getName(), paramNode.getName());
 		if (activityEdgeMap.containsKey(id)) {
@@ -165,20 +167,43 @@ public class MapDecorator {
 
 	}
 
+	public Set<ActivityParameterNode> getConnectedParameterNodes(ActivityNode activeNode) {
+		if (conncetedParameterNodeMap.containsKey(activeNode)) {
+			return conncetedParameterNodeMap.get(activeNode);
+		}
+		return new HashSet<>();
+	}
+
+	public ActivityNode getActivityNode(String xmofElementName) {
+		return activityNodeMap.get(xmofElementName);
+	}
+
 	public Map<String, ActivityNode> getActivityNodeMap() {
-		return activityNodeMap;
+		return Collections.unmodifiableMap(activityNodeMap);
 	}
 
 	public Map<EdgeID, Set<ActivityEdge>> getActivityEdgeMap() {
-		return activityEdgeMap;
+		return Collections.unmodifiableMap(activityEdgeMap);
 	}
 
 	public Map<ActivityNode, Set<ActivityEdge>> getForkNodeEdges() {
-		return forkNodeEdges;
+		return Collections.unmodifiableMap(forkNodeEdges);
 	}
 
 	public Map<ActivityNode, Set<ActivityParameterNode>> getConncetedParameterNodeMap() {
-		return conncetedParameterNodeMap;
+		return Collections.unmodifiableMap(conncetedParameterNodeMap);
+	}
+
+	public Set<ActivityNode> retrieveAllConnectedNodes(ActivityNode node) {
+		Set<ActivityNode> set = new HashSet<>();
+		if (conncetedParameterNodeMap.containsKey(node)) {
+			set.addAll(conncetedParameterNodeMap.get(node));
+
+			
+		}
+		set.add(node);
+		return set;
+
 	}
 
 }

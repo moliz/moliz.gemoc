@@ -25,7 +25,7 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
-import org.modelexecution.xmof.animation.decorator.MapDecorator;
+import org.modelexecution.xmof.animation.decorator.DecoratorMap;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 
 /**
@@ -136,10 +136,10 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	@Override
 	protected void refreshDiagram() {
-		for (ActivityNode node : super.mapDecorator.getActivityNodeMap().values()) {
+		for (ActivityNode node : super.decoratorMap.getActivityNodeMap().values()) {
 			refreshDecoration(node);
 		}
-		for (Set<ActivityEdge> edges : super.mapDecorator.getActivityEdgeMap().values()) {
+		for (Set<ActivityEdge> edges : super.decoratorMap.getActivityEdgeMap().values()) {
 			for (ActivityEdge edge :edges){
 				refreshDecoration(edge);
 			}
