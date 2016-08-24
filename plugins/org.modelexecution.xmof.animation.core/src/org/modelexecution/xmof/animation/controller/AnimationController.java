@@ -8,27 +8,22 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.decorator.DecoratorService;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
-import org.modelexecution.xmof.animation.decorator.internal.Representation;
 import org.modelexecution.xmof.animation.handler.DiagramHandler;
 import org.modelexecution.xmof.animation.mapping.MappingService;
 import org.modelexecution.xmof.animation.mapping.Match;
 import org.modelexecution.xmof.animation.ui.Activator;
-import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 
 /**
- * The controller manages the communication flow
- * within the model animator. The execution engine provides all information
- * needed for the animation process encapsulated in a Model Specific Event object.
+ * The controller manages the communication flow within the model animator. The
+ * execution engine provides all information needed for the animation process
+ * encapsulated in a Model Speci fic Event object.
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
@@ -36,28 +31,25 @@ import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
  *
  */
 public abstract class AnimationController {
-
-	private MappingService mappingService;
-	private XMOFBasedModel model;
-	private Resource conigurationResource;
-	protected Map<String, DiagramDecorator> diagramDecoratorMap;
+	protected ControllerMap controllerMap;
+	protected MappingService mappingService;
 	protected DiagramDecorator activeDecorator;
-	protected Map<String, String> activityCallerMap;
 	protected DiagramHandler diagramHandler;
-	
+
 	/**
 	 * Constructor resets DecoratorService
 	 * 
-	 * @param model xMOF model that should be animated
-	 * @param resource that contains the configuration model
-	 * @param concreteHandler open or shows activity diagrams
+	 * @param model
+	 *            xMOF model that should be animated
+	 * @param resource
+	 *            that contains the configuration model
+	 * @param concreteHandler
+	 *            open or shows activity diagrams
 	 */
-	public AnimationController(XMOFBasedModel model,Resource resource, DiagramHandler concreteHandler) {
-		this.model = model;
-		conigurationResource=resource;
-		mappingService = new MappingService(model,resource);
-		diagramDecoratorMap = new HashMap<String, DiagramDecorator>();
-		activityCallerMap = new HashMap<>();
+	public AnimationController (Resource resource, DiagramHandler concreteHandler) {
+
+		controllerMap = new ControllerMap(resource);
+		mappingService = new MappingService(controllerMap.getActivityNames());
 		this.diagramHandler = concreteHandler;
 		DecoratorService.reset();
 	}
@@ -66,10 +58,11 @@ public abstract class AnimationController {
 	 * processes MSEOccurences to match an event
 	 * 
 	 * @param mseOccurrence
-	 * @param verbose Debug output
+	 * @param verbose
+	 *            Debug output
 	 */
 	public void processMSE(MSEOccurrence mseOccurrence, boolean verbose) {
-		Match match = mappingService.matchDebugEvent(mseOccurrence.getMse().getName());
+		Match match = mappingService.matchDebugEvent(mseOccurrence.getMse());
 		if (verbose) {
 			String info = mseOccurrence.getMse().getName() + " has been matched to:\n" + match.getXmofElementName();
 			Activator.getDefault().getMessaggingSystem().debug(info, Activator.PLUGIN_ID);
@@ -81,20 +74,22 @@ public abstract class AnimationController {
 	/**
 	 * Intializes decorators and opens correct activity diagram
 	 * 
-	 * @param match matched debug event
+	 * @param match
+	 *            matched debug event
 	 */
 	public void handleMain(Match match) {
 		initializeDecorators();
-		Activity activity = getModelProcessor().getActivityByName(match.getXmofElementName());
+		Activity activity = controllerMap.getActivityByName(match.getXmofElementName());
 		openOrCreateActivityDiagram(activity);
-		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
+		activeDecorator = controllerMap.getDecoratorByName(activity.getName());
 		DecoratorService.intializeContainer(activity.getName());
 	}
 
 	/**
 	 * Opens activity diagram in active workbench
 	 * 
-	 * @param activity Activity diagram
+	 * @param activity
+	 *            Activity diagram
 	 */
 	protected void openOrCreateActivityDiagram(Activity activity) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
@@ -109,7 +104,7 @@ public abstract class AnimationController {
 	/**
 	 * Resets DecoratorService
 	 */
-	public  void dispose(){
+	public void dispose() {
 		DecoratorService.reset();
 	}
 
@@ -119,24 +114,26 @@ public abstract class AnimationController {
 	 * @param match
 	 */
 	public void handleActivity(Match match) {
-		Activity activity = getModelProcessor().getActivityByName(match.getXmofElementName());
+		Activity activity = controllerMap.getActivityByName(match.getXmofElementName());
 		openOrCreateActivityDiagram(activity);
-		activityCallerMap.put(activity.getName(), activeDecorator.getActivity().getName());
-		activeDecorator = diagramDecoratorMap.get(activity.getName().trim());
+		controllerMap.addCallingActivity(activity.getName(), activeDecorator.getActivity().getName());
+
+		activeDecorator = controllerMap.getDecoratorByName((activity.getName()));
 		DecoratorService.intializeContainer(activity.getName());
 	}
 
 	/**
 	 * Determines type of match and delegates to other methods
 	 * 
-	 * @param match matched debugEvent
+	 * @param match
+	 *            matched debugEvent
 	 */
 	private void processType(Match match) {
 		switch (match.getType()) {
 		case MAIN:
 			handleMain(match);
 			return;
-		case ACTITVITY:
+		case ACTIVITY:
 			handleActivity(match);
 			return;
 		case CONTROLNODE:
@@ -146,31 +143,19 @@ public abstract class AnimationController {
 			decorateActivityNode(match);
 			return;
 		default:
-			Activator.getDefault().getMessaggingSystem().debug("process type could not be determined", Activator.PLUGIN_ID);
+			Activator.getDefault().getMessaggingSystem().debug("process type could not be determined",
+					Activator.PLUGIN_ID);
 		}
 	}
 
 	protected abstract void initializeDecorators();
 
-	public MappingService getModelProcessor() {
-		return mappingService;
-	}
-
-	public XMOFBasedModel getModel() {
-		return model;
-	}
-
-	
-
-	public Resource getConigurationResource() {
-		return conigurationResource;
-	}
-
 	/**
-	 * Try to decorate node in active diagram. If the node cannot be found in the currently active activity
-	 * the caller activity is used.
+	 * Try to decorate node in active diagram. If the node cannot be found in
+	 * the currently active activity the caller activity is used.
 	 * 
-	 * @param match matched debugEvent
+	 * @param match
+	 *            matched debugEvent
 	 */
 	protected void decorateActivityNode(Match match) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
@@ -178,7 +163,7 @@ public abstract class AnimationController {
 			public void run() {
 				if (activeDecorator != null) {
 					if (!tryDecorateInCurrentActivity(match)) {
-						DiagramDecorator lastDecorator=activeDecorator;
+						DiagramDecorator lastDecorator = activeDecorator;
 						if (tryDecorateInCallingActivity(match)) {
 							lastDecorator.setActivityFinished(true);
 						} else {
@@ -191,11 +176,11 @@ public abstract class AnimationController {
 			}
 
 			private boolean tryDecorateInCallingActivity(Match match) {
-				String callingActivity = activityCallerMap.get(activeDecorator.getActivity().getName());
+				String callingActivity = controllerMap.getCallingActivity((activeDecorator.getActivity().getName()));
 				if (callingActivity != null) {
-					activeDecorator = diagramDecoratorMap.get(callingActivity.trim());
+					activeDecorator = controllerMap.getDecoratorByName(callingActivity);
 					if (activeDecorator.decorateActivityElement(match)) {
-						openOrCreateActivityDiagram(getModelProcessor().getActivityByName(callingActivity));
+						openOrCreateActivityDiagram(controllerMap.getActivityByName(callingActivity));
 					}
 					return true;
 				}
@@ -210,7 +195,5 @@ public abstract class AnimationController {
 		});
 
 	}
-
-
 
 }

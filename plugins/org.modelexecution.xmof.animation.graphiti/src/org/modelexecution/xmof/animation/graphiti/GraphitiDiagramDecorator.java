@@ -8,7 +8,6 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.graphiti;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -25,7 +24,6 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
-import org.modelexecution.xmof.animation.decorator.DecoratorMap;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 
 /**

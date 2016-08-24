@@ -8,12 +8,9 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.graphiti;
 
-import java.util.HashMap;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.controller.AnimationController;
-import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 /**
  * Animation controller for Graphiti implementation. It extends the Animation Controller.
@@ -26,15 +23,14 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
  */
 public class GraphitiAnimationController extends AnimationController {
 
-	public GraphitiAnimationController(XMOFBasedModel model, Resource modelResource) {
-		super(model,modelResource, new GraphitiDiagramHandler(modelResource));
+	public GraphitiAnimationController(Resource modelResource) {
+		super(modelResource, new GraphitiDiagramHandler(modelResource));
 	}
 
 	@Override
 	protected void initializeDecorators() {
-		diagramDecoratorMap = new HashMap<>();
-		for (Activity activity : getModelProcessor().getActivities()) {
-			diagramDecoratorMap.put(activity.getName(), new GraphitiDiagramDecorator(activity,
+		for (Activity activity : controllerMap.getActivities()) {
+			controllerMap.addDecorator(activity.getName(), new GraphitiDiagramDecorator(activity,
 					((GraphitiDiagramHandler) diagramHandler).getKernelEditor()));
 		}
 	}

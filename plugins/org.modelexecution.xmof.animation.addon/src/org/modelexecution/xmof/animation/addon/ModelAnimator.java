@@ -51,12 +51,12 @@ public class ModelAnimator implements IEngineAddon {
 	 * @param animConfig
 	 *            RunConfiguration where the representation should be
 	 */
-	private void initialize(XMOFBasedModel model, Resource resource) {
+	private void initialize( Resource resource) {
 		if (!FORCE_GRAPHITI&&exisitsSiriusRepresentationFile(resource)){
-			animationController = new SiriusAnimationController(model, resource);
+			animationController = new SiriusAnimationController( resource);
 			DecoratorService.setActiveAnimator(Representation.SIRIUS);
 		}else{
-			animationController = new GraphitiAnimationController(model, resource);
+			animationController = new GraphitiAnimationController( resource);
 			DecoratorService.setActiveAnimator(Representation.GRAPHITI);
 		}
 		DecoratorService.setRunning(true);
@@ -84,7 +84,7 @@ public class ModelAnimator implements IEngineAddon {
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
 		if (executionEngine instanceof XMOFExecutionEngine) {
 			XMOFExecutionEngine xmofEngine = (XMOFExecutionEngine) executionEngine;
-			initialize(xmofEngine.getXMOFBasedModel(), xmofEngine.getModelLoader().getXMOFModelResource());
+			initialize(xmofEngine.getModelLoader().getXMOFModelResource());
 
 		}
 

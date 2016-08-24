@@ -3,8 +3,6 @@ package org.modelexecution.xmof.animation.addon.ui;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import com.sun.javafx.scene.traversal.Hueristic2D;
-
 /**
  * The activator class controls the plug-in life cycle
  */

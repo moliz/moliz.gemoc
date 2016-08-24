@@ -8,15 +8,10 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.sirius;
 
-import java.util.HashMap;
-
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.animation.controller.AnimationController;
 import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
-import org.modelexecution.xmof.animation.handler.DiagramHandler;
 import org.modelexecution.xmof.animation.mapping.Match;
-import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 
 
@@ -31,18 +26,17 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
  */
 public class SiriusAnimationController extends AnimationController {
 	
-	public SiriusAnimationController(XMOFBasedModel model, Resource resource) {
-		super(model, resource, new SiriusDiagramHandler(resource));
+	public SiriusAnimationController(Resource resource) {
+		super(resource, new SiriusDiagramHandler(resource));
 	}
 
 
 
 	@Override
 	protected void initializeDecorators() {
-		diagramDecoratorMap = new HashMap<>();
-		for (String activityName : getModelProcessor().getActivityNames()) {
-			diagramDecoratorMap.put(activityName,
-					new SiriusDiagramDecorator(getModelProcessor().getActivityByName(activityName), this));
+		for (String activityName : controllerMap.getActivityNames()) {
+			controllerMap.addDecorator(activityName,
+					new SiriusDiagramDecorator(controllerMap.getActivityByName(activityName), this));
 		}
 
 	}

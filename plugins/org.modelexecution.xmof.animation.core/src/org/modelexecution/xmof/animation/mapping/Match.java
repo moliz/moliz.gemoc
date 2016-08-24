@@ -8,6 +8,8 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.mapping;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * Container class for events with names and xMOF-types
  * 
@@ -21,9 +23,17 @@ public class Match {
 	private XMOFType type = XMOFType.UNKOWN;
 	private String mseName;
 	private String xmofElementName;
-	private String callerObjectName;
+	private EObject callerObject;
 
 
+
+	public Match(String mseName,XMOFType type, String xmofElementName, EObject callerObject) {
+		super();
+		this.type = type;
+		this.mseName = mseName;
+		this.xmofElementName = xmofElementName;
+		this.callerObject = callerObject;
+	}
 
 	public Match() {
 		super();
@@ -57,13 +67,15 @@ public class Match {
 	public void setType(XMOFType type) {
 		this.type = type;
 	}
-	
-	public String getCallerObjectName() {
-		return callerObjectName;
+
+	public EObject getCallerObject() {
+		return callerObject;
 	}
 
-	public void setCallerObjectName(String invokerObjectName) {
-		this.callerObjectName = invokerObjectName;
+	public void setCallerObject(EObject callerObject) {
+		this.callerObject = callerObject;
 	}
+	
+	
 
 }
