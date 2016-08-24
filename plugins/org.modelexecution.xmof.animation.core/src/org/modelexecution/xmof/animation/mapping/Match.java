@@ -20,20 +20,14 @@ import org.eclipse.emf.ecore.EObject;
  */
 public class Match {
 
-	private XMOFType type = XMOFType.UNKOWN;
+	public final static String XMOF_ACTIVITY_MAIN = "MainActivity";
+	public final static String XMOF_ACTIVITY = "Activity";
+	public final static String XMOF_ACTIVITYNODE = "ActivityNode";
+
 	private String mseName;
 	private String xmofElementName;
+	private String xmofType;
 	private EObject callerObject;
-
-
-
-	public Match(String mseName,XMOFType type, String xmofElementName, EObject callerObject) {
-		super();
-		this.type = type;
-		this.mseName = mseName;
-		this.xmofElementName = xmofElementName;
-		this.callerObject = callerObject;
-	}
 
 	public Match() {
 		super();
@@ -60,12 +54,12 @@ public class Match {
 		this.xmofElementName = xmofElementName.trim();
 	}
 
-	public XMOFType getType() {
-		return type;
+	public String getXmofType() {
+		return xmofType;
 	}
 
-	public void setType(XMOFType type) {
-		this.type = type;
+	public void setXmofType(String xmofType) {
+		this.xmofType = xmofType;
 	}
 
 	public EObject getCallerObject() {
@@ -75,7 +69,5 @@ public class Match {
 	public void setCallerObject(EObject callerObject) {
 		this.callerObject = callerObject;
 	}
-	
-	
 
 }

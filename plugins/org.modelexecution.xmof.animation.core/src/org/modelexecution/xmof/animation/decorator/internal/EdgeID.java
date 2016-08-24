@@ -25,12 +25,12 @@ public class EdgeID {
 	private String targetNodeId;
 
 	public EdgeID(ActivityEdge edge) {
-		ActivityNode source= DiagramUtil.retreiveSourceNode(edge);
-		ActivityNode target= DiagramUtil.retreiveTargetNode(edge);
-		if (source!= null) {
+		ActivityNode source = DiagramUtil.retreiveSourceNode(edge);
+		ActivityNode target = DiagramUtil.retreiveTargetNode(edge);
+		if (source != null) {
 			sourceNodeId = source.getName();
 		}
-		if (target!= null) {
+		if (target != null) {
 			targetNodeId = target.getName();
 		}
 	}
