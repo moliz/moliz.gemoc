@@ -818,7 +818,7 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.decorator.DecoratorService"/>
+    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.core.decorator.DecoratorService"/>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.representation.sirius.design.services.ActivityDiagramService"/>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.representation.sirius.design.services.DecoratorServiceFallback"/>
   </ownedViewpoints>
