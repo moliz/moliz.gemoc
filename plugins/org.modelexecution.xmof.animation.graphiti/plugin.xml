@@ -7,5 +7,11 @@
             decoratorProviderClass="org.modelexecution.xmof.animation.graphiti.NodeDecoratorProvider">
       </decoratorProvider>
    </extension>
+   <extension
+         point="org.modelexecution.xmof.animationProvider">
+      <animationProvider
+            animationProviderClass="org.modelexecution.xmof.animation.graphiti.GraphitiAnimationProvider">
+      </animationProvider>
+   </extension>
 
 </plugin>

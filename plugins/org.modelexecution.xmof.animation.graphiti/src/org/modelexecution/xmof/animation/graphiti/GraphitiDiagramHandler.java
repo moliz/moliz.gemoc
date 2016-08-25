@@ -51,7 +51,6 @@ public class GraphitiDiagramHandler extends DiagramHandler {
 
 	private boolean openModel() {
 		IEditorInput editorInput = getEditorInput();
-
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 
 		try {

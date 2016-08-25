@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.modelexecution.xmof.animationProvider">
+      <animationProvider
+            animationProviderClass="org.modelexecution.xmof.animation.sirius.SiriusAnimationProvider">
+      </animationProvider>
+   </extension>
+
+
+</plugin>

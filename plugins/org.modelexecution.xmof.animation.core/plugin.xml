@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension-point id="org.modelexecution.xmof.animationProvider" name="xMOF Representation Animation Provider" schema="schema/org.modelexecution.xmof.AnimationProvider.exsd"/>
+   <extension
+         id="org.xmof.addontest.AddonGroup1"
+         name="XMOF- Addongroup"
+         point="org.gemoc.gemoc_language_workbench.engine_addon_group">
+      <AddonGroup
+            Name="XMOF- Addongroup"
+            id="org.xmof.addontest.AddonGroup1">
+      </AddonGroup>
+   </extension>
+   <extension
+         id="org.modelexecution.animationaddon"
+         name="XMOF Animation- Addon"
+         point="org.gemoc.gemoc_language_workbench.engine_addon">
+      <Addon
+            AddonGroupId="org.xmof.addontest.AddonGroup1"
+            Class="org.modelexecution.xmof.animation.addon.ModelAnimator"
+            Name="org.modelexecution.xmof.animation.addon.AnimationAddon"
+            ShortDescription="Addon for animated debugging"
+            id="org.modelexecution.xmof.animation.addon.AnimationAddon">
+      </Addon>
+   </extension>
 
 
 </plugin>

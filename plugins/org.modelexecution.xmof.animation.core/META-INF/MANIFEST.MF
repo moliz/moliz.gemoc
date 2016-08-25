@@ -9,11 +9,26 @@ Require-Bundle: org.modelexecution.xmof.vm;bundle-version="1.0.0",
  fr.inria.diverse.commons.eclipse.messagingsystem.api,
  org.eclipse.ui,
  org.eclipse.emf.ecore,
- fr.inria.diverse.trace.commons.model
+ fr.inria.diverse.trace.commons.model,
+ org.gemoc.xdsmlframework.api,
+ org.modelexecution.xmof.gemoc.engine,
+ org.gemoc.executionframework.engine;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.modelexecution.xmof.animation.controller,
- org.modelexecution.xmof.animation.decorator,
- org.modelexecution.xmof.animation.decorator.internal,
- org.modelexecution.xmof.animation.handler,
- org.modelexecution.xmof.animation.mapping
+Export-Package: org.modelexecution.xmof.animation.controller;
+  uses:="org.modelexecution.xmof.animation.handler,
+   fr.inria.diverse.trace.commons.model.trace,
+   org.modelexecution.xmof.animation.mapping,
+   org.modelexecution.xmof.Syntax.Activities.IntermediateActivities,
+   org.eclipse.emf.ecore.resource,
+   org.modelexecution.xmof.animation.decorator",
+ org.modelexecution.xmof.animation.decorator;
+  uses:="org.eclipse.emf.ecore,
+   org.modelexecution.xmof.animation.mapping,
+   org.modelexecution.xmof.animation.decorator.internal,
+   org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities,
+   org.modelexecution.xmof.Syntax.Activities.IntermediateActivities",
+ org.modelexecution.xmof.animation.decorator.internal;uses:="org.modelexecution.xmof.Syntax.Activities.IntermediateActivities",
+ org.modelexecution.xmof.animation.handler;uses:="org.modelexecution.xmof.Syntax.Activities.IntermediateActivities,org.eclipse.emf.ecore.resource",
+ org.modelexecution.xmof.animation.mapping;uses:="org.eclipse.emf.ecore,fr.inria.diverse.trace.commons.model.trace",
+ org.modelexecution.xmof.animation.provider;uses:="org.eclipse.emf.ecore.resource"
 Bundle-ActivationPolicy: lazy

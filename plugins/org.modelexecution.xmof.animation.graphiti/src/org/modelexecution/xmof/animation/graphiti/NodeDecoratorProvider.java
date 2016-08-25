@@ -36,8 +36,6 @@ public class NodeDecoratorProvider implements IXMOFDecoratorProvider {
 
 	@Override
 	public IDecorator[] getDecorators(PictogramElement pe) {
-		if (!DecoratorService.getXMOFRepresentation().equals(Representation.GRAPHITI))
-			return new IDecorator[0];
 		for (EObject businessObject : pe.getLink().getBusinessObjects()) {
 			if (businessObject instanceof ActivityNode) {
 				return getDecorators((ActivityNode) businessObject);

@@ -11,19 +11,14 @@ package org.modelexecution.xmof.animation.addon;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.controller.AnimationController;
-import org.modelexecution.xmof.animation.decorator.DecoratorService;
-import org.modelexecution.xmof.animation.decorator.internal.Representation;
-import org.modelexecution.xmof.animation.graphiti.GraphitiAnimationController;
-import org.modelexecution.xmof.animation.sirius.SiriusAnimationController;
+import org.modelexecution.xmof.animation.provider.AnimationProviderRegistry;
+import org.modelexecution.xmof.animation.provider.IAnimationProvider;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
-import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
 
@@ -39,35 +34,7 @@ import fr.inria.diverse.trace.commons.model.trace.Step;
 public class ModelAnimator implements IEngineAddon {
 
 	private AnimationController animationController;
-	private static String SIRIUS_SPECIFICATION_FILE = "representations.aird";
-	private static boolean FORCE_GRAPHITI=false;
-	/**
-	 * Initialization of graphical representation. Either Graphiti or Sirius
-	 * will be used
-	 * 
-	 * @param model
-	 *            A xMOF-based Model
-	 * @param resource
-	 * @param animConfig
-	 *            RunConfiguration where the representation should be
-	 */
-	private void initialize( Resource resource) {
-		if (!FORCE_GRAPHITI&&exisitsSiriusRepresentationFile(resource)){
-			animationController = new SiriusAnimationController( resource);
-			DecoratorService.setActiveAnimator(Representation.SIRIUS);
-		}else{
-			animationController = new GraphitiAnimationController( resource);
-			DecoratorService.setActiveAnimator(Representation.GRAPHITI);
-		}
-		DecoratorService.setRunning(true);
 
-	}
-
-	private boolean exisitsSiriusRepresentationFile(Resource resource) {
-		URI siriusURI = URI
-				.createURI("platform:/resource/" + resource.getURI().segment(1) + "/" + SIRIUS_SPECIFICATION_FILE);
-		return new ExtensibleURIConverterImpl().exists(siriusURI, null);
-	}
 
 	@Override
 	public void engineAboutToStart(IBasicExecutionEngine executionEngine) {
@@ -84,10 +51,19 @@ public class ModelAnimator implements IEngineAddon {
 	public void engineStarted(IBasicExecutionEngine executionEngine) {
 		if (executionEngine instanceof XMOFExecutionEngine) {
 			XMOFExecutionEngine xmofEngine = (XMOFExecutionEngine) executionEngine;
-			initialize(xmofEngine.getModelLoader().getXMOFModelResource());
-
+			Resource modelResource = xmofEngine.getModelLoader().getXMOFModelResource();
+			animationController = retrieveController(modelResource);
 		}
 
+	}
+
+	private AnimationController retrieveController(Resource modelResource) {
+		AnimationProviderRegistry registry = AnimationProviderRegistry.getInstance();
+		if (registry.haveProvider(modelResource)) {
+			IAnimationProvider provider = registry.getProvider(modelResource);
+			return provider.retrieveController(modelResource);
+		}
+		return null;
 	}
 
 	@Override
@@ -106,7 +82,6 @@ public class ModelAnimator implements IEngineAddon {
 
 	@Override
 	public void engineAboutToDispose(IBasicExecutionEngine engine) {
-		
 
 	}
 

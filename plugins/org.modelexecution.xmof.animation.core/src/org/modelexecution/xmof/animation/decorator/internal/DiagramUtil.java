@@ -10,6 +10,8 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectFl
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNode;
 
 public class DiagramUtil {
+	private DiagramUtil() {
+	}
 
 	public static ActivityNode retreiveSourceNode(ActivityEdge edge) {
 		ActivityNode source = null;
