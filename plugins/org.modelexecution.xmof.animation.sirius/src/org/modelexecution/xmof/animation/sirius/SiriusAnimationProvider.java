@@ -23,4 +23,9 @@ public class SiriusAnimationProvider implements IAnimationProvider {
 		return new SiriusAnimationController(resource);
 	}
 
+	@Override
+	public String getName() {
+		return "Sirius Animation Provider";
+	}
+
 }

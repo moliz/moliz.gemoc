@@ -18,7 +18,6 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.animation.core.decorator.internal.ActivityElementContainer;
 import org.modelexecution.xmof.animation.core.decorator.internal.EdgeID;
 import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
-import org.modelexecution.xmof.animation.core.decorator.internal.Representation;
 
 /**
  * DecoratorService class to specify which elements need to be decorated

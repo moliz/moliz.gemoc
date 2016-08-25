@@ -1,7 +1,9 @@
 package org.modelexecution.xmof.animation.core.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -20,7 +22,7 @@ public class AnimationProviderRegistry {
 	}
 
 	private void loadRegisteredProviders() {
-		registeredProviders = new HashSet<>();
+		registeredProviders = new LinkedHashSet<>();
 		obtainProvidersFromRegistry();
 	}
 
@@ -39,7 +41,7 @@ public class AnimationProviderRegistry {
 		}
 
 	}
-	
+
 	public static AnimationProviderRegistry getInstance() {
 		if (instance == null) {
 			instance = new AnimationProviderRegistry();
@@ -47,18 +49,17 @@ public class AnimationProviderRegistry {
 		return instance;
 	}
 
-	
 	public boolean haveProvider(Resource resource) {
-		return getProvider(resource) != null;
+		return !getProviders(resource).isEmpty();
 	}
 
-	
-	public IAnimationProvider getProvider(Resource resource) {
+	public List<IAnimationProvider> getProviders(Resource resource) {
+		List<IAnimationProvider> possibleProviders = new ArrayList<>();
 		for (IAnimationProvider provider : registeredProviders) {
 			if (provider.canAnimateModel(resource)) {
-				return provider;
+				possibleProviders.add(provider);
 			}
 		}
-		return null;
+		return possibleProviders;
 	}
 }

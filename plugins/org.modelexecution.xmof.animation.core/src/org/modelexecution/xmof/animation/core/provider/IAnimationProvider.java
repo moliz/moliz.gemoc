@@ -14,4 +14,6 @@ public interface IAnimationProvider {
 	public boolean canAnimateModel(Resource resource);
 	
 	public AnimationController retrieveController(Resource resource);
+	
+	public String getName();
 }

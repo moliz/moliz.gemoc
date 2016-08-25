@@ -19,4 +19,11 @@ public class GraphitiAnimationProvider implements IAnimationProvider {
 		return new GraphitiAnimationController(resource);
 	}
 
+	@Override
+	public String getName() {
+		return "Graphiti Animation Provider";
+	}
+	
+	
+
 }
