@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.decorator;
+package org.modelexecution.xmof.animation.core.decorator;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,8 +16,8 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode;
-import org.modelexecution.xmof.animation.decorator.internal.DiagramUtil;
-import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
+import org.modelexecution.xmof.animation.core.decorator.internal.DiagramUtil;
+import org.modelexecution.xmof.animation.core.decorator.internal.EdgeID;
 
 public class DecoratorMap {
 

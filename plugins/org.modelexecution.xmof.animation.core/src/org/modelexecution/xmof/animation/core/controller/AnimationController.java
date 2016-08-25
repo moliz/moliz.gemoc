@@ -6,17 +6,17 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.controller;
+package org.modelexecution.xmof.animation.core.controller;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.decorator.DecoratorService;
-import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
-import org.modelexecution.xmof.animation.handler.DiagramHandler;
-import org.modelexecution.xmof.animation.mapping.MappingService;
-import org.modelexecution.xmof.animation.mapping.Match;
-import org.modelexecution.xmof.animation.ui.Activator;
+import org.modelexecution.xmof.animation.core.decorator.DecoratorService;
+import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.core.handler.DiagramHandler;
+import org.modelexecution.xmof.animation.core.mapping.MappingService;
+import org.modelexecution.xmof.animation.core.mapping.Match;
+import org.modelexecution.xmof.animation.core.ui.Activator;
 
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 

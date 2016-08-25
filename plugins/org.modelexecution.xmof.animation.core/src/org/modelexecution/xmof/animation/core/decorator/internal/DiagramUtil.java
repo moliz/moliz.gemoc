@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.decorator.internal;
+package org.modelexecution.xmof.animation.core.decorator.internal;
 
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;

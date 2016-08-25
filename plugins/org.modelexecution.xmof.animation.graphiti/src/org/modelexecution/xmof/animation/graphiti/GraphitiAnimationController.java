@@ -10,14 +10,14 @@ package org.modelexecution.xmof.animation.graphiti;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.controller.AnimationController;
+import org.modelexecution.xmof.animation.core.controller.AnimationController;
 
 /**
  * Animation controller for Graphiti implementation. It extends the Animation Controller.
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @see org.modelexecution.xmof.animation.controller.AnimationController
+ * @see org.modelexecution.xmof.animation.core.controller.AnimationController
  * @version 1.0
  *
  */

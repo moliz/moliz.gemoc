@@ -6,10 +6,19 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.decorator.internal;
+package org.modelexecution.xmof.animation.core.handler;
 
-public enum ElementState {
+import org.eclipse.emf.ecore.resource.Resource;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 
-	ACTIVE, TRAVERSED, UNKNOWN;
+public abstract class DiagramHandler {
+	protected Resource modelResource;
 
+	public DiagramHandler(Resource resource) {
+		this.modelResource = resource;
+	}
+
+	public abstract void openOrShowDiagram(Activity activity);
+
+	public abstract void dispose();
 }

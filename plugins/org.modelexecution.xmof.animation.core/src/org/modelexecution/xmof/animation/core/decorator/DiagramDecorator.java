@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.decorator;
+package org.modelexecution.xmof.animation.core.decorator;
 
 import java.util.Set;
 
@@ -16,9 +16,9 @@ import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.Expan
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.animation.decorator.internal.DiagramUtil;
-import org.modelexecution.xmof.animation.decorator.internal.ElementState;
-import org.modelexecution.xmof.animation.mapping.Match;
+import org.modelexecution.xmof.animation.core.decorator.internal.DiagramUtil;
+import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
+import org.modelexecution.xmof.animation.core.mapping.Match;
 
 /**
  * The DiagramDecorator is capable of manipulating the graphical representation

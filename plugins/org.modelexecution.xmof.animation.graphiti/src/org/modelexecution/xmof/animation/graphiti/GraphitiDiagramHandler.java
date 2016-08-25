@@ -17,7 +17,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
-import org.modelexecution.xmof.animation.handler.DiagramHandler;
+import org.modelexecution.xmof.animation.core.handler.DiagramHandler;
 
 /**
  * Handler for Graphiti animation service

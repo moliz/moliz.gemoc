@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.controller;
+package org.modelexecution.xmof.animation.core.controller;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEClass;
 import org.modelexecution.xmof.Syntax.CommonBehaviors.BasicBehaviors.Behavior;
-import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
 
 public class ControllerMap {
 	private Map<String, Activity> activityMap;

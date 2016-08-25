@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.decorator;
+package org.modelexecution.xmof.animation.core.decorator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.animation.decorator.internal.ActivityElementContainer;
-import org.modelexecution.xmof.animation.decorator.internal.EdgeID;
-import org.modelexecution.xmof.animation.decorator.internal.ElementState;
-import org.modelexecution.xmof.animation.decorator.internal.Representation;
+import org.modelexecution.xmof.animation.core.decorator.internal.ActivityElementContainer;
+import org.modelexecution.xmof.animation.core.decorator.internal.EdgeID;
+import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
+import org.modelexecution.xmof.animation.core.decorator.internal.Representation;
 
 /**
  * DecoratorService class to specify which elements need to be decorated

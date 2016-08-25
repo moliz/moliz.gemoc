@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.animation.provider;
+package org.modelexecution.xmof.animation.core.provider;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -7,7 +7,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.modelexecution.xmof.animation.ui.Activator;
+import org.modelexecution.xmof.animation.core.ui.Activator;
 
 public class AnimationProviderRegistry {
 	private static final String CLASS_ATTRIBUTE = "animationProviderClass";

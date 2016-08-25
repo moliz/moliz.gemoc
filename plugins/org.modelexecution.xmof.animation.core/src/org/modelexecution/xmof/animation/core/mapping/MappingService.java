@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.mapping;
+package org.modelexecution.xmof.animation.core.mapping;
 
 import java.util.Set;
 

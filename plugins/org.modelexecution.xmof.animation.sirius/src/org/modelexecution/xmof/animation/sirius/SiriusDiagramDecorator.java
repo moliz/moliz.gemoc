@@ -10,7 +10,7 @@ package org.modelexecution.xmof.animation.sirius;
 
 
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
 
 
 /**

@@ -35,7 +35,7 @@ import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.core.CommandExecution;
 import org.gemoc.executionframework.extensions.sirius.modelloader.DebugPermissionProvider;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.animation.handler.DiagramHandler;
+import org.modelexecution.xmof.animation.core.handler.DiagramHandler;
 
 /**
  * Provider for Sirius animation service

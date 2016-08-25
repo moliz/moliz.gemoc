@@ -1,7 +1,7 @@
-package org.modelexecution.xmof.animation.provider;
+package org.modelexecution.xmof.animation.core.provider;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.modelexecution.xmof.animation.controller.AnimationController;
+import org.modelexecution.xmof.animation.core.controller.AnimationController;
 
 public interface IAnimationProvider {
 

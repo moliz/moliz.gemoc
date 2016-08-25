@@ -9,9 +9,9 @@
 package org.modelexecution.xmof.animation.sirius;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.modelexecution.xmof.animation.controller.AnimationController;
-import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
-import org.modelexecution.xmof.animation.mapping.Match;
+import org.modelexecution.xmof.animation.core.controller.AnimationController;
+import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.core.mapping.Match;
 
 
 
@@ -20,7 +20,7 @@ import org.modelexecution.xmof.animation.mapping.Match;
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @see org.modelexecution.xmof.animation.controller.AnimationController
+ * @see org.modelexecution.xmof.animation.core.controller.AnimationController
  * @version 1.0
  *
  */

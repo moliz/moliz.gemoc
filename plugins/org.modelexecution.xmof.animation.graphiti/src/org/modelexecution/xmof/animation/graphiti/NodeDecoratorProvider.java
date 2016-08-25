@@ -20,8 +20,8 @@ import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.St
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
-import org.modelexecution.xmof.animation.decorator.DecoratorService;
-import org.modelexecution.xmof.animation.decorator.internal.Representation;
+import org.modelexecution.xmof.animation.core.decorator.DecoratorService;
+import org.modelexecution.xmof.animation.core.decorator.internal.Representation;
 import org.modelexecution.xmof.diagram.decoration.IXMOFDecoratorProvider;
 
 /**

@@ -23,8 +23,8 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
-import org.modelexecution.xmof.animation.decorator.DiagramDecorator;
-import org.modelexecution.xmof.animation.decorator.internal.ElementState;
+import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
+import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
 
 /**
  * Specific DiagramDecorator for Graphiti
