@@ -87,7 +87,7 @@
     <ownedBehavior xsi:type="fUML.Syntax.Activities.IntermediateActivities:Activity" name="initializeMarking" specification="//NetConfiguration/initializeMarking">
       <ownedParameter name="initialTokens" upperBound="-1"/>
       <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ActivityParameterNode" name="initialTokens" outgoing="//NetConfiguration/initializeMarking.1/01" upperBound="-1" parameter="//NetConfiguration/initializeMarking.1/initialTokens"/>
-      <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" name="initialize tokens" inputElement="//NetConfiguration/initializeMarking.1/%">
+      <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" name="initialize tokens" inputElement="//NetConfiguration/initializeMarking.1/e1">
         <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="f1" outgoing="//NetConfiguration/initializeMarking.1/initialize%20tokens/o3 //NetConfiguration/initializeMarking.1/initialize%20tokens/%" incoming="//NetConfiguration/initializeMarking.1/initialize%20tokens/o2"/>
         <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="read holdingPlace" structuralFeature="//Token/holdingPlace">
           <object name="object" incoming="//NetConfiguration/initializeMarking.1/initialize%20tokens/o3" lowerBound="1"/>
@@ -98,13 +98,13 @@
           <value name="value" incoming="//NetConfiguration/initializeMarking.1/initialize%20tokens/%" lowerBound="1"/>
           <result name="result" lowerBound="1"/>
         </node>
-        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" name="o2" source="//NetConfiguration/initializeMarking.1/%" target="//NetConfiguration/initializeMarking.1/initialize%20tokens/f1"/>
+        <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" name="o2" source="//NetConfiguration/initializeMarking.1/e1" target="//NetConfiguration/initializeMarking.1/initialize%20tokens/f1"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" name="o3" source="//NetConfiguration/initializeMarking.1/initialize%20tokens/f1" target="//NetConfiguration/initializeMarking.1/initialize%20tokens/read%20holdingPlace/object"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//NetConfiguration/initializeMarking.1/initialize%20tokens/f1" target="//NetConfiguration/initializeMarking.1/initialize%20tokens/addheldTokens/value"/>
         <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//NetConfiguration/initializeMarking.1/initialize%20tokens/read%20holdingPlace/result" target="//NetConfiguration/initializeMarking.1/initialize%20tokens/addheldTokens/object"/>
       </node>
-      <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" outgoing="//NetConfiguration/initializeMarking.1/initialize%20tokens/o2" incoming="//NetConfiguration/initializeMarking.1/01" upperBound="-1" regionAsInput="//NetConfiguration/initializeMarking.1/initialize%20tokens"/>
-      <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" name="01" source="//NetConfiguration/initializeMarking.1/initialTokens.1" target="//NetConfiguration/initializeMarking.1/%"/>
+      <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" name="e1" outgoing="//NetConfiguration/initializeMarking.1/initialize%20tokens/o2" incoming="//NetConfiguration/initializeMarking.1/01" upperBound="-1" regionAsInput="//NetConfiguration/initializeMarking.1/initialize%20tokens"/>
+      <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" name="01" source="//NetConfiguration/initializeMarking.1/initialTokens.1" target="//NetConfiguration/initializeMarking.1/e1"/>
     </ownedBehavior>
   </eClassifiers>
   <eClassifiers xsi:type="kernel:BehavioredEClass" name="PlaceConfiguration">

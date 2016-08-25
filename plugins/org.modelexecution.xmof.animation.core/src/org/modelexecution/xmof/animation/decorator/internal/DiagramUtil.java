@@ -10,9 +10,9 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectFl
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNode;
 
 public class DiagramUtil {
-	
-	public static ActivityNode retreiveSourceNode(ActivityEdge edge){
-		ActivityNode source=null;
+
+	public static ActivityNode retreiveSourceNode(ActivityEdge edge) {
+		ActivityNode source = null;
 		if (edge instanceof ControlFlow) {
 			source = edge.getSource();
 		} else if (edge instanceof ObjectFlow) {
@@ -20,9 +20,9 @@ public class DiagramUtil {
 		}
 		return source;
 	}
-	
-	public static ActivityNode retreiveTargetNode(ActivityEdge edge){
-		ActivityNode target=null;
+
+	public static ActivityNode retreiveTargetNode(ActivityEdge edge) {
+		ActivityNode target = null;
 		if (edge instanceof ControlFlow) {
 			target = edge.getTarget();
 		} else if (edge instanceof ObjectFlow) {
@@ -30,6 +30,7 @@ public class DiagramUtil {
 		}
 		return target;
 	}
+
 	private static ActivityNode retrieveConnectedNode(ActivityNode node) {
 		if (node instanceof ObjectNode) {
 			if (node instanceof Pin) {

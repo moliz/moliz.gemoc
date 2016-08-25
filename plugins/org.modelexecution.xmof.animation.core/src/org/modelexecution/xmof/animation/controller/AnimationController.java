@@ -23,7 +23,7 @@ import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 /**
  * The controller manages the communication flow within the model animator. The
  * execution engine provides all information needed for the animation process
- * encapsulated in a Model Speci fic Event object.
+ * encapsulated in a Model Specific Event object.
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
@@ -46,7 +46,7 @@ public abstract class AnimationController {
 	 * @param concreteHandler
 	 *            open or shows activity diagrams
 	 */
-	public AnimationController (Resource resource, DiagramHandler concreteHandler) {
+	public AnimationController(Resource resource, DiagramHandler concreteHandler) {
 
 		controllerMap = new ControllerMap(resource);
 		mappingService = new MappingService(controllerMap.getActivityNames());
@@ -77,7 +77,7 @@ public abstract class AnimationController {
 	 * @param match
 	 *            matched debug event
 	 */
-	public void handleMain(Match match) {
+	protected void handleMain(Match match) {
 		initializeDecorators();
 		Activity activity = controllerMap.getActivityByName(match.getXmofElementName());
 		openOrCreateActivityDiagram(activity);
@@ -113,7 +113,7 @@ public abstract class AnimationController {
 	 * 
 	 * @param match
 	 */
-	public void handleActivity(Match match) {
+	protected void handleActivity(Match match) {
 		Activity activity = controllerMap.getActivityByName(match.getXmofElementName());
 		openOrCreateActivityDiagram(activity);
 		controllerMap.addCallingActivity(activity.getName(), activeDecorator.getActivity().getName());
@@ -129,22 +129,17 @@ public abstract class AnimationController {
 	 *            matched debugEvent
 	 */
 	private void processType(Match match) {
-		switch (match.getType()) {
-		case MAIN:
+		switch (match.getXmofType()) {
+		case Match.XMOF_ACTIVITY_MAIN:
 			handleMain(match);
 			return;
-		case ACTIVITY:
+		case Match.XMOF_ACTIVITY:
 			handleActivity(match);
 			return;
-		case CONTROLNODE:
-		case CALLOPERATION:
-		case ACTIVITYNODE:
-		case STRUCTUREDACTIVITYNODE:
+		case Match.XMOF_ACTIVITYNODE:
 			decorateActivityNode(match);
 			return;
 		default:
-			Activator.getDefault().getMessaggingSystem().debug("process type could not be determined",
-					Activator.PLUGIN_ID);
 		}
 	}
 

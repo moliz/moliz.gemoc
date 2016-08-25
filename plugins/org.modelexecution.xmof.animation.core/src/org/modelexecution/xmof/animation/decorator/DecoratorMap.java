@@ -82,9 +82,9 @@ public class DecoratorMap {
 		}
 
 		if (source instanceof ActivityParameterNode) {
-			addToConnectedParameterNodeMap(target, (ActivityParameterNode) source);
+			addToConnectedParameterNodeMap(target, source);
 		} else if (target instanceof ActivityParameterNode) {
-			addToConnectedParameterNodeMap(source, (ActivityParameterNode) target);
+			addToConnectedParameterNodeMap(source, target);
 		}
 
 	}
@@ -136,11 +136,11 @@ public class DecoratorMap {
 
 				getActivityNodes((StructuredActivityNode) node);
 				getActivityEdges((StructuredActivityNode) node);
-				if (node instanceof ExpansionRegion){
-					for(ActivityNode expNode:((ExpansionRegion)node).getOutputElement()){
+				if (node instanceof ExpansionRegion) {
+					for (ActivityNode expNode : ((ExpansionRegion) node).getOutputElement()) {
 						addToConnectedParameterNodeMap(node, expNode);
 					}
-					for(ActivityNode expNode:((ExpansionRegion)node).getInputElement()){
+					for (ActivityNode expNode : ((ExpansionRegion) node).getInputElement()) {
 						addToConnectedParameterNodeMap(node, expNode);
 					}
 				}
@@ -215,7 +215,7 @@ public class DecoratorMap {
 			return activityEdgeMap.get(id);
 		} else {
 			id = new EdgeID(paramNode.getName(), activityNode.getName());
-			if (activityEdgeMap.containsKey(id)){
+			if (activityEdgeMap.containsKey(id)) {
 				return activityEdgeMap.get(id);
 			}
 			return new HashSet<>();

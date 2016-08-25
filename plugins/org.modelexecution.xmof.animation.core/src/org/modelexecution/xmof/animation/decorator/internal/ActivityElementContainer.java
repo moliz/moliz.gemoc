@@ -22,8 +22,8 @@ import java.util.Set;
  */
 public class ActivityElementContainer {
 
-	private Set<String> activeNodes=new HashSet<>();
-	private Set<EdgeID> activeEdges= new HashSet<>();
+	private Set<String> activeNodes = new HashSet<>();
+	private Set<EdgeID> activeEdges = new HashSet<>();
 	private Set<String> traversedNodes = new HashSet<>();
 	private Set<EdgeID> traversedEdges = new HashSet<>();
 

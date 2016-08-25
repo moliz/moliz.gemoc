@@ -147,7 +147,7 @@
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
       <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="45" x="108" y="20"/>
       <link>
-        <businessObjects href="petrinet2.xmof#//NetConfiguration/initializeMarking.1/%"/>
+        <businessObjects href="petrinet2.xmof#//NetConfiguration/initializeMarking.1/e1"/>
       </link>
       <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.1" incomingConnections="//@connections.0"/>
       <children visible="true">

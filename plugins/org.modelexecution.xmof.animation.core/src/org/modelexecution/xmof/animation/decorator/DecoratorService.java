@@ -32,8 +32,8 @@ import org.modelexecution.xmof.animation.decorator.internal.Representation;
 public class DecoratorService {
 
 	private static Map<String, ActivityElementContainer> activityElementContainerMap = new HashMap<>();
-	private static Representation xmofRepresentation=Representation.NONE;
-	private static boolean running=false;
+	private static Representation xmofRepresentation = Representation.NONE;
+	private static boolean running = false;
 
 	public static void addDecoratedElement(Activity activity, EObject element, ElementState state) {
 		if (element instanceof ActivityNode) {
@@ -51,7 +51,8 @@ public class DecoratorService {
 	 * @return boolean active node or not
 	 */
 	public static boolean isActiveNode(ActivityNode node) {
-		if (!running) return false;
+		if (!running)
+			return false;
 		String key = getActivityName(node);
 		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
@@ -70,7 +71,8 @@ public class DecoratorService {
 	 * @return boolean traversed node or not
 	 */
 	public static boolean isTraversedNode(ActivityNode node) {
-		if (!running) return false;
+		if (!running)
+			return false;
 		String key = getActivityName(node);
 		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
@@ -87,7 +89,8 @@ public class DecoratorService {
 	 * @return boolean active edge or not
 	 */
 	public static boolean isActiveEdge(ActivityEdge edge) {
-		if (!running) return false;
+		if (!running)
+			return false;
 		String key = getActivityName(edge);
 		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null && container.getActiveEdges() != null) {
@@ -105,7 +108,8 @@ public class DecoratorService {
 	 * @return boolean traversed edge or not
 	 */
 	public static boolean isTraversedEdge(ActivityEdge edge) {
-		if (!running) return false;
+		if (!running)
+			return false;
 		String key = getActivityName(edge);
 		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
@@ -124,7 +128,7 @@ public class DecoratorService {
 
 	public static void reset() {
 		activityElementContainerMap = new HashMap<>();
-		running=false;
+		running = false;
 
 	}
 
@@ -250,6 +254,5 @@ public class DecoratorService {
 	public static void setRunning(boolean running) {
 		DecoratorService.running = running;
 	}
-	
 
 }

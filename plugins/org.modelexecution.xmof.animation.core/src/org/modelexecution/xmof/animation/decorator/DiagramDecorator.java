@@ -11,9 +11,7 @@ package org.modelexecution.xmof.animation.decorator;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
-import org.modelexecution.xmof.Syntax.Actions.BasicActions.OutputPin;
 import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
@@ -110,22 +108,21 @@ public abstract class DiagramDecorator {
 
 	private void decoratePreviouslyActiveNodes() {
 		if (previouslyActiveNode != null) {
-			for (ActivityNode node: decoratorMap.retrieveAllConnectedNodes(previouslyActiveNode)){
+			for (ActivityNode node : decoratorMap.retrieveAllConnectedNodes(previouslyActiveNode)) {
 				if (!(previouslyActiveNode instanceof StructuredActivityNode)) {
 					decorateElement(node, ElementState.TRAVERSED);
 				}
 			}
-			
+
 		}
 		if (inStructuredNode != null) {
 			if (executionOfStructuredNodeFinished()) {
 				decorateLastEdgeOfExpansionRegion();
 				previouslyActiveNode = inStructuredNode;
-				for (ActivityNode node: decoratorMap.retrieveAllConnectedNodes(previouslyActiveNode)){
+				for (ActivityNode node : decoratorMap.retrieveAllConnectedNodes(previouslyActiveNode)) {
 					decorateElement(node, ElementState.TRAVERSED);
 				}
-				
-				
+
 				inStructuredNode = null;
 			}
 		}
