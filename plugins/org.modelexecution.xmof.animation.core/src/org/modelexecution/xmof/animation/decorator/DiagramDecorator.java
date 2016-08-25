@@ -11,11 +11,14 @@ package org.modelexecution.xmof.animation.decorator;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.OutputPin;
 import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
+import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
+import org.modelexecution.xmof.animation.decorator.internal.DiagramUtil;
 import org.modelexecution.xmof.animation.decorator.internal.ElementState;
 import org.modelexecution.xmof.animation.mapping.Match;
 
@@ -116,13 +119,24 @@ public abstract class DiagramDecorator {
 		}
 		if (inStructuredNode != null) {
 			if (executionOfStructuredNodeFinished()) {
+				decorateLastEdgeOfExpansionRegion();
 				previouslyActiveNode = inStructuredNode;
-				for (ActivityNode node:decoratorMap.retrieveAllConnectedNodes(previouslyActiveNode)){
+				for (ActivityNode node: decoratorMap.retrieveAllConnectedNodes(previouslyActiveNode)){
 					decorateElement(node, ElementState.TRAVERSED);
 				}
 				
 				
 				inStructuredNode = null;
+			}
+		}
+	}
+	
+	private void decorateLastEdgeOfExpansionRegion() {
+		if(previouslyActiveNode==null || previouslyActiveNode.getOutgoing().isEmpty()) return;
+		for(ActivityEdge edge: previouslyActiveNode.getOutgoing()) {
+			ActivityNode target = DiagramUtil.retreiveTargetNode(edge);
+			if(target instanceof ExpansionRegion) {
+				decorateElement(edge, ElementState.TRAVERSED);
 			}
 		}
 	}
