@@ -18,6 +18,7 @@ import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory;
 import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
+import org.eclipse.emf.codegen.ecore.genmodel.GenParameter;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.codegen.ecore.genmodel.util.GenModelUtil;
 import org.eclipse.emf.common.util.BasicMonitor;
@@ -27,10 +28,11 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.CallBehaviorAction;
 import org.modelexecution.xmof.Syntax.Actions.CompleteActions.ReduceAction;
@@ -41,33 +43,40 @@ import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 public class XMOFCodeGenerator {
 
 	public static final String MODEL_GEN_FOLDER = "model-gen";
-	
+
 	protected IProgressMonitor progressMonitor;
-	
+
 	protected ResourceSet resourceSet;
 	protected IProject xmofProject;
-	
-	
+
+	protected URI modelGenFolderURI;
+	protected String srcFolderPathString;
+
 	public boolean generateCode(Resource xmofModelResource, IProgressMonitor progressMonitor) {
 		this.progressMonitor = progressMonitor;
-		this.resourceSet = new ResourceSetImpl();
+		this.resourceSet = xmofModelResource.getResourceSet();
 		this.xmofProject = getXMOFProject(xmofModelResource);
-		
+
 		boolean success = false;
-		
-		// setup folder for saving temporary models
-		URI modelGenFolderURI = setupModelGenFolder();
-		
+
+		// setup model-gen folder for saving temporary models
+		this.modelGenFolderURI = setupModelGenFolder();
+
+		// setup src folder for model code generation
+		this.srcFolderPathString = setupSrcFolder();
+
 		// 1. create temporary Ecore metamodel
-		// TODO: See whether we can avoid this step and therewith also 4., 5. and 6.
-		final EPackage rootEPackage = generateEcoreModel(xmofModelResource, modelGenFolderURI);
+		// final EPackage rootEPackage = generateEcoreModel(xmofModelResource);
 
 		// 2. create temporary Genmodel, set initialize by load to true
-		final GenModel genModel = generateGenModel(rootEPackage, modelGenFolderURI);
+		// final GenModel genModel = generateGenModel(rootEPackage,
+		// modelGenFolderURI);
+		final GenModel genModel = generateGenModel((EPackage) xmofModelResource.getContents().get(0),
+				modelGenFolderURI);
 
 		// 3. generate code
 		success = generateCode(genModel, progressMonitor);
-		
+
 		// 4. copy xMOF file into impl folder
 		// 5. change URI of Ecore file in PackageImpl class
 		// 6. Special case of empty packages has to be considered for 4. and 5.
@@ -82,31 +91,46 @@ public class XMOFCodeGenerator {
 		return xmofProject;
 	}
 
-	protected URI setupModelGenFolder() {
+	private URI setupModelGenFolder() {
 		URI modelGenFolderURI = null;
 		final IFolder modelGenFolder = xmofProject.getFolder(MODEL_GEN_FOLDER);
 		if (!modelGenFolder.exists()) {
 			try {
 				modelGenFolder.create(true, true, null);
 			} catch (CoreException e) {
-				e.printStackTrace();
+				throw new RuntimeException("The folder \'model-gen\' could not be created.", e);
 			}
 		}
 		modelGenFolderURI = URI.createPlatformResourceURI(modelGenFolder.getFullPath().toString(), true);
 		return modelGenFolderURI;
 	}
 
-	protected EPackage generateEcoreModel(Resource xmofModelResource, URI modelGenFolderURI) {
-		final Resource ecoreModelResource = copyXMOFModel(xmofModelResource, modelGenFolderURI);
-		final EPackage rootEPackage = (EPackage)ecoreModelResource.getContents().get(0);
+	private String setupSrcFolder() {
+		String srcFolderPathString = null;
+		final IFolder srcFolder = xmofProject.getFolder("src");
+		if (!srcFolder.exists()) {
+			try {
+				srcFolder.create(true, true, null);
+			} catch (CoreException e) {
+				throw new RuntimeException("The source folder \'src\' could not be created.", e);
+			}
+		}
+		srcFolderPathString = srcFolder.getFullPath().toString();
+		return srcFolderPathString;
+	}
+
+	protected EPackage generateEcoreModel(Resource xmofModelResource) {
+		final Resource ecoreModelResource = copyXMOFModel(xmofModelResource);
+		final EPackage rootEPackage = (EPackage) ecoreModelResource.getContents().get(0);
 		removeBehaviors(rootEPackage);
 		save(ecoreModelResource);
 		return rootEPackage;
 	}
 
-	private Resource copyXMOFModel(Resource xmofModelResource, URI modelGenFolderURI) {
-		final String ecoreModelFileName = xmofModelResource.getURI().trimFileExtension().appendFileExtension("ecore").lastSegment().toString();
-		final URI ecoreModelURI = modelGenFolderURI.appendSegment(ecoreModelFileName);
+	private Resource copyXMOFModel(Resource xmofModelResource) {
+		final String ecoreModelFileName = xmofModelResource.getURI().trimFileExtension().appendFileExtension("ecore")
+				.lastSegment().toString();
+		final URI ecoreModelURI = this.modelGenFolderURI.appendSegment(ecoreModelFileName);
 		final Resource ecoreModelResource = resourceSet.createResource(ecoreModelURI);
 
 		final Copier copier = new Copier();
@@ -116,7 +140,6 @@ public class XMOFCodeGenerator {
 	}
 
 	private void removeBehaviors(EPackage ePackage) {
-		// TODO: is it enough to remove BehavioredEOperations?
 		for (TreeIterator<EObject> eAllContents = ePackage.eAllContents(); eAllContents.hasNext();) {
 			EObject eObject = eAllContents.next();
 			if (eObject instanceof BehavioredEClass) {
@@ -137,62 +160,47 @@ public class XMOFCodeGenerator {
 				reduceAction.setReducer(null);
 			}
 		}
-
-		// for (EClassifier eClassifier : ePackage.getEClassifiers()) {
-		// if (eClassifier instanceof BehavioredEClass) {
-		// BehavioredEClass behavioredEClass = (BehavioredEClass) eClassifier;
-		// behavioredEClass.getOwnedBehavior().clear();
-		// for (EOperation eOperation : behavioredEClass.getEOperations()) {
-		// if (eOperation instanceof BehavioredEOperation) {
-		// BehavioredEOperation behavioredEOperation = (BehavioredEOperation)
-		// eOperation;
-		// behavioredEOperation.getMethod().clear();
-		// }
-		// }
-		// }
-		// }
-		// for (EPackage subPackage : ePackage.getESubpackages()) {
-		// removeBehaviors(subPackage);
-		// }
 	}
-	
-	protected GenModel generateGenModel(EPackage rootEPackage, URI modelGenFolderURI) {		
+
+	protected GenModel generateGenModel(EPackage rootEPackage, URI modelGenFolderURI) {
 		final Resource genModelResource = createGenModel(rootEPackage);
-		GenModel genModel = (GenModel)genModelResource.getContents().get(0);
-		setInitializeByLoad((genModel).getGenPackages().get(0));
+		GenModel genModel = (GenModel) genModelResource.getContents().get(0);
+		setInitializeByLoad(genModel);
 		save(genModelResource);
 		return genModel;
 	}
 
-	private Resource createGenModel(EPackage rootEPackage) {
+	protected Resource createGenModel(EPackage rootEPackage) {
 		final Resource ecoreModelResource = rootEPackage.eResource();
-		final URI genmodelURI = URI
-				.createURI(ecoreModelResource.getURI().trimFileExtension().appendFileExtension("genmodel").toString());
-		final Resource genModelResource = resourceSet.createResource(genmodelURI);
+		final String genModelFileName = ecoreModelResource.getURI().trimFileExtension().appendFileExtension("genmodel")
+				.lastSegment().toString();
+		final URI genModelURI = this.modelGenFolderURI.appendSegment(genModelFileName);
 
+		final Resource genModelResource = resourceSet.createResource(genModelURI);
 		GenModel genModel = GenModelFactory.eINSTANCE.createGenModel();
 		genModelResource.getContents().add(genModel);
 
 		final IFolder srcFolder = xmofProject.getFolder("src");
 		genModel.setModelDirectory(srcFolder.getFullPath().toString());
-		genModel.getForeignModel().add(ecoreModelResource.getURI().lastSegment());
-		genModel.initialize(Collections.singleton(rootEPackage));
-		genModel.setModelName(genmodelURI.trimFileExtension().lastSegment());
-		genModel.setModelPluginID(getPluginID(genmodelURI));
+		genModel.getForeignModel().add(ecoreModelResource.getURI().toString());
+		genModel.setModelName(getModelName(genModelURI));
+		genModel.setModelPluginID(getPluginID(genModelURI));
 
-		final List<GenPackage> missingGenPackages = new UniqueEList<GenPackage>();
-		final Map<String, URI> genModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap(true);
-		for (EPackage ePackage : genModel.getMissingPackages()) {
-			final URI missingGenModelURI = genModelLocationMap.get(ePackage.getNsURI());
-			final Resource missingGenModelResource = resourceSet.getResource(missingGenModelURI, true);
-			final GenModel missingGenModel = (GenModel) missingGenModelResource.getContents().get(0);
-			missingGenPackages.addAll(missingGenModel.getGenPackages());
-		}
+		genModel.initialize(Collections.singleton(rootEPackage));
+		setMissingParameterTypes(genModel);
+
+		final List<GenPackage> missingGenPackages = computeMissingGenPackages(genModel);
 		genModel.getUsedGenPackages().addAll(missingGenPackages);
 
 		return genModelResource;
 	}
-	
+
+	protected String getModelName(URI genModelURI) {
+		final String genModelFileName = genModelURI.trimFileExtension().lastSegment();
+		final String modelName = genModelFileName.substring(0, 1).toUpperCase() + genModelFileName.substring(1);
+		return modelName;
+	}
+
 	protected final String getPluginID(URI uri) {
 		String pluginID = "";
 		final IFile manifestFile = xmofProject.getFolder("META-INF").getFile("MANIFEST.MF");
@@ -207,8 +215,65 @@ public class XMOFCodeGenerator {
 				pluginID = symbolicName.trim();
 			}
 		} catch (Exception e) {
+			throw new RuntimeException(
+					"Could not find manifest file \'" + manifestFile.getFullPath().toString() + "\'.", e);
 		}
 		return pluginID;
+	}
+
+	/**
+	 * In case of missing parameter types, the types are temporarily set to
+	 * EObject
+	 * 
+	 * @param genModel
+	 */
+	private void setMissingParameterTypes(GenModel genModel) {
+		for (TreeIterator<EObject> genModelContents = genModel.eAllContents(); genModelContents.hasNext();) {
+			EObject genModelElement = genModelContents.next();
+			if (genModelElement instanceof GenParameter) {
+				GenParameter genParameter = (GenParameter) genModelElement;
+				EParameter ecoreParameter = genParameter.getEcoreParameter();
+				if (ecoreParameter.getEType() == null) {
+					ecoreParameter.setEType(EcorePackage.eINSTANCE.getEObject());
+				}
+			}
+		}
+	}
+
+	protected List<GenPackage> computeMissingGenPackages(GenModel genModel) {
+		final List<GenPackage> missingGenPackages = new UniqueEList<GenPackage>();
+		final Map<String, URI> genModelLocationMapTargetEnvironment = EcorePlugin
+				.getEPackageNsURIToGenModelLocationMap(true);
+		final Map<String, URI> genModelLocationMapEnvironment = EcorePlugin
+				.getEPackageNsURIToGenModelLocationMap(false);
+		for (EPackage ePackage : genModel.getMissingPackages()) {
+			if (ePackage != null) { // happens for activities
+				URI missingGenModelURI = genModelLocationMapEnvironment.get(ePackage.getNsURI());
+				if (missingGenModelURI == null) {
+					missingGenModelURI = genModelLocationMapTargetEnvironment.get(ePackage.getNsURI());
+				}
+				if (missingGenModelURI == null) {
+					throw new RuntimeException(
+							"Unable to load generator model of required package \'" + ePackage.getNsURI() + "\'.");
+				}
+				Resource missingGenModelResource = null;
+				try {
+					missingGenModelResource = resourceSet.getResource(missingGenModelURI, true);
+				} catch (RuntimeException e) {
+					throw new RuntimeException(
+							"Unable to load generator model of required package \'" + ePackage.getNsURI() + "\'.");
+				}
+				final GenModel missingGenModel = (GenModel) missingGenModelResource.getContents().get(0);
+				missingGenPackages.addAll(missingGenModel.getGenPackages());
+			}
+		}
+		return missingGenPackages;
+	}
+
+	protected void setInitializeByLoad(GenModel genModel) {
+		for (GenPackage genPackage : genModel.getGenPackages()) {
+			setInitializeByLoad(genPackage);
+		}
 	}
 
 	private void setInitializeByLoad(GenPackage genPackage) {
@@ -233,19 +298,16 @@ public class XMOFCodeGenerator {
 		return success;
 	}
 
-	private void prepareGenModelForCodeGeneration(GenModel genModel) {
+	protected void prepareGenModelForCodeGeneration(GenModel genModel) {
 		genModel.reconcile();
 		genModel.setCanGenerate(true);
 	}
-	
-	private final boolean save(Resource ecoreModelResource) {
-		boolean success = false;
+
+	private final void save(Resource resource) {
 		try {
-			ecoreModelResource.save(Collections.EMPTY_MAP);
-			success = true;
+			resource.save(Collections.EMPTY_MAP);
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Could not save resource \'" + resource.getURI() + "\'.", e);
 		}
-		return success;
 	}
 }
