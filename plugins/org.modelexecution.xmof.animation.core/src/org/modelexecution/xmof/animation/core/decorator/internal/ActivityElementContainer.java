@@ -30,7 +30,7 @@ public class ActivityElementContainer {
 	public void addActiveNode(String nodeName) {
 		if (nodeName != null) {
 			activeNodes.add(nodeName);
-			traversedNodes.remove(activeNodes);
+			traversedNodes.remove(nodeName);
 		}
 
 	}
