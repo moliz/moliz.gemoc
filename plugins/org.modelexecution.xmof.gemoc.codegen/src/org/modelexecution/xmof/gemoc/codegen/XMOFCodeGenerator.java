@@ -15,12 +15,14 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
+import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory;
 import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.codegen.ecore.genmodel.GenParameter;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.codegen.ecore.genmodel.util.GenModelUtil;
+import org.eclipse.emf.codegen.util.CodeGenUtil;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -186,6 +188,12 @@ public class XMOFCodeGenerator {
 		genModel.setModelName(getModelName(genModelURI));
 		genModel.setModelPluginID(getPluginID(genModelURI));
 
+		// genModel.setOperationReflection(true);
+		// genModel.setMinimalReflectiveMethods(true);
+		genModel.setRootExtendsClass("org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container");
+		genModel.setComplianceLevel(getComplicanceLevel());
+		genModel.setImportOrganizing(true);
+
 		genModel.initialize(Collections.singleton(rootEPackage));
 		setMissingParameterTypes(genModel);
 
@@ -219,6 +227,21 @@ public class XMOFCodeGenerator {
 					"Could not find manifest file \'" + manifestFile.getFullPath().toString() + "\'.", e);
 		}
 		return pluginID;
+	}
+
+	private GenJDKLevel getComplicanceLevel() {
+		String complianceLevel = CodeGenUtil.EclipseUtil.getJavaComplianceLevel(xmofProject);
+		if ("1.4".equals(complianceLevel)) {
+			return GenJDKLevel.JDK14_LITERAL;
+		} else if ("1.5".equals(complianceLevel)) {
+			return GenJDKLevel.JDK50_LITERAL;
+		} else if ("1.6".equals(complianceLevel)) {
+			return GenJDKLevel.JDK60_LITERAL;
+		} else if ("1.7".equals(complianceLevel)) {
+			return GenJDKLevel.JDK70_LITERAL;
+		} else {
+			return GenJDKLevel.JDK80_LITERAL;
+		}
 	}
 
 	/**
