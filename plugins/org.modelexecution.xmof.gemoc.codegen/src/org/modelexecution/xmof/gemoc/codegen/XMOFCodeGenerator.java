@@ -1,9 +1,12 @@
 package org.modelexecution.xmof.gemoc.codegen;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.jar.Manifest;
 
 import org.eclipse.core.resources.IFile;
@@ -31,10 +34,12 @@ import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.CallBehaviorAction;
 import org.modelexecution.xmof.Syntax.Actions.CompleteActions.ReduceAction;
@@ -59,8 +64,6 @@ public class XMOFCodeGenerator {
 		this.resourceSet = xmofModelResource.getResourceSet();
 		this.xmofProject = getXMOFProject(xmofModelResource);
 
-		boolean success = false;
-
 		// setup model-gen folder for saving temporary models
 		this.modelGenFolderURI = setupModelGenFolder();
 
@@ -70,6 +73,9 @@ public class XMOFCodeGenerator {
 		// 1. create temporary Ecore metamodel
 		// final EPackage rootEPackage = generateEcoreModel(xmofModelResource);
 
+		// check whether all referenced packages can be loaded
+		checkReferencedPackages(xmofModelResource);
+
 		// 2. create temporary Genmodel, set initialize by load to true
 		// final GenModel genModel = generateGenModel(rootEPackage,
 		// modelGenFolderURI);
@@ -77,12 +83,11 @@ public class XMOFCodeGenerator {
 				modelGenFolderURI);
 
 		// 3. generate code
-		success = generateCode(genModel, progressMonitor);
+		return generateCode(genModel, progressMonitor);
 
 		// 4. copy xMOF file into impl folder
 		// 5. change URI of Ecore file in PackageImpl class
 		// 6. Special case of empty packages has to be considered for 4. and 5.
-		return success;
 	}
 
 	private IProject getXMOFProject(Resource xmofModelResource) {
@@ -161,6 +166,22 @@ public class XMOFCodeGenerator {
 				ReduceAction reduceAction = (ReduceAction) eObject;
 				reduceAction.setReducer(null);
 			}
+		}
+	}
+
+	private void checkReferencedPackages(Resource xmofModelResource) {
+		Set<URI> missingPackages = new HashSet<URI>();
+		Map<EObject, Collection<Setting>> externalCrossReferences = EcoreUtil.ExternalCrossReferencer
+				.find(xmofModelResource);
+		for (EObject eObject : externalCrossReferences.keySet()) {
+			if (eObject.eIsProxy()) {
+				missingPackages.add(EcoreUtil.getURI(eObject).trimFragment());
+			}
+		}
+
+		if (missingPackages.size() > 0) {
+			throw new RuntimeException("Unable to load the following referenced resource"
+					+ (missingPackages.size() == 1 ? "" : "s") + ": " + missingPackages.toString());
 		}
 	}
 
