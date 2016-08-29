@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.sirius;
+package org.modelexecution.xmof.animation.sirius.handler;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -59,8 +59,8 @@ public class SiriusDiagramHandler extends DiagramHandler {
 	}
 
 	private URI createURI() {
-		URI siriusURI = URI
-				.createURI("platform:/resource/" + modelResource.getURI().segment(1) + "/" + SIRIUS_SPECIFICATION_FILE);
+		URI siriusURI = URI.createURI("platform:/" + modelResource.getURI().segment(0) + "/"
+				+ modelResource.getURI().segment(1) + "/" + SIRIUS_SPECIFICATION_FILE);
 		return siriusURI;
 	}
 

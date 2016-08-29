@@ -20,4 +20,3 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.ecore.presentation,
  org.gemoc.commons.eclipse.emf
-Export-Package: org.modelexecution.xmof.animation.graphiti

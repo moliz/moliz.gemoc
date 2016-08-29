@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.graphiti;
+package org.modelexecution.xmof.animation.graphiti.decorator;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.emf.ecore.EObject;
@@ -21,7 +21,6 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
 import org.modelexecution.xmof.animation.core.decorator.DecoratorService;
-import org.modelexecution.xmof.animation.core.decorator.internal.Representation;
 import org.modelexecution.xmof.diagram.decoration.IXMOFDecoratorProvider;
 
 /**
@@ -62,7 +61,7 @@ public class NodeDecoratorProvider implements IXMOFDecoratorProvider {
 			if (node instanceof StructuredActivityNode) {
 				return new IDecorator[] {
 						new BorderDecorator(new ColorConstant(51, 205, 153), 1, Graphics.LINE_DASHDOTDOT) };
-			}else if(node instanceof ActivityParameterNode){
+			} else if (node instanceof ActivityParameterNode) {
 				return new IDecorator[] {
 						new BorderDecorator(new ColorConstant(51, 205, 153), 1, Graphics.LINE_SOLID) };
 			}
@@ -71,7 +70,7 @@ public class NodeDecoratorProvider implements IXMOFDecoratorProvider {
 			if (node instanceof StructuredActivityNode) {
 				return new IDecorator[] {
 						new BorderDecorator(new ColorConstant(255, 102, 102), 1, Graphics.LINE_DASHDOTDOT) };
-			}else if (node instanceof ActivityParameterNode){
+			} else if (node instanceof ActivityParameterNode) {
 				return new IDecorator[] {
 						new BorderDecorator(new ColorConstant(255, 102, 102), 1, Graphics.LINE_SOLID) };
 			}

@@ -4,13 +4,13 @@
    <extension
          point="org.modelexecution.xmof.diagram.DecorationProvider">
       <decoratorProvider
-            decoratorProviderClass="org.modelexecution.xmof.animation.graphiti.NodeDecoratorProvider">
+            decoratorProviderClass="org.modelexecution.xmof.animation.graphiti.decorator.NodeDecoratorProvider">
       </decoratorProvider>
    </extension>
    <extension
          point="org.modelexecution.xmof.animationProvider">
       <animationProvider
-            animationProviderClass="org.modelexecution.xmof.animation.graphiti.GraphitiAnimationProvider">
+            animationProviderClass="org.modelexecution.xmof.animation.graphiti.provider.GraphitiAnimationProvider">
       </animationProvider>
    </extension>
 

@@ -16,11 +16,9 @@ import java.util.Map;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
-import org.eclipse.ui.dialogs.SelectionDialog;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
@@ -79,10 +77,12 @@ public class ModelAnimator implements IEngineAddon {
 		AnimationProviderRegistry registry = AnimationProviderRegistry.getInstance();
 		if (registry.haveProvider(modelResource)) {
 			List<IAnimationProvider> possibleProviders = registry.getProviders(modelResource);
-			IAnimationProvider provider;
+			IAnimationProvider provider = null;
 			if (possibleProviders.size() > 1) {
 				provider = letUserSelectProvider(possibleProviders);
-			} else {
+			}
+			if (provider == null) {
+
 				provider = possibleProviders.get(0);
 			}
 			return provider.retrieveController(modelResource);
@@ -98,7 +98,7 @@ public class ModelAnimator implements IEngineAddon {
 			return null;
 		}
 		Object[] result = dialog.getResult();
-	
+
 		return providerMap.get(result[0]);
 
 	}

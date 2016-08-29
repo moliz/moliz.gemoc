@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.graphiti;
+package org.modelexecution.xmof.animation.graphiti.handler;
 
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;
@@ -32,8 +32,7 @@ public class GraphitiDiagramHandler extends DiagramHandler {
 	private static final String KERNEL_EDITOR_ID = "org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditorID";
 
 	private KernelEditor activeEditor;
-	
-	
+
 	public GraphitiDiagramHandler(Resource modelResource) {
 		super(modelResource);
 		PlatformUI.getWorkbench().getDisplay().asyncExec((new Runnable() {
@@ -45,6 +44,7 @@ public class GraphitiDiagramHandler extends DiagramHandler {
 
 	}
 
+	@Override
 	public void openOrShowDiagram(Activity activity) {
 		activeEditor.showDiagram(activity);
 	}

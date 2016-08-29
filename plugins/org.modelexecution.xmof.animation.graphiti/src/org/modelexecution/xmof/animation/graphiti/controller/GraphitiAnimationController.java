@@ -6,14 +6,17 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.graphiti;
+package org.modelexecution.xmof.animation.graphiti.controller;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.core.controller.AnimationController;
+import org.modelexecution.xmof.animation.graphiti.decorator.GraphitiDiagramDecorator;
+import org.modelexecution.xmof.animation.graphiti.handler.GraphitiDiagramHandler;
 
 /**
- * Animation controller for Graphiti implementation. It extends the Animation Controller.
+ * Animation controller for Graphiti implementation. It extends the Animation
+ * Controller.
  * 
  * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
  * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
@@ -35,5 +38,4 @@ public class GraphitiAnimationController extends AnimationController {
 		}
 	}
 
-	
 }

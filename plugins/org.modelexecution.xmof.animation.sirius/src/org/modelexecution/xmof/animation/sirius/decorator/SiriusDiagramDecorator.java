@@ -6,12 +6,11 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.sirius;
-
+package org.modelexecution.xmof.animation.sirius.decorator;
 
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
-
+import org.modelexecution.xmof.animation.sirius.controller.SiriusAnimationController;
 
 /**
  * Specific DiagramDecorator for Sirius
@@ -31,19 +30,16 @@ public class SiriusDiagramDecorator extends DiagramDecorator {
 		this.controller = controller;
 	}
 
-	
 	@Override
 	public void resetDecorations() {
 		super.resetDecorations();
-	
 
 	}
-
 
 	@Override
 	protected void refreshDiagram() {
 		controller.refresh(this);
-		
+
 	}
 
 }

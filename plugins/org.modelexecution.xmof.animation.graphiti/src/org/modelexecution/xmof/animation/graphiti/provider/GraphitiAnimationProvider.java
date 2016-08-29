@@ -1,11 +1,10 @@
-package org.modelexecution.xmof.animation.graphiti;
+package org.modelexecution.xmof.animation.graphiti.provider;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 import org.modelexecution.xmof.animation.core.controller.AnimationController;
-import org.modelexecution.xmof.animation.core.decorator.DecoratorService;
-import org.modelexecution.xmof.animation.core.decorator.internal.Representation;
 import org.modelexecution.xmof.animation.core.provider.IAnimationProvider;
+import org.modelexecution.xmof.animation.graphiti.controller.GraphitiAnimationController;
 
 public class GraphitiAnimationProvider implements IAnimationProvider {
 
@@ -23,7 +22,5 @@ public class GraphitiAnimationProvider implements IAnimationProvider {
 	public String getName() {
 		return "Graphiti Animation Provider";
 	}
-	
-	
 
 }

@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  *******************************************************************************/
-package org.modelexecution.xmof.animation.graphiti;
+package org.modelexecution.xmof.animation.graphiti.decorator;
 
 import java.util.List;
 import java.util.Set;
@@ -44,13 +44,13 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 		super(activity);
 		this.kernelEditor = kernelEditor;
 	}
-	
+
 	@Override
 	public void initializeMaps() {
 		diagramEditor = getActiveDiagramEditor();
 		if (diagramEditor != null) {
-				activity = getActivity(diagramEditor);
-				super.initializeMaps();
+			activity = getActivity(diagramEditor);
+			super.initializeMaps();
 		}
 	}
 
@@ -62,12 +62,10 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	@Override
 	protected void decorateElement(EObject element, ElementState state) {
-	
-			super.decorateElement(element, state);
-			refreshDecoration(element);
-		
-		
-		
+
+		super.decorateElement(element, state);
+		refreshDecoration(element);
+
 	}
 
 	private void refreshDecoration(EObject element) {
@@ -138,10 +136,10 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 			refreshDecoration(node);
 		}
 		for (Set<ActivityEdge> edges : super.decoratorMap.getActivityEdgeMap().values()) {
-			for (ActivityEdge edge :edges){
+			for (ActivityEdge edge : edges) {
 				refreshDecoration(edge);
 			}
-			
+
 		}
 
 	}
