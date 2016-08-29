@@ -83,11 +83,12 @@ public class XMOFMutableFieldExtractor implements IMutableFieldExtractor {
 
 	private String getObjectNameValue(EObject eObject) {
 		String objectNameValue = null;
-		EStructuralFeature nameFeature = eObject.eClass()
-				.getEStructuralFeature("name");
-		Object nameValue = eObject.eGet(nameFeature);
-		if (nameValue instanceof String) {
-			objectNameValue = (String) nameValue;
+		EStructuralFeature nameFeature = eObject.eClass().getEStructuralFeature("name");
+		if (nameFeature != null) {
+			Object nameValue = eObject.eGet(nameFeature);
+			if (nameValue instanceof String) {
+				objectNameValue = (String) nameValue;
+			}
 		}
 		return objectNameValue;
 	}
