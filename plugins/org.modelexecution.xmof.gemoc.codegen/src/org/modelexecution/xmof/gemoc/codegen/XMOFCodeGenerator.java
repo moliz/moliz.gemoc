@@ -70,24 +70,20 @@ public class XMOFCodeGenerator {
 		// setup src folder for model code generation
 		this.srcFolderPathString = setupSrcFolder();
 
-		// 1. create temporary Ecore metamodel
+		// create temporary Ecore metamodel
 		// final EPackage rootEPackage = generateEcoreModel(xmofModelResource);
 
 		// check whether all referenced packages can be loaded
 		checkReferencedPackages(xmofModelResource);
 
-		// 2. create temporary Genmodel, set initialize by load to true
+		// create temporary Genmodel, set initialize by load to true
 		// final GenModel genModel = generateGenModel(rootEPackage,
 		// modelGenFolderURI);
 		final GenModel genModel = generateGenModel((EPackage) xmofModelResource.getContents().get(0),
 				modelGenFolderURI);
 
-		// 3. generate code
+		// generate code
 		return generateCode(genModel, progressMonitor);
-
-		// 4. copy xMOF file into impl folder
-		// 5. change URI of Ecore file in PackageImpl class
-		// 6. Special case of empty packages has to be considered for 4. and 5.
 	}
 
 	private IProject getXMOFProject(Resource xmofModelResource) {
