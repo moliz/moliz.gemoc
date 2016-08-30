@@ -7,8 +7,6 @@ import fumlConfiguration.Classes.Kernel.Value;
 
 import fumlConfiguration.Loci.impl.SemanticVisitorImpl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -95,34 +93,6 @@ public abstract class ValueImpl extends SemanticVisitorImpl implements Value {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case KernelPackage.VALUE___GET_TYPES__ELIST:
-				getTypes((EList<Classifier>)arguments.get(0));
-				return null;
-			case KernelPackage.VALUE___COPY__VALUE:
-				copy((Value)arguments.get(0));
-				return null;
-			case KernelPackage.VALUE___NEW____VALUE:
-				new_((Value)arguments.get(0));
-				return null;
-			case KernelPackage.VALUE___EQUALS__VALUE_BOOLEAN:
-				equals((Value)arguments.get(0), (Boolean)arguments.get(1));
-				return null;
-			case KernelPackage.VALUE___HAS_TYPE__CLASSIFIER_BOOLEAN:
-				hasType((Classifier)arguments.get(0), (Boolean)arguments.get(1));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ValueImpl

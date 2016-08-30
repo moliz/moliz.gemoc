@@ -8,8 +8,6 @@ import fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.
 import fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.Execution;
 import fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.ParameterValue;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -281,37 +279,6 @@ public abstract class ExecutionImpl extends ObjectImpl implements Execution {
 				return parameterValues != null && !parameterValues.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BasicBehaviorsFewStepsPackage.EXECUTION___SET_PARAMETER_VALUE__PARAMETERVALUE:
-				setParameterValue((ParameterValue)arguments.get(0));
-				return null;
-			case BasicBehaviorsFewStepsPackage.EXECUTION___EXECUTE:
-				execute();
-				return null;
-			case BasicBehaviorsFewStepsPackage.EXECUTION___GET_OUTPUT_PARAMETER_VALUES__ELIST:
-				getOutputParameterValues((EList<ParameterValue>)arguments.get(0));
-				return null;
-			case BasicBehaviorsFewStepsPackage.EXECUTION___GET_PARAMETER_VALUE__PARAMETER_PARAMETERVALUE:
-				getParameterValue((Parameter)arguments.get(0), (ParameterValue)arguments.get(1));
-				return null;
-			case BasicBehaviorsFewStepsPackage.EXECUTION___TERMINATE:
-				terminate();
-				return null;
-			case BasicBehaviorsFewStepsPackage.EXECUTION___GET_BEHAVIOR__BEHAVIOR:
-				getBehavior((Behavior)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ExecutionImpl

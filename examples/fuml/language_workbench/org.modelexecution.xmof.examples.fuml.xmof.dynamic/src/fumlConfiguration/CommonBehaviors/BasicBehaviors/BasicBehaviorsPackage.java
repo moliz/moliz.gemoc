@@ -5,7 +5,6 @@ package fumlConfiguration.CommonBehaviors.BasicBehaviors;
 import fumlConfiguration.Classes.Kernel.KernelPackage;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -16,7 +15,6 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -132,159 +130,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	int EXECUTION_FEATURE_COUNT = KernelPackage.OBJECT_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Initialize</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___INITIALIZE = KernelPackage.OBJECT___INITIALIZE;
-
-	/**
-	 * The operation id for the '<em>Get Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___GET_TYPES__ELIST = KernelPackage.OBJECT___GET_TYPES__ELIST;
-
-	/**
-	 * The operation id for the '<em>Copy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___COPY__VALUE = KernelPackage.OBJECT___COPY__VALUE;
-
-	/**
-	 * The operation id for the '<em>New </em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___NEW____VALUE = KernelPackage.OBJECT___NEW____VALUE;
-
-	/**
-	 * The operation id for the '<em>Equals</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___EQUALS__VALUE_BOOLEAN = KernelPackage.OBJECT___EQUALS__VALUE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Has Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___HAS_TYPE__CLASSIFIER_BOOLEAN = KernelPackage.OBJECT___HAS_TYPE__CLASSIFIER_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Create Feature Values</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___CREATE_FEATURE_VALUES = KernelPackage.OBJECT___CREATE_FEATURE_VALUES;
-
-	/**
-	 * The operation id for the '<em>Get Feature Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___GET_FEATURE_VALUE__STRUCTURALFEATURE_FEATUREVALUE = KernelPackage.OBJECT___GET_FEATURE_VALUE__STRUCTURALFEATURE_FEATUREVALUE;
-
-	/**
-	 * The operation id for the '<em>Set Feature Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___SET_FEATURE_VALUE__STRUCTURALFEATURE_ELIST_INT = KernelPackage.OBJECT___SET_FEATURE_VALUE__STRUCTURALFEATURE_ELIST_INT;
-
-	/**
-	 * The operation id for the '<em>Destroy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___DESTROY = KernelPackage.OBJECT___DESTROY;
-
-	/**
-	 * The operation id for the '<em>Set Parameter Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___SET_PARAMETER_VALUE__PARAMETERVALUE = KernelPackage.OBJECT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___EXECUTE = KernelPackage.OBJECT_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get Output Parameter Values</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___GET_OUTPUT_PARAMETER_VALUES__ELIST = KernelPackage.OBJECT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Get Parameter Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___GET_PARAMETER_VALUE__PARAMETER_PARAMETERVALUE = KernelPackage.OBJECT_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Terminate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___TERMINATE = KernelPackage.OBJECT_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Get Behavior</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION___GET_BEHAVIOR__BEHAVIOR = KernelPackage.OBJECT_OPERATION_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Execution</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_OPERATION_COUNT = KernelPackage.OBJECT_OPERATION_COUNT + 6;
-
-	/**
 	 * The meta object id for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.OpaqueBehaviorExecutionImpl <em>Opaque Behavior Execution</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -358,168 +203,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	int OPAQUE_BEHAVIOR_EXECUTION_FEATURE_COUNT = EXECUTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Initialize</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___INITIALIZE = EXECUTION___INITIALIZE;
-
-	/**
-	 * The operation id for the '<em>Get Types</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___GET_TYPES__ELIST = EXECUTION___GET_TYPES__ELIST;
-
-	/**
-	 * The operation id for the '<em>Copy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___COPY__VALUE = EXECUTION___COPY__VALUE;
-
-	/**
-	 * The operation id for the '<em>New </em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___NEW____VALUE = EXECUTION___NEW____VALUE;
-
-	/**
-	 * The operation id for the '<em>Equals</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___EQUALS__VALUE_BOOLEAN = EXECUTION___EQUALS__VALUE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Has Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___HAS_TYPE__CLASSIFIER_BOOLEAN = EXECUTION___HAS_TYPE__CLASSIFIER_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Create Feature Values</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___CREATE_FEATURE_VALUES = EXECUTION___CREATE_FEATURE_VALUES;
-
-	/**
-	 * The operation id for the '<em>Get Feature Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___GET_FEATURE_VALUE__STRUCTURALFEATURE_FEATUREVALUE = EXECUTION___GET_FEATURE_VALUE__STRUCTURALFEATURE_FEATUREVALUE;
-
-	/**
-	 * The operation id for the '<em>Set Feature Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___SET_FEATURE_VALUE__STRUCTURALFEATURE_ELIST_INT = EXECUTION___SET_FEATURE_VALUE__STRUCTURALFEATURE_ELIST_INT;
-
-	/**
-	 * The operation id for the '<em>Destroy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___DESTROY = EXECUTION___DESTROY;
-
-	/**
-	 * The operation id for the '<em>Set Parameter Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___SET_PARAMETER_VALUE__PARAMETERVALUE = EXECUTION___SET_PARAMETER_VALUE__PARAMETERVALUE;
-
-	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___EXECUTE = EXECUTION___EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Get Output Parameter Values</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___GET_OUTPUT_PARAMETER_VALUES__ELIST = EXECUTION___GET_OUTPUT_PARAMETER_VALUES__ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Parameter Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___GET_PARAMETER_VALUE__PARAMETER_PARAMETERVALUE = EXECUTION___GET_PARAMETER_VALUE__PARAMETER_PARAMETERVALUE;
-
-	/**
-	 * The operation id for the '<em>Terminate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___TERMINATE = EXECUTION___TERMINATE;
-
-	/**
-	 * The operation id for the '<em>Get Behavior</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___GET_BEHAVIOR__BEHAVIOR = EXECUTION___GET_BEHAVIOR__BEHAVIOR;
-
-	/**
-	 * The operation id for the '<em>Do Body</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION___DO_BODY__ELIST_ELIST = EXECUTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Opaque Behavior Execution</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPAQUE_BEHAVIOR_EXECUTION_OPERATION_COUNT = EXECUTION_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.ParameterValueImpl <em>Parameter Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -556,24 +239,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	 */
 	int PARAMETER_VALUE_FEATURE_COUNT = 2;
 
-	/**
-	 * The operation id for the '<em>Copy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_VALUE___COPY__PARAMETERVALUE = 0;
-
-	/**
-	 * The number of operations of the '<em>Parameter Value</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_VALUE_OPERATION_COUNT = 1;
-
 
 	/**
 	 * Returns the meta object for class '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution <em>Execution</em>}'.
@@ -608,66 +273,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	EReference getExecution_ParameterValues();
 
 	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#setParameterValue(fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) <em>Set Parameter Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Parameter Value</em>' operation.
-	 * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#setParameterValue(fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue)
-	 * @generated
-	 */
-	EOperation getExecution__SetParameterValue__ParameterValue();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#execute() <em>Execute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Execute</em>' operation.
-	 * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#execute()
-	 * @generated
-	 */
-	EOperation getExecution__Execute();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#getOutputParameterValues(org.eclipse.emf.common.util.EList) <em>Get Output Parameter Values</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Output Parameter Values</em>' operation.
-	 * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#getOutputParameterValues(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getExecution__GetOutputParameterValues__EList();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#getParameterValue(org.eclipse.uml2.uml.Parameter, fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) <em>Get Parameter Value</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Parameter Value</em>' operation.
-	 * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#getParameterValue(org.eclipse.uml2.uml.Parameter, fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue)
-	 * @generated
-	 */
-	EOperation getExecution__GetParameterValue__Parameter_ParameterValue();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#terminate() <em>Terminate</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Terminate</em>' operation.
-	 * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#terminate()
-	 * @generated
-	 */
-	EOperation getExecution__Terminate();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#getBehavior(org.eclipse.uml2.uml.Behavior) <em>Get Behavior</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Behavior</em>' operation.
-	 * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution#getBehavior(org.eclipse.uml2.uml.Behavior)
-	 * @generated
-	 */
-	EOperation getExecution__GetBehavior__Behavior();
-
-	/**
 	 * Returns the meta object for class '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution <em>Opaque Behavior Execution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -676,16 +281,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getOpaqueBehaviorExecution();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution#doBody(org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList) <em>Do Body</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Do Body</em>' operation.
-	 * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution#doBody(org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getOpaqueBehaviorExecution__DoBody__EList_EList();
 
 	/**
 	 * Returns the meta object for class '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue <em>Parameter Value</em>}'.
@@ -720,16 +315,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	EReference getParameterValue_Values_ParameterValue();
 
 	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue#copy(fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue) <em>Copy</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Copy</em>' operation.
-	 * @see fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue#copy(fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue)
-	 * @generated
-	 */
-	EOperation getParameterValue__Copy__ParameterValue();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -744,7 +329,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -779,54 +363,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 		EReference EXECUTION__PARAMETER_VALUES = eINSTANCE.getExecution_ParameterValues();
 
 		/**
-		 * The meta object literal for the '<em><b>Set Parameter Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION___SET_PARAMETER_VALUE__PARAMETERVALUE = eINSTANCE.getExecution__SetParameterValue__ParameterValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION___EXECUTE = eINSTANCE.getExecution__Execute();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Output Parameter Values</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION___GET_OUTPUT_PARAMETER_VALUES__ELIST = eINSTANCE.getExecution__GetOutputParameterValues__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Parameter Value</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION___GET_PARAMETER_VALUE__PARAMETER_PARAMETERVALUE = eINSTANCE.getExecution__GetParameterValue__Parameter_ParameterValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Terminate</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION___TERMINATE = eINSTANCE.getExecution__Terminate();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Behavior</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION___GET_BEHAVIOR__BEHAVIOR = eINSTANCE.getExecution__GetBehavior__Behavior();
-
-		/**
 		 * The meta object literal for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.OpaqueBehaviorExecutionImpl <em>Opaque Behavior Execution</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -835,14 +371,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OPAQUE_BEHAVIOR_EXECUTION = eINSTANCE.getOpaqueBehaviorExecution();
-
-		/**
-		 * The meta object literal for the '<em><b>Do Body</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation OPAQUE_BEHAVIOR_EXECUTION___DO_BODY__ELIST_ELIST = eINSTANCE.getOpaqueBehaviorExecution__DoBody__EList_EList();
 
 		/**
 		 * The meta object literal for the '{@link fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.ParameterValueImpl <em>Parameter Value</em>}' class.
@@ -869,14 +397,6 @@ public interface BasicBehaviorsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARAMETER_VALUE__VALUES_PARAMETER_VALUE = eINSTANCE.getParameterValue_Values_ParameterValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Copy</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PARAMETER_VALUE___COPY__PARAMETERVALUE = eINSTANCE.getParameterValue__Copy__ParameterValue();
 
 	}
 

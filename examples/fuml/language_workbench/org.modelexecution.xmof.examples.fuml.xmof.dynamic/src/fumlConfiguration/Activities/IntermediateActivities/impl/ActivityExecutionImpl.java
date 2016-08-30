@@ -11,12 +11,8 @@ import fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue;
 
 import fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.ExecutionImpl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -217,24 +213,6 @@ public class ActivityExecutionImpl extends ExecutionImpl implements ActivityExec
 				return activationGroup != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case IntermediateActivitiesPackage.ACTIVITY_EXECUTION___COLLECT_OUTPUT_PARAMETER_VALUES:
-				collectOutputParameterValues();
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_EXECUTION___SET_PARAMETER_VALUE_VALUES__PARAMETERVALUE_ACTIVITYPARAMETERNODEACTIVATION:
-				setParameterValueValues((ParameterValue)arguments.get(0), (ActivityParameterNodeActivation)arguments.get(1));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ActivityExecutionImpl

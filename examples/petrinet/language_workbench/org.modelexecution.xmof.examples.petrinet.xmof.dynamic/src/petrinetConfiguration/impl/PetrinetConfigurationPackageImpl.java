@@ -12,7 +12,6 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -20,6 +19,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
 
 import petrinet.PetrinetPackage;
 
@@ -36,9 +39,9 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	protected String packageFilename = "petrinet.xmof";
+	protected String packageFilename = "petrinetConfiguration.ecore";
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,6 +110,8 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 
 		// Initialize simple dependencies
 		PetrinetPackage.eINSTANCE.eClass();
+		IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
 		// Load packages
 		thePetrinetConfigurationPackage.loadPackage();
@@ -140,24 +145,6 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getNetConfiguration__Main() {
-        return getNetConfiguration().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getNetConfiguration__Run() {
-        return getNetConfiguration().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPlaceConfiguration() {
 		if (placeConfigurationEClass == null) {
 			placeConfigurationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(PetrinetConfigurationPackage.eNS_URI).getEClassifiers().get(1);
@@ -179,47 +166,11 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getPlaceConfiguration__RemoveToken() {
-        return getPlaceConfiguration().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getPlaceConfiguration__AddToken() {
-        return getPlaceConfiguration().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTransitionConfiguration() {
 		if (transitionConfigurationEClass == null) {
 			transitionConfigurationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(PetrinetConfigurationPackage.eNS_URI).getEClassifiers().get(2);
 		}
 		return transitionConfigurationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getTransitionConfiguration__IsEnabled() {
-        return getTransitionConfiguration().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getTransitionConfiguration__Fire() {
-        return getTransitionConfiguration().getEOperations().get(1);
 	}
 
 	/**

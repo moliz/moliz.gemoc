@@ -21,10 +21,10 @@ import petrinet2Configuration.Token;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link petrinet2Configuration.impl.TokenImpl#getHoldingPlace <em>Holding Place</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

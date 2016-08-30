@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.fuml.xmof.dynamic/src"
+    modelPluginID="org.modelexecution.xmof.examples.fuml.xmof.dynamic" modelName="Fuml"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="8.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml platform:/plugin/org.modelexecution.xmof.standardlibrary/model-gen/xmof_library.genmodel#//XMOF"
+    importOrganizing="true">
+  <foreignModel>platform:/resource/org.modelexecution.xmof.examples.fuml.xmof.dynamic/xmof/fuml.xmof</foreignModel>
+  <genPackages prefix="FumlConfiguration" disposableProviderFactory="true" loadInitialization="true"
+      literalsInterface="false" ecorePackage="../xmof/fuml.xmof#/">
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ModelConfiguration">
+      <genOperations ecoreOperation="../xmof/fuml.xmof#//ModelConfiguration/main">
+        <genParameters ecoreParameter="../xmof/fuml.xmof#//ModelConfiguration/main/executionEnvironment"/>
+        <genParameters ecoreParameter="../xmof/fuml.xmof#//ModelConfiguration/main/behavior"/>
+        <genParameters ecoreParameter="../xmof/fuml.xmof#//ModelConfiguration/main/context"/>
+        <genParameters ecoreParameter="../xmof/fuml.xmof#//ModelConfiguration/main/inputs"/>
+        <genParameters ecoreParameter="../xmof/fuml.xmof#//ModelConfiguration/main/outputs"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ElementConfiguration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//ElementConfiguration/semanticVisitor"/>
+    </genClasses>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActivityContentConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActivityConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//BehaviorConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ClassConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//BehavioredClassifierConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ClassifierConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//NamespaceConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//NamedElementConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CommentConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StereotypeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ImageConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ProfileConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PackageConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PackageableElementConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ParameterableElementConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TemplateParameterConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TemplateSignatureConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TemplateableElementConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TemplateBindingConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DirectedRelationshipConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//RelationshipConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TemplateParameterSubstitutionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TypeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//AssociationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PropertyConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ConnectableElementConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TypedElementConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ConnectorEndConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//MultiplicityElementConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ValueSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ConnectableElementTemplateParameterConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DeploymentTargetConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DeploymentConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DependencyConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DeploymentSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ArtifactConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DeployedArtifactConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ManifestationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//AbstractionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//OpaqueExpressionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ParameterConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//OperationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//BehavioralFeatureConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//FeatureConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//RedefinableElementConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ParameterSetConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ConstraintConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DataTypeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InterfaceConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReceptionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//SignalConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ProtocolStateMachineConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StateMachineConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PseudostateConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//VertexConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//RegionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StateConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ConnectionPointReferenceConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TriggerConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//EventConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PortConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TransitionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ProtocolConformanceConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//OperationTemplateParameterConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StructuralFeatureConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PackageMergeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ProfileApplicationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//EnumerationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//EnumerationLiteralConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InstanceSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//SlotConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PrimitiveTypeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ElementImportConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PackageImportConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExtensionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExtensionEndConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StringExpressionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExpressionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//UsageConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CollaborationUseConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CollaborationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StructuredClassifierConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ConnectorConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//GeneralizationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//GeneralizationSetConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//RedefinableTemplateSignatureConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//UseCaseConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExtendConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExtensionPointConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//IncludeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//SubstitutionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//RealizationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ClassifierTemplateParameterConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InterfaceRealizationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//EncapsulatedClassifierConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActivityGroupConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActivityEdgeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActivityPartitionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActivityNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InterruptibleActivityRegionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StructuredActivityNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExecutableNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExceptionHandlerConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ObjectNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InputPinConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PinConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//OutputPinConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//VariableConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ValueSpecificationActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//VariableActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//WriteLinkActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LinkActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LinkEndDataConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//QualifierValueConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//WriteStructuralFeatureActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StructuralFeatureActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//WriteVariableActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//AcceptCallActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//AcceptEventActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActionInputPinConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//AddStructuralFeatureValueActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//AddVariableValueActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//BroadcastSignalActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InvocationActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CallActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CallBehaviorActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CallOperationActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ClauseConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ClearAssociationActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ClearStructuralFeatureActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ClearVariableActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ConditionalNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CreateLinkActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LinkEndCreationDataConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CreateLinkObjectActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CreateObjectActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DestroyLinkActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LinkEndDestructionDataConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DestroyObjectActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExpansionNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExpansionRegionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LoopNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//OpaqueActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//RaiseExceptionActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReadExtentActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReadIsClassifiedObjectActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReadLinkActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReadLinkObjectEndActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReadLinkObjectEndQualifierActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReadSelfActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReadStructuralFeatureActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReadVariableActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReclassifyObjectActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReduceActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//RemoveStructuralFeatureValueActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//RemoveVariableValueActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ReplyActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//SendObjectActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//SendSignalActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//SequenceNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StartClassifierBehaviorActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StartObjectBehaviorActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TestIdentityActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//UnmarshallActionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ValuePinConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActivityFinalNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//FinalNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ControlNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActivityParameterNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CentralBufferNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ControlFlowConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DataStoreNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DecisionNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ObjectFlowConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//FlowFinalNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ForkNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InitialNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//JoinNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//MergeNodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InstanceValueConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//AnyReceiveEventConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//MessageEventConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CallEventConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ChangeEventConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//FunctionBehaviorConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//OpaqueBehaviorConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//SignalEventConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TimeEventConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TimeExpressionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ObservationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CommunicationPathConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DeviceConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//NodeConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExecutionEnvironmentConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InformationFlowConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//MessageConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InteractionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InteractionFragmentConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LifelineConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//PartDecompositionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InteractionUseConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//GateConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//MessageEndConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InteractionOperandConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InteractionConstraintConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//GeneralOrderingConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//OccurrenceSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//InformationItemConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActionExecutionSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExecutionSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//BehaviorExecutionSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//CombinedFragmentConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ConsiderIgnoreFragmentConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ContinuationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DestructionOccurrenceSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//MessageOccurrenceSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ExecutionOccurrenceSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//StateInvariantConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//FinalStateConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ProtocolTransitionConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//AssociationClassConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ComponentConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ComponentRealizationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//ActorConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DurationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DurationConstraintConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//IntervalConstraintConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//IntervalConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DurationIntervalConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//DurationObservationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LiteralBooleanConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LiteralSpecificationConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LiteralIntegerConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LiteralNullConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LiteralRealConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LiteralStringConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//LiteralUnlimitedNaturalConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TimeConstraintConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TimeIntervalConfiguration"/>
+    <genClasses ecoreClass="../xmof/fuml.xmof#//TimeObservationConfiguration"/>
+    <nestedGenPackages prefix="Loci" disposableProviderFactory="true" loadInitialization="true"
+        ecorePackage="../xmof/fuml.xmof#//Loci">
+      <genClasses ecoreClass="../xmof/fuml.xmof#//Loci/ExecutionEnvironment">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Loci/ExecutionEnvironment/locus_ExecutionEnvironment"/>
+      </genClasses>
+      <genClasses ecoreClass="../xmof/fuml.xmof#//Loci/Locus">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Loci/Locus/factory"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Loci/Locus/executor"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Loci/Locus/extensionalValues"/>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/Locus/remove">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Locus/remove/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/Locus/add">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Locus/add/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/Locus/instantiate">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Locus/instantiate/type"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Locus/instantiate/object"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="../xmof/fuml.xmof#//Loci/Executor">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Loci/Executor/locus_Executor"/>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/Executor/execute">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Executor/execute/behavior"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Executor/execute/context"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Executor/execute/inputs"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Executor/execute/outputs"/>
+        </genOperations>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/Executor/evaluate">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Executor/evaluate/specification"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/Executor/evaluate/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="../xmof/fuml.xmof#//Loci/ExecutionFactory">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Loci/ExecutionFactory/locus_ExecutionFactory"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Loci/ExecutionFactory/primitiveBehaviorPrototypes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Loci/ExecutionFactory/builtInTypes"/>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/ExecutionFactory/createExecution">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/createExecution/behavior"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/createExecution/context"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/createExecution/execution"/>
+        </genOperations>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/ExecutionFactory/instantiateVisitor">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/instantiateVisitor/element"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/instantiateVisitor/visitor"/>
+        </genOperations>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/ExecutionFactory/createEvaluation">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/createEvaluation/evaluation"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/createEvaluation/specification"/>
+        </genOperations>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/ExecutionFactory/getBuiltInType">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/getBuiltInType/name"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/getBuiltInType/type"/>
+        </genOperations>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/ExecutionFactory/instantiateOpaqueBehaviorExecution">
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/instantiateOpaqueBehaviorExecution/behavior"/>
+          <genParameters ecoreParameter="../xmof/fuml.xmof#//Loci/ExecutionFactory/instantiateOpaqueBehaviorExecution/execution"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="../xmof/fuml.xmof#//Loci/SemanticVisitor">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Loci/SemanticVisitor/runtimeModelElement"/>
+        <genOperations ecoreOperation="../xmof/fuml.xmof#//Loci/SemanticVisitor/initialize"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Classes" disposableProviderFactory="true" ecorePackage="../xmof/fuml.xmof#//Classes">
+      <nestedGenPackages prefix="Kernel" disposableProviderFactory="true" loadInitialization="true"
+          ecorePackage="../xmof/fuml.xmof#//Classes/Kernel">
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/ExtensionalValue">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Classes/Kernel/ExtensionalValue/locus_ExtensionalValue"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/ExtensionalValue/destroy"/>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/Object">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Classes/Kernel/Object/types"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/StructuredValue">
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/StructuredValue/createFeatureValues"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/StructuredValue/getFeatureValue">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/StructuredValue/getFeatureValue/feature"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/StructuredValue/getFeatureValue/featureValue"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/StructuredValue/setFeatureValue">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/StructuredValue/setFeatureValue/feature"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/StructuredValue/setFeatureValue/values"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/StructuredValue/setFeatureValue/position"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/CompoundValue">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Classes/Kernel/CompoundValue/featureValues"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/Value">
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/Value/getTypes">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/Value/getTypes/types"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/Value/copy">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/Value/copy/value"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/Value/new">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/Value/new/value"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/Value/equals">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/Value/equals/otherValue"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/Value/equals/return"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/Value/hasType">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/Value/hasType/type"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/Value/hasType/hasType"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/Evaluation">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Classes/Kernel/Evaluation/specification_Evaluation"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Classes/Kernel/Evaluation/locus_Evaluation"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/Evaluation/evaluate">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/Evaluation/evaluate/value"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/LiteralIntegerEvaluation"/>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/LiteralEvaluation">
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/LiteralEvaluation/getType">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/LiteralEvaluation/getType/builtInTypeName"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/LiteralEvaluation/getType/type"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/PrimitiveValue">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Classes/Kernel/PrimitiveValue/type"/>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/IntegerValue">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Classes/Kernel/IntegerValue/value_IntegerValue"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/FeatureValue">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Classes/Kernel/FeatureValue/feature"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Classes/Kernel/FeatureValue/values_FeatureValue"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Classes/Kernel/FeatureValue/position"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Classes/Kernel/FeatureValue/copy">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Classes/Kernel/FeatureValue/copy/value"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/BooleanValue">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Classes/Kernel/BooleanValue/value_BooleanValue"/>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/LiteralBooleanEvaluation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Classes/Kernel/Reference">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Classes/Kernel/Reference/referent"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="CommonBehaviors" disposableProviderFactory="true" ecorePackage="../xmof/fuml.xmof#//CommonBehaviors">
+      <nestedGenPackages prefix="BasicBehaviors" disposableProviderFactory="true"
+          loadInitialization="true" ecorePackage="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors">
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/context"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/parameterValues"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/setParameterValue">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/setParameterValue/parameterValue"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/execute"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/getOutputParameterValues">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/getOutputParameterValues/outputParameterValues"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/getParameterValue">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/getParameterValue/parameter"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/getParameterValue/parameterValue"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/terminate"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/getBehavior">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/Execution/getBehavior/behavior"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution">
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/doBody">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/doBody/inputParameters"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/doBody/outputParameters"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/ParameterValue">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/ParameterValue/parameter_ParameterValue"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/ParameterValue/values_ParameterValue"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/ParameterValue/copy">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//CommonBehaviors/BasicBehaviors/ParameterValue/copy/value"/>
+          </genOperations>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="PrimitiveBehaviors" disposableProviderFactory="true"
+        ecorePackage="../xmof/fuml.xmof#//PrimitiveBehaviors">
+      <nestedGenPackages prefix="IntegerFunctions" disposableProviderFactory="true"
+          loadInitialization="true" ecorePackage="../xmof/fuml.xmof#//PrimitiveBehaviors/IntegerFunctions">
+        <genClasses ecoreClass="../xmof/fuml.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Activities" disposableProviderFactory="true" ecorePackage="../xmof/fuml.xmof#//Activities">
+      <nestedGenPackages prefix="IntermediateActivities" disposableProviderFactory="true"
+          loadInitialization="true" ecorePackage="../xmof/fuml.xmof#//Activities/IntermediateActivities">
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityExecution">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityExecution/activationGroup"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityExecution/collectOutputParameterValues"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityExecution/setParameterValueValues">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityExecution/setParameterValueValues/parameterValue"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityExecution/setParameterValueValues/outputActivation"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/activityExecution"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/edgeInstances"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/nodeActivations"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/activate">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/activate/nodes"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/activate/edges"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations/outputParameterNodeActivations"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/createNodeActivations">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/createNodeActivations/nodes"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/createEdgeInstances">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/createEdgeInstances/edges"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/run">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/run/activations"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/createNodeActivation">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/createNodeActivation/node"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/createNodeActivation/activation"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getActivityExecution">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getActivityExecution/activityExecution"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getNodeActivation">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getNodeActivation/node"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getNodeActivation/activation"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/runNodes">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/runNodes/activations"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations/activations"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations/enabledActivations"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges/activation"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges/activations"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges/return"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getSourceActivations">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getSourceActivations/activations"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getSourceActivations/incomingEdge"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/getSourceActivations/sourceActivations"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivationGroup/terminateAll"/>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityParameterNodeActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/group_ActivityNodeActivation"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/node_ActivityNodeActivation"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/running"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/incomingEdges"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/outgoingEdges"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/isRunning.1"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/heldTokens"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getTokens/tokens"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/createNodeActivations"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/createEdgeInstances"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/run"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/receiveOffer"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/isReady">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/isReady/isReady"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/takeOfferedTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/takeOfferedTokens/tokens"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/fire">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/fire/incomingTokens"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/isRunning">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/isRunning/isRunning"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers/hasOffers"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/removeToken">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/removeToken/token"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/removeToken/position"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/addTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/addTokens/tokens"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/sendOffers">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/sendOffers/tokens"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/addToken">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/addToken/token"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/isSourceFor">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/isSourceFor/isSourceFor"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/isSourceFor/edgeInstance"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getNodeActivation">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getNodeActivation/node"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getNodeActivation/activation"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/terminate"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/clearTokens"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getExecutionLocus">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getExecutionLocus/locus"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getActivityExecution">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getActivityExecution/activityExecution"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getExecutionContext">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityNodeActivation/getExecutionContext/context"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/holder"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/withdraw"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/isWithdrawn">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/isWithdrawn/isWithdrawn"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/transfer">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/transfer/holder"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/transfer/token"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/getValue">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/getValue/value"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/isControl">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/Token/isControl/isControl"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/group_ActivityEdgeInstance"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/edge_ActivityEdgeInstance"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/source"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/target"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/offers"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer/hasOffer"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens/offeredTokens"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues/count"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens.1">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens.1/offeredTokens"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens.1/maxCount"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/sendOffer">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityEdgeInstance/sendOffer/tokens"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ControlNodeActivation"/>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/offeredTokenCount"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens/count"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens/unofferedTokens"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues/count"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/takeUnofferedTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectNodeActivation/takeUnofferedTokens/tokens"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/Offer">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/Offer/offeredTokens"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/Offer/hasTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/Offer/hasTokens/hasTokens"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/Offer/getOfferedTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/Offer/getOfferedTokens/offeredTokens"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/Offer/countOfferedValues">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/Offer/countOfferedValues/count"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/Offer/removeWithdrawnTokens"/>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation">
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/removeJoinedControlTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/removeJoinedControlTokens/incomingTokens"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/removeJoinedControlTokens/removedControlTokens"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/removeJoinedControlTokens/incomingTokens_joinedControlTokensRemoved"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionValues">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionValues/incomingTokens"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionValues/decisionValues"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens/incomingTokens"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens/decisionValues"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens/edgeInstance"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens/offeredTokens"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens/receivesOffer"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/test">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/test/guard"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/test/value"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/test/result"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput/return"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionInputFlowValue">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionInputFlowValue/value"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior/inputValue"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior/decisionInputValue"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior/decisionInputResult"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionInputFlowInstance">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionInputFlowInstance/edgeInstance"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ControlToken"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectToken">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ObjectToken/value"/>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ForkedToken">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Activities/IntermediateActivities/ForkedToken/baseToken"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Activities/IntermediateActivities/ForkedToken/remainingOffersCount"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Activities/IntermediateActivities/ForkedToken/baseTokenIsWithdrawn"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Activities/IntermediateActivities/ForkedToken/initialize"/>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/InitialNodeActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/MergeNodeActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/JoinNodeActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ForkNodeActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Activities/IntermediateActivities/ActivityFinalNodeActivation"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Actions" disposableProviderFactory="true" ecorePackage="../xmof/fuml.xmof#//Actions">
+      <nestedGenPackages prefix="BasicActions" disposableProviderFactory="true" loadInitialization="true"
+          ecorePackage="../xmof/fuml.xmof#//Actions/BasicActions">
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/pinActivations"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/firing"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/getPinActivation">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/getPinActivation/pin"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/getPinActivation/return"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/sendOffers"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/doAction"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/shouldFireAgain">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/shouldFireAgain/fireAgain"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/putToken">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/putToken/pin"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/putToken/value"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/takeTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/takeTokens/pin"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/takeTokens/values"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/putTokens">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/putTokens/pin"/>
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/ActionActivation/putTokens/values"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Actions/BasicActions/PinActivation">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Actions/BasicActions/PinActivation/actionActivation"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Actions/BasicActions/PinActivation/count_temp"/>
+        </genClasses>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Actions/BasicActions/InputPinActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Actions/BasicActions/OpaqueActionActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Actions/BasicActions/OutputPinActivation"/>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation/callExecutions"/>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation/getCallExecution">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation/getCallExecution/execution"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation/removeCallExecution">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation/removeCallExecution/execution"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation/initializeInputParameterValues">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation/initializeInputParameterValues/callExecution"/>
+          </genOperations>
+          <genOperations ecoreOperation="../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation/collectOutputParameterValues">
+            <genParameters ecoreParameter="../xmof/fuml.xmof#//Actions/BasicActions/CallActionActivation/collectOutputParameterValues/callExecution"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Actions/BasicActions/InvocationActionActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Actions/BasicActions/CallBehaviorActionActivation"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="IntermediateActions" disposableProviderFactory="true"
+          loadInitialization="true" ecorePackage="../xmof/fuml.xmof#//Actions/IntermediateActions">
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Actions/IntermediateActions/ValueSpecificationActionActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Actions/IntermediateActions/CreateObjectActionActivation"/>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Actions/IntermediateActions/StructuralFeatureActionActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Actions/IntermediateActions/ReadStructuralFeatureActionActivation"/>
+        <genClasses image="false" ecoreClass="../xmof/fuml.xmof#//Actions/IntermediateActions/WriteStructuralFeatureActionActivation"/>
+        <genClasses ecoreClass="../xmof/fuml.xmof#//Actions/IntermediateActions/AddStructuralFeatureValueActionActivation"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Input" disposableProviderFactory="true" loadInitialization="true"
+        ecorePackage="../xmof/fuml.xmof#//Input">
+      <genClasses ecoreClass="../xmof/fuml.xmof#//Input/InputParameterValues">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/fuml.xmof#//Input/InputParameterValues/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../xmof/fuml.xmof#//Input/InputParameterValues/parameterValues"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

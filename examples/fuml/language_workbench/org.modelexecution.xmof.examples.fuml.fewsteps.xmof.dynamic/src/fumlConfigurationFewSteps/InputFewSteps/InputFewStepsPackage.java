@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -93,15 +92,6 @@ public interface InputFewStepsPackage extends EPackage {
 	 */
 	int INPUT_PARAMETER_VALUES_FEATURE_COUNT = 2;
 
-	/**
-	 * The number of operations of the '<em>Input Parameter Values</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PARAMETER_VALUES_OPERATION_COUNT = 0;
-
 
 	/**
 	 * Returns the meta object for class '{@link fumlConfigurationFewSteps.InputFewSteps.InputParameterValues <em>Input Parameter Values</em>}'.
@@ -150,7 +140,6 @@ public interface InputFewStepsPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>

@@ -10,8 +10,6 @@ import fumlConfiguration.Loci.Executor;
 import fumlConfiguration.Loci.LociPackage;
 import fumlConfiguration.Loci.Locus;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -343,27 +341,6 @@ public class LocusImpl extends MinimalEObjectImpl.Container implements Locus {
 				return extensionalValues != null && !extensionalValues.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case LociPackage.LOCUS___REMOVE__EXTENSIONALVALUE:
-				remove((ExtensionalValue)arguments.get(0));
-				return null;
-			case LociPackage.LOCUS___ADD__EXTENSIONALVALUE:
-				add((ExtensionalValue)arguments.get(0));
-				return null;
-			case LociPackage.LOCUS___INSTANTIATE__CLASS_OBJECT:
-				instantiate((org.eclipse.uml2.uml.Class)arguments.get(0), (fumlConfiguration.Classes.Kernel.Object)arguments.get(1));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //LocusImpl

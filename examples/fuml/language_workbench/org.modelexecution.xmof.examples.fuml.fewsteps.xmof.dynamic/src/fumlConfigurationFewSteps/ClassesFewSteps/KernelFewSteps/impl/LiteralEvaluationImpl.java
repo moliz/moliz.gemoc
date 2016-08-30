@@ -5,10 +5,6 @@ package fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.impl;
 import fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.KernelFewStepsPackage;
 import fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.LiteralEvaluation;
 
-import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.uml2.uml.PrimitiveType;
@@ -49,21 +45,6 @@ public abstract class LiteralEvaluationImpl extends EvaluationImpl implements Li
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case KernelFewStepsPackage.LITERAL_EVALUATION___GET_TYPE__STRING_PRIMITIVETYPE:
-				getType((String)arguments.get(0), (PrimitiveType)arguments.get(1));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //LiteralEvaluationImpl

@@ -40,13 +40,16 @@ import fumlConfigurationFewSteps.impl.FumlConfigurationFewStepsPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.uml.UMLPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -199,6 +202,8 @@ public class KernelFewStepsPackageImpl extends EPackageImpl implements KernelFew
 
 		// Initialize simple dependencies
 		UMLPackage.eINSTANCE.eClass();
+		IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		FumlConfigurationFewStepsPackageImpl theFumlConfigurationFewStepsPackage = (FumlConfigurationFewStepsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) instanceof FumlConfigurationFewStepsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) : FumlConfigurationFewStepsPackage.eINSTANCE);
@@ -259,15 +264,6 @@ public class KernelFewStepsPackageImpl extends EPackageImpl implements KernelFew
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExtensionalValue__Destroy() {
-        return getExtensionalValue().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getObject() {
 		if (objectEClass == null) {
 			objectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelFewStepsPackage.eNS_URI).getEClassifiers().get(1);
@@ -294,33 +290,6 @@ public class KernelFewStepsPackageImpl extends EPackageImpl implements KernelFew
 			structuredValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelFewStepsPackage.eNS_URI).getEClassifiers().get(2);
 		}
 		return structuredValueEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getStructuredValue__CreateFeatureValues() {
-        return getStructuredValue().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getStructuredValue__GetFeatureValue__StructuralFeature_FeatureValue() {
-        return getStructuredValue().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getStructuredValue__SetFeatureValue__StructuralFeature_EList_int() {
-        return getStructuredValue().getEOperations().get(2);
 	}
 
 	/**
@@ -361,51 +330,6 @@ public class KernelFewStepsPackageImpl extends EPackageImpl implements KernelFew
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getValue__GetTypes__EList() {
-        return getValue().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getValue__Copy__Value() {
-        return getValue().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getValue__New___Value() {
-        return getValue().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getValue__Equals__Value_boolean() {
-        return getValue().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getValue__HasType__Classifier_boolean() {
-        return getValue().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEvaluation() {
 		if (evaluationEClass == null) {
 			evaluationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelFewStepsPackage.eNS_URI).getEClassifiers().get(5);
@@ -436,15 +360,6 @@ public class KernelFewStepsPackageImpl extends EPackageImpl implements KernelFew
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getEvaluation__Evaluate__Value() {
-        return getEvaluation().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLiteralIntegerEvaluation() {
 		if (literalIntegerEvaluationEClass == null) {
 			literalIntegerEvaluationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelFewStepsPackage.eNS_URI).getEClassifiers().get(6);
@@ -462,15 +377,6 @@ public class KernelFewStepsPackageImpl extends EPackageImpl implements KernelFew
 			literalEvaluationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KernelFewStepsPackage.eNS_URI).getEClassifiers().get(7);
 		}
 		return literalEvaluationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getLiteralEvaluation__GetType__String_PrimitiveType() {
-        return getLiteralEvaluation().getEOperations().get(0);
 	}
 
 	/**
@@ -552,15 +458,6 @@ public class KernelFewStepsPackageImpl extends EPackageImpl implements KernelFew
 	 */
 	public EAttribute getFeatureValue_Position() {
         return (EAttribute)getFeatureValue().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getFeatureValue__Copy__FeatureValue() {
-        return getFeatureValue().getEOperations().get(0);
 	}
 
 	/**

@@ -4,6 +4,8 @@ package petrinet2Configuration;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 import petrinet2.Net;
 
 /**
@@ -39,6 +41,6 @@ public interface NetConfiguration extends Net {
 	 * @model initialTokensMany="true"
 	 * @generated
 	 */
-	void initializeMarking(EList<Token> initialTokens);
+	void initializeMarking(EList<EObject> initialTokens);
 
 } // NetConfiguration

@@ -9,8 +9,6 @@ import fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSte
 
 import fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.Value;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -130,43 +128,6 @@ public class DecisionNodeActivationImpl extends ControlNodeActivationImpl implem
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case IntermediateActivitiesFewStepsPackage.DECISION_NODE_ACTIVATION___REMOVE_JOINED_CONTROL_TOKENS__ELIST_ELIST_ELIST:
-				removeJoinedControlTokens((EList<Token>)arguments.get(0), (EList<Token>)arguments.get(1), (EList<Token>)arguments.get(2));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.DECISION_NODE_ACTIVATION___GET_DECISION_VALUES__ELIST_ELIST:
-				getDecisionValues((EList<Token>)arguments.get(0), (EList<Value>)arguments.get(1));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.DECISION_NODE_ACTIVATION___DETERMINE_OFFERED_TOKENS__ELIST_ELIST_ACTIVITYEDGEINSTANCE_ELIST_BOOLEAN:
-				determineOfferedTokens((EList<Token>)arguments.get(0), (EList<Value>)arguments.get(1), (ActivityEdgeInstance)arguments.get(2), (EList<Token>)arguments.get(3), (Boolean)arguments.get(4));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.DECISION_NODE_ACTIVATION___TEST__VALUESPECIFICATION_VALUE_BOOLEAN:
-				test((ValueSpecification)arguments.get(0), (Value)arguments.get(1), (Boolean)arguments.get(2));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.DECISION_NODE_ACTIVATION___HAS_OBJECT_FLOW_INPUT__BOOLEAN:
-				hasObjectFlowInput((Boolean)arguments.get(0));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.DECISION_NODE_ACTIVATION___GET_DECISION_INPUT_FLOW_VALUE__VALUE:
-				getDecisionInputFlowValue((Value)arguments.get(0));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.DECISION_NODE_ACTIVATION___EXECUTE_DECISION_INPUT_BEHAVIOR__VALUE_VALUE_VALUE:
-				executeDecisionInputBehavior((Value)arguments.get(0), (Value)arguments.get(1), (Value)arguments.get(2));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.DECISION_NODE_ACTIVATION___GET_DECISION_INPUT_FLOW_INSTANCE__ACTIVITYEDGEINSTANCE:
-				getDecisionInputFlowInstance((ActivityEdgeInstance)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //DecisionNodeActivationImpl

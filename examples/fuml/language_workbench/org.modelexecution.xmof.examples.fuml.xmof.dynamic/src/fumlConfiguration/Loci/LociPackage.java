@@ -3,7 +3,6 @@
 package fumlConfiguration.Loci;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -14,7 +13,6 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -85,15 +83,6 @@ public interface LociPackage extends EPackage {
 	int EXECUTION_ENVIRONMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Execution Environment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_ENVIRONMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link fumlConfiguration.Loci.impl.LocusImpl <em>Locus</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,42 +129,6 @@ public interface LociPackage extends EPackage {
 	int LOCUS_FEATURE_COUNT = 3;
 
 	/**
-	 * The operation id for the '<em>Remove</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCUS___REMOVE__EXTENSIONALVALUE = 0;
-
-	/**
-	 * The operation id for the '<em>Add</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCUS___ADD__EXTENSIONALVALUE = 1;
-
-	/**
-	 * The operation id for the '<em>Instantiate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCUS___INSTANTIATE__CLASS_OBJECT = 2;
-
-	/**
-	 * The number of operations of the '<em>Locus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCUS_OPERATION_COUNT = 3;
-
-	/**
 	 * The meta object id for the '{@link fumlConfiguration.Loci.impl.ExecutorImpl <em>Executor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,33 +155,6 @@ public interface LociPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXECUTOR_FEATURE_COUNT = 1;
-
-	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTOR___EXECUTE__BEHAVIOR_OBJECT_ELIST_ELIST = 0;
-
-	/**
-	 * The operation id for the '<em>Evaluate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTOR___EVALUATE__VALUESPECIFICATION_VALUE = 1;
-
-	/**
-	 * The number of operations of the '<em>Executor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTOR_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link fumlConfiguration.Loci.impl.ExecutionFactoryImpl <em>Execution Factory</em>}' class.
@@ -277,60 +203,6 @@ public interface LociPackage extends EPackage {
 	int EXECUTION_FACTORY_FEATURE_COUNT = 3;
 
 	/**
-	 * The operation id for the '<em>Create Execution</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_FACTORY___CREATE_EXECUTION__BEHAVIOR_OBJECT_EXECUTION = 0;
-
-	/**
-	 * The operation id for the '<em>Instantiate Visitor</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_FACTORY___INSTANTIATE_VISITOR__ELEMENT_SEMANTICVISITOR = 1;
-
-	/**
-	 * The operation id for the '<em>Create Evaluation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_FACTORY___CREATE_EVALUATION__EVALUATION_VALUESPECIFICATION = 2;
-
-	/**
-	 * The operation id for the '<em>Get Built In Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_FACTORY___GET_BUILT_IN_TYPE__STRING_PRIMITIVETYPE = 3;
-
-	/**
-	 * The operation id for the '<em>Instantiate Opaque Behavior Execution</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_FACTORY___INSTANTIATE_OPAQUE_BEHAVIOR_EXECUTION__OPAQUEBEHAVIOR_OPAQUEBEHAVIOREXECUTION = 4;
-
-	/**
-	 * The number of operations of the '<em>Execution Factory</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_FACTORY_OPERATION_COUNT = 5;
-
-	/**
 	 * The meta object id for the '{@link fumlConfiguration.Loci.impl.SemanticVisitorImpl <em>Semantic Visitor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,24 +229,6 @@ public interface LociPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEMANTIC_VISITOR_FEATURE_COUNT = 1;
-
-	/**
-	 * The operation id for the '<em>Initialize</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMANTIC_VISITOR___INITIALIZE = 0;
-
-	/**
-	 * The number of operations of the '<em>Semantic Visitor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMANTIC_VISITOR_OPERATION_COUNT = 1;
 
 
 	/**
@@ -442,36 +296,6 @@ public interface LociPackage extends EPackage {
 	EReference getLocus_ExtensionalValues();
 
 	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.Locus#remove(fumlConfiguration.Classes.Kernel.ExtensionalValue) <em>Remove</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Remove</em>' operation.
-	 * @see fumlConfiguration.Loci.Locus#remove(fumlConfiguration.Classes.Kernel.ExtensionalValue)
-	 * @generated
-	 */
-	EOperation getLocus__Remove__ExtensionalValue();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.Locus#add(fumlConfiguration.Classes.Kernel.ExtensionalValue) <em>Add</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add</em>' operation.
-	 * @see fumlConfiguration.Loci.Locus#add(fumlConfiguration.Classes.Kernel.ExtensionalValue)
-	 * @generated
-	 */
-	EOperation getLocus__Add__ExtensionalValue();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.Locus#instantiate(org.eclipse.uml2.uml.Class, fumlConfiguration.Classes.Kernel.Object) <em>Instantiate</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Instantiate</em>' operation.
-	 * @see fumlConfiguration.Loci.Locus#instantiate(org.eclipse.uml2.uml.Class, fumlConfiguration.Classes.Kernel.Object)
-	 * @generated
-	 */
-	EOperation getLocus__Instantiate__Class_Object();
-
-	/**
 	 * Returns the meta object for class '{@link fumlConfiguration.Loci.Executor <em>Executor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -491,26 +315,6 @@ public interface LociPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExecutor_Locus_Executor();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.Executor#execute(org.eclipse.uml2.uml.Behavior, fumlConfiguration.Classes.Kernel.Object, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList) <em>Execute</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Execute</em>' operation.
-	 * @see fumlConfiguration.Loci.Executor#execute(org.eclipse.uml2.uml.Behavior, fumlConfiguration.Classes.Kernel.Object, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getExecutor__Execute__Behavior_Object_EList_EList();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.Executor#evaluate(org.eclipse.uml2.uml.ValueSpecification, fumlConfiguration.Classes.Kernel.Value) <em>Evaluate</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Evaluate</em>' operation.
-	 * @see fumlConfiguration.Loci.Executor#evaluate(org.eclipse.uml2.uml.ValueSpecification, fumlConfiguration.Classes.Kernel.Value)
-	 * @generated
-	 */
-	EOperation getExecutor__Evaluate__ValueSpecification_Value();
 
 	/**
 	 * Returns the meta object for class '{@link fumlConfiguration.Loci.ExecutionFactory <em>Execution Factory</em>}'.
@@ -556,56 +360,6 @@ public interface LociPackage extends EPackage {
 	EReference getExecutionFactory_BuiltInTypes();
 
 	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.ExecutionFactory#createExecution(org.eclipse.uml2.uml.Behavior, fumlConfiguration.Classes.Kernel.Object, fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution) <em>Create Execution</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Create Execution</em>' operation.
-	 * @see fumlConfiguration.Loci.ExecutionFactory#createExecution(org.eclipse.uml2.uml.Behavior, fumlConfiguration.Classes.Kernel.Object, fumlConfiguration.CommonBehaviors.BasicBehaviors.Execution)
-	 * @generated
-	 */
-	EOperation getExecutionFactory__CreateExecution__Behavior_Object_Execution();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.ExecutionFactory#instantiateVisitor(org.eclipse.uml2.uml.Element, fumlConfiguration.Loci.SemanticVisitor) <em>Instantiate Visitor</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Instantiate Visitor</em>' operation.
-	 * @see fumlConfiguration.Loci.ExecutionFactory#instantiateVisitor(org.eclipse.uml2.uml.Element, fumlConfiguration.Loci.SemanticVisitor)
-	 * @generated
-	 */
-	EOperation getExecutionFactory__InstantiateVisitor__Element_SemanticVisitor();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.ExecutionFactory#createEvaluation(fumlConfiguration.Classes.Kernel.Evaluation, org.eclipse.uml2.uml.ValueSpecification) <em>Create Evaluation</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Create Evaluation</em>' operation.
-	 * @see fumlConfiguration.Loci.ExecutionFactory#createEvaluation(fumlConfiguration.Classes.Kernel.Evaluation, org.eclipse.uml2.uml.ValueSpecification)
-	 * @generated
-	 */
-	EOperation getExecutionFactory__CreateEvaluation__Evaluation_ValueSpecification();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.ExecutionFactory#getBuiltInType(java.lang.String, org.eclipse.uml2.uml.PrimitiveType) <em>Get Built In Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Built In Type</em>' operation.
-	 * @see fumlConfiguration.Loci.ExecutionFactory#getBuiltInType(java.lang.String, org.eclipse.uml2.uml.PrimitiveType)
-	 * @generated
-	 */
-	EOperation getExecutionFactory__GetBuiltInType__String_PrimitiveType();
-
-	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.ExecutionFactory#instantiateOpaqueBehaviorExecution(org.eclipse.uml2.uml.OpaqueBehavior, fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution) <em>Instantiate Opaque Behavior Execution</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Instantiate Opaque Behavior Execution</em>' operation.
-	 * @see fumlConfiguration.Loci.ExecutionFactory#instantiateOpaqueBehaviorExecution(org.eclipse.uml2.uml.OpaqueBehavior, fumlConfiguration.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution)
-	 * @generated
-	 */
-	EOperation getExecutionFactory__InstantiateOpaqueBehaviorExecution__OpaqueBehavior_OpaqueBehaviorExecution();
-
-	/**
 	 * Returns the meta object for class '{@link fumlConfiguration.Loci.SemanticVisitor <em>Semantic Visitor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -627,16 +381,6 @@ public interface LociPackage extends EPackage {
 	EReference getSemanticVisitor_RuntimeModelElement();
 
 	/**
-	 * Returns the meta object for the '{@link fumlConfiguration.Loci.SemanticVisitor#initialize() <em>Initialize</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Initialize</em>' operation.
-	 * @see fumlConfiguration.Loci.SemanticVisitor#initialize()
-	 * @generated
-	 */
-	EOperation getSemanticVisitor__Initialize();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -651,7 +395,6 @@ public interface LociPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -712,30 +455,6 @@ public interface LociPackage extends EPackage {
 		EReference LOCUS__EXTENSIONAL_VALUES = eINSTANCE.getLocus_ExtensionalValues();
 
 		/**
-		 * The meta object literal for the '<em><b>Remove</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LOCUS___REMOVE__EXTENSIONALVALUE = eINSTANCE.getLocus__Remove__ExtensionalValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Add</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LOCUS___ADD__EXTENSIONALVALUE = eINSTANCE.getLocus__Add__ExtensionalValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Instantiate</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LOCUS___INSTANTIATE__CLASS_OBJECT = eINSTANCE.getLocus__Instantiate__Class_Object();
-
-		/**
 		 * The meta object literal for the '{@link fumlConfiguration.Loci.impl.ExecutorImpl <em>Executor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -752,22 +471,6 @@ public interface LociPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXECUTOR__LOCUS_EXECUTOR = eINSTANCE.getExecutor_Locus_Executor();
-
-		/**
-		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTOR___EXECUTE__BEHAVIOR_OBJECT_ELIST_ELIST = eINSTANCE.getExecutor__Execute__Behavior_Object_EList_EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Evaluate</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTOR___EVALUATE__VALUESPECIFICATION_VALUE = eINSTANCE.getExecutor__Evaluate__ValueSpecification_Value();
 
 		/**
 		 * The meta object literal for the '{@link fumlConfiguration.Loci.impl.ExecutionFactoryImpl <em>Execution Factory</em>}' class.
@@ -804,46 +507,6 @@ public interface LociPackage extends EPackage {
 		EReference EXECUTION_FACTORY__BUILT_IN_TYPES = eINSTANCE.getExecutionFactory_BuiltInTypes();
 
 		/**
-		 * The meta object literal for the '<em><b>Create Execution</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION_FACTORY___CREATE_EXECUTION__BEHAVIOR_OBJECT_EXECUTION = eINSTANCE.getExecutionFactory__CreateExecution__Behavior_Object_Execution();
-
-		/**
-		 * The meta object literal for the '<em><b>Instantiate Visitor</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION_FACTORY___INSTANTIATE_VISITOR__ELEMENT_SEMANTICVISITOR = eINSTANCE.getExecutionFactory__InstantiateVisitor__Element_SemanticVisitor();
-
-		/**
-		 * The meta object literal for the '<em><b>Create Evaluation</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION_FACTORY___CREATE_EVALUATION__EVALUATION_VALUESPECIFICATION = eINSTANCE.getExecutionFactory__CreateEvaluation__Evaluation_ValueSpecification();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Built In Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION_FACTORY___GET_BUILT_IN_TYPE__STRING_PRIMITIVETYPE = eINSTANCE.getExecutionFactory__GetBuiltInType__String_PrimitiveType();
-
-		/**
-		 * The meta object literal for the '<em><b>Instantiate Opaque Behavior Execution</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXECUTION_FACTORY___INSTANTIATE_OPAQUE_BEHAVIOR_EXECUTION__OPAQUEBEHAVIOR_OPAQUEBEHAVIOREXECUTION = eINSTANCE.getExecutionFactory__InstantiateOpaqueBehaviorExecution__OpaqueBehavior_OpaqueBehaviorExecution();
-
-		/**
 		 * The meta object literal for the '{@link fumlConfiguration.Loci.impl.SemanticVisitorImpl <em>Semantic Visitor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -860,14 +523,6 @@ public interface LociPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEMANTIC_VISITOR__RUNTIME_MODEL_ELEMENT = eINSTANCE.getSemanticVisitor_RuntimeModelElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Initialize</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SEMANTIC_VISITOR___INITIALIZE = eINSTANCE.getSemanticVisitor__Initialize();
 
 	}
 

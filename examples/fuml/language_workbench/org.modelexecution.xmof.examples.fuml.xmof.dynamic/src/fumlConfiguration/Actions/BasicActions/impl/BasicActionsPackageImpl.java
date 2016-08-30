@@ -31,8 +31,6 @@ import fumlConfiguration.Loci.LociPackage;
 
 import fumlConfiguration.Loci.impl.LociPackageImpl;
 
-import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
-
 import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
 
 import fumlConfiguration.impl.FumlConfigurationPackageImpl;
@@ -40,13 +38,16 @@ import fumlConfiguration.impl.FumlConfigurationPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.uml.UMLPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -157,13 +158,15 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 
 		// Initialize simple dependencies
 		UMLPackage.eINSTANCE.eClass();
+		IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		FumlConfigurationPackageImpl theFumlConfigurationPackage = (FumlConfigurationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationPackage.eNS_URI) instanceof FumlConfigurationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationPackage.eNS_URI) : FumlConfigurationPackage.eINSTANCE);
 		LociPackageImpl theLociPackage = (LociPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LociPackage.eNS_URI) instanceof LociPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LociPackage.eNS_URI) : LociPackage.eINSTANCE);
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) instanceof KernelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) : KernelPackage.eINSTANCE);
 		BasicBehaviorsPackageImpl theBasicBehaviorsPackage = (BasicBehaviorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) instanceof BasicBehaviorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) : BasicBehaviorsPackage.eINSTANCE);
-		IntegerFunctionsPackageImpl theIntegerFunctionsPackage = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) : IntegerFunctionsPackage.eINSTANCE);
+		IntegerFunctionsPackageImpl theIntegerFunctionsPackage_1 = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage.eNS_URI) : fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage.eINSTANCE);
 		IntermediateActivitiesPackageImpl theIntermediateActivitiesPackage = (IntermediateActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) instanceof IntermediateActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) : IntermediateActivitiesPackage.eINSTANCE);
 		IntermediateActionsPackageImpl theIntermediateActionsPackage = (IntermediateActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) instanceof IntermediateActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActionsPackage.eNS_URI) : IntermediateActionsPackage.eINSTANCE);
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
@@ -177,7 +180,7 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 		theLociPackage.fixPackageContents();
 		theKernelPackage.fixPackageContents();
 		theBasicBehaviorsPackage.fixPackageContents();
-		theIntegerFunctionsPackage.fixPackageContents();
+		theIntegerFunctionsPackage_1.fixPackageContents();
 		theIntermediateActivitiesPackage.fixPackageContents();
 		theIntermediateActionsPackage.fixPackageContents();
 		theInputPackage.fixPackageContents();
@@ -219,69 +222,6 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 */
 	public EAttribute getActionActivation_Firing() {
         return (EAttribute)getActionActivation().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActionActivation__GetPinActivation__Pin_PinActivation() {
-        return getActionActivation().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActionActivation__SendOffers() {
-        return getActionActivation().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActionActivation__DoAction() {
-        return getActionActivation().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActionActivation__ShouldFireAgain__boolean() {
-        return getActionActivation().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActionActivation__PutToken__OutputPin_Value() {
-        return getActionActivation().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActionActivation__TakeTokens__InputPin_EList() {
-        return getActionActivation().getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActionActivation__PutTokens__OutputPin_EList() {
-        return getActionActivation().getEOperations().get(6);
 	}
 
 	/**
@@ -376,42 +316,6 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCallActionActivation__GetCallExecution__Execution() {
-        return getCallActionActivation().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getCallActionActivation__RemoveCallExecution__Execution() {
-        return getCallActionActivation().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getCallActionActivation__InitializeInputParameterValues__Execution() {
-        return getCallActionActivation().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getCallActionActivation__CollectOutputParameterValues__Execution() {
-        return getCallActionActivation().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getInvocationActionActivation() {
 		if (invocationActionActivationEClass == null) {
 			invocationActionActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI).getEClassifiers().get(6);
@@ -472,25 +376,6 @@ public class BasicActionsPackageImpl extends EPackageImpl implements BasicAction
 			eClassifier.setInstanceClassName("fumlConfiguration.Actions.BasicActions." + eClassifier.getName());
 			setGeneratedClassName(eClassifier);
 		}
-	}
-	
-	// TODO: for now added manually
-	@Override
-	protected EClass createEClass(int id) {
-		org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl c = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
-				.createBehavioredEClass();
-		c.setClassifierID(id);
-		getEClassifiers().add(c);
-		return c;
-	}
-
-	// TODO: for now added manually
-	@Override
-	protected void createEOperation(EClass owner, int id) {
-		org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl o = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
-				.createBehavioredEOperation();
-		o.setOperationID(id);
-		owner.getEOperations().add(o);
 	}
 
 } //BasicActionsPackageImpl

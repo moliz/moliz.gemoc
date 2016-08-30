@@ -11,7 +11,7 @@
       <package
             uri="http://petrinet2/1.0/configuration"
             class="petrinet2Configuration.Petrinet2ConfigurationPackage"
-            genModel="model-gen/petrinet2.xmof.genmodel"/>
+            genModel="model-gen/petrinet2.genmodel"/>
    </extension>
 
 </plugin>

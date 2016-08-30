@@ -2,27 +2,22 @@
  */
 package fumlConfiguration.impl;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.uml2.uml.internal.impl.LinkEndCreationDataImpl;
+
 import fumlConfiguration.ElementConfiguration;
 import fumlConfiguration.FumlConfigurationPackage;
 import fumlConfiguration.LinkEndCreationDataConfiguration;
 import fumlConfiguration.LinkEndDataConfiguration;
-
 import fumlConfiguration.Loci.LociPackage;
 import fumlConfiguration.Loci.SemanticVisitor;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.eclipse.uml2.uml.internal.impl.LinkEndCreationDataImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -10,11 +10,7 @@ import fumlConfiguration.Loci.Locus;
 
 import fumlConfiguration.Loci.impl.SemanticVisitorImpl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -232,21 +228,6 @@ public abstract class EvaluationImpl extends SemanticVisitorImpl implements Eval
 				return locus_Evaluation != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case KernelPackage.EVALUATION___EVALUATE__VALUE:
-				evaluate((Value)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //EvaluationImpl

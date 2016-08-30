@@ -39,13 +39,16 @@ import fumlConfigurationFewSteps.impl.FumlConfigurationFewStepsPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.uml.UMLPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,6 +124,8 @@ public class BasicBehaviorsFewStepsPackageImpl extends EPackageImpl implements B
 
 		// Initialize simple dependencies
 		UMLPackage.eINSTANCE.eClass();
+		IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		FumlConfigurationFewStepsPackageImpl theFumlConfigurationFewStepsPackage = (FumlConfigurationFewStepsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) instanceof FumlConfigurationFewStepsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) : FumlConfigurationFewStepsPackage.eINSTANCE);
@@ -190,74 +195,11 @@ public class BasicBehaviorsFewStepsPackageImpl extends EPackageImpl implements B
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExecution__SetParameterValue__ParameterValue() {
-        return getExecution().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecution__Execute() {
-        return getExecution().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecution__GetOutputParameterValues__EList() {
-        return getExecution().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecution__GetParameterValue__Parameter_ParameterValue() {
-        return getExecution().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecution__Terminate() {
-        return getExecution().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecution__GetBehavior__Behavior() {
-        return getExecution().getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getOpaqueBehaviorExecution() {
 		if (opaqueBehaviorExecutionEClass == null) {
 			opaqueBehaviorExecutionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsFewStepsPackage.eNS_URI).getEClassifiers().get(1);
 		}
 		return opaqueBehaviorExecutionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getOpaqueBehaviorExecution__DoBody__EList_EList() {
-        return getOpaqueBehaviorExecution().getEOperations().get(0);
 	}
 
 	/**
@@ -288,15 +230,6 @@ public class BasicBehaviorsFewStepsPackageImpl extends EPackageImpl implements B
 	 */
 	public EReference getParameterValue_Values_ParameterValue() {
         return (EReference)getParameterValue().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getParameterValue__Copy__ParameterValue() {
-        return getParameterValue().getEOperations().get(0);
 	}
 
 	/**

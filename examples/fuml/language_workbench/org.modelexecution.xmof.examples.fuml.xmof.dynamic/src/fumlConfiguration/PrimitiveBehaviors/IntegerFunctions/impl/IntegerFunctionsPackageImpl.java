@@ -3,29 +3,49 @@
 package fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl;
 
 import fumlConfiguration.Actions.BasicActions.BasicActionsPackage;
+
 import fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
+
 import fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
+
 import fumlConfiguration.Actions.IntermediateActions.impl.IntermediateActionsPackageImpl;
+
 import fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
+
 import fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
+
 import fumlConfiguration.Classes.Kernel.KernelPackage;
+
 import fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl;
+
 import fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage;
+
 import fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.BasicBehaviorsPackageImpl;
+
 import fumlConfiguration.FumlConfigurationPackage;
+
 import fumlConfiguration.Input.InputPackage;
+
 import fumlConfiguration.Input.impl.InputPackageImpl;
+
 import fumlConfiguration.Loci.LociPackage;
+
 import fumlConfiguration.Loci.impl.LociPackageImpl;
+
 import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsFactory;
 import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
 import fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.uml2.uml.UMLPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,6 +121,8 @@ public class IntegerFunctionsPackageImpl extends EPackageImpl implements Integer
 
 		// Initialize simple dependencies
 		UMLPackage.eINSTANCE.eClass();
+		org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		FumlConfigurationPackageImpl theFumlConfigurationPackage = (FumlConfigurationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationPackage.eNS_URI) instanceof FumlConfigurationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationPackage.eNS_URI) : FumlConfigurationPackage.eINSTANCE);
@@ -212,25 +234,6 @@ public class IntegerFunctionsPackageImpl extends EPackageImpl implements Integer
 			eClassifier.setInstanceClassName("fumlConfiguration.PrimitiveBehaviors.IntegerFunctions." + eClassifier.getName());
 			setGeneratedClassName(eClassifier);
 		}
-	}
-
-	// TODO: for now added manually
-	@Override
-	protected EClass createEClass(int id) {
-		org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl c = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
-				.createBehavioredEClass();
-		c.setClassifierID(id);
-		getEClassifiers().add(c);
-		return c;
-	}
-
-	// TODO: for now added manually
-	@Override
-	protected void createEOperation(EClass owner, int id) {
-		org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl o = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
-				.createBehavioredEOperation();
-		o.setOperationID(id);
-		owner.getEOperations().add(o);
 	}
 
 } //IntegerFunctionsPackageImpl

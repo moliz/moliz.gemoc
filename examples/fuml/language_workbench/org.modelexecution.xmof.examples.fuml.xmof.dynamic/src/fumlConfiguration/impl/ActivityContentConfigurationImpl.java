@@ -2,18 +2,12 @@
  */
 package fumlConfiguration.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.uml2.uml.Activity;
+
 import fumlConfiguration.ActivityContentConfiguration;
 import fumlConfiguration.FumlConfigurationPackage;
-
-import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.uml2.uml.Activity;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,20 +45,6 @@ public class ActivityContentConfigurationImpl extends MinimalEObjectImpl.Contain
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case FumlConfigurationPackage.ACTIVITY_CONTENT_CONFIGURATION___CONTAINING_ACTIVITY:
-				return containingActivity();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ActivityContentConfigurationImpl

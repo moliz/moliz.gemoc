@@ -3,29 +3,49 @@
 package fumlConfiguration.Actions.IntermediateActions.impl;
 
 import fumlConfiguration.Actions.BasicActions.BasicActionsPackage;
+
 import fumlConfiguration.Actions.BasicActions.impl.BasicActionsPackageImpl;
+
 import fumlConfiguration.Actions.IntermediateActions.IntermediateActionsFactory;
 import fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage;
+
 import fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
+
 import fumlConfiguration.Activities.IntermediateActivities.impl.IntermediateActivitiesPackageImpl;
+
 import fumlConfiguration.Classes.Kernel.KernelPackage;
+
 import fumlConfiguration.Classes.Kernel.impl.KernelPackageImpl;
+
 import fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage;
+
 import fumlConfiguration.CommonBehaviors.BasicBehaviors.impl.BasicBehaviorsPackageImpl;
+
 import fumlConfiguration.FumlConfigurationPackage;
+
 import fumlConfiguration.Input.InputPackage;
+
 import fumlConfiguration.Input.impl.InputPackageImpl;
+
 import fumlConfiguration.Loci.LociPackage;
+
 import fumlConfiguration.Loci.impl.LociPackageImpl;
-import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
 import fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.impl.IntegerFunctionsPackageImpl;
+
 import fumlConfiguration.impl.FumlConfigurationPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.eclipse.uml2.uml.UMLPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,13 +142,15 @@ public class IntermediateActionsPackageImpl extends EPackageImpl implements Inte
 
 		// Initialize simple dependencies
 		UMLPackage.eINSTANCE.eClass();
+		IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		FumlConfigurationPackageImpl theFumlConfigurationPackage = (FumlConfigurationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationPackage.eNS_URI) instanceof FumlConfigurationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationPackage.eNS_URI) : FumlConfigurationPackage.eINSTANCE);
 		LociPackageImpl theLociPackage = (LociPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LociPackage.eNS_URI) instanceof LociPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LociPackage.eNS_URI) : LociPackage.eINSTANCE);
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) instanceof KernelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI) : KernelPackage.eINSTANCE);
 		BasicBehaviorsPackageImpl theBasicBehaviorsPackage = (BasicBehaviorsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) instanceof BasicBehaviorsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicBehaviorsPackage.eNS_URI) : BasicBehaviorsPackage.eINSTANCE);
-		IntegerFunctionsPackageImpl theIntegerFunctionsPackage = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntegerFunctionsPackage.eNS_URI) : IntegerFunctionsPackage.eINSTANCE);
+		IntegerFunctionsPackageImpl theIntegerFunctionsPackage_1 = (IntegerFunctionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage.eNS_URI) instanceof IntegerFunctionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage.eNS_URI) : fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage.eINSTANCE);
 		IntermediateActivitiesPackageImpl theIntermediateActivitiesPackage = (IntermediateActivitiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) instanceof IntermediateActivitiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesPackage.eNS_URI) : IntermediateActivitiesPackage.eINSTANCE);
 		BasicActionsPackageImpl theBasicActionsPackage = (BasicActionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) instanceof BasicActionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasicActionsPackage.eNS_URI) : BasicActionsPackage.eINSTANCE);
 		InputPackageImpl theInputPackage = (InputPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) instanceof InputPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InputPackage.eNS_URI) : InputPackage.eINSTANCE);
@@ -142,7 +164,7 @@ public class IntermediateActionsPackageImpl extends EPackageImpl implements Inte
 		theLociPackage.fixPackageContents();
 		theKernelPackage.fixPackageContents();
 		theBasicBehaviorsPackage.fixPackageContents();
-		theIntegerFunctionsPackage.fixPackageContents();
+		theIntegerFunctionsPackage_1.fixPackageContents();
 		theIntermediateActivitiesPackage.fixPackageContents();
 		theBasicActionsPackage.fixPackageContents();
 		theInputPackage.fixPackageContents();
@@ -269,25 +291,6 @@ public class IntermediateActionsPackageImpl extends EPackageImpl implements Inte
 			eClassifier.setInstanceClassName("fumlConfiguration.Actions.IntermediateActions." + eClassifier.getName());
 			setGeneratedClassName(eClassifier);
 		}
-	}
-
-	// TODO: for now added manually
-	@Override
-	protected EClass createEClass(int id) {
-		org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl c = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
-				.createBehavioredEClass();
-		c.setClassifierID(id);
-		getEClassifiers().add(c);
-		return c;
-	}
-
-	// TODO: for now added manually
-	@Override
-	protected void createEOperation(EClass owner, int id) {
-		org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl o = (org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl) org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory.eINSTANCE
-				.createBehavioredEOperation();
-		o.setOperationID(id);
-		owner.getEOperations().add(o);
 	}
 
 } //IntermediateActionsPackageImpl

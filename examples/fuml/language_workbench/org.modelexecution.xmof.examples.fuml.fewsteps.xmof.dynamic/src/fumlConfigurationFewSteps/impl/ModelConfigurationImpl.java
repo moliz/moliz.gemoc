@@ -19,8 +19,6 @@ import fumlConfigurationFewSteps.PackageableElementConfiguration;
 import fumlConfigurationFewSteps.ParameterableElementConfiguration;
 import fumlConfigurationFewSteps.TemplateableElementConfiguration;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -282,22 +280,6 @@ public class ModelConfigurationImpl extends ModelImpl implements ModelConfigurat
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case FumlConfigurationFewStepsPackage.MODEL_CONFIGURATION___MAIN__EXECUTIONENVIRONMENT_BEHAVIOR_OBJECT_ELIST_ELIST:
-				main((ExecutionEnvironment)arguments.get(0), (Behavior)arguments.get(1), (fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.Object)arguments.get(2), (EList<ParameterValue>)arguments.get(3), (EList<ParameterValue>)arguments.get(4));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ModelConfigurationImpl
