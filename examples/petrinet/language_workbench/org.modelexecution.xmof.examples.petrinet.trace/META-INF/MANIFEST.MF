@@ -22,7 +22,6 @@ Export-Package: org.modelexecution.xmof.examples.petrinet.trace.tracemanager,
  petrinetTrace.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.gemoc.executionframework.engine.mse.model;visibility:=reexport,
  org.modelexecution.xmof.examples.petrinet.xmof.dynamic;visibility:=reexport,
  org.modelexecution.xmof.examples.petrinet;visibility:=reexport,
  fr.inria.diverse.trace.api,

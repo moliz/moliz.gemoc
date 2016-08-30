@@ -2,7 +2,7 @@
  */
 package petrinetTrace.Steps;
 
-import org.gemoc.executionframework.engine.mse.Step;
+import fr.inria.diverse.trace.commons.model.trace.Step;
 
 import petrinetTrace.States.State;
 

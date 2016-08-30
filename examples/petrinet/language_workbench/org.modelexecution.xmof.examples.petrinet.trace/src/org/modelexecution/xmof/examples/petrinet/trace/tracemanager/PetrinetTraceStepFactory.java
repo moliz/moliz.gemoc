@@ -7,12 +7,12 @@ import fr.inria.diverse.trace.gemoc.api.IStepFactory;
 public class PetrinetTraceStepFactory implements IStepFactory {
 
 	@Override
-	public org.gemoc.executionframework.engine.mse.Step createStep(org.gemoc.executionframework.engine.mse.MSE mse,
+	public fr.inria.diverse.trace.commons.model.trace.Step createStep(fr.inria.diverse.trace.commons.model.trace.MSE mse,
 			List<Object> parameters, List<Object> result) {
 
 		String stepRule = fr.inria.diverse.trace.commons.EcoreCraftingUtil.getFQN(mse.getCaller().eClass(), ".") + "."
 				+ mse.getAction().getName();
-		org.gemoc.executionframework.engine.mse.Step step = null;
+		fr.inria.diverse.trace.commons.model.trace.Step step = null;
 
 		if (stepRule.equalsIgnoreCase("petrinetConfiguration.NetConfiguration.run")) {
 			step = petrinetTrace.Steps.StepsFactory.eINSTANCE.createPetrinetConfiguration_NetConfiguration_Run();
@@ -24,10 +24,10 @@ public class PetrinetTraceStepFactory implements IStepFactory {
 		}
 
 		else {
-			step = org.gemoc.executionframework.engine.mse.MseFactory.eINSTANCE.createGenericSequentialStep();
+			step = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE.createGenericSequentialStep();
 		}
 
-		org.gemoc.executionframework.engine.mse.MSEOccurrence mseocc = org.gemoc.executionframework.engine.mse.MseFactory.eINSTANCE
+		fr.inria.diverse.trace.commons.model.trace.MSEOccurrence mseocc = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE
 				.createMSEOccurrence();
 		mseocc.setMse(mse);
 		mseocc.getParameters().addAll(parameters);

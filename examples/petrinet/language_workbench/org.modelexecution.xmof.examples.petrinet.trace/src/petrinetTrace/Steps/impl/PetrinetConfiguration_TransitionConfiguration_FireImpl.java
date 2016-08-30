@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.gemoc.executionframework.engine.mse.impl.StepImpl;
+import fr.inria.diverse.trace.commons.model.trace.impl.StepImpl;
 
 import petrinetConfiguration.TransitionConfiguration;
 

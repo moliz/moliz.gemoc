@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.gemoc.executionframework.engine.mse.MsePackage;
+import fr.inria.diverse.trace.commons.model.trace.TracePackage;
 
 import petrinetConfiguration.PetrinetConfigurationPackage;
 
@@ -129,7 +129,7 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		MsePackage.eINSTANCE.eClass();
+		TracePackage.eINSTANCE.eClass();
 		PetrinetConfigurationPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
@@ -317,7 +317,7 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		MsePackage theMsePackage = (MsePackage)EPackage.Registry.INSTANCE.getEPackage(MsePackage.eNS_URI);
+		TracePackage theMsePackage = (TracePackage)EPackage.Registry.INSTANCE.getEPackage(TracePackage.eNS_URI);
 		PetrinetConfigurationPackage thePetrinetConfigurationPackage = (PetrinetConfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(PetrinetConfigurationPackage.eNS_URI);
 		StatesPackage theStatesPackage = (StatesPackage)EPackage.Registry.INSTANCE.getEPackage(StatesPackage.eNS_URI);
 

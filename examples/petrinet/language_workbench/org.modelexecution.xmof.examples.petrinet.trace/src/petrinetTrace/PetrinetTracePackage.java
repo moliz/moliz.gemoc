@@ -6,7 +6,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.gemoc.executionframework.engine.mse.MsePackage;
+import fr.inria.diverse.trace.commons.model.trace.TracePackage;
+
+
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +76,7 @@ public interface PetrinetTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__ROOT_STEP = MsePackage.TRACE__ROOT_STEP;
+	int SPECIFIC_TRACE__ROOT_STEP = TracePackage.TRACE__ROOT_STEP;
 
 	/**
 	 * The feature id for the '<em><b>Launchconfiguration</b></em>' containment reference.
@@ -83,7 +85,7 @@ public interface PetrinetTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__LAUNCHCONFIGURATION = MsePackage.TRACE__LAUNCHCONFIGURATION;
+	int SPECIFIC_TRACE__LAUNCHCONFIGURATION = TracePackage.TRACE__LAUNCHCONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Petrinet Configuration Net Configuration Run Sequence</b></em>' reference list.
@@ -92,7 +94,7 @@ public interface PetrinetTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__PETRINET_CONFIGURATION_NET_CONFIGURATION_RUN_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 0;
+	int SPECIFIC_TRACE__PETRINET_CONFIGURATION_NET_CONFIGURATION_RUN_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Petrinet Configuration Transition Configuration Fire Sequence</b></em>' reference list.
@@ -101,7 +103,7 @@ public interface PetrinetTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__PETRINET_CONFIGURATION_TRANSITION_CONFIGURATION_FIRE_SEQUENCE = MsePackage.TRACE_FEATURE_COUNT + 1;
+	int SPECIFIC_TRACE__PETRINET_CONFIGURATION_TRANSITION_CONFIGURATION_FIRE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Petrinet Configuration traced Place Configurations</b></em>' containment reference list.
@@ -110,7 +112,7 @@ public interface PetrinetTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__PETRINET_CONFIGURATION_TRACED_PLACE_CONFIGURATIONS = MsePackage.TRACE_FEATURE_COUNT + 2;
+	int SPECIFIC_TRACE__PETRINET_CONFIGURATION_TRACED_PLACE_CONFIGURATIONS = TracePackage.TRACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>States Trace</b></em>' containment reference list.
@@ -119,7 +121,7 @@ public interface PetrinetTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__STATES_TRACE = MsePackage.TRACE_FEATURE_COUNT + 3;
+	int SPECIFIC_TRACE__STATES_TRACE = TracePackage.TRACE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Specific Trace</em>' class.
@@ -128,7 +130,7 @@ public interface PetrinetTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE_FEATURE_COUNT = MsePackage.TRACE_FEATURE_COUNT + 4;
+	int SPECIFIC_TRACE_FEATURE_COUNT = TracePackage.TRACE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Specific Trace</em>' class.
@@ -137,7 +139,7 @@ public interface PetrinetTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE_OPERATION_COUNT = MsePackage.TRACE_OPERATION_COUNT + 0;
+	int SPECIFIC_TRACE_OPERATION_COUNT = TracePackage.TRACE_OPERATION_COUNT + 0;
 
 
 	/**
