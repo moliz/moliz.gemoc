@@ -11,7 +11,7 @@
       <package
             uri="http://www.modelexecution.org/xmof/example/fuml/configurationFewSteps"
             class="fumlConfigurationFewSteps.FumlConfigurationFewStepsPackage"
-            genModel="model-gen/fuml.xmof.genmodel"/>
+            genModel="model-gen/fuml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -19,7 +19,7 @@
       <package
             uri="http://www.modelexecution.org/xmof/example/fuml/configuration/lociFewSteps"
             class="fumlConfigurationFewSteps.LociFewSteps.LociFewStepsPackage"
-            genModel="model-gen/fuml.xmof.genmodel"/>
+            genModel="model-gen/fuml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -27,7 +27,7 @@
       <package
             uri="http://www.modelexecution.org/xmof/example/fuml/configuration/classes/kernelFewSteps"
             class="fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.KernelFewStepsPackage"
-            genModel="model-gen/fuml.xmof.genmodel"/>
+            genModel="model-gen/fuml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -35,7 +35,7 @@
       <package
             uri="http://www.modelexecution.org/xmof/example/fuml/configuration/commonbehaviors/basicbehaviorsFewSteps"
             class="fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.BasicBehaviorsFewStepsPackage"
-            genModel="model-gen/fuml.xmof.genmodel"/>
+            genModel="model-gen/fuml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -43,7 +43,7 @@
       <package
             uri="http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors/integerfunctionsFewSteps"
             class="fumlConfigurationFewSteps.PrimitiveBehaviorsFewSteps.IntegerFunctionsFewSteps.IntegerFunctionsFewStepsPackage"
-            genModel="model-gen/fuml.xmof.genmodel"/>
+            genModel="model-gen/fuml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -51,7 +51,7 @@
       <package
             uri="http://www.modelexecution.org/xmof/example/fuml/configuration/activities/intermediateactivitiesFewSteps"
             class="fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage"
-            genModel="model-gen/fuml.xmof.genmodel"/>
+            genModel="model-gen/fuml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -59,7 +59,7 @@
       <package
             uri="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/basicactionsFewSteps"
             class="fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.BasicActionsFewStepsPackage"
-            genModel="model-gen/fuml.xmof.genmodel"/>
+            genModel="model-gen/fuml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -67,7 +67,7 @@
       <package
             uri="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/intermediateactionsFewSteps"
             class="fumlConfigurationFewSteps.ActionsFewSteps.IntermediateActionsFewSteps.IntermediateActionsFewStepsPackage"
-            genModel="model-gen/fuml.xmof.genmodel"/>
+            genModel="model-gen/fuml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -75,7 +75,7 @@
       <package
             uri="http://www.modelexecution.org/xmof/example/fuml/configuration/inputFewSteps"
             class="fumlConfigurationFewSteps.InputFewSteps.InputFewStepsPackage"
-            genModel="model-gen/fuml.xmof.genmodel"/>
+            genModel="model-gen/fuml.genmodel"/>
    </extension>
 
 </plugin>

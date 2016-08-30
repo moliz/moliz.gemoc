@@ -1,9 +1,6 @@
 package org.modelexecution.xmof.examples.petrinet.trace.tracemanager;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,10 +11,10 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.gemoc.executionframework.engine.mse.LaunchConfiguration;
-import org.gemoc.executionframework.engine.mse.MSEModel;
-import org.gemoc.executionframework.engine.mse.SequentialStep;
 
+import fr.inria.diverse.trace.commons.model.trace.LaunchConfiguration;
+import fr.inria.diverse.trace.commons.model.trace.MSEModel;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
 import fr.inria.diverse.trace.gemoc.api.ITraceConstructor;
 
 public class PetrinetTraceConstructor implements ITraceConstructor {
@@ -75,9 +72,8 @@ public class PetrinetTraceConstructor implements ITraceConstructor {
 		return newState;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public void addState(Set<org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange> changes) {
+	public void addState(List<org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange> changes) {
 		if (lastState == null) {
 			addInitialState();
 		}
@@ -121,7 +117,7 @@ public class PetrinetTraceConstructor implements ITraceConstructor {
 			}
 			if (stateChanged) {
 				final petrinetTrace.Steps.SpecificStep currentStep = context.peekFirst();
-				if (currentStep != null && currentStep instanceof org.gemoc.executionframework.engine.mse.BigStep) {
+				if (currentStep != null && currentStep instanceof fr.inria.diverse.trace.commons.model.trace.BigStep) {
 					final petrinetTrace.States.State startingState = lastState;
 					final petrinetTrace.States.State endingState = newState;
 					addImplicitStep(currentStep, startingState, endingState);
@@ -134,12 +130,12 @@ public class PetrinetTraceConstructor implements ITraceConstructor {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void addStep(org.gemoc.executionframework.engine.mse.Step step) {
+	public void addStep(fr.inria.diverse.trace.commons.model.trace.Step step) {
 		petrinetTrace.Steps.SpecificStep step_cast = null;
 		if (step != null && step instanceof petrinetTrace.Steps.SpecificStep) {
 			step_cast = (petrinetTrace.Steps.SpecificStep) step;
 			if (mseModel == null) {
-				mseModel = org.gemoc.executionframework.engine.mse.MseFactory.eINSTANCE.createMSEModel();
+				mseModel = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE.createMSEModel();
 				traceResource.getContents().add(mseModel);
 			}
 			mseModel.getOwnedMSEs().add(step_cast.getMseoccurrence().getMse());
@@ -185,7 +181,7 @@ public class PetrinetTraceConstructor implements ITraceConstructor {
 	}
 
 	@Override
-	public void endStep(org.gemoc.executionframework.engine.mse.Step step) {
+	public void endStep(fr.inria.diverse.trace.commons.model.trace.Step step) {
 		petrinetTrace.Steps.SpecificStep popped = context.pop();
 		if (popped != null)
 			popped.setEndingState(lastState);
@@ -198,7 +194,7 @@ public class PetrinetTraceConstructor implements ITraceConstructor {
 		traceRoot.setLaunchconfiguration(launchConfiguration);
 
 		// Create root sequential step
-		org.gemoc.executionframework.engine.mse.SequentialStep<petrinetTrace.Steps.SpecificStep> rootStep = org.gemoc.executionframework.engine.mse.MseFactory.eINSTANCE
+		fr.inria.diverse.trace.commons.model.trace.SequentialStep<petrinetTrace.Steps.SpecificStep> rootStep = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE
 				.createSequentialStep();
 		traceRoot.setRootStep(rootStep);
 

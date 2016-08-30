@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.gemoc.executionframework.engine.mse.MsePackage;
+import fr.inria.diverse.trace.commons.model.trace.TracePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,7 +75,7 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_STEP__MSEOCCURRENCE = MsePackage.STEP__MSEOCCURRENCE;
+	int SPECIFIC_STEP__MSEOCCURRENCE = TracePackage.STEP__MSEOCCURRENCE;
 
 	/**
 	 * The feature id for the '<em><b>Ending State</b></em>' reference.
@@ -84,7 +84,7 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_STEP__ENDING_STATE = MsePackage.STEP_FEATURE_COUNT + 0;
+	int SPECIFIC_STEP__ENDING_STATE = TracePackage.STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Starting State</b></em>' reference.
@@ -93,7 +93,7 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_STEP__STARTING_STATE = MsePackage.STEP_FEATURE_COUNT + 1;
+	int SPECIFIC_STEP__STARTING_STATE = TracePackage.STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Specific Step</em>' class.
@@ -102,7 +102,7 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_STEP_FEATURE_COUNT = MsePackage.STEP_FEATURE_COUNT + 2;
+	int SPECIFIC_STEP_FEATURE_COUNT = TracePackage.STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Specific Step</em>' class.
@@ -111,7 +111,7 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_STEP_OPERATION_COUNT = MsePackage.STEP_OPERATION_COUNT + 0;
+	int SPECIFIC_STEP_OPERATION_COUNT = TracePackage.STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link petrinetTrace.Steps.impl.PetrinetConfiguration_NetConfiguration_RunImpl <em>Petrinet Configuration Net Configuration Run</em>}' class.
@@ -377,7 +377,7 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_IMPLICIT_STEP__MSEOCCURRENCE = MsePackage.SMALL_STEP__MSEOCCURRENCE;
+	int ROOT_IMPLICIT_STEP__MSEOCCURRENCE = TracePackage.SMALL_STEP__MSEOCCURRENCE;
 
 	/**
 	 * The number of structural features of the '<em>Root Implicit Step</em>' class.
@@ -386,7 +386,7 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_IMPLICIT_STEP_FEATURE_COUNT = MsePackage.SMALL_STEP_FEATURE_COUNT + 0;
+	int ROOT_IMPLICIT_STEP_FEATURE_COUNT = TracePackage.SMALL_STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Root Implicit Step</em>' class.
@@ -395,7 +395,7 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_IMPLICIT_STEP_OPERATION_COUNT = MsePackage.SMALL_STEP_OPERATION_COUNT + 0;
+	int ROOT_IMPLICIT_STEP_OPERATION_COUNT = TracePackage.SMALL_STEP_OPERATION_COUNT + 0;
 
 
 	/**

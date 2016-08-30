@@ -7,8 +7,6 @@ import fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.CallAction
 
 import fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.Execution;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -192,30 +190,6 @@ public abstract class CallActionActivationImpl extends InvocationActionActivatio
 				return callExecutions != null && !callExecutions.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BasicActionsFewStepsPackage.CALL_ACTION_ACTIVATION___GET_CALL_EXECUTION__EXECUTION:
-				getCallExecution((Execution)arguments.get(0));
-				return null;
-			case BasicActionsFewStepsPackage.CALL_ACTION_ACTIVATION___REMOVE_CALL_EXECUTION__EXECUTION:
-				removeCallExecution((Execution)arguments.get(0));
-				return null;
-			case BasicActionsFewStepsPackage.CALL_ACTION_ACTIVATION___INITIALIZE_INPUT_PARAMETER_VALUES__EXECUTION:
-				initializeInputParameterValues((Execution)arguments.get(0));
-				return null;
-			case BasicActionsFewStepsPackage.CALL_ACTION_ACTIVATION___COLLECT_OUTPUT_PARAMETER_VALUES__EXECUTION:
-				collectOutputParameterValues((Execution)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //CallActionActivationImpl

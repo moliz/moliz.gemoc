@@ -11,10 +11,10 @@ import petrinet.Place;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link petrinetConfiguration.PlaceConfiguration#getTokens <em>Tokens</em>}</li>
  * </ul>
- * </p>
  *
  * @see petrinetConfiguration.PetrinetConfigurationPackage#getPlaceConfiguration()
  * @model

@@ -6,8 +6,6 @@ import fumlConfiguration.Classes.Kernel.FeatureValue;
 import fumlConfiguration.Classes.Kernel.KernelPackage;
 import fumlConfiguration.Classes.Kernel.Value;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -276,21 +274,6 @@ public abstract class FeatureValueImpl extends MinimalEObjectImpl.Container impl
 				return position != POSITION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case KernelPackage.FEATURE_VALUE___COPY__FEATUREVALUE:
-				copy((FeatureValue)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

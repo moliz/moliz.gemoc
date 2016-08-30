@@ -79,7 +79,7 @@
         <argument name="list" incoming="//NetConfiguration/run.1/%.4" lowerBound="1" upperBound="-1"/>
         <argument name="index" incoming="//NetConfiguration/run.1/%.6" lowerBound="1"/>
         <result name="result" outgoing="//NetConfiguration/run.1/%.5"/>
-        <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+        <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
       </node>
       <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="Call fire" outgoing="//NetConfiguration/run.1/%.8" operation="//TransitionConfiguration/fire">
         <target name="target" incoming="//NetConfiguration/run.1/%.5" lowerBound="1"/>
@@ -125,7 +125,7 @@
         <argument name="x" incoming="//PlaceConfiguration/addToken.1/%.6" lowerBound="1"/>
         <argument name="y" incoming="//PlaceConfiguration/addToken.1/%.7" lowerBound="1"/>
         <result name="result" outgoing="//PlaceConfiguration/addToken.1/%.8"/>
-        <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlus"/>
+        <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerPlus"/>
       </node>
       <node xsi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" name="Set tokens" structuralFeature="//PlaceConfiguration/tokens" replaceAll="true">
         <object name="object" incoming="//PlaceConfiguration/addToken.1/%.5" lowerBound="1"/>
@@ -157,7 +157,7 @@
         <argument name="x" incoming="//PlaceConfiguration/removeToken.1/%.6" lowerBound="1"/>
         <argument name="y" incoming="//PlaceConfiguration/removeToken.1/%.7" lowerBound="1"/>
         <result name="result" outgoing="//PlaceConfiguration/removeToken.1/%.8"/>
-        <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerMinus"/>
+        <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerMinus"/>
       </node>
       <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="Read tokens" structuralFeature="//PlaceConfiguration/tokens">
         <object name="object" incoming="//PlaceConfiguration/removeToken.1/%.4" lowerBound="1"/>
@@ -182,7 +182,9 @@
   <eClassifiers xsi:type="kernel:BehavioredEClass" name="TransitionConfiguration">
     <eSuperTypes href="http://petrinet/1.0#//Transition"/>
     <eOperations xsi:type="kernel:BehavioredEOperation" name="isEnabled" method="//TransitionConfiguration/isEnabled.1">
-      <eParameters xsi:type="kernel:DirectedParameter" name="return" direction="RETURN"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="return" direction="RETURN">
+      	<eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
     </eOperations>
     <eOperations xsi:type="kernel:BehavioredEOperation" name="fire" method="//TransitionConfiguration/fire.1">
       <eAnnotations source="http://www.modelexecution.org/xmof">
@@ -227,10 +229,10 @@
       <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="Call listSize" incoming="//TransitionConfiguration/isEnabled.1/%.7">
         <argument name="list" incoming="//TransitionConfiguration/isEnabled.1/%.4" upperBound="-1"/>
         <result name="result" outgoing="//TransitionConfiguration/isEnabled.1/listSize2decision"/>
-        <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+        <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
       </node>
       <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="d1" outgoing="//TransitionConfiguration/isEnabled.1/isEnabledTrue //TransitionConfiguration/isEnabled.1/isEnabledFalse" incoming="//TransitionConfiguration/isEnabled.1/listSize2decision //TransitionConfiguration/isEnabled.1/isEnabled_decisionInputFlow2" decisionInputFlow="//TransitionConfiguration/isEnabled.1/isEnabled_decisionInputFlow2">
-        <decisionInput xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+        <decisionInput xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
       </node>
       <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="Specify true" incoming="//TransitionConfiguration/isEnabled.1/isEnabledTrue">
         <value xsi:type="kernel:LiteralBoolean" value="true"/>

@@ -6,8 +6,6 @@ import fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitie
 import fumlConfiguration.Activities.IntermediateActivities.Offer;
 import fumlConfiguration.Activities.IntermediateActivities.Token;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
@@ -175,31 +173,6 @@ public class OfferImpl extends MinimalEObjectImpl.Container implements Offer {
 				return offeredTokens != null && !offeredTokens.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case IntermediateActivitiesPackage.OFFER___HAS_TOKENS__BOOLEAN:
-				hasTokens((Boolean)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.OFFER___GET_OFFERED_TOKENS__ELIST:
-				getOfferedTokens((EList<Token>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.OFFER___COUNT_OFFERED_VALUES__INT:
-				countOfferedValues((Integer)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.OFFER___REMOVE_WITHDRAWN_TOKENS:
-				removeWithdrawnTokens();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //OfferImpl

@@ -4,8 +4,8 @@ package petrinetTrace;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.gemoc.executionframework.engine.mse.SequentialStep;
-import org.gemoc.executionframework.engine.mse.Trace;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.Trace;
 
 import petrinetTrace.States.State;
 

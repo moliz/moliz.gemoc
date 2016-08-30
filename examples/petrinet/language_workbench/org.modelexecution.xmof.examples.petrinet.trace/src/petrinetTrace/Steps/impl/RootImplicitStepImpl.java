@@ -4,7 +4,7 @@ package petrinetTrace.Steps.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.gemoc.executionframework.engine.mse.impl.SmallStepImpl;
+import fr.inria.diverse.trace.commons.model.trace.impl.SmallStepImpl;
 
 import petrinetTrace.Steps.RootImplicitStep;
 import petrinetTrace.Steps.StepsPackage;

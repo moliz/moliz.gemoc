@@ -6,11 +6,7 @@ import fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSte
 import fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.IntermediateActivitiesFewStepsPackage;
 import fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.Token;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -270,21 +266,6 @@ public class ForkedTokenImpl extends TokenImpl implements ForkedToken {
 				return baseTokenIsWithdrawn != BASE_TOKEN_IS_WITHDRAWN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case IntermediateActivitiesFewStepsPackage.FORKED_TOKEN___INITIALIZE:
-				initialize();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -10,11 +10,7 @@
     <modeltype id="org.modelexecution.examples.FumlFewStepsMT" uri="http://fumlfewstepsmt/" />
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="" entryPoints="" exactType="org.modelexecution.examples.FumlMT" id="org.modelexecution.examples.Fuml" uri="http://www.eclipse.org/uml2/5.0.0/UML">
-      <adapter class="org.modelexecution.examples.fuml.adapters.fumlmt.FumlAdapter" modeltypeId="org.modelexecution.examples.FumlMT" />
-    </language>
-    <language aspects="" entryPoints="" exactType="org.modelexecution.examples.FumlFewStepsMT" id="org.modelexecution.examples.FumlFewSteps" uri="http://www.eclipse.org/uml2/5.0.0/UML">
-      <adapter class="org.modelexecution.examples.fumlfewsteps.adapters.fumlfewstepsmt.FumlFewStepsAdapter" modeltypeId="org.modelexecution.examples.FumlFewStepsMT" />
-    </language>
+    <language aspects="" entryPoints="" exactType="org.modelexecution.examples.FumlMT" id="org.modelexecution.examples.Fuml" uri="http://www.eclipse.org/uml2/5.0.0/UML" />
+    <language aspects="" entryPoints="" exactType="org.modelexecution.examples.FumlFewStepsMT" id="org.modelexecution.examples.FumlFewSteps" uri="http://www.eclipse.org/uml2/5.0.0/UML" />
   </extension>
 </plugin>

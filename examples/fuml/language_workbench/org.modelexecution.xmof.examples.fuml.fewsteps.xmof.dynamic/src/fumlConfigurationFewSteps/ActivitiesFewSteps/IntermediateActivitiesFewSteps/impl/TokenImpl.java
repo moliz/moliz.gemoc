@@ -8,12 +8,8 @@ import fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSte
 
 import fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.Value;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -252,33 +248,6 @@ public class TokenImpl extends MinimalEObjectImpl.Container implements Token {
 				return getHolder() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case IntermediateActivitiesFewStepsPackage.TOKEN___WITHDRAW:
-				withdraw();
-				return null;
-			case IntermediateActivitiesFewStepsPackage.TOKEN___IS_WITHDRAWN__BOOLEAN:
-				isWithdrawn((Boolean)arguments.get(0));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.TOKEN___TRANSFER__ACTIVITYNODEACTIVATION_TOKEN:
-				transfer((ActivityNodeActivation)arguments.get(0), (Token)arguments.get(1));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.TOKEN___GET_VALUE__VALUE:
-				getValue((Value)arguments.get(0));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.TOKEN___IS_CONTROL__BOOLEAN:
-				isControl((Boolean)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //TokenImpl

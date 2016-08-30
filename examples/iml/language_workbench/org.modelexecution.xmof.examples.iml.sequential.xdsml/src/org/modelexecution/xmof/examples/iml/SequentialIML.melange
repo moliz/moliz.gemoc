@@ -1,0 +1,25 @@
+package org.modelexecution.xmof.examples.iml
+
+language SequentialIML {
+	syntax "platform:/resource//org.modelexecution.xmof.examples.iml/model/IML.ecore"
+	
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.CommentAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.JumpAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.AddDataAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.IdentifyableElementAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.StateAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.SelectionConvergenceAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.ActivityAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.SelectionDivergenceAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.SimultaneousConvergenceAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.ElementAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.StateTransitionAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.EventAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.SimultaneousDivergenceAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.VariableAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.HeaderAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.ConnectionAspect
+	with org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.ConnectionPointAspect
+
+	exactType SequentialIMLMT
+}

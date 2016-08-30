@@ -1,7 +1,6 @@
 package org.modelexecution.xmof.examples.petrinet.trace.tracemanager;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -19,10 +18,10 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.gemoc.executionframework.engine.core.CommandExecution;
-import org.gemoc.executionframework.engine.mse.LaunchConfiguration;
-import org.gemoc.executionframework.engine.mse.SequentialStep;
-import org.gemoc.executionframework.engine.mse.Step;
 
+import fr.inria.diverse.trace.commons.model.trace.LaunchConfiguration;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.Step;
 import fr.inria.diverse.trace.gemoc.api.ITraceExplorer;
 import fr.inria.diverse.trace.gemoc.api.ITraceListener;
 
@@ -336,7 +335,6 @@ public class PetrinetTraceExplorer implements ITraceExplorer {
 		callStack.addAll(stepPathUnmodifiable.stream().map(s -> (Step) s).collect(Collectors.toList()));
 	}
 
-	@SuppressWarnings("unchecked")
 	private void goTo(EObject eObject) {
 		if (eObject instanceof petrinetTrace.States.State) {
 			petrinetTrace.States.State stateToGo = (petrinetTrace.States.State) eObject;
@@ -580,7 +578,8 @@ public class PetrinetTraceExplorer implements ITraceExplorer {
 	@Override
 	public StateWrapper getStateWrapper(int stateIndex) {
 		if (stateIndex > -1 && stateIndex < statesTrace.size()) {
-			return new StateWrapper(statesTrace.get(stateIndex), stateIndex);
+			final petrinetTrace.States.State state = statesTrace.get(stateIndex);
+			return new StateWrapper(state, stateIndex, false);
 		}
 		return null;
 	}
@@ -592,7 +591,8 @@ public class PetrinetTraceExplorer implements ITraceExplorer {
 		final int endStateIndex = Math.min(statesTrace.size() - 1, end);
 
 		for (int i = startStateIndex; i < endStateIndex + 1; i++) {
-			result.add(new StateWrapper(statesTrace.get(i), i));
+			final petrinetTrace.States.State state = statesTrace.get(i);
+			result.add(new StateWrapper(state, i, false));
 		}
 
 		return result;

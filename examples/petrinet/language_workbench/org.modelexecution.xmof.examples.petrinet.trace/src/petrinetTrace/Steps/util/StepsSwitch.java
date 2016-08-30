@@ -7,10 +7,10 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.gemoc.executionframework.engine.mse.BigStep;
-import org.gemoc.executionframework.engine.mse.SequentialStep;
-import org.gemoc.executionframework.engine.mse.SmallStep;
-import org.gemoc.executionframework.engine.mse.Step;
+import fr.inria.diverse.trace.commons.model.trace.BigStep;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.SmallStep;
+import fr.inria.diverse.trace.commons.model.trace.Step;
 
 import petrinetTrace.Steps.*;
 

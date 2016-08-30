@@ -39,13 +39,16 @@ import fumlConfigurationFewSteps.impl.FumlConfigurationFewStepsPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.uml.UMLPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,6 +138,8 @@ public class LociFewStepsPackageImpl extends EPackageImpl implements LociFewStep
 
 		// Initialize simple dependencies
 		UMLPackage.eINSTANCE.eClass();
+		IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		FumlConfigurationFewStepsPackageImpl theFumlConfigurationFewStepsPackage = (FumlConfigurationFewStepsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) instanceof FumlConfigurationFewStepsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) : FumlConfigurationFewStepsPackage.eINSTANCE);
@@ -234,33 +239,6 @@ public class LociFewStepsPackageImpl extends EPackageImpl implements LociFewStep
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLocus__Remove__ExtensionalValue() {
-        return getLocus().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getLocus__Add__ExtensionalValue() {
-        return getLocus().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getLocus__Instantiate__Class_Object() {
-        return getLocus().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getExecutor() {
 		if (executorEClass == null) {
 			executorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(LociFewStepsPackage.eNS_URI).getEClassifiers().get(2);
@@ -275,24 +253,6 @@ public class LociFewStepsPackageImpl extends EPackageImpl implements LociFewStep
 	 */
 	public EReference getExecutor_Locus_Executor() {
         return (EReference)getExecutor().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecutor__Execute__Behavior_Object_EList_EList() {
-        return getExecutor().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecutor__Evaluate__ValueSpecification_Value() {
-        return getExecutor().getEOperations().get(1);
 	}
 
 	/**
@@ -339,51 +299,6 @@ public class LociFewStepsPackageImpl extends EPackageImpl implements LociFewStep
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExecutionFactory__CreateExecution__Behavior_Object_Execution() {
-        return getExecutionFactory().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecutionFactory__InstantiateVisitor__Element_SemanticVisitor() {
-        return getExecutionFactory().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecutionFactory__CreateEvaluation__Evaluation_ValueSpecification() {
-        return getExecutionFactory().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecutionFactory__GetBuiltInType__String_PrimitiveType() {
-        return getExecutionFactory().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExecutionFactory__InstantiateOpaqueBehaviorExecution__OpaqueBehavior_OpaqueBehaviorExecution() {
-        return getExecutionFactory().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSemanticVisitor() {
 		if (semanticVisitorEClass == null) {
 			semanticVisitorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(LociFewStepsPackage.eNS_URI).getEClassifiers().get(4);
@@ -398,15 +313,6 @@ public class LociFewStepsPackageImpl extends EPackageImpl implements LociFewStep
 	 */
 	public EReference getSemanticVisitor_RuntimeModelElement() {
         return (EReference)getSemanticVisitor().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getSemanticVisitor__Initialize() {
-        return getSemanticVisitor().getEOperations().get(0);
 	}
 
 	/**

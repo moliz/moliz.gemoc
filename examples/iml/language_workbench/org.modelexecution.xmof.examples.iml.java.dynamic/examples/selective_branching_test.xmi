@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<iml:Header xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iml="http://cdlflex.tuwien.ac.at" id="0" name="selectionBranchTest">
+  <members xsi:type="iml:State" id="000" name="S_Init" init="true"/>
+  <members xsi:type="iml:StateTransition" id="100" name="ST_Init->1" booleanGuard="//@members.28"/>
+  <members xsi:type="iml:State" id="001" name="S1"/>
+  <members xsi:type="iml:SelectionDivergence" id="500"/>
+  <members xsi:type="iml:StateTransition" id="101" name="ST_Div->S2" booleanGuard="//@members.29"/>
+  <members xsi:type="iml:State" id="002" name="S2"/>
+  <members xsi:type="iml:StateTransition" id="103" name="ST_S2->Conv" booleanGuard="//@members.28"/>
+  <members xsi:type="iml:StateTransition" id="103" name="ST_Div->S3" booleanGuard="//@members.28"/>
+  <members xsi:type="iml:State" id="003" name="S3"/>
+  <members xsi:type="iml:StateTransition" id="104" name="ST_S3->Conv" booleanGuard="//@members.28"/>
+  <members xsi:type="iml:SelectionConvergence" id="501"/>
+  <members xsi:type="iml:State" id="004" name="S4"/>
+  <members xsi:type="iml:StateTransition" id="105" name="ST_S4->Term" booleanGuard="//@members.28"/>
+  <members xsi:type="iml:State" id="005" name="S_Term" terminal="true"/>
+  <members xsi:type="iml:Connection" id="400" source="//@members.0" target="//@members.1"/>
+  <members xsi:type="iml:Connection" id="401" source="//@members.1" target="//@members.2"/>
+  <members xsi:type="iml:Connection" id="402" source="//@members.2" target="//@members.3"/>
+  <members xsi:type="iml:Connection" id="403" source="//@members.3" target="//@members.4"/>
+  <members xsi:type="iml:Connection" id="404" source="//@members.4" target="//@members.5"/>
+  <members xsi:type="iml:Connection" id="405" source="//@members.5" target="//@members.6"/>
+  <members xsi:type="iml:Connection" id="406" source="//@members.6" target="//@members.10"/>
+  <members xsi:type="iml:Connection" id="407" source="//@members.3" target="//@members.7"/>
+  <members xsi:type="iml:Connection" id="408" source="//@members.7" target="//@members.8"/>
+  <members xsi:type="iml:Connection" id="409" source="//@members.8" target="//@members.9"/>
+  <members xsi:type="iml:Connection" id="410" source="//@members.9" target="//@members.10"/>
+  <members xsi:type="iml:Connection" id="411" source="//@members.10" target="//@members.11"/>
+  <members xsi:type="iml:Connection" id="412" source="//@members.11" target="//@members.12"/>
+  <members xsi:type="iml:Connection" id="413" source="//@members.12" target="//@members.13"/>
+  <members xsi:type="iml:Variable" id="200" name="trueVariable" type="boolean" content="true"/>
+  <members xsi:type="iml:Variable" id="201" name="falseVariable" type="boolean" content="false" initialValue="false"/>
+</iml:Header>

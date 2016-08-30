@@ -2,36 +2,30 @@
  */
 package fumlConfiguration.impl;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.uml2.uml.internal.impl.ActionInputPinImpl;
+
 import fumlConfiguration.ActionInputPinConfiguration;
 import fumlConfiguration.ActivityContentConfiguration;
 import fumlConfiguration.ActivityNodeConfiguration;
 import fumlConfiguration.ElementConfiguration;
 import fumlConfiguration.FumlConfigurationPackage;
 import fumlConfiguration.InputPinConfiguration;
-
-import fumlConfiguration.Loci.LociPackage;
-import fumlConfiguration.Loci.SemanticVisitor;
-
 import fumlConfiguration.MultiplicityElementConfiguration;
 import fumlConfiguration.NamedElementConfiguration;
 import fumlConfiguration.ObjectNodeConfiguration;
 import fumlConfiguration.PinConfiguration;
 import fumlConfiguration.RedefinableElementConfiguration;
 import fumlConfiguration.TypedElementConfiguration;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.eclipse.uml2.uml.internal.impl.ActionInputPinImpl;
+import fumlConfiguration.Loci.LociPackage;
+import fumlConfiguration.Loci.SemanticVisitor;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,8 +6,6 @@ import fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.
 import fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.OpaqueBehaviorExecution;
 import fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.ParameterValue;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -48,22 +46,6 @@ public abstract class OpaqueBehaviorExecutionImpl extends ExecutionImpl implemen
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BasicBehaviorsFewStepsPackage.OPAQUE_BEHAVIOR_EXECUTION___DO_BODY__ELIST_ELIST:
-				doBody((EList<ParameterValue>)arguments.get(0), (EList<ParameterValue>)arguments.get(1));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //OpaqueBehaviorExecutionImpl

@@ -13,8 +13,6 @@ import fumlConfiguration.Loci.Locus;
 
 import fumlConfiguration.Loci.impl.SemanticVisitorImpl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -719,82 +717,6 @@ public class ActivityNodeActivationImpl extends SemanticVisitorImpl implements A
 				return heldTokens != null && !heldTokens.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___GET_TOKENS__ELIST:
-				getTokens((EList<Token>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___CREATE_NODE_ACTIVATIONS:
-				createNodeActivations();
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___CREATE_EDGE_INSTANCES:
-				createEdgeInstances();
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___RUN:
-				run();
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___RECEIVE_OFFER:
-				receiveOffer();
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___IS_READY__BOOLEAN:
-				isReady((Boolean)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___TAKE_OFFERED_TOKENS__ELIST:
-				takeOfferedTokens((EList<Token>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___FIRE__ELIST:
-				fire((EList<Token>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___IS_RUNNING__BOOLEAN:
-				isRunning((Boolean)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___HAS_OFFERS__BOOLEAN:
-				hasOffers((Boolean)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___REMOVE_TOKEN__TOKEN_INT:
-				removeToken((Token)arguments.get(0), (Integer)arguments.get(1));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___ADD_TOKENS__ELIST:
-				addTokens((EList<Token>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___SEND_OFFERS__ELIST:
-				sendOffers((EList<Token>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___ADD_TOKEN__TOKEN:
-				addToken((Token)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___IS_SOURCE_FOR__BOOLEAN_ACTIVITYEDGEINSTANCE:
-				isSourceFor((Boolean)arguments.get(0), (ActivityEdgeInstance)arguments.get(1));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___GET_NODE_ACTIVATION__ACTIVITYNODE_ACTIVITYNODEACTIVATION:
-				getNodeActivation((ActivityNode)arguments.get(0), (ActivityNodeActivation)arguments.get(1));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___TERMINATE:
-				terminate();
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___CLEAR_TOKENS:
-				clearTokens();
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___GET_EXECUTION_LOCUS__LOCUS:
-				getExecutionLocus((Locus)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___GET_ACTIVITY_EXECUTION__ACTIVITYEXECUTION:
-				getActivityExecution((ActivityExecution)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION___GET_EXECUTION_CONTEXT__OBJECT:
-				getExecutionContext((fumlConfiguration.Classes.Kernel.Object)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

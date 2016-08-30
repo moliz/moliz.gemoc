@@ -6,14 +6,12 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Require-Bundle: org.junit,
- org.modelexecution.xmof.vm;bundle-version="1.0.0",
- org.eclipse.emf.edit,
- org.modelexecution.xmof.configuration,
- org.modelexecution.fumldebug,
- org.eclipse.core.runtime,
+Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.modelexecution.xmof.examples.petrinet;visibility:=reexport
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.modelexecution.xmof.examples.petrinet;visibility:=reexport,
+ org.modelexecution.xmof.standardlibrary;visibility:=reexport
+Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: petrinetConfiguration,

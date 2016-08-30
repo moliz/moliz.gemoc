@@ -2,7 +2,7 @@
  */
 package petrinetTrace.Steps;
 
-import org.gemoc.executionframework.engine.mse.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
 
 import petrinetConfiguration.NetConfiguration;
 

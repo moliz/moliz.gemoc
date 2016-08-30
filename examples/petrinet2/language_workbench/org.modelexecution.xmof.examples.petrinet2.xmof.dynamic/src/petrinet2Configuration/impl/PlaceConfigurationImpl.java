@@ -2,8 +2,6 @@
  */
 package petrinet2Configuration.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -28,10 +26,10 @@ import petrinet2Configuration.Token;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link petrinet2Configuration.impl.PlaceConfigurationImpl#getHeldTokens <em>Held Tokens</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -171,24 +169,6 @@ public class PlaceConfigurationImpl extends PlaceImpl implements PlaceConfigurat
 				return heldTokens != null && !heldTokens.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case Petrinet2ConfigurationPackage.PLACE_CONFIGURATION___ADD_TOKEN:
-				addToken();
-				return null;
-			case Petrinet2ConfigurationPackage.PLACE_CONFIGURATION___REMOVE_TOKEN:
-				removeToken();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //PlaceConfigurationImpl

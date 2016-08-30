@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+-->
+<plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated imlTrace -->
+    <package uri="imlTrace" class="imlTrace.ImlTracePackage" genModel="model/imlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated imlTrace -->
+    <package uri="imlTrace_Steps" class="imlTrace.Steps.StepsPackage" genModel="model/imlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated imlTrace -->
+    <package uri="imlTrace_States" class="imlTrace.States.StatesPackage" genModel="model/imlTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated imlTrace -->
+    <package uri="imlTrace_iml" class="imlTrace.States.iml.ImlPackage" genModel="model/imlTrace.genmodel" />
+  </extension>
+  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon Class="org.modelexecution.xmof.examples.iml.sequential.sequentialiml.trace.tracemanager.ImlTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.iml.sequential.sequentialiml.trace" Name="iml MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to iml language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" />
+  </extension>
+</plugin>

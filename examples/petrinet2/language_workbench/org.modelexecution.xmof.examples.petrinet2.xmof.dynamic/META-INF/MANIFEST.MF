@@ -12,6 +12,8 @@ Export-Package: petrinet2Configuration,
  petrinet2Configuration.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.modelexecution.xmof.examples.petrinet2;visibility:=reexport,
+ org.modelexecution.xmof.standardlibrary;visibility:=reexport,
  org.modelexecution.xmof
 Bundle-ActivationPolicy: lazy

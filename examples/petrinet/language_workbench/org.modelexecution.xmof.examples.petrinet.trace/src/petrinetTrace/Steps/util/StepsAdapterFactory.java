@@ -9,10 +9,10 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.gemoc.executionframework.engine.mse.BigStep;
-import org.gemoc.executionframework.engine.mse.SequentialStep;
-import org.gemoc.executionframework.engine.mse.SmallStep;
-import org.gemoc.executionframework.engine.mse.Step;
+import fr.inria.diverse.trace.commons.model.trace.BigStep;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.SmallStep;
+import fr.inria.diverse.trace.commons.model.trace.Step;
 
 import petrinetTrace.Steps.*;
 
@@ -217,13 +217,13 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.executionframework.engine.mse.Step <em>Step</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.inria.diverse.trace.commons.model.trace.Step <em>Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gemoc.executionframework.engine.mse.Step
+	 * @see fr.inria.diverse.trace.commons.model.trace.Step
 	 * @generated
 	 */
 	public Adapter createStepAdapter() {
@@ -231,13 +231,13 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.executionframework.engine.mse.BigStep <em>Big Step</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.inria.diverse.trace.commons.model.trace.BigStep <em>Big Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gemoc.executionframework.engine.mse.BigStep
+	 * @see fr.inria.diverse.trace.commons.model.trace.BigStep
 	 * @generated
 	 */
 	public Adapter createBigStepAdapter() {
@@ -245,13 +245,13 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.executionframework.engine.mse.SequentialStep <em>Sequential Step</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.inria.diverse.trace.commons.model.trace.SequentialStep <em>Sequential Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gemoc.executionframework.engine.mse.SequentialStep
+	 * @see fr.inria.diverse.trace.commons.model.trace.SequentialStep
 	 * @generated
 	 */
 	public Adapter createSequentialStepAdapter() {
@@ -259,13 +259,13 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.executionframework.engine.mse.SmallStep <em>Small Step</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.inria.diverse.trace.commons.model.trace.SmallStep <em>Small Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gemoc.executionframework.engine.mse.SmallStep
+	 * @see fr.inria.diverse.trace.commons.model.trace.SmallStep
 	 * @generated
 	 */
 	public Adapter createSmallStepAdapter() {

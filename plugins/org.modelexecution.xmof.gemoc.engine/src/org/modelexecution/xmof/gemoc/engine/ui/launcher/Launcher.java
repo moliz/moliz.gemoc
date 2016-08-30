@@ -57,7 +57,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 		if (traceAddons.isEmpty()) {
 			debugger = new GenericSequentialModelDebugger(dispatcher, (ISequentialExecutionEngine) _executionEngine);
 		} else {
-			debugger = null;
+			debugger = new GenericSequentialModelDebugger(dispatcher, (ISequentialExecutionEngine) _executionEngine);
 			// res = new OmniscientGenericSequentialModelDebugger(dispatcher,
 			// (ISequentialExecutionEngine) executionEngine,
 			// traceAddons.iterator().next());

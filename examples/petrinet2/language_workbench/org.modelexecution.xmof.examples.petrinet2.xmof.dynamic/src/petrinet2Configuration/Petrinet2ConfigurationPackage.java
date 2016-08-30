@@ -3,7 +3,6 @@
 package petrinet2Configuration;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -16,7 +15,6 @@ import petrinet2.Petrinet2Package;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -105,42 +103,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 	int NET_CONFIGURATION_FEATURE_COUNT = Petrinet2Package.NET_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Run</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NET_CONFIGURATION___RUN = 0;
-
-	/**
-	 * The operation id for the '<em>Main</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NET_CONFIGURATION___MAIN__ELIST = 1;
-
-	/**
-	 * The operation id for the '<em>Initialize Marking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NET_CONFIGURATION___INITIALIZE_MARKING__ELIST = 2;
-
-	/**
-	 * The number of operations of the '<em>Net Configuration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NET_CONFIGURATION_OPERATION_COUNT = 3;
-
-	/**
 	 * The meta object id for the '{@link petrinet2Configuration.impl.PlaceConfigurationImpl <em>Place Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -176,33 +138,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int PLACE_CONFIGURATION_FEATURE_COUNT = Petrinet2Package.PLACE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Add Token</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLACE_CONFIGURATION___ADD_TOKEN = 0;
-
-	/**
-	 * The operation id for the '<em>Remove Token</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLACE_CONFIGURATION___REMOVE_TOKEN = 1;
-
-	/**
-	 * The number of operations of the '<em>Place Configuration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLACE_CONFIGURATION_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link petrinet2Configuration.impl.TransitionConfigurationImpl <em>Transition Configuration</em>}' class.
@@ -251,33 +186,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 	int TRANSITION_CONFIGURATION_FEATURE_COUNT = Petrinet2Package.TRANSITION_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Fire</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION_CONFIGURATION___FIRE = 0;
-
-	/**
-	 * The operation id for the '<em>Is Enabled</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION_CONFIGURATION___IS_ENABLED = 1;
-
-	/**
-	 * The number of operations of the '<em>Transition Configuration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION_CONFIGURATION_OPERATION_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link petrinet2Configuration.impl.TokenDistributionImpl <em>Token Distribution</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -304,15 +212,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int TOKEN_DISTRIBUTION_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Token Distribution</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOKEN_DISTRIBUTION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link petrinet2Configuration.impl.TokenImpl <em>Token</em>}' class.
@@ -342,15 +241,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 	 */
 	int TOKEN_FEATURE_COUNT = 1;
 
-	/**
-	 * The number of operations of the '<em>Token</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOKEN_OPERATION_COUNT = 0;
-
 
 	/**
 	 * Returns the meta object for class '{@link petrinet2Configuration.NetConfiguration <em>Net Configuration</em>}'.
@@ -361,36 +251,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getNetConfiguration();
-
-	/**
-	 * Returns the meta object for the '{@link petrinet2Configuration.NetConfiguration#run() <em>Run</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Run</em>' operation.
-	 * @see petrinet2Configuration.NetConfiguration#run()
-	 * @generated
-	 */
-	EOperation getNetConfiguration__Run();
-
-	/**
-	 * Returns the meta object for the '{@link petrinet2Configuration.NetConfiguration#main(org.eclipse.emf.common.util.EList) <em>Main</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Main</em>' operation.
-	 * @see petrinet2Configuration.NetConfiguration#main(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getNetConfiguration__Main__EList();
-
-	/**
-	 * Returns the meta object for the '{@link petrinet2Configuration.NetConfiguration#initializeMarking(org.eclipse.emf.common.util.EList) <em>Initialize Marking</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Initialize Marking</em>' operation.
-	 * @see petrinet2Configuration.NetConfiguration#initializeMarking(org.eclipse.emf.common.util.EList)
-	 * @generated
-	 */
-	EOperation getNetConfiguration__InitializeMarking__EList();
 
 	/**
 	 * Returns the meta object for class '{@link petrinet2Configuration.PlaceConfiguration <em>Place Configuration</em>}'.
@@ -414,26 +274,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 	EReference getPlaceConfiguration_HeldTokens();
 
 	/**
-	 * Returns the meta object for the '{@link petrinet2Configuration.PlaceConfiguration#addToken() <em>Add Token</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Token</em>' operation.
-	 * @see petrinet2Configuration.PlaceConfiguration#addToken()
-	 * @generated
-	 */
-	EOperation getPlaceConfiguration__AddToken();
-
-	/**
-	 * Returns the meta object for the '{@link petrinet2Configuration.PlaceConfiguration#removeToken() <em>Remove Token</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Remove Token</em>' operation.
-	 * @see petrinet2Configuration.PlaceConfiguration#removeToken()
-	 * @generated
-	 */
-	EOperation getPlaceConfiguration__RemoveToken();
-
-	/**
 	 * Returns the meta object for class '{@link petrinet2Configuration.TransitionConfiguration <em>Transition Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -442,26 +282,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTransitionConfiguration();
-
-	/**
-	 * Returns the meta object for the '{@link petrinet2Configuration.TransitionConfiguration#fire() <em>Fire</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Fire</em>' operation.
-	 * @see petrinet2Configuration.TransitionConfiguration#fire()
-	 * @generated
-	 */
-	EOperation getTransitionConfiguration__Fire();
-
-	/**
-	 * Returns the meta object for the '{@link petrinet2Configuration.TransitionConfiguration#isEnabled() <em>Is Enabled</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Enabled</em>' operation.
-	 * @see petrinet2Configuration.TransitionConfiguration#isEnabled()
-	 * @generated
-	 */
-	EOperation getTransitionConfiguration__IsEnabled();
 
 	/**
 	 * Returns the meta object for class '{@link petrinet2Configuration.TokenDistribution <em>Token Distribution</em>}'.
@@ -520,7 +340,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -537,30 +356,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NET_CONFIGURATION = eINSTANCE.getNetConfiguration();
-
-		/**
-		 * The meta object literal for the '<em><b>Run</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NET_CONFIGURATION___RUN = eINSTANCE.getNetConfiguration__Run();
-
-		/**
-		 * The meta object literal for the '<em><b>Main</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NET_CONFIGURATION___MAIN__ELIST = eINSTANCE.getNetConfiguration__Main__EList();
-
-		/**
-		 * The meta object literal for the '<em><b>Initialize Marking</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NET_CONFIGURATION___INITIALIZE_MARKING__ELIST = eINSTANCE.getNetConfiguration__InitializeMarking__EList();
 
 		/**
 		 * The meta object literal for the '{@link petrinet2Configuration.impl.PlaceConfigurationImpl <em>Place Configuration</em>}' class.
@@ -581,22 +376,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 		EReference PLACE_CONFIGURATION__HELD_TOKENS = eINSTANCE.getPlaceConfiguration_HeldTokens();
 
 		/**
-		 * The meta object literal for the '<em><b>Add Token</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PLACE_CONFIGURATION___ADD_TOKEN = eINSTANCE.getPlaceConfiguration__AddToken();
-
-		/**
-		 * The meta object literal for the '<em><b>Remove Token</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PLACE_CONFIGURATION___REMOVE_TOKEN = eINSTANCE.getPlaceConfiguration__RemoveToken();
-
-		/**
 		 * The meta object literal for the '{@link petrinet2Configuration.impl.TransitionConfigurationImpl <em>Transition Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -605,22 +384,6 @@ public interface Petrinet2ConfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRANSITION_CONFIGURATION = eINSTANCE.getTransitionConfiguration();
-
-		/**
-		 * The meta object literal for the '<em><b>Fire</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TRANSITION_CONFIGURATION___FIRE = eINSTANCE.getTransitionConfiguration__Fire();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Enabled</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TRANSITION_CONFIGURATION___IS_ENABLED = eINSTANCE.getTransitionConfiguration__IsEnabled();
 
 		/**
 		 * The meta object literal for the '{@link petrinet2Configuration.impl.TokenDistributionImpl <em>Token Distribution</em>}' class.

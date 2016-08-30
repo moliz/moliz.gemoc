@@ -12,8 +12,6 @@ import fumlConfiguration.Loci.LociPackage;
 import fumlConfiguration.Loci.Locus;
 import fumlConfiguration.Loci.SemanticVisitor;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -334,33 +332,6 @@ public class ExecutionFactoryImpl extends MinimalEObjectImpl.Container implement
 				return builtInTypes != null && !builtInTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case LociPackage.EXECUTION_FACTORY___CREATE_EXECUTION__BEHAVIOR_OBJECT_EXECUTION:
-				createExecution((Behavior)arguments.get(0), (fumlConfiguration.Classes.Kernel.Object)arguments.get(1), (Execution)arguments.get(2));
-				return null;
-			case LociPackage.EXECUTION_FACTORY___INSTANTIATE_VISITOR__ELEMENT_SEMANTICVISITOR:
-				instantiateVisitor((Element)arguments.get(0), (SemanticVisitor)arguments.get(1));
-				return null;
-			case LociPackage.EXECUTION_FACTORY___CREATE_EVALUATION__EVALUATION_VALUESPECIFICATION:
-				createEvaluation((Evaluation)arguments.get(0), (ValueSpecification)arguments.get(1));
-				return null;
-			case LociPackage.EXECUTION_FACTORY___GET_BUILT_IN_TYPE__STRING_PRIMITIVETYPE:
-				getBuiltInType((String)arguments.get(0), (PrimitiveType)arguments.get(1));
-				return null;
-			case LociPackage.EXECUTION_FACTORY___INSTANTIATE_OPAQUE_BEHAVIOR_EXECUTION__OPAQUEBEHAVIOR_OPAQUEBEHAVIOREXECUTION:
-				instantiateOpaqueBehaviorExecution((OpaqueBehavior)arguments.get(0), (OpaqueBehaviorExecution)arguments.get(1));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ExecutionFactoryImpl

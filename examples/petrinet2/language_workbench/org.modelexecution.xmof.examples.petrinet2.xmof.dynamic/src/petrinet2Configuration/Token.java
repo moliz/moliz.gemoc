@@ -13,10 +13,10 @@ import petrinet2.Place;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link petrinet2Configuration.Token#getHoldingPlace <em>Holding Place</em>}</li>
  * </ul>
- * </p>
  *
  * @see petrinet2Configuration.Petrinet2ConfigurationPackage#getToken()
  * @model

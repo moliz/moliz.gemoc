@@ -7,8 +7,6 @@ import fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.Value;
 import fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.BasicBehaviorsFewStepsPackage;
 import fumlConfigurationFewSteps.CommonBehaviorsFewSteps.BasicBehaviorsFewSteps.ParameterValue;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -225,21 +223,6 @@ public class ParameterValueImpl extends MinimalEObjectImpl.Container implements 
 				return values_ParameterValue != null && !values_ParameterValue.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BasicBehaviorsFewStepsPackage.PARAMETER_VALUE___COPY__PARAMETERVALUE:
-				copy((ParameterValue)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ParameterValueImpl

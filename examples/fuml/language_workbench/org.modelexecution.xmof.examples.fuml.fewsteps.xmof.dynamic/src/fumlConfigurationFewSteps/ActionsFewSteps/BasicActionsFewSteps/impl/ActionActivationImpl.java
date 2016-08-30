@@ -10,8 +10,6 @@ import fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSte
 
 import fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.Value;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -302,40 +300,6 @@ public abstract class ActionActivationImpl extends ActivityNodeActivationImpl im
 				return firing != FIRING_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case BasicActionsFewStepsPackage.ACTION_ACTIVATION___GET_PIN_ACTIVATION__PIN_PINACTIVATION:
-				getPinActivation((Pin)arguments.get(0), (PinActivation)arguments.get(1));
-				return null;
-			case BasicActionsFewStepsPackage.ACTION_ACTIVATION___SEND_OFFERS:
-				sendOffers();
-				return null;
-			case BasicActionsFewStepsPackage.ACTION_ACTIVATION___DO_ACTION:
-				doAction();
-				return null;
-			case BasicActionsFewStepsPackage.ACTION_ACTIVATION___SHOULD_FIRE_AGAIN__BOOLEAN:
-				shouldFireAgain((Boolean)arguments.get(0));
-				return null;
-			case BasicActionsFewStepsPackage.ACTION_ACTIVATION___PUT_TOKEN__OUTPUTPIN_VALUE:
-				putToken((OutputPin)arguments.get(0), (Value)arguments.get(1));
-				return null;
-			case BasicActionsFewStepsPackage.ACTION_ACTIVATION___TAKE_TOKENS__INPUTPIN_ELIST:
-				takeTokens((InputPin)arguments.get(0), (EList<Value>)arguments.get(1));
-				return null;
-			case BasicActionsFewStepsPackage.ACTION_ACTIVATION___PUT_TOKENS__OUTPUTPIN_ELIST:
-				putTokens((OutputPin)arguments.get(0), (EList<Value>)arguments.get(1));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

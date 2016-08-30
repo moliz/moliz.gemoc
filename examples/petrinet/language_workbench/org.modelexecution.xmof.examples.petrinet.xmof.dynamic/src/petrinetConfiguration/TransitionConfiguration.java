@@ -18,10 +18,10 @@ public interface TransitionConfiguration extends Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model
 	 * @generated
 	 */
-	boolean isEnabled();
+	void isEnabled(boolean return_);
 
 	/**
 	 * <!-- begin-user-doc -->

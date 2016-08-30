@@ -26,10 +26,10 @@ import petrinet2Configuration.TokenDistribution;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link petrinet2Configuration.impl.TokenDistributionImpl#getInitialTokens <em>Initial Tokens</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.gemoc.executionframework.engine.mse.MsePackage;
+import fr.inria.diverse.trace.commons.model.trace.TracePackage;
 
 import petrinetConfiguration.PetrinetConfigurationPackage;
 
@@ -105,7 +105,7 @@ public class StatesPackageImpl extends EPackageImpl implements StatesPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		MsePackage.eINSTANCE.eClass();
+		TracePackage.eINSTANCE.eClass();
 		PetrinetConfigurationPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies

@@ -1405,13 +1405,13 @@
         <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call size" incoming="//Loci/ExecutionFactory/createExecution_ExecutionFactory/%">
           <argument name="list" incoming="//Loci/ExecutionFactory/createExecution_ExecutionFactory/of7" upperBound="-1"/>
           <result name="result" outgoing="//Loci/ExecutionFactory/createExecution_ExecutionFactory/of9"/>
-          <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+          <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
         </node>
         <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call greater">
           <argument name="x" incoming="//Loci/ExecutionFactory/createExecution_ExecutionFactory/of9" lowerBound="1"/>
           <argument name="y" incoming="//Loci/ExecutionFactory/createExecution_ExecutionFactory/of8" lowerBound="1"/>
           <result name="result" outgoing="//Loci/ExecutionFactory/createExecution_ExecutionFactory/of10"/>
-          <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+          <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
         </node>
         <node xsi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" name="set context (context)" incoming="//Loci/ExecutionFactory/createExecution_ExecutionFactory/contextNotNull_true" structuralFeature="//CommonBehaviors/BasicBehaviors/Execution/context">
           <object name="object" incoming="//Loci/ExecutionFactory/createExecution_ExecutionFactory/of18" lowerBound="1"/>
@@ -1926,7 +1926,7 @@
           <argument name="list" incoming="//Loci/ExecutionFactory/getBuiltInType_ExecutionFactory/%.3" lowerBound="1" upperBound="-1"/>
           <argument name="index" incoming="//Loci/ExecutionFactory/getBuiltInType_ExecutionFactory/%.2" lowerBound="1"/>
           <result name="result" outgoing="//Loci/ExecutionFactory/getBuiltInType_ExecutionFactory/%.4"/>
-          <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+          <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
         </node>
         <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
           <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -2326,7 +2326,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Classes/Kernel/CompoundValue/setFeatureValue_CompoundValue/%.5">
             <argument name="list" incoming="//Classes/Kernel/CompoundValue/setFeatureValue_CompoundValue/%.4" upperBound="-1"/>
             <result name="result" outgoing="//Classes/Kernel/CompoundValue/setFeatureValue_CompoundValue/%.6"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Classes/Kernel/CompoundValue/setFeatureValue_CompoundValue/%.6" lowerBound="1"/>
@@ -2516,12 +2516,12 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize types value" incoming="//Classes/Kernel/Value/equals_Value/%.24">
             <argument name="list" incoming="//Classes/Kernel/Value/equals_Value/%.3" upperBound="-1"/>
             <result name="result" outgoing="//Classes/Kernel/Value/equals_Value/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize types otherValue" incoming="//Classes/Kernel/Value/equals_Value/%.25">
             <argument name="list" incoming="//Classes/Kernel/Value/equals_Value/%.6" upperBound="-1"/>
             <result name="result" outgoing="//Classes/Kernel/Value/equals_Value/%.7"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call getTypes size value" outgoing="//Classes/Kernel/Value/equals_Value/%.24" operation="//Classes/Kernel/Value/getTypes">
             <result name="types" outgoing="//Classes/Kernel/Value/equals_Value/%.3"/>
@@ -2552,7 +2552,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize 0 types value" incoming="//Classes/Kernel/Value/equals_Value/%.26">
             <argument name="list" incoming="//Classes/Kernel/Value/equals_Value/%.20" upperBound="-1"/>
             <result name="result" outgoing="//Classes/Kernel/Value/equals_Value/%.21"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Classes/Kernel/Value/equals_Value/%.21" lowerBound="1"/>
@@ -2572,7 +2572,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize not found types" incoming="//Classes/Kernel/Value/equals_Value/%.27">
             <argument name="list" incoming="//Classes/Kernel/Value/equals_Value/%.14" upperBound="-1"/>
             <result name="result" outgoing="//Classes/Kernel/Value/equals_Value/%.15"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Classes/Kernel/Value/equals_Value/%.15" lowerBound="1"/>
@@ -2641,7 +2641,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize number of types" incoming="//Classes/Kernel/Value/hasType_Value/%.15">
             <argument name="list" incoming="//Classes/Kernel/Value/hasType_Value/%.2" upperBound="-1"/>
             <result name="result" outgoing="//Classes/Kernel/Value/hasType_Value/%.3"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="hasNoTypes" outgoing="//Classes/Kernel/Value/hasType_Value/hasNoTypes_true //Classes/Kernel/Value/hasType_Value/hasNoTypes_false" incoming="//Classes/Kernel/Value/hasType_Value/%.3"/>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify false" incoming="//Classes/Kernel/Value/hasType_Value/hasNoTypes_true">
@@ -2668,13 +2668,13 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize found types" incoming="//Classes/Kernel/Value/hasType_Value/%.14">
             <argument name="list" incoming="//Classes/Kernel/Value/hasType_Value/%.9" upperBound="-1"/>
             <result name="result" outgoing="//Classes/Kernel/Value/hasType_Value/%.10"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerGreater">
             <argument name="x" incoming="//Classes/Kernel/Value/hasType_Value/%.10" lowerBound="1"/>
             <argument name="y" incoming="//Classes/Kernel/Value/hasType_Value/%.11" lowerBound="1"/>
             <result name="result" outgoing="//Classes/Kernel/Value/hasType_Value/%.12"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -2815,7 +2815,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Classes/Kernel/LiteralEvaluation/getType_LiteralEvaluation/%.11">
             <argument name="list" incoming="//Classes/Kernel/LiteralEvaluation/getType_LiteralEvaluation/%.4" upperBound="-1"/>
             <result name="result" outgoing="//Classes/Kernel/LiteralEvaluation/getType_LiteralEvaluation/%.5"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="noType" outgoing="//Classes/Kernel/LiteralEvaluation/getType_LiteralEvaluation/noType_0" incoming="//Classes/Kernel/LiteralEvaluation/getType_LiteralEvaluation/%.5"/>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" name="read self" incoming="//Classes/Kernel/LiteralEvaluation/getType_LiteralEvaluation/noType_0">
@@ -3436,7 +3436,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//CommonBehaviors/BasicBehaviors/Execution/setParameterValue_Execution/%.7">
             <argument name="list" incoming="//CommonBehaviors/BasicBehaviors/Execution/setParameterValue_Execution/%.6" upperBound="-1"/>
             <result name="result" outgoing="//CommonBehaviors/BasicBehaviors/Execution/setParameterValue_Execution/%.9"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//CommonBehaviors/BasicBehaviors/Execution/setParameterValue_Execution/%.9" lowerBound="1"/>
@@ -3519,7 +3519,7 @@
             <argument name="list" incoming="//CommonBehaviors/BasicBehaviors/Execution/getBehavior_Execution/%.1" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//CommonBehaviors/BasicBehaviors/Execution/getBehavior_Execution/%.2" lowerBound="1"/>
             <result name="result" outgoing="//CommonBehaviors/BasicBehaviors/Execution/getBehavior_Execution/%.3"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -3711,7 +3711,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/execute_OpaqueBehaviorExecution/%.11">
             <argument name="list" incoming="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/execute_OpaqueBehaviorExecution/%.10" upperBound="-1"/>
             <result name="result" outgoing="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/execute_OpaqueBehaviorExecution/%.16"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="noParameters" outgoing="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/execute_OpaqueBehaviorExecution/noParameters_0" incoming="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/execute_OpaqueBehaviorExecution/%.16"/>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:MergeNode" name="mergeDoBody" outgoing="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/execute_OpaqueBehaviorExecution/%.8" incoming="//CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/execute_OpaqueBehaviorExecution/noParameters_0 //CommonBehaviors/BasicBehaviors/OpaqueBehaviorExecution/execute_OpaqueBehaviorExecution/%.9"/>
@@ -3821,13 +3821,13 @@
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.1" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.3" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.13"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListGet for y">
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.2" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.4" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.14"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="arguments" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.1 //PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.2" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%"/>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
@@ -3842,7 +3842,7 @@
             <argument name="x" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.9" lowerBound="1"/>
             <argument name="y" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.10" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.5"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlus"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerPlus"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:CreateObjectAction" name="create IntegerValue" classifier="//Classes/Kernel/IntegerValue">
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.6" lowerBound="1"/>
@@ -3856,7 +3856,7 @@
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.7" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.8" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.12"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -3887,13 +3887,13 @@
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.15" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.16" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.19"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListGet y value">
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.17" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.18" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerPlusFunctionBehaviorExecution/doBody_IntegerPlusFunctionBehaviorExecution/%.20"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -3952,13 +3952,13 @@
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.1" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.3" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.13"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListGet for y">
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.2" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.4" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.16"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="read value" structuralFeature="//Classes/Kernel/IntegerValue/value_IntegerValue">
             <object name="object" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.20" lowerBound="1"/>
@@ -3972,7 +3972,7 @@
             <argument name="x" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.5" lowerBound="1"/>
             <argument name="y" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.6" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.7"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:CreateObjectAction" name="create BooleanValue" classifier="//Classes/Kernel/BooleanValue">
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.8" lowerBound="1"/>
@@ -3986,7 +3986,7 @@
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.10" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.11" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.12"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -4018,13 +4018,13 @@
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.14" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.15" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.20"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListGet y">
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.17" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.18" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/%.19"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/inputParameters.1" target="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/inputParameters.2"/>
           <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/inputParameters.2" target="//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterFunctionBehaviorExecution/doBody_IntegerGreaterFunctionBehaviorExecution/call%20ListGet%20for%20x/list"/>
@@ -4072,7 +4072,7 @@
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.1" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.2" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.3"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="read values x" structuralFeature="//CommonBehaviors/BasicBehaviors/ParameterValue/values_ParameterValue">
             <object name="object" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.3" lowerBound="1"/>
@@ -4082,31 +4082,31 @@
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.4" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.5" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.6"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListGet for y">
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.8" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.9" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.10"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListGet y">
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.11" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.12" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.13"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerLess">
             <argument name="x" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.7" lowerBound="1"/>
             <argument name="y" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.14" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.15"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLess"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerLess"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListGet for result">
             <argument name="list" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.17" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.20" lowerBound="1"/>
             <result name="result" outgoing="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.18"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" name="set value" structuralFeature="//Classes/Kernel/BooleanValue/value_BooleanValue">
             <object name="object" incoming="//PrimitiveBehaviors/IntegerFunctions/IntegerLessFunctionBehaviorExecution/doBody_IntegerLessFunctionBehaviorExecution/%.16" lowerBound="1"/>
@@ -4210,7 +4210,7 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityExecution/execute_ActivityExecution/%.8" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Activities/IntermediateActivities/ActivityExecution/execute_ActivityExecution/%.9" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityExecution/execute_ActivityExecution/%.10"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -4761,7 +4761,7 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getNodeActivation_ActivityNodeActivationGroup/%.5" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getNodeActivation_ActivityNodeActivationGroup/%.7" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getNodeActivation_ActivityNodeActivationGroup/%.6"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -4952,7 +4952,7 @@
             <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call size" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations_ActivityNodeActivationGroup/filter%20out%20not%20enabled%20actions/%.11">
               <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations_ActivityNodeActivationGroup/filter%20out%20not%20enabled%20actions/%.7" upperBound="-1"/>
               <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations_ActivityNodeActivationGroup/filter%20out%20not%20enabled%20actions/%.8"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
               <value xsi:type="kernel:LiteralInteger"/>
@@ -4968,7 +4968,7 @@
             <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations_ActivityNodeActivationGroup/filter%20out%20not%20enabled%20actions/%.16">
               <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations_ActivityNodeActivationGroup/filter%20out%20not%20enabled%20actions/%.15" upperBound="-1"/>
               <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations_ActivityNodeActivationGroup/filter%20out%20not%20enabled%20actions/%.17"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
               <second name="second" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getInitiallyEnabledNodeActivations_ActivityNodeActivationGroup/filter%20out%20not%20enabled%20actions/%.17" lowerBound="1"/>
@@ -5080,7 +5080,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize sourceActivations" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges_ActivityNodeActivationGroup/%.4">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges_ActivityNodeActivationGroup/%.3" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges_ActivityNodeActivationGroup/%.5"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="sourceActivations equals 0">
             <second name="second" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges_ActivityNodeActivationGroup/%.5" lowerBound="1"/>
@@ -5094,7 +5094,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize incomingEdges" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges_ActivityNodeActivationGroup/%.17">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges_ActivityNodeActivationGroup/%.16" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges_ActivityNodeActivationGroup/%.8"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="incomingEdges equals 0">
             <second name="second" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/checkIncomingEdges_ActivityNodeActivationGroup/%.8" lowerBound="1"/>
@@ -5214,7 +5214,7 @@
             <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations_ActivityNodeActivationGroup/collect%20output%20parameter%20nodes/%.5">
               <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations_ActivityNodeActivationGroup/collect%20output%20parameter%20nodes/%.3" upperBound="-1"/>
               <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations_ActivityNodeActivationGroup/collect%20output%20parameter%20nodes/%.6"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
             </node>
             <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="noIncomingEdge" outgoing="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations_ActivityNodeActivationGroup/collect%20output%20parameter%20nodes/noIncomingEdge_false" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations_ActivityNodeActivationGroup/collect%20output%20parameter%20nodes/of //Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations_ActivityNodeActivationGroup/collect%20output%20parameter%20nodes/noIncomingEdge_decInput" decisionInputFlow="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations_ActivityNodeActivationGroup/collect%20output%20parameter%20nodes/noIncomingEdge_decInput"/>
             <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="instanceofActivityParameterNodeActivation" outgoing="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations_ActivityNodeActivationGroup/collect%20output%20parameter%20nodes/instanceofActivityParameterNodeActivation_true" incoming="//Activities/IntermediateActivities/ActivityNodeActivationGroup/getOutputParameterNodeActivations_ActivityNodeActivationGroup/collect%20output%20parameter%20nodes/%.4"/>
@@ -5270,7 +5270,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ActivityParameterNodeActivation/fire_ActivityParameterNodeActivation/%.7">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityParameterNodeActivation/fire_ActivityParameterNodeActivation/%.3" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityParameterNodeActivation/fire_ActivityParameterNodeActivation/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/ActivityParameterNodeActivation/fire_ActivityParameterNodeActivation/%.4" lowerBound="1"/>
@@ -5390,7 +5390,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ActivityParameterNodeActivation/clearTokens_ActivityParameterNodeActivation/%.5">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityParameterNodeActivation/clearTokens_ActivityParameterNodeActivation/%.2" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityParameterNodeActivation/clearTokens_ActivityParameterNodeActivation/%.3"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/ActivityParameterNodeActivation/clearTokens_ActivityParameterNodeActivation/%.3" lowerBound="1"/>
@@ -5663,7 +5663,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.5" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.6"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="is equals">
             <second name="second" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.6" lowerBound="1"/>
@@ -5690,7 +5690,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize2" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.11">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.9" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.7"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" name="read self">
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.12" lowerBound="1"/>
@@ -5702,7 +5702,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.18">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.13" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.14"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals 0">
             <second name="second" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/hasOffers_ActivityNodeActivation/%.14" lowerBound="1"/>
@@ -5785,7 +5785,7 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/removeToken_ActivityNodeActivation/%.1" upperBound="-1"/>
             <argument name="object" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/removeToken_ActivityNodeActivation/%.3" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivation/removeToken_ActivityNodeActivation/%.9"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListIndexOf"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListIndexOf"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="forkToken" outgoing="//Activities/IntermediateActivities/ActivityNodeActivation/removeToken_ActivityNodeActivation/%.3 //Activities/IntermediateActivities/ActivityNodeActivation/removeToken_ActivityNodeActivation/%.8" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/removeToken_ActivityNodeActivation/%.2"/>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:RemoveStructuralFeatureValueAction" name="remove heldTokens" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/removeToken_ActivityNodeActivation/%.10" structuralFeature="//Activities/IntermediateActivities/ActivityNodeActivation/heldTokens">
@@ -5977,7 +5977,7 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/clearTokens_ActivityNodeActivation/%.1" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Activities/IntermediateActivities/ActivityNodeActivation/clearTokens_ActivityNodeActivation/%.2" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityNodeActivation/clearTokens_ActivityNodeActivation/%.3"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -6112,7 +6112,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/Token/isWithdrawn_Token/%.5">
             <argument name="list" incoming="//Activities/IntermediateActivities/Token/isWithdrawn_Token/%.1" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/Token/isWithdrawn_Token/%.2"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/Token/isWithdrawn_Token/%.2" lowerBound="1"/>
@@ -6183,7 +6183,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/Token/transfer_Token/%.3">
             <argument name="list" incoming="//Activities/IntermediateActivities/Token/transfer_Token/%.2" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/Token/transfer_Token/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/Token/transfer_Token/%.4" lowerBound="1"/>
@@ -6317,7 +6317,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.5">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.2" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.3"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -6327,12 +6327,12 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.3" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.4" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.6"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize offers" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.16">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.11" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.12"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/hasOffer_ActivityEdgeInstance/%.12" lowerBound="1"/>
@@ -6428,7 +6428,7 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.6" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.5" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.8"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.16">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -6442,7 +6442,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.17" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.14" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.7"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLessOrEquals"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerLessOrEquals"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="countLessOrEqualsRemainingCount" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/countLessOrEqualsRemainingCount_true //Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/countLessOrEqualsRemainingCount_false" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.7"/>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call getOfferedTokens" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.12" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/countLessOrEqualsRemainingCount_true" operation="//Activities/IntermediateActivities/Offer/getOfferedTokens">
@@ -6457,7 +6457,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.15" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.18" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.19"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerMinus"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerMinus"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.14 //Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.15 //Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.31 //Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.45" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.13"/>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="count" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.17 //Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.18" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.51"/>
@@ -6470,7 +6470,7 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.22" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.23" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.25"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1 2" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.24">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -6491,7 +6491,7 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.27" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.28" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.29"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1 4" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.42">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -6502,13 +6502,13 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.32" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.33" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.34"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerMinus"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerMinus"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerGreaterOrEquals">
             <argument name="x" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.36" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.37" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.38"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterOrEquals"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreaterOrEquals"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.43">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -6525,7 +6525,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.45" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.44" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.46"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0 2" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens_int_ActivityEdgeInstance/%.47">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -6623,7 +6623,7 @@
           <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/collect%20counts/%" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/%.2" lowerBound="1" upperBound="-1" regionAsInput="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/collect%20counts"/>
           <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/%.3" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/collect%20counts/%.1" regionAsOutput="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/collect%20counts"/>
           <node xsi:type="fUML.Syntax.Actions.CompleteActions:ReduceAction" name="reduce IntegerPlus">
-            <reducer xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlus"/>
+            <reducer xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerPlus"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/%.4" lowerBound="1"/>
             <collection name="collection" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/%.3" lowerBound="1" upperBound="-1"/>
           </node>
@@ -6634,7 +6634,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/%.11">
             <argument name="list" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/%.8" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/%.9"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="offers" outgoing="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/offers_0" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/%.9"/>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0" incoming="//Activities/IntermediateActivities/ActivityEdgeInstance/countOfferedValues_ActivityEdgeInstance/offers_0">
@@ -6771,7 +6771,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/%">
             <argument name="list" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/%.1" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/%.5" lowerBound="1"/>
@@ -6803,7 +6803,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/%.11" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/%.10" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/%.13"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerMinus"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerMinus"/>
           </node>
           <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ControlFlow" source="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/read%20heldTokens" target="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/call%20ListSize"/>
           <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/read%20heldTokens/result" target="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens_ObjectNodeActivation/call%20ListSize/list"/>
@@ -6862,7 +6862,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.3" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.4" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.5"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -6872,7 +6872,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.6" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.9" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.7"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLessOrEquals"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerLessOrEquals"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" name="read self" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/tokenRemoved_true">
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.13" lowerBound="1"/>
@@ -6891,7 +6891,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.10" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.11" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.12"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerMinus"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerMinus"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" name="set offeredTokenCount" structuralFeature="//Activities/IntermediateActivities/ObjectNodeActivation/offeredTokenCount">
             <object name="object" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/removeToken_ObjectNodeActivation/%.15" lowerBound="1"/>
@@ -6934,7 +6934,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.9">
             <argument name="list" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.5" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.6"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="self" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.1 //Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.2 //Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.3 //Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.4 //Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.10" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%"/>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="read offeredTokenCount" structuralFeature="//Activities/IntermediateActivities/ObjectNodeActivation/offeredTokenCount">
@@ -6945,7 +6945,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.6" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.7" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.8"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlus"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerPlus"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" name="set offeredTokenCount" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.13" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.12" structuralFeature="//Activities/IntermediateActivities/ObjectNodeActivation/offeredTokenCount" replaceAll="true">
             <object name="object" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendUnofferedTokens_ObjectNodeActivation/%.4" lowerBound="1"/>
@@ -6985,7 +6985,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/addToken_ObjectNodeActivation/%.3">
             <argument name="list" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/addToken_ObjectNodeActivation/%.2" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/addToken_ObjectNodeActivation/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/addToken_ObjectNodeActivation/%.4" lowerBound="1"/>
@@ -7031,7 +7031,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.14" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.2" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.3"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLessOrEquals"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerLessOrEquals"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call countUnofferedTokens" operation="//Activities/IntermediateActivities/ObjectNodeActivation/countUnofferedTokens">
             <result name="count" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.2"/>
@@ -7052,13 +7052,13 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.4" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.12" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.5"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerPlus i">
             <argument name="x" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.16" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.6" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.7"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlus"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerPlus"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.17">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -7072,7 +7072,7 @@
             <argument name="x" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.11" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.15" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.12"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlus"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerPlus"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="self" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.9 //Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.10" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.8"/>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="i" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.14 //Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.15 //Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.16 //Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.18" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/getUnofferedTokens_ObjectNodeActivation/%.13"/>
@@ -7120,7 +7120,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/%.6">
             <argument name="list" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/%.5" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/%.1"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:MergeNode" name="mergeTokens" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/%.3" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/%.2 //Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/%.8"/>
           <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" name="check tokens" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/%.6" inputElement="//Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/tokens%20in" outputElement="//Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/tokens%20out%201 //Activities/IntermediateActivities/ObjectNodeActivation/sendOffers_ObjectNodeActivation/tokens%20out%202">
@@ -7225,7 +7225,7 @@
           <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/count%20offered%20values/%" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/%.2" lowerBound="1" upperBound="-1" regionAsInput="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/count%20offered%20values"/>
           <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionNode" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/%.3" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/count%20offered%20values/%.1" regionAsOutput="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/count%20offered%20values"/>
           <node xsi:type="fUML.Syntax.Actions.CompleteActions:ReduceAction" name="reduce IntegerPlus">
-            <reducer xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlus"/>
+            <reducer xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerPlus"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/%.4" lowerBound="1"/>
             <collection name="collection" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/%.3" lowerBound="1" upperBound="-1"/>
           </node>
@@ -7237,7 +7237,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/%.11">
             <argument name="list" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/%.8" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/%.9"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="incomingEdges" outgoing="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/incomingEdges_0" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/%.9"/>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0" incoming="//Activities/IntermediateActivities/ObjectNodeActivation/countOfferedValues_ObjectNodeActivation/incomingEdges_0">
@@ -7308,7 +7308,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/Offer/countOfferedValues_Offer/%.6">
             <argument name="list" incoming="//Activities/IntermediateActivities/Offer/countOfferedValues_Offer/%.3" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/Offer/countOfferedValues_Offer/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="self" outgoing="//Activities/IntermediateActivities/Offer/countOfferedValues_Offer/%.1 //Activities/IntermediateActivities/Offer/countOfferedValues_Offer/%.2" incoming="//Activities/IntermediateActivities/Offer/countOfferedValues_Offer/%"/>
           <edge xsi:type="fUML.Syntax.Activities.IntermediateActivities:ObjectFlow" source="//Activities/IntermediateActivities/Offer/countOfferedValues_Offer/read%20self/result" target="//Activities/IntermediateActivities/Offer/countOfferedValues_Offer/self"/>
@@ -7396,13 +7396,13 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/Offer/hasTokens_Offer/%.8">
             <argument name="list" incoming="//Activities/IntermediateActivities/Offer/hasTokens_Offer/%.3" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/Offer/hasTokens_Offer/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerGreater">
             <argument name="x" incoming="//Activities/IntermediateActivities/Offer/hasTokens_Offer/%.4" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/Offer/hasTokens_Offer/%.5" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/Offer/hasTokens_Offer/%.6"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -7530,13 +7530,13 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/takeOfferedTokens_DecisionNodeActivation/%.4">
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/takeOfferedTokens_DecisionNodeActivation/%.10" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/takeOfferedTokens_DecisionNodeActivation/%.11"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerGreater">
             <argument name="x" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/takeOfferedTokens_DecisionNodeActivation/%.11" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/takeOfferedTokens_DecisionNodeActivation/%.12" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/takeOfferedTokens_DecisionNodeActivation/%.13"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -7729,13 +7729,13 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens_DecisionNodeActivation/%.11">
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens_DecisionNodeActivation/%.10" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens_DecisionNodeActivation/%.12"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerGreater">
             <argument name="x" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens_DecisionNodeActivation/%.12" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens_DecisionNodeActivation/%.13" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/determineOfferedTokens_DecisionNodeActivation/%.14"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -7852,13 +7852,13 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.16">
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.15" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerGreater">
             <argument name="x" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.4" lowerBound="1"/>
             <argument name="y" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.5" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.6"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -7867,7 +7867,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize decisionInputFlow" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.9">
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.8" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.10"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/hasObjectFlowInput_DecisionNodeActivation/%.10" lowerBound="1"/>
@@ -8051,7 +8051,7 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionInputFlowValue_DecisionNodeActivation/%" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionInputFlowValue_DecisionNodeActivation/%.1" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/getDecisionInputFlowValue_DecisionNodeActivation/%.2"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -8148,7 +8148,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize decisionInput" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior_DecisionNodeActivation/%.9">
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior_DecisionNodeActivation/%.8" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior_DecisionNodeActivation/%.10"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -8164,7 +8164,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize decisionInputValue" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior_DecisionNodeActivation/noDecisionInput_true">
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior_DecisionNodeActivation/%.1" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior_DecisionNodeActivation/%.2"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -8180,7 +8180,7 @@
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior_DecisionNodeActivation/%.4" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior_DecisionNodeActivation/%.3" lowerBound="1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/executeDecisionInputBehavior_DecisionNodeActivation/%.5"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -8238,7 +8238,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize incomingEdges" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/%.15">
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/%.4" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/%.13"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="noIncomingEdges" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/noIncomingEdges_true //Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/noIncomingEdges_false" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/%.12"/>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify true" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/noIncomingEdges_true">
@@ -8248,7 +8248,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize edgesWithoutOffer" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/%.16">
             <argument name="list" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/%.6" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/%.7"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals edgesWithoutOffer">
             <second name="second" incoming="//Activities/IntermediateActivities/DecisionNodeActivation/isReady_DecisionNodeActivation/%.7" lowerBound="1"/>
@@ -8406,7 +8406,7 @@
               <argument name="x" incoming="//Activities/IntermediateActivities/ForkedToken/withdraw_ForkedToken/remainingOffersCount%20%3E%200/%.1" lowerBound="1"/>
               <argument name="y" incoming="//Activities/IntermediateActivities/ForkedToken/withdraw_ForkedToken/remainingOffersCount%20%3E%200/%.2" lowerBound="1"/>
               <result name="result" outgoing="//Activities/IntermediateActivities/ForkedToken/withdraw_ForkedToken/remainingOffersCount%20%3E%200/%.3"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
               <value xsi:type="kernel:LiteralInteger"/>
@@ -8421,7 +8421,7 @@
               <argument name="x" incoming="//Activities/IntermediateActivities/ForkedToken/withdraw_ForkedToken/remainingOffersCount%20%3E%200/%.5" lowerBound="1"/>
               <argument name="y" incoming="//Activities/IntermediateActivities/ForkedToken/withdraw_ForkedToken/remainingOffersCount%20%3E%200/%.4" lowerBound="1"/>
               <result name="result" outgoing="//Activities/IntermediateActivities/ForkedToken/withdraw_ForkedToken/remainingOffersCount%20%3E%200/%.9"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerMinus"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerMinus"/>
             </node>
             <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="remainingOffersCount" outgoing="//Activities/IntermediateActivities/ForkedToken/withdraw_ForkedToken/remainingOffersCount%20%3E%200/%.1 //Activities/IntermediateActivities/ForkedToken/withdraw_ForkedToken/remainingOffersCount%20%3E%200/%.5" incoming="//Activities/IntermediateActivities/ForkedToken/withdraw_ForkedToken/remainingOffersCount%20%3E%200/%"/>
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" name="set remainingOffersCount" structuralFeature="//Activities/IntermediateActivities/ForkedToken/remainingOffersCount" replaceAll="true">
@@ -8606,7 +8606,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/JoinNodeActivation/isReady_JoinNodeActivation/%.8">
             <argument name="list" incoming="//Activities/IntermediateActivities/JoinNodeActivation/isReady_JoinNodeActivation/%.3" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/JoinNodeActivation/isReady_JoinNodeActivation/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/JoinNodeActivation/isReady_JoinNodeActivation/%.4" lowerBound="1"/>
@@ -8649,7 +8649,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/JoinNodeActivation/isReady_JoinNodeActivation/%.15">
             <argument name="list" incoming="//Activities/IntermediateActivities/JoinNodeActivation/isReady_JoinNodeActivation/%.11" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/JoinNodeActivation/isReady_JoinNodeActivation/%.12"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/JoinNodeActivation/isReady_JoinNodeActivation/%.12" lowerBound="1"/>
@@ -8696,7 +8696,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.3">
             <argument name="list" incoming="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.4" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.5"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.ExtraStructuredActivities:ExpansionRegion" name="create forked tokens" outgoing="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.9" incoming="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.24" inputElement="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%" outputElement="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.1 //Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.2">
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:CreateObjectAction" name="create ForkedToken" classifier="//Activities/IntermediateActivities/ForkedToken">
@@ -8741,7 +8741,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize forkedTokens" incoming="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.9">
             <argument name="list" incoming="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.8" upperBound="-1"/>
             <result name="result" outgoing="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.17"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Activities/IntermediateActivities/ForkNodeActivation/fire_ForkNodeActivation/%.17" lowerBound="1"/>
@@ -8996,12 +8996,12 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize pins" incoming="//Actions/BasicActions/ActionActivation/hasOffers_ActionActivation/%.6">
             <argument name="list" incoming="//Actions/BasicActions/ActionActivation/hasOffers_ActionActivation/%.4" upperBound="-1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/hasOffers_ActionActivation/%.13"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize ready pins" incoming="//Actions/BasicActions/ActionActivation/hasOffers_ActionActivation/%.7">
             <argument name="list" incoming="//Actions/BasicActions/ActionActivation/hasOffers_ActionActivation/%.5" upperBound="-1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/hasOffers_ActionActivation/%.2"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="is equals">
             <second name="second" incoming="//Actions/BasicActions/ActionActivation/hasOffers_ActionActivation/%.14" lowerBound="1"/>
@@ -9289,13 +9289,13 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/%.9">
             <argument name="list" incoming="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/%.7" upperBound="-1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/%.8"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerGreater">
             <argument name="x" incoming="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/%.8" lowerBound="1"/>
             <argument name="y" incoming="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/%.10" lowerBound="1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/%.11"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="tokensAvailable" outgoing="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/tokensAvailable_true //Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/tokensAvailable_false" incoming="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/%.11"/>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:MergeNode" name="returnFalse" outgoing="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/%.5" incoming="//Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/isReady_false //Actions/BasicActions/ActionActivation/shouldFireAgain_ActionActivation/%.15"/>
@@ -9420,13 +9420,13 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Actions/BasicActions/ActionActivation/sendOffers_ActionActivation/%.7">
             <argument name="list" incoming="//Actions/BasicActions/ActionActivation/sendOffers_ActionActivation/%.6" upperBound="-1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/sendOffers_ActionActivation/%.8"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerGreater">
             <argument name="x" incoming="//Actions/BasicActions/ActionActivation/sendOffers_ActionActivation/%.8" lowerBound="1"/>
             <argument name="y" incoming="//Actions/BasicActions/ActionActivation/sendOffers_ActionActivation/%.9" lowerBound="1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/sendOffers_ActionActivation/%.10"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -9453,7 +9453,7 @@
             <argument name="list" incoming="//Actions/BasicActions/ActionActivation/sendOffers_ActionActivation/%.15" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Actions/BasicActions/ActionActivation/sendOffers_ActionActivation/%.16" lowerBound="1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/sendOffers_ActionActivation/%.17"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -9503,13 +9503,13 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Actions/BasicActions/ActionActivation/isSourceFor_ActionActivation/%.6">
             <argument name="list" incoming="//Actions/BasicActions/ActionActivation/isSourceFor_ActionActivation/%.1" upperBound="-1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/isSourceFor_ActionActivation/%.2"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerGreater">
             <argument name="x" incoming="//Actions/BasicActions/ActionActivation/isSourceFor_ActionActivation/%.2" lowerBound="1"/>
             <argument name="y" incoming="//Actions/BasicActions/ActionActivation/isSourceFor_ActionActivation/%.3" lowerBound="1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/isSourceFor_ActionActivation/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreater"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreater"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 0">
             <value xsi:type="kernel:LiteralInteger"/>
@@ -9531,7 +9531,7 @@
             <argument name="list" incoming="//Actions/BasicActions/ActionActivation/isSourceFor_ActionActivation/%.8" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Actions/BasicActions/ActionActivation/isSourceFor_ActionActivation/%.9" lowerBound="1"/>
             <result name="result" outgoing="//Actions/BasicActions/ActionActivation/isSourceFor_ActionActivation/%.10"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -9806,13 +9806,13 @@
             <argument name="x" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/%.4" lowerBound="1"/>
             <argument name="y" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/%.7" lowerBound="1"/>
             <result name="result" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/%.8"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLess"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerLess"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerLess upper" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/upperLess0_false">
             <argument name="x" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/%.6" lowerBound="1"/>
             <argument name="y" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/%.5" lowerBound="1"/>
             <result name="result" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/%.9"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLess"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerLess"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="upperLess0" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/upperLess0_false //Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/upperLess0_true" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/%.8"/>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="countLessUpper" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/countLessUpper_true" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/%.9"/>
@@ -9830,19 +9830,19 @@
               <argument name="x" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.6" lowerBound="1"/>
               <argument name="y" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.3" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.4"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLess"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerLess"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerMinus">
               <argument name="x" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.7" lowerBound="1"/>
               <argument name="y" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.17" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.8"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerMinus"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerMinus"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call IntegerLess upper-counter" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/upperLess0_false">
               <argument name="x" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.9" lowerBound="1"/>
               <argument name="y" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.8" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.10"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLess"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerLess"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="read count_temp" structuralFeature="//Actions/BasicActions/PinActivation/count_temp">
               <object name="object" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.32" lowerBound="1"/>
@@ -9863,7 +9863,7 @@
               <argument name="x" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.15" lowerBound="1"/>
               <argument name="y" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.18" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.14"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlus"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerPlus"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:AddStructuralFeatureValueAction" name="set count_temp" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.20" structuralFeature="//Actions/BasicActions/PinActivation/count_temp" replaceAll="true">
               <object name="object" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.13" lowerBound="1"/>
@@ -9880,7 +9880,7 @@
               <argument name="x" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.21" lowerBound="1"/>
               <argument name="y" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.22" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.30"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerLess"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerLess"/>
             </node>
             <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:DecisionNode" name="countSmallerUpper" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/countSmallerUpper_true" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.30"/>
             <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call takeOfferedTokens maxCount" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.31" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/countSmallerUpper_true" operation="//Activities/IntermediateActivities/ActivityEdgeInstance/takeOfferedTokens.1">
@@ -9900,7 +9900,7 @@
               <argument name="x" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.25" lowerBound="1"/>
               <argument name="y" incoming="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.26" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.27"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerMinus"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerMinus"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" name="read self">
               <result name="result" outgoing="//Actions/BasicActions/PinActivation/takeOfferedTokens_PinActivation/take%20offered%20tokens/%.32" lowerBound="1"/>
@@ -10055,7 +10055,7 @@
             <argument name="x" incoming="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.4" lowerBound="1"/>
             <argument name="y" incoming="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.5" lowerBound="1"/>
             <result name="result" outgoing="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.6"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerPlus"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerPlus"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="read node" structuralFeature="//Activities/IntermediateActivities/ActivityNodeActivation/node_ActivityNodeActivation">
             <object name="object" incoming="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.7" lowerBound="1"/>
@@ -10070,7 +10070,7 @@
             <argument name="x" incoming="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.6" lowerBound="1"/>
             <argument name="y" incoming="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.12" lowerBound="1"/>
             <result name="result" outgoing="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.9"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/IntegerFunctions/IntegerGreaterOrEquals"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/integerfunctions#//IntegerGreaterOrEquals"/>
           </node>
           <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="self" outgoing="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.2 //Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.3 //Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.7" incoming="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/%.1"/>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify false" incoming="//Actions/BasicActions/InputPinActivation/isReady_InputPinActivation/superIsReady_false">
@@ -10268,7 +10268,7 @@
               <argument name="list" incoming="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.12" lowerBound="1" upperBound="-1"/>
               <argument name="object" incoming="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.13" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.14"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListIndexOf"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListIndexOf"/>
             </node>
             <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="parameter" outgoing="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.1 //Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.5 //Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.13" incoming="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%"/>
             <node xsi:type="fUML.Syntax.Activities.IntermediateActivities:ForkNode" name="parameterValue" outgoing="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.4" incoming="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.3"/>
@@ -10285,7 +10285,7 @@
               <argument name="list" incoming="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.10" lowerBound="1" upperBound="-1"/>
               <argument name="index" incoming="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.14" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/CallActionActivation/initializeInputParameterValues_CallActionActivation/initialize%20input%20parameter%20values/%.16"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadStructuralFeatureAction" name="read ownedParameter">
               <structuralFeature xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Behavior/ownedParameter"/>
@@ -10372,7 +10372,7 @@
               <argument name="list" incoming="//Actions/BasicActions/CallActionActivation/collectOutputParameterValues_CallActionActivation/collect%20output%20parameter%20values/%.2" lowerBound="1" upperBound="-1"/>
               <argument name="index" incoming="//Actions/BasicActions/CallActionActivation/collectOutputParameterValues_CallActionActivation/collect%20output%20parameter%20values/%.5" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/CallActionActivation/collectOutputParameterValues_CallActionActivation/collect%20output%20parameter%20values/%.8"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.BasicActions:CallOperationAction" name="call getOutputParameterValues" operation="//CommonBehaviors/BasicBehaviors/Execution/getOutputParameterValues">
               <result name="outputParameterValues" outgoing="//Actions/BasicActions/CallActionActivation/collectOutputParameterValues_CallActionActivation/collect%20output%20parameter%20values/%.4"/>
@@ -10382,7 +10382,7 @@
               <argument name="list" incoming="//Actions/BasicActions/CallActionActivation/collectOutputParameterValues_CallActionActivation/collect%20output%20parameter%20values/%.4" lowerBound="1" upperBound="-1"/>
               <argument name="object" incoming="//Actions/BasicActions/CallActionActivation/collectOutputParameterValues_CallActionActivation/collect%20output%20parameter%20values/%.10" lowerBound="1"/>
               <result name="result" outgoing="//Actions/BasicActions/CallActionActivation/collectOutputParameterValues_CallActionActivation/collect%20output%20parameter%20values/%.5"/>
-              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListIndexOf"/>
+              <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListIndexOf"/>
             </node>
             <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ReadSelfAction" name="read self">
               <result name="result" outgoing="//Actions/BasicActions/CallActionActivation/collectOutputParameterValues_CallActionActivation/collect%20output%20parameter%20values/%.7" lowerBound="1"/>
@@ -10445,7 +10445,7 @@
           <node xsi:type="fUML.Syntax.Actions.BasicActions:CallBehaviorAction" name="call ListSize" incoming="//Actions/BasicActions/CallBehaviorActionActivation/getCallExecution_CallBehaviorActionActivation/%.18">
             <argument name="list" incoming="//Actions/BasicActions/CallBehaviorActionActivation/getCallExecution_CallBehaviorActionActivation/%.3" upperBound="-1"/>
             <result name="result" outgoing="//Actions/BasicActions/CallBehaviorActionActivation/getCallExecution_CallBehaviorActionActivation/%.4"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListSize"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListSize"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:TestIdentityAction" name="equals">
             <second name="second" incoming="//Actions/BasicActions/CallBehaviorActionActivation/getCallExecution_CallBehaviorActionActivation/%.4" lowerBound="1"/>
@@ -10641,7 +10641,7 @@
             <argument name="list" incoming="//Actions/IntermediateActions/ReadStructuralFeatureActionActivation/doAction_ReadStructuralFeatureActionActivation/%.8" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Actions/IntermediateActions/ReadStructuralFeatureActionActivation/doAction_ReadStructuralFeatureActionActivation/%.9" lowerBound="1"/>
             <result name="result" outgoing="//Actions/IntermediateActions/ReadStructuralFeatureActionActivation/doAction_ReadStructuralFeatureActionActivation/%.10"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>
@@ -10738,7 +10738,7 @@
             <argument name="list" incoming="//Actions/IntermediateActions/AddStructuralFeatureValueActionActivation/doAction_AddStructuralFeatureValueActionActivation/%.11" lowerBound="1" upperBound="-1"/>
             <argument name="index" incoming="//Actions/IntermediateActions/AddStructuralFeatureValueActionActivation/doAction_AddStructuralFeatureValueActionActivation/%.12" lowerBound="1"/>
             <result name="result" outgoing="//Actions/IntermediateActions/AddStructuralFeatureValueActionActivation/doAction_AddStructuralFeatureValueActionActivation/%.18"/>
-            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="pathmap://XMOF_LIBRARY/xmof_library.xmof#//PrimitiveBehaviors/ListFunctions/ListGet"/>
+            <behavior xsi:type="fUML.Syntax.CommonBehaviors.BasicBehaviors:FunctionBehavior" href="http://xmofstandardlibrary/1.0/primitivebehaviors/listfunctions#//ListGet"/>
           </node>
           <node xsi:type="fUML.Syntax.Actions.IntermediateActions:ValueSpecificationAction" name="specify 1">
             <value xsi:type="kernel:LiteralInteger" value="1"/>

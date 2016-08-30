@@ -2,21 +2,32 @@
  */
 package petrinetConfiguration.impl;
 
+import java.io.IOException;
+
+import java.net.URL;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.modelexecution.xmof.Syntax.Classes.Kernel.KernelFactory;
-import org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEClassImpl;
-import org.modelexecution.xmof.Syntax.Classes.Kernel.impl.BehavioredEOperationImpl;
+
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
 
 import petrinet.PetrinetPackage;
-import petrinetConfiguration.NetConfiguration;
+
 import petrinetConfiguration.PetrinetConfigurationFactory;
 import petrinetConfiguration.PetrinetConfigurationPackage;
-import petrinetConfiguration.PlaceConfiguration;
-import petrinetConfiguration.TransitionConfiguration;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,9 +36,13 @@ import petrinetConfiguration.TransitionConfiguration;
  * @generated
  */
 public class PetrinetConfigurationPackageImpl extends EPackageImpl implements PetrinetConfigurationPackage {
-	
-	protected KernelFactory xmofKernelFactory = null;
-	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected String packageFilename = "petrinetConfiguration.ecore";
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,11 +77,10 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see petrinetConfiguration.PetrinetConfigurationPackage#eNS_URI
 	 * @see #init()
-	 * @generated not
+	 * @generated
 	 */
 	private PetrinetConfigurationPackageImpl() {
 		super(eNS_URI, PetrinetConfigurationFactory.eINSTANCE);
-		xmofKernelFactory = KernelFactory.eINSTANCE;
 	}
 
 	/**
@@ -84,8 +98,6 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static PetrinetConfigurationPackage init() {
@@ -98,12 +110,14 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 
 		// Initialize simple dependencies
 		PetrinetPackage.eINSTANCE.eClass();
+		IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
-		// Create package meta-data objects
-		thePetrinetConfigurationPackage.createPackageContents();
+		// Load packages
+		thePetrinetConfigurationPackage.loadPackage();
 
-		// Initialize created meta-data
-		thePetrinetConfigurationPackage.initializePackageContents();
+		// Fix loaded packages
+		thePetrinetConfigurationPackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePetrinetConfigurationPackage.freeze();
@@ -120,6 +134,9 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * @generated
 	 */
 	public EClass getNetConfiguration() {
+		if (netConfigurationEClass == null) {
+			netConfigurationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(PetrinetConfigurationPackage.eNS_URI).getEClassifiers().get(0);
+		}
 		return netConfigurationEClass;
 	}
 
@@ -128,25 +145,10 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getNetConfiguration__Main() {
-		return netConfigurationEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getNetConfiguration__Run() {
-		return netConfigurationEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPlaceConfiguration() {
+		if (placeConfigurationEClass == null) {
+			placeConfigurationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(PetrinetConfigurationPackage.eNS_URI).getEClassifiers().get(1);
+		}
 		return placeConfigurationEClass;
 	}
 
@@ -156,25 +158,7 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * @generated
 	 */
 	public EAttribute getPlaceConfiguration_Tokens() {
-		return (EAttribute)placeConfigurationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getPlaceConfiguration__RemoveToken() {
-		return placeConfigurationEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getPlaceConfiguration__AddToken() {
-		return placeConfigurationEClass.getEOperations().get(1);
+        return (EAttribute)getPlaceConfiguration().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -183,25 +167,10 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * @generated
 	 */
 	public EClass getTransitionConfiguration() {
+		if (transitionConfigurationEClass == null) {
+			transitionConfigurationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(PetrinetConfigurationPackage.eNS_URI).getEClassifiers().get(2);
+		}
 		return transitionConfigurationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getTransitionConfiguration__IsEnabled() {
-		return transitionConfigurationEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getTransitionConfiguration__Fire() {
-		return transitionConfigurationEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -218,135 +187,66 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isCreated = false;
+	private boolean isLoaded = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
+	 * Laods the package and any sub-packages from their serialized form.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents() {
-		if (isCreated) return;
-		isCreated = true;
+	public void loadPackage() {
+		if (isLoaded) return;
+		isLoaded = true;
 
-		// Create classes and their features
-		netConfigurationEClass = createEClass(NET_CONFIGURATION);
-		createEOperation(netConfigurationEClass, NET_CONFIGURATION___MAIN);
-		createEOperation(netConfigurationEClass, NET_CONFIGURATION___RUN);
-
-		placeConfigurationEClass = createEClass(PLACE_CONFIGURATION);
-		createEAttribute(placeConfigurationEClass, PLACE_CONFIGURATION__TOKENS);
-		createEOperation(placeConfigurationEClass, PLACE_CONFIGURATION___REMOVE_TOKEN);
-		createEOperation(placeConfigurationEClass, PLACE_CONFIGURATION___ADD_TOKEN);
-
-		transitionConfigurationEClass = createEClass(TRANSITION_CONFIGURATION);
-		createEOperation(transitionConfigurationEClass, TRANSITION_CONFIGURATION___IS_ENABLED);
-		createEOperation(transitionConfigurationEClass, TRANSITION_CONFIGURATION___FIRE);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private boolean isInitialized = false;
-
-	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void initializePackageContents() {
-		if (isInitialized) return;
-		isInitialized = true;
-
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
-
-		// Obtain other dependent packages
-		PetrinetPackage thePetrinetPackage = (PetrinetPackage)EPackage.Registry.INSTANCE.getEPackage(PetrinetPackage.eNS_URI);
-
-		// Create type parameters
-
-		// Set bounds for type parameters
-
-		// Add supertypes to classes
-		netConfigurationEClass.getESuperTypes().add(thePetrinetPackage.getNet());
-		placeConfigurationEClass.getESuperTypes().add(thePetrinetPackage.getPlace());
-		transitionConfigurationEClass.getESuperTypes().add(thePetrinetPackage.getTransition());
-
-		// Initialize classes, features, and operations; add parameters
-		initEClass(netConfigurationEClass, NetConfiguration.class, "NetConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getNetConfiguration__Main(), null, "main", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getNetConfiguration__Run(), null, "run", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(placeConfigurationEClass, PlaceConfiguration.class, "PlaceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlaceConfiguration_Tokens(), ecorePackage.getEInt(), "tokens", null, 0, 1, PlaceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getPlaceConfiguration__RemoveToken(), null, "removeToken", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getPlaceConfiguration__AddToken(), null, "addToken", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(transitionConfigurationEClass, TransitionConfiguration.class, "TransitionConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getTransitionConfiguration__IsEnabled(), ecorePackage.getEBoolean(), "isEnabled", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getTransitionConfiguration__Fire(), null, "fire", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		// Create resource
+		URL url = getClass().getResource(packageFilename);
+		if (url == null) {
+			throw new RuntimeException("Missing serialized package: " + packageFilename);
+		}
+		URI uri = URI.createURI(url.toString());
+		Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
+		try {
+			resource.load(null);
+		}
+		catch (IOException exception) {
+			throw new WrappedException(exception);
+		}
+		initializeFromLoadedEPackage(this, (EPackage)resource.getContents().get(0));
 		createResource(eNS_URI);
-
-		// Create annotations
-		// http://www.modelexecution.org/xmof
-		createXmofAnnotations();
 	}
 
+
 	/**
-	 * Initializes the annotations for <b>http://www.modelexecution.org/xmof</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createXmofAnnotations() {
-		String source = "http://www.modelexecution.org/xmof";	
-		addAnnotation
-		  (getNetConfiguration__Run(), 
-		   source, 
-		   new String[] {
-			 "Step", "true"
-		   });	
-		addAnnotation
-		  (getTransitionConfiguration__Fire(), 
-		   source, 
-		   new String[] {
-			 "Step", "true"
-		   });
+	private boolean isFixed = false;
+
+	/**
+	 * Fixes up the loaded package, to make it appear as if it had been programmatically built.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void fixPackageContents() {
+		if (isFixed) return;
+		isFixed = true;
+		fixEClassifiers();
 	}
 
-	//TODO: for now added manually
+	/**
+	 * Sets the instance class on the given classifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
-	protected EClass createEClass(int id) {
-		BehavioredEClassImpl c = (BehavioredEClassImpl)xmofKernelFactory.createBehavioredEClass();
-		c.setClassifierID(id);
-		getEClassifiers().add(c);
-		return c;
+	protected void fixInstanceClass(EClassifier eClassifier) {
+		if (eClassifier.getInstanceClassName() == null) {
+			eClassifier.setInstanceClassName("petrinetConfiguration." + eClassifier.getName());
+			setGeneratedClassName(eClassifier);
+		}
 	}
-	
-	//TODO: for now added manually
-	@Override
-	protected void createEOperation(EClass owner, int id) {
-		BehavioredEOperationImpl o = (BehavioredEOperationImpl) xmofKernelFactory
-				.createBehavioredEOperation();
-		o.setOperationID(id);
-		owner.getEOperations().add(o);
-	}
-	
+
 } //PetrinetConfigurationPackageImpl

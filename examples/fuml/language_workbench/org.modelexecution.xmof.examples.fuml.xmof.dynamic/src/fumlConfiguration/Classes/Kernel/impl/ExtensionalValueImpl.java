@@ -8,12 +8,8 @@ import fumlConfiguration.Classes.Kernel.KernelPackage;
 import fumlConfiguration.Loci.LociPackage;
 import fumlConfiguration.Loci.Locus;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -207,21 +203,6 @@ public abstract class ExtensionalValueImpl extends CompoundValueImpl implements 
 				return getLocus_ExtensionalValue() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case KernelPackage.EXTENSIONAL_VALUE___DESTROY:
-				destroy();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ExtensionalValueImpl

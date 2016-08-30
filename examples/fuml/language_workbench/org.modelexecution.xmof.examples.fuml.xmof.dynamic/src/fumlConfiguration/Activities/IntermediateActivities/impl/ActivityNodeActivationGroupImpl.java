@@ -8,8 +8,6 @@ import fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivatio
 import fumlConfiguration.Activities.IntermediateActivities.ActivityNodeActivationGroup;
 import fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -426,58 +424,6 @@ public class ActivityNodeActivationGroupImpl extends MinimalEObjectImpl.Containe
 				return nodeActivations != null && !nodeActivations.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___ACTIVATE__ELIST_ELIST:
-				activate((EList<ActivityNode>)arguments.get(0), (EList<ActivityEdge>)arguments.get(1));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___GET_OUTPUT_PARAMETER_NODE_ACTIVATIONS__ELIST:
-				getOutputParameterNodeActivations((EList<EObject>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___CREATE_NODE_ACTIVATIONS__ELIST:
-				createNodeActivations((EList<ActivityNode>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___CREATE_EDGE_INSTANCES__ELIST:
-				createEdgeInstances((EList<ActivityEdge>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___RUN__ELIST:
-				run((EList<ActivityNodeActivation>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___CREATE_NODE_ACTIVATION__ACTIVITYNODE_ACTIVITYNODEACTIVATION:
-				createNodeActivation((ActivityNode)arguments.get(0), (ActivityNodeActivation)arguments.get(1));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___GET_ACTIVITY_EXECUTION__ACTIVITYEXECUTION:
-				getActivityExecution((ActivityExecution)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___GET_NODE_ACTIVATION__ACTIVITYNODE_ACTIVITYNODEACTIVATION:
-				getNodeActivation((ActivityNode)arguments.get(0), (ActivityNodeActivation)arguments.get(1));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___RUN_NODES__ELIST:
-				runNodes((EList<ActivityNodeActivation>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___GET_INITIALLY_ENABLED_NODE_ACTIVATIONS__ELIST_ELIST:
-				getInitiallyEnabledNodeActivations((EList<ActivityNodeActivation>)arguments.get(0), (EList<ActivityNodeActivation>)arguments.get(1));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___CHECK_INCOMING_EDGES__ELIST_ELIST_BOOLEAN:
-				checkIncomingEdges((EList<ActivityNodeActivation>)arguments.get(0), (EList<ActivityNodeActivation>)arguments.get(1), (Boolean)arguments.get(2));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___GET_SOURCE_ACTIVATIONS__ELIST_ACTIVITYEDGEINSTANCE_ELIST:
-				getSourceActivations((EList<ActivityNodeActivation>)arguments.get(0), (ActivityEdgeInstance)arguments.get(1), (EList<ActivityNodeActivation>)arguments.get(2));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_NODE_ACTIVATION_GROUP___TERMINATE_ALL:
-				terminateAll();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ActivityNodeActivationGroupImpl

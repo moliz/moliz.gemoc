@@ -45,6 +45,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.uml.UMLPackage;
 
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
@@ -140,6 +144,8 @@ public class IntermediateActionsFewStepsPackageImpl extends EPackageImpl impleme
 
 		// Initialize simple dependencies
 		UMLPackage.eINSTANCE.eClass();
+		IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		FumlConfigurationFewStepsPackageImpl theFumlConfigurationFewStepsPackage = (FumlConfigurationFewStepsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) instanceof FumlConfigurationFewStepsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) : FumlConfigurationFewStepsPackage.eINSTANCE);

@@ -10,8 +10,6 @@ import fumlConfigurationFewSteps.LociFewSteps.Executor;
 import fumlConfigurationFewSteps.LociFewSteps.LociFewStepsPackage;
 import fumlConfigurationFewSteps.LociFewSteps.Locus;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -224,25 +222,6 @@ public class ExecutorImpl extends MinimalEObjectImpl.Container implements Execut
 				return getLocus_Executor() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case LociFewStepsPackage.EXECUTOR___EXECUTE__BEHAVIOR_OBJECT_ELIST_ELIST:
-				execute((Behavior)arguments.get(0), (fumlConfigurationFewSteps.ClassesFewSteps.KernelFewSteps.Object)arguments.get(1), (EList<ParameterValue>)arguments.get(2), (EList<ParameterValue>)arguments.get(3));
-				return null;
-			case LociFewStepsPackage.EXECUTOR___EVALUATE__VALUESPECIFICATION_VALUE:
-				evaluate((ValueSpecification)arguments.get(0), (Value)arguments.get(1));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ExecutorImpl

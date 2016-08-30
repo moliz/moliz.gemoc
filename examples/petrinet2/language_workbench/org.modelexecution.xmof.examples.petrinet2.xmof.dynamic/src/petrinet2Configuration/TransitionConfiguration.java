@@ -2,6 +2,8 @@
  */
 package petrinet2Configuration;
 
+import org.eclipse.emf.ecore.EObject;
+
 import petrinet2.Transition;
 
 /**
@@ -26,9 +28,9 @@ public interface TransitionConfiguration extends Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
+	 * @model
 	 * @generated
 	 */
-	boolean isEnabled();
+	void isEnabled(EObject enabled);
 
 } // TransitionConfiguration

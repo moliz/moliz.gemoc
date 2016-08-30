@@ -9,8 +9,6 @@ import fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitie
 import fumlConfiguration.Activities.IntermediateActivities.Offer;
 import fumlConfiguration.Activities.IntermediateActivities.Token;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -529,34 +527,6 @@ public class ActivityEdgeInstanceImpl extends MinimalEObjectImpl.Container imple
 				return offers != null && !offers.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case IntermediateActivitiesPackage.ACTIVITY_EDGE_INSTANCE___HAS_OFFER__BOOLEAN:
-				hasOffer((Boolean)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_EDGE_INSTANCE___TAKE_OFFERED_TOKENS__ELIST:
-				takeOfferedTokens((EList<Token>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_EDGE_INSTANCE___COUNT_OFFERED_VALUES__INT:
-				countOfferedValues((Integer)arguments.get(0));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_EDGE_INSTANCE___TAKE_OFFERED_TOKENS__ELIST_INT:
-				takeOfferedTokens((EList<Token>)arguments.get(0), (Integer)arguments.get(1));
-				return null;
-			case IntermediateActivitiesPackage.ACTIVITY_EDGE_INSTANCE___SEND_OFFER__ELIST:
-				sendOffer((EList<Token>)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ActivityEdgeInstanceImpl

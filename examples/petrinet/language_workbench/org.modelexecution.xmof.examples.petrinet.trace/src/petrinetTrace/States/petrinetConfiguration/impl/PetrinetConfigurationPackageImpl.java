@@ -5,25 +5,17 @@ package petrinetTrace.States.petrinetConfiguration.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.gemoc.executionframework.engine.mse.MsePackage;
-
+import fr.inria.diverse.trace.commons.model.trace.TracePackage;
 import petrinetTrace.PetrinetTracePackage;
-
 import petrinetTrace.States.StatesPackage;
-
 import petrinetTrace.States.impl.StatesPackageImpl;
-
 import petrinetTrace.States.petrinetConfiguration.PetrinetConfigurationFactory;
 import petrinetTrace.States.petrinetConfiguration.PetrinetConfigurationPackage;
 import petrinetTrace.States.petrinetConfiguration.TracedPlaceConfiguration;
-
 import petrinetTrace.Steps.StepsPackage;
-
 import petrinetTrace.Steps.impl.StepsPackageImpl;
-
 import petrinetTrace.impl.PetrinetTracePackageImpl;
 
 /**
@@ -87,7 +79,7 @@ public class PetrinetConfigurationPackageImpl extends EPackageImpl implements Pe
 		isInited = true;
 
 		// Initialize simple dependencies
-		MsePackage.eINSTANCE.eClass();
+		TracePackage.eINSTANCE.eClass();
 		petrinetConfiguration.PetrinetConfigurationPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies

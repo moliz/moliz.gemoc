@@ -106,7 +106,7 @@ public interface ActivityNodeActivationGroup extends EObject {
 	 * @model outputParameterNodeActivationsMany="true"
 	 * @generated
 	 */
-	EObject getOutputParameterNodeActivations(EList<EObject> outputParameterNodeActivations);
+	void getOutputParameterNodeActivations(EList<EObject> outputParameterNodeActivations);
 
 	/**
 	 * <!-- begin-user-doc -->

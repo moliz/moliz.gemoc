@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<iml:Header xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iml="http://cdlflex.tuwien.ac.at" id="00" name="simpleGantt">
+  <members xsi:type="iml:State" id="000" name="InitialStep_Gantt" init="true" current="true"/>
+  <members xsi:type="iml:StateTransition" id="100" name="T_init->Divergence" booleanGuard="//@members.2"/>
+  <members xsi:type="iml:Variable" id="210" name="V_init" type="boolean" content="true" initialValue="true"/>
+  <members xsi:type="iml:SimultaneousDivergence" id="500"/>
+  <members xsi:type="iml:State" id="001" name="S_InitialiseRobot1" activities="//@members.5"/>
+  <members xsi:type="iml:Activity" id="300" name="TA_InitialiseRobot1" sd="6"/>
+  <members xsi:type="iml:StateTransition" id="101" name="ST_InitialiseRobot1->SysExecManRobot1" booleanGuard="//@members.7"/>
+  <members xsi:type="iml:Variable" id="201" name="V_InitialiseRobot1" type="boolean" content="false" initialValue="false"/>
+  <members xsi:type="iml:State" id="002" name="Sys_ExecManRobot1_1"/>
+  <members xsi:type="iml:State" id="003" name="S_Lift skid" activities="//@members.10"/>
+  <members xsi:type="iml:Activity" id="301" name="TA_Lift skid" d="7" sd="9"/>
+  <members xsi:type="iml:Variable" id="202" name="V_S_Lift skid" type="boolean" content="false" initialValue="false"/>
+  <members xsi:type="iml:StateTransition" id="102" name="ST_S-Lift skid->SysExecManRobot1" booleanGuard="//@members.11"/>
+  <members xsi:type="iml:State" id="004" name="Sys_ExecManRobot1_2"/>
+  <members xsi:type="iml:SimultaneousConvergence" id="501"/>
+  <members xsi:type="iml:StateTransition" id="103" name="ST_Convergence->S_ExecManRobot1"/>
+  <members xsi:type="iml:State" id="005" name="S_ExecManufacturingRobot1" activities="//@members.19"/>
+  <members xsi:type="iml:StateTransition" id="104" name="ST_ExecManRobot1->TerminalStep" booleanGuard="//@members.18"/>
+  <members xsi:type="iml:Variable" id="203" name="V_ExecManufacturingRobot1" type="boolean" content="false" initialValue="false"/>
+  <members xsi:type="iml:Activity" id="302" name="TA_ExecManufacturingRobot1" sd="9"/>
+  <members xsi:type="iml:State" id="006" name="TerminalStep_Gantt" terminal="true"/>
+  <members xsi:type="iml:Connection" id="400" source="//@members.0" target="//@members.1"/>
+  <members xsi:type="iml:Connection" id="401" source="//@members.3" target="//@members.4"/>
+  <members xsi:type="iml:Connection" id="402" source="//@members.4" target="//@members.6"/>
+  <members xsi:type="iml:Connection" id="403" source="//@members.6" target="//@members.8"/>
+  <members xsi:type="iml:Connection" id="404" source="//@members.8" target="//@members.14"/>
+  <members xsi:type="iml:Connection" id="405" source="//@members.3" target="//@members.9"/>
+  <members xsi:type="iml:Connection" id="406" source="//@members.9" target="//@members.12"/>
+  <members xsi:type="iml:Connection" id="407" source="//@members.12" target="//@members.13"/>
+  <members xsi:type="iml:Connection" id="408" source="//@members.13" target="//@members.14"/>
+  <members xsi:type="iml:Connection" id="409" source="//@members.14" target="//@members.15"/>
+  <members xsi:type="iml:Connection" id="410" source="//@members.15" target="//@members.16"/>
+  <members xsi:type="iml:Connection" id="411" source="//@members.16" target="//@members.17"/>
+  <members xsi:type="iml:Connection" id="412" source="//@members.17" target="//@members.20"/>
+  <members xsi:type="iml:Connection" id="4001" source="//@members.1" target="//@members.3"/>
+</iml:Header>

@@ -6,6 +6,8 @@ import fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -24,7 +26,7 @@ import org.eclipse.uml2.uml.Element;
  * @model
  * @generated
  */
-public interface ElementConfiguration extends Element {
+public interface ElementConfiguration extends EObject, Element {
 	/**
 	 * Returns the value of the '<em><b>Semantic Visitor</b></em>' reference list.
 	 * The list contents are of type {@link fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor}.

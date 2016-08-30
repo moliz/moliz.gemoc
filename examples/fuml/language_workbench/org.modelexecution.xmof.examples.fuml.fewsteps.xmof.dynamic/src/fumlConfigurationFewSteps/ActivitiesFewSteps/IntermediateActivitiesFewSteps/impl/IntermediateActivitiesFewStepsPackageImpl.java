@@ -40,13 +40,16 @@ import fumlConfigurationFewSteps.impl.FumlConfigurationFewStepsPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.uml.UMLPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage;
+
+import org.modelexecution.xmof.standardlibrary.XMOF.PrimitiveBehaviors.ListFunctions.ListFunctionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -227,6 +230,8 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 
 		// Initialize simple dependencies
 		UMLPackage.eINSTANCE.eClass();
+		IntegerFunctionsPackage.eINSTANCE.eClass();
+		ListFunctionsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		FumlConfigurationFewStepsPackageImpl theFumlConfigurationFewStepsPackage = (FumlConfigurationFewStepsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) instanceof FumlConfigurationFewStepsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FumlConfigurationFewStepsPackage.eNS_URI) : FumlConfigurationFewStepsPackage.eINSTANCE);
@@ -287,24 +292,6 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getActivityExecution__CollectOutputParameterValues() {
-        return getActivityExecution().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityExecution__SetParameterValueValues__ParameterValue_ActivityParameterNodeActivation() {
-        return getActivityExecution().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getActivityNodeActivationGroup() {
 		if (activityNodeActivationGroupEClass == null) {
 			activityNodeActivationGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesFewStepsPackage.eNS_URI).getEClassifiers().get(1);
@@ -337,123 +324,6 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 	 */
 	public EReference getActivityNodeActivationGroup_NodeActivations() {
         return (EReference)getActivityNodeActivationGroup().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__Activate__EList_EList() {
-        return getActivityNodeActivationGroup().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__GetOutputParameterNodeActivations__EList() {
-        return getActivityNodeActivationGroup().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__CreateNodeActivations__EList() {
-        return getActivityNodeActivationGroup().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__CreateEdgeInstances__EList() {
-        return getActivityNodeActivationGroup().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__Run__EList() {
-        return getActivityNodeActivationGroup().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__CreateNodeActivation__ActivityNode_ActivityNodeActivation() {
-        return getActivityNodeActivationGroup().getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__GetActivityExecution__ActivityExecution() {
-        return getActivityNodeActivationGroup().getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__GetNodeActivation__ActivityNode_ActivityNodeActivation() {
-        return getActivityNodeActivationGroup().getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__RunNodes__EList() {
-        return getActivityNodeActivationGroup().getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__GetInitiallyEnabledNodeActivations__EList_EList() {
-        return getActivityNodeActivationGroup().getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__CheckIncomingEdges__EList_EList_boolean() {
-        return getActivityNodeActivationGroup().getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__GetSourceActivations__EList_ActivityEdgeInstance_EList() {
-        return getActivityNodeActivationGroup().getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivationGroup__TerminateAll() {
-        return getActivityNodeActivationGroup().getEOperations().get(12);
 	}
 
 	/**
@@ -548,195 +418,6 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getActivityNodeActivation__GetTokens__EList() {
-        return getActivityNodeActivation().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__CreateNodeActivations() {
-        return getActivityNodeActivation().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__CreateEdgeInstances() {
-        return getActivityNodeActivation().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__Run() {
-        return getActivityNodeActivation().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__ReceiveOffer() {
-        return getActivityNodeActivation().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__IsReady__boolean() {
-        return getActivityNodeActivation().getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__TakeOfferedTokens__EList() {
-        return getActivityNodeActivation().getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__Fire__EList() {
-        return getActivityNodeActivation().getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__IsRunning__boolean() {
-        return getActivityNodeActivation().getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__HasOffers__boolean() {
-        return getActivityNodeActivation().getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__RemoveToken__Token_int() {
-        return getActivityNodeActivation().getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__AddTokens__EList() {
-        return getActivityNodeActivation().getEOperations().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__SendOffers__EList() {
-        return getActivityNodeActivation().getEOperations().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__AddToken__Token() {
-        return getActivityNodeActivation().getEOperations().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__IsSourceFor__boolean_ActivityEdgeInstance() {
-        return getActivityNodeActivation().getEOperations().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__GetNodeActivation__ActivityNode_ActivityNodeActivation() {
-        return getActivityNodeActivation().getEOperations().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__Terminate() {
-        return getActivityNodeActivation().getEOperations().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__ClearTokens() {
-        return getActivityNodeActivation().getEOperations().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__GetExecutionLocus__Locus() {
-        return getActivityNodeActivation().getEOperations().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__GetActivityExecution__ActivityExecution() {
-        return getActivityNodeActivation().getEOperations().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityNodeActivation__GetExecutionContext__Object() {
-        return getActivityNodeActivation().getEOperations().get(20);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getToken() {
 		if (tokenEClass == null) {
 			tokenEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesFewStepsPackage.eNS_URI).getEClassifiers().get(4);
@@ -751,51 +432,6 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 	 */
 	public EReference getToken_Holder() {
         return (EReference)getToken().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getToken__Withdraw() {
-        return getToken().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getToken__IsWithdrawn__boolean() {
-        return getToken().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getToken__Transfer__ActivityNodeActivation_Token() {
-        return getToken().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getToken__GetValue__Value() {
-        return getToken().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getToken__IsControl__boolean() {
-        return getToken().getEOperations().get(4);
 	}
 
 	/**
@@ -860,51 +496,6 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getActivityEdgeInstance__HasOffer__boolean() {
-        return getActivityEdgeInstance().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityEdgeInstance__TakeOfferedTokens__EList() {
-        return getActivityEdgeInstance().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityEdgeInstance__CountOfferedValues__int() {
-        return getActivityEdgeInstance().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityEdgeInstance__TakeOfferedTokens__EList_int() {
-        return getActivityEdgeInstance().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getActivityEdgeInstance__SendOffer__EList() {
-        return getActivityEdgeInstance().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getControlNodeActivation() {
 		if (controlNodeActivationEClass == null) {
 			controlNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesFewStepsPackage.eNS_URI).getEClassifiers().get(6);
@@ -938,51 +529,6 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getObjectNodeActivation__CountUnofferedTokens__int() {
-        return getObjectNodeActivation().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getObjectNodeActivation__SendUnofferedTokens() {
-        return getObjectNodeActivation().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getObjectNodeActivation__GetUnofferedTokens__EList() {
-        return getObjectNodeActivation().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getObjectNodeActivation__CountOfferedValues__int() {
-        return getObjectNodeActivation().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getObjectNodeActivation__TakeUnofferedTokens__EList() {
-        return getObjectNodeActivation().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getOffer() {
 		if (offerEClass == null) {
 			offerEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesFewStepsPackage.eNS_URI).getEClassifiers().get(8);
@@ -1004,119 +550,11 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getOffer__HasTokens__boolean() {
-        return getOffer().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getOffer__GetOfferedTokens__EList() {
-        return getOffer().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getOffer__CountOfferedValues__int() {
-        return getOffer().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getOffer__RemoveWithdrawnTokens() {
-        return getOffer().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDecisionNodeActivation() {
 		if (decisionNodeActivationEClass == null) {
 			decisionNodeActivationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(IntermediateActivitiesFewStepsPackage.eNS_URI).getEClassifiers().get(9);
 		}
 		return decisionNodeActivationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDecisionNodeActivation__RemoveJoinedControlTokens__EList_EList_EList() {
-        return getDecisionNodeActivation().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDecisionNodeActivation__GetDecisionValues__EList_EList() {
-        return getDecisionNodeActivation().getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDecisionNodeActivation__DetermineOfferedTokens__EList_EList_ActivityEdgeInstance_EList_boolean() {
-        return getDecisionNodeActivation().getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDecisionNodeActivation__Test__ValueSpecification_Value_boolean() {
-        return getDecisionNodeActivation().getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDecisionNodeActivation__HasObjectFlowInput__boolean() {
-        return getDecisionNodeActivation().getEOperations().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDecisionNodeActivation__GetDecisionInputFlowValue__Value() {
-        return getDecisionNodeActivation().getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDecisionNodeActivation__ExecuteDecisionInputBehavior__Value_Value_Value() {
-        return getDecisionNodeActivation().getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDecisionNodeActivation__GetDecisionInputFlowInstance__ActivityEdgeInstance() {
-        return getDecisionNodeActivation().getEOperations().get(7);
 	}
 
 	/**
@@ -1189,15 +627,6 @@ public class IntermediateActivitiesFewStepsPackageImpl extends EPackageImpl impl
 	 */
 	public EAttribute getForkedToken_BaseTokenIsWithdrawn() {
         return (EAttribute)getForkedToken().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getForkedToken__Initialize() {
-        return getForkedToken().getEOperations().get(0);
 	}
 
 	/**

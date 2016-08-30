@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.gemoc.executionframework.engine.mse.SequentialStep;
+import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
 
-import org.gemoc.executionframework.engine.mse.impl.TraceImpl;
+import fr.inria.diverse.trace.commons.model.trace.impl.TraceImpl;
 
 import petrinetTrace.PetrinetTracePackage;
 import petrinetTrace.SpecificTrace;

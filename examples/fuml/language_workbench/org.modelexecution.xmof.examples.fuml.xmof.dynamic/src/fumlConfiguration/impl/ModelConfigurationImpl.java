@@ -2,15 +2,19 @@
  */
 package fumlConfiguration.impl;
 
-import fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.internal.impl.ModelImpl;
 
 import fumlConfiguration.ElementConfiguration;
 import fumlConfiguration.FumlConfigurationPackage;
-
-import fumlConfiguration.Loci.ExecutionEnvironment;
-import fumlConfiguration.Loci.LociPackage;
-import fumlConfiguration.Loci.SemanticVisitor;
-
 import fumlConfiguration.ModelConfiguration;
 import fumlConfiguration.NamedElementConfiguration;
 import fumlConfiguration.NamespaceConfiguration;
@@ -18,24 +22,10 @@ import fumlConfiguration.PackageConfiguration;
 import fumlConfiguration.PackageableElementConfiguration;
 import fumlConfiguration.ParameterableElementConfiguration;
 import fumlConfiguration.TemplateableElementConfiguration;
-
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.eclipse.uml2.uml.Behavior;
-
-import org.eclipse.uml2.uml.internal.impl.ModelImpl;
+import fumlConfiguration.CommonBehaviors.BasicBehaviors.ParameterValue;
+import fumlConfiguration.Loci.ExecutionEnvironment;
+import fumlConfiguration.Loci.LociPackage;
+import fumlConfiguration.Loci.SemanticVisitor;
 
 /**
  * <!-- begin-user-doc -->
@@ -282,22 +272,6 @@ public class ModelConfigurationImpl extends ModelImpl implements ModelConfigurat
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case FumlConfigurationPackage.MODEL_CONFIGURATION___MAIN__EXECUTIONENVIRONMENT_BEHAVIOR_OBJECT_ELIST_ELIST:
-				main((ExecutionEnvironment)arguments.get(0), (Behavior)arguments.get(1), (fumlConfiguration.Classes.Kernel.Object)arguments.get(2), (EList<ParameterValue>)arguments.get(3), (EList<ParameterValue>)arguments.get(4));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ModelConfigurationImpl

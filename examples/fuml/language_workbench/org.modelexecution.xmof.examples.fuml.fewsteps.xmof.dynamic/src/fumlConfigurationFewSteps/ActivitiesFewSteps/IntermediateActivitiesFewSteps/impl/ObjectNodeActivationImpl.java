@@ -6,8 +6,6 @@ import fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSte
 import fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.ObjectNodeActivation;
 import fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.Token;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -201,34 +199,6 @@ public abstract class ObjectNodeActivationImpl extends ActivityNodeActivationImp
 				return offeredTokenCount != OFFERED_TOKEN_COUNT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case IntermediateActivitiesFewStepsPackage.OBJECT_NODE_ACTIVATION___COUNT_UNOFFERED_TOKENS__INT:
-				countUnofferedTokens((Integer)arguments.get(0));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.OBJECT_NODE_ACTIVATION___SEND_UNOFFERED_TOKENS:
-				sendUnofferedTokens();
-				return null;
-			case IntermediateActivitiesFewStepsPackage.OBJECT_NODE_ACTIVATION___GET_UNOFFERED_TOKENS__ELIST:
-				getUnofferedTokens((EList<Token>)arguments.get(0));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.OBJECT_NODE_ACTIVATION___COUNT_OFFERED_VALUES__INT:
-				countOfferedValues((Integer)arguments.get(0));
-				return null;
-			case IntermediateActivitiesFewStepsPackage.OBJECT_NODE_ACTIVATION___TAKE_UNOFFERED_TOKENS__ELIST:
-				takeUnofferedTokens((EList<Token>)arguments.get(0));
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
