@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+-->
+<plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace" class="fumlConfigurationTrace.FumlConfigurationTracePackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_Steps" class="fumlConfigurationTrace.Steps.StepsPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_States" class="fumlConfigurationTrace.States.StatesPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_fumlConfiguration" class="fumlConfigurationTrace.States.fumlConfiguration.FumlConfigurationPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_Loci" class="fumlConfigurationTrace.States.fumlConfiguration.Loci.LociPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_IntermediateActivities" class="fumlConfigurationTrace.States.fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_Kernel" class="fumlConfigurationTrace.States.fumlConfiguration.Classes.Kernel.KernelPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_BasicBehaviors" class="fumlConfigurationTrace.States.fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_BasicActions" class="fumlConfigurationTrace.States.fumlConfiguration.Actions.BasicActions.BasicActionsPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_IntermediateActions" class="fumlConfigurationTrace.States.fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_Input" class="fumlConfigurationTrace.States.fumlConfiguration.Input.InputPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fumlConfigurationTrace -->
+    <package uri="fumlConfigurationTrace_IntegerFunctions" class="fumlConfigurationTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage" genModel="model/fumlConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon Class="org.modelexecution.xmof.examples.fuml.trace.tracemanager.FumlConfigurationTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.fuml.trace" Name="fumlConfiguration MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to fumlConfiguration language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" />
+  </extension>
+</plugin>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fuml.xmof -->
+      <package
+            uri="http://www.modelexecution.org/xmof/example/fuml/configuration"
+            class="fumlConfiguration.FumlConfigurationPackage"
+            genModel="model-gen/fuml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fuml.xmof -->
+      <package
+            uri="http://www.modelexecution.org/xmof/example/fuml/configuration/loci"
+            class="fumlConfiguration.Loci.LociPackage"
+            genModel="model-gen/fuml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fuml.xmof -->
+      <package
+            uri="http://www.modelexecution.org/xmof/example/fuml/configuration/classes/kernel"
+            class="fumlConfiguration.Classes.Kernel.KernelPackage"
+            genModel="model-gen/fuml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fuml.xmof -->
+      <package
+            uri="http://www.modelexecution.org/xmof/example/fuml/configuration/commonbehaviors/basicbehaviors"
+            class="fumlConfiguration.CommonBehaviors.BasicBehaviors.BasicBehaviorsPackage"
+            genModel="model-gen/fuml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fuml.xmof -->
+      <package
+            uri="http://www.modelexecution.org/xmof/example/fuml/configuration/primitivebehaviors/integerfunctions"
+            class="fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage"
+            genModel="model-gen/fuml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fuml.xmof -->
+      <package
+            uri="http://www.modelexecution.org/xmof/example/fuml/configuration/activities/intermediateactivities"
+            class="fumlConfiguration.Activities.IntermediateActivities.IntermediateActivitiesPackage"
+            genModel="model-gen/fuml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fuml.xmof -->
+      <package
+            uri="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/basicactions"
+            class="fumlConfiguration.Actions.BasicActions.BasicActionsPackage"
+            genModel="model-gen/fuml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fuml.xmof -->
+      <package
+            uri="http://www.modelexecution.org/xmof/example/fuml/configuration/actions/intermediateactions"
+            class="fumlConfiguration.Actions.IntermediateActions.IntermediateActionsPackage"
+            genModel="model-gen/fuml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated fuml.xmof -->
+      <package
+            uri="http://www.modelexecution.org/xmof/example/fuml/configuration/input"
+            class="fumlConfiguration.Input.InputPackage"
+            genModel="model-gen/fuml.genmodel"/>
+   </extension>
+</plugin>

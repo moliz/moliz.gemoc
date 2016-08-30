@@ -155,4 +155,5 @@ public class GemocModelSynchronizer extends XMOFBasedModelSynchronizer {
 	private TransactionalEditingDomain getTransactionalEditingDomain() {
 		return (TransactionalEditingDomain) getEditingDomain();
 	}
+
 }

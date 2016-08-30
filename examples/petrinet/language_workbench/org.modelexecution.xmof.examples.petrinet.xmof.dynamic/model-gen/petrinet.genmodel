@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.petrinet.xmof.dynamic/src"
+    modelPluginID="org.modelexecution.xmof.examples.petrinet.xmof.dynamic" modelName="Petrinet"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="8.0"
+    copyrightFields="false" usedGenPackages="../../org.modelexecution.xmof.examples.petrinet/model/petrinet.genmodel#//petrinet platform:/plugin/org.modelexecution.xmof.standardlibrary/model-gen/xmof_library.genmodel#//XMOF"
+    importOrganizing="true">
+  <foreignModel>platform:/resource/org.modelexecution.xmof.examples.petrinet.xmof.dynamic/xmof/petrinet.xmof</foreignModel>
+  <genPackages prefix="PetrinetConfiguration" disposableProviderFactory="true" loadInitialization="true"
+      ecorePackage="../xmof/petrinet.xmof#/">
+    <genClasses ecoreClass="../xmof/petrinet.xmof#//NetConfiguration">
+      <genOperations ecoreOperation="../xmof/petrinet.xmof#//NetConfiguration/main"/>
+      <genOperations ecoreOperation="../xmof/petrinet.xmof#//NetConfiguration/run"/>
+    </genClasses>
+    <genClasses ecoreClass="../xmof/petrinet.xmof#//PlaceConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../xmof/petrinet.xmof#//PlaceConfiguration/tokens"/>
+      <genOperations ecoreOperation="../xmof/petrinet.xmof#//PlaceConfiguration/removeToken"/>
+      <genOperations ecoreOperation="../xmof/petrinet.xmof#//PlaceConfiguration/addToken"/>
+    </genClasses>
+    <genClasses ecoreClass="../xmof/petrinet.xmof#//TransitionConfiguration">
+      <genOperations ecoreOperation="../xmof/petrinet.xmof#//TransitionConfiguration/isEnabled">
+        <genParameters ecoreParameter="../xmof/petrinet.xmof#//TransitionConfiguration/isEnabled/return"/>
+      </genOperations>
+      <genOperations ecoreOperation="../xmof/petrinet.xmof#//TransitionConfiguration/fire"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

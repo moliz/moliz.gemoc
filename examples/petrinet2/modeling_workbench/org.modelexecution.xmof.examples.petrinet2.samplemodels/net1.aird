@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:petrinet2="http://petrinet2/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_rWMZMPgWEeWKl48CccOz2g" selectedViews="_rWeGAPgWEeWKl48CccOz2g" version="8.1.1">
   <models xmi:type="petrinet2:Net" href="net1.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="net2.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_121754/net1.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163736/net1.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163804/net1.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163820/net2.petrinet2#/"/>
-  <models xmi:type="petrinet2:Net" href="gemoc-gen/execution/execution-20160401_163846/net2.petrinet2#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_rWeGAPgWEeWKl48CccOz2g" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_ICnhMPfyEeW17J_I5G3Vcg" name="petrinet2 net1">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_ICpWYPfyEeW17J_I5G3Vcg" source="GMF_DIAGRAMS">

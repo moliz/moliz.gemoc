@@ -27,14 +27,18 @@ Require-Bundle: org.eclipse.ui,
  org.modelexecution.xmof.vm,
  org.modelexecution.fuml.convert,
  org.eclipse.emf.transaction,
- org.gemoc.xdsmlframework.xdsml.model,
  org.gemoc.execution.sequential.javaengine.ui,
  fr.inria.diverse.trace.gemoc;bundle-version="1.0.0",
  fr.inria.diverse.trace.api;bundle-version="1.0.0",
  org.eclipse.xtext,
- fr.inria.diverse.melange.metamodel;bundle-version="0.1.0"
+ fr.inria.diverse.melange.metamodel;bundle-version="0.1.0",
+ org.gemoc.execution.sequential.javaxdsml.api,
+ fr.inria.diverse.trace.commons.model,
+ fr.inria.diverse.melange;bundle-version="0.1.0",
+ fr.inria.diverse.melange.lib;bundle-version="0.1.0",
+ org.eclipse.uml2.common,
+ org.gemoc.execution.sequential.javaengine
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.modelexecution.xmof.gemoc.engine,
  org.modelexecution.xmof.gemoc.engine.ui.commons
-Import-Package: org.gemoc.execution.sequential.javaxdsml.api.extensions.languages

@@ -2,7 +2,9 @@ package org.modelexecution.xmof.gemoc.engine.internal;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.command.Command;
@@ -18,6 +20,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.gemoc.commons.eclipse.emf.EMFResource;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.ObjectValue;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
@@ -25,7 +28,7 @@ import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.Paramete
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValueDefinition;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.GenericXMOFAnimationServices;
-import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
+import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.melange.metamodel.melange.Element;
@@ -37,6 +40,8 @@ public class XMOFBasedModelLoader {
 	private IExecutionContext executionContext;
 
 	private ConfigurationObjectMap configurationMap;
+
+	private Set<EPackage> xmofConfigurationMetamodelPackages = new HashSet<EPackage>();
 
 	public XMOFBasedModelLoader(IExecutionContext executionContext) {
 		this.executionContext = executionContext;
@@ -60,16 +65,27 @@ public class XMOFBasedModelLoader {
 				.setConfigurationObjectMap(configurationMap);
 
 		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
-				getParameterValueConfiguration(inputParameterValues),
-				getEditingDomain());
+				getParameterValueConfiguration(inputParameterValues), getEditingDomain());
 	}
 
 	private Collection<EObject> loadInputModelElements() {
-		return getModelResource().getContents();
+		EList<EObject> inputModelElements = new BasicEList<EObject>();
+		for(Resource resource : getInputModelResources()) {
+			inputModelElements.addAll(resource.getContents());
+		}		
+		return inputModelElements;
+	}
+	
+	private Collection<Resource> getInputModelResources() {
+		Set<Resource> inputModelResources = new HashSet<Resource>();
+		Resource modelResource = getModelResource();
+		inputModelResources.add(modelResource);
+		inputModelResources.addAll(EMFResource.getRelatedResources(modelResource));
+		return inputModelResources;
 	}
 
 	private Collection<EObject> getParameterValueObjects(
-			Collection<ParameterValue> inputParameterValues) {
+			Collection<ParameterValue> inputParameterValues) { 
 		Collection<EObject> parameterValueObjects = new BasicEList<EObject>();
 		for (ParameterValue parameterValue : inputParameterValues) {
 			for (Value value : parameterValue.getValues()) {
@@ -82,6 +98,17 @@ public class XMOFBasedModelLoader {
 				}
 			}
 		}
+		
+		// add referenced objects that reside in different resources
+		if(parameterValueObjects.size() > 0) {
+			EObject parameterValueObject = parameterValueObjects.iterator().next();
+			Resource parameterValueObjectResource = parameterValueObject.eResource();
+			for (Resource relatedResource : EMFResource.getRelatedResources(parameterValueObjectResource)) {
+				if (relatedResource != null && relatedResource != parameterValueObjectResource)
+					parameterValueObjects.addAll(relatedResource.getContents());
+			}
+		}
+		
 		return parameterValueObjects;
 	}
 
@@ -134,33 +161,39 @@ public class XMOFBasedModelLoader {
 
 	private String getXMOFModelFilePath() {
 		String xmofModelFilePath = "";
-		Resource xdsmlFileResource = loadPluginResource(getXDSMLModelPat());
+		String xdsmlModelPath = getXDSMLModelPath();
+		Resource xdsmlFileResource = loadPluginResource(xdsmlModelPath);
 		ModelTypingSpace modelTypingSpace = (ModelTypingSpace) xdsmlFileResource
 				.getContents().get(0);
+		String languageFQN = executionContext.getLanguageDefinitionExtension().getName();
 		for (Element element : modelTypingSpace.getElements()) {
 			if (element instanceof Language) {
 				Language language = (Language) element;
-				xmofModelFilePath = language.getXmof();
+				if (languageFQN.endsWith(language.getName())) {
+					xmofModelFilePath = language.getXmof();
+					break;
+				}
 			}
 		}
-		return xmofModelFilePath.replace("platform:/resource//", "");
+		return xmofModelFilePath.replace("platform:/resource/", "");
 	}
 
 	private Collection<EPackage> loadConfigurationMetamodel() {
 		String confMetamodelPath = getXMOFModelFilePath();
-		Resource resource = loadPluginResource(confMetamodelPath);
+		Resource confMetamodelResource = loadPluginResource(confMetamodelPath);
 
-		Collection<EPackage> confMMPackages = new ArrayList<EPackage>();
-		for (EObject eObject : resource.getContents()) {
+		Collection<EPackage> confMMPackages = new HashSet<EPackage>();
+		for (EObject eObject : confMetamodelResource.getContents()) {
 			if (eObject instanceof EPackage) {
 				EPackage ePackage = (EPackage) eObject;
 				if (EPackage.Registry.INSTANCE.containsKey(ePackage.getNsURI())) {
-					EPackage registeredPackage = (EPackage) EPackage.Registry.INSTANCE
-							.get(ePackage.getNsURI());
+					EPackage registeredPackage = EPackage.Registry.INSTANCE
+							.getEPackage(ePackage.getNsURI());
 					confMMPackages.add(registeredPackage);
 				} else {
 					confMMPackages.add(ePackage);
 				}
+				xmofConfigurationMetamodelPackages.add(ePackage);
 			}
 		}
 		return confMMPackages;
@@ -217,11 +250,11 @@ public class XMOFBasedModelLoader {
 	}
 
 	private String getInitializationModelPath() {
-		return ((RunConfiguration) executionContext.getRunConfiguration())
+		return ((IXMOFRunConfiguration) executionContext.getRunConfiguration())
 				.getModelInitializationModel();
 	}
 
-	private String getXDSMLModelPat() {
+	private String getXDSMLModelPath() {
 		return executionContext.getLanguageDefinitionExtension()
 				.getXDSMLFilePath();
 	}
@@ -234,4 +267,5 @@ public class XMOFBasedModelLoader {
 		ResourceSet resourceSet = getResourceSet();
 		return TransactionUtil.getEditingDomain(resourceSet);
 	}
+
 }
