@@ -7,7 +7,7 @@
     xmlns:fUML.Semantics.CommonBehaviors.BasicBehaviors="http://www.modelexecution.org/xmof/semantics/commonbehaviors/basicbehaviors">
   <parameterValues>
     <parameter
-        href="platform:/plugin/org.modelexecution.xmof.examples.fuml.xmof.dynamic/xmof/fuml.xmof#//ModelConfiguration/main.1/executionEnvironment"/>
+        href="http://www.modelexecution.org/xmof/example/fuml/configuration#//ModelConfiguration/main.1/executionEnvironment"/>
     <values
         xsi:type="fUML.Semantics.Classes.Kernel:ObjectValue">
       <eObject
@@ -16,7 +16,7 @@
   </parameterValues>
   <parameterValues>
     <parameter
-        href="platform:/plugin/org.modelexecution.xmof.examples.fuml.xmof.dynamic/xmof/fuml.xmof#//ModelConfiguration/main.1/behavior"/>
+        href="http://www.modelexecution.org/xmof/example/fuml/configuration#//ModelConfiguration/main.1/behavior"/>
     <values
         xsi:type="fUML.Semantics.Classes.Kernel:ObjectValue">
       <eObject
@@ -25,11 +25,11 @@
   </parameterValues>
   <parameterValues>
     <parameter
-        href="platform:/plugin/org.modelexecution.xmof.examples.fuml.xmof.dynamic/xmof/fuml.xmof#//ModelConfiguration/main.1/context"/>
+        href="http://www.modelexecution.org/xmof/example/fuml/configuration#//ModelConfiguration/main.1/context"/>
   </parameterValues>
   <parameterValues>
     <parameter
-        href="platform:/plugin/org.modelexecution.xmof.examples.fuml.xmof.dynamic/xmof/fuml.xmof#//ModelConfiguration/main.1/inputs"/>
+        href="http://www.modelexecution.org/xmof/example/fuml/configuration#//ModelConfiguration/main.1/inputs"/>
     <values
         xsi:type="fUML.Semantics.Classes.Kernel:ObjectValue">
       <eObject
