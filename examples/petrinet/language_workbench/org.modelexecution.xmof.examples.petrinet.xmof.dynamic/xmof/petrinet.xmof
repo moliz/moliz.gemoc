@@ -182,7 +182,9 @@
   <eClassifiers xsi:type="kernel:BehavioredEClass" name="TransitionConfiguration">
     <eSuperTypes href="http://petrinet/1.0#//Transition"/>
     <eOperations xsi:type="kernel:BehavioredEOperation" name="isEnabled" method="//TransitionConfiguration/isEnabled.1">
-      <eParameters xsi:type="kernel:DirectedParameter" name="return" direction="RETURN"/>
+      <eParameters xsi:type="kernel:DirectedParameter" name="return" direction="RETURN">
+      	<eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eParameters>
     </eOperations>
     <eOperations xsi:type="kernel:BehavioredEOperation" name="fire" method="//TransitionConfiguration/fire.1">
       <eAnnotations source="http://www.modelexecution.org/xmof">
