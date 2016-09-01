@@ -8,7 +8,7 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.core.controller;
 
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.core.decorator.DecoratorService;
@@ -17,6 +17,7 @@ import org.modelexecution.xmof.animation.core.handler.DiagramHandler;
 import org.modelexecution.xmof.animation.core.mapping.MappingService;
 import org.modelexecution.xmof.animation.core.mapping.Match;
 import org.modelexecution.xmof.animation.core.ui.Activator;
+import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 
@@ -41,14 +42,14 @@ public abstract class AnimationController {
 	 * 
 	 * @param model
 	 *            xMOF model that should be animated
-	 * @param resource
+	 * @param modelURI
 	 *            that contains the configuration model
 	 * @param concreteHandler
 	 *            open or shows activity diagrams
 	 */
-	public AnimationController(Resource resource, DiagramHandler concreteHandler) {
+	public AnimationController(URI modelURI, XMOFBasedModel model, DiagramHandler concreteHandler) {
 
-		controllerMap = new ControllerMap(resource);
+		controllerMap = new ControllerMap(model);
 		mappingService = new MappingService(controllerMap.getActivityNames());
 		this.diagramHandler = concreteHandler;
 		DecoratorService.reset();

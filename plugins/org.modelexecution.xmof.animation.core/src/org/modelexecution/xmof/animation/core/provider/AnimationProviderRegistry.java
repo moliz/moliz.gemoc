@@ -8,7 +8,7 @@ import java.util.List;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.common.util.URI;
 import org.modelexecution.xmof.animation.core.ui.Activator;
 
 public class AnimationProviderRegistry {
@@ -49,14 +49,14 @@ public class AnimationProviderRegistry {
 		return instance;
 	}
 
-	public boolean haveProvider(Resource resource) {
-		return !getProviders(resource).isEmpty();
+	public boolean haveProvider(URI xmofModelURI) {
+		return !getProviders(xmofModelURI).isEmpty();
 	}
 
-	public List<IAnimationProvider> getProviders(Resource resource) {
+	public List<IAnimationProvider> getProviders(URI xmofModelURI) {
 		List<IAnimationProvider> possibleProviders = new ArrayList<>();
 		for (IAnimationProvider provider : registeredProviders) {
-			if (provider.canAnimateModel(resource)) {
+			if (provider.canAnimateModel(xmofModelURI)) {
 				possibleProviders.add(provider);
 			}
 		}

@@ -8,14 +8,14 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.core.handler;
 
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.common.util.URI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 
 public abstract class DiagramHandler {
-	protected Resource modelResource;
+	protected URI xmofModelURI;
 
-	public DiagramHandler(Resource resource) {
-		this.modelResource = resource;
+	public DiagramHandler(URI modelURI) {
+		this.xmofModelURI = modelURI;
 	}
 
 	public abstract void openOrShowDiagram(Activity activity);

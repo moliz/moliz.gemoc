@@ -127,12 +127,13 @@ public abstract class DiagramDecorator {
 			}
 		}
 	}
-	
+
 	private void decorateLastEdgeOfExpansionRegion() {
-		if(previouslyActiveNode==null || previouslyActiveNode.getOutgoing().isEmpty()) return;
-		for(ActivityEdge edge: previouslyActiveNode.getOutgoing()) {
+		if (previouslyActiveNode == null || previouslyActiveNode.getOutgoing().isEmpty())
+			return;
+		for (ActivityEdge edge : previouslyActiveNode.getOutgoing()) {
 			ActivityNode target = DiagramUtil.retreiveTargetNode(edge);
-			if(target instanceof ExpansionRegion) {
+			if (target instanceof ExpansionRegion) {
 				decorateElement(edge, ElementState.TRAVERSED);
 			}
 		}

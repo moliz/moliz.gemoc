@@ -10,7 +10,6 @@ package org.modelexecution.xmof.animation.graphiti.handler;
 
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
@@ -33,8 +32,8 @@ public class GraphitiDiagramHandler extends DiagramHandler {
 
 	private KernelEditor activeEditor;
 
-	public GraphitiDiagramHandler(Resource modelResource) {
-		super(modelResource);
+	public GraphitiDiagramHandler(URI xmofModelURI) {
+		super(xmofModelURI);
 		PlatformUI.getWorkbench().getDisplay().asyncExec((new Runnable() {
 			@Override
 			public void run() {
@@ -67,8 +66,7 @@ public class GraphitiDiagramHandler extends DiagramHandler {
 	}
 
 	private IEditorInput getEditorInput() {
-		URI modelPathURI = modelResource.getURI();
-		return new URIEditorInput(modelPathURI);
+		return new URIEditorInput(xmofModelURI);
 	}
 
 	public KernelEditor getKernelEditor() {

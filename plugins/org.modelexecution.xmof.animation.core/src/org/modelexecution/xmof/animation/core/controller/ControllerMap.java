@@ -1,87 +1,83 @@
 package org.modelexecution.xmof.animation.core.controller;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.EOperation;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
-import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEClass;
-import org.modelexecution.xmof.Syntax.CommonBehaviors.BasicBehaviors.Behavior;
+import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
 import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
+import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class ControllerMap {
 	private Map<String, Activity> activityMap;
 	private Map<String, String> activityCallerMap;
 	private Map<String, DiagramDecorator> diagramDecoratorMap;
-	private Resource xmofModelResource;
 
-	public ControllerMap(Resource xmofModelResource) {
-		this.xmofModelResource = xmofModelResource;
+	public ControllerMap(XMOFBasedModel model) {
+
 		diagramDecoratorMap = new HashMap<String, DiagramDecorator>();
 		activityCallerMap = new HashMap<>();
-		prepareMap();
+		prepareMap(model);
 	}
 
 	public Activity getActivityByName(String name) {
 		return activityMap.get(name);
 	}
 
-	private void prepareMap() {
+	private void prepareMap(XMOFBasedModel model) {
 		activityMap = new HashMap<>();
-		List<EPackage> epackages = getConfigurationPackages();
-		for (Activity activity : obtainActivities(epackages)) {
+		for (Activity activity : obtainActivities(obtainDistinctModelElements(model))) {
 			String name = activity.getName();
 			activityMap.put(name, activity);
+
 		}
 
 		return;
 
 	}
 
-	private List<EPackage> getConfigurationPackages() {
-		List<EPackage> list = new ArrayList<>();
-		for (EObject eObj : xmofModelResource.getContents()) {
-			if (eObj instanceof EPackage) {
-				list.add((EPackage) eObj);
+	private Collection<EObject> obtainDistinctModelElements(XMOFBasedModel model) {
+		Map<String, EObject> elementMap = new HashMap<>();
+		for (EObject element : model.getModelElements()) {
+			if (!elementMap.containsKey(element.getClass().getName())) {
+				elementMap.put(element.getClass().getName(), element);
 			}
 		}
-		return list;
+		return elementMap.values();
+
 	}
 
-	private Set<Activity> obtainActivities(List<EPackage> epackages) {
+	private Set<Activity> obtainActivities(Collection<EObject> modelElements) {
 		Set<Activity> activities = new HashSet<>();
-		for (EPackage epackage : epackages) {
-			activities.addAll(obtainActivities(epackage.eContents()));
+		for (EObject element : modelElements) {
+			activities.addAll(obtainActivities(element));
 		}
 		return activities;
 	}
 
-	private Collection<Activity> obtainActivities(EList<EObject> eContents) {
+	private Set<Activity> obtainActivities(EObject modelElement) {
 		Set<Activity> activities = new HashSet<>();
-		for (EObject eObj : eContents) {
-			if (eObj instanceof BehavioredEClass) {
-				activities.addAll(getActivities((BehavioredEClass) eObj));
+		EClass eClass = modelElement.eClass();
+		for (EOperation eOperation : eClass.getEOperations()) {
+			if (eOperation instanceof BehavioredEOperation) {
+				activities.add(getActivity((BehavioredEOperation) eOperation));
 			}
+
 		}
 		return activities;
+
 	}
 
-	private Set<Activity> getActivities(BehavioredEClass behavioredClass) {
-		Set<Activity> activities = new HashSet<>();
-		for (Behavior behavior : behavioredClass.getOwnedBehavior()) {
-			if (behavior instanceof Activity) {
-				activities.add((Activity) behavior);
-			}
-		}
-		return activities;
+	private Activity getActivity(BehavioredEOperation eOperation) {
+		if (!eOperation.getMethod().isEmpty())
+			return (Activity) eOperation.getMethod().get(0);
+		return null;
 	}
 
 	public DiagramDecorator getDecoratorByName(String name) {

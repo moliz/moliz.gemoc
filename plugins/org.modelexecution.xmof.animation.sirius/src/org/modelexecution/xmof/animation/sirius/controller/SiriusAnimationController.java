@@ -8,12 +8,13 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.sirius.controller;
 
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.common.util.URI;
 import org.modelexecution.xmof.animation.core.controller.AnimationController;
 import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.core.mapping.Match;
 import org.modelexecution.xmof.animation.sirius.decorator.SiriusDiagramDecorator;
 import org.modelexecution.xmof.animation.sirius.handler.SiriusDiagramHandler;
+import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 /**
  * Animation controller for Sirius implementation. It extends the Animation
@@ -27,8 +28,8 @@ import org.modelexecution.xmof.animation.sirius.handler.SiriusDiagramHandler;
  */
 public class SiriusAnimationController extends AnimationController {
 
-	public SiriusAnimationController(Resource resource) {
-		super(resource, new SiriusDiagramHandler(resource));
+	public SiriusAnimationController(URI modelURI, XMOFBasedModel model) {
+		super(modelURI, model, new SiriusDiagramHandler(modelURI));
 	}
 
 	@Override

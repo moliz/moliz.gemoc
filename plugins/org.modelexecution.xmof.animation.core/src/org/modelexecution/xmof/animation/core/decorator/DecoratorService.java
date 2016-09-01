@@ -48,7 +48,7 @@ public class DecoratorService {
 	 * @return boolean active node or not
 	 */
 	public static boolean isActiveNode(ActivityNode node) {
-		
+
 		String key = getActivityName(node);
 		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
@@ -67,7 +67,7 @@ public class DecoratorService {
 	 * @return boolean traversed node or not
 	 */
 	public static boolean isTraversedNode(ActivityNode node) {
-		
+
 		String key = getActivityName(node);
 		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {

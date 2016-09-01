@@ -8,11 +8,12 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.graphiti.controller;
 
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.common.util.URI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.core.controller.AnimationController;
 import org.modelexecution.xmof.animation.graphiti.decorator.GraphitiDiagramDecorator;
 import org.modelexecution.xmof.animation.graphiti.handler.GraphitiDiagramHandler;
+import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 /**
  * Animation controller for Graphiti implementation. It extends the Animation
@@ -26,8 +27,8 @@ import org.modelexecution.xmof.animation.graphiti.handler.GraphitiDiagramHandler
  */
 public class GraphitiAnimationController extends AnimationController {
 
-	public GraphitiAnimationController(Resource modelResource) {
-		super(modelResource, new GraphitiDiagramHandler(modelResource));
+	public GraphitiAnimationController(URI xmofModelURI, XMOFBasedModel model) {
+		super(xmofModelURI, model, new GraphitiDiagramHandler(xmofModelURI));
 	}
 
 	@Override

@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
@@ -26,6 +27,7 @@ import org.modelexecution.xmof.animation.core.controller.AnimationController;
 import org.modelexecution.xmof.animation.core.provider.AnimationProviderRegistry;
 import org.modelexecution.xmof.animation.core.provider.IAnimationProvider;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
+import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
 
@@ -66,17 +68,19 @@ public class ModelAnimator implements IEngineAddon {
 		PlatformUI.getWorkbench().getDisplay().syncExec((new Runnable() {
 			@Override
 			public void run() {
-				Resource modelResource = engine.getModelLoader().getXMOFModelResource();
-				animationController = retrieveController(modelResource);
+
+				animationController = retrieveController(engine);
 			}
 		}));
 
 	}
 
-	private AnimationController retrieveController(Resource modelResource) {
+	private AnimationController retrieveController(XMOFExecutionEngine engine) {
+		URI xmofModelURI = retrieveXMOFModelURI(engine);
+		XMOFBasedModel model = engine.getRawVirtualMachine().getModel();
 		AnimationProviderRegistry registry = AnimationProviderRegistry.getInstance();
-		if (registry.haveProvider(modelResource)) {
-			List<IAnimationProvider> possibleProviders = registry.getProviders(modelResource);
+		if (registry.haveProvider(xmofModelURI)) {
+			List<IAnimationProvider> possibleProviders = registry.getProviders(xmofModelURI);
 			IAnimationProvider provider = null;
 			if (possibleProviders.size() > 1) {
 				provider = letUserSelectProvider(possibleProviders);
@@ -85,9 +89,14 @@ public class ModelAnimator implements IEngineAddon {
 
 				provider = possibleProviders.get(0);
 			}
-			return provider.retrieveController(modelResource);
+			return provider.createController(xmofModelURI, model);
 		}
 		return null;
+	}
+
+	private URI retrieveXMOFModelURI(XMOFExecutionEngine engine) {
+		Resource modelResource = engine.getModelLoader().getXMOFModelResource();
+		return modelResource.getURI();
 	}
 
 	private IAnimationProvider letUserSelectProvider(List<IAnimationProvider> possibleProviders) {

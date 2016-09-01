@@ -15,7 +15,6 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.session.Session;
@@ -51,16 +50,16 @@ public class SiriusDiagramHandler extends DiagramHandler {
 	private static String SIRIUS_SPECIFICATION_FILE = "representations.aird";
 	private URI airdURI;
 
-	public SiriusDiagramHandler(Resource resource) {
-		super(resource);
+	public SiriusDiagramHandler(URI modelURI) {
+		super(modelURI);
 		this.airdURI = createURI();
 		killPreviousSiriusSession(airdURI);
 
 	}
 
 	private URI createURI() {
-		URI siriusURI = URI.createURI("platform:/" + modelResource.getURI().segment(0) + "/"
-				+ modelResource.getURI().segment(1) + "/" + SIRIUS_SPECIFICATION_FILE);
+		URI siriusURI = URI.createURI("platform:/" + xmofModelURI.segment(0) + "/" + xmofModelURI.segment(1) + "/"
+				+ SIRIUS_SPECIFICATION_FILE);
 		return siriusURI;
 	}
 
