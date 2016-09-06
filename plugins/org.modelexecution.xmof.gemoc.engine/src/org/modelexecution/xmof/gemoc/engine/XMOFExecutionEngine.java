@@ -246,8 +246,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 	
 	@Override
-	public void dispose() {
-		super.dispose();
+	public void finishDispose() {
 		this.configurationMap = null;
 		this.vm = null;
 	}
