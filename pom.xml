@@ -21,6 +21,7 @@
 		<tycho-version>0.25.0</tycho-version>
 		<project.build.sourceEncoding>UTF8</project.build.sourceEncoding>
 		<xtend.version>2.9.1</xtend.version>
+		<tycho.scmUrl>scm:git:https://github.com/moliz/moliz.gemoc.git</tycho.scmUrl>
 	</properties>
 
 	<repositories>
