@@ -2,7 +2,7 @@
 <feature
       id="org.modelexecution.xmof.gemoc.feature"
       label="xMOF GEMOC Integration"
-      version="1.0.0.qualifier">
+      version="0.1.0.qualifier">
 
    <description url="https://github.com/moliz/moliz.gemoc">
       Contains the xMOF engine for GEMOC, the code generator for xMOF models, and the trace addon generator for xMOF.

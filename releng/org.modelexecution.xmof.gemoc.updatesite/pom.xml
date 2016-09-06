@@ -12,4 +12,6 @@
 	<artifactId>org.modelexecution.xmof.gemoc.updatesite</artifactId>
 	<packaging>eclipse-repository</packaging>
 
+	<groupId>org.modelexecution</groupId>
+	<version>0.1.0-SNAPSHOT</version>
 </project> 

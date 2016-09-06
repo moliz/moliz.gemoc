@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>org.modelexecution</groupId>
 	<artifactId>fr.inria.diverse.trace.gemoc.generator.xmof</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 
 
