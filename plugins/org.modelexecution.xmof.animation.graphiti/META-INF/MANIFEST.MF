@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.graphiti.ui,
  org.eclipse.graphiti,
- org.modelexecution.xmof.diagram
+ org.modelexecution.xmof.diagram,
+ fr.inria.diverse.trace.commons.model
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.ecore.presentation,

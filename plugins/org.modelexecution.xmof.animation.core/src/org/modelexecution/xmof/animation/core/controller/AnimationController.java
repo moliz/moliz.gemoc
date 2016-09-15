@@ -81,7 +81,7 @@ public abstract class AnimationController {
 	protected void handleMain(Match match) {
 		initializeDecorators();
 		Activity activity = controllerMap.getActivityByName(match.getXmofElementName());
-		openOrCreateActivityDiagram(activity);
+		openOrShowDiagram(activity);
 		activeDecorator = controllerMap.getDecoratorByName(activity.getName());
 		DecoratorService.intializeContainer(activity.getName());
 	}
@@ -92,7 +92,7 @@ public abstract class AnimationController {
 	 * @param activity
 	 *            Activity diagram
 	 */
-	protected void openOrCreateActivityDiagram(Activity activity) {
+	protected void openOrShowDiagram(Activity activity) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 			@Override
 			public void run() {
@@ -116,7 +116,7 @@ public abstract class AnimationController {
 	 */
 	protected void handleActivity(Match match) {
 		Activity activity = controllerMap.getActivityByName(match.getXmofElementName());
-		openOrCreateActivityDiagram(activity);
+		openOrShowDiagram(activity);
 		controllerMap.addCallingActivity(activity.getName(), activeDecorator.getActivity().getName());
 
 		activeDecorator = controllerMap.getDecoratorByName((activity.getName()));
@@ -176,7 +176,7 @@ public abstract class AnimationController {
 				if (callingActivity != null) {
 					activeDecorator = controllerMap.getDecoratorByName(callingActivity);
 					if (activeDecorator.decorateActivityElement(match)) {
-						openOrCreateActivityDiagram(controllerMap.getActivityByName(callingActivity));
+						openOrShowDiagram(controllerMap.getActivityByName(callingActivity));
 					}
 					return true;
 				}

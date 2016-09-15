@@ -34,7 +34,7 @@ public class GraphitiDiagramHandler extends DiagramHandler {
 
 	public GraphitiDiagramHandler(URI xmofModelURI) {
 		super(xmofModelURI);
-		PlatformUI.getWorkbench().getDisplay().asyncExec((new Runnable() {
+		PlatformUI.getWorkbench().getDisplay().syncExec((new Runnable() {
 			@Override
 			public void run() {
 				openModel();

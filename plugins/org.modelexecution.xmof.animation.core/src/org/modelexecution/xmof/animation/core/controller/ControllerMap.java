@@ -103,6 +103,10 @@ public class ControllerMap {
 
 	public void addDecorator(String key, DiagramDecorator decorator) {
 		diagramDecoratorMap.put(key, decorator);
+	
 
 	}
+	
+	
+	
 }
