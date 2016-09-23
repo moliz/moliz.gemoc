@@ -14,4 +14,20 @@ package org.modelexecution.xmof.examples.iml.sequentialiml.iml;
  * @generated
  */
 public interface SelectionConvergence extends IdentifyableElement, ConnectionPoint {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	boolean isEnabled();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void doFire();
+
 } // SelectionConvergence

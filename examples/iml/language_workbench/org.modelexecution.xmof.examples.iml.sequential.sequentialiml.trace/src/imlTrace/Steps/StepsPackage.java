@@ -66,7 +66,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getSpecificStep()
 	 * @generated
 	 */
-	int SPECIFIC_STEP = 17;
+	int SPECIFIC_STEP = 27;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -121,7 +121,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_ExecuteActivities_AbstractSubStep()
 	 * @generated
 	 */
-	int IML_STATE_EXECUTE_ACTIVITIES_ABSTRACT_SUB_STEP = 14;
+	int IML_STATE_EXECUTE_ACTIVITIES_ABSTRACT_SUB_STEP = 24;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -416,6 +416,372 @@ public interface StepsPackage extends EPackage {
 	int IML_HEADER_EXECUTE_IMPLICIT_STEP_OPERATION_COUNT = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link imlTrace.Steps.impl.Iml_SelectionConvergence_DoFireImpl <em>Iml Selection Convergence Do Fire</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.impl.Iml_SelectionConvergence_DoFireImpl
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionConvergence_DoFire()
+	 * @generated
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE__MSEOCCURRENCE = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE__ENDING_STATE = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE__STARTING_STATE = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP__STARTING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Sub Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE__SUB_STEPS = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Iml Selection Convergence Do Fire</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_FEATURE_COUNT = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Caller</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE___GET_CALLER = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml Selection Convergence Do Fire</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_OPERATION_COUNT = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep <em>Iml Selection Convergence Do Fire Abstract Sub Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionConvergence_DoFire_AbstractSubStep()
+	 * @generated
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP = 5;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__MSEOCCURRENCE = SPECIFIC_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__ENDING_STATE = SPECIFIC_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__STARTING_STATE = SPECIFIC_STEP__STARTING_STATE;
+
+	/**
+	 * The number of structural features of the '<em>Iml Selection Convergence Do Fire Abstract Sub Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP_FEATURE_COUNT = SPECIFIC_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml Selection Convergence Do Fire Abstract Sub Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP_OPERATION_COUNT = SPECIFIC_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link imlTrace.Steps.impl.Iml_SelectionConvergence_DoFire_ImplicitStepImpl <em>Iml Selection Convergence Do Fire Implicit Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.impl.Iml_SelectionConvergence_DoFire_ImplicitStepImpl
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionConvergence_DoFire_ImplicitStep()
+	 * @generated
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP = 6;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP__MSEOCCURRENCE = IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP__ENDING_STATE = IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP__STARTING_STATE = IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__STARTING_STATE;
+
+	/**
+	 * The number of structural features of the '<em>Iml Selection Convergence Do Fire Implicit Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP_FEATURE_COUNT = IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml Selection Convergence Do Fire Implicit Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP_OPERATION_COUNT = IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link imlTrace.Steps.impl.Iml_SelectionDivergence_DoFireImpl <em>Iml Selection Divergence Do Fire</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.impl.Iml_SelectionDivergence_DoFireImpl
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionDivergence_DoFire()
+	 * @generated
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE__MSEOCCURRENCE = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE__ENDING_STATE = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE__STARTING_STATE = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP__STARTING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Sub Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE__SUB_STEPS = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Iml Selection Divergence Do Fire</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_FEATURE_COUNT = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Caller</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE___GET_CALLER = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml Selection Divergence Do Fire</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_OPERATION_COUNT = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep <em>Iml Selection Divergence Do Fire Abstract Sub Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionDivergence_DoFire_AbstractSubStep()
+	 * @generated
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP = 8;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__MSEOCCURRENCE = SPECIFIC_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__ENDING_STATE = SPECIFIC_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__STARTING_STATE = SPECIFIC_STEP__STARTING_STATE;
+
+	/**
+	 * The number of structural features of the '<em>Iml Selection Divergence Do Fire Abstract Sub Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP_FEATURE_COUNT = SPECIFIC_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml Selection Divergence Do Fire Abstract Sub Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP_OPERATION_COUNT = SPECIFIC_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link imlTrace.Steps.impl.Iml_SelectionDivergence_DoFire_ImplicitStepImpl <em>Iml Selection Divergence Do Fire Implicit Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.impl.Iml_SelectionDivergence_DoFire_ImplicitStepImpl
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionDivergence_DoFire_ImplicitStep()
+	 * @generated
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP = 9;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP__MSEOCCURRENCE = IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP__ENDING_STATE = IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP__STARTING_STATE = IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP__STARTING_STATE;
+
+	/**
+	 * The number of structural features of the '<em>Iml Selection Divergence Do Fire Implicit Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP_FEATURE_COUNT = IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml Selection Divergence Do Fire Implicit Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP_OPERATION_COUNT = IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link imlTrace.Steps.impl.Iml_SimultaneousConvergence_DoFireImpl <em>Iml Simultaneous Convergence Do Fire</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -423,7 +789,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SimultaneousConvergence_DoFire()
 	 * @generated
 	 */
-	int IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE = 4;
+	int IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -496,7 +862,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SimultaneousConvergence_DoFire_AbstractSubStep()
 	 * @generated
 	 */
-	int IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP = 5;
+	int IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP = 11;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -551,7 +917,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SimultaneousConvergence_DoFire_ImplicitStep()
 	 * @generated
 	 */
-	int IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_IMPLICIT_STEP = 6;
+	int IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_IMPLICIT_STEP = 12;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -606,7 +972,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SimultaneousDivergence_DoFire()
 	 * @generated
 	 */
-	int IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE = 7;
+	int IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -679,7 +1045,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SimultaneousDivergence_DoFire_AbstractSubStep()
 	 * @generated
 	 */
-	int IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP = 8;
+	int IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP = 14;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -734,7 +1100,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SimultaneousDivergence_DoFire_ImplicitStep()
 	 * @generated
 	 */
-	int IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_IMPLICIT_STEP = 9;
+	int IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_IMPLICIT_STEP = 15;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -789,7 +1155,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_StateTransition_DoFire()
 	 * @generated
 	 */
-	int IML_STATE_TRANSITION_DO_FIRE = 10;
+	int IML_STATE_TRANSITION_DO_FIRE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -862,7 +1228,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_StateTransition_DoFire_AbstractSubStep()
 	 * @generated
 	 */
-	int IML_STATE_TRANSITION_DO_FIRE_ABSTRACT_SUB_STEP = 11;
+	int IML_STATE_TRANSITION_DO_FIRE_ABSTRACT_SUB_STEP = 17;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -917,7 +1283,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_StateTransition_DoFire_ImplicitStep()
 	 * @generated
 	 */
-	int IML_STATE_TRANSITION_DO_FIRE_IMPLICIT_STEP = 12;
+	int IML_STATE_TRANSITION_DO_FIRE_IMPLICIT_STEP = 18;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -965,6 +1331,253 @@ public interface StepsPackage extends EPackage {
 	int IML_STATE_TRANSITION_DO_FIRE_IMPLICIT_STEP_OPERATION_COUNT = IML_STATE_TRANSITION_DO_FIRE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link imlTrace.Steps.impl.Iml_State_ActivateImpl <em>Iml State Activate</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.impl.Iml_State_ActivateImpl
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_Activate()
+	 * @generated
+	 */
+	int IML_STATE_ACTIVATE = 19;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE__MSEOCCURRENCE = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE__ENDING_STATE = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE__STARTING_STATE = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP__STARTING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Sub Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE__SUB_STEPS = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Iml State Activate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_FEATURE_COUNT = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Caller</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE___GET_CALLER = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml State Activate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_OPERATION_COUNT = IML_HEADER_EXECUTE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link imlTrace.Steps.Iml_State_Activate_AbstractSubStep <em>Iml State Activate Abstract Sub Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.Iml_State_Activate_AbstractSubStep
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_Activate_AbstractSubStep()
+	 * @generated
+	 */
+	int IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP = 20;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP__MSEOCCURRENCE = SPECIFIC_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP__ENDING_STATE = SPECIFIC_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP__STARTING_STATE = SPECIFIC_STEP__STARTING_STATE;
+
+	/**
+	 * The number of structural features of the '<em>Iml State Activate Abstract Sub Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP_FEATURE_COUNT = SPECIFIC_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml State Activate Abstract Sub Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP_OPERATION_COUNT = SPECIFIC_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link imlTrace.Steps.impl.Iml_State_Activate_ImplicitStepImpl <em>Iml State Activate Implicit Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.impl.Iml_State_Activate_ImplicitStepImpl
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_Activate_ImplicitStep()
+	 * @generated
+	 */
+	int IML_STATE_ACTIVATE_IMPLICIT_STEP = 21;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_IMPLICIT_STEP__MSEOCCURRENCE = IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_IMPLICIT_STEP__ENDING_STATE = IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_IMPLICIT_STEP__STARTING_STATE = IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP__STARTING_STATE;
+
+	/**
+	 * The number of structural features of the '<em>Iml State Activate Implicit Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_IMPLICIT_STEP_FEATURE_COUNT = IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml State Activate Implicit Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_ACTIVATE_IMPLICIT_STEP_OPERATION_COUNT = IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link imlTrace.Steps.impl.Iml_State_DeactivateImpl <em>Iml State Deactivate</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see imlTrace.Steps.impl.Iml_State_DeactivateImpl
+	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_Deactivate()
+	 * @generated
+	 */
+	int IML_STATE_DEACTIVATE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_DEACTIVATE__MSEOCCURRENCE = SPECIFIC_STEP__MSEOCCURRENCE;
+
+	/**
+	 * The feature id for the '<em><b>Ending State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_DEACTIVATE__ENDING_STATE = SPECIFIC_STEP__ENDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Starting State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_DEACTIVATE__STARTING_STATE = SPECIFIC_STEP__STARTING_STATE;
+
+	/**
+	 * The number of structural features of the '<em>Iml State Deactivate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_DEACTIVATE_FEATURE_COUNT = SPECIFIC_STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Caller</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_DEACTIVATE___GET_CALLER = SPECIFIC_STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Iml State Deactivate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IML_STATE_DEACTIVATE_OPERATION_COUNT = SPECIFIC_STEP_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link imlTrace.Steps.impl.Iml_State_ExecuteActivitiesImpl <em>Iml State Execute Activities</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -972,7 +1585,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_ExecuteActivities()
 	 * @generated
 	 */
-	int IML_STATE_EXECUTE_ACTIVITIES = 13;
+	int IML_STATE_EXECUTE_ACTIVITIES = 23;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -1045,7 +1658,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_ExecuteActivities_ImplicitStep()
 	 * @generated
 	 */
-	int IML_STATE_EXECUTE_ACTIVITIES_IMPLICIT_STEP = 15;
+	int IML_STATE_EXECUTE_ACTIVITIES_IMPLICIT_STEP = 25;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -1100,7 +1713,7 @@ public interface StepsPackage extends EPackage {
 	 * @see imlTrace.Steps.impl.StepsPackageImpl#getRootImplicitStep()
 	 * @generated
 	 */
-	int ROOT_IMPLICIT_STEP = 16;
+	int ROOT_IMPLICIT_STEP = 26;
 
 	/**
 	 * The feature id for the '<em><b>Mseoccurrence</b></em>' containment reference.
@@ -1189,6 +1802,86 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIml_Header_Execute_ImplicitStep();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_SelectionConvergence_DoFire <em>Iml Selection Convergence Do Fire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml Selection Convergence Do Fire</em>'.
+	 * @see imlTrace.Steps.Iml_SelectionConvergence_DoFire
+	 * @generated
+	 */
+	EClass getIml_SelectionConvergence_DoFire();
+
+	/**
+	 * Returns the meta object for the '{@link imlTrace.Steps.Iml_SelectionConvergence_DoFire#getCaller() <em>Get Caller</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Caller</em>' operation.
+	 * @see imlTrace.Steps.Iml_SelectionConvergence_DoFire#getCaller()
+	 * @generated
+	 */
+	EOperation getIml_SelectionConvergence_DoFire__GetCaller();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep <em>Iml Selection Convergence Do Fire Abstract Sub Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml Selection Convergence Do Fire Abstract Sub Step</em>'.
+	 * @see imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep
+	 * @generated
+	 */
+	EClass getIml_SelectionConvergence_DoFire_AbstractSubStep();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_SelectionConvergence_DoFire_ImplicitStep <em>Iml Selection Convergence Do Fire Implicit Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml Selection Convergence Do Fire Implicit Step</em>'.
+	 * @see imlTrace.Steps.Iml_SelectionConvergence_DoFire_ImplicitStep
+	 * @generated
+	 */
+	EClass getIml_SelectionConvergence_DoFire_ImplicitStep();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_SelectionDivergence_DoFire <em>Iml Selection Divergence Do Fire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml Selection Divergence Do Fire</em>'.
+	 * @see imlTrace.Steps.Iml_SelectionDivergence_DoFire
+	 * @generated
+	 */
+	EClass getIml_SelectionDivergence_DoFire();
+
+	/**
+	 * Returns the meta object for the '{@link imlTrace.Steps.Iml_SelectionDivergence_DoFire#getCaller() <em>Get Caller</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Caller</em>' operation.
+	 * @see imlTrace.Steps.Iml_SelectionDivergence_DoFire#getCaller()
+	 * @generated
+	 */
+	EOperation getIml_SelectionDivergence_DoFire__GetCaller();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep <em>Iml Selection Divergence Do Fire Abstract Sub Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml Selection Divergence Do Fire Abstract Sub Step</em>'.
+	 * @see imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep
+	 * @generated
+	 */
+	EClass getIml_SelectionDivergence_DoFire_AbstractSubStep();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_SelectionDivergence_DoFire_ImplicitStep <em>Iml Selection Divergence Do Fire Implicit Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml Selection Divergence Do Fire Implicit Step</em>'.
+	 * @see imlTrace.Steps.Iml_SelectionDivergence_DoFire_ImplicitStep
+	 * @generated
+	 */
+	EClass getIml_SelectionDivergence_DoFire_ImplicitStep();
 
 	/**
 	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_SimultaneousConvergence_DoFire <em>Iml Simultaneous Convergence Do Fire</em>}'.
@@ -1309,6 +2002,66 @@ public interface StepsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIml_StateTransition_DoFire_ImplicitStep();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_State_Activate <em>Iml State Activate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml State Activate</em>'.
+	 * @see imlTrace.Steps.Iml_State_Activate
+	 * @generated
+	 */
+	EClass getIml_State_Activate();
+
+	/**
+	 * Returns the meta object for the '{@link imlTrace.Steps.Iml_State_Activate#getCaller() <em>Get Caller</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Caller</em>' operation.
+	 * @see imlTrace.Steps.Iml_State_Activate#getCaller()
+	 * @generated
+	 */
+	EOperation getIml_State_Activate__GetCaller();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_State_Activate_AbstractSubStep <em>Iml State Activate Abstract Sub Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml State Activate Abstract Sub Step</em>'.
+	 * @see imlTrace.Steps.Iml_State_Activate_AbstractSubStep
+	 * @generated
+	 */
+	EClass getIml_State_Activate_AbstractSubStep();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_State_Activate_ImplicitStep <em>Iml State Activate Implicit Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml State Activate Implicit Step</em>'.
+	 * @see imlTrace.Steps.Iml_State_Activate_ImplicitStep
+	 * @generated
+	 */
+	EClass getIml_State_Activate_ImplicitStep();
+
+	/**
+	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_State_Deactivate <em>Iml State Deactivate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Iml State Deactivate</em>'.
+	 * @see imlTrace.Steps.Iml_State_Deactivate
+	 * @generated
+	 */
+	EClass getIml_State_Deactivate();
+
+	/**
+	 * Returns the meta object for the '{@link imlTrace.Steps.Iml_State_Deactivate#getCaller() <em>Get Caller</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Caller</em>' operation.
+	 * @see imlTrace.Steps.Iml_State_Deactivate#getCaller()
+	 * @generated
+	 */
+	EOperation getIml_State_Deactivate__GetCaller();
 
 	/**
 	 * Returns the meta object for class '{@link imlTrace.Steps.Iml_State_ExecuteActivities <em>Iml State Execute Activities</em>}'.
@@ -1472,6 +2225,82 @@ public interface StepsPackage extends EPackage {
 		EClass IML_HEADER_EXECUTE_IMPLICIT_STEP = eINSTANCE.getIml_Header_Execute_ImplicitStep();
 
 		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.impl.Iml_SelectionConvergence_DoFireImpl <em>Iml Selection Convergence Do Fire</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.impl.Iml_SelectionConvergence_DoFireImpl
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionConvergence_DoFire()
+		 * @generated
+		 */
+		EClass IML_SELECTION_CONVERGENCE_DO_FIRE = eINSTANCE.getIml_SelectionConvergence_DoFire();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Caller</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IML_SELECTION_CONVERGENCE_DO_FIRE___GET_CALLER = eINSTANCE.getIml_SelectionConvergence_DoFire__GetCaller();
+
+		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep <em>Iml Selection Convergence Do Fire Abstract Sub Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionConvergence_DoFire_AbstractSubStep()
+		 * @generated
+		 */
+		EClass IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP = eINSTANCE.getIml_SelectionConvergence_DoFire_AbstractSubStep();
+
+		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.impl.Iml_SelectionConvergence_DoFire_ImplicitStepImpl <em>Iml Selection Convergence Do Fire Implicit Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.impl.Iml_SelectionConvergence_DoFire_ImplicitStepImpl
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionConvergence_DoFire_ImplicitStep()
+		 * @generated
+		 */
+		EClass IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP = eINSTANCE.getIml_SelectionConvergence_DoFire_ImplicitStep();
+
+		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.impl.Iml_SelectionDivergence_DoFireImpl <em>Iml Selection Divergence Do Fire</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.impl.Iml_SelectionDivergence_DoFireImpl
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionDivergence_DoFire()
+		 * @generated
+		 */
+		EClass IML_SELECTION_DIVERGENCE_DO_FIRE = eINSTANCE.getIml_SelectionDivergence_DoFire();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Caller</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IML_SELECTION_DIVERGENCE_DO_FIRE___GET_CALLER = eINSTANCE.getIml_SelectionDivergence_DoFire__GetCaller();
+
+		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep <em>Iml Selection Divergence Do Fire Abstract Sub Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionDivergence_DoFire_AbstractSubStep()
+		 * @generated
+		 */
+		EClass IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP = eINSTANCE.getIml_SelectionDivergence_DoFire_AbstractSubStep();
+
+		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.impl.Iml_SelectionDivergence_DoFire_ImplicitStepImpl <em>Iml Selection Divergence Do Fire Implicit Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.impl.Iml_SelectionDivergence_DoFire_ImplicitStepImpl
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_SelectionDivergence_DoFire_ImplicitStep()
+		 * @generated
+		 */
+		EClass IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP = eINSTANCE.getIml_SelectionDivergence_DoFire_ImplicitStep();
+
+		/**
 		 * The meta object literal for the '{@link imlTrace.Steps.impl.Iml_SimultaneousConvergence_DoFireImpl <em>Iml Simultaneous Convergence Do Fire</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1584,6 +2413,62 @@ public interface StepsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IML_STATE_TRANSITION_DO_FIRE_IMPLICIT_STEP = eINSTANCE.getIml_StateTransition_DoFire_ImplicitStep();
+
+		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.impl.Iml_State_ActivateImpl <em>Iml State Activate</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.impl.Iml_State_ActivateImpl
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_Activate()
+		 * @generated
+		 */
+		EClass IML_STATE_ACTIVATE = eINSTANCE.getIml_State_Activate();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Caller</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IML_STATE_ACTIVATE___GET_CALLER = eINSTANCE.getIml_State_Activate__GetCaller();
+
+		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.Iml_State_Activate_AbstractSubStep <em>Iml State Activate Abstract Sub Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.Iml_State_Activate_AbstractSubStep
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_Activate_AbstractSubStep()
+		 * @generated
+		 */
+		EClass IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP = eINSTANCE.getIml_State_Activate_AbstractSubStep();
+
+		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.impl.Iml_State_Activate_ImplicitStepImpl <em>Iml State Activate Implicit Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.impl.Iml_State_Activate_ImplicitStepImpl
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_Activate_ImplicitStep()
+		 * @generated
+		 */
+		EClass IML_STATE_ACTIVATE_IMPLICIT_STEP = eINSTANCE.getIml_State_Activate_ImplicitStep();
+
+		/**
+		 * The meta object literal for the '{@link imlTrace.Steps.impl.Iml_State_DeactivateImpl <em>Iml State Deactivate</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see imlTrace.Steps.impl.Iml_State_DeactivateImpl
+		 * @see imlTrace.Steps.impl.StepsPackageImpl#getIml_State_Deactivate()
+		 * @generated
+		 */
+		EClass IML_STATE_DEACTIVATE = eINSTANCE.getIml_State_Deactivate();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Caller</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IML_STATE_DEACTIVATE___GET_CALLER = eINSTANCE.getIml_State_Deactivate__GetCaller();
 
 		/**
 		 * The meta object literal for the '{@link imlTrace.Steps.impl.Iml_State_ExecuteActivitiesImpl <em>Iml State Execute Activities</em>}' class.

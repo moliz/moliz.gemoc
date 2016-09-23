@@ -22,10 +22,14 @@ public abstract class ConnectionPointAspect {
   public static boolean isEnabled(final ConnectionPoint _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.ConnectionPointAspectConnectionPointAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.ConnectionPointAspectConnectionPointAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition){
-    					result = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateTransitionAspect.isEnabled((org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition)_self);
-    } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence){
+     if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence){
     					result = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SimultaneousDivergenceAspect.isEnabled((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence)_self);
+    } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence){
+    					result = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SelectionDivergenceAspect.isEnabled((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence)_self);
+    } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionConvergence){
+    					result = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SelectionConvergenceAspect.isEnabled((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionConvergence)_self);
+    } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition){
+    					result = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateTransitionAspect.isEnabled((org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition)_self);
     } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence){
     					result = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SimultaneousConvergenceAspect.isEnabled((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence)_self);
     } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint){
@@ -42,10 +46,14 @@ public abstract class ConnectionPointAspect {
   @Abstract
   public static void doFire(final ConnectionPoint _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.ConnectionPointAspectConnectionPointAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.ConnectionPointAspectConnectionPointAspectContext.getSelf(_self);
-     if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition){
-    					org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateTransitionAspect.doFire((org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition)_self);
-    } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence){
+     if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence){
     					org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SimultaneousDivergenceAspect.doFire((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence)_self);
+    } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence){
+    					org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SelectionDivergenceAspect.doFire((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence)_self);
+    } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionConvergence){
+    					org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SelectionConvergenceAspect.doFire((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionConvergence)_self);
+    } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition){
+    					org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateTransitionAspect.doFire((org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition)_self);
     } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence){
     					org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SimultaneousConvergenceAspect.doFire((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence)_self);
     } else  if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint){

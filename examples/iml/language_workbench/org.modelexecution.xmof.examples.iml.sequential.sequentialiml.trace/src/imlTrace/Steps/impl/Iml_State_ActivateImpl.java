@@ -13,9 +13,13 @@ import imlTrace.States.StatesPackage;
 
 import imlTrace.States.iml.TracedState;
 
+import imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep;
+import imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep;
+import imlTrace.Steps.Iml_SimultaneousConvergence_DoFire_AbstractSubStep;
+import imlTrace.Steps.Iml_SimultaneousDivergence_DoFire_AbstractSubStep;
+import imlTrace.Steps.Iml_StateTransition_DoFire_AbstractSubStep;
+import imlTrace.Steps.Iml_State_Activate;
 import imlTrace.Steps.Iml_State_Activate_AbstractSubStep;
-import imlTrace.Steps.Iml_State_ExecuteActivities;
-import imlTrace.Steps.Iml_State_ExecuteActivities_AbstractSubStep;
 import imlTrace.Steps.StepsPackage;
 
 import java.lang.reflect.InvocationTargetException;
@@ -37,20 +41,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Iml State Execute Activities</b></em>'.
+ * An implementation of the model object '<em><b>Iml State Activate</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link imlTrace.Steps.impl.Iml_State_ExecuteActivitiesImpl#getEndingState <em>Ending State</em>}</li>
- *   <li>{@link imlTrace.Steps.impl.Iml_State_ExecuteActivitiesImpl#getStartingState <em>Starting State</em>}</li>
- *   <li>{@link imlTrace.Steps.impl.Iml_State_ExecuteActivitiesImpl#getSubSteps <em>Sub Steps</em>}</li>
+ *   <li>{@link imlTrace.Steps.impl.Iml_State_ActivateImpl#getEndingState <em>Ending State</em>}</li>
+ *   <li>{@link imlTrace.Steps.impl.Iml_State_ActivateImpl#getStartingState <em>Starting State</em>}</li>
+ *   <li>{@link imlTrace.Steps.impl.Iml_State_ActivateImpl#getSubSteps <em>Sub Steps</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_State_ExecuteActivities {
+public class Iml_State_ActivateImpl extends StepImpl implements Iml_State_Activate {
 	/**
 	 * The cached value of the '{@link #getEndingState() <em>Ending State</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -79,14 +83,14 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Iml_State_ExecuteActivities_AbstractSubStep> subSteps;
+	protected EList<Iml_State_Activate_AbstractSubStep> subSteps;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Iml_State_ExecuteActivitiesImpl() {
+	protected Iml_State_ActivateImpl() {
 		super();
 	}
 
@@ -97,7 +101,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return StepsPackage.Literals.IML_STATE_EXECUTE_ACTIVITIES;
+		return StepsPackage.Literals.IML_STATE_ACTIVATE;
 	}
 
 	/**
@@ -111,7 +115,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 			endingState = (State)eResolveProxy(oldEndingState);
 			if (endingState != oldEndingState) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__ENDING_STATE, oldEndingState, endingState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StepsPackage.IML_STATE_ACTIVATE__ENDING_STATE, oldEndingState, endingState));
 			}
 		}
 		return endingState;
@@ -135,7 +139,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 		State oldEndingState = endingState;
 		endingState = newEndingState;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__ENDING_STATE, oldEndingState, newEndingState);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StepsPackage.IML_STATE_ACTIVATE__ENDING_STATE, oldEndingState, newEndingState);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -157,7 +161,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__ENDING_STATE, newEndingState, newEndingState));
+			eNotify(new ENotificationImpl(this, Notification.SET, StepsPackage.IML_STATE_ACTIVATE__ENDING_STATE, newEndingState, newEndingState));
 	}
 
 	/**
@@ -171,7 +175,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 			startingState = (State)eResolveProxy(oldStartingState);
 			if (startingState != oldStartingState) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__STARTING_STATE, oldStartingState, startingState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StepsPackage.IML_STATE_ACTIVATE__STARTING_STATE, oldStartingState, startingState));
 			}
 		}
 		return startingState;
@@ -195,7 +199,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 		State oldStartingState = startingState;
 		startingState = newStartingState;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__STARTING_STATE, oldStartingState, newStartingState);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StepsPackage.IML_STATE_ACTIVATE__STARTING_STATE, oldStartingState, newStartingState);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -217,7 +221,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__STARTING_STATE, newStartingState, newStartingState));
+			eNotify(new ENotificationImpl(this, Notification.SET, StepsPackage.IML_STATE_ACTIVATE__STARTING_STATE, newStartingState, newStartingState));
 	}
 
 	/**
@@ -225,9 +229,9 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Iml_State_ExecuteActivities_AbstractSubStep> getSubSteps() {
+	public EList<Iml_State_Activate_AbstractSubStep> getSubSteps() {
 		if (subSteps == null) {
-			subSteps = new EObjectContainmentEList<Iml_State_ExecuteActivities_AbstractSubStep>(Iml_State_ExecuteActivities_AbstractSubStep.class, this, StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__SUB_STEPS);
+			subSteps = new EObjectContainmentEList<Iml_State_Activate_AbstractSubStep>(Iml_State_Activate_AbstractSubStep.class, this, StepsPackage.IML_STATE_ACTIVATE__SUB_STEPS);
 		}
 		return subSteps;
 	}
@@ -249,11 +253,11 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__ENDING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__ENDING_STATE:
 				if (endingState != null)
 					msgs = ((InternalEObject)endingState).eInverseRemove(this, StatesPackage.STATE__ENDED_STEPS, State.class, msgs);
 				return basicSetEndingState((State)otherEnd, msgs);
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__STARTING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__STARTING_STATE:
 				if (startingState != null)
 					msgs = ((InternalEObject)startingState).eInverseRemove(this, StatesPackage.STATE__STARTED_STEPS, State.class, msgs);
 				return basicSetStartingState((State)otherEnd, msgs);
@@ -269,11 +273,11 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__ENDING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__ENDING_STATE:
 				return basicSetEndingState(null, msgs);
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__STARTING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__STARTING_STATE:
 				return basicSetStartingState(null, msgs);
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__SUB_STEPS:
+			case StepsPackage.IML_STATE_ACTIVATE__SUB_STEPS:
 				return ((InternalEList<?>)getSubSteps()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -287,13 +291,13 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__ENDING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__ENDING_STATE:
 				if (resolve) return getEndingState();
 				return basicGetEndingState();
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__STARTING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__STARTING_STATE:
 				if (resolve) return getStartingState();
 				return basicGetStartingState();
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__SUB_STEPS:
+			case StepsPackage.IML_STATE_ACTIVATE__SUB_STEPS:
 				return getSubSteps();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -308,15 +312,15 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__ENDING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__ENDING_STATE:
 				setEndingState((State)newValue);
 				return;
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__STARTING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__STARTING_STATE:
 				setStartingState((State)newValue);
 				return;
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__SUB_STEPS:
+			case StepsPackage.IML_STATE_ACTIVATE__SUB_STEPS:
 				getSubSteps().clear();
-				getSubSteps().addAll((Collection<? extends Iml_State_ExecuteActivities_AbstractSubStep>)newValue);
+				getSubSteps().addAll((Collection<? extends Iml_State_Activate_AbstractSubStep>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -330,13 +334,13 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__ENDING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__ENDING_STATE:
 				setEndingState((State)null);
 				return;
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__STARTING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__STARTING_STATE:
 				setStartingState((State)null);
 				return;
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__SUB_STEPS:
+			case StepsPackage.IML_STATE_ACTIVATE__SUB_STEPS:
 				getSubSteps().clear();
 				return;
 		}
@@ -351,11 +355,11 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__ENDING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__ENDING_STATE:
 				return endingState != null;
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__STARTING_STATE:
+			case StepsPackage.IML_STATE_ACTIVATE__STARTING_STATE:
 				return startingState != null;
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__SUB_STEPS:
+			case StepsPackage.IML_STATE_ACTIVATE__SUB_STEPS:
 				return subSteps != null && !subSteps.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -370,7 +374,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BigStep.class) {
 			switch (derivedFeatureID) {
-				case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__SUB_STEPS: return TracePackage.BIG_STEP__SUB_STEPS;
+				case StepsPackage.IML_STATE_ACTIVATE__SUB_STEPS: return TracePackage.BIG_STEP__SUB_STEPS;
 				default: return -1;
 			}
 		}
@@ -379,7 +383,27 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 				default: return -1;
 			}
 		}
-		if (baseClass == Iml_State_Activate_AbstractSubStep.class) {
+		if (baseClass == Iml_SelectionConvergence_DoFire_AbstractSubStep.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Iml_StateTransition_DoFire_AbstractSubStep.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Iml_SimultaneousConvergence_DoFire_AbstractSubStep.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Iml_SimultaneousDivergence_DoFire_AbstractSubStep.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Iml_SelectionDivergence_DoFire_AbstractSubStep.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
 			}
@@ -396,7 +420,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BigStep.class) {
 			switch (baseFeatureID) {
-				case TracePackage.BIG_STEP__SUB_STEPS: return StepsPackage.IML_STATE_EXECUTE_ACTIVITIES__SUB_STEPS;
+				case TracePackage.BIG_STEP__SUB_STEPS: return StepsPackage.IML_STATE_ACTIVATE__SUB_STEPS;
 				default: return -1;
 			}
 		}
@@ -405,7 +429,27 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 				default: return -1;
 			}
 		}
-		if (baseClass == Iml_State_Activate_AbstractSubStep.class) {
+		if (baseClass == Iml_SelectionConvergence_DoFire_AbstractSubStep.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Iml_StateTransition_DoFire_AbstractSubStep.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Iml_SimultaneousConvergence_DoFire_AbstractSubStep.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Iml_SimultaneousDivergence_DoFire_AbstractSubStep.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Iml_SelectionDivergence_DoFire_AbstractSubStep.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}
@@ -421,10 +465,10 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES___GET_CALLER:
+			case StepsPackage.IML_STATE_ACTIVATE___GET_CALLER:
 				return getCaller();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //Iml_State_ExecuteActivitiesImpl
+} //Iml_State_ActivateImpl

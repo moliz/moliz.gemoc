@@ -151,8 +151,24 @@
       <eAnnotations source="aspect"/>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectionDivergence" eSuperTypes="//IdentifyableElement //ConnectionPoint"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectionConvergence" eSuperTypes="//IdentifyableElement //ConnectionPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectionDivergence" eSuperTypes="//IdentifyableElement //ConnectionPoint">
+    <eOperations name="isEnabled">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="doFire">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectionConvergence" eSuperTypes="//IdentifyableElement //ConnectionPoint">
+    <eOperations name="isEnabled">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="doFire">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectionPoint" abstract="true">
     <eOperations name="isEnabled">
       <eAnnotations source="aspect"/>

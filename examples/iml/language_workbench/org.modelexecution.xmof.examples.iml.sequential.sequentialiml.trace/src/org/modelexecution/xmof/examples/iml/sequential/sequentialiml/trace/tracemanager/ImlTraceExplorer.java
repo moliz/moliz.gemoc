@@ -103,10 +103,19 @@ public class ImlTraceExplorer implements ITraceExplorer {
 		};
 	}
 
+	@SuppressWarnings("unused")
 	private List<List<? extends imlTrace.States.Value>> getAllValueTraces() {
 		final List<List<? extends imlTrace.States.Value>> result = new ArrayList<>();
 		for (imlTrace.States.iml.TracedActivity tracedObject : traceRoot.getIml_tracedActivitys()) {
 			result.add(tracedObject.getCurrentSequence());
+		}
+		for (imlTrace.States.iml.TracedAddData tracedObject : traceRoot.getIml_tracedAddDatas()) {
+		}
+		for (imlTrace.States.iml.TracedConnection tracedObject : traceRoot.getIml_tracedConnections()) {
+		}
+		for (imlTrace.States.iml.TracedEvent tracedObject : traceRoot.getIml_tracedEvents()) {
+		}
+		for (imlTrace.States.iml.TracedHeader tracedObject : traceRoot.getIml_tracedHeaders()) {
 		}
 		for (imlTrace.States.iml.TracedJump tracedObject : traceRoot.getIml_tracedJumps()) {
 			result.add(tracedObject.getFiringSequence());
@@ -266,12 +275,11 @@ public class ImlTraceExplorer implements ITraceExplorer {
 		}
 	};
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private List<Diff> compareEObjects(EObject e1, EObject e2) {
 		IPostProcessor.Descriptor descriptor = new BasicPostProcessorDescriptorImpl(customPostProcessor,
 				Pattern.compile(".*"), null);
 
-		@SuppressWarnings("rawtypes")
 		Registry registry = new PostProcessorDescriptorRegistryImpl();
 		registry.put(customPostProcessor.getClass().getName(), descriptor);
 
@@ -317,12 +325,25 @@ public class ImlTraceExplorer implements ITraceExplorer {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private List<imlTrace.States.Value> getAllStateValues(imlTrace.States.State state) {
 		final List<List<? extends imlTrace.States.Value>> traces = new ArrayList<>();
 		final List<imlTrace.States.Value> result = new ArrayList<>();
 		for (imlTrace.States.iml.TracedActivity tracedObject : ((imlTrace.SpecificTrace) state.eContainer())
 				.getIml_tracedActivitys()) {
 			traces.add(tracedObject.getCurrentSequence());
+		}
+		for (imlTrace.States.iml.TracedAddData tracedObject : ((imlTrace.SpecificTrace) state.eContainer())
+				.getIml_tracedAddDatas()) {
+		}
+		for (imlTrace.States.iml.TracedConnection tracedObject : ((imlTrace.SpecificTrace) state.eContainer())
+				.getIml_tracedConnections()) {
+		}
+		for (imlTrace.States.iml.TracedEvent tracedObject : ((imlTrace.SpecificTrace) state.eContainer())
+				.getIml_tracedEvents()) {
+		}
+		for (imlTrace.States.iml.TracedHeader tracedObject : ((imlTrace.SpecificTrace) state.eContainer())
+				.getIml_tracedHeaders()) {
 		}
 		for (imlTrace.States.iml.TracedJump tracedObject : ((imlTrace.SpecificTrace) state.eContainer())
 				.getIml_tracedJumps()) {
@@ -912,9 +933,12 @@ public class ImlTraceExplorer implements ITraceExplorer {
 		if (b) {
 			imlTrace.Steps.SpecificStep s = state.getStartedSteps().get(0);
 			return !(s instanceof imlTrace.Steps.Iml_Header_Execute_ImplicitStep
+					|| s instanceof imlTrace.Steps.Iml_SelectionConvergence_DoFire_ImplicitStep
+					|| s instanceof imlTrace.Steps.Iml_SelectionDivergence_DoFire_ImplicitStep
 					|| s instanceof imlTrace.Steps.Iml_SimultaneousConvergence_DoFire_ImplicitStep
 					|| s instanceof imlTrace.Steps.Iml_SimultaneousDivergence_DoFire_ImplicitStep
 					|| s instanceof imlTrace.Steps.Iml_StateTransition_DoFire_ImplicitStep
+					|| s instanceof imlTrace.Steps.Iml_State_Activate_ImplicitStep
 					|| s instanceof imlTrace.Steps.Iml_State_ExecuteActivities_ImplicitStep);
 		}
 		return true;

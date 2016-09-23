@@ -104,13 +104,31 @@ public interface ImlTracePackage extends EPackage {
 	int SPECIFIC_TRACE__IML_HEADER_EXECUTE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Iml Selection Convergence Do Fire Sequence</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__IML_SELECTION_CONVERGENCE_DO_FIRE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Iml Selection Divergence Do Fire Sequence</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__IML_SELECTION_DIVERGENCE_DO_FIRE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Iml Simultaneous Convergence Do Fire Sequence</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 2;
+	int SPECIFIC_TRACE__IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Iml Simultaneous Divergence Do Fire Sequence</b></em>' reference list.
@@ -119,7 +137,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 3;
+	int SPECIFIC_TRACE__IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Iml State Transition Do Fire Sequence</b></em>' reference list.
@@ -128,7 +146,25 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_STATE_TRANSITION_DO_FIRE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 4;
+	int SPECIFIC_TRACE__IML_STATE_TRANSITION_DO_FIRE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Iml State Activate Sequence</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__IML_STATE_ACTIVATE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Iml State Deactivate Sequence</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIFIC_TRACE__IML_STATE_DEACTIVATE_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Iml State Execute Activities Sequence</b></em>' reference list.
@@ -137,7 +173,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_STATE_EXECUTE_ACTIVITIES_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 5;
+	int SPECIFIC_TRACE__IML_STATE_EXECUTE_ACTIVITIES_SEQUENCE = TracePackage.TRACE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Activitys</b></em>' containment reference list.
@@ -146,7 +182,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_ACTIVITYS = TracePackage.TRACE_FEATURE_COUNT + 6;
+	int SPECIFIC_TRACE__IML_TRACED_ACTIVITYS = TracePackage.TRACE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Add Datas</b></em>' containment reference list.
@@ -155,7 +191,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_ADD_DATAS = TracePackage.TRACE_FEATURE_COUNT + 7;
+	int SPECIFIC_TRACE__IML_TRACED_ADD_DATAS = TracePackage.TRACE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Connections</b></em>' containment reference list.
@@ -164,7 +200,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_CONNECTIONS = TracePackage.TRACE_FEATURE_COUNT + 8;
+	int SPECIFIC_TRACE__IML_TRACED_CONNECTIONS = TracePackage.TRACE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Events</b></em>' containment reference list.
@@ -173,7 +209,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_EVENTS = TracePackage.TRACE_FEATURE_COUNT + 9;
+	int SPECIFIC_TRACE__IML_TRACED_EVENTS = TracePackage.TRACE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Headers</b></em>' containment reference list.
@@ -182,7 +218,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_HEADERS = TracePackage.TRACE_FEATURE_COUNT + 10;
+	int SPECIFIC_TRACE__IML_TRACED_HEADERS = TracePackage.TRACE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Jumps</b></em>' containment reference list.
@@ -191,7 +227,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_JUMPS = TracePackage.TRACE_FEATURE_COUNT + 11;
+	int SPECIFIC_TRACE__IML_TRACED_JUMPS = TracePackage.TRACE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Selection Convergences</b></em>' containment reference list.
@@ -200,7 +236,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_SELECTION_CONVERGENCES = TracePackage.TRACE_FEATURE_COUNT + 12;
+	int SPECIFIC_TRACE__IML_TRACED_SELECTION_CONVERGENCES = TracePackage.TRACE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Selection Divergences</b></em>' containment reference list.
@@ -209,7 +245,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_SELECTION_DIVERGENCES = TracePackage.TRACE_FEATURE_COUNT + 13;
+	int SPECIFIC_TRACE__IML_TRACED_SELECTION_DIVERGENCES = TracePackage.TRACE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Simultaneous Convergences</b></em>' containment reference list.
@@ -218,7 +254,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_SIMULTANEOUS_CONVERGENCES = TracePackage.TRACE_FEATURE_COUNT + 14;
+	int SPECIFIC_TRACE__IML_TRACED_SIMULTANEOUS_CONVERGENCES = TracePackage.TRACE_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Simultaneous Divergences</b></em>' containment reference list.
@@ -227,7 +263,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_SIMULTANEOUS_DIVERGENCES = TracePackage.TRACE_FEATURE_COUNT + 15;
+	int SPECIFIC_TRACE__IML_TRACED_SIMULTANEOUS_DIVERGENCES = TracePackage.TRACE_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced State Transitions</b></em>' containment reference list.
@@ -236,7 +272,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_STATE_TRANSITIONS = TracePackage.TRACE_FEATURE_COUNT + 16;
+	int SPECIFIC_TRACE__IML_TRACED_STATE_TRANSITIONS = TracePackage.TRACE_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced States</b></em>' containment reference list.
@@ -245,7 +281,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_STATES = TracePackage.TRACE_FEATURE_COUNT + 17;
+	int SPECIFIC_TRACE__IML_TRACED_STATES = TracePackage.TRACE_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Iml traced Variables</b></em>' containment reference list.
@@ -254,7 +290,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__IML_TRACED_VARIABLES = TracePackage.TRACE_FEATURE_COUNT + 18;
+	int SPECIFIC_TRACE__IML_TRACED_VARIABLES = TracePackage.TRACE_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>States Trace</b></em>' containment reference list.
@@ -263,7 +299,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE__STATES_TRACE = TracePackage.TRACE_FEATURE_COUNT + 19;
+	int SPECIFIC_TRACE__STATES_TRACE = TracePackage.TRACE_FEATURE_COUNT + 23;
 
 	/**
 	 * The number of structural features of the '<em>Specific Trace</em>' class.
@@ -272,7 +308,7 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFIC_TRACE_FEATURE_COUNT = TracePackage.TRACE_FEATURE_COUNT + 20;
+	int SPECIFIC_TRACE_FEATURE_COUNT = TracePackage.TRACE_FEATURE_COUNT + 24;
 
 	/**
 	 * The number of operations of the '<em>Specific Trace</em>' class.
@@ -317,6 +353,28 @@ public interface ImlTracePackage extends EPackage {
 	EReference getSpecificTrace_Iml_Header_Execute_Sequence();
 
 	/**
+	 * Returns the meta object for the reference list '{@link imlTrace.SpecificTrace#getIml_SelectionConvergence_DoFire_Sequence <em>Iml Selection Convergence Do Fire Sequence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Iml Selection Convergence Do Fire Sequence</em>'.
+	 * @see imlTrace.SpecificTrace#getIml_SelectionConvergence_DoFire_Sequence()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_Iml_SelectionConvergence_DoFire_Sequence();
+
+	/**
+	 * Returns the meta object for the reference list '{@link imlTrace.SpecificTrace#getIml_SelectionDivergence_DoFire_Sequence <em>Iml Selection Divergence Do Fire Sequence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Iml Selection Divergence Do Fire Sequence</em>'.
+	 * @see imlTrace.SpecificTrace#getIml_SelectionDivergence_DoFire_Sequence()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_Iml_SelectionDivergence_DoFire_Sequence();
+
+	/**
 	 * Returns the meta object for the reference list '{@link imlTrace.SpecificTrace#getIml_SimultaneousConvergence_DoFire_Sequence <em>Iml Simultaneous Convergence Do Fire Sequence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,6 +406,28 @@ public interface ImlTracePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSpecificTrace_Iml_StateTransition_DoFire_Sequence();
+
+	/**
+	 * Returns the meta object for the reference list '{@link imlTrace.SpecificTrace#getIml_State_Activate_Sequence <em>Iml State Activate Sequence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Iml State Activate Sequence</em>'.
+	 * @see imlTrace.SpecificTrace#getIml_State_Activate_Sequence()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_Iml_State_Activate_Sequence();
+
+	/**
+	 * Returns the meta object for the reference list '{@link imlTrace.SpecificTrace#getIml_State_Deactivate_Sequence <em>Iml State Deactivate Sequence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Iml State Deactivate Sequence</em>'.
+	 * @see imlTrace.SpecificTrace#getIml_State_Deactivate_Sequence()
+	 * @see #getSpecificTrace()
+	 * @generated
+	 */
+	EReference getSpecificTrace_Iml_State_Deactivate_Sequence();
 
 	/**
 	 * Returns the meta object for the reference list '{@link imlTrace.SpecificTrace#getIml_State_ExecuteActivities_Sequence <em>Iml State Execute Activities Sequence</em>}'.
@@ -564,6 +644,22 @@ public interface ImlTracePackage extends EPackage {
 		EReference SPECIFIC_TRACE__IML_HEADER_EXECUTE_SEQUENCE = eINSTANCE.getSpecificTrace_Iml_Header_Execute_Sequence();
 
 		/**
+		 * The meta object literal for the '<em><b>Iml Selection Convergence Do Fire Sequence</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__IML_SELECTION_CONVERGENCE_DO_FIRE_SEQUENCE = eINSTANCE.getSpecificTrace_Iml_SelectionConvergence_DoFire_Sequence();
+
+		/**
+		 * The meta object literal for the '<em><b>Iml Selection Divergence Do Fire Sequence</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__IML_SELECTION_DIVERGENCE_DO_FIRE_SEQUENCE = eINSTANCE.getSpecificTrace_Iml_SelectionDivergence_DoFire_Sequence();
+
+		/**
 		 * The meta object literal for the '<em><b>Iml Simultaneous Convergence Do Fire Sequence</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -586,6 +682,22 @@ public interface ImlTracePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SPECIFIC_TRACE__IML_STATE_TRANSITION_DO_FIRE_SEQUENCE = eINSTANCE.getSpecificTrace_Iml_StateTransition_DoFire_Sequence();
+
+		/**
+		 * The meta object literal for the '<em><b>Iml State Activate Sequence</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__IML_STATE_ACTIVATE_SEQUENCE = eINSTANCE.getSpecificTrace_Iml_State_Activate_Sequence();
+
+		/**
+		 * The meta object literal for the '<em><b>Iml State Deactivate Sequence</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIFIC_TRACE__IML_STATE_DEACTIVATE_SEQUENCE = eINSTANCE.getSpecificTrace_Iml_State_Deactivate_Sequence();
 
 		/**
 		 * The meta object literal for the '<em><b>Iml State Execute Activities Sequence</b></em>' reference list feature.

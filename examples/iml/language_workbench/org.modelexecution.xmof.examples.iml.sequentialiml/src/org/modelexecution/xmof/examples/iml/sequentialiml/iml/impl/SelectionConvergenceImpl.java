@@ -104,7 +104,7 @@ public class SelectionConvergenceImpl extends IdentifyableElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fire() {
+	public void doFire() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -115,7 +115,7 @@ public class SelectionConvergenceImpl extends IdentifyableElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void doFire() {
+	public void fire() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

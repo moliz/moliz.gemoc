@@ -23,9 +23,13 @@ import imlTrace.States.iml.TracedVariable;
 
 import imlTrace.Steps.Iml_Activity_DoExecute;
 import imlTrace.Steps.Iml_Header_Execute;
+import imlTrace.Steps.Iml_SelectionConvergence_DoFire;
+import imlTrace.Steps.Iml_SelectionDivergence_DoFire;
 import imlTrace.Steps.Iml_SimultaneousConvergence_DoFire;
 import imlTrace.Steps.Iml_SimultaneousDivergence_DoFire;
 import imlTrace.Steps.Iml_StateTransition_DoFire;
+import imlTrace.Steps.Iml_State_Activate;
+import imlTrace.Steps.Iml_State_Deactivate;
 import imlTrace.Steps.Iml_State_ExecuteActivities;
 import imlTrace.Steps.SpecificStep;
 
@@ -42,9 +46,13 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link imlTrace.SpecificTrace#getIml_Activity_DoExecute_Sequence <em>Iml Activity Do Execute Sequence</em>}</li>
  *   <li>{@link imlTrace.SpecificTrace#getIml_Header_Execute_Sequence <em>Iml Header Execute Sequence</em>}</li>
+ *   <li>{@link imlTrace.SpecificTrace#getIml_SelectionConvergence_DoFire_Sequence <em>Iml Selection Convergence Do Fire Sequence</em>}</li>
+ *   <li>{@link imlTrace.SpecificTrace#getIml_SelectionDivergence_DoFire_Sequence <em>Iml Selection Divergence Do Fire Sequence</em>}</li>
  *   <li>{@link imlTrace.SpecificTrace#getIml_SimultaneousConvergence_DoFire_Sequence <em>Iml Simultaneous Convergence Do Fire Sequence</em>}</li>
  *   <li>{@link imlTrace.SpecificTrace#getIml_SimultaneousDivergence_DoFire_Sequence <em>Iml Simultaneous Divergence Do Fire Sequence</em>}</li>
  *   <li>{@link imlTrace.SpecificTrace#getIml_StateTransition_DoFire_Sequence <em>Iml State Transition Do Fire Sequence</em>}</li>
+ *   <li>{@link imlTrace.SpecificTrace#getIml_State_Activate_Sequence <em>Iml State Activate Sequence</em>}</li>
+ *   <li>{@link imlTrace.SpecificTrace#getIml_State_Deactivate_Sequence <em>Iml State Deactivate Sequence</em>}</li>
  *   <li>{@link imlTrace.SpecificTrace#getIml_State_ExecuteActivities_Sequence <em>Iml State Execute Activities Sequence</em>}</li>
  *   <li>{@link imlTrace.SpecificTrace#getIml_tracedActivitys <em>Iml traced Activitys</em>}</li>
  *   <li>{@link imlTrace.SpecificTrace#getIml_tracedAddDatas <em>Iml traced Add Datas</em>}</li>
@@ -100,6 +108,38 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	EList<Iml_Header_Execute> getIml_Header_Execute_Sequence();
 
 	/**
+	 * Returns the value of the '<em><b>Iml Selection Convergence Do Fire Sequence</b></em>' reference list.
+	 * The list contents are of type {@link imlTrace.Steps.Iml_SelectionConvergence_DoFire}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Iml Selection Convergence Do Fire Sequence</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Iml Selection Convergence Do Fire Sequence</em>' reference list.
+	 * @see imlTrace.ImlTracePackage#getSpecificTrace_Iml_SelectionConvergence_DoFire_Sequence()
+	 * @model
+	 * @generated
+	 */
+	EList<Iml_SelectionConvergence_DoFire> getIml_SelectionConvergence_DoFire_Sequence();
+
+	/**
+	 * Returns the value of the '<em><b>Iml Selection Divergence Do Fire Sequence</b></em>' reference list.
+	 * The list contents are of type {@link imlTrace.Steps.Iml_SelectionDivergence_DoFire}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Iml Selection Divergence Do Fire Sequence</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Iml Selection Divergence Do Fire Sequence</em>' reference list.
+	 * @see imlTrace.ImlTracePackage#getSpecificTrace_Iml_SelectionDivergence_DoFire_Sequence()
+	 * @model
+	 * @generated
+	 */
+	EList<Iml_SelectionDivergence_DoFire> getIml_SelectionDivergence_DoFire_Sequence();
+
+	/**
 	 * Returns the value of the '<em><b>Iml Simultaneous Convergence Do Fire Sequence</b></em>' reference list.
 	 * The list contents are of type {@link imlTrace.Steps.Iml_SimultaneousConvergence_DoFire}.
 	 * <!-- begin-user-doc -->
@@ -146,6 +186,38 @@ public interface SpecificTrace extends Trace<SequentialStep<SpecificStep>> {
 	 * @generated
 	 */
 	EList<Iml_StateTransition_DoFire> getIml_StateTransition_DoFire_Sequence();
+
+	/**
+	 * Returns the value of the '<em><b>Iml State Activate Sequence</b></em>' reference list.
+	 * The list contents are of type {@link imlTrace.Steps.Iml_State_Activate}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Iml State Activate Sequence</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Iml State Activate Sequence</em>' reference list.
+	 * @see imlTrace.ImlTracePackage#getSpecificTrace_Iml_State_Activate_Sequence()
+	 * @model
+	 * @generated
+	 */
+	EList<Iml_State_Activate> getIml_State_Activate_Sequence();
+
+	/**
+	 * Returns the value of the '<em><b>Iml State Deactivate Sequence</b></em>' reference list.
+	 * The list contents are of type {@link imlTrace.Steps.Iml_State_Deactivate}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Iml State Deactivate Sequence</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Iml State Deactivate Sequence</em>' reference list.
+	 * @see imlTrace.ImlTracePackage#getSpecificTrace_Iml_State_Deactivate_Sequence()
+	 * @model
+	 * @generated
+	 */
+	EList<Iml_State_Deactivate> getIml_State_Deactivate_Sequence();
 
 	/**
 	 * Returns the value of the '<em><b>Iml State Execute Activities Sequence</b></em>' reference list.

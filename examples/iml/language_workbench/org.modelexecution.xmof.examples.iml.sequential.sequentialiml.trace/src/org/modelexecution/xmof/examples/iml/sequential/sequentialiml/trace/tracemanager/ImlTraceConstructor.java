@@ -43,13 +43,13 @@ public class ImlTraceConstructor implements ITraceConstructor {
 				for (TreeIterator<EObject> i = r.getAllContents(); i.hasNext();) {
 					EObject o = i.next();
 
-					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint) {
-						org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint o_cast = (org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint) o;
+					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Element) {
+						org.modelexecution.xmof.examples.iml.sequentialiml.iml.Element o_cast = (org.modelexecution.xmof.examples.iml.sequentialiml.iml.Element) o;
 						addNewObjectToState(o_cast, lastState);
 					} else
 
-					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Element) {
-						org.modelexecution.xmof.examples.iml.sequentialiml.iml.Element o_cast = (org.modelexecution.xmof.examples.iml.sequentialiml.iml.Element) o;
+					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint) {
+						org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint o_cast = (org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint) o;
 						addNewObjectToState(o_cast, lastState);
 					}
 				}
@@ -111,22 +111,22 @@ public class ImlTraceConstructor implements ITraceConstructor {
 		if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence) o_cast,
 					newState);
-		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence) {
-			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence) o_cast,
-					newState);
 		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Jump) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Jump) o_cast, newState);
 		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition) o_cast,
-					newState);
-		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence) {
-			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence) o_cast,
 					newState);
 		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionConvergence) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionConvergence) o_cast,
 					newState);
 		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.State) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.State) o_cast, newState);
+		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence) {
+			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence) o_cast,
+					newState);
+		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence) {
+			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence) o_cast,
+					newState);
 		}
 
 	}// end addNewObjectToState
@@ -171,35 +171,35 @@ public class ImlTraceConstructor implements ITraceConstructor {
 	private void addNewObjectToState(org.modelexecution.xmof.examples.iml.sequentialiml.iml.IdentifyableElement o_cast,
 			imlTrace.States.State newState) {
 
-		if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Header) {
-			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Header) o_cast, newState);
-		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.AddData) {
-			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.AddData) o_cast, newState);
-		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Connection) {
-			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Connection) o_cast, newState);
-		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence) {
+		if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence) o_cast,
 					newState);
-		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence) {
-			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence) o_cast,
-					newState);
-		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable) {
-			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable) o_cast, newState);
-		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity) {
-			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity) o_cast, newState);
 		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Jump) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Jump) o_cast, newState);
 		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition) o_cast,
 					newState);
-		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence) {
-			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence) o_cast,
-					newState);
 		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionConvergence) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionConvergence) o_cast,
 					newState);
+		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Header) {
+			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Header) o_cast, newState);
 		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.State) {
 			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.State) o_cast, newState);
+		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable) {
+			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable) o_cast, newState);
+		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.AddData) {
+			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.AddData) o_cast, newState);
+		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity) {
+			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity) o_cast, newState);
+		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence) {
+			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousDivergence) o_cast,
+					newState);
+		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence) {
+			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence) o_cast,
+					newState);
+		} else if (o_cast instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Connection) {
+			addNewObjectToState((org.modelexecution.xmof.examples.iml.sequentialiml.iml.Connection) o_cast, newState);
 		}
 
 	}// end addNewObjectToState
@@ -415,58 +415,6 @@ public class ImlTraceConstructor implements ITraceConstructor {
 					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) modelChange;
 					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
 
-					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable) {
-						org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable o_cast = (org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable) o;
-
-						if (p.getFeatureID() == org.modelexecution.xmof.examples.iml.sequentialiml.iml.ImlPackage.eINSTANCE
-								.getVariable_Value().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							imlTrace.States.iml.TracedVariable traced = (imlTrace.States.iml.TracedVariable) exeToTraced
-									.get(o);
-							imlTrace.States.Variable_value_Value lastValue = traced.getValueSequence()
-									.get(traced.getValueSequence().size() - 1);
-							newState.getVariable_value_Values().remove(lastValue);
-
-							// And we create a proper new value
-							imlTrace.States.Variable_value_Value newValue = imlTrace.States.StatesFactory.eINSTANCE
-									.createVariable_value_Value();
-
-							java.lang.String value = o_cast.getValue();
-
-							newValue.setValue((java.lang.String) value);
-
-							traced.getValueSequence().add(newValue);
-							newState.getVariable_value_Values().add(newValue);
-						}
-					}
-
-					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity) {
-						org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity o_cast = (org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity) o;
-
-						if (p.getFeatureID() == org.modelexecution.xmof.examples.iml.sequentialiml.iml.ImlPackage.eINSTANCE
-								.getActivity_Current().getFeatureID()) {
-
-							// Rollback: we remove the last value of this field from the new state
-							imlTrace.States.iml.TracedActivity traced = (imlTrace.States.iml.TracedActivity) exeToTraced
-									.get(o);
-							imlTrace.States.Activity_current_Value lastValue = traced.getCurrentSequence()
-									.get(traced.getCurrentSequence().size() - 1);
-							newState.getActivity_current_Values().remove(lastValue);
-
-							// And we create a proper new value
-							imlTrace.States.Activity_current_Value newValue = imlTrace.States.StatesFactory.eINSTANCE
-									.createActivity_current_Value();
-
-							boolean value = o_cast.isCurrent();
-
-							newValue.setCurrent((boolean) value);
-
-							traced.getCurrentSequence().add(newValue);
-							newState.getActivity_current_Values().add(newValue);
-						}
-					}
-
 					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.State) {
 						org.modelexecution.xmof.examples.iml.sequentialiml.iml.State o_cast = (org.modelexecution.xmof.examples.iml.sequentialiml.iml.State) o;
 
@@ -518,6 +466,58 @@ public class ImlTraceConstructor implements ITraceConstructor {
 							newState.getConnectionPoint_firing_Values().add(newValue);
 						}
 					}
+
+					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable) {
+						org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable o_cast = (org.modelexecution.xmof.examples.iml.sequentialiml.iml.Variable) o;
+
+						if (p.getFeatureID() == org.modelexecution.xmof.examples.iml.sequentialiml.iml.ImlPackage.eINSTANCE
+								.getVariable_Value().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							imlTrace.States.iml.TracedVariable traced = (imlTrace.States.iml.TracedVariable) exeToTraced
+									.get(o);
+							imlTrace.States.Variable_value_Value lastValue = traced.getValueSequence()
+									.get(traced.getValueSequence().size() - 1);
+							newState.getVariable_value_Values().remove(lastValue);
+
+							// And we create a proper new value
+							imlTrace.States.Variable_value_Value newValue = imlTrace.States.StatesFactory.eINSTANCE
+									.createVariable_value_Value();
+
+							java.lang.String value = o_cast.getValue();
+
+							newValue.setValue((java.lang.String) value);
+
+							traced.getValueSequence().add(newValue);
+							newState.getVariable_value_Values().add(newValue);
+						}
+					}
+
+					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity) {
+						org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity o_cast = (org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity) o;
+
+						if (p.getFeatureID() == org.modelexecution.xmof.examples.iml.sequentialiml.iml.ImlPackage.eINSTANCE
+								.getActivity_Current().getFeatureID()) {
+
+							// Rollback: we remove the last value of this field from the new state
+							imlTrace.States.iml.TracedActivity traced = (imlTrace.States.iml.TracedActivity) exeToTraced
+									.get(o);
+							imlTrace.States.Activity_current_Value lastValue = traced.getCurrentSequence()
+									.get(traced.getCurrentSequence().size() - 1);
+							newState.getActivity_current_Values().remove(lastValue);
+
+							// And we create a proper new value
+							imlTrace.States.Activity_current_Value newValue = imlTrace.States.StatesFactory.eINSTANCE
+									.createActivity_current_Value();
+
+							boolean value = o_cast.isCurrent();
+
+							newValue.setCurrent((boolean) value);
+
+							traced.getCurrentSequence().add(newValue);
+							newState.getActivity_current_Values().add(newValue);
+						}
+					}
 				}
 			}
 			if (stateChanged) {
@@ -561,6 +561,12 @@ public class ImlTraceConstructor implements ITraceConstructor {
 			} else if (step_cast instanceof imlTrace.Steps.Iml_Header_Execute) {
 				imlTrace.Steps.Iml_Header_Execute iml_Header_ExecuteInstance = (imlTrace.Steps.Iml_Header_Execute) step_cast;
 				traceRoot.getIml_Header_Execute_Sequence().add(iml_Header_ExecuteInstance);
+			} else if (step_cast instanceof imlTrace.Steps.Iml_SelectionConvergence_DoFire) {
+				imlTrace.Steps.Iml_SelectionConvergence_DoFire iml_SelectionConvergence_DoFireInstance = (imlTrace.Steps.Iml_SelectionConvergence_DoFire) step_cast;
+				traceRoot.getIml_SelectionConvergence_DoFire_Sequence().add(iml_SelectionConvergence_DoFireInstance);
+			} else if (step_cast instanceof imlTrace.Steps.Iml_SelectionDivergence_DoFire) {
+				imlTrace.Steps.Iml_SelectionDivergence_DoFire iml_SelectionDivergence_DoFireInstance = (imlTrace.Steps.Iml_SelectionDivergence_DoFire) step_cast;
+				traceRoot.getIml_SelectionDivergence_DoFire_Sequence().add(iml_SelectionDivergence_DoFireInstance);
 			} else if (step_cast instanceof imlTrace.Steps.Iml_SimultaneousConvergence_DoFire) {
 				imlTrace.Steps.Iml_SimultaneousConvergence_DoFire iml_SimultaneousConvergence_DoFireInstance = (imlTrace.Steps.Iml_SimultaneousConvergence_DoFire) step_cast;
 				traceRoot.getIml_SimultaneousConvergence_DoFire_Sequence()
@@ -569,6 +575,12 @@ public class ImlTraceConstructor implements ITraceConstructor {
 				imlTrace.Steps.Iml_SimultaneousDivergence_DoFire iml_SimultaneousDivergence_DoFireInstance = (imlTrace.Steps.Iml_SimultaneousDivergence_DoFire) step_cast;
 				traceRoot.getIml_SimultaneousDivergence_DoFire_Sequence()
 						.add(iml_SimultaneousDivergence_DoFireInstance);
+			} else if (step_cast instanceof imlTrace.Steps.Iml_State_Activate) {
+				imlTrace.Steps.Iml_State_Activate iml_State_ActivateInstance = (imlTrace.Steps.Iml_State_Activate) step_cast;
+				traceRoot.getIml_State_Activate_Sequence().add(iml_State_ActivateInstance);
+			} else if (step_cast instanceof imlTrace.Steps.Iml_State_Deactivate) {
+				imlTrace.Steps.Iml_State_Deactivate iml_State_DeactivateInstance = (imlTrace.Steps.Iml_State_Deactivate) step_cast;
+				traceRoot.getIml_State_Deactivate_Sequence().add(iml_State_DeactivateInstance);
 			} else if (step_cast instanceof imlTrace.Steps.Iml_State_ExecuteActivities) {
 				imlTrace.Steps.Iml_State_ExecuteActivities iml_State_ExecuteActivitiesInstance = (imlTrace.Steps.Iml_State_ExecuteActivities) step_cast;
 				traceRoot.getIml_State_ExecuteActivities_Sequence().add(iml_State_ExecuteActivitiesInstance);
@@ -587,6 +599,10 @@ public class ImlTraceConstructor implements ITraceConstructor {
 		imlTrace.Steps.SpecificStep implicitStep = null;
 		if (currentStep instanceof imlTrace.Steps.Iml_Header_Execute) {
 			implicitStep = imlTrace.Steps.StepsFactory.eINSTANCE.createIml_Header_Execute_ImplicitStep();
+		} else if (currentStep instanceof imlTrace.Steps.Iml_SelectionConvergence_DoFire) {
+			implicitStep = imlTrace.Steps.StepsFactory.eINSTANCE.createIml_SelectionConvergence_DoFire_ImplicitStep();
+		} else if (currentStep instanceof imlTrace.Steps.Iml_SelectionDivergence_DoFire) {
+			implicitStep = imlTrace.Steps.StepsFactory.eINSTANCE.createIml_SelectionDivergence_DoFire_ImplicitStep();
 		} else if (currentStep instanceof imlTrace.Steps.Iml_SimultaneousConvergence_DoFire) {
 			implicitStep = imlTrace.Steps.StepsFactory.eINSTANCE
 					.createIml_SimultaneousConvergence_DoFire_ImplicitStep();
@@ -594,6 +610,8 @@ public class ImlTraceConstructor implements ITraceConstructor {
 			implicitStep = imlTrace.Steps.StepsFactory.eINSTANCE.createIml_SimultaneousDivergence_DoFire_ImplicitStep();
 		} else if (currentStep instanceof imlTrace.Steps.Iml_StateTransition_DoFire) {
 			implicitStep = imlTrace.Steps.StepsFactory.eINSTANCE.createIml_StateTransition_DoFire_ImplicitStep();
+		} else if (currentStep instanceof imlTrace.Steps.Iml_State_Activate) {
+			implicitStep = imlTrace.Steps.StepsFactory.eINSTANCE.createIml_State_Activate_ImplicitStep();
 		} else if (currentStep instanceof imlTrace.Steps.Iml_State_ExecuteActivities) {
 			implicitStep = imlTrace.Steps.StepsFactory.eINSTANCE.createIml_State_ExecuteActivities_ImplicitStep();
 		}

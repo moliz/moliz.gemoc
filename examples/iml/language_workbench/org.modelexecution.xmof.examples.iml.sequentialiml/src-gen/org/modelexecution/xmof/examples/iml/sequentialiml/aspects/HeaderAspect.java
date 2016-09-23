@@ -1,6 +1,5 @@
 package org.modelexecution.xmof.examples.iml.sequentialiml.aspects;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel;
@@ -11,7 +10,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.modelexecution.xmof.examples.iml.sequentialiml.iml.Connection;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.Element;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.Header;
@@ -80,27 +78,18 @@ public class HeaderAspect extends IdentifyableElementAspect {
       {
         Iterable<State> _currentStates = HeaderAspect.getCurrentStates(_self);
         for (final State s : _currentStates) {
-          EList<Element> _members_1 = _self.getMembers();
-          Iterable<Connection> _filter_2 = Iterables.<Connection>filter(_members_1, Connection.class);
-          final Function1<Connection, Boolean> _function_1 = (Connection c) -> {
-            ConnectionPoint _source = c.getSource();
-            return Boolean.valueOf(Objects.equal(_source, s));
-          };
-          Iterable<Connection> _filter_3 = IterableExtensions.<Connection>filter(_filter_2, _function_1);
-          for (final Connection c : _filter_3) {
-            ConnectionPoint _target = c.getTarget();
-            boolean _isEnabled = ConnectionPointAspect.isEnabled(_target);
-            if (_isEnabled) {
-              ConnectionPoint _target_1 = c.getTarget();
-              ConnectionPointAspect.fire(_target_1);
-            }
+          ConnectionPoint _target = ConnectionPointAspect.getTarget(s);
+          boolean _isEnabled = ConnectionPointAspect.isEnabled(_target);
+          if (_isEnabled) {
+            ConnectionPoint _target_1 = ConnectionPointAspect.getTarget(s);
+            ConnectionPointAspect.fire(_target_1);
           }
         }
         Iterable<State> _currentStates_1 = HeaderAspect.getCurrentStates(_self);
-        final Function1<State, Boolean> _function_2 = (State cs) -> {
+        final Function1<State, Boolean> _function_1 = (State cs) -> {
           return Boolean.valueOf(cs.isTerminal());
         };
-        boolean _exists = IterableExtensions.<State>exists(_currentStates_1, _function_2);
+        boolean _exists = IterableExtensions.<State>exists(_currentStates_1, _function_1);
         if (_exists) {
           terminate = true;
         }

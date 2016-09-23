@@ -3,9 +3,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="SpecificTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_Activity_DoExecute_Sequence" upperBound="-1" eType="//Steps/Iml_Activity_DoExecute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_Header_Execute_Sequence" upperBound="-1" eType="//Steps/Iml_Header_Execute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_SelectionConvergence_DoFire_Sequence" upperBound="-1" eType="//Steps/Iml_SelectionConvergence_DoFire"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_SelectionDivergence_DoFire_Sequence" upperBound="-1" eType="//Steps/Iml_SelectionDivergence_DoFire"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_SimultaneousConvergence_DoFire_Sequence" upperBound="-1" eType="//Steps/Iml_SimultaneousConvergence_DoFire"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_SimultaneousDivergence_DoFire_Sequence" upperBound="-1" eType="//Steps/Iml_SimultaneousDivergence_DoFire"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_StateTransition_DoFire_Sequence" upperBound="-1" eType="//Steps/Iml_StateTransition_DoFire"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_State_Activate_Sequence" upperBound="-1" eType="//Steps/Iml_State_Activate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_State_Deactivate_Sequence" upperBound="-1" eType="//Steps/Iml_State_Deactivate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Iml_State_ExecuteActivities_Sequence" upperBound="-1" eType="//Steps/Iml_State_ExecuteActivities"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iml_tracedActivitys" ordered="false" upperBound="-1" eType="//States/iml/TracedActivity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iml_tracedAddDatas" ordered="false" upperBound="-1" eType="//States/iml/TracedAddData" containment="true"/>
@@ -57,6 +61,48 @@
       <eSuperTypes href="#//Steps/Iml_Header_Execute_AbstractSubStep"/>
       <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_SelectionConvergence_DoFire">
+      <eOperations name="getCaller" lowerBound="1" eType="//States/iml/TracedSelectionConvergence">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (imlTrace.States.iml.TracedSelectionConvergence) this.getMseoccurrence().getMse().getCaller();"/>
+        </eAnnotations>
+      </eOperations>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_Header_Execute_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//Steps/Iml_SelectionConvergence_DoFire_AbstractSubStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_StateTransition_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SimultaneousConvergence_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_SelectionConvergence_DoFire_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_SelectionConvergence_DoFire_ImplicitStep">
+      <eSuperTypes href="#//Steps/Iml_SelectionConvergence_DoFire_AbstractSubStep"/>
+      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_SelectionDivergence_DoFire">
+      <eOperations name="getCaller" lowerBound="1" eType="//States/iml/TracedSelectionDivergence">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (imlTrace.States.iml.TracedSelectionDivergence) this.getMseoccurrence().getMse().getCaller();"/>
+        </eAnnotations>
+      </eOperations>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_Header_Execute_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_StateTransition_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SimultaneousConvergence_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_SelectionDivergence_DoFire_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_SelectionDivergence_DoFire_ImplicitStep">
+      <eSuperTypes href="#//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
+      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_SimultaneousConvergence_DoFire">
       <eOperations name="getCaller" lowerBound="1" eType="//States/iml/TracedSimultaneousConvergence">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -71,6 +117,7 @@
         <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/Iml_SimultaneousConvergence_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_SimultaneousConvergence_DoFire_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_SimultaneousConvergence_DoFire_ImplicitStep">
@@ -91,6 +138,7 @@
         <eTypeArguments eClassifier="//Steps/Iml_SimultaneousDivergence_DoFire_AbstractSubStep"/>
         <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_SimultaneousDivergence_DoFire_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_SimultaneousDivergence_DoFire_ImplicitStep">
@@ -111,11 +159,48 @@
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/Iml_StateTransition_DoFire_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/Iml_SimultaneousConvergence_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_StateTransition_DoFire_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_StateTransition_DoFire_ImplicitStep">
       <eSuperTypes href="#//Steps/Iml_StateTransition_DoFire_AbstractSubStep"/>
       <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_State_Activate">
+      <eOperations name="getCaller" lowerBound="1" eType="//States/iml/TracedState">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (imlTrace.States.iml.TracedState) this.getMseoccurrence().getMse().getCaller();"/>
+        </eAnnotations>
+      </eOperations>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_Header_Execute_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//Steps/Iml_State_Activate_AbstractSubStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SelectionConvergence_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_StateTransition_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SimultaneousConvergence_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SimultaneousDivergence_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_State_Activate_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_State_Activate_ImplicitStep">
+      <eSuperTypes href="#//Steps/Iml_State_Activate_AbstractSubStep"/>
+      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Iml_State_Deactivate">
+      <eSuperTypes href="#//Steps/SpecificStep"/>
+      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="#//Steps/Iml_Header_Execute_AbstractSubStep"/>
+      <eSuperTypes href="#//Steps/Iml_StateTransition_DoFire_AbstractSubStep"/>
+      <eSuperTypes href="#//Steps/Iml_SimultaneousConvergence_DoFire_AbstractSubStep"/>
+      <eSuperTypes href="#//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
+      <eOperations name="getCaller" lowerBound="1" eType="//States/iml/TracedState">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (imlTrace.States.iml.TracedState) this.getMseoccurrence().getMse().getCaller();"/>
+        </eAnnotations>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_State_ExecuteActivities">
       <eOperations name="getCaller" lowerBound="1" eType="//States/iml/TracedState">
@@ -128,10 +213,7 @@
         <eTypeArguments eClassifier="//Steps/Iml_State_ExecuteActivities_AbstractSubStep"/>
         <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
-      <eGenericSuperTypes eClassifier="//Steps/Iml_Header_Execute_AbstractSubStep"/>
-      <eGenericSuperTypes eClassifier="//Steps/Iml_StateTransition_DoFire_AbstractSubStep"/>
-      <eGenericSuperTypes eClassifier="//Steps/Iml_SimultaneousConvergence_DoFire_AbstractSubStep"/>
-      <eGenericSuperTypes eClassifier="//Steps/Iml_SimultaneousDivergence_DoFire_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/Iml_State_Activate_AbstractSubStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_State_ExecuteActivities_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="Iml_State_ExecuteActivities_ImplicitStep">

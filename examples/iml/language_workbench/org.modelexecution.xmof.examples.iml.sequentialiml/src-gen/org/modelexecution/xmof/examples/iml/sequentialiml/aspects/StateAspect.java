@@ -12,14 +12,40 @@ import org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectSta
 @Aspect(className = State.class)
 @SuppressWarnings("all")
 public class StateAspect extends ConnectionPointAspect {
+  @Step
   public static void activate(final State _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectContext.getSelf(_self);
-    _privk3_activate(_self_, _self);;
+    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    	@Override
+    	public void execute() {
+    		_privk3_activate(_self_, _self);
+    	}
+    };
+    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    if (manager != null) {
+    	manager.executeStep(_self,command,"State","activate");
+    } else {
+    	command.execute();
+    }
+    ;;
   }
   
+  @Step
   public static void deactivate(final State _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectContext.getSelf(_self);
-    _privk3_deactivate(_self_, _self);;
+    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    	@Override
+    	public void execute() {
+    		_privk3_deactivate(_self_, _self);
+    	}
+    };
+    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    if (manager != null) {
+    	manager.executeStep(_self,command,"State","deactivate");
+    } else {
+    	command.execute();
+    }
+    ;;
   }
   
   @Step

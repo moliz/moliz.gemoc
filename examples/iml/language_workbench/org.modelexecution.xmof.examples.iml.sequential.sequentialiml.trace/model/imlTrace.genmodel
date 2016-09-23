@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.iml.sequential.sequentialiml.trace/src" modelPluginID="org.modelexecution.xmof.examples.iml.sequential.sequentialiml.trace" modelName="ImlTrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
-  <foreignModel>file:/C:/Users/tanjam/AppData/Local/Temp/diverse3986797532764230090tracemmgeneration/imlTrace.ecore</foreignModel>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.iml.sequential.sequentialiml.trace/src" modelPluginID="org.modelexecution.xmof.examples.iml.sequential.sequentialiml.trace" modelName="ImlTrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>file:/C:/Users/tanjam/AppData/Local/Temp/diverse4794481828637573297tracemmgeneration/imlTrace.ecore</foreignModel>
   <genPackages prefix="ImlTrace" disposableProviderFactory="true">
     <ecorePackage href="imlTrace.ecore#/"/>
     <genClasses>
@@ -12,6 +12,12 @@
         <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_Header_Execute_Sequence"/>
       </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_SelectionConvergence_DoFire_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_SelectionDivergence_DoFire_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_SimultaneousConvergence_DoFire_Sequence"/>
       </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
@@ -19,6 +25,12 @@
       </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_StateTransition_DoFire_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_State_Activate_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_State_Deactivate_Sequence"/>
       </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="imlTrace.ecore#//SpecificTrace/Iml_State_ExecuteActivities_Sequence"/>
@@ -87,6 +99,30 @@
         <ecoreClass href="imlTrace.ecore#//Steps/Iml_Header_Execute_ImplicitStep"/>
       </genClasses>
       <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SelectionConvergence_DoFire"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_SelectionConvergence_DoFire/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SelectionConvergence_DoFire_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SelectionConvergence_DoFire_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SelectionDivergence_DoFire"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_SelectionDivergence_DoFire/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SelectionDivergence_DoFire_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_SelectionDivergence_DoFire_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
         <ecoreClass href="imlTrace.ecore#//Steps/Iml_SimultaneousConvergence_DoFire"/>
         <genOperations>
           <ecoreOperation href="imlTrace.ecore#//Steps/Iml_SimultaneousConvergence_DoFire/getCaller"/>
@@ -121,6 +157,24 @@
       </genClasses>
       <genClasses>
         <ecoreClass href="imlTrace.ecore#//Steps/Iml_StateTransition_DoFire_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_State_Activate"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_State_Activate/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_State_Activate_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_State_Activate_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="imlTrace.ecore#//Steps/Iml_State_Deactivate"/>
+        <genOperations>
+          <ecoreOperation href="imlTrace.ecore#//Steps/Iml_State_Deactivate/getCaller"/>
+        </genOperations>
       </genClasses>
       <genClasses>
         <ecoreClass href="imlTrace.ecore#//Steps/Iml_State_ExecuteActivities"/>

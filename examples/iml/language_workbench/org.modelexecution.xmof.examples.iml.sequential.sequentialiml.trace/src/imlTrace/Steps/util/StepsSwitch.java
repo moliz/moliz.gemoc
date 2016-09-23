@@ -109,6 +109,70 @@ public class StepsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case StepsPackage.IML_SELECTION_CONVERGENCE_DO_FIRE: {
+				Iml_SelectionConvergence_DoFire iml_SelectionConvergence_DoFire = (Iml_SelectionConvergence_DoFire)theEObject;
+				T result = caseIml_SelectionConvergence_DoFire(iml_SelectionConvergence_DoFire);
+				if (result == null) result = caseIml_Header_Execute_AbstractSubStep(iml_SelectionConvergence_DoFire);
+				if (result == null) result = caseSequentialStep(iml_SelectionConvergence_DoFire);
+				if (result == null) result = caseIml_StateTransition_DoFire_AbstractSubStep(iml_SelectionConvergence_DoFire);
+				if (result == null) result = caseIml_SimultaneousConvergence_DoFire_AbstractSubStep(iml_SelectionConvergence_DoFire);
+				if (result == null) result = caseIml_SelectionDivergence_DoFire_AbstractSubStep(iml_SelectionConvergence_DoFire);
+				if (result == null) result = caseSpecificStep(iml_SelectionConvergence_DoFire);
+				if (result == null) result = caseBigStep(iml_SelectionConvergence_DoFire);
+				if (result == null) result = caseStep(iml_SelectionConvergence_DoFire);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP: {
+				Iml_SelectionConvergence_DoFire_AbstractSubStep iml_SelectionConvergence_DoFire_AbstractSubStep = (Iml_SelectionConvergence_DoFire_AbstractSubStep)theEObject;
+				T result = caseIml_SelectionConvergence_DoFire_AbstractSubStep(iml_SelectionConvergence_DoFire_AbstractSubStep);
+				if (result == null) result = caseSpecificStep(iml_SelectionConvergence_DoFire_AbstractSubStep);
+				if (result == null) result = caseStep(iml_SelectionConvergence_DoFire_AbstractSubStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP: {
+				Iml_SelectionConvergence_DoFire_ImplicitStep iml_SelectionConvergence_DoFire_ImplicitStep = (Iml_SelectionConvergence_DoFire_ImplicitStep)theEObject;
+				T result = caseIml_SelectionConvergence_DoFire_ImplicitStep(iml_SelectionConvergence_DoFire_ImplicitStep);
+				if (result == null) result = caseIml_SelectionConvergence_DoFire_AbstractSubStep(iml_SelectionConvergence_DoFire_ImplicitStep);
+				if (result == null) result = caseSmallStep(iml_SelectionConvergence_DoFire_ImplicitStep);
+				if (result == null) result = caseSpecificStep(iml_SelectionConvergence_DoFire_ImplicitStep);
+				if (result == null) result = caseStep(iml_SelectionConvergence_DoFire_ImplicitStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.IML_SELECTION_DIVERGENCE_DO_FIRE: {
+				Iml_SelectionDivergence_DoFire iml_SelectionDivergence_DoFire = (Iml_SelectionDivergence_DoFire)theEObject;
+				T result = caseIml_SelectionDivergence_DoFire(iml_SelectionDivergence_DoFire);
+				if (result == null) result = caseIml_Header_Execute_AbstractSubStep(iml_SelectionDivergence_DoFire);
+				if (result == null) result = caseIml_StateTransition_DoFire_AbstractSubStep(iml_SelectionDivergence_DoFire);
+				if (result == null) result = caseIml_SimultaneousConvergence_DoFire_AbstractSubStep(iml_SelectionDivergence_DoFire);
+				if (result == null) result = caseSequentialStep(iml_SelectionDivergence_DoFire);
+				if (result == null) result = caseIml_SelectionDivergence_DoFire_AbstractSubStep(iml_SelectionDivergence_DoFire);
+				if (result == null) result = caseSpecificStep(iml_SelectionDivergence_DoFire);
+				if (result == null) result = caseBigStep(iml_SelectionDivergence_DoFire);
+				if (result == null) result = caseStep(iml_SelectionDivergence_DoFire);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP: {
+				Iml_SelectionDivergence_DoFire_AbstractSubStep iml_SelectionDivergence_DoFire_AbstractSubStep = (Iml_SelectionDivergence_DoFire_AbstractSubStep)theEObject;
+				T result = caseIml_SelectionDivergence_DoFire_AbstractSubStep(iml_SelectionDivergence_DoFire_AbstractSubStep);
+				if (result == null) result = caseSpecificStep(iml_SelectionDivergence_DoFire_AbstractSubStep);
+				if (result == null) result = caseStep(iml_SelectionDivergence_DoFire_AbstractSubStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP: {
+				Iml_SelectionDivergence_DoFire_ImplicitStep iml_SelectionDivergence_DoFire_ImplicitStep = (Iml_SelectionDivergence_DoFire_ImplicitStep)theEObject;
+				T result = caseIml_SelectionDivergence_DoFire_ImplicitStep(iml_SelectionDivergence_DoFire_ImplicitStep);
+				if (result == null) result = caseIml_SelectionDivergence_DoFire_AbstractSubStep(iml_SelectionDivergence_DoFire_ImplicitStep);
+				if (result == null) result = caseSmallStep(iml_SelectionDivergence_DoFire_ImplicitStep);
+				if (result == null) result = caseSpecificStep(iml_SelectionDivergence_DoFire_ImplicitStep);
+				if (result == null) result = caseStep(iml_SelectionDivergence_DoFire_ImplicitStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case StepsPackage.IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE: {
 				Iml_SimultaneousConvergence_DoFire iml_SimultaneousConvergence_DoFire = (Iml_SimultaneousConvergence_DoFire)theEObject;
 				T result = caseIml_SimultaneousConvergence_DoFire(iml_SimultaneousConvergence_DoFire);
@@ -116,6 +180,7 @@ public class StepsSwitch<T> extends Switch<T> {
 				if (result == null) result = caseIml_StateTransition_DoFire_AbstractSubStep(iml_SimultaneousConvergence_DoFire);
 				if (result == null) result = caseSequentialStep(iml_SimultaneousConvergence_DoFire);
 				if (result == null) result = caseIml_SimultaneousConvergence_DoFire_AbstractSubStep(iml_SimultaneousConvergence_DoFire);
+				if (result == null) result = caseIml_SelectionDivergence_DoFire_AbstractSubStep(iml_SimultaneousConvergence_DoFire);
 				if (result == null) result = caseSpecificStep(iml_SimultaneousConvergence_DoFire);
 				if (result == null) result = caseBigStep(iml_SimultaneousConvergence_DoFire);
 				if (result == null) result = caseStep(iml_SimultaneousConvergence_DoFire);
@@ -147,6 +212,7 @@ public class StepsSwitch<T> extends Switch<T> {
 				if (result == null) result = caseIml_StateTransition_DoFire_AbstractSubStep(iml_SimultaneousDivergence_DoFire);
 				if (result == null) result = caseIml_SimultaneousConvergence_DoFire_AbstractSubStep(iml_SimultaneousDivergence_DoFire);
 				if (result == null) result = caseSequentialStep(iml_SimultaneousDivergence_DoFire);
+				if (result == null) result = caseIml_SelectionDivergence_DoFire_AbstractSubStep(iml_SimultaneousDivergence_DoFire);
 				if (result == null) result = caseSpecificStep(iml_SimultaneousDivergence_DoFire);
 				if (result == null) result = caseBigStep(iml_SimultaneousDivergence_DoFire);
 				if (result == null) result = caseStep(iml_SimultaneousDivergence_DoFire);
@@ -178,6 +244,7 @@ public class StepsSwitch<T> extends Switch<T> {
 				if (result == null) result = caseSequentialStep(iml_StateTransition_DoFire);
 				if (result == null) result = caseIml_StateTransition_DoFire_AbstractSubStep(iml_StateTransition_DoFire);
 				if (result == null) result = caseIml_SimultaneousConvergence_DoFire_AbstractSubStep(iml_StateTransition_DoFire);
+				if (result == null) result = caseIml_SelectionDivergence_DoFire_AbstractSubStep(iml_StateTransition_DoFire);
 				if (result == null) result = caseSpecificStep(iml_StateTransition_DoFire);
 				if (result == null) result = caseBigStep(iml_StateTransition_DoFire);
 				if (result == null) result = caseStep(iml_StateTransition_DoFire);
@@ -202,14 +269,58 @@ public class StepsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case StepsPackage.IML_STATE_ACTIVATE: {
+				Iml_State_Activate iml_State_Activate = (Iml_State_Activate)theEObject;
+				T result = caseIml_State_Activate(iml_State_Activate);
+				if (result == null) result = caseIml_Header_Execute_AbstractSubStep(iml_State_Activate);
+				if (result == null) result = caseSequentialStep(iml_State_Activate);
+				if (result == null) result = caseIml_SelectionConvergence_DoFire_AbstractSubStep(iml_State_Activate);
+				if (result == null) result = caseIml_StateTransition_DoFire_AbstractSubStep(iml_State_Activate);
+				if (result == null) result = caseIml_SimultaneousConvergence_DoFire_AbstractSubStep(iml_State_Activate);
+				if (result == null) result = caseIml_SimultaneousDivergence_DoFire_AbstractSubStep(iml_State_Activate);
+				if (result == null) result = caseIml_SelectionDivergence_DoFire_AbstractSubStep(iml_State_Activate);
+				if (result == null) result = caseSpecificStep(iml_State_Activate);
+				if (result == null) result = caseBigStep(iml_State_Activate);
+				if (result == null) result = caseStep(iml_State_Activate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP: {
+				Iml_State_Activate_AbstractSubStep iml_State_Activate_AbstractSubStep = (Iml_State_Activate_AbstractSubStep)theEObject;
+				T result = caseIml_State_Activate_AbstractSubStep(iml_State_Activate_AbstractSubStep);
+				if (result == null) result = caseSpecificStep(iml_State_Activate_AbstractSubStep);
+				if (result == null) result = caseStep(iml_State_Activate_AbstractSubStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.IML_STATE_ACTIVATE_IMPLICIT_STEP: {
+				Iml_State_Activate_ImplicitStep iml_State_Activate_ImplicitStep = (Iml_State_Activate_ImplicitStep)theEObject;
+				T result = caseIml_State_Activate_ImplicitStep(iml_State_Activate_ImplicitStep);
+				if (result == null) result = caseIml_State_Activate_AbstractSubStep(iml_State_Activate_ImplicitStep);
+				if (result == null) result = caseSmallStep(iml_State_Activate_ImplicitStep);
+				if (result == null) result = caseSpecificStep(iml_State_Activate_ImplicitStep);
+				if (result == null) result = caseStep(iml_State_Activate_ImplicitStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case StepsPackage.IML_STATE_DEACTIVATE: {
+				Iml_State_Deactivate iml_State_Deactivate = (Iml_State_Deactivate)theEObject;
+				T result = caseIml_State_Deactivate(iml_State_Deactivate);
+				if (result == null) result = caseSmallStep(iml_State_Deactivate);
+				if (result == null) result = caseIml_Header_Execute_AbstractSubStep(iml_State_Deactivate);
+				if (result == null) result = caseIml_StateTransition_DoFire_AbstractSubStep(iml_State_Deactivate);
+				if (result == null) result = caseIml_SimultaneousConvergence_DoFire_AbstractSubStep(iml_State_Deactivate);
+				if (result == null) result = caseIml_SelectionDivergence_DoFire_AbstractSubStep(iml_State_Deactivate);
+				if (result == null) result = caseSpecificStep(iml_State_Deactivate);
+				if (result == null) result = caseStep(iml_State_Deactivate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES: {
 				Iml_State_ExecuteActivities iml_State_ExecuteActivities = (Iml_State_ExecuteActivities)theEObject;
 				T result = caseIml_State_ExecuteActivities(iml_State_ExecuteActivities);
 				if (result == null) result = caseSequentialStep(iml_State_ExecuteActivities);
-				if (result == null) result = caseIml_Header_Execute_AbstractSubStep(iml_State_ExecuteActivities);
-				if (result == null) result = caseIml_StateTransition_DoFire_AbstractSubStep(iml_State_ExecuteActivities);
-				if (result == null) result = caseIml_SimultaneousConvergence_DoFire_AbstractSubStep(iml_State_ExecuteActivities);
-				if (result == null) result = caseIml_SimultaneousDivergence_DoFire_AbstractSubStep(iml_State_ExecuteActivities);
+				if (result == null) result = caseIml_State_Activate_AbstractSubStep(iml_State_ExecuteActivities);
 				if (result == null) result = caseSpecificStep(iml_State_ExecuteActivities);
 				if (result == null) result = caseBigStep(iml_State_ExecuteActivities);
 				if (result == null) result = caseStep(iml_State_ExecuteActivities);
@@ -310,6 +421,96 @@ public class StepsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIml_Header_Execute_ImplicitStep(Iml_Header_Execute_ImplicitStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml Selection Convergence Do Fire</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml Selection Convergence Do Fire</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_SelectionConvergence_DoFire(Iml_SelectionConvergence_DoFire object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml Selection Convergence Do Fire Abstract Sub Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml Selection Convergence Do Fire Abstract Sub Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_SelectionConvergence_DoFire_AbstractSubStep(Iml_SelectionConvergence_DoFire_AbstractSubStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml Selection Convergence Do Fire Implicit Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml Selection Convergence Do Fire Implicit Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_SelectionConvergence_DoFire_ImplicitStep(Iml_SelectionConvergence_DoFire_ImplicitStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml Selection Divergence Do Fire</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml Selection Divergence Do Fire</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_SelectionDivergence_DoFire(Iml_SelectionDivergence_DoFire object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml Selection Divergence Do Fire Abstract Sub Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml Selection Divergence Do Fire Abstract Sub Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_SelectionDivergence_DoFire_AbstractSubStep(Iml_SelectionDivergence_DoFire_AbstractSubStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml Selection Divergence Do Fire Implicit Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml Selection Divergence Do Fire Implicit Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_SelectionDivergence_DoFire_ImplicitStep(Iml_SelectionDivergence_DoFire_ImplicitStep object) {
 		return null;
 	}
 
@@ -445,6 +646,66 @@ public class StepsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIml_StateTransition_DoFire_ImplicitStep(Iml_StateTransition_DoFire_ImplicitStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml State Activate</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml State Activate</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_State_Activate(Iml_State_Activate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml State Activate Abstract Sub Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml State Activate Abstract Sub Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_State_Activate_AbstractSubStep(Iml_State_Activate_AbstractSubStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml State Activate Implicit Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml State Activate Implicit Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_State_Activate_ImplicitStep(Iml_State_Activate_ImplicitStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Iml State Deactivate</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Iml State Deactivate</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIml_State_Deactivate(Iml_State_Deactivate object) {
 		return null;
 	}
 

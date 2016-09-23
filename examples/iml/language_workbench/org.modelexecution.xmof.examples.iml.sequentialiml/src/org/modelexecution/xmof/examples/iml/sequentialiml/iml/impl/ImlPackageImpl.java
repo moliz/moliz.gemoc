@@ -1002,7 +1002,15 @@ public class ImlPackageImpl extends EPackageImpl implements ImlPackage {
 
 		initEClass(selectionDivergenceEClass, SelectionDivergence.class, "SelectionDivergence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(selectionDivergenceEClass, ecorePackage.getEBoolean(), "isEnabled", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(selectionDivergenceEClass, null, "doFire", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(selectionConvergenceEClass, SelectionConvergence.class, "SelectionConvergence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(selectionConvergenceEClass, ecorePackage.getEBoolean(), "isEnabled", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(selectionConvergenceEClass, null, "doFire", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(connectionPointEClass, ConnectionPoint.class, "ConnectionPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConnectionPoint_Firing(), ecorePackage.getEBoolean(), "firing", null, 0, 1, ConnectionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1134,6 +1142,26 @@ public class ImlPackageImpl extends EPackageImpl implements ImlPackage {
 		   });	
 		addAnnotation
 		  (simultaneousConvergenceEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (selectionDivergenceEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (selectionDivergenceEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (selectionConvergenceEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (selectionConvergenceEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });	
