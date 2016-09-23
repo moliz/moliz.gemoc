@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iml:Header xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iml="http://sequentialiml/iml/" id="H1" name="SimpleMovingRobot">
+  <members xsi:type="iml:State" id="S1" name="InitialStep" init="true"/>
+  <members xsi:type="iml:State" id="S2" name="MovingForward" activities="//@members.5 //@members.3"/>
+  <members xsi:type="iml:State" id="S3" name="Stopping" activities="//@members.6 //@members.4"/>
+  <members xsi:type="iml:Activity" id="A1" name="MoveStepForward"/>
+  <members xsi:type="iml:Activity" id="A2" name="Stop"/>
+  <members xsi:type="iml:Activity" id="A3" name="BlinkGreen"/>
+  <members xsi:type="iml:Activity" id="A4" name="BlinkRed"/>
+  <members xsi:type="iml:SelectionConvergence" id="SC1"/>
+  <members xsi:type="iml:StateTransition" id="T1" name="Move"/>
+  <members xsi:type="iml:StateTransition" id="T2" name="Stop"/>
+  <members xsi:type="iml:StateTransition" id="T3" name="Repeat"/>
+  <members xsi:type="iml:Connection" id="c1" source="//@members.0" target="//@members.8"/>
+  <members xsi:type="iml:Connection" id="C2" source="//@members.8" target="//@members.7"/>
+  <members xsi:type="iml:Connection" id="C3" source="//@members.7" target="//@members.1"/>
+  <members xsi:type="iml:Connection" id="C4" source="//@members.1" target="//@members.9"/>
+  <members xsi:type="iml:Connection" id="C5" source="//@members.9" target="//@members.2"/>
+  <members xsi:type="iml:Connection" id="C6" source="//@members.2" target="//@members.10"/>
+  <members xsi:type="iml:Connection" id="C7" source="//@members.10" target="//@members.7"/>
+</iml:Header>

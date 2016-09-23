@@ -8,7 +8,7 @@
 <stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value="public static void org.modelexecution.xmof.examples.iml.sequentialiml.aspects.HeaderAspect.execute(org.modelexecution.xmof.examples.iml.sequentialiml.iml.Header)"/>
 <stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value="/"/>
 <booleanAttribute key="MultiBranch Reflective Trace" value="false"/>
-<stringAttribute key="Resource" value="/org.modelexecution.xmof.examples.iml.samplemodels/GrippingRobot.iml"/>
+<stringAttribute key="Resource" value="/org.modelexecution.xmof.examples.iml.samplemodels/SimpleMovingRobot.iml"/>
 <booleanAttribute key="VCD visualization" value="false"/>
 <stringAttribute key="airdResource" value="/org.modelexecution.xmof.examples.iml.samplemodels/representations.aird"/>
 <booleanAttribute key="iml MultiDimensional Trace" value="false"/>
