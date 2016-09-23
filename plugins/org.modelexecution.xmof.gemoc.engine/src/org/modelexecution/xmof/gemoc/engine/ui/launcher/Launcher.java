@@ -18,8 +18,7 @@ import org.gemoc.executionframework.engine.ui.debug.AbstractGemocDebugger;
 import org.gemoc.executionframework.engine.ui.launcher.AbstractSequentialGemocLauncher;
 import org.gemoc.executionframework.ui.views.engine.EnginesStatusView;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
-import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
-import org.gemoc.xdsmlframework.api.core.ISequentialExecutionEngine;
+import org.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
@@ -37,10 +36,10 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 	public final static String TYPE_ID = Activator.PLUGIN_ID + ".launcher";
 
 	@Override
-	protected IBasicExecutionEngine createExecutionEngine(
+	protected IExecutionEngine createExecutionEngine(
 			org.gemoc.executionframework.engine.ui.commons.RunConfiguration runConfiguration,
 			ExecutionMode executionMode) throws CoreException, EngineContextException {
-		IBasicExecutionEngine executionEngine = new XMOFExecutionEngine();
+		IExecutionEngine executionEngine = new XMOFExecutionEngine();
 		ModelExecutionContext executioncontext = new SequentialModelExecutionContext(runConfiguration, executionMode);
 		//new//new XMOFExecutionModelContext(runConfiguration, executionMode);
 		executioncontext.initializeResourceModel();
@@ -55,9 +54,9 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 		Set<IMultiDimensionalTraceAddon> traceAddons = _executionEngine
 				.getAddonsTypedBy(IMultiDimensionalTraceAddon.class);
 		if (traceAddons.isEmpty()) {
-			debugger = new GenericSequentialModelDebugger(dispatcher, (ISequentialExecutionEngine) _executionEngine);
+			debugger = new GenericSequentialModelDebugger(dispatcher, _executionEngine);
 		} else {
-			debugger = new GenericSequentialModelDebugger(dispatcher, (ISequentialExecutionEngine) _executionEngine);
+			debugger = new GenericSequentialModelDebugger(dispatcher, _executionEngine);
 			// res = new OmniscientGenericSequentialModelDebugger(dispatcher,
 			// (ISequentialExecutionEngine) executionEngine,
 			// traceAddons.iterator().next());
@@ -70,9 +69,9 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 		// we add this dummy break
 		try {
 			if (configuration.getAttribute(RunConfiguration.LAUNCH_BREAK_START, false)) {
-				debugger.addPredicateBreak(new BiPredicate<IBasicExecutionEngine, MSEOccurrence>() {
+				debugger.addPredicateBreak(new BiPredicate<IExecutionEngine, MSEOccurrence>() {
 					@Override
-					public boolean test(IBasicExecutionEngine t, MSEOccurrence u) {
+					public boolean test(IExecutionEngine t, MSEOccurrence u) {
 						return true;
 					}
 				});
