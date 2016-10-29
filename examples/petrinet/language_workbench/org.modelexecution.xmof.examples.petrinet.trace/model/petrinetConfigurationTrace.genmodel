@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.petrinet.trace/src" modelPluginID="org.modelexecution.xmof.examples.petrinet.trace" modelName="PetrinetConfigurationTrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="8.0" copyrightFields="false" importOrganizing="true">
+  <foreignModel>platform:/resource/org.modelexecution.xmof.examples.petrinet.trace/model/petrinetConfigurationTrace.ecore</foreignModel>
+  <genPackages prefix="PetrinetConfigurationTrace" disposableProviderFactory="true">
+    <ecorePackage href="petrinetConfigurationTrace.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="petrinetConfigurationTrace.ecore#//SpecificTrace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//SpecificTrace/PetrinetConfiguration_NetConfiguration_Main_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//SpecificTrace/PetrinetConfiguration_NetConfiguration_Run_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//SpecificTrace/PetrinetConfiguration_TransitionConfiguration_Fire_Sequence"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//SpecificTrace/petrinetConfiguration_tracedPlaceConfigurations"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//SpecificTrace/statesTrace"/>
+      </genFeatures>
+    </genClasses>
+    <nestedGenPackages prefix="Steps" disposableProviderFactory="true">
+      <ecorePackage href="petrinetConfigurationTrace.ecore#//Steps"/>
+      <genClasses>
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_NetConfiguration_Main"/>
+        <genOperations>
+          <ecoreOperation href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_NetConfiguration_Main/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_NetConfiguration_Main_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_NetConfiguration_Main_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_NetConfiguration_Run"/>
+        <genOperations>
+          <ecoreOperation href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_NetConfiguration_Run/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_NetConfiguration_Run_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_NetConfiguration_Run_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_TransitionConfiguration_Fire"/>
+        <genOperations>
+          <ecoreOperation href="petrinetConfigurationTrace.ecore#//Steps/PetrinetConfiguration_TransitionConfiguration_Fire/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//Steps/RootImplicitStep"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//Steps/SpecificStep"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//Steps/SpecificStep/endingState"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//Steps/SpecificStep/startingState"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="States" disposableProviderFactory="true">
+      <ecorePackage href="petrinetConfigurationTrace.ecore#//States"/>
+      <genClasses>
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//States/PlaceConfiguration_tokens_Value"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//States/PlaceConfiguration_tokens_Value/parent"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//States/PlaceConfiguration_tokens_Value/states"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="petrinetConfigurationTrace.ecore#//States/PlaceConfiguration_tokens_Value/tokens"/>
+        </genFeatures>
+        <genOperations>
+          <ecoreOperation href="petrinetConfigurationTrace.ecore#//States/PlaceConfiguration_tokens_Value/getStatesNoOpposite"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//States/State"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//States/State/endedSteps"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//States/State/placeConfiguration_tokens_Values"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//States/State/startedSteps"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="petrinetConfigurationTrace.ecore#//States/Value"/>
+        <genFeatures property="Readonly" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//States/Value/statesNoOpposite"/>
+        </genFeatures>
+      </genClasses>
+      <nestedGenPackages prefix="PetrinetConfiguration" disposableProviderFactory="true">
+        <ecorePackage href="petrinetConfigurationTrace.ecore#//States/petrinetConfiguration"/>
+        <genClasses>
+          <ecoreClass href="petrinetConfigurationTrace.ecore#//States/petrinetConfiguration/TracedPlaceConfiguration"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//States/petrinetConfiguration/TracedPlaceConfiguration/originalObject"/>
+          </genFeatures>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="petrinetConfigurationTrace.ecore#//States/petrinetConfiguration/TracedPlaceConfiguration/tokensSequence"/>
+          </genFeatures>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+  <usedGenPackages href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.genmodel#//trace"/>
+  <usedGenPackages href="../../../plugin/org.modelexecution.xmof.examples.petrinet.xmof.dynamic/model-gen/petrinet.genmodel#//petrinetConfiguration"/>
+</genmodel:GenModel>
