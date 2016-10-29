@@ -39,10 +39,10 @@ class XMOFTraceAddonGeneratorIntegrationConfiguration implements TraceAddonGener
 		for (p : xmofModel.allContents.filter(EPackage).toSet)
 			EPackage.Registry.INSTANCE.put(p.getNsURI(), p);
 
-		val fakeURIGeneratedEcore = URI.
-			createURI('''platform:/«xmofModel.URI.segment(0)»/«xmofModel.URI.segment(1)»/model-gen/«xmofModel.URI.lastSegment».ecore''')
+//		val fakeURIGeneratedEcore = URI.
+//			createURI('''platform:/«xmofModel.URI.segment(0)»/«xmofModel.URI.segment(1)»/model-gen/«xmofModel.URI.lastSegment».ecore''')
 
-		xmofModel.URI = fakeURIGeneratedEcore
+//		xmofModel.URI = fakeURIGeneratedEcore
 
 		val XmofExecutionExtensionExtractor extractor = new XmofExecutionExtensionExtractor(abstractSyntax,
 			executionMetamodel, false)
