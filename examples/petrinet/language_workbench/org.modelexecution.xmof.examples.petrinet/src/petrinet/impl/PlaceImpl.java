@@ -18,11 +18,11 @@ import petrinet.Place;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link petrinet.impl.PlaceImpl#getInitialTokens <em>Initial Tokens</em>}</li>
  *   <li>{@link petrinet.impl.PlaceImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

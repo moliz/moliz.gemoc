@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link petrinet.Transition#getInput <em>Input</em>}</li>
  *   <li>{@link petrinet.Transition#getOutput <em>Output</em>}</li>
  *   <li>{@link petrinet.Transition#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see petrinet.PetrinetPackage#getTransition()
  * @model

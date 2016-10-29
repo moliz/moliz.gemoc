@@ -5,6 +5,7 @@ package petrinet.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -24,12 +25,12 @@ import petrinet.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link petrinet.impl.TransitionImpl#getInput <em>Input</em>}</li>
  *   <li>{@link petrinet.impl.TransitionImpl#getOutput <em>Output</em>}</li>
  *   <li>{@link petrinet.impl.TransitionImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
