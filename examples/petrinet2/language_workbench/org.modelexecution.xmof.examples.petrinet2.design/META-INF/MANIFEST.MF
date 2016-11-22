@@ -12,6 +12,6 @@ Require-Bundle: org.eclipse.ui,
  org.gemoc.executionframework.extensions.sirius,
  org.gemoc.xdsmlframework.api,
  org.modelexecution.xmof.examples.petrinet2;bundle-version="1.0.0",
- org.modelexecution.xmof.gemoc.engine;bundle-version="1.0.0"
+ org.modelexecution.xmof.gemoc.engine
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
