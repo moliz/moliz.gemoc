@@ -95,7 +95,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 	}
 
 	@Override
-	protected String getModelIdentifier() {
+	public String getModelIdentifier() {
 		if (_executionEngine instanceof XMOFExecutionEngine)
 			return Activator.PLUGIN_ID + ".debugModel";
 		else
