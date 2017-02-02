@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
-import org.gemoc.xdsmlframework.api.core.IBasicExecutionEngine;
+import org.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.core.controller.AnimationController;
 import org.modelexecution.xmof.animation.core.provider.AnimationProviderRegistry;
@@ -45,7 +45,7 @@ public class ModelAnimator implements IEngineAddon {
 	private AnimationController animationController;
 
 	@Override
-	public void engineAboutToStart(IBasicExecutionEngine executionEngine) {
+	public void engineAboutToStart(IExecutionEngine executionEngine) {
 
 	}
 
@@ -56,7 +56,7 @@ public class ModelAnimator implements IEngineAddon {
 	 * @param executionEngine
 	 */
 	@Override
-	public void engineStarted(IBasicExecutionEngine executionEngine) {
+	public void engineStarted(IExecutionEngine executionEngine) {
 		if (executionEngine instanceof XMOFExecutionEngine) {
 			initialize((XMOFExecutionEngine) executionEngine);
 
@@ -130,7 +130,7 @@ public class ModelAnimator implements IEngineAddon {
 	}
 
 	@Override
-	public void engineAboutToStop(IBasicExecutionEngine engine) {
+	public void engineAboutToStop(IExecutionEngine engine) {
 		if (animationController != null) {
 			animationController.dispose();
 			animationController = null;
@@ -138,30 +138,30 @@ public class ModelAnimator implements IEngineAddon {
 	}
 
 	@Override
-	public void engineStopped(IBasicExecutionEngine engine) {
+	public void engineStopped(IExecutionEngine engine) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void engineAboutToDispose(IBasicExecutionEngine engine) {
+	public void engineAboutToDispose(IExecutionEngine engine) {
 
 	}
 
 	@Override
-	public void aboutToSelectStep(IBasicExecutionEngine engine, Collection<Step> steps) {
+	public void aboutToSelectStep(IExecutionEngine engine, Collection<Step> steps) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void proposedStepsChanged(IBasicExecutionEngine engine, Collection<Step> steps) {
+	public void proposedStepsChanged(IExecutionEngine engine, Collection<Step> steps) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void stepSelected(IBasicExecutionEngine engine, Step selectedStep) {
+	public void stepSelected(IExecutionEngine engine, Step selectedStep) {
 		// TODO Auto-generated method stub
 
 	}
@@ -170,7 +170,7 @@ public class ModelAnimator implements IEngineAddon {
 	 * MSE occurrence is passed to controller to animate step
 	 */
 	@Override
-	public void aboutToExecuteStep(IBasicExecutionEngine engine, Step stepToExecute) {
+	public void aboutToExecuteStep(IExecutionEngine engine, Step stepToExecute) {
 		if (animationController != null) {
 			animationController.processMSE(stepToExecute.getMseoccurrence(), true);
 		}
@@ -178,13 +178,13 @@ public class ModelAnimator implements IEngineAddon {
 	}
 
 	@Override
-	public void stepExecuted(IBasicExecutionEngine engine, Step stepExecuted) {
+	public void stepExecuted(IExecutionEngine engine, Step stepExecuted) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void engineStatusChanged(IBasicExecutionEngine engine, RunStatus newStatus) {
+	public void engineStatusChanged(IExecutionEngine engine, RunStatus newStatus) {
 		// TODO Auto-generated method stub
 
 	}
