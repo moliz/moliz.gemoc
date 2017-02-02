@@ -25,6 +25,7 @@ import org.eclipse.sirius.ui.business.api.session.IEditingSession;
 import org.eclipse.sirius.ui.business.api.session.SessionUIManager;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
@@ -143,7 +144,8 @@ public class SiriusDiagramHandler extends DiagramHandler {
 		}
 		DAnalysis root = (DAnalysis) siriusSession.getSessionResource().getContents().get(0);
 		DView dView = root.getOwnedViews().get(0);
-		for (DRepresentation representation : dView.getOwnedRepresentations()) {
+		for (DRepresentationDescriptor representationDescriptor : dView.getOwnedRepresentationDescriptors()) {
+			DRepresentation representation=representationDescriptor.getRepresentation();
 			if (representation.getName().toUpperCase().contains(key)) {
 				IEditorPart editor = DialectUIManager.INSTANCE.openEditor(siriusSession, representation,
 						new NullProgressMonitor());
