@@ -149,7 +149,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_SimultaneousConvergence_DoFire_Sequence() {
+	public EReference getSpecificTrace_Iml_SelectionConvergence_DoFire_Sequence() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -158,7 +158,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_SimultaneousDivergence_DoFire_Sequence() {
+	public EReference getSpecificTrace_Iml_SelectionDivergence_DoFire_Sequence() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -167,7 +167,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_StateTransition_DoFire_Sequence() {
+	public EReference getSpecificTrace_Iml_SimultaneousConvergence_DoFire_Sequence() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -176,7 +176,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_State_ExecuteActivities_Sequence() {
+	public EReference getSpecificTrace_Iml_SimultaneousDivergence_DoFire_Sequence() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -185,7 +185,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedActivitys() {
+	public EReference getSpecificTrace_Iml_StateTransition_DoFire_Sequence() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -194,7 +194,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedAddDatas() {
+	public EReference getSpecificTrace_Iml_State_Activate_Sequence() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -203,7 +203,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedConnections() {
+	public EReference getSpecificTrace_Iml_State_Deactivate_Sequence() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -212,7 +212,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedEvents() {
+	public EReference getSpecificTrace_Iml_State_ExecuteActivities_Sequence() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -221,7 +221,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedHeaders() {
+	public EReference getSpecificTrace_Iml_tracedActivitys() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -230,7 +230,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedJumps() {
+	public EReference getSpecificTrace_Iml_tracedAddDatas() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -239,7 +239,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedSelectionConvergences() {
+	public EReference getSpecificTrace_Iml_tracedConnections() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -248,7 +248,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedSelectionDivergences() {
+	public EReference getSpecificTrace_Iml_tracedEvents() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -257,7 +257,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedSimultaneousConvergences() {
+	public EReference getSpecificTrace_Iml_tracedHeaders() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -266,7 +266,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedSimultaneousDivergences() {
+	public EReference getSpecificTrace_Iml_tracedJumps() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -275,7 +275,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedStateTransitions() {
+	public EReference getSpecificTrace_Iml_tracedSelectionConvergences() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -284,7 +284,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedStates() {
+	public EReference getSpecificTrace_Iml_tracedSelectionDivergences() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -293,7 +293,7 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_Iml_tracedVariables() {
+	public EReference getSpecificTrace_Iml_tracedSimultaneousConvergences() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -302,8 +302,44 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificTrace_StatesTrace() {
+	public EReference getSpecificTrace_Iml_tracedSimultaneousDivergences() {
 		return (EReference)specificTraceEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Iml_tracedStateTransitions() {
+		return (EReference)specificTraceEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Iml_tracedStates() {
+		return (EReference)specificTraceEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_Iml_tracedVariables() {
+		return (EReference)specificTraceEClass.getEStructuralFeatures().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificTrace_StatesTrace() {
+		return (EReference)specificTraceEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -337,9 +373,13 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 		specificTraceEClass = createEClass(SPECIFIC_TRACE);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_ACTIVITY_DO_EXECUTE_SEQUENCE);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_HEADER_EXECUTE_SEQUENCE);
+		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_SELECTION_CONVERGENCE_DO_FIRE_SEQUENCE);
+		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_SELECTION_DIVERGENCE_DO_FIRE_SEQUENCE);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_SEQUENCE);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_SEQUENCE);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_STATE_TRANSITION_DO_FIRE_SEQUENCE);
+		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_STATE_ACTIVATE_SEQUENCE);
+		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_STATE_DEACTIVATE_SEQUENCE);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_STATE_EXECUTE_ACTIVITIES_SEQUENCE);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_TRACED_ACTIVITYS);
 		createEReference(specificTraceEClass, SPECIFIC_TRACE__IML_TRACED_ADD_DATAS);
@@ -406,9 +446,13 @@ public class ImlTracePackageImpl extends EPackageImpl implements ImlTracePackage
 		initEClass(specificTraceEClass, SpecificTrace.class, "SpecificTrace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSpecificTrace_Iml_Activity_DoExecute_Sequence(), theStepsPackage.getIml_Activity_DoExecute(), null, "Iml_Activity_DoExecute_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecificTrace_Iml_Header_Execute_Sequence(), theStepsPackage.getIml_Header_Execute(), null, "Iml_Header_Execute_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecificTrace_Iml_SelectionConvergence_DoFire_Sequence(), theStepsPackage.getIml_SelectionConvergence_DoFire(), null, "Iml_SelectionConvergence_DoFire_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecificTrace_Iml_SelectionDivergence_DoFire_Sequence(), theStepsPackage.getIml_SelectionDivergence_DoFire(), null, "Iml_SelectionDivergence_DoFire_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecificTrace_Iml_SimultaneousConvergence_DoFire_Sequence(), theStepsPackage.getIml_SimultaneousConvergence_DoFire(), null, "Iml_SimultaneousConvergence_DoFire_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecificTrace_Iml_SimultaneousDivergence_DoFire_Sequence(), theStepsPackage.getIml_SimultaneousDivergence_DoFire(), null, "Iml_SimultaneousDivergence_DoFire_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecificTrace_Iml_StateTransition_DoFire_Sequence(), theStepsPackage.getIml_StateTransition_DoFire(), null, "Iml_StateTransition_DoFire_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecificTrace_Iml_State_Activate_Sequence(), theStepsPackage.getIml_State_Activate(), null, "Iml_State_Activate_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecificTrace_Iml_State_Deactivate_Sequence(), theStepsPackage.getIml_State_Deactivate(), null, "Iml_State_Deactivate_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecificTrace_Iml_State_ExecuteActivities_Sequence(), theStepsPackage.getIml_State_ExecuteActivities(), null, "Iml_State_ExecuteActivities_Sequence", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecificTrace_Iml_tracedActivitys(), theImlPackage_1.getTracedActivity(), null, "iml_tracedActivitys", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSpecificTrace_Iml_tracedAddDatas(), theImlPackage_1.getTracedAddData(), null, "iml_tracedAddDatas", null, 0, -1, SpecificTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

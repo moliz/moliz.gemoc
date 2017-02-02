@@ -16,7 +16,7 @@ import imlTrace.States.iml.TracedState;
  * @model
  * @generated
  */
-public interface Iml_State_ExecuteActivities extends SpecificStep, SequentialStep<Iml_State_ExecuteActivities_AbstractSubStep>, Iml_Header_Execute_AbstractSubStep, Iml_StateTransition_DoFire_AbstractSubStep, Iml_SimultaneousConvergence_DoFire_AbstractSubStep, Iml_SimultaneousDivergence_DoFire_AbstractSubStep {
+public interface Iml_State_ExecuteActivities extends SpecificStep, SequentialStep<Iml_State_ExecuteActivities_AbstractSubStep>, Iml_State_Activate_AbstractSubStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

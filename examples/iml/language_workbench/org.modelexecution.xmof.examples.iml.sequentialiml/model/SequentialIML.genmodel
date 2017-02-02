@@ -182,9 +182,21 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="SequentialIML.ecore#//SelectionDivergence"/>
+      <genOperations>
+        <ecoreOperation href="SequentialIML.ecore#//SelectionDivergence/isEnabled"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="SequentialIML.ecore#//SelectionDivergence/doFire"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="SequentialIML.ecore#//SelectionConvergence"/>
+      <genOperations>
+        <ecoreOperation href="SequentialIML.ecore#//SelectionConvergence/isEnabled"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="SequentialIML.ecore#//SelectionConvergence/doFire"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="SequentialIML.ecore#//ConnectionPoint"/>

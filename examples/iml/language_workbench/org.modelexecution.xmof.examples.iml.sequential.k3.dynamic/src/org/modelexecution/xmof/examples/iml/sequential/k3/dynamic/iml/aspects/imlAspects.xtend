@@ -31,47 +31,46 @@ import java.util.List
 
 @Aspect(className=Header)
 class HeaderAspect extends IdentifyableElementAspect {
-	
+
 	@InitializeModel
 	def void initializeModel(List<String> args) {
-		
 	}
-	
+
 	@Main
 	@Step
 	def void execute() {
-		_self.members.filter(State).filter(m | m instanceof State && (m as State).init).get(0).activate();
-		
+		_self.members.filter(State).filter(m|m instanceof State && (m as State).init).get(0).activate();
+
 		var boolean terminate = false
 		while (!terminate) {
 			for (State s : _self.currentStates) {
-				for (Connection c : _self.members.filter(Connection).filter(c | c.source == s)) {
-					if (c.target.isEnabled()) {
-						c.target.fire();
-					}
+				if (s.target.isEnabled()) {
+					s.target.fire();
 				}
 			}
-			if (_self.currentStates.exists[cs | cs.terminal]) {
+			if (_self.currentStates.exists[cs|cs.terminal]) {
 				terminate = true
 			}
 		}
 	}
-	
+
 	def Iterable<State> getCurrentStates() {
-		_self.members.filter(State).filter(s | s.current)
+		_self.members.filter(State).filter(s|s.current)
 	}
 }
 
 @Aspect(className=State)
 class StateAspect extends ConnectionPointAspect {
-	
+
 	public var boolean current = false
-	
+
+	@Step
 	def void activate() {
 		_self.current = true;
 		_self.executeActivities();
 	}
-	
+
+	@Step
 	def void deactivate() {
 		_self.current = false;
 	}
@@ -82,31 +81,30 @@ class StateAspect extends ConnectionPointAspect {
 			activity.execute();
 		}
 	}
-	
+
 }
 
 @Aspect(className=Activity)
 class ActivityAspect extends IdentifyableElementAspect {
 
 	public var boolean current = false;
-	
+
 	def void execute() {
 		_self.current = true
 		_self.doExecute()
 		_self.current = false;
 	}
-	
+
 	@Step
 	def void doExecute() {
-		
 	}
 }
 
 @Aspect(className=ConnectionPoint)
 abstract class ConnectionPointAspect {
-	
+
 	public var boolean firing = false
-	
+
 	abstract def boolean isEnabled()
 
 	def void fire() {
@@ -114,37 +112,37 @@ abstract class ConnectionPointAspect {
 		_self.doFire();
 		_self.firing = false;
 	}
-	
+
 	abstract def void doFire()
-	
+
 	def Iterable<ConnectionPoint> getPredecessors() {
 		val Header container = _self.eContainer as Header;
-		container.members.filter(Connection).filter(c | c.target == _self).map[c | c.source];
+		container.members.filter(Connection).filter(c|c.target == _self).map[c|c.source];
 	}
-	
+
 	def Iterable<ConnectionPoint> getSuccessors() {
 		val Header container = _self.eContainer as Header;
-		container.members.filter(Connection).filter(c | c.source == _self).map[c | c.target];
+		container.members.filter(Connection).filter(c|c.source == _self).map[c|c.target];
 	}
-	
+
 	def ConnectionPoint getSource() {
 		if (_self.predecessors.size > 0)
 			_self.predecessors.get(0)
-		else 
+		else
 			null
 	}
-	
+
 	def ConnectionPoint getTarget() {
 		if (_self.successors.size > 0)
 			_self.successors.get(0)
-		else 
+		else
 			null
 	}
 }
 
 @Aspect(className=StateTransition)
 class StateTransitionAspect extends ConnectionPointAspect {
-	
+
 	/**
 	 * If the predecessor is a state, this state has to be active.  
 	 * If the predecessor is a simultaneous convergence, the state transition is enabled.
@@ -158,7 +156,7 @@ class StateTransitionAspect extends ConnectionPointAspect {
 			isEnabled = true
 		}
 		isEnabled
-	}	
+	}
 
 	/**
 	 * First deactivates the predecessor state(s):
@@ -168,16 +166,15 @@ class StateTransitionAspect extends ConnectionPointAspect {
 	 * If the successor is a state, this state is activated;
 	 * If the successor is a simultaneous divergence, fires this simultaneous divergence
 	 */
-	@OverrideAspectMethod	
+	@OverrideAspectMethod
 	@Step
 	def void doFire() {
 		if (_self.source instanceof State && (_self.source as State).current) {
 			(_self.source as State).deactivate()
-		} 
+		}
 //		else if (_self.source instanceof SimultaneousConvergence) {
 //			(_self.source as SimultaneousConvergence).predecessors.filter(State).forEach[s | s.deactivate()]
 //		}
-		
 		if (_self.target instanceof State) {
 			(_self.target as State).activate()
 		} else if (_self.target.isEnabled()) {
@@ -197,7 +194,7 @@ class SimultaneousDivergenceAspect extends ConnectionPointAspect {
 	@OverrideAspectMethod
 	def boolean isEnabled() {
 		true
-	}	
+	}
 
 	/**
 	 * Activates the successor states
@@ -205,7 +202,7 @@ class SimultaneousDivergenceAspect extends ConnectionPointAspect {
 	@OverrideAspectMethod
 	@Step
 	def void doFire() {
-		_self.successors.filter(State).forEach[s | s.activate()]
+		_self.successors.filter(State).forEach[s|s.activate()]
 	}
 
 }
@@ -226,7 +223,7 @@ class SimultaneousConvergenceAspect extends ConnectionPointAspect {
 			}
 		}
 		isEnabled
-	}	
+	}
 
 	/**
 	 * Deactivates predecessor states and fires successor state transition
@@ -234,56 +231,86 @@ class SimultaneousConvergenceAspect extends ConnectionPointAspect {
 	@OverrideAspectMethod
 	@Step
 	def void doFire() {
-		_self.predecessors.filter(State).forEach[s | s.deactivate()]
-		
+		_self.predecessors.filter(State).forEach[s|s.deactivate()]
+
 		val StateTransition successorStateTransition = _self.target as StateTransition
 		if (successorStateTransition.isEnabled()) {
-			successorStateTransition.fire()	
+			successorStateTransition.fire()
 		}
 	}
 }
 
-@Aspect(className=IdentifyableElement)
-abstract class IdentifyableElementAspect extends ElementAspect {
-
-}
-
-@Aspect(className=Connection)
-class ConnectionAspect extends IdentifyableElementAspect {
-
-}
-
-@Aspect(className=Element)
-abstract class ElementAspect {
-
-}
-
-@Aspect(className=Comment)
-class CommentAspect {
-
-}
-
-@Aspect(className=AddData)
-class AddDataAspect extends IdentifyableElementAspect {
-
-}
-
-@Aspect(className=Jump)
-class JumpAspect extends ConnectionPointAspect {
-
-}
-
-@Aspect(className=Event)
-class EventAspect extends ElementAspect {
-
-}
-
 @Aspect(className=SelectionDivergence)
 class SelectionDivergenceAspect extends ConnectionPointAspect {
+	
+	/**
+	 * The predecessor state has to be activated 
+	 */
+	@OverrideAspectMethod
+	def boolean isEnabled() {
+		(_self.source as State).isEnabled;
+	}
 
+	/**
+	 * Deactivates predecessor state and fires enabled successor state transition 
+	 */
+	@OverrideAspectMethod
+	@Step
+	def void doFire() {
+		(_self.predecessors as State).deactivate();
+		var StateTransition next = _self.successors.filter(StateTransition).findFirst(t | t.isEnabled) as StateTransition;
+		if (next != null) {
+			next.fire();
+		}
+	}
 }
 
 @Aspect(className=SelectionConvergence)
 class SelectionConvergenceAspect extends ConnectionPointAspect {
+	
+	/**
+	 * One of the predecessor state transitions has to be firing 
+	 */
+	@OverrideAspectMethod
+	def boolean isEnabled() {
+		_self.predecessors.filter(StateTransition).exists[t | t.firing ];
+	}
 
+	/**
+	 * Activates target state
+	 */
+	@OverrideAspectMethod
+	@Step
+	def void doFire() {
+		(_self.target as State).activate();
+	}
+	
+}
+
+@Aspect(className=IdentifyableElement)
+abstract class IdentifyableElementAspect extends ElementAspect {
+}
+
+@Aspect(className=Connection)
+class ConnectionAspect extends IdentifyableElementAspect {
+}
+
+@Aspect(className=Element)
+abstract class ElementAspect {
+}
+
+@Aspect(className=Comment)
+class CommentAspect {
+}
+
+@Aspect(className=AddData)
+class AddDataAspect extends IdentifyableElementAspect {
+}
+
+@Aspect(className=Jump)
+class JumpAspect extends ConnectionPointAspect {
+}
+
+@Aspect(className=Event)
+class EventAspect extends ElementAspect {
 }

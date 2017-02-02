@@ -89,6 +89,30 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 				return createIml_Header_Execute_ImplicitStepAdapter();
 			}
 			@Override
+			public Adapter caseIml_SelectionConvergence_DoFire(Iml_SelectionConvergence_DoFire object) {
+				return createIml_SelectionConvergence_DoFireAdapter();
+			}
+			@Override
+			public Adapter caseIml_SelectionConvergence_DoFire_AbstractSubStep(Iml_SelectionConvergence_DoFire_AbstractSubStep object) {
+				return createIml_SelectionConvergence_DoFire_AbstractSubStepAdapter();
+			}
+			@Override
+			public Adapter caseIml_SelectionConvergence_DoFire_ImplicitStep(Iml_SelectionConvergence_DoFire_ImplicitStep object) {
+				return createIml_SelectionConvergence_DoFire_ImplicitStepAdapter();
+			}
+			@Override
+			public Adapter caseIml_SelectionDivergence_DoFire(Iml_SelectionDivergence_DoFire object) {
+				return createIml_SelectionDivergence_DoFireAdapter();
+			}
+			@Override
+			public Adapter caseIml_SelectionDivergence_DoFire_AbstractSubStep(Iml_SelectionDivergence_DoFire_AbstractSubStep object) {
+				return createIml_SelectionDivergence_DoFire_AbstractSubStepAdapter();
+			}
+			@Override
+			public Adapter caseIml_SelectionDivergence_DoFire_ImplicitStep(Iml_SelectionDivergence_DoFire_ImplicitStep object) {
+				return createIml_SelectionDivergence_DoFire_ImplicitStepAdapter();
+			}
+			@Override
 			public Adapter caseIml_SimultaneousConvergence_DoFire(Iml_SimultaneousConvergence_DoFire object) {
 				return createIml_SimultaneousConvergence_DoFireAdapter();
 			}
@@ -123,6 +147,22 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseIml_StateTransition_DoFire_ImplicitStep(Iml_StateTransition_DoFire_ImplicitStep object) {
 				return createIml_StateTransition_DoFire_ImplicitStepAdapter();
+			}
+			@Override
+			public Adapter caseIml_State_Activate(Iml_State_Activate object) {
+				return createIml_State_ActivateAdapter();
+			}
+			@Override
+			public Adapter caseIml_State_Activate_AbstractSubStep(Iml_State_Activate_AbstractSubStep object) {
+				return createIml_State_Activate_AbstractSubStepAdapter();
+			}
+			@Override
+			public Adapter caseIml_State_Activate_ImplicitStep(Iml_State_Activate_ImplicitStep object) {
+				return createIml_State_Activate_ImplicitStepAdapter();
+			}
+			@Override
+			public Adapter caseIml_State_Deactivate(Iml_State_Deactivate object) {
+				return createIml_State_DeactivateAdapter();
 			}
 			@Override
 			public Adapter caseIml_State_ExecuteActivities(Iml_State_ExecuteActivities object) {
@@ -233,6 +273,90 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIml_Header_Execute_ImplicitStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_SelectionConvergence_DoFire <em>Iml Selection Convergence Do Fire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_SelectionConvergence_DoFire
+	 * @generated
+	 */
+	public Adapter createIml_SelectionConvergence_DoFireAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep <em>Iml Selection Convergence Do Fire Abstract Sub Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep
+	 * @generated
+	 */
+	public Adapter createIml_SelectionConvergence_DoFire_AbstractSubStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_SelectionConvergence_DoFire_ImplicitStep <em>Iml Selection Convergence Do Fire Implicit Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_SelectionConvergence_DoFire_ImplicitStep
+	 * @generated
+	 */
+	public Adapter createIml_SelectionConvergence_DoFire_ImplicitStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_SelectionDivergence_DoFire <em>Iml Selection Divergence Do Fire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_SelectionDivergence_DoFire
+	 * @generated
+	 */
+	public Adapter createIml_SelectionDivergence_DoFireAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep <em>Iml Selection Divergence Do Fire Abstract Sub Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep
+	 * @generated
+	 */
+	public Adapter createIml_SelectionDivergence_DoFire_AbstractSubStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_SelectionDivergence_DoFire_ImplicitStep <em>Iml Selection Divergence Do Fire Implicit Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_SelectionDivergence_DoFire_ImplicitStep
+	 * @generated
+	 */
+	public Adapter createIml_SelectionDivergence_DoFire_ImplicitStepAdapter() {
 		return null;
 	}
 
@@ -359,6 +483,62 @@ public class StepsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIml_StateTransition_DoFire_ImplicitStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_State_Activate <em>Iml State Activate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_State_Activate
+	 * @generated
+	 */
+	public Adapter createIml_State_ActivateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_State_Activate_AbstractSubStep <em>Iml State Activate Abstract Sub Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_State_Activate_AbstractSubStep
+	 * @generated
+	 */
+	public Adapter createIml_State_Activate_AbstractSubStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_State_Activate_ImplicitStep <em>Iml State Activate Implicit Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_State_Activate_ImplicitStep
+	 * @generated
+	 */
+	public Adapter createIml_State_Activate_ImplicitStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link imlTrace.Steps.Iml_State_Deactivate <em>Iml State Deactivate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see imlTrace.Steps.Iml_State_Deactivate
+	 * @generated
+	 */
+	public Adapter createIml_State_DeactivateAdapter() {
 		return null;
 	}
 

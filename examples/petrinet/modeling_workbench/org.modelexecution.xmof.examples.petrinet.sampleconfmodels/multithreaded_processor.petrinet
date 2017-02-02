@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<petrinetConf:NetConfiguration
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:petrinetConf="http://petrinet/1.0/configuration">
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      initialTokens="3"
+      name="Ready"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      name="Cont"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      name="Pst1"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      name="Pst2"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      name="Pnxt"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      name="Done"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      initialTokens="1"
+      name="Proc"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      name="Mreq"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      initialTokens="1"
+      name="Mem"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      name="Pcsw"/>
+  <places xsi:type="petrinetConf:PlaceConfiguration"
+      initialTokens="1"
+      name="Next"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.0 //@places.10"
+      output="//@places.1"
+      name="Tsel"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.1 //@places.6"
+      output="//@places.5 //@places.6"
+      name="Trun"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.5"
+      output="//@places.4"
+      name="Tnxt"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.4"
+      output="//@places.1"
+      name="Tst0"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.4"
+      output="//@places.2"
+      name="Tst1"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.4"
+      output="//@places.3"
+      name="Tst2"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.3"
+      output="//@places.2"
+      name="Td2"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.2"
+      output="//@places.1"
+      name="Td1"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.5"
+      output="//@places.7 //@places.9"
+      name="Tend"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.9"
+      output="//@places.10"
+      name="Tcsw"/>
+  <transitions
+      xsi:type="petrinetConf:TransitionConfiguration"
+      input="//@places.7 //@places.8"
+      output="//@places.0 //@places.8"
+      name="Tmem"/>
+</petrinetConf:NetConfiguration>

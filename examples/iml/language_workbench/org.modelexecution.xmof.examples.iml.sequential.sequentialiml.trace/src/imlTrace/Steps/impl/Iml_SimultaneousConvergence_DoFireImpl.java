@@ -13,6 +13,7 @@ import imlTrace.States.StatesPackage;
 
 import imlTrace.States.iml.TracedSimultaneousConvergence;
 
+import imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep;
 import imlTrace.Steps.Iml_SimultaneousConvergence_DoFire;
 import imlTrace.Steps.Iml_SimultaneousConvergence_DoFire_AbstractSubStep;
 import imlTrace.Steps.Iml_StateTransition_DoFire_AbstractSubStep;
@@ -389,6 +390,11 @@ public class Iml_SimultaneousConvergence_DoFireImpl extends StepImpl implements 
 				default: return -1;
 			}
 		}
+		if (baseClass == Iml_SelectionDivergence_DoFire_AbstractSubStep.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -416,6 +422,11 @@ public class Iml_SimultaneousConvergence_DoFireImpl extends StepImpl implements 
 			}
 		}
 		if (baseClass == Iml_SimultaneousConvergence_DoFire_AbstractSubStep.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Iml_SelectionDivergence_DoFire_AbstractSubStep.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}

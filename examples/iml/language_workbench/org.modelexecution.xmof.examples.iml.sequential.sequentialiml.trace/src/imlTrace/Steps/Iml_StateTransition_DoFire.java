@@ -16,7 +16,7 @@ import imlTrace.States.iml.TracedStateTransition;
  * @model
  * @generated
  */
-public interface Iml_StateTransition_DoFire extends Iml_Header_Execute_AbstractSubStep, SpecificStep, SequentialStep<Iml_StateTransition_DoFire_AbstractSubStep>, Iml_StateTransition_DoFire_AbstractSubStep, Iml_SimultaneousConvergence_DoFire_AbstractSubStep {
+public interface Iml_StateTransition_DoFire extends Iml_Header_Execute_AbstractSubStep, SpecificStep, SequentialStep<Iml_StateTransition_DoFire_AbstractSubStep>, Iml_StateTransition_DoFire_AbstractSubStep, Iml_SimultaneousConvergence_DoFire_AbstractSubStep, Iml_SelectionDivergence_DoFire_AbstractSubStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

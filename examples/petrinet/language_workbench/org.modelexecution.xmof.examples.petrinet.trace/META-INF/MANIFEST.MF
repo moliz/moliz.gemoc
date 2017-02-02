@@ -2,30 +2,32 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.modelexecution.xmof.examples.petrinet.trace;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.modelexecution.xmof.examples.petrinet.trace.tracemanager,
- petrinetTrace,
- petrinetTrace.States,
- petrinetTrace.States.impl,
- petrinetTrace.States.petrinetConfiguration,
- petrinetTrace.States.petrinetConfiguration.impl,
- petrinetTrace.States.petrinetConfiguration.util,
- petrinetTrace.States.util,
- petrinetTrace.Steps,
- petrinetTrace.Steps.impl,
- petrinetTrace.Steps.util,
- petrinetTrace.impl,
- petrinetTrace.util
+Export-Package: petrinetConfigurationTrace,
+ petrinetConfigurationTrace.States,
+ petrinetConfigurationTrace.States.impl,
+ petrinetConfigurationTrace.States.petrinetConfiguration,
+ petrinetConfigurationTrace.States.petrinetConfiguration.impl,
+ petrinetConfigurationTrace.States.petrinetConfiguration.util,
+ petrinetConfigurationTrace.States.util,
+ petrinetConfigurationTrace.Steps,
+ petrinetConfigurationTrace.Steps.impl,
+ petrinetConfigurationTrace.Steps.util,
+ petrinetConfigurationTrace.impl,
+ petrinetConfigurationTrace.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ fr.inria.diverse.trace.commons.model;visibility:=reexport,
  org.modelexecution.xmof.examples.petrinet.xmof.dynamic;visibility:=reexport,
  org.modelexecution.xmof.examples.petrinet;visibility:=reexport,
+ org.modelexecution.xmof.standardlibrary;visibility:=reexport,
  fr.inria.diverse.trace.api,
  org.eclipse.emf.transaction,
+ org.eclipse.emf.compare,
  org.gemoc.executionframework.engine,
  org.eclipse.xtext,
  org.gemoc.commons.eclipse,
@@ -34,7 +36,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gemoc.xdsmlframework.api,
  org.gemoc.sequential_addons.multidimensional.timeline,
  fr.obeo.timeline,
- fr.inria.diverse.trace.commons,
- fr.inria.diverse.trace.commons.model;bundle-version="0.1.0"
+ fr.inria.diverse.trace.commons
 Bundle-ActivationPolicy: lazy
 

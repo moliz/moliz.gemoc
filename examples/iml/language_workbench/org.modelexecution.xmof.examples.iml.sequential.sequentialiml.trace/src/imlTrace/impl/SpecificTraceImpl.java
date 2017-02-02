@@ -27,9 +27,13 @@ import imlTrace.States.iml.TracedVariable;
 
 import imlTrace.Steps.Iml_Activity_DoExecute;
 import imlTrace.Steps.Iml_Header_Execute;
+import imlTrace.Steps.Iml_SelectionConvergence_DoFire;
+import imlTrace.Steps.Iml_SelectionDivergence_DoFire;
 import imlTrace.Steps.Iml_SimultaneousConvergence_DoFire;
 import imlTrace.Steps.Iml_SimultaneousDivergence_DoFire;
 import imlTrace.Steps.Iml_StateTransition_DoFire;
+import imlTrace.Steps.Iml_State_Activate;
+import imlTrace.Steps.Iml_State_Deactivate;
 import imlTrace.Steps.Iml_State_ExecuteActivities;
 import imlTrace.Steps.SpecificStep;
 
@@ -56,9 +60,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_Activity_DoExecute_Sequence <em>Iml Activity Do Execute Sequence</em>}</li>
  *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_Header_Execute_Sequence <em>Iml Header Execute Sequence</em>}</li>
+ *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_SelectionConvergence_DoFire_Sequence <em>Iml Selection Convergence Do Fire Sequence</em>}</li>
+ *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_SelectionDivergence_DoFire_Sequence <em>Iml Selection Divergence Do Fire Sequence</em>}</li>
  *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_SimultaneousConvergence_DoFire_Sequence <em>Iml Simultaneous Convergence Do Fire Sequence</em>}</li>
  *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_SimultaneousDivergence_DoFire_Sequence <em>Iml Simultaneous Divergence Do Fire Sequence</em>}</li>
  *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_StateTransition_DoFire_Sequence <em>Iml State Transition Do Fire Sequence</em>}</li>
+ *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_State_Activate_Sequence <em>Iml State Activate Sequence</em>}</li>
+ *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_State_Deactivate_Sequence <em>Iml State Deactivate Sequence</em>}</li>
  *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_State_ExecuteActivities_Sequence <em>Iml State Execute Activities Sequence</em>}</li>
  *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_tracedActivitys <em>Iml traced Activitys</em>}</li>
  *   <li>{@link imlTrace.impl.SpecificTraceImpl#getIml_tracedAddDatas <em>Iml traced Add Datas</em>}</li>
@@ -100,6 +108,26 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	protected EList<Iml_Header_Execute> iml_Header_Execute_Sequence;
 
 	/**
+	 * The cached value of the '{@link #getIml_SelectionConvergence_DoFire_Sequence() <em>Iml Selection Convergence Do Fire Sequence</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIml_SelectionConvergence_DoFire_Sequence()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Iml_SelectionConvergence_DoFire> iml_SelectionConvergence_DoFire_Sequence;
+
+	/**
+	 * The cached value of the '{@link #getIml_SelectionDivergence_DoFire_Sequence() <em>Iml Selection Divergence Do Fire Sequence</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIml_SelectionDivergence_DoFire_Sequence()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Iml_SelectionDivergence_DoFire> iml_SelectionDivergence_DoFire_Sequence;
+
+	/**
 	 * The cached value of the '{@link #getIml_SimultaneousConvergence_DoFire_Sequence() <em>Iml Simultaneous Convergence Do Fire Sequence</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,6 +156,26 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * @ordered
 	 */
 	protected EList<Iml_StateTransition_DoFire> iml_StateTransition_DoFire_Sequence;
+
+	/**
+	 * The cached value of the '{@link #getIml_State_Activate_Sequence() <em>Iml State Activate Sequence</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIml_State_Activate_Sequence()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Iml_State_Activate> iml_State_Activate_Sequence;
+
+	/**
+	 * The cached value of the '{@link #getIml_State_Deactivate_Sequence() <em>Iml State Deactivate Sequence</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIml_State_Deactivate_Sequence()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Iml_State_Deactivate> iml_State_Deactivate_Sequence;
 
 	/**
 	 * The cached value of the '{@link #getIml_State_ExecuteActivities_Sequence() <em>Iml State Execute Activities Sequence</em>}' reference list.
@@ -338,6 +386,30 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Iml_SelectionConvergence_DoFire> getIml_SelectionConvergence_DoFire_Sequence() {
+		if (iml_SelectionConvergence_DoFire_Sequence == null) {
+			iml_SelectionConvergence_DoFire_Sequence = new EObjectResolvingEList<Iml_SelectionConvergence_DoFire>(Iml_SelectionConvergence_DoFire.class, this, ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_CONVERGENCE_DO_FIRE_SEQUENCE);
+		}
+		return iml_SelectionConvergence_DoFire_Sequence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Iml_SelectionDivergence_DoFire> getIml_SelectionDivergence_DoFire_Sequence() {
+		if (iml_SelectionDivergence_DoFire_Sequence == null) {
+			iml_SelectionDivergence_DoFire_Sequence = new EObjectResolvingEList<Iml_SelectionDivergence_DoFire>(Iml_SelectionDivergence_DoFire.class, this, ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_DIVERGENCE_DO_FIRE_SEQUENCE);
+		}
+		return iml_SelectionDivergence_DoFire_Sequence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Iml_SimultaneousConvergence_DoFire> getIml_SimultaneousConvergence_DoFire_Sequence() {
 		if (iml_SimultaneousConvergence_DoFire_Sequence == null) {
 			iml_SimultaneousConvergence_DoFire_Sequence = new EObjectResolvingEList<Iml_SimultaneousConvergence_DoFire>(Iml_SimultaneousConvergence_DoFire.class, this, ImlTracePackage.SPECIFIC_TRACE__IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_SEQUENCE);
@@ -367,6 +439,30 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			iml_StateTransition_DoFire_Sequence = new EObjectResolvingEList<Iml_StateTransition_DoFire>(Iml_StateTransition_DoFire.class, this, ImlTracePackage.SPECIFIC_TRACE__IML_STATE_TRANSITION_DO_FIRE_SEQUENCE);
 		}
 		return iml_StateTransition_DoFire_Sequence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Iml_State_Activate> getIml_State_Activate_Sequence() {
+		if (iml_State_Activate_Sequence == null) {
+			iml_State_Activate_Sequence = new EObjectResolvingEList<Iml_State_Activate>(Iml_State_Activate.class, this, ImlTracePackage.SPECIFIC_TRACE__IML_STATE_ACTIVATE_SEQUENCE);
+		}
+		return iml_State_Activate_Sequence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Iml_State_Deactivate> getIml_State_Deactivate_Sequence() {
+		if (iml_State_Deactivate_Sequence == null) {
+			iml_State_Deactivate_Sequence = new EObjectResolvingEList<Iml_State_Deactivate>(Iml_State_Deactivate.class, this, ImlTracePackage.SPECIFIC_TRACE__IML_STATE_DEACTIVATE_SEQUENCE);
+		}
+		return iml_State_Deactivate_Sequence;
 	}
 
 	/**
@@ -601,12 +697,20 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return getIml_Activity_DoExecute_Sequence();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_HEADER_EXECUTE_SEQUENCE:
 				return getIml_Header_Execute_Sequence();
+			case ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_CONVERGENCE_DO_FIRE_SEQUENCE:
+				return getIml_SelectionConvergence_DoFire_Sequence();
+			case ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_DIVERGENCE_DO_FIRE_SEQUENCE:
+				return getIml_SelectionDivergence_DoFire_Sequence();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_SEQUENCE:
 				return getIml_SimultaneousConvergence_DoFire_Sequence();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_SEQUENCE:
 				return getIml_SimultaneousDivergence_DoFire_Sequence();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_TRANSITION_DO_FIRE_SEQUENCE:
 				return getIml_StateTransition_DoFire_Sequence();
+			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_ACTIVATE_SEQUENCE:
+				return getIml_State_Activate_Sequence();
+			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_DEACTIVATE_SEQUENCE:
+				return getIml_State_Deactivate_Sequence();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_EXECUTE_ACTIVITIES_SEQUENCE:
 				return getIml_State_ExecuteActivities_Sequence();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_TRACED_ACTIVITYS:
@@ -658,6 +762,14 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				getIml_Header_Execute_Sequence().clear();
 				getIml_Header_Execute_Sequence().addAll((Collection<? extends Iml_Header_Execute>)newValue);
 				return;
+			case ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_CONVERGENCE_DO_FIRE_SEQUENCE:
+				getIml_SelectionConvergence_DoFire_Sequence().clear();
+				getIml_SelectionConvergence_DoFire_Sequence().addAll((Collection<? extends Iml_SelectionConvergence_DoFire>)newValue);
+				return;
+			case ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_DIVERGENCE_DO_FIRE_SEQUENCE:
+				getIml_SelectionDivergence_DoFire_Sequence().clear();
+				getIml_SelectionDivergence_DoFire_Sequence().addAll((Collection<? extends Iml_SelectionDivergence_DoFire>)newValue);
+				return;
 			case ImlTracePackage.SPECIFIC_TRACE__IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_SEQUENCE:
 				getIml_SimultaneousConvergence_DoFire_Sequence().clear();
 				getIml_SimultaneousConvergence_DoFire_Sequence().addAll((Collection<? extends Iml_SimultaneousConvergence_DoFire>)newValue);
@@ -669,6 +781,14 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_TRANSITION_DO_FIRE_SEQUENCE:
 				getIml_StateTransition_DoFire_Sequence().clear();
 				getIml_StateTransition_DoFire_Sequence().addAll((Collection<? extends Iml_StateTransition_DoFire>)newValue);
+				return;
+			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_ACTIVATE_SEQUENCE:
+				getIml_State_Activate_Sequence().clear();
+				getIml_State_Activate_Sequence().addAll((Collection<? extends Iml_State_Activate>)newValue);
+				return;
+			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_DEACTIVATE_SEQUENCE:
+				getIml_State_Deactivate_Sequence().clear();
+				getIml_State_Deactivate_Sequence().addAll((Collection<? extends Iml_State_Deactivate>)newValue);
 				return;
 			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_EXECUTE_ACTIVITIES_SEQUENCE:
 				getIml_State_ExecuteActivities_Sequence().clear();
@@ -748,6 +868,12 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 			case ImlTracePackage.SPECIFIC_TRACE__IML_HEADER_EXECUTE_SEQUENCE:
 				getIml_Header_Execute_Sequence().clear();
 				return;
+			case ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_CONVERGENCE_DO_FIRE_SEQUENCE:
+				getIml_SelectionConvergence_DoFire_Sequence().clear();
+				return;
+			case ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_DIVERGENCE_DO_FIRE_SEQUENCE:
+				getIml_SelectionDivergence_DoFire_Sequence().clear();
+				return;
 			case ImlTracePackage.SPECIFIC_TRACE__IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_SEQUENCE:
 				getIml_SimultaneousConvergence_DoFire_Sequence().clear();
 				return;
@@ -756,6 +882,12 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return;
 			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_TRANSITION_DO_FIRE_SEQUENCE:
 				getIml_StateTransition_DoFire_Sequence().clear();
+				return;
+			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_ACTIVATE_SEQUENCE:
+				getIml_State_Activate_Sequence().clear();
+				return;
+			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_DEACTIVATE_SEQUENCE:
+				getIml_State_Deactivate_Sequence().clear();
 				return;
 			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_EXECUTE_ACTIVITIES_SEQUENCE:
 				getIml_State_ExecuteActivities_Sequence().clear();
@@ -818,12 +950,20 @@ public class SpecificTraceImpl extends TraceImpl<SequentialStep<SpecificStep>> i
 				return iml_Activity_DoExecute_Sequence != null && !iml_Activity_DoExecute_Sequence.isEmpty();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_HEADER_EXECUTE_SEQUENCE:
 				return iml_Header_Execute_Sequence != null && !iml_Header_Execute_Sequence.isEmpty();
+			case ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_CONVERGENCE_DO_FIRE_SEQUENCE:
+				return iml_SelectionConvergence_DoFire_Sequence != null && !iml_SelectionConvergence_DoFire_Sequence.isEmpty();
+			case ImlTracePackage.SPECIFIC_TRACE__IML_SELECTION_DIVERGENCE_DO_FIRE_SEQUENCE:
+				return iml_SelectionDivergence_DoFire_Sequence != null && !iml_SelectionDivergence_DoFire_Sequence.isEmpty();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_SEQUENCE:
 				return iml_SimultaneousConvergence_DoFire_Sequence != null && !iml_SimultaneousConvergence_DoFire_Sequence.isEmpty();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_SEQUENCE:
 				return iml_SimultaneousDivergence_DoFire_Sequence != null && !iml_SimultaneousDivergence_DoFire_Sequence.isEmpty();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_TRANSITION_DO_FIRE_SEQUENCE:
 				return iml_StateTransition_DoFire_Sequence != null && !iml_StateTransition_DoFire_Sequence.isEmpty();
+			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_ACTIVATE_SEQUENCE:
+				return iml_State_Activate_Sequence != null && !iml_State_Activate_Sequence.isEmpty();
+			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_DEACTIVATE_SEQUENCE:
+				return iml_State_Deactivate_Sequence != null && !iml_State_Deactivate_Sequence.isEmpty();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_STATE_EXECUTE_ACTIVITIES_SEQUENCE:
 				return iml_State_ExecuteActivities_Sequence != null && !iml_State_ExecuteActivities_Sequence.isEmpty();
 			case ImlTracePackage.SPECIFIC_TRACE__IML_TRACED_ACTIVITYS:

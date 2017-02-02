@@ -16,6 +16,12 @@ import imlTrace.Steps.Iml_Activity_DoExecute;
 import imlTrace.Steps.Iml_Header_Execute;
 import imlTrace.Steps.Iml_Header_Execute_AbstractSubStep;
 import imlTrace.Steps.Iml_Header_Execute_ImplicitStep;
+import imlTrace.Steps.Iml_SelectionConvergence_DoFire;
+import imlTrace.Steps.Iml_SelectionConvergence_DoFire_AbstractSubStep;
+import imlTrace.Steps.Iml_SelectionConvergence_DoFire_ImplicitStep;
+import imlTrace.Steps.Iml_SelectionDivergence_DoFire;
+import imlTrace.Steps.Iml_SelectionDivergence_DoFire_AbstractSubStep;
+import imlTrace.Steps.Iml_SelectionDivergence_DoFire_ImplicitStep;
 import imlTrace.Steps.Iml_SimultaneousConvergence_DoFire;
 import imlTrace.Steps.Iml_SimultaneousConvergence_DoFire_AbstractSubStep;
 import imlTrace.Steps.Iml_SimultaneousConvergence_DoFire_ImplicitStep;
@@ -25,6 +31,10 @@ import imlTrace.Steps.Iml_SimultaneousDivergence_DoFire_ImplicitStep;
 import imlTrace.Steps.Iml_StateTransition_DoFire;
 import imlTrace.Steps.Iml_StateTransition_DoFire_AbstractSubStep;
 import imlTrace.Steps.Iml_StateTransition_DoFire_ImplicitStep;
+import imlTrace.Steps.Iml_State_Activate;
+import imlTrace.Steps.Iml_State_Activate_AbstractSubStep;
+import imlTrace.Steps.Iml_State_Activate_ImplicitStep;
+import imlTrace.Steps.Iml_State_Deactivate;
 import imlTrace.Steps.Iml_State_ExecuteActivities;
 import imlTrace.Steps.Iml_State_ExecuteActivities_AbstractSubStep;
 import imlTrace.Steps.Iml_State_ExecuteActivities_ImplicitStep;
@@ -79,6 +89,48 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 	 * @generated
 	 */
 	private EClass iml_Header_Execute_ImplicitStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_SelectionConvergence_DoFireEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_SelectionConvergence_DoFire_AbstractSubStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_SelectionConvergence_DoFire_ImplicitStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_SelectionDivergence_DoFireEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_SelectionDivergence_DoFire_AbstractSubStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_SelectionDivergence_DoFire_ImplicitStepEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,6 +194,34 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 	 * @generated
 	 */
 	private EClass iml_StateTransition_DoFire_ImplicitStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_State_ActivateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_State_Activate_AbstractSubStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_State_Activate_ImplicitStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iml_State_DeactivateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -313,6 +393,78 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIml_SelectionConvergence_DoFire() {
+		return iml_SelectionConvergence_DoFireEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIml_SelectionConvergence_DoFire__GetCaller() {
+		return iml_SelectionConvergence_DoFireEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIml_SelectionConvergence_DoFire_AbstractSubStep() {
+		return iml_SelectionConvergence_DoFire_AbstractSubStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIml_SelectionConvergence_DoFire_ImplicitStep() {
+		return iml_SelectionConvergence_DoFire_ImplicitStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIml_SelectionDivergence_DoFire() {
+		return iml_SelectionDivergence_DoFireEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIml_SelectionDivergence_DoFire__GetCaller() {
+		return iml_SelectionDivergence_DoFireEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIml_SelectionDivergence_DoFire_AbstractSubStep() {
+		return iml_SelectionDivergence_DoFire_AbstractSubStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIml_SelectionDivergence_DoFire_ImplicitStep() {
+		return iml_SelectionDivergence_DoFire_ImplicitStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIml_SimultaneousConvergence_DoFire() {
 		return iml_SimultaneousConvergence_DoFireEClass;
 	}
@@ -414,6 +566,60 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 	 */
 	public EClass getIml_StateTransition_DoFire_ImplicitStep() {
 		return iml_StateTransition_DoFire_ImplicitStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIml_State_Activate() {
+		return iml_State_ActivateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIml_State_Activate__GetCaller() {
+		return iml_State_ActivateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIml_State_Activate_AbstractSubStep() {
+		return iml_State_Activate_AbstractSubStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIml_State_Activate_ImplicitStep() {
+		return iml_State_Activate_ImplicitStepEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIml_State_Deactivate() {
+		return iml_State_DeactivateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIml_State_Deactivate__GetCaller() {
+		return iml_State_DeactivateEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -526,6 +732,20 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 
 		iml_Header_Execute_ImplicitStepEClass = createEClass(IML_HEADER_EXECUTE_IMPLICIT_STEP);
 
+		iml_SelectionConvergence_DoFireEClass = createEClass(IML_SELECTION_CONVERGENCE_DO_FIRE);
+		createEOperation(iml_SelectionConvergence_DoFireEClass, IML_SELECTION_CONVERGENCE_DO_FIRE___GET_CALLER);
+
+		iml_SelectionConvergence_DoFire_AbstractSubStepEClass = createEClass(IML_SELECTION_CONVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP);
+
+		iml_SelectionConvergence_DoFire_ImplicitStepEClass = createEClass(IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP);
+
+		iml_SelectionDivergence_DoFireEClass = createEClass(IML_SELECTION_DIVERGENCE_DO_FIRE);
+		createEOperation(iml_SelectionDivergence_DoFireEClass, IML_SELECTION_DIVERGENCE_DO_FIRE___GET_CALLER);
+
+		iml_SelectionDivergence_DoFire_AbstractSubStepEClass = createEClass(IML_SELECTION_DIVERGENCE_DO_FIRE_ABSTRACT_SUB_STEP);
+
+		iml_SelectionDivergence_DoFire_ImplicitStepEClass = createEClass(IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP);
+
 		iml_SimultaneousConvergence_DoFireEClass = createEClass(IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE);
 		createEOperation(iml_SimultaneousConvergence_DoFireEClass, IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE___GET_CALLER);
 
@@ -546,6 +766,16 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		iml_StateTransition_DoFire_AbstractSubStepEClass = createEClass(IML_STATE_TRANSITION_DO_FIRE_ABSTRACT_SUB_STEP);
 
 		iml_StateTransition_DoFire_ImplicitStepEClass = createEClass(IML_STATE_TRANSITION_DO_FIRE_IMPLICIT_STEP);
+
+		iml_State_ActivateEClass = createEClass(IML_STATE_ACTIVATE);
+		createEOperation(iml_State_ActivateEClass, IML_STATE_ACTIVATE___GET_CALLER);
+
+		iml_State_Activate_AbstractSubStepEClass = createEClass(IML_STATE_ACTIVATE_ABSTRACT_SUB_STEP);
+
+		iml_State_Activate_ImplicitStepEClass = createEClass(IML_STATE_ACTIVATE_IMPLICIT_STEP);
+
+		iml_State_DeactivateEClass = createEClass(IML_STATE_DEACTIVATE);
+		createEOperation(iml_State_DeactivateEClass, IML_STATE_DEACTIVATE___GET_CALLER);
 
 		iml_State_ExecuteActivitiesEClass = createEClass(IML_STATE_EXECUTE_ACTIVITIES);
 		createEOperation(iml_State_ExecuteActivitiesEClass, IML_STATE_EXECUTE_ACTIVITIES___GET_CALLER);
@@ -607,6 +837,40 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		iml_Header_Execute_ImplicitStepEClass.getESuperTypes().add(this.getIml_Header_Execute_AbstractSubStep());
 		iml_Header_Execute_ImplicitStepEClass.getESuperTypes().add(theTracePackage.getSmallStep());
 		g1 = createEGenericType(this.getIml_Header_Execute_AbstractSubStep());
+		iml_SelectionConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getSpecificStep());
+		iml_SelectionConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theTracePackage.getSequentialStep());
+		g2 = createEGenericType(this.getIml_SelectionConvergence_DoFire_AbstractSubStep());
+		g1.getETypeArguments().add(g2);
+		iml_SelectionConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_StateTransition_DoFire_AbstractSubStep());
+		iml_SelectionConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SimultaneousConvergence_DoFire_AbstractSubStep());
+		iml_SelectionConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SelectionDivergence_DoFire_AbstractSubStep());
+		iml_SelectionConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		iml_SelectionConvergence_DoFire_AbstractSubStepEClass.getESuperTypes().add(this.getSpecificStep());
+		iml_SelectionConvergence_DoFire_ImplicitStepEClass.getESuperTypes().add(this.getIml_SelectionConvergence_DoFire_AbstractSubStep());
+		iml_SelectionConvergence_DoFire_ImplicitStepEClass.getESuperTypes().add(theTracePackage.getSmallStep());
+		g1 = createEGenericType(this.getIml_Header_Execute_AbstractSubStep());
+		iml_SelectionDivergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_StateTransition_DoFire_AbstractSubStep());
+		iml_SelectionDivergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SimultaneousConvergence_DoFire_AbstractSubStep());
+		iml_SelectionDivergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getSpecificStep());
+		iml_SelectionDivergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theTracePackage.getSequentialStep());
+		g2 = createEGenericType(this.getIml_SelectionDivergence_DoFire_AbstractSubStep());
+		g1.getETypeArguments().add(g2);
+		iml_SelectionDivergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SelectionDivergence_DoFire_AbstractSubStep());
+		iml_SelectionDivergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		iml_SelectionDivergence_DoFire_AbstractSubStepEClass.getESuperTypes().add(this.getSpecificStep());
+		iml_SelectionDivergence_DoFire_ImplicitStepEClass.getESuperTypes().add(this.getIml_SelectionDivergence_DoFire_AbstractSubStep());
+		iml_SelectionDivergence_DoFire_ImplicitStepEClass.getESuperTypes().add(theTracePackage.getSmallStep());
+		g1 = createEGenericType(this.getIml_Header_Execute_AbstractSubStep());
 		iml_SimultaneousConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getIml_StateTransition_DoFire_AbstractSubStep());
 		iml_SimultaneousConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
@@ -617,6 +881,8 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		g1.getETypeArguments().add(g2);
 		iml_SimultaneousConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getIml_SimultaneousConvergence_DoFire_AbstractSubStep());
+		iml_SimultaneousConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SelectionDivergence_DoFire_AbstractSubStep());
 		iml_SimultaneousConvergence_DoFireEClass.getEGenericSuperTypes().add(g1);
 		iml_SimultaneousConvergence_DoFire_AbstractSubStepEClass.getESuperTypes().add(this.getSpecificStep());
 		iml_SimultaneousConvergence_DoFire_ImplicitStepEClass.getESuperTypes().add(this.getIml_SimultaneousConvergence_DoFire_AbstractSubStep());
@@ -633,6 +899,8 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		g2 = createEGenericType(this.getIml_SimultaneousDivergence_DoFire_AbstractSubStep());
 		g1.getETypeArguments().add(g2);
 		iml_SimultaneousDivergence_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SelectionDivergence_DoFire_AbstractSubStep());
+		iml_SimultaneousDivergence_DoFireEClass.getEGenericSuperTypes().add(g1);
 		iml_SimultaneousDivergence_DoFire_AbstractSubStepEClass.getESuperTypes().add(this.getSpecificStep());
 		iml_SimultaneousDivergence_DoFire_ImplicitStepEClass.getESuperTypes().add(this.getIml_SimultaneousDivergence_DoFire_AbstractSubStep());
 		iml_SimultaneousDivergence_DoFire_ImplicitStepEClass.getESuperTypes().add(theTracePackage.getSmallStep());
@@ -648,22 +916,45 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		iml_StateTransition_DoFireEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getIml_SimultaneousConvergence_DoFire_AbstractSubStep());
 		iml_StateTransition_DoFireEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SelectionDivergence_DoFire_AbstractSubStep());
+		iml_StateTransition_DoFireEClass.getEGenericSuperTypes().add(g1);
 		iml_StateTransition_DoFire_AbstractSubStepEClass.getESuperTypes().add(this.getSpecificStep());
 		iml_StateTransition_DoFire_ImplicitStepEClass.getESuperTypes().add(this.getIml_StateTransition_DoFire_AbstractSubStep());
 		iml_StateTransition_DoFire_ImplicitStepEClass.getESuperTypes().add(theTracePackage.getSmallStep());
+		g1 = createEGenericType(this.getIml_Header_Execute_AbstractSubStep());
+		iml_State_ActivateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getSpecificStep());
+		iml_State_ActivateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theTracePackage.getSequentialStep());
+		g2 = createEGenericType(this.getIml_State_Activate_AbstractSubStep());
+		g1.getETypeArguments().add(g2);
+		iml_State_ActivateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SelectionConvergence_DoFire_AbstractSubStep());
+		iml_State_ActivateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_StateTransition_DoFire_AbstractSubStep());
+		iml_State_ActivateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SimultaneousConvergence_DoFire_AbstractSubStep());
+		iml_State_ActivateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SimultaneousDivergence_DoFire_AbstractSubStep());
+		iml_State_ActivateEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getIml_SelectionDivergence_DoFire_AbstractSubStep());
+		iml_State_ActivateEClass.getEGenericSuperTypes().add(g1);
+		iml_State_Activate_AbstractSubStepEClass.getESuperTypes().add(this.getSpecificStep());
+		iml_State_Activate_ImplicitStepEClass.getESuperTypes().add(this.getIml_State_Activate_AbstractSubStep());
+		iml_State_Activate_ImplicitStepEClass.getESuperTypes().add(theTracePackage.getSmallStep());
+		iml_State_DeactivateEClass.getESuperTypes().add(this.getSpecificStep());
+		iml_State_DeactivateEClass.getESuperTypes().add(theTracePackage.getSmallStep());
+		iml_State_DeactivateEClass.getESuperTypes().add(this.getIml_Header_Execute_AbstractSubStep());
+		iml_State_DeactivateEClass.getESuperTypes().add(this.getIml_StateTransition_DoFire_AbstractSubStep());
+		iml_State_DeactivateEClass.getESuperTypes().add(this.getIml_SimultaneousConvergence_DoFire_AbstractSubStep());
+		iml_State_DeactivateEClass.getESuperTypes().add(this.getIml_SelectionDivergence_DoFire_AbstractSubStep());
 		g1 = createEGenericType(this.getSpecificStep());
 		iml_State_ExecuteActivitiesEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theTracePackage.getSequentialStep());
 		g2 = createEGenericType(this.getIml_State_ExecuteActivities_AbstractSubStep());
 		g1.getETypeArguments().add(g2);
 		iml_State_ExecuteActivitiesEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getIml_Header_Execute_AbstractSubStep());
-		iml_State_ExecuteActivitiesEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getIml_StateTransition_DoFire_AbstractSubStep());
-		iml_State_ExecuteActivitiesEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getIml_SimultaneousConvergence_DoFire_AbstractSubStep());
-		iml_State_ExecuteActivitiesEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getIml_SimultaneousDivergence_DoFire_AbstractSubStep());
+		g1 = createEGenericType(this.getIml_State_Activate_AbstractSubStep());
 		iml_State_ExecuteActivitiesEClass.getEGenericSuperTypes().add(g1);
 		iml_State_ExecuteActivities_AbstractSubStepEClass.getESuperTypes().add(this.getSpecificStep());
 		iml_State_ExecuteActivities_ImplicitStepEClass.getESuperTypes().add(this.getIml_State_ExecuteActivities_AbstractSubStep());
@@ -683,6 +974,22 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		initEClass(iml_Header_Execute_AbstractSubStepEClass, Iml_Header_Execute_AbstractSubStep.class, "Iml_Header_Execute_AbstractSubStep", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(iml_Header_Execute_ImplicitStepEClass, Iml_Header_Execute_ImplicitStep.class, "Iml_Header_Execute_ImplicitStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(iml_SelectionConvergence_DoFireEClass, Iml_SelectionConvergence_DoFire.class, "Iml_SelectionConvergence_DoFire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getIml_SelectionConvergence_DoFire__GetCaller(), theImlPackage_1.getTracedSelectionConvergence(), "getCaller", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(iml_SelectionConvergence_DoFire_AbstractSubStepEClass, Iml_SelectionConvergence_DoFire_AbstractSubStep.class, "Iml_SelectionConvergence_DoFire_AbstractSubStep", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(iml_SelectionConvergence_DoFire_ImplicitStepEClass, Iml_SelectionConvergence_DoFire_ImplicitStep.class, "Iml_SelectionConvergence_DoFire_ImplicitStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(iml_SelectionDivergence_DoFireEClass, Iml_SelectionDivergence_DoFire.class, "Iml_SelectionDivergence_DoFire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getIml_SelectionDivergence_DoFire__GetCaller(), theImlPackage_1.getTracedSelectionDivergence(), "getCaller", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(iml_SelectionDivergence_DoFire_AbstractSubStepEClass, Iml_SelectionDivergence_DoFire_AbstractSubStep.class, "Iml_SelectionDivergence_DoFire_AbstractSubStep", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(iml_SelectionDivergence_DoFire_ImplicitStepEClass, Iml_SelectionDivergence_DoFire_ImplicitStep.class, "Iml_SelectionDivergence_DoFire_ImplicitStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(iml_SimultaneousConvergence_DoFireEClass, Iml_SimultaneousConvergence_DoFire.class, "Iml_SimultaneousConvergence_DoFire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -707,6 +1014,18 @@ public class StepsPackageImpl extends EPackageImpl implements StepsPackage {
 		initEClass(iml_StateTransition_DoFire_AbstractSubStepEClass, Iml_StateTransition_DoFire_AbstractSubStep.class, "Iml_StateTransition_DoFire_AbstractSubStep", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(iml_StateTransition_DoFire_ImplicitStepEClass, Iml_StateTransition_DoFire_ImplicitStep.class, "Iml_StateTransition_DoFire_ImplicitStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(iml_State_ActivateEClass, Iml_State_Activate.class, "Iml_State_Activate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getIml_State_Activate__GetCaller(), theImlPackage_1.getTracedState(), "getCaller", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(iml_State_Activate_AbstractSubStepEClass, Iml_State_Activate_AbstractSubStep.class, "Iml_State_Activate_AbstractSubStep", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(iml_State_Activate_ImplicitStepEClass, Iml_State_Activate_ImplicitStep.class, "Iml_State_Activate_ImplicitStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(iml_State_DeactivateEClass, Iml_State_Deactivate.class, "Iml_State_Deactivate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getIml_State_Deactivate__GetCaller(), theImlPackage_1.getTracedState(), "getCaller", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(iml_State_ExecuteActivitiesEClass, Iml_State_ExecuteActivities.class, "Iml_State_ExecuteActivities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -11,5 +11,5 @@
 <stringAttribute key="Resource" value="/org.modelexecution.xmof.examples.iml.samplemodels/GrippingRobot.iml"/>
 <booleanAttribute key="VCD visualization" value="false"/>
 <stringAttribute key="airdResource" value="/org.modelexecution.xmof.examples.iml.samplemodels/representations.aird"/>
-<booleanAttribute key="iml MultiDimensional Trace" value="true"/>
+<booleanAttribute key="iml MultiDimensional Trace" value="false"/>
 </launchConfiguration>

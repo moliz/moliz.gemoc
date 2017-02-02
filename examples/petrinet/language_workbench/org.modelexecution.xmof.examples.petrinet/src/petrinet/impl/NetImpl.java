@@ -29,12 +29,12 @@ import petrinet.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link petrinet.impl.NetImpl#getPlaces <em>Places</em>}</li>
  *   <li>{@link petrinet.impl.NetImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link petrinet.impl.NetImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

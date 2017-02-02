@@ -13,10 +13,7 @@ import imlTrace.States.StatesPackage;
 
 import imlTrace.States.iml.TracedState;
 
-import imlTrace.Steps.Iml_Header_Execute_AbstractSubStep;
-import imlTrace.Steps.Iml_SimultaneousConvergence_DoFire_AbstractSubStep;
-import imlTrace.Steps.Iml_SimultaneousDivergence_DoFire_AbstractSubStep;
-import imlTrace.Steps.Iml_StateTransition_DoFire_AbstractSubStep;
+import imlTrace.Steps.Iml_State_Activate_AbstractSubStep;
 import imlTrace.Steps.Iml_State_ExecuteActivities;
 import imlTrace.Steps.Iml_State_ExecuteActivities_AbstractSubStep;
 import imlTrace.Steps.StepsPackage;
@@ -382,22 +379,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 				default: return -1;
 			}
 		}
-		if (baseClass == Iml_Header_Execute_AbstractSubStep.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Iml_StateTransition_DoFire_AbstractSubStep.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Iml_SimultaneousConvergence_DoFire_AbstractSubStep.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Iml_SimultaneousDivergence_DoFire_AbstractSubStep.class) {
+		if (baseClass == Iml_State_Activate_AbstractSubStep.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
 			}
@@ -423,22 +405,7 @@ public class Iml_State_ExecuteActivitiesImpl extends StepImpl implements Iml_Sta
 				default: return -1;
 			}
 		}
-		if (baseClass == Iml_Header_Execute_AbstractSubStep.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Iml_StateTransition_DoFire_AbstractSubStep.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Iml_SimultaneousConvergence_DoFire_AbstractSubStep.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Iml_SimultaneousDivergence_DoFire_AbstractSubStep.class) {
+		if (baseClass == Iml_State_Activate_AbstractSubStep.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}

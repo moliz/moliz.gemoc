@@ -1,7 +1,6 @@
 package org.modelexecution.examples.petrinet
 
-language Petrinet {
+external language Petrinet {
 	syntax "platform:/resource/org.modelexecution.xmof.examples.petrinet/model/petrinet.ecore"
-	
 	xmof "platform:/resource/org.modelexecution.xmof.examples.petrinet.xmof.dynamic/xmof/petrinet.xmof"
 }

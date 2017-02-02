@@ -21,36 +21,65 @@ public class XMOFMutableFieldExtractor implements IMutableFieldExtractor {
 
 	private Map<EClass, Integer> counters = new HashMap<EClass, Integer>();
 
-	public XMOFMutableFieldExtractor(
-			ConfigurationObjectMap configurationObjectMap) {
+	public XMOFMutableFieldExtractor(ConfigurationObjectMap configurationObjectMap) {
 		this.configurationObjectMap = configurationObjectMap;
 	}
 
 	@Override
+	//TODO factorize
 	public List<MutableField> extractMutableField(EObject eObject) {
 		List<MutableField> mutableFields = new ArrayList<MutableField>();
-		EObject configurationObject = configurationObjectMap
-				.getConfigurationObject(eObject);
-		for (EStructuralFeature feature : configurationObject.eClass()
-				.getEAllStructuralFeatures()) {
-			EStructuralFeature originalFeature = eObject.eClass()
-					.getEStructuralFeature(feature.getName());
-			if (originalFeature == null) {
-				// We have found a mutable feature
-				String objectName = getObjectName(eObject);
-				String className = eObject.eClass().getName();
-				String fieldName = feature.getName() + " (" + objectName + " :"
-						+ className + ")";
-				Supplier<Object> getter = () -> {
-					return configurationObject.eGet(feature);
-				};
-				Consumer<Object> setter = (Object t) -> {
-				};
-				mutableFields.add(new MutableField(fieldName, eObject, feature,
-						getter, setter));
+		EObject configurationObject = configurationObjectMap.getConfigurationObject(eObject);
+
+		// Case original objects not available
+		if (eObject == configurationObject) {
+
+			// We find the original class
+			EClass originalEClass = null;
+			for (EClass superType : configurationObject.eClass().getEAllSuperTypes()) {
+				if (configurationObject.eClass().getName().equals(superType.getName() + "Configuration")) {
+					originalEClass = superType;
+					break;
+				}
+			}
+
+			for (EStructuralFeature feature : configurationObject.eClass().getEAllStructuralFeatures()) {
+
+				// We check whether the original class has the feature or not
+				boolean isInOriginal = originalEClass.getEAllStructuralFeatures().stream()
+						.anyMatch((f) -> f.getName().equals(feature.getName()));
+
+				if (!isInOriginal) {
+					mutableFields.add(createMutableField(eObject, configurationObject, feature));
+				}
+
 			}
 		}
+
+		// Case original objects available
+		else {
+			for (EStructuralFeature feature : configurationObject.eClass().getEAllStructuralFeatures()) {
+				EStructuralFeature originalFeature = eObject.eClass().getEStructuralFeature(feature.getName());
+				if (originalFeature == null) {
+					// We have found a mutable feature
+					mutableFields.add(createMutableField(eObject, configurationObject, feature));
+				}
+			}
+		}
+
 		return mutableFields;
+	}
+
+	private MutableField createMutableField(EObject eObject, EObject configurationObject, EStructuralFeature feature) {
+		String objectName = getObjectName(eObject);
+		String className = eObject.eClass().getName();
+		String fieldName = feature.getName() + " (" + objectName + " :" + className + ")";
+		Supplier<Object> getter = () -> {
+			return configurationObject.eGet(feature);
+		};
+		Consumer<Object> setter = (Object t) -> {
+		};
+		return new MutableField(fieldName, eObject, feature, getter, setter);
 	}
 
 	private String getObjectName(EObject eObject) {
@@ -69,7 +98,7 @@ public class XMOFMutableFieldExtractor implements IMutableFieldExtractor {
 		return objectName;
 	}
 
-	private String getObjectID(EObject eObject) {
+	private static String getObjectID(EObject eObject) {
 		String objectId = null;
 		EAttribute idAttribute = eObject.eClass().getEIDAttribute();
 		if (idAttribute != null) {
@@ -81,7 +110,7 @@ public class XMOFMutableFieldExtractor implements IMutableFieldExtractor {
 		return objectId;
 	}
 
-	private String getObjectNameValue(EObject eObject) {
+	private static String getObjectNameValue(EObject eObject) {
 		String objectNameValue = null;
 		EStructuralFeature nameFeature = eObject.eClass().getEStructuralFeature("name");
 		if (nameFeature != null) {

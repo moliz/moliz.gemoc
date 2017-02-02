@@ -49,6 +49,42 @@ public interface StepsFactory extends EFactory {
 	Iml_Header_Execute_ImplicitStep createIml_Header_Execute_ImplicitStep();
 
 	/**
+	 * Returns a new object of class '<em>Iml Selection Convergence Do Fire</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Iml Selection Convergence Do Fire</em>'.
+	 * @generated
+	 */
+	Iml_SelectionConvergence_DoFire createIml_SelectionConvergence_DoFire();
+
+	/**
+	 * Returns a new object of class '<em>Iml Selection Convergence Do Fire Implicit Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Iml Selection Convergence Do Fire Implicit Step</em>'.
+	 * @generated
+	 */
+	Iml_SelectionConvergence_DoFire_ImplicitStep createIml_SelectionConvergence_DoFire_ImplicitStep();
+
+	/**
+	 * Returns a new object of class '<em>Iml Selection Divergence Do Fire</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Iml Selection Divergence Do Fire</em>'.
+	 * @generated
+	 */
+	Iml_SelectionDivergence_DoFire createIml_SelectionDivergence_DoFire();
+
+	/**
+	 * Returns a new object of class '<em>Iml Selection Divergence Do Fire Implicit Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Iml Selection Divergence Do Fire Implicit Step</em>'.
+	 * @generated
+	 */
+	Iml_SelectionDivergence_DoFire_ImplicitStep createIml_SelectionDivergence_DoFire_ImplicitStep();
+
+	/**
 	 * Returns a new object of class '<em>Iml Simultaneous Convergence Do Fire</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +137,33 @@ public interface StepsFactory extends EFactory {
 	 * @generated
 	 */
 	Iml_StateTransition_DoFire_ImplicitStep createIml_StateTransition_DoFire_ImplicitStep();
+
+	/**
+	 * Returns a new object of class '<em>Iml State Activate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Iml State Activate</em>'.
+	 * @generated
+	 */
+	Iml_State_Activate createIml_State_Activate();
+
+	/**
+	 * Returns a new object of class '<em>Iml State Activate Implicit Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Iml State Activate Implicit Step</em>'.
+	 * @generated
+	 */
+	Iml_State_Activate_ImplicitStep createIml_State_Activate_ImplicitStep();
+
+	/**
+	 * Returns a new object of class '<em>Iml State Deactivate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Iml State Deactivate</em>'.
+	 * @generated
+	 */
+	Iml_State_Deactivate createIml_State_Deactivate();
 
 	/**
 	 * Returns a new object of class '<em>Iml State Execute Activities</em>'.

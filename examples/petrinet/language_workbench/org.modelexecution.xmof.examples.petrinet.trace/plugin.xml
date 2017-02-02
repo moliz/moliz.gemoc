@@ -4,22 +4,22 @@
 -->
 <plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated petrinetTrace -->
-    <package uri="petrinetTrace" class="petrinetTrace.PetrinetTracePackage" genModel="model/petrinetTrace.genmodel" />
+    <!-- @generated petrinetConfigurationTrace -->
+    <package uri="petrinetConfigurationTrace" class="petrinetConfigurationTrace.PetrinetConfigurationTracePackage" genModel="model/petrinetConfigurationTrace.genmodel" />
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated petrinetTrace -->
-    <package uri="petrinetTrace_Steps" class="petrinetTrace.Steps.StepsPackage" genModel="model/petrinetTrace.genmodel" />
+    <!-- @generated petrinetConfigurationTrace -->
+    <package uri="petrinetConfigurationTrace_Steps" class="petrinetConfigurationTrace.Steps.StepsPackage" genModel="model/petrinetConfigurationTrace.genmodel" />
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated petrinetTrace -->
-    <package uri="petrinetTrace_States" class="petrinetTrace.States.StatesPackage" genModel="model/petrinetTrace.genmodel" />
+    <!-- @generated petrinetConfigurationTrace -->
+    <package uri="petrinetConfigurationTrace_States" class="petrinetConfigurationTrace.States.StatesPackage" genModel="model/petrinetConfigurationTrace.genmodel" />
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated petrinetTrace -->
-    <package uri="petrinetTrace_petrinetConfiguration" class="petrinetTrace.States.petrinetConfiguration.PetrinetConfigurationPackage" genModel="model/petrinetTrace.genmodel" />
+    <!-- @generated petrinetConfigurationTrace -->
+    <package uri="petrinetConfigurationTrace_petrinetConfiguration" class="petrinetConfigurationTrace.States.petrinetConfiguration.PetrinetConfigurationPackage" genModel="model/petrinetConfigurationTrace.genmodel" />
   </extension>
   <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
-    <Addon Class="org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.petrinet.trace" Name="petrinet MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to petrinet language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" />
+    <Addon Class="org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetConfigurationTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.petrinet.trace" Name="petrinetConfiguration MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to petrinetConfiguration language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" AddonGroupId="Sequential.AddonGroup" />
   </extension>
 </plugin>

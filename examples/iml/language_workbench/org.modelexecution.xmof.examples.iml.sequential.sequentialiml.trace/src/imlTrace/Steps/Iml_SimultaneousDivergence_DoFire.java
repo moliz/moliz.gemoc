@@ -16,7 +16,7 @@ import imlTrace.States.iml.TracedSimultaneousDivergence;
  * @model
  * @generated
  */
-public interface Iml_SimultaneousDivergence_DoFire extends Iml_Header_Execute_AbstractSubStep, Iml_StateTransition_DoFire_AbstractSubStep, Iml_SimultaneousConvergence_DoFire_AbstractSubStep, SpecificStep, SequentialStep<Iml_SimultaneousDivergence_DoFire_AbstractSubStep> {
+public interface Iml_SimultaneousDivergence_DoFire extends Iml_Header_Execute_AbstractSubStep, Iml_StateTransition_DoFire_AbstractSubStep, Iml_SimultaneousConvergence_DoFire_AbstractSubStep, SpecificStep, SequentialStep<Iml_SimultaneousDivergence_DoFire_AbstractSubStep>, Iml_SelectionDivergence_DoFire_AbstractSubStep {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

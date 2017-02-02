@@ -59,12 +59,19 @@ public class StepsFactoryImpl extends EFactoryImpl implements StepsFactory {
 			case StepsPackage.IML_ACTIVITY_DO_EXECUTE: return createIml_Activity_DoExecute();
 			case StepsPackage.IML_HEADER_EXECUTE: return createIml_Header_Execute();
 			case StepsPackage.IML_HEADER_EXECUTE_IMPLICIT_STEP: return createIml_Header_Execute_ImplicitStep();
+			case StepsPackage.IML_SELECTION_CONVERGENCE_DO_FIRE: return createIml_SelectionConvergence_DoFire();
+			case StepsPackage.IML_SELECTION_CONVERGENCE_DO_FIRE_IMPLICIT_STEP: return createIml_SelectionConvergence_DoFire_ImplicitStep();
+			case StepsPackage.IML_SELECTION_DIVERGENCE_DO_FIRE: return createIml_SelectionDivergence_DoFire();
+			case StepsPackage.IML_SELECTION_DIVERGENCE_DO_FIRE_IMPLICIT_STEP: return createIml_SelectionDivergence_DoFire_ImplicitStep();
 			case StepsPackage.IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE: return createIml_SimultaneousConvergence_DoFire();
 			case StepsPackage.IML_SIMULTANEOUS_CONVERGENCE_DO_FIRE_IMPLICIT_STEP: return createIml_SimultaneousConvergence_DoFire_ImplicitStep();
 			case StepsPackage.IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE: return createIml_SimultaneousDivergence_DoFire();
 			case StepsPackage.IML_SIMULTANEOUS_DIVERGENCE_DO_FIRE_IMPLICIT_STEP: return createIml_SimultaneousDivergence_DoFire_ImplicitStep();
 			case StepsPackage.IML_STATE_TRANSITION_DO_FIRE: return createIml_StateTransition_DoFire();
 			case StepsPackage.IML_STATE_TRANSITION_DO_FIRE_IMPLICIT_STEP: return createIml_StateTransition_DoFire_ImplicitStep();
+			case StepsPackage.IML_STATE_ACTIVATE: return createIml_State_Activate();
+			case StepsPackage.IML_STATE_ACTIVATE_IMPLICIT_STEP: return createIml_State_Activate_ImplicitStep();
+			case StepsPackage.IML_STATE_DEACTIVATE: return createIml_State_Deactivate();
 			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES: return createIml_State_ExecuteActivities();
 			case StepsPackage.IML_STATE_EXECUTE_ACTIVITIES_IMPLICIT_STEP: return createIml_State_ExecuteActivities_ImplicitStep();
 			case StepsPackage.ROOT_IMPLICIT_STEP: return createRootImplicitStep();
@@ -101,6 +108,46 @@ public class StepsFactoryImpl extends EFactoryImpl implements StepsFactory {
 	public Iml_Header_Execute_ImplicitStep createIml_Header_Execute_ImplicitStep() {
 		Iml_Header_Execute_ImplicitStepImpl iml_Header_Execute_ImplicitStep = new Iml_Header_Execute_ImplicitStepImpl();
 		return iml_Header_Execute_ImplicitStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iml_SelectionConvergence_DoFire createIml_SelectionConvergence_DoFire() {
+		Iml_SelectionConvergence_DoFireImpl iml_SelectionConvergence_DoFire = new Iml_SelectionConvergence_DoFireImpl();
+		return iml_SelectionConvergence_DoFire;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iml_SelectionConvergence_DoFire_ImplicitStep createIml_SelectionConvergence_DoFire_ImplicitStep() {
+		Iml_SelectionConvergence_DoFire_ImplicitStepImpl iml_SelectionConvergence_DoFire_ImplicitStep = new Iml_SelectionConvergence_DoFire_ImplicitStepImpl();
+		return iml_SelectionConvergence_DoFire_ImplicitStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iml_SelectionDivergence_DoFire createIml_SelectionDivergence_DoFire() {
+		Iml_SelectionDivergence_DoFireImpl iml_SelectionDivergence_DoFire = new Iml_SelectionDivergence_DoFireImpl();
+		return iml_SelectionDivergence_DoFire;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iml_SelectionDivergence_DoFire_ImplicitStep createIml_SelectionDivergence_DoFire_ImplicitStep() {
+		Iml_SelectionDivergence_DoFire_ImplicitStepImpl iml_SelectionDivergence_DoFire_ImplicitStep = new Iml_SelectionDivergence_DoFire_ImplicitStepImpl();
+		return iml_SelectionDivergence_DoFire_ImplicitStep;
 	}
 
 	/**
@@ -161,6 +208,36 @@ public class StepsFactoryImpl extends EFactoryImpl implements StepsFactory {
 	public Iml_StateTransition_DoFire_ImplicitStep createIml_StateTransition_DoFire_ImplicitStep() {
 		Iml_StateTransition_DoFire_ImplicitStepImpl iml_StateTransition_DoFire_ImplicitStep = new Iml_StateTransition_DoFire_ImplicitStepImpl();
 		return iml_StateTransition_DoFire_ImplicitStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iml_State_Activate createIml_State_Activate() {
+		Iml_State_ActivateImpl iml_State_Activate = new Iml_State_ActivateImpl();
+		return iml_State_Activate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iml_State_Activate_ImplicitStep createIml_State_Activate_ImplicitStep() {
+		Iml_State_Activate_ImplicitStepImpl iml_State_Activate_ImplicitStep = new Iml_State_Activate_ImplicitStepImpl();
+		return iml_State_Activate_ImplicitStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iml_State_Deactivate createIml_State_Deactivate() {
+		Iml_State_DeactivateImpl iml_State_Deactivate = new Iml_State_DeactivateImpl();
+		return iml_State_Deactivate;
 	}
 
 	/**
