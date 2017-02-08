@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xMOF Engine UI
+Bundle-SymbolicName: org.modelexecution.xmof.gemoc.engine.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.modelexecution.xmof.gemoc.ui.Activator
+Bundle-Vendor: Business Informatics Group, TU Wien
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.modelexecution.xmof.configuration;bundle-version="1.0.0",
+ org.eclipse.pde.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui.dialogs

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.modelexecution.xmof.gemoc.category"
+            name="xMOF Language">
+      </category>
+      <wizard
+            canFinishEarly="true"
+            category="org.modelexecution.xmof.gemoc.category"
+            class="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
+            id="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
+            name="GEMOC xMOF Language Project"
+            project="true">
+         <description>
+            Create a new GEMOC xMOF project to specify an executable language that will run using the xMOF execution engine (which extends the GEMOC java sequential engine)
+         </description>
+      </wizard>
+   </extension>
+
+</plugin>
