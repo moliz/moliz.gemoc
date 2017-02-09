@@ -8,9 +8,10 @@
             name="xMOF Language">
       </category>
       <wizard
-            canFinishEarly="true"
+            canFinishEarly="false"
             category="org.modelexecution.xmof.gemoc.category"
             class="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
+            hasPages="true"
             id="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
             name="GEMOC xMOF Language Project"
             project="true">
