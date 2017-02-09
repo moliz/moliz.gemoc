@@ -8,7 +8,7 @@
  * Tobias Ortmayr - initial API and implementation
  */
 
-package org.modelexecution.xmof.gemoc.ui.pages;
+package org.modelexecution.xmof.gemoc.ui.wizards;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.ISelection;

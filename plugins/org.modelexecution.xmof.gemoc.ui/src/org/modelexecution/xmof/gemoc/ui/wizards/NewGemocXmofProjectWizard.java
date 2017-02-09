@@ -13,30 +13,33 @@ package org.modelexecution.xmof.gemoc.ui.wizards;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
 import org.eclipse.jface.operation.IRunnableWithProgress;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.pde.internal.core.ICoreConstants;
 import org.eclipse.pde.internal.core.PDECore;
-import org.eclipse.pde.internal.core.util.IdUtil;
 import org.eclipse.pde.internal.core.util.VMUtil;
 import org.eclipse.pde.internal.ui.PDEPlugin;
 import org.eclipse.pde.internal.ui.PDEUIMessages;
 import org.eclipse.pde.internal.ui.wizards.IProjectProvider;
+import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
 import org.eclipse.pde.internal.ui.wizards.plugin.PluginFieldData;
+import org.eclipse.pde.ui.IFieldData;
+import org.eclipse.pde.ui.IPluginContentWizard;
 import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.configuration.ui.wizards.NewConfigurationWizard;
 import org.modelexecution.xmof.configuration.ui.wizards.SelectTargetFilePage;
-import org.modelexecution.xmof.gemoc.ui.operations.NewGemoXmofProjectCreationOperation;
-import org.modelexecution.xmof.gemoc.ui.pages.NewGemocXmofProjectCreationPage;
-import org.modelexecution.xmof.gemoc.ui.pages.SelectStaticModelPage;
 
 @SuppressWarnings("restriction")
 public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
@@ -118,7 +121,7 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
 
   @Override
   public boolean canFinish() {
-    return newProjectCreationPage.isPageComplete() && selectEcoreModelFilePage.isPageComplete() ;
+    return newProjectCreationPage.isPageComplete() && selectEcoreModelFilePage.isPageComplete();
   }
 
   private boolean createXmofBasedConfiguration() {
@@ -198,6 +201,35 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
     }
     return PDEUIMessages.PluginContentPage_noEE;
 
+  }
+
+  class NewGemoXmofProjectCreationOperation extends NewProjectCreationOperation {
+
+    private String xmofFolder;
+    private IFolder generatedXmofFolder;
+
+    public NewGemoXmofProjectCreationOperation(IFieldData data, IProjectProvider provider,
+        IPluginContentWizard contentWizard, String xmofFolder) {
+      super(data, provider, contentWizard);
+      this.xmofFolder = xmofFolder;
+    }
+
+    @Override
+    protected void createContents(IProgressMonitor monitor, IProject project)
+        throws CoreException, JavaModelException, InvocationTargetException, InterruptedException {
+      super.createContents(monitor, project);
+      SubMonitor subMonitor = SubMonitor.convert(monitor, 1);
+      generatedXmofFolder = project.getFolder(xmofFolder);
+      if (!generatedXmofFolder.exists()) {
+        generatedXmofFolder.create(IResource.NONE, true, subMonitor);
+      }
+
+      subMonitor.setWorkRemaining(0);
+    }
+
+    public IFolder getGeneratedXmofFolder() {
+      return generatedXmofFolder;
+    }
   }
 
 }

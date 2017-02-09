@@ -7,7 +7,7 @@
  * Contributors:
  * Tobias Ortmayr - initial API and implementation
  */
-package org.modelexecution.xmof.gemoc.ui.pages;
+package org.modelexecution.xmof.gemoc.ui.wizards;
 
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.pde.internal.ui.wizards.plugin.AbstractFieldData;
