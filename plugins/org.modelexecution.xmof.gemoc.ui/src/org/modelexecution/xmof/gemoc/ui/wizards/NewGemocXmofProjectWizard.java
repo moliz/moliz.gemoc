@@ -21,6 +21,7 @@ import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.pde.internal.core.ICoreConstants;
 import org.eclipse.pde.internal.core.PDECore;
 import org.eclipse.pde.internal.core.util.IdUtil;
@@ -117,7 +118,7 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
 
   @Override
   public boolean canFinish() {
-    return newProjectCreationPage.isPageComplete() && selectEcoreModelFilePage.isPageComplete();
+    return newProjectCreationPage.isPageComplete() && selectEcoreModelFilePage.isPageComplete() ;
   }
 
   private boolean createXmofBasedConfiguration() {
@@ -177,7 +178,7 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
     pluginData.setHasBundleStructure(true);
     pluginData.setOSGiFramework(null);
 
-    pluginData.setId(IdUtil.getValidName(newProjectCreationPage.getProjectName()));
+    pluginData.setId(newProjectCreationPage.getProjectName());
     pluginData.setVersion(PLUGIN_VERSION);
     pluginData.setName(PLUGIN_NAME);
     pluginData.setProvider(PLUGIN_VENDOR);

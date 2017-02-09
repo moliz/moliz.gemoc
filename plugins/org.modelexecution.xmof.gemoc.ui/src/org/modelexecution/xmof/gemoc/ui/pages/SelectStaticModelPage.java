@@ -26,4 +26,9 @@ public class SelectStaticModelPage extends SelectEcoreModelFilePage {
     return super.canFlipToNextPage() && getNextPage() != null;
   }
 
+  @Override
+  public boolean isPageComplete() {
+    return super.isPageComplete() && super.canFlipToNextPage();
+  }
+
 }

@@ -27,7 +27,7 @@ public class NewGemocXmofProjectCreationPage extends WizardNewProjectCreationPag
   private AbstractFieldData data;
   private IStructuredSelection selection;
   private Text xmofNameField;
-  private String initialxmofNameFieldValue = "model.xmof";
+  private String initialxmofNameFieldValue = "model";
 
   public NewGemocXmofProjectCreationPage(String pageName, AbstractFieldData data,
       IStructuredSelection selection) {

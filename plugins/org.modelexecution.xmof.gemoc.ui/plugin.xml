@@ -3,13 +3,9 @@
 <plugin>
    <extension
          point="org.eclipse.ui.newWizards">
-      <category
-            id="org.modelexecution.xmof.gemoc.category"
-            name="xMOF Language">
-      </category>
       <wizard
             canFinishEarly="false"
-            category="org.modelexecution.xmof.gemoc.category"
+            category="org.modelexecution.xmof"
             class="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
             hasPages="true"
             id="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
