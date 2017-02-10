@@ -39,23 +39,20 @@ import org.eclipse.pde.ui.IPluginContentWizard;
 import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.configuration.ui.wizards.NewConfigurationWizard;
+import org.modelexecution.xmof.configuration.ui.wizards.SelectEcoreModelFilePage;
 import org.modelexecution.xmof.configuration.ui.wizards.SelectTargetFilePage;
+import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectConstants;
 
 @SuppressWarnings("restriction")
-public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
-  private static final String DEFAULT_PROJECT_NAME = "org.company.model.xmof.dynamic";
-  private static final String PLUGIN_VERSION = "1.0.0.qualifer";
-  private static final String PLUGIN_NAME = "%pluginName";
-  private static final String PLUGIN_VENDOR = "%providerName";
-  private static final String XMOF_FILE_FOLDER = "xmof";
-  private static final String XMOF_FILE_EXTENSION = ".xmof";
+public class NewXMOFProjectWizard extends NewConfigurationWizard {
+
 
   private PluginFieldData pluginData;
-  private NewGemocXmofProjectCreationPage newProjectCreationPage;
+  private NewXMOFProjectCreationPage newProjectCreationPage;
   private IProjectProvider projectProvider;
-  private NewGemoXmofProjectCreationOperation projectCreationOperation;
+  private NewXMOFProjectCreationOperation projectCreationOperation;
 
-  public NewGemocXmofProjectWizard() {
+  public NewXMOFProjectWizard() {
     super();
     pluginData = new PluginFieldData();
 
@@ -63,9 +60,9 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
 
   @Override
   public void addPages() {
-    newProjectCreationPage = new NewGemocXmofProjectCreationPage(
+    newProjectCreationPage = new NewXMOFProjectCreationPage(
         "Create a GEMOC xMOF Language Project", pluginData, selection);
-    newProjectCreationPage.setInitialProjectName(DEFAULT_PROJECT_NAME);
+    newProjectCreationPage.setInitialProjectName(XMOFProjectConstants.DEFAULT_PROJECT_NAME);
 
     projectProvider = new IProjectProvider() {
       @Override
@@ -84,11 +81,25 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
       }
     };
 
-    selectEcoreModelFilePage = new SelectStaticModelPage(selection, resourceSet);
+    selectEcoreModelFilePage = createSelectEcoreModelFilePage();
     selectTargetFilePage = createTargeFilePageMock();
     addPage(newProjectCreationPage);
     addPage(selectEcoreModelFilePage);
 
+  }
+
+  private SelectEcoreModelFilePage createSelectEcoreModelFilePage() {
+    return new SelectEcoreModelFilePage(selection, resourceSet) {
+      @Override
+      public boolean canFlipToNextPage() {
+        return super.canFlipToNextPage() && getNextPage() != null;
+      }
+
+      @Override
+      public boolean isPageComplete() {
+        return super.isPageComplete() && super.canFlipToNextPage();
+      }
+    };
   }
 
   private SelectTargetFilePage createTargeFilePageMock() {
@@ -108,8 +119,8 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
 
   private String getXmofFileString() {
     String name = newProjectCreationPage.getXmofFileName();
-    if (!name.endsWith(XMOF_FILE_EXTENSION))
-      name += XMOF_FILE_EXTENSION;
+    if (!name.endsWith(XMOFProjectConstants.XMOF_FILE_EXTENSION))
+      name += XMOFProjectConstants.XMOF_FILE_EXTENSION;
     return name;
   }
 
@@ -153,8 +164,8 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
         }
       }
 
-      projectCreationOperation = new NewGemoXmofProjectCreationOperation(pluginData,
-          projectProvider, null, XMOF_FILE_FOLDER);
+      projectCreationOperation = new NewXMOFProjectCreationOperation(pluginData,
+          projectProvider, null, XMOFProjectConstants.XMOF_FILE_FOLDER);
       getContainer().run(false, true, projectCreationOperation);
 
       IWorkingSet[] workingSets = newProjectCreationPage.getSelectedWorkingSets();
@@ -182,9 +193,9 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
     pluginData.setOSGiFramework(null);
 
     pluginData.setId(newProjectCreationPage.getProjectName());
-    pluginData.setVersion(PLUGIN_VERSION);
-    pluginData.setName(PLUGIN_NAME);
-    pluginData.setProvider(PLUGIN_VENDOR);
+    pluginData.setVersion(XMOFProjectConstants.PLUGIN_VERSION);
+    pluginData.setName(XMOFProjectConstants.PLUGIN_NAME);
+    pluginData.setProvider(XMOFProjectConstants.PLUGIN_VENDOR);
     pluginData.setDoGenerateClass(false);
     pluginData.setUIPlugin(false);
     pluginData.setRCPApplicationPlugin(false);
@@ -203,12 +214,12 @@ public class NewGemocXmofProjectWizard extends NewConfigurationWizard {
 
   }
 
-  class NewGemoXmofProjectCreationOperation extends NewProjectCreationOperation {
+  class NewXMOFProjectCreationOperation extends NewProjectCreationOperation {
 
     private String xmofFolder;
     private IFolder generatedXmofFolder;
 
-    public NewGemoXmofProjectCreationOperation(IFieldData data, IProjectProvider provider,
+    public NewXMOFProjectCreationOperation(IFieldData data, IProjectProvider provider,
         IPluginContentWizard contentWizard, String xmofFolder) {
       super(data, provider, contentWizard);
       this.xmofFolder = xmofFolder;

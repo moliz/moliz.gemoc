@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
 @SuppressWarnings("restriction")
-public class NewGemocXmofProjectCreationPage extends WizardNewProjectCreationPage {
+public class NewXMOFProjectCreationPage extends WizardNewProjectCreationPage {
   private static final int SIZING_TEXT_FIELD_WIDTH = 250;
   private static final String DEFAULT_MESSAGE = "Define project details";
   private AbstractFieldData data;
@@ -29,7 +29,7 @@ public class NewGemocXmofProjectCreationPage extends WizardNewProjectCreationPag
   private Text xmofNameField;
   private String initialxmofNameFieldValue = "model";
 
-  public NewGemocXmofProjectCreationPage(String pageName, AbstractFieldData data,
+  public NewXMOFProjectCreationPage(String pageName, AbstractFieldData data,
       IStructuredSelection selection) {
     super(pageName);
     setTitle(pageName);
