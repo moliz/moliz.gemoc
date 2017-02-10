@@ -39,7 +39,7 @@
                   style="push">
             </command>
             <command
-                  commandId="org.modelexecution.xmof.gemoc.ui.command2"
+                  commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject"
                   label="Generate xDSML project"
                   style="push">
             </command>
@@ -85,6 +85,7 @@
       </command>
       <command
             categoryId="org.modelexecution.xmof.gemoc.ui.commands"
+            description="Generates xDSML project for languages defined with xMOF"
             id="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject"
             name="Generates xDSML project for languages defined with xMOF">
       </command>
@@ -94,6 +95,10 @@
       <handler
             class="org.modelexecution.xmof.gemoc.ui.commands.XMOFCodeGenerationHandler"
             commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode">
+      </handler>
+      <handler
+            class="org.modelexecution.xmof.gemoc.ui.commands.XDSMLProjectGenerationHandler"
+            commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject">
       </handler>
    </extension>
 
