@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide,
  org.eclipse.jdt.launching,
  org.eclipse.jdt.core;bundle-version="3.12.2",
- org.modelexecution.xmof.gemoc.codegen
+ org.modelexecution.xmof.gemoc.codegen,
+ org.eclipse.core.expressions
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.ui.dialogs

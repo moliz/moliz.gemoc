@@ -25,29 +25,43 @@
                id="xmof.menu"
                label="xMOF">
             <command
-                  commandId="org.modelexecution.xmof.gemoc.codegen.ui.GenerateXMOFCode"
+                  commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll"
+                  label="Generate all"
+                  style="push">
+            </command>
+            <separator
+                  name="Seperator"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode"
                   label="Generate code"
                   style="push">
-               <visibleWhen
-                     checkEnabled="false">
-                  <with
-                        variable="selection">
-                     <count
-                           value="1">
-                     </count>
-                     <iterate
-                           ifEmpty="false">
-                        <adapt
-                              type="org.eclipse.core.resources.IResource">
-                           <test
-                                 property="org.eclipse.core.resources.name"
-                                 value="*.xmof">
-                           </test>
-                        </adapt>
-                     </iterate>
-                  </with>
-               </visibleWhen>
             </command>
+            <command
+                  commandId="org.modelexecution.xmof.gemoc.ui.command2"
+                  label="Generate xDSML project"
+                  style="push">
+            </command>
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.xmof">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
          </menu>
       </menuContribution>
    </extension>
@@ -59,16 +73,27 @@
       </category>
       <command
             categoryId="org.modelexecution.xmof.gemoc.ui.commands"
+            description="Generate all code artefacts for languages defined with xMOF"
+            id="org.modelexecution.xmof.gemoc.ui.GenerateAll"
+            name="GenerateAll">
+      </command>
+      <command
+            categoryId="org.modelexecution.xmof.gemoc.ui.commands"
             description="Generates code for languages defined with xMOF"
-            id="org.modelexecution.xmof.gemoc.codegen.ui.GenerateXMOFCode"
+            id="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode"
             name="GenerateXMOFCode">
+      </command>
+      <command
+            categoryId="org.modelexecution.xmof.gemoc.ui.commands"
+            id="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject"
+            name="Generates xDSML project for languages defined with xMOF">
       </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
             class="org.modelexecution.xmof.gemoc.ui.commands.XMOFCodeGenerationHandler"
-            commandId="org.modelexecution.xmof.gemoc.codegen.ui.GenerateXMOFCode">
+            commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode">
       </handler>
    </extension>
 
