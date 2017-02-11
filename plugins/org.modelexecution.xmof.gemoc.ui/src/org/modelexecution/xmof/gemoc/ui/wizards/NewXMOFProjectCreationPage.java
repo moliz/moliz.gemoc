@@ -103,7 +103,7 @@ public class NewXMOFProjectCreationPage extends WizardNewProjectCreationPage {
     }
 
     if (xmofNameStringFieldContent.equals("")) {
-      setErrorMessage("xMOF file name must be specified");
+      setErrorMessage("Language name must be specified");
       return false;
     }
 

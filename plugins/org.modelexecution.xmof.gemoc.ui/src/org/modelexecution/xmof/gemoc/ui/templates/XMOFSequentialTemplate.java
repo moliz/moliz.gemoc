@@ -12,6 +12,7 @@ package org.modelexecution.xmof.gemoc.ui.templates;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
+import java.util.Properties;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.ui.PlatformUI;
@@ -24,8 +25,8 @@ import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.templates.Templ
 import fr.inria.diverse.melange.ui.templates.MelangeTemplateMessages;
 
 public class XMOFSequentialTemplate extends SequentialTemplate {
-  public static final String KEY_XMOFFILE_PATH ="xmofFilePath"; //$NON-NLS-1$
-  
+  public static final String KEY_XMOFFILE_PATH = "xmofFilePath"; //$NON-NLS-1$
+
   public XMOFSequentialTemplate() {
     super();
     addOption(KEY_XMOFFILE_PATH, "", (String) null, 0);
@@ -58,12 +59,13 @@ public class XMOFSequentialTemplate extends SequentialTemplate {
     return Activator.getDefault().getBundle().getEntry("/");
   }
 
-  public void updateOptions(Map<String, String> optionsMap) {
+  public void updateOptions(Properties properties) {
     TemplateOption[] allOptions = getOptions(0);
     for (TemplateOption option : allOptions) {
-      for (String key : optionsMap.keySet()) {
-        if (option.getName().equals(key) && optionsMap.get(key) != null) {
-          option.setValue(optionsMap.get(key));
+
+      for (Object key : properties.keySet()) {
+        if (option.getName().equals(key) && properties.get(key) != null) {
+          option.setValue(properties.get(key));
         }
       }
     }

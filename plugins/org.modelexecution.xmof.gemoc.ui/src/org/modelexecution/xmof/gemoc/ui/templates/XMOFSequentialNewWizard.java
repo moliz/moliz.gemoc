@@ -10,6 +10,7 @@
 package org.modelexecution.xmof.gemoc.ui.templates;
 
 import java.util.Map;
+import java.util.Properties;
 
 import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialNewWizard;
 import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialTemplate;
@@ -22,10 +23,10 @@ public class XMOFSequentialNewWizard extends SequentialNewWizard {
     return new ITemplateSection[] { new XMOFSequentialTemplate() };
   }
 
-  public void updateOptions(Map<String,String> optionsMap) {
+  public void updateOptions(Properties properties) {
     ITemplateSection[] selections = getTemplateSections();
     XMOFSequentialTemplate selection = (XMOFSequentialTemplate) selections[0];
-    selection.updateOptions(optionsMap);
+    selection.updateOptions(properties);
   }
   
   

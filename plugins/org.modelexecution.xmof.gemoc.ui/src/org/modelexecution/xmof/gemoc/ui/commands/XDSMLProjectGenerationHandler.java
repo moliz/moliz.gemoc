@@ -10,8 +10,8 @@
 
 package org.modelexecution.xmof.gemoc.ui.commands;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.IOException;
+import java.util.Properties;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -21,30 +21,29 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.xtext.xbase.services.XbaseGrammarAccess.OpOrElements;
-import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialTemplate;
+import org.eclipse.emf.common.util.URI;
 import org.gemoc.execution.sequential.javaxdsml.ide.ui.wizards.CreateNewGemocSequentialLanguageProject;
 import org.modelexecution.xmof.gemoc.ui.Activator;
-import org.modelexecution.xmof.gemoc.ui.internal.TemplateData;
 import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectConstants;
 import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialNewWizard;
 import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialTemplate;
 
 import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.ProjectTemplateApplicationOperation;
 import fr.inria.diverse.melange.ui.MelangeUiModule;
-import fr.inria.diverse.melange.ui.templates.melange.SimpleMTTemplate;
 import fr.inria.diverse.melange.ui.wizards.pages.NewMelangeProjectWizardFields;
 
 public class XDSMLProjectGenerationHandler extends XMOFCommand {
 
   private NewMelangeProjectWizardFields context;
   private XMOFSequentialNewWizard templateWizard = new XMOFSequentialNewWizard();
+  private IFile xmofFile;
+  private String languageName;
   private CreateNewGemocSequentialLanguageProject delegate = new CreateNewGemocSequentialLanguageProject() {
     @Override
     public void addPages() {
@@ -55,15 +54,16 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
 
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
-   
     init(event);
-    final Job job = new Job("Generating code for " + "s") {
+
+    final Job job = new Job("Generating xDSML project code for : " + languageName) {
 
       @Override
       protected IStatus run(IProgressMonitor monitor) {
         boolean success = createXDSMLProject(monitor);
         return new Status(success ? Status.OK : Status.ERROR, Activator.PLUGIN_ID,
-            (success ? "Code generated for " : "Error during code generation for ") + "S");
+            (success ? "xDSML project code generated for "
+                : "Error during xDSML project code generation for ") + languageName);
       }
     };
     job.schedule();
@@ -71,20 +71,14 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
     return null;
   }
 
-  private TemplateData loadData(ExecutionEvent event) {
-    TemplateData temp = new TemplateData();
-    temp.setProjectName("org.test.project.xdsml");
-    temp.setPackageName("org.test.project");
-    temp.setLanguageName("MyLanguage");
-    temp.setEcoreModelFilePath("platform:/resource//org.modelexecution.notMof");
-    temp.setXmofModelFilePath(
-        "platform:/resource//org.modelexecution.xmof.examples.petrinet2.xmof");
-    return temp;
-  }
-
   // Adapted code from CreateNewGemocSequentialLanguageProject.performFinish()
   private boolean createXDSMLProject(IProgressMonitor monitor) {
     try {
+      Properties properties = loadTemplateSettings();
+      if (properties != null) {
+        templateWizard.updateOptions(properties);
+      }
+
       IWorkspace workspace = ResourcesPlugin.getWorkspace();
       final IProjectDescription description = workspace
           .newProjectDescription(this.context.projectName);
@@ -93,7 +87,6 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
 
       final IProject project = ResourcesPlugin.getWorkspace().getRoot()
           .getProject(this.context.projectName);
-
       project.create(description, monitor);
       project.open(monitor);
       delegate.addNaturesToProject(project);
@@ -115,24 +108,37 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
 
   }
 
+  private Properties loadTemplateSettings() throws IOException, CoreException {
+    IFile pref = xmofFile.getProject().getFile(XMOFProjectConstants.XDSML_PREFERENCES_NAME);
+    if (pref.exists()) {
+      Properties props = new Properties();
+      props.load(pref.getContents());
+      props.put(XMOFSequentialTemplate.KEY_METAMODEL_NAME, languageName);
+      props.put(XMOFSequentialTemplate.KEY_MELANGE_FILE_NAME, languageName);
+      props.put(XMOFSequentialTemplate.KEY_PACKAGE_NAME,
+          getProjectName().replace(XMOFProjectConstants.DEFAULT_XDSML_SUFFIX, "").toLowerCase());
+      props.put(XMOFSequentialTemplate.KEY_XMOFFILE_PATH, getXMOFModelFilePath());
+      return props;
+
+    }
+    return null;
+  }
+
+  private String getXMOFModelFilePath() {
+    return URI.createPlatformResourceURI(xmofFile.getFullPath().toOSString(), false).toString();
+  }
+
+  private String getProjectName() {
+    return xmofFile.getProject().getName().replace(XMOFProjectConstants.DEFAULT_XMOF_PROJECT_SUFFIX,
+        "") + XMOFProjectConstants.DEFAULT_XDSML_SUFFIX;
+  }
+
   private void init(ExecutionEvent event) {
+    xmofFile = getXMOFFileFromSelection(event);
     context = delegate.getContext();
-   
-    TemplateData data = loadData(event);
-    context.projectName=data.getProjectName();
-    Map<String, String> optionMap = generateOptionsMap(data);
-    templateWizard.updateOptions(optionMap);
-  }
+    context.projectName = getProjectName();
+    languageName = xmofFile.getName().replace(XMOFProjectConstants.XMOF_FILE_EXTENSION, "");
 
-  private Map<String, String> generateOptionsMap(TemplateData data) {
-    Map<String, String> optionsMap = new HashMap<String, String>();
-    optionsMap.put(XMOFSequentialTemplate.KEY_ECOREFILE_PATH,data.getEcoreModelFilePath());
-    optionsMap.put(XMOFSequentialTemplate.KEY_MELANGE_FILE_NAME,data.getLanguageName().toLowerCase());
-    optionsMap.put(XMOFSequentialTemplate.KEY_METAMODEL_NAME, data.getLanguageName());
-    optionsMap.put(XMOFSequentialTemplate.KEY_PACKAGE_NAME, data.getPackageName());
-    optionsMap.put(XMOFSequentialTemplate.KEY_XMOFFILE_PATH,data.getXmofModelFilePath());
-    return optionsMap;
   }
-
 
 }

@@ -26,11 +26,10 @@ public class XMOFProjectConstants {
       + DEFAULT_XMOF_PROJECT_SUFFIX;
   public static final String DEFAULT_LANGUAGE_NAME = "ExampleLanguage";
 
-  public static final String KEY_LANGUAGE_NAME = "languageName";
-  public static final String KEY_PROJECT_NAME = "projectName";
-  public static final String KEY_PACKAGE_NAME = XMOFSequentialTemplate.KEY_PACKAGE_NAME;
+  public static final String XDSML_PREFERENCES_NAME="xdsml.properties";
+
   public static final String KEY_ECOREMODEL_FILE_PATH = XMOFSequentialTemplate.KEY_ECOREFILE_PATH;
-  public static final String KEY_XMOFMODEL_FILE_PATH = XMOFSequentialTemplate.KEY_XMOFFILE_PATH;
+
 
   private XMOFProjectConstants() {
   }
