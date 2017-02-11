@@ -1,105 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
-   <extension
-         point="org.eclipse.ui.newWizards">
-      <wizard
-            canFinishEarly="false"
-            category="org.modelexecution.xmof"
-            class="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
-            hasPages="true"
-            id="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
-            name="GEMOC xMOF Language Project"
-            project="true">
-         <description>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="org.eclipse.ui.newWizards">
+    <wizard canFinishEarly="false" category="org.modelexecution.xmof" class="org.modelexecution.xmof.gemoc.ui.wizards.NewXMOFProjectWizard" hasPages="true" id="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard" name="GEMOC xMOF Language Project" project="true">
+      <description>
             Create a new GEMOC xMOF project to specify an executable language that will run using the xMOF execution engine (which extends the GEMOC java sequential engine)
          </description>
-      </wizard>
-   </extension>
-   <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            allPopups="false"
-            locationURI="popup:org.eclipse.ui.popup.any?after=xdsmlGroup">
-         <menu
-               id="xmof.menu"
-               label="xMOF">
-            <command
-                  commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll"
-                  label="Generate all"
-                  style="push">
-            </command>
-            <separator
-                  name="Seperator"
-                  visible="true">
-            </separator>
-            <command
-                  commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode"
-                  label="Generate code"
-                  style="push">
-            </command>
-            <command
-                  commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject"
-                  label="Generate xDSML project"
-                  style="push">
-            </command>
-            <visibleWhen
-                  checkEnabled="false">
-               <with
-                     variable="selection">
-                  <count
-                        value="1">
-                  </count>
-                  <iterate
-                        ifEmpty="false">
-                     <adapt
-                           type="org.eclipse.core.resources.IResource">
-                        <test
-                              property="org.eclipse.core.resources.name"
-                              value="*.xmof">
-                        </test>
-                     </adapt>
-                  </iterate>
-               </with>
-            </visibleWhen>
-         </menu>
-      </menuContribution>
-   </extension>
-   <extension
-         point="org.eclipse.ui.commands">
-      <category
-            id="org.modelexecution.xmof.gemoc.ui.commands"
-            name="xMOF commands">
-      </category>
-      <command
-            categoryId="org.modelexecution.xmof.gemoc.ui.commands"
-            description="Generate all code artefacts for languages defined with xMOF"
-            id="org.modelexecution.xmof.gemoc.ui.GenerateAll"
-            name="GenerateAll">
-      </command>
-      <command
-            categoryId="org.modelexecution.xmof.gemoc.ui.commands"
-            description="Generates code for languages defined with xMOF"
-            id="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode"
-            name="GenerateXMOFCode">
-      </command>
-      <command
-            categoryId="org.modelexecution.xmof.gemoc.ui.commands"
-            description="Generates xDSML project for languages defined with xMOF"
-            id="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject"
-            name="Generates xDSML project for languages defined with xMOF">
-      </command>
-   </extension>
-   <extension
-         point="org.eclipse.ui.handlers">
-      <handler
-            class="org.modelexecution.xmof.gemoc.ui.commands.XMOFCodeGenerationHandler"
-            commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode">
-      </handler>
-      <handler
-            class="org.modelexecution.xmof.gemoc.ui.commands.XDSMLProjectGenerationHandler"
-            commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject">
-      </handler>
-   </extension>
-
+    </wizard>
+  </extension>
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution allPopups="false" locationURI="popup:org.eclipse.ui.popup.any?after=xdsmlGroup">
+      <menu id="xmof.menu" label="xMOF">
+        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll" label="Generate all" style="push"/>
+        <separator name="Seperator" visible="true"/>
+        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode" label="Generate code" style="push"/>
+        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject" label="Generate xDSML project" style="push"/>
+        <visibleWhen checkEnabled="false">
+          <with variable="selection">
+            <count value="1"/>
+            <iterate ifEmpty="false">
+              <adapt type="org.eclipse.core.resources.IResource">
+                <test property="org.eclipse.core.resources.name" value="*.xmof"/>
+              </adapt>
+            </iterate>
+          </with>
+        </visibleWhen>
+      </menu>
+    </menuContribution>
+  </extension>
+  <extension point="org.eclipse.ui.commands">
+    <category id="org.modelexecution.xmof.gemoc.ui.commands" name="xMOF commands"/>
+    <command categoryId="org.modelexecution.xmof.gemoc.ui.commands" description="Generate all code artefacts for languages defined with xMOF" id="org.modelexecution.xmof.gemoc.ui.GenerateAll" name="GenerateAll"/>
+    <command categoryId="org.modelexecution.xmof.gemoc.ui.commands" description="Generates code for languages defined with xMOF" id="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode" name="GenerateXMOFCode"/>
+    <command categoryId="org.modelexecution.xmof.gemoc.ui.commands" description="Generates xDSML project for languages defined with xMOF" id="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject" name="Generates xDSML project for languages defined with xMOF"/>
+  </extension>
+  <extension point="org.eclipse.ui.handlers">
+    <handler class="org.modelexecution.xmof.gemoc.ui.commands.XMOFCodeGenerationHandler" commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode"/>
+    <handler class="org.modelexecution.xmof.gemoc.ui.commands.XDSMLProjectGenerationHandler" commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject"/>
+  </extension>
 </plugin>

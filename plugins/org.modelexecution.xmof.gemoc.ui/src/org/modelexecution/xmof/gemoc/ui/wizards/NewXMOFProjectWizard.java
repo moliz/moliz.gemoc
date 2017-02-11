@@ -10,7 +10,11 @@
 
 package org.modelexecution.xmof.gemoc.ui.wizards;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Properties;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -21,10 +25,14 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.pde.internal.core.ICoreConstants;
 import org.eclipse.pde.internal.core.PDECore;
@@ -36,6 +44,7 @@ import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
 import org.eclipse.pde.internal.ui.wizards.plugin.PluginFieldData;
 import org.eclipse.pde.ui.IFieldData;
 import org.eclipse.pde.ui.IPluginContentWizard;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.configuration.ui.wizards.NewConfigurationWizard;
@@ -45,7 +54,6 @@ import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectConstants;
 
 @SuppressWarnings("restriction")
 public class NewXMOFProjectWizard extends NewConfigurationWizard {
-
 
   private PluginFieldData pluginData;
   private NewXMOFProjectCreationPage newProjectCreationPage;
@@ -60,8 +68,8 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
 
   @Override
   public void addPages() {
-    newProjectCreationPage = new NewXMOFProjectCreationPage(
-        "Create a GEMOC xMOF Language Project", pluginData, selection);
+    newProjectCreationPage = new NewXMOFProjectCreationPage("Create a GEMOC xMOF Language Project",
+        pluginData, selection);
     newProjectCreationPage.setInitialProjectName(XMOFProjectConstants.DEFAULT_PROJECT_NAME);
 
     projectProvider = new IProjectProvider() {
@@ -90,6 +98,15 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
 
   private SelectEcoreModelFilePage createSelectEcoreModelFilePage() {
     return new SelectEcoreModelFilePage(selection, resourceSet) {
+
+      
+      @Override
+      public void createControl(Composite parent) {
+        // TODO Auto-generated method stub
+        super.createControl(parent);
+        browseEPackageRegistryButton.setVisible(false);
+      }
+
       @Override
       public boolean canFlipToNextPage() {
         return super.canFlipToNextPage() && getNextPage() != null;
@@ -99,6 +116,7 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
       public boolean isPageComplete() {
         return super.isPageComplete() && super.canFlipToNextPage();
       }
+
     };
   }
 
@@ -118,25 +136,20 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
   }
 
   private String getXmofFileString() {
-    String name = newProjectCreationPage.getXmofFileName();
-    if (!name.endsWith(XMOFProjectConstants.XMOF_FILE_EXTENSION))
-      name += XMOFProjectConstants.XMOF_FILE_EXTENSION;
-    return name;
+    String name = newProjectCreationPage.getLanguageName();
+    return name.toLowerCase().concat(XMOFProjectConstants.XMOF_FILE_EXTENSION);
+
   }
 
   @Override
   public boolean performFinish() {
-    return createBasePluginProject() && createXmofBasedConfiguration();
+    return createBasePluginProject() && super.performFinish() && storeXdsmlPreferences();
 
   }
 
   @Override
   public boolean canFinish() {
     return newProjectCreationPage.isPageComplete() && selectEcoreModelFilePage.isPageComplete();
-  }
-
-  private boolean createXmofBasedConfiguration() {
-    return super.performFinish();
   }
 
   private boolean createBasePluginProject() {
@@ -164,8 +177,8 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
         }
       }
 
-      projectCreationOperation = new NewXMOFProjectCreationOperation(pluginData,
-          projectProvider, null, XMOFProjectConstants.XMOF_FILE_FOLDER);
+      projectCreationOperation = new NewXMOFProjectCreationOperation(pluginData, projectProvider,
+          null);
       getContainer().run(false, true, projectCreationOperation);
 
       IWorkingSet[] workingSets = newProjectCreationPage.getSelectedWorkingSets();
@@ -214,15 +227,71 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
 
   }
 
+  private boolean storeXdsmlPreferences() {
+    final Properties properties = createTemplateProperties();
+    IRunnableWithProgress op = new IRunnableWithProgress() {
+      public void run(IProgressMonitor monitor) throws InvocationTargetException {
+        try {
+          persistPreferences(properties, monitor);
+        } catch (IOException | CoreException e) {
+          throw new InvocationTargetException(e);
+        } finally {
+          monitor.done();
+        }
+      }
+
+    };
+
+    try {
+      getContainer().run(true, false, op);
+    } catch (InterruptedException e) {
+      return false;
+    } catch (InvocationTargetException e) {
+      Throwable realException = e.getTargetException();
+      MessageDialog.openError(getShell(), "Error", realException.getMessage());
+      return false;
+    }
+    return true;
+  }
+
+  private Properties createTemplateProperties() {
+    Properties properties = new Properties();
+    properties.put(XMOFProjectConstants.KEY_ECOREMODEL_FILE_PATH, getEcoreModelPath());
+    properties.put(XMOFProjectConstants.KEY_LANGUAGE_NAME,
+        newProjectCreationPage.getLanguageName());
+    return properties;
+  }
+
+  private String getEcoreModelPath() {
+    URI uri= selectEcoreModelFilePage.getMetamodelResource().getURI();
+    if (uri.isHierarchical()){
+     //TODO: implement resovlement of ns-uri to platform:// uri
+    }
+
+    return selectEcoreModelFilePage.getMetamodelResource().getURI().toString();
+
+  }
+
+  private void persistPreferences(Properties properties, IProgressMonitor monitor)
+      throws IOException, CoreException {
+
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    properties.store(out, "Autogenerated properties. DO NOT MODIFY!");
+    IFile pref = projectCreationOperation.getGeneratedProject().getFile("xdsml.properties");
+    ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
+    pref.create(in, true, monitor);
+
+  }
+
   class NewXMOFProjectCreationOperation extends NewProjectCreationOperation {
 
-    private String xmofFolder;
     private IFolder generatedXmofFolder;
+    private IProject generatedProject;
 
     public NewXMOFProjectCreationOperation(IFieldData data, IProjectProvider provider,
-        IPluginContentWizard contentWizard, String xmofFolder) {
+        IPluginContentWizard contentWizard) {
       super(data, provider, contentWizard);
-      this.xmofFolder = xmofFolder;
+
     }
 
     @Override
@@ -230,16 +299,21 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
         throws CoreException, JavaModelException, InvocationTargetException, InterruptedException {
       super.createContents(monitor, project);
       SubMonitor subMonitor = SubMonitor.convert(monitor, 1);
-      generatedXmofFolder = project.getFolder(xmofFolder);
+      generatedProject = project;
+      generatedXmofFolder = project.getFolder(XMOFProjectConstants.XMOF_FILE_FOLDER);
       if (!generatedXmofFolder.exists()) {
         generatedXmofFolder.create(IResource.NONE, true, subMonitor);
       }
-
       subMonitor.setWorkRemaining(0);
+
     }
 
     public IFolder getGeneratedXmofFolder() {
       return generatedXmofFolder;
+    }
+
+    public IProject getGeneratedProject() {
+      return generatedProject;
     }
   }
 

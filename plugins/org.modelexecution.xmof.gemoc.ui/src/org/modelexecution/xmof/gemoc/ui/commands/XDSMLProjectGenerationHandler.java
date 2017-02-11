@@ -10,9 +10,12 @@
 
 package org.modelexecution.xmof.gemoc.ui.commands;
 
-import org.eclipse.core.commands.AbstractHandler;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
@@ -23,20 +26,25 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialNewWizard;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.xtext.xbase.services.XbaseGrammarAccess.OpOrElements;
 import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialTemplate;
 import org.gemoc.execution.sequential.javaxdsml.ide.ui.wizards.CreateNewGemocSequentialLanguageProject;
 import org.modelexecution.xmof.gemoc.ui.Activator;
+import org.modelexecution.xmof.gemoc.ui.internal.TemplateData;
+import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectConstants;
+import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialNewWizard;
+import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialTemplate;
 
-import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.IProjectContentWizard;
 import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.ProjectTemplateApplicationOperation;
-import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.templates.ITemplateSection;
 import fr.inria.diverse.melange.ui.MelangeUiModule;
+import fr.inria.diverse.melange.ui.templates.melange.SimpleMTTemplate;
 import fr.inria.diverse.melange.ui.wizards.pages.NewMelangeProjectWizardFields;
 
-public class XDSMLProjectGenerationHandler extends AbstractHandler {
+public class XDSMLProjectGenerationHandler extends XMOFCommand {
+
   private NewMelangeProjectWizardFields context;
-  private CustomizedTemplateWizard templateWizard = new CustomizedTemplateWizard();
+  private XMOFSequentialNewWizard templateWizard = new XMOFSequentialNewWizard();
   private CreateNewGemocSequentialLanguageProject delegate = new CreateNewGemocSequentialLanguageProject() {
     @Override
     public void addPages() {
@@ -47,8 +55,8 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
 
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
-
-    init();
+   
+    init(event);
     final Job job = new Job("Generating code for " + "s") {
 
       @Override
@@ -61,6 +69,17 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
     job.schedule();
 
     return null;
+  }
+
+  private TemplateData loadData(ExecutionEvent event) {
+    TemplateData temp = new TemplateData();
+    temp.setProjectName("org.test.project.xdsml");
+    temp.setPackageName("org.test.project");
+    temp.setLanguageName("MyLanguage");
+    temp.setEcoreModelFilePath("platform:/resource//org.modelexecution.notMof");
+    temp.setXmofModelFilePath(
+        "platform:/resource//org.modelexecution.xmof.examples.petrinet2.xmof");
+    return temp;
   }
 
   // Adapted code from CreateNewGemocSequentialLanguageProject.performFinish()
@@ -83,8 +102,7 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
 
       // launch the template
 
-      IProjectContentWizard contentWizard = new SequentialNewWizard();
-      new ProjectTemplateApplicationOperation(context, project, contentWizard).run(monitor);
+      new ProjectTemplateApplicationOperation(context, project, templateWizard).run(monitor);
 
       // setClassPath(project, monitor);
       project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
@@ -97,28 +115,24 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
 
   }
 
-  @SuppressWarnings("restriction")
-  private void init() {
-
+  private void init(ExecutionEvent event) {
     context = delegate.getContext();
-
-    updateData(context);
+   
+    TemplateData data = loadData(event);
+    context.projectName=data.getProjectName();
+    Map<String, String> optionMap = generateOptionsMap(data);
+    templateWizard.updateOptions(optionMap);
   }
 
-  private void updateData(NewMelangeProjectWizardFields context) {
-    context.projectName = "YourMami";
-    templateWizard.updateOptions("full.packed", "fXSM");
-
+  private Map<String, String> generateOptionsMap(TemplateData data) {
+    Map<String, String> optionsMap = new HashMap<String, String>();
+    optionsMap.put(XMOFSequentialTemplate.KEY_ECOREFILE_PATH,data.getEcoreModelFilePath());
+    optionsMap.put(XMOFSequentialTemplate.KEY_MELANGE_FILE_NAME,data.getLanguageName().toLowerCase());
+    optionsMap.put(XMOFSequentialTemplate.KEY_METAMODEL_NAME, data.getLanguageName());
+    optionsMap.put(XMOFSequentialTemplate.KEY_PACKAGE_NAME, data.getPackageName());
+    optionsMap.put(XMOFSequentialTemplate.KEY_XMOFFILE_PATH,data.getXmofModelFilePath());
+    return optionsMap;
   }
 
-  class CustomizedTemplateWizard extends SequentialNewWizard {
-
-    public void updateOptions(String packageName, String languageName) {
-      ITemplateSection[] selections = getTemplateSections();
-      SequentialTemplate selection = (SequentialTemplate) selections[0];
-      selection.updateOptions(packageName, languageName);
-    }
-
-  }
 
 }

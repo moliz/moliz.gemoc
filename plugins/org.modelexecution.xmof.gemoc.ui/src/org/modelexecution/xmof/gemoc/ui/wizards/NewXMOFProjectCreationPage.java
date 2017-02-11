@@ -10,7 +10,7 @@
 package org.modelexecution.xmof.gemoc.ui.wizards;
 
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.pde.internal.ui.wizards.plugin.AbstractFieldData;
+import org.eclipse.pde.internal.ui.wizards.plugin.PluginFieldData;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -19,17 +19,18 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
+import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectConstants;
 
 @SuppressWarnings("restriction")
 public class NewXMOFProjectCreationPage extends WizardNewProjectCreationPage {
   private static final int SIZING_TEXT_FIELD_WIDTH = 250;
   private static final String DEFAULT_MESSAGE = "Define project details";
-  private AbstractFieldData data;
+  private PluginFieldData data;
   private IStructuredSelection selection;
-  private Text xmofNameField;
-  private String initialxmofNameFieldValue = "model";
+  private Text languageNameField;
+  private String initiallanguageNameFieldValue = XMOFProjectConstants.DEFAULT_LANGUAGE_NAME;
 
-  public NewXMOFProjectCreationPage(String pageName, AbstractFieldData data,
+  public NewXMOFProjectCreationPage(String pageName, PluginFieldData data,
       IStructuredSelection selection) {
     super(pageName);
     setTitle(pageName);
@@ -44,50 +45,50 @@ public class NewXMOFProjectCreationPage extends WizardNewProjectCreationPage {
     Composite control = (Composite) getControl();
     GridLayout layout = new GridLayout();
     control.setLayout(layout);
-
-    createXmofFileNameGroup(control);
+    createLanguageNameGroup(control);
     createWorkingSetGroup(control, selection,
         new String[] { "org.eclipse.jdt.ui.JavaWorkingSetPage",
             "org.eclipse.pde.ui.pluginWorkingSet", "org.eclipse.ui.resourceWorkingSetPage" });
     validate();
   }
 
-  private final void createXmofFileNameGroup(Composite parent) {
+  private final void createLanguageNameGroup(Composite parent) {
     // project specification group
-    Composite xmofGroup = new Composite(parent, SWT.NONE);
+    Composite group = new Composite(parent, SWT.NONE);
     GridLayout layout = new GridLayout();
     layout.numColumns = 2;
-    xmofGroup.setLayout(layout);
-    xmofGroup.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+    group.setLayout(layout);
+    group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
     // new project label
-    Label xmofFileLabel = new Label(xmofGroup, SWT.NONE);
-    xmofFileLabel.setText("xMOF file name:");
-    xmofFileLabel.setFont(parent.getFont());
+    Label languageLabel = new Label(group, SWT.NONE);
+    languageLabel.setText("Language name:");
+    languageLabel.setFont(parent.getFont());
 
     // new project name entry field
-    xmofNameField = new Text(xmofGroup, SWT.BORDER);
+    languageNameField = new Text(group, SWT.BORDER);
     GridData data = new GridData(GridData.FILL_HORIZONTAL);
     data.widthHint = SIZING_TEXT_FIELD_WIDTH;
-    xmofNameField.setLayoutData(data);
-    xmofNameField.setFont(parent.getFont());
+    languageNameField.setLayoutData(data);
+    languageNameField.setFont(parent.getFont());
 
     // Set the initial value first before listener
     // to avoid handling an event during the creation.
-    if (initialxmofNameFieldValue != null) {
-      xmofNameField.setText(initialxmofNameFieldValue);
+    if (initiallanguageNameFieldValue != null) {
+      languageNameField.setText(initiallanguageNameFieldValue);
     }
-    xmofNameField.addListener(SWT.Modify, nameModifyListener);
+    languageNameField.addListener(SWT.Modify, langaugeNameModifyListener);
   }
 
-  private Listener nameModifyListener = e -> {
+  private Listener langaugeNameModifyListener = e -> {
     validate();
-
   };
+
 
   private void validate() {
     boolean valid = validatePage();
     setPageComplete(valid);
+
   }
 
   @Override
@@ -97,8 +98,8 @@ public class NewXMOFProjectCreationPage extends WizardNewProjectCreationPage {
     }
 
     String xmofNameStringFieldContent = "";
-    if (xmofNameField != null && xmofNameField.getText() != null) {
-      xmofNameStringFieldContent = xmofNameField.getText();
+    if (languageNameField != null && languageNameField.getText() != null) {
+      xmofNameStringFieldContent = languageNameField.getText();
     }
 
     if (xmofNameStringFieldContent.equals("")) {
@@ -115,8 +116,8 @@ public class NewXMOFProjectCreationPage extends WizardNewProjectCreationPage {
     data.setWorkingSets(getSelectedWorkingSets());
   }
 
-  public String getXmofFileName() {
-    return xmofNameField.getText();
+  public String getLanguageName() {
+    return languageNameField.getText();
   }
 
 }
