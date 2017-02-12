@@ -10,10 +10,22 @@
   <extension point="org.eclipse.ui.menus">
     <menuContribution allPopups="false" locationURI="popup:org.eclipse.ui.popup.any?after=xdsmlGroup">
       <menu id="xmof.menu" label="xMOF">
-        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll" label="Generate all" style="push"/>
+        <command
+              commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll"
+              id="0"
+              label="Generate all"
+              style="push"/>
         <separator name="Seperator" visible="true"/>
-        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode" label="Generate code" style="push"/>
-        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject" label="Generate xDSML project" style="push"/>
+        <command
+              commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode"
+              id="1"
+              label="Generate code"
+              style="push"/>
+        <command
+              commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject"
+              id="2"
+              label="Generate xDSML project"
+              style="push"/>
         <visibleWhen checkEnabled="false">
           <with variable="selection">
             <count value="1"/>
@@ -36,5 +48,9 @@
   <extension point="org.eclipse.ui.handlers">
     <handler class="org.modelexecution.xmof.gemoc.ui.commands.XMOFCodeGenerationHandler" commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode"/>
     <handler class="org.modelexecution.xmof.gemoc.ui.commands.XDSMLProjectGenerationHandler" commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject"/>
+    <handler
+          class="org.modelexecution.xmof.gemoc.ui.commands.AllGenerationHandler"
+          commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll">
+    </handler>
   </extension>
 </plugin>
