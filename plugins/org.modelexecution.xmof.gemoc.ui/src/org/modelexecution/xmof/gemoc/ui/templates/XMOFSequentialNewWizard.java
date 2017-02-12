@@ -9,11 +9,9 @@
  */
 package org.modelexecution.xmof.gemoc.ui.templates;
 
-import java.util.Map;
 import java.util.Properties;
 
 import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialNewWizard;
-import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialTemplate;
 
 import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.templates.ITemplateSection;
 
@@ -28,7 +26,5 @@ public class XMOFSequentialNewWizard extends SequentialNewWizard {
     XMOFSequentialTemplate selection = (XMOFSequentialTemplate) selections[0];
     selection.updateOptions(properties);
   }
-  
-  
 
 }

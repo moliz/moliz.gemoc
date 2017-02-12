@@ -19,8 +19,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 public abstract class XMOFCommand extends AbstractHandler {
-  
-  
+
   protected IFile getXMOFFileFromSelection(ExecutionEvent event) {
     ISelection selection = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage()
         .getSelection();

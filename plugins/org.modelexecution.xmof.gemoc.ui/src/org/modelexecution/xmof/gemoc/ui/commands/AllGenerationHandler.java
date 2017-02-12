@@ -30,7 +30,6 @@ public class AllGenerationHandler extends XMOFCommand {
   public Object execute(ExecutionEvent event) throws ExecutionException {
     for (AbstractHandler command : commands) {
       command.execute(event);
-
     }
     return null;
   }

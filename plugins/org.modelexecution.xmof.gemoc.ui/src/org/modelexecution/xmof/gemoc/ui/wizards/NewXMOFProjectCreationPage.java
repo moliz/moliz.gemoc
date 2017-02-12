@@ -84,7 +84,6 @@ public class NewXMOFProjectCreationPage extends WizardNewProjectCreationPage {
     validate();
   };
 
-
   private void validate() {
     boolean valid = validatePage();
     setPageComplete(valid);

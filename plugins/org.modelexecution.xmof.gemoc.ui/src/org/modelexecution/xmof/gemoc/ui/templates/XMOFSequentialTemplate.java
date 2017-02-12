@@ -11,18 +11,12 @@ package org.modelexecution.xmof.gemoc.ui.templates;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Map;
 import java.util.Properties;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.ui.PlatformUI;
-import org.gemoc.execution.sequential.javaxdsml.ide.ui.dialogs.SelectDSAIProjectDialog;
 import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialTemplate;
 import org.modelexecution.xmof.gemoc.ui.Activator;
 
-import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.templates.AbstractStringWithButtonOption;
 import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.templates.TemplateOption;
-import fr.inria.diverse.melange.ui.templates.MelangeTemplateMessages;
 
 public class XMOFSequentialTemplate extends SequentialTemplate {
   public static final String KEY_XMOFFILE_PATH = "xmofFilePath"; //$NON-NLS-1$

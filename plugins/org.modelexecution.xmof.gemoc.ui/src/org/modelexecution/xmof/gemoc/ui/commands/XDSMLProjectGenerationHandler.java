@@ -44,6 +44,7 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
   private XMOFSequentialNewWizard templateWizard = new XMOFSequentialNewWizard();
   private IFile xmofFile;
   private String languageName;
+
   private CreateNewGemocSequentialLanguageProject delegate = new CreateNewGemocSequentialLanguageProject() {
     @Override
     public void addPages() {
@@ -87,6 +88,9 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
 
       final IProject project = ResourcesPlugin.getWorkspace().getRoot()
           .getProject(this.context.projectName);
+      if (project.exists()) {
+        project.delete(true, monitor);
+      }
       project.create(description, monitor);
       project.open(monitor);
       delegate.addNaturesToProject(project);
@@ -113,7 +117,7 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
     if (pref.exists()) {
       Properties props = new Properties();
       props.load(pref.getContents());
-      props.put(XMOFSequentialTemplate.KEY_METAMODEL_NAME, languageName);
+      props.put(XMOFSequentialTemplate.KEY_METAMODEL_NAME, getMetamodelname());
       props.put(XMOFSequentialTemplate.KEY_MELANGE_FILE_NAME, languageName);
       props.put(XMOFSequentialTemplate.KEY_PACKAGE_NAME,
           getProjectName().replace(XMOFProjectConstants.DEFAULT_XDSML_SUFFIX, "").toLowerCase());
@@ -122,6 +126,10 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
 
     }
     return null;
+  }
+
+  private Object getMetamodelname() {
+    return languageName.substring(0, 1).toUpperCase() + languageName.substring(1);
   }
 
   private String getXMOFModelFilePath() {
