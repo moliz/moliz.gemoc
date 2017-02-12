@@ -273,7 +273,7 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
     ByteArrayOutputStream out = new ByteArrayOutputStream();
     properties.store(out, "DO NOT MODIFY!");
     IFile pref = projectCreationOperation.getGeneratedProject()
-        .getFile(XMOFProjectConstants.XDSML_PREFERENCES_NAME);
+        .getFile(XMOFProjectConstants.PREFERENCES_FILE_NAME);
     ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
     pref.create(in, true, monitor);
 

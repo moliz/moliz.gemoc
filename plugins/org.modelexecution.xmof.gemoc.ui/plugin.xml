@@ -14,31 +14,94 @@
               commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll"
               id="0"
               label="Generate all"
-              style="push"/>
-        <separator name="Seperator" visible="true"/>
+              style="push">
+           <visibleWhen
+                 checkEnabled="false">
+              <with
+                    variable="selection">
+                 <count
+                       value="1">
+                 </count>
+                 <iterate
+                       ifEmpty="false">
+                    <or>
+                       <adapt
+                             type="org.eclipse.core.resources.IResource">
+                          <test
+                                forcePluginActivation="true"
+                                property="org.modelexecution.xmof.gemoc.ui.isXmofProject"
+                                value="*.xmof">
+                          </test>
+                       </adapt>
+                    </or>
+                 </iterate>
+              </with>
+           </visibleWhen>
+        </command>
         <command
               commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode"
               id="1"
               label="Generate code"
-              style="push"/>
+              style="push">
+           <visibleWhen
+                 checkEnabled="false">
+              <with
+                    variable="selection">
+                 <count
+                       value="1">
+                 </count>
+                 <iterate
+                       ifEmpty="false">
+                    <or>
+                       <adapt
+                             type="org.eclipse.core.resources.IResource">
+                          <test
+                                forcePluginActivation="true"
+                                property="org.modelexecution.xmof.gemoc.ui.isXmofProject"
+                                value="*.xmof">
+                          </test>
+                       </adapt>
+                       <adapt
+                             type="org.eclipse.core.resources.IFile">
+                          <test
+                                forcePluginActivation="true"
+                                property="org.eclipse.core.resources.name"
+                                value="*.xmof">
+                          </test>
+                       </adapt>
+                    </or>
+                 </iterate>
+              </with>
+           </visibleWhen>
+        </command>
         <command
               commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject"
               id="2"
               label="Generate xDSML project"
-              style="push"/>
-        <visibleWhen checkEnabled="false">
-          <with variable="selection">
-            <count value="1"/>
-            <iterate ifEmpty="false">
-              <adapt type="org.eclipse.core.resources.IResource">
-                <test
-                      forcePluginActivation="true"
-                      property="org.modelexecution.xmof.gemoc.ui.isXmofProject"
-                      value="*.xmof"/>
-              </adapt>
-            </iterate>
-          </with>
-        </visibleWhen>
+              style="push">
+           <visibleWhen
+                 checkEnabled="false">
+              <with
+                    variable="selection">
+                 <count
+                       value="1">
+                 </count>
+                 <iterate
+                       ifEmpty="false">
+                    <or>
+                       <adapt
+                             type="org.eclipse.core.resources.IResource">
+                          <test
+                                forcePluginActivation="true"
+                                property="org.modelexecution.xmof.gemoc.ui.isXmofProject"
+                                value="*.xmof">
+                          </test>
+                       </adapt>
+                    </or>
+                 </iterate>
+              </with>
+           </visibleWhen>
+        </command>
       </menu>
     </menuContribution>
   </extension>

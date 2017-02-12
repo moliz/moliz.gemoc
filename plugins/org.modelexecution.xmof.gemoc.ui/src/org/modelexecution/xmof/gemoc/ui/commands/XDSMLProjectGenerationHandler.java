@@ -113,7 +113,7 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
   }
 
   private Properties loadTemplateSettings() throws IOException, CoreException {
-    IFile pref = xmofFile.getProject().getFile(XMOFProjectConstants.XDSML_PREFERENCES_NAME);
+    IFile pref = xmofFile.getProject().getFile(XMOFProjectConstants.PREFERENCES_FILE_NAME);
     if (pref.exists()) {
       Properties props = new Properties();
       props.load(pref.getContents());

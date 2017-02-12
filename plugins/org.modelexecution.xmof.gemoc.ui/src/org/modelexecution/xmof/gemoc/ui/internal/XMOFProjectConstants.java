@@ -26,7 +26,7 @@ public class XMOFProjectConstants {
       + DEFAULT_XMOF_PROJECT_SUFFIX;
   public static final String DEFAULT_LANGUAGE_NAME = "ExampleLanguage";
 
-  public static final String XDSML_PREFERENCES_NAME = "xdsml.properties";
+  public static final String PREFERENCES_FILE_NAME = "xmof.properties";
 
   public static final String KEY_ECOREMODEL_FILE_PATH = XMOFSequentialTemplate.KEY_ECOREFILE_PATH;
 

@@ -11,7 +11,6 @@
 package org.modelexecution.xmof.gemoc.ui.internal;
 
 import org.eclipse.core.expressions.PropertyTester;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -23,30 +22,32 @@ public class XmofProjectPropertyTester extends PropertyTester {
   @Override
   public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
     if (property.equals(PROPERTY_IS_XMOF_PROJECT)) {
-      if (receiver instanceof IFile) {
-        if (((IFile) receiver).getName().endsWith(XMOFProjectConstants.XMOF_FILE_EXTENSION))
-          return true;
-      } else {
-        try {
-          IProject project = ((IResource) receiver).getProject();
-          IFolder xmofFolder = project.getFolder(XMOFProjectConstants.XMOF_FILE_FOLDER);
-          if (xmofFolder.exists()) {
-            for (IResource res : xmofFolder.members()) {
-              if (res.getName().endsWith(XMOFProjectConstants.XMOF_FILE_EXTENSION)) {
-                return true;
-              }
-            }
-          }
-          return project.getFile(XMOFProjectConstants.XDSML_PREFERENCES_NAME).exists();
-        } catch (CoreException e) {
-          e.printStackTrace();
-          return false;
-        }
+      IProject project = ((IResource) receiver).getProject();
+      return hasXmofFolder(project) && hasPreferencesFile(project);
+    }
 
+    return false;
+  }
+
+  private boolean hasXmofFolder(IProject project) {
+    try {
+      IFolder xmofFolder = project.getFolder(XMOFProjectConstants.XMOF_FILE_FOLDER);
+      if (xmofFolder.exists()) {
+        for (IResource res : xmofFolder.members()) {
+          if (res.getName().endsWith(XMOFProjectConstants.XMOF_FILE_EXTENSION)) {
+            return true;
+          }
+        }
       }
+    } catch (CoreException e) {
+      e.printStackTrace();
 
     }
     return false;
+  }
+
+  private boolean hasPreferencesFile(IProject project) {
+    return project.getFile(XMOFProjectConstants.PREFERENCES_FILE_NAME).exists();
   }
 
 }
