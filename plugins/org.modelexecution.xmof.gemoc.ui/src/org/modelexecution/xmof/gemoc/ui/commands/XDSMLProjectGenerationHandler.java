@@ -119,13 +119,33 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
       props.load(pref.getContents());
       props.put(XMOFSequentialTemplate.KEY_METAMODEL_NAME, getMetamodelname());
       props.put(XMOFSequentialTemplate.KEY_MELANGE_FILE_NAME, languageName);
-      props.put(XMOFSequentialTemplate.KEY_PACKAGE_NAME,
-          getProjectName().replace(XMOFProjectConstants.DEFAULT_XDSML_SUFFIX, "").toLowerCase());
+      props.put(XMOFSequentialTemplate.KEY_PACKAGE_NAME, getPackageName());
       props.put(XMOFSequentialTemplate.KEY_XMOFFILE_PATH, getXMOFModelFilePath());
       return props;
 
     }
     return null;
+  }
+
+  private String getPackageName() {
+    String packageName = getProjectName().replace(XMOFProjectConstants.DEFAULT_XDSML_SUFFIX, "")
+        .toLowerCase();
+    return cleanPackageName(packageName);
+
+  }
+
+  private String cleanPackageName(String packageName) {
+    String cleanPackage = "";
+    for (String fragment : packageName.split("\\.")) {
+      if (!XMOFProjectConstants.RESERVED_MELANGE_KEYWORDS.contains(fragment)) {
+        cleanPackage += fragment + ".";
+      }
+    }
+    cleanPackage = cleanPackage.substring(0, cleanPackage.length() - 1);
+    if (cleanPackage.isEmpty()) {
+      return "xdsml";
+    }
+    return cleanPackage;
   }
 
   private Object getMetamodelname() {
@@ -137,8 +157,10 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
   }
 
   private String getProjectName() {
-    return xmofFile.getProject().getName().replace(XMOFProjectConstants.DEFAULT_XMOF_PROJECT_SUFFIX,
-        "") + XMOFProjectConstants.DEFAULT_XDSML_SUFFIX;
+    String projectName = xmofFile.getProject().getName();
+    projectName = projectName.endsWith(XMOFProjectConstants.DEFAULT_XMOF_PROJECT_SUFFIX)
+        ? projectName.replace(XMOFProjectConstants.DEFAULT_XMOF_PROJECT_SUFFIX, "") : projectName;
+    return projectName + XMOFProjectConstants.DEFAULT_XDSML_SUFFIX;
   }
 
   private void init(ExecutionEvent event) {

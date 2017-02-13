@@ -10,6 +10,10 @@
 
 package org.modelexecution.xmof.gemoc.ui.internal;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialTemplate;
 
 public class XMOFProjectConstants {
@@ -32,5 +36,11 @@ public class XMOFProjectConstants {
 
   private XMOFProjectConstants() {
   }
+
+  public static final Set<String> RESERVED_MELANGE_KEYWORDS = new HashSet<String>(
+      Arrays.asList("package", "language", "inherits", "implements", "requires", "resource",
+          "xtext", "sirius", "ecl", "xmof", "fileExtension", "uri", "exactType", "setup", "Melange",
+          "Xtext", "EMF", "modeltype", "syntax", "merge", "renaming", "slice", "on", "with",
+          "withGenmodel", "to", "map", "@Main", "transformation"));
 
 }
