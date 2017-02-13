@@ -11,6 +11,7 @@
 package org.modelexecution.xmof.gemoc.ui.commands;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
 import org.eclipse.core.commands.ExecutionEvent;
@@ -28,6 +29,12 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.ui.IEditorDescriptor;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.part.FileEditorInput;
 import org.gemoc.execution.sequential.javaxdsml.ide.ui.wizards.CreateNewGemocSequentialLanguageProject;
 import org.modelexecution.xmof.gemoc.ui.Activator;
 import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectConstants;
@@ -45,11 +52,9 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
   private IFile xmofFile;
   private String languageName;
 
-  private CreateNewGemocSequentialLanguageProject delegate = new CreateNewGemocSequentialLanguageProject() {
-    @Override
-    public void addPages() {
-      // avoid initialization of unused objects
-    }
+  private CreateNewGemocSequentialLanguageProject delegate=new CreateNewGemocSequentialLanguageProject(){@Override public void addPages(){
+  // avoid initialization of unused objects
+  }
 
   };
 
@@ -98,12 +103,25 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
       delegate.configureProject(project, monitor);
 
       // launch the template
-
-      new ProjectTemplateApplicationOperation(context, project, templateWizard).run(monitor);
-
+      try {
+        new ProjectTemplateApplicationOperation(context, project, templateWizard).run(monitor);
+      } catch (InvocationTargetException e) {
+        MelangeUiModule.logErrorMessage(e.getMessage(), e);
+      } catch (InterruptedException e) {
+        MelangeUiModule.logErrorMessage(e.getMessage(), e);
+      }
       // setClassPath(project, monitor);
-      project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 
+      PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+
+        @Override
+        public void run() {
+          generatePluginXML(project, monitor);
+
+        }
+      });
+
+      project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
     } catch (Exception exception) {
       MelangeUiModule.logErrorMessage(exception.getMessage(), exception);
       return false;
@@ -112,19 +130,58 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
 
   }
 
+  // Workaround to invoke plugin.xml generation: open melange file and save it again.
+  private void generatePluginXML(IProject project, IProgressMonitor monitor) {
+    IEditorPart part;
+    try {
+      IWorkbenchPage page = getCurrentWorkbenchPage();
+      IFile melangeFile = project.getFolder("src" + "/" + getPackageName().replace(".", "/"))
+          .getFile(getMelangeFileName() + ".melange");
+      IEditorDescriptor desc = PlatformUI.getWorkbench().getEditorRegistry()
+          .getDefaultEditor(melangeFile.getName());
+
+      part = page.openEditor(new FileEditorInput(melangeFile), desc.getId());
+      part.doSave(monitor);
+
+    } catch (PartInitException e) {
+      e.printStackTrace();
+    }
+
+  }
+
+  private IWorkbenchPage getCurrentWorkbenchPage() {
+    if (PlatformUI.getWorkbench() != null
+        && PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
+      return PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+    }
+    return null;
+  }
+
   private Properties loadTemplateSettings() throws IOException, CoreException {
     IFile pref = xmofFile.getProject().getFile(XMOFProjectConstants.PREFERENCES_FILE_NAME);
     if (pref.exists()) {
       Properties props = new Properties();
       props.load(pref.getContents());
       props.put(XMOFSequentialTemplate.KEY_METAMODEL_NAME, getMetamodelname());
-      props.put(XMOFSequentialTemplate.KEY_MELANGE_FILE_NAME, languageName);
+      props.put(XMOFSequentialTemplate.KEY_MELANGE_FILE_NAME, getMelangeFileName());
       props.put(XMOFSequentialTemplate.KEY_PACKAGE_NAME, getPackageName());
       props.put(XMOFSequentialTemplate.KEY_XMOFFILE_PATH, getXMOFModelFilePath());
       return props;
 
     }
     return null;
+  }
+
+  private String getMelangeFileName() {
+    return languageName.toLowerCase();
+  }
+
+  private String getMetamodelname() {
+    return languageName.substring(0, 1).toUpperCase() + languageName.substring(1);
+  }
+
+  private String getXMOFModelFilePath() {
+    return URI.createPlatformResourceURI(xmofFile.getFullPath().toOSString(), false).toString();
   }
 
   private String getPackageName() {
@@ -148,19 +205,9 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
     return cleanPackage;
   }
 
-  private Object getMetamodelname() {
-    return languageName.substring(0, 1).toUpperCase() + languageName.substring(1);
-  }
-
-  private String getXMOFModelFilePath() {
-    return URI.createPlatformResourceURI(xmofFile.getFullPath().toOSString(), false).toString();
-  }
-
   private String getProjectName() {
-    String projectName = xmofFile.getProject().getName();
-    projectName = projectName.endsWith(XMOFProjectConstants.DEFAULT_XMOF_PROJECT_SUFFIX)
-        ? projectName.replace(XMOFProjectConstants.DEFAULT_XMOF_PROJECT_SUFFIX, "") : projectName;
-    return projectName + XMOFProjectConstants.DEFAULT_XDSML_SUFFIX;
+    return xmofFile.getProject().getName().replace(XMOFProjectConstants.DEFAULT_XMOF_PROJECT_SUFFIX,
+        "") + XMOFProjectConstants.DEFAULT_XDSML_SUFFIX;
   }
 
   private void init(ExecutionEvent event) {
