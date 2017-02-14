@@ -13,12 +13,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide,
  org.eclipse.jdt.launching,
  org.eclipse.jdt.core;bundle-version="3.12.2",
- org.modelexecution.xmof.gemoc.codegen,
  org.eclipse.core.expressions,
  fr.inria.diverse.melange.ui,
  fr.inria.diverse.melange.ui.templates,
- org.gemoc.xdsmlframework.extensions.sirius,
- org.gemoc.execution.sequential.javaxdsml.ide.ui
+ org.gemoc.execution.sequential.javaxdsml.ide.ui,
+ org.modelexecution.xmof.gemoc.codegen.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.ui.dialogs

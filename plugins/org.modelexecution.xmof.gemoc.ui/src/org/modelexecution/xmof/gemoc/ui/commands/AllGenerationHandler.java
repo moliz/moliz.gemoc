@@ -16,6 +16,7 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.modelexecution.xmof.gemoc.codegen.ui.commands.XMOFCodeGenerationHandler;
 
 public class AllGenerationHandler extends AbstractHandler {
   private List<AbstractHandler> commands;
