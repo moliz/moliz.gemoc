@@ -10,20 +10,68 @@
 
 package org.modelexecution.xmof.gemoc.extension.sirius.wizards;
 
+import java.lang.reflect.InvocationTargetException;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.sirius.diagram.description.DiagramDescription;
+import org.gemoc.xdsmlframework.extensions.sirius.Activator;
 import org.gemoc.xdsmlframework.extensions.sirius.wizards.NewGemocDebugRepresentationWizard;
-import org.gemoc.xdsmlframework.extensions.sirius.wizards.pages.AddDebugRepresentationPage;
 import org.gemoc.xdsmlframework.extensions.sirius.wizards.pages.DebugRepresentationSelectionPage;
-import org.gemoc.xdsmlframework.extensions.sirius.wizards.pages.NewViewPointProjectPage;
-import org.gemoc.xdsmlframework.extensions.sirius.wizards.pages.SelectDiagramDefinitionPage;
 
 public class XMOFAnimatiorProjectWizard extends NewGemocDebugRepresentationWizard {
 
-
-
   public XMOFAnimatiorProjectWizard() {
     super();
-    setWindowTitle("Create XMOF Sirius Animation Project");
+    setWindowTitle("Create xMOF GEMOC debug/animation representation");
   }
 
- 
+  @Override
+  public boolean performFinish() {
+    if (!super.performFinish()) {
+      return false;
+    }
+
+    IFile odesignFile = getOdesignFile();
+    String diagramName = getDiagramName();
+
+    final AddAnimationLayerRunnable finisher = new AddAnimationLayerRunnable(odesignFile,
+        diagramName);
+    try {
+      getContainer().run(false, true, finisher);
+    } catch (InvocationTargetException e) {
+      Activator.getMessagingSystem().error(e.getMessage(), Activator.PLUGIN_ID, e);
+    } catch (InterruptedException e) {
+      Activator.getMessagingSystem().error(e.getMessage(), Activator.PLUGIN_ID, e);
+    }
+
+    return finisher.getResult();
+
+  }
+
+  private String getDiagramName() {
+    if (getDebugRepresentationSelectionPage()
+        .getSelected() == DebugRepresentationSelectionPage.ADD_DEBUG_LAYER) {
+      return getSelectDiagramDefinitionPage().getSelectedDiagram().getName();
+    } else {
+      return getNewViewPointProjectPage().getDiagramName();
+    }
+
+  }
+
+  private IFile getOdesignFile() {
+    String filePath = getNewViewPointProjectPage().getProjectName() + "/description/"
+        + getNewViewPointProjectPage().getViewpointSpecificationModelName();
+    if (getDebugRepresentationSelectionPage()
+        .getSelected() != DebugRepresentationSelectionPage.ADD_DEBUG_LAYER) {
+      return ResourcesPlugin.getWorkspace().getRoot().getFile(Path.fromOSString(filePath));
+    } else {
+      DiagramDescription desc = getSelectDiagramDefinitionPage().getSelectedDiagram();
+      return (IFile) ResourcesPlugin.getWorkspace().getRoot()
+          .findMember(desc.eResource().getURI().toPlatformString(true));
+    }
+
+  }
+
 }

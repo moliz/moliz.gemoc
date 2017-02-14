@@ -5,15 +5,17 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.modelexecution.xmof"
-            class="org.modelexecution.xmof.gemoc.ui.wizards.XMOFAnimatiorProjectWizard"
+            class="org.modelexecution.xmof.gemoc.extension.sirius.wizards.XMOFAnimatiorProjectWizard"
             hasPages="true"
             id="org.modelexecution.xmof.gemoc.ui.XmofSiriusProjectWizard"
-            name="xMOF GEMOC Sirius Animation Project"
-            project="true">
+            name="xMOF Debug/Animation Viewpoint Specification"
+            project="false">
          <description>
-            Create a new Sirius Specification Project which is tailored for the use as an Debug/Animation representation for xMOF lanugages.
+            Create a debug/animation representation for a xMOF GEMOC language. May create a new project, or modify or extend an existing Viewpoint Specification.
          </description>
       </wizard>
+     
+     
    </extension>
 
 </plugin>
