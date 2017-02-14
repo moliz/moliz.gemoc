@@ -47,7 +47,7 @@ public class XmofProjectPropertyTester extends PropertyTester {
   }
 
   private boolean hasPreferencesFile(IProject project) {
-    return project.getFile(XMOFProjectConstants.PREFERENCES_FILE_NAME).exists();
+    return project.getFile(XMOFProjectConstants.XMOF_PROPERTIES_NAME).exists();
   }
 
 }

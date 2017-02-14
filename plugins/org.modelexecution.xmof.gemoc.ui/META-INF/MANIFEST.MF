@@ -17,6 +17,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.expressions,
  fr.inria.diverse.melange.ui,
  fr.inria.diverse.melange.ui.templates,
+ org.gemoc.xdsmlframework.extensions.sirius,
  org.gemoc.execution.sequential.javaxdsml.ide.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

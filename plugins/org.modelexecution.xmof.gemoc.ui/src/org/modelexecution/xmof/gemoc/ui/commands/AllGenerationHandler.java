@@ -17,7 +17,7 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 
-public class AllGenerationHandler extends XMOFCommand {
+public class AllGenerationHandler extends AbstractHandler {
   private List<AbstractHandler> commands;
 
   public AllGenerationHandler() {

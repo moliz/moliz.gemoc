@@ -49,6 +49,7 @@ import org.modelexecution.xmof.configuration.ui.wizards.NewConfigurationWizard;
 import org.modelexecution.xmof.configuration.ui.wizards.SelectEcoreModelFilePage;
 import org.modelexecution.xmof.configuration.ui.wizards.SelectTargetFilePage;
 import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectConstants;
+import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectUtil;
 
 @SuppressWarnings("restriction")
 public class NewXMOFProjectWizard extends NewConfigurationWizard {
@@ -229,12 +230,12 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
     IRunnableWithProgress op = new IRunnableWithProgress() {
       public void run(IProgressMonitor monitor) throws InvocationTargetException {
         try {
-          persistPreferences(properties, monitor);
-        } catch (IOException | CoreException e) {
-          throw new InvocationTargetException(e);
+          XMOFProjectUtil.persistXmofProperties(projectCreationOperation.getGeneratedProject(),
+              properties, monitor);
         } finally {
           monitor.done();
         }
+
       }
 
     };
@@ -253,8 +254,15 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
 
   private Properties createTemplateProperties() {
     Properties properties = new Properties();
+    properties.put(XMOFProjectConstants.KEY_XDSMLPROJECT_NAME, getXdsmlProjectName());
     properties.put(XMOFProjectConstants.KEY_ECOREMODEL_FILE_PATH, getEcoreModelPath());
+    properties.put(XMOFProjectConstants.KEY_PACAKGE_NAME,
+        XMOFProjectUtil.getMelangePackageName(getXdsmlProjectName()));
     return properties;
+  }
+
+  private String getXdsmlProjectName() {
+    return XMOFProjectUtil.getXDSMLProjectName(newProjectCreationPage.getProjectName());
   }
 
   private String getEcoreModelPath() {
@@ -264,18 +272,6 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
     }
 
     return selectEcoreModelFilePage.getMetamodelResource().getURI().toString();
-
-  }
-
-  private void persistPreferences(Properties properties, IProgressMonitor monitor)
-      throws IOException, CoreException {
-
-    ByteArrayOutputStream out = new ByteArrayOutputStream();
-    properties.store(out, "DO NOT MODIFY!");
-    IFile pref = projectCreationOperation.getGeneratedProject()
-        .getFile(XMOFProjectConstants.PREFERENCES_FILE_NAME);
-    ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
-    pref.create(in, true, monitor);
 
   }
 

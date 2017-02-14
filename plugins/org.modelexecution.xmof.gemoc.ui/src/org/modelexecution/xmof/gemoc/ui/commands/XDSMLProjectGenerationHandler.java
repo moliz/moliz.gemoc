@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
+import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
@@ -38,6 +39,7 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.gemoc.execution.sequential.javaxdsml.ide.ui.wizards.CreateNewGemocSequentialLanguageProject;
 import org.modelexecution.xmof.gemoc.ui.Activator;
 import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectConstants;
+import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectUtil;
 import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialNewWizard;
 import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialTemplate;
 
@@ -45,16 +47,18 @@ import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.ProjectTemplate
 import fr.inria.diverse.melange.ui.MelangeUiModule;
 import fr.inria.diverse.melange.ui.wizards.pages.NewMelangeProjectWizardFields;
 
-public class XDSMLProjectGenerationHandler extends XMOFCommand {
+public class XDSMLProjectGenerationHandler extends AbstractHandler {
 
   private NewMelangeProjectWizardFields context;
   private XMOFSequentialNewWizard templateWizard = new XMOFSequentialNewWizard();
   private IFile xmofFile;
   private String languageName;
 
-  private CreateNewGemocSequentialLanguageProject delegate=new CreateNewGemocSequentialLanguageProject(){@Override public void addPages(){
-  // avoid initialization of unused objects
-  }
+  private CreateNewGemocSequentialLanguageProject delegate = new CreateNewGemocSequentialLanguageProject() {
+    @Override
+    public void addPages() {
+      // avoid initialization of unused objects
+    }
 
   };
 
@@ -158,10 +162,8 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
   }
 
   private Properties loadTemplateSettings() throws IOException, CoreException {
-    IFile pref = xmofFile.getProject().getFile(XMOFProjectConstants.PREFERENCES_FILE_NAME);
-    if (pref.exists()) {
-      Properties props = new Properties();
-      props.load(pref.getContents());
+    Properties props = XMOFProjectUtil.loadXmofProperties(xmofFile.getProject());
+    if (props != null) {
       props.put(XMOFSequentialTemplate.KEY_METAMODEL_NAME, getMetamodelname());
       props.put(XMOFSequentialTemplate.KEY_MELANGE_FILE_NAME, getMelangeFileName());
       props.put(XMOFSequentialTemplate.KEY_PACKAGE_NAME, getPackageName());
@@ -170,6 +172,10 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
 
     }
     return null;
+  }
+
+  private String getPackageName() {
+    return XMOFProjectUtil.getMelangePackageName(xmofFile.getProject().getName());
   }
 
   private String getMelangeFileName() {
@@ -184,37 +190,16 @@ public class XDSMLProjectGenerationHandler extends XMOFCommand {
     return URI.createPlatformResourceURI(xmofFile.getFullPath().toOSString(), false).toString();
   }
 
-  private String getPackageName() {
-    String packageName = getProjectName().replace(XMOFProjectConstants.DEFAULT_XDSML_SUFFIX, "")
-        .toLowerCase();
-    return cleanPackageName(packageName);
-
-  }
-
-  private String cleanPackageName(String packageName) {
-    String cleanPackage = "";
-    for (String fragment : packageName.split("\\.")) {
-      if (!XMOFProjectConstants.RESERVED_MELANGE_KEYWORDS.contains(fragment)) {
-        cleanPackage += fragment + ".";
-      }
-    }
-    cleanPackage = cleanPackage.substring(0, cleanPackage.length() - 1);
-    if (cleanPackage.isEmpty()) {
-      return "xdsml";
-    }
-    return cleanPackage;
-  }
-
-  private String getProjectName() {
-    return xmofFile.getProject().getName().replace(XMOFProjectConstants.DEFAULT_XMOF_PROJECT_SUFFIX,
-        "") + XMOFProjectConstants.DEFAULT_XDSML_SUFFIX;
-  }
-
   private void init(ExecutionEvent event) {
-    xmofFile = getXMOFFileFromSelection(event);
+    xmofFile = XMOFProjectUtil.getXMOFFileFromSelection(event);
     context = delegate.getContext();
     context.projectName = getProjectName();
     languageName = xmofFile.getName().replace(XMOFProjectConstants.XMOF_FILE_EXTENSION, "");
+
+  }
+
+  private String getProjectName() {
+    return XMOFProjectUtil.getXDSMLProjectName(xmofFile.getProject().getName());
 
   }
 

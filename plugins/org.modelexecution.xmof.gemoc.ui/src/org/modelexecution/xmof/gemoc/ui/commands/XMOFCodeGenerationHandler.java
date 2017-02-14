@@ -9,6 +9,7 @@
  */
 package org.modelexecution.xmof.gemoc.ui.commands;
 
+import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
@@ -22,12 +23,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.modelexecution.xmof.gemoc.codegen.XMOFCodeGenerator;
 import org.modelexecution.xmof.gemoc.ui.Activator;
+import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectUtil;
 
-public class XMOFCodeGenerationHandler extends XMOFCommand {
+public class XMOFCodeGenerationHandler extends AbstractHandler {
 
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
-    final IFile xmofFile = getXMOFFileFromSelection(event);
+    final IFile xmofFile = XMOFProjectUtil.getXMOFFileFromSelection(event);
     final Resource xmofResource = loadXMOFResource(xmofFile);
 
     String xmofFileName = xmofResource.getURI().lastSegment();
