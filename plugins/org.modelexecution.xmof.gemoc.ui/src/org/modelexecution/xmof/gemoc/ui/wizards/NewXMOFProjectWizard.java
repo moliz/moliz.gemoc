@@ -67,7 +67,7 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
 
   @Override
   public void addPages() {
-    newProjectCreationPage = new NewXMOFProjectCreationPage("Create a GEMOC xMOF Language Project",
+    newProjectCreationPage = new NewXMOFProjectCreationPage("New xMOF GEMOC Language Project",
         pluginData, selection);
     newProjectCreationPage.setInitialProjectName(XMOFProjectConstants.DEFAULT_PROJECT_NAME);
 

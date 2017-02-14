@@ -26,9 +26,30 @@
         </command>
         <separator
               name="org.modelexecution.xmof.gemoc.ui.separator1"
-              visible="false">
+              visible="true">
         </separator>
-        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateXMOFCode" id="1" label="Generate code" style="push">
+        <command commandId="org.modelexecution.xmof.gemoc.codegen.ui.GenerateXMOFCode" id="1" label="Generate code" style="push">
+           <visibleWhen
+                 checkEnabled="false">
+              <with
+                    variable="selection">
+                 <count
+                       value="1">
+                 </count>
+                 <iterate
+                       ifEmpty="false">
+                    <adapt
+                          type="org.eclipse.core.resources.IResource">
+                       <not>
+                          <test
+                                property="org.eclipse.core.resources.name"
+                                value="*.xmof">
+                          </test>
+                       </not>
+                    </adapt>
+                 </iterate>
+              </with>
+           </visibleWhen>
         </command>
         <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject" id="2" label="Generate xDSML project" style="push">
         </command>
