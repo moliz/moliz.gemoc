@@ -128,7 +128,8 @@ public class XMOFProjectUtil {
       IFile pref = project.getFile(XMOFProjectConstants.XMOF_PROPERTIES_NAME);
       ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
       pref.create(in, true, monitor);
-
+      in.close();
+      out.close();
     } catch (IOException | CoreException ex) {
       throw new InvocationTargetException(ex);
     }

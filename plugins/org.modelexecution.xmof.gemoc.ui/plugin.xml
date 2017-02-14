@@ -7,6 +7,7 @@
           class="org.modelexecution.xmof.gemoc.ui.wizards.NewXMOFProjectWizard"
           finalPerspective="org.eclipse.sirius.ui.tools.perspective.design"
           hasPages="true"
+          icon="icons/xmof-16.png"
           id="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
           name="xMOF GEMOC Language Project"
           project="true">
@@ -17,7 +18,10 @@
   </extension>
   <extension point="org.eclipse.ui.menus">
     <menuContribution allPopups="false" locationURI="popup:org.eclipse.ui.popup.any?after=xdsmlGroup">
-      <menu id="xmof.menu" label="xMOF">
+      <menu
+            icon="icons/xmof-16.png"
+            id="xmof.menu"
+            label="xMOF">
         <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll" id="0" label="Generate all" style="push">
         </command>
         <separator
