@@ -74,7 +74,7 @@ public class XMOFBasedModelLoader {
 		Collection<EPackage> configurationPackages = loadConfigurationMetamodel();
 
 		// We try to find out whether the provided model is already a configuration model, or not
-		boolean isConfModel = isConfigurationModel(inputElements, configurationPackages);
+		boolean isConfModel = isConfigurationModel(inputModelElements, configurationPackages);
 
 		// Initializes the configuration (ie. dynamic) model using the static model.
 		// ie. for each static object, creates a configuration object using a configuration class.
