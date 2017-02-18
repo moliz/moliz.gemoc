@@ -19,6 +19,7 @@ import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.gemoc.xdsmlframework.extensions.sirius.Activator;
 import org.gemoc.xdsmlframework.extensions.sirius.wizards.NewGemocDebugRepresentationWizard;
 import org.gemoc.xdsmlframework.extensions.sirius.wizards.pages.DebugRepresentationSelectionPage;
+import org.modelexecution.xmof.gemoc.extension.sirius.command.AddAnimationLayerRunnable;
 
 public class XMOFAnimatiorProjectWizard extends NewGemocDebugRepresentationWizard {
 
