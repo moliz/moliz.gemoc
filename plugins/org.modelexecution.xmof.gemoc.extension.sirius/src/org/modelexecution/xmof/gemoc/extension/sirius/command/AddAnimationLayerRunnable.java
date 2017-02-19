@@ -12,8 +12,11 @@ package org.modelexecution.xmof.gemoc.extension.sirius.command;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -68,6 +71,10 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
       "org.gemoc.executionframework.extensions.sirius", "org.modelexecution.xmof.gemoc.engine",
       "org.gemoc.execution.sequential.javaengine.ui" };
 
+  private static final String REGEX_ACTIVATOR_START_METHOD = "public\\s+void\\s+start\\s*\\"
+      + "(\\s*BundleContext\\s+context\\s*\\)\\s*throws\\s+Exception\\s*[^}]*}";
+  private static final String REGEX_IMPORT_BLOCK = "import.*;";
+
   private IFile diagramDescriptionFile;
   private String diagramDescriptionName;
   private ExecutionEvent event;
@@ -104,10 +111,11 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
 
       final IProject project = diagramDescriptionFile.getProject();
       final String projectName = project.getName();
-      final IFolder serviceFolder = project.getFolder(
-          new Path("src/" + projectName.replaceAll("\\.", "/").toLowerCase() + "/services"));
+      final IFolder srcFolder = project
+          .getFolder(new Path("src/" + projectName.replaceAll("\\.", "/").toLowerCase()));
+
       final String languageName = diagramDescription.getName();
-      final String qualifiedServiceClassName = getOrCreateAnimationServiceClass(serviceFolder,
+      final String qualifiedServiceClassName = getOrCreateAnimationServiceClass(srcFolder,
           projectName, languageName, layerName, monitor);
 
       EditingDomain editingDomain = ((IEditingDomainProvider) diagramDescription.eResource()
@@ -259,11 +267,12 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
     return res;
   }
 
-  private static String getOrCreateAnimationServiceClass(IFolder serviceFolder, String projectName,
+  private static String getOrCreateAnimationServiceClass(IFolder srcFolder, String projectName,
       String languageName, String layerName, IProgressMonitor monitor)
       throws CoreException, IOException {
     final String className = AddDebugLayerHandler.toCamelCase(languageName.replaceAll("\\W", ""))
         + "AnimationServices";
+    final IFolder serviceFolder = srcFolder.getFolder(Path.fromOSString("/services"));
     final IFile classFile = serviceFolder.getFile(new Path(className + ".java"));
     final String packageName = projectName + ".services";
     final String res = packageName + "." + className;
@@ -275,10 +284,59 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
 
       createAnimationServiceClass(classFile, packageName, className, languageName, layerName,
           monitor);
+      updateAndSaveActivatorClass(srcFolder, className, res, monitor);
     }
 
     return res;
 
+  }
+
+  private static void updateAndSaveActivatorClass(IFolder srcFolder, String className, String res,
+      IProgressMonitor monitor) throws IOException, CoreException {
+    IFile activatorClassFile = srcFolder.getFile("Activator.java");
+    if (activatorClassFile.exists()) {
+      String activatorClass = AddDebugLayerHandler.getContent(activatorClassFile.getContents(),
+          "UTF8");
+      activatorClass = addImportToClass(activatorClass, res);
+      activatorClass = updateStartMethod(activatorClass, className);
+      activatorClassFile.delete(true, monitor);
+      InputStream in = new ByteArrayInputStream(activatorClass.getBytes());
+      activatorClassFile.create(in, true, monitor);
+    }
+
+  }
+
+  private static String addImportToClass(String activatorClass, String res) {
+    Pattern pattern = Pattern.compile(REGEX_IMPORT_BLOCK);
+    Matcher matcher = pattern.matcher(activatorClass);
+    String insertPoint = null;
+    String lastStmnt = null;
+    String newStmnt = String.format("import %s;\n", res);
+    while (matcher.find()) {
+      lastStmnt = matcher.group();
+      if (lastStmnt.compareTo(newStmnt) > 0) {
+        insertPoint = lastStmnt;
+        break;
+      }
+    }
+
+    if (insertPoint == null)
+      insertPoint = lastStmnt;
+    return activatorClass.replace(insertPoint, newStmnt.concat(insertPoint));
+
+  }
+
+  private static String updateStartMethod(String activatorClass, String className) {
+    Pattern pattern = Pattern.compile(REGEX_ACTIVATOR_START_METHOD);
+    Matcher matcher = pattern.matcher(activatorClass);
+    if (matcher.find()) {
+      String newLine = String.format("\nnew %s();\n}", className);
+      String startMethod = matcher.group();
+      String replaceString = startMethod.replace("}", "").trim().concat(newLine);
+      return activatorClass.replace(startMethod, replaceString);
+    }
+
+    return null;
   }
 
   private static void createAnimationServiceClass(IFile classFile, String packageName,
