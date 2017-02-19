@@ -29,7 +29,6 @@
                label="xMOF">
             <command
                   commandId="org.gemoc.gemoc_language_workbench.extensions.sirius.addDebugLayer"
-                  icon="icons/IconeGemocLanguage-16.png"
                   label="Add debug layer"
                   style="push"
                   tooltip="Add a debug layer to the selected diagram description">
@@ -50,7 +49,6 @@
             </command>
             <command
                   commandId="org.modelexecution.xmof.gemoc.extension.sirius.AddAnimationLayer"
-                  icon="icons/IconeGemocLanguage-16.png"
                   label="Add animation layer"
                   style="push"
                   tooltip="Add an xMOF animation layer to the selected diagram description">
