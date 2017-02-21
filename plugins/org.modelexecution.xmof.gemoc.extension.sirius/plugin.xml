@@ -5,7 +5,7 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.modelexecution.xmof"
-            class="org.modelexecution.xmof.gemoc.extension.sirius.wizards.XMOFAnimatiorProjectWizard"
+            class="org.modelexecution.xmof.gemoc.extension.sirius.ui.wizards.XMOFAnimatiorProjectWizard"
             hasPages="true"
             icon="icons/xmof-16.png"
             id="org.modelexecution.xmof.gemoc.ui.XmofSiriusProjectWizard"
@@ -73,7 +73,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="org.modelexecution.xmof.gemoc.extension.sirius.command.AddAnimationLayerHandler"
+            defaultHandler="org.modelexecution.xmof.gemoc.extension.sirius.ui.command.AddAnimationLayerHandler"
             id="org.modelexecution.xmof.gemoc.extension.sirius.AddAnimationLayer"
             name="addAnimationLayer">
       </command>

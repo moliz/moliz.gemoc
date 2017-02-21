@@ -8,7 +8,7 @@
  * Tobias Ortmayr - initial API and implementation
  */
 
-package org.modelexecution.xmof.gemoc.extension.sirius.wizards;
+package org.modelexecution.xmof.gemoc.extension.sirius.ui.wizards;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -19,7 +19,7 @@ import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.gemoc.xdsmlframework.extensions.sirius.Activator;
 import org.gemoc.xdsmlframework.extensions.sirius.wizards.NewGemocDebugRepresentationWizard;
 import org.gemoc.xdsmlframework.extensions.sirius.wizards.pages.DebugRepresentationSelectionPage;
-import org.modelexecution.xmof.gemoc.extension.sirius.command.AddAnimationLayerRunnable;
+import org.modelexecution.xmof.gemoc.extension.sirius.ui.command.AddAnimationLayerRunnable;
 
 public class XMOFAnimatiorProjectWizard extends NewGemocDebugRepresentationWizard {
 

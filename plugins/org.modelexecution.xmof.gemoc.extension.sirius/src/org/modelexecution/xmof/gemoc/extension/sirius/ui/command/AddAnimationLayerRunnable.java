@@ -8,7 +8,7 @@
  * Tobias Ortmayr - initial API and implementation
  */
 
-package org.modelexecution.xmof.gemoc.extension.sirius.command;
+package org.modelexecution.xmof.gemoc.extension.sirius.ui.command;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
