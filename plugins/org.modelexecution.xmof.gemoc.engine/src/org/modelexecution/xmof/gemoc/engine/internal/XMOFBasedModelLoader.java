@@ -31,7 +31,6 @@ import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.Paramete
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValueDefinition;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.GenericXMOFAnimationServices;
-import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
@@ -47,6 +46,8 @@ public class XMOFBasedModelLoader {
 	private ConfigurationObjectMap configurationMap;
 
 	private Set<EPackage> xmofConfigurationMetamodelPackages = new HashSet<EPackage>();
+
+	private Resource configurationModelResource;
 
 	public XMOFBasedModelLoader(IExecutionContext executionContext) {
 		this.executionContext = executionContext;
@@ -89,7 +90,7 @@ public class XMOFBasedModelLoader {
 
 		// Creates a resource for the configuration model, and fills it with configuration objects
 		// and persists the created resource into the execution-folder.
-		createConfigurationModelResource();
+		configurationModelResource=createConfigurationModelResource();
 
 		// Provides the map static->dynamic to the animation services, ie. to display execution data
 		// even in the sirius session of a static model.
@@ -266,7 +267,7 @@ public class XMOFBasedModelLoader {
 	 * 
 	 * This resource not made available, and is only reachable in the ResourceSet.
 	 */
-	private void createConfigurationModelResource() {
+	private Resource createConfigurationModelResource() {
 		URI configurationModelURI = computeConfigurationModelURI();
 		Resource configurationResource = null;
 		for (EObject configurationObject : configurationMap.getConfigurationObjects()) {
@@ -284,6 +285,7 @@ public class XMOFBasedModelLoader {
 		} catch (IOException e) {
 			Activator.error(e.getMessage(), e);
 		}
+		return configurationResource;
 	}
 
 	/**
@@ -295,7 +297,7 @@ public class XMOFBasedModelLoader {
 		IPath executionPath = getExecutionPath();
 		String modelFileName = getModelResource().getURI().lastSegment();
 		String modelFileExtension = getModelResource().getURI().fileExtension();
-		String configurationModelFileName = modelFileName.replace("." + modelFileExtension, XMOFExecutionEngine.DYNAMIC_RESOURCE_FILE_SUFFIX);
+		String configurationModelFileName = modelFileName.replace("." + modelFileExtension,"-configuration.xmi");
 		IPath configurationModelPath = executionPath.append(configurationModelFileName);
 		URI uri = URI.createPlatformResourceURI(configurationModelPath.toString(), true);
 		return uri;
@@ -353,6 +355,10 @@ public class XMOFBasedModelLoader {
 	private EditingDomain getEditingDomain() {
 		ResourceSet resourceSet = getResourceSet();
 		return TransactionUtil.getEditingDomain(resourceSet);
+	}
+	
+	public Resource getConfigurationModelResource(){
+		return configurationModelResource;
 	}
 
 }

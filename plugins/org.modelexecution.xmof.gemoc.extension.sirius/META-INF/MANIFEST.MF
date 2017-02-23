@@ -16,7 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.swt;bundle-version="3.105.2",
  org.eclipse.sirius.common;bundle-version="4.1.2",
  org.eclipse.sirius.common.ui;bundle-version="4.1.2",
- org.modelexecution.xmof.gemoc.engine;bundle-version="0.1.0",
  org.modelexecution.xmof.configuration,
  org.gemoc.executionframework.engine,
  org.eclipse.sirius.diagram,
@@ -25,3 +24,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Export-Package: org.modelexecution.xmof.gemoc.extension.sirius.converter,
+ org.modelexecution.xmof.gemoc.extension.sirius.modelloader

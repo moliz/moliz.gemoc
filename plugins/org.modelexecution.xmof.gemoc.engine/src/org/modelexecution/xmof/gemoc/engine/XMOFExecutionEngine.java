@@ -1,14 +1,17 @@
 package org.modelexecution.xmof.gemoc.engine;
 
-import org.eclipse.emf.common.command.Command;
+import java.util.HashSet;
+
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.uml2.common.util.CacheAdapter;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
-import org.gemoc.xdsmlframework.api.core.ExecutionMode;
+import org.gemoc.executionframework.engine.core.CommandExecution;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
 import org.modelexecution.fumldebug.core.NodeSelectionStrategy;
@@ -29,7 +32,9 @@ import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFVirtualMachine;
 import org.modelexecution.xmof.gemoc.engine.internal.SequentialNodeSelectionStrategy;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
+import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
+import org.modelexecution.xmof.gemoc.extension.sirius.converter.ConvertToDynamicRepresentationCommand;
 import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.vm.XMOFBasedModelSynchronizer;
@@ -41,8 +46,7 @@ import fUML.Semantics.Classes.Kernel.Object_;
 
 public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		implements ExecutionEventListener, IXMOFVirtualMachineListener {
-	
-	public static String DYNAMIC_RESOURCE_FILE_SUFFIX = "-configuration.xmi";
+
 	private static String STEP_ANNOTATION_SOURCE = "http://www.modelexecution.org/xmof";
 	private static String STEP_ANNOTATION_KEY = "Step";
 
@@ -75,18 +79,18 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		// context model by dynamic configuration objects.
 		// This works because we don't need an aird in this case.
 		// Thereby, execution addons (e.g. trace addon) are correctly notified.
-//		if (executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
-//			TransactionalEditingDomain editingDomain = TransactionUtil
-//					.getEditingDomain(executionContext.getResourceModel());
-//			Command cmd = new RecordingCommand(editingDomain) {
-//				@Override
-//				protected void doExecute() {
-//					executionContext.getResourceModel().getContents().clear();
-//					executionContext.getResourceModel().getContents().addAll(model.getModelResource().getContents());
-//				}
-//			};
-//			editingDomain.getCommandStack().execute(cmd);
-//		}
+		// if (executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
+		// TransactionalEditingDomain editingDomain = TransactionUtil
+		// .getEditingDomain(executionContext.getResourceModel());
+		// Command cmd = new RecordingCommand(editingDomain) {
+		// @Override
+		// protected void doExecute() {
+		// executionContext.getResourceModel().getContents().clear();
+		// executionContext.getResourceModel().getContents().addAll(model.getModelResource().getContents());
+		// }
+		// };
+		// editingDomain.getCommandStack().execute(cmd);
+		// }
 
 		configurationMap = loader.getConfigurationMap();
 
@@ -245,7 +249,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		}
 		configurationMap = null;
 	}
-	
+
 	@Override
 	public void finishDispose() {
 		this.configurationMap = null;
@@ -254,5 +258,31 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 	public XMOFBasedModelLoader getModelLoader() {
 		return loader;
+	}
+
+	public void prepareAnimator(IExecutionContext executionContext) {
+
+		if (!orginalModelIsDynamic()) {
+			Resource dynamicModel = getModelLoader().getConfigurationModelResource();
+			ResourceSet resourceSet = dynamicModel.getResourceSet();
+			URI airdURI = executionContext.getRunConfiguration().getAnimatorURI();
+			Resource airdResource = resourceSet.getResource(airdURI, true);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(resourceSet);
+			
+			ConvertToDynamicRepresentationCommand cmd = new ConvertToDynamicRepresentationCommand(editingDomain,
+					configurationMap, airdResource, dynamicModel.getURI());
+			try {
+				CommandExecution.execute(editingDomain, cmd);
+			} catch (Exception e) {
+				Activator.error(e.getMessage(), e);
+			}
+
+		}
+
+	}
+
+	private boolean orginalModelIsDynamic() {
+		return new HashSet<EObject>(configurationMap.getConfigurationObjects())
+				.equals(new HashSet<EObject>(configurationMap.getOriginalObjects()));
 	}
 }
