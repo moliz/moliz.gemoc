@@ -37,6 +37,13 @@ public class XMOFModelLoader implements IModelLoader {
 		return resource;
 	}
 
+	/**
+	 * Difference to DefaultModelLoader implementation: Only resourceModel and
+	 * corresponding editing domain is created. Whereas in the default
+	 * implementation the Sirius session and Editor would also be opened at this
+	 * point. Deferring the creation of the Sirius session enables further
+	 * manipulation of airdResource (e.g. conversion for dynamic model resource)
+	 */
 	@Override
 	public Resource loadModelForAnimation(IExecutionContext context) throws RuntimeException {
 		return loadModel(context);
