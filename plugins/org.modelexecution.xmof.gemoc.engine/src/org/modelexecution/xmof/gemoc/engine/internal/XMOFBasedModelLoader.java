@@ -1,7 +1,9 @@
 package org.modelexecution.xmof.gemoc.engine.internal;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -29,6 +31,8 @@ import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.Paramete
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValueDefinition;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.GenericXMOFAnimationServices;
+import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
+import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
@@ -83,8 +87,8 @@ public class XMOFBasedModelLoader {
 		// itself
 		configurationMap = new ConfigurationObjectMap(inputElements, configurationPackages, isConfModel);
 
-		// Creates a resource for the configuration model, and fills it with configuration objects.
-		// (we never directly use this resource later on, it's just to have objects stored somewhere).
+		// Creates a resource for the configuration model, and fills it with configuration objects
+		// and persists the created resource into the execution-folder.
 		createConfigurationModelResource();
 
 		// Provides the map static->dynamic to the animation services, ie. to display execution data
@@ -274,11 +278,16 @@ public class XMOFBasedModelLoader {
 				getEditingDomain().getCommandStack().execute(cmd);
 			}
 		}
+		
+		try {
+			configurationResource.save(Collections.EMPTY_MAP);
+		} catch (IOException e) {
+			Activator.error(e.getMessage(), e);
+		}
 	}
 
 	/**
-	 * Creates a URI for the configuration (ie. dynamic) model, inside the execution folder. This model is at the moment
-	 * never serialized, so this is simlpy for EMF to be happy.
+	 * Creates a URI for the configuration (ie. dynamic) model, inside the execution folder.
 	 * 
 	 * @return The URI of the configuration model, in the execution folder.
 	 */
@@ -286,7 +295,7 @@ public class XMOFBasedModelLoader {
 		IPath executionPath = getExecutionPath();
 		String modelFileName = getModelResource().getURI().lastSegment();
 		String modelFileExtension = getModelResource().getURI().fileExtension();
-		String configurationModelFileName = modelFileName.replace("." + modelFileExtension, "-configuration.xmi");
+		String configurationModelFileName = modelFileName.replace("." + modelFileExtension, XMOFExecutionEngine.DYNAMIC_RESOURCE_FILE_SUFFIX);
 		IPath configurationModelPath = executionPath.append(configurationModelFileName);
 		URI uri = URI.createPlatformResourceURI(configurationModelPath.toString(), true);
 		return uri;
