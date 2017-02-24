@@ -42,7 +42,7 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 	private Resource originalAirdResource;
 	private URI dynamicModelURI;
 	private TransactionalEditingDomain editingDomain;
-	private URI dynamicAirdURI;
+	private Resource dynamicAirdResource;
 
 	public ConvertToDynamicRepresentationCommand(TransactionalEditingDomain editingDomain,
 			ConfigurationObjectMap configurationObjectMap, Resource originalAirdResource, URI dynamicModelURI) {
@@ -57,12 +57,13 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 	protected void doExecute() {
 		if (originalAirdResource == null)
 			return;
-		Resource dynamicAirdResource;
+
 		try {
 			dynamicAirdResource = createAndPersistCopy(originalAirdResource);
 			if (dynamicAirdResource == null)
 				return;
 			updateReferences(dynamicAirdResource);
+			dynamicAirdResource.save(Collections.EMPTY_MAP);
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -91,14 +92,11 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 	}
 
 	private URI computeDynamicAirdURI() {
-		if (dynamicAirdURI == null) {
-			String uriString = dynamicModelURI.toString();
-			String modelFileName = dynamicModelURI.lastSegment();
-			String aridFileName = originalAirdResource.getURI().lastSegment();
-			String dynamicAirdUriString = uriString.replace(modelFileName, aridFileName);
-			dynamicAirdURI = URI.createURI(dynamicAirdUriString);
-		}
-		return dynamicAirdURI;
+		String uriString = dynamicModelURI.toString();
+		String modelFileName = dynamicModelURI.lastSegment();
+		String aridFileName = originalAirdResource.getURI().lastSegment();
+		String dynamicAirdUriString = uriString.replace(modelFileName, aridFileName);
+		return URI.createURI(dynamicAirdUriString);
 	}
 
 	private void updateDiagramSpec(DSemanticDiagramSpec semanticDiagramSpec) {
@@ -170,8 +168,8 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 		return resource;
 	}
 
-	public URI getDynamicAiardURI() {
-		return dynamicAirdURI;
+	public Resource getDynamicAirdResourec() {
+		return dynamicAirdResource;
 	}
 
 }
