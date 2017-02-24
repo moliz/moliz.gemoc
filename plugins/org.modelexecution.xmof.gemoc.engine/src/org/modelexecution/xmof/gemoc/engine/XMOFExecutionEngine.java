@@ -1,17 +1,11 @@
 package org.modelexecution.xmof.gemoc.engine;
 
-import java.util.HashSet;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.uml2.common.util.CacheAdapter;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
-import org.gemoc.executionframework.engine.core.CommandExecution;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
 import org.modelexecution.fumldebug.core.NodeSelectionStrategy;
@@ -32,14 +26,13 @@ import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFVirtualMachine;
 import org.modelexecution.xmof.gemoc.engine.internal.SequentialNodeSelectionStrategy;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
-import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
-import org.modelexecution.xmof.gemoc.extension.sirius.converter.ConvertToDynamicRepresentationCommand;
+import org.modelexecution.xmof.gemoc.extension.sirius.XMOFAnimator;
 import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.vm.XMOFBasedModelSynchronizer;
 import org.modelexecution.xmof.vm.XMOFInstanceMap;
-import org.modelexecution.xmof.vm.XMOFVirtualMachine;
+import org.modelexecution.xmof.vm.XMOFVirtualMachine;	
 import org.modelexecution.xmof.vm.XMOFVirtualMachineEvent;
 
 import fUML.Semantics.Classes.Kernel.Object_;
@@ -260,29 +253,16 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		return loader;
 	}
 
-	public void prepareAnimator(IExecutionContext executionContext) {
+	public void intializeXMOFAnimator(IExecutionContext executionContext) {
+		URI airdURI = executionContext.getRunConfiguration().getAnimatorURI();
+		URI configurationModelURI = loader.getConfigurationModelURI();
+		ResourceSet resourceSet = executionContext.getResourceModel().getResourceSet();
+		String debugModelId = executionContext.getRunConfiguration().getDebugModelID();
 
-		if (!orginalModelIsDynamic()) {
-			Resource dynamicModel = getModelLoader().getConfigurationModelResource();
-			ResourceSet resourceSet = dynamicModel.getResourceSet();
-			URI airdURI = executionContext.getRunConfiguration().getAnimatorURI();
-			Resource airdResource = resourceSet.getResource(airdURI, true);
-			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(resourceSet);
-			
-			ConvertToDynamicRepresentationCommand cmd = new ConvertToDynamicRepresentationCommand(editingDomain,
-					configurationMap, airdResource, dynamicModel.getURI());
-			try {
-				CommandExecution.execute(editingDomain, cmd);
-			} catch (Exception e) {
-				Activator.error(e.getMessage(), e);
-			}
-
-		}
+		XMOFAnimator animator = new XMOFAnimator(resourceSet, airdURI, configurationModelURI,
+				configurationMap, debugModelId);
+		animator.startAnimationSession();
 
 	}
 
-	private boolean orginalModelIsDynamic() {
-		return new HashSet<EObject>(configurationMap.getConfigurationObjects())
-				.equals(new HashSet<EObject>(configurationMap.getOriginalObjects()));
-	}
 }

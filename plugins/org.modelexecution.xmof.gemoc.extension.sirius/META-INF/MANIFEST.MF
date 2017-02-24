@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Sirius
 Bundle-SymbolicName: org.modelexecution.xmof.gemoc.extension.sirius
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.modelexecution.xmof.gemoc.extension.sirius.Activator
+Bundle-Activator: org.modelexecution.xmof.gemoc.extension.sirius.ui.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.gemoc.executionframework.extensions.sirius,
  org.gemoc.xdsmlframework.api;bundle-version="2.3.0",
@@ -24,5 +24,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.modelexecution.xmof.gemoc.extension.sirius.converter,
- org.modelexecution.xmof.gemoc.extension.sirius.modelloader
+Export-Package: org.modelexecution.xmof.gemoc.extension.sirius,
+ org.modelexecution.xmof.gemoc.extension.sirius.modelloader,
+ org.modelexecution.xmof.gemoc.extension.sirius.util

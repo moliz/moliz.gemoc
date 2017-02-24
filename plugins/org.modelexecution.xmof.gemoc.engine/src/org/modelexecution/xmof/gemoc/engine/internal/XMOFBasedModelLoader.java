@@ -47,7 +47,7 @@ public class XMOFBasedModelLoader {
 
 	private Set<EPackage> xmofConfigurationMetamodelPackages = new HashSet<EPackage>();
 
-	private Resource configurationModelResource;
+	private URI configurationModelURI;
 
 	public XMOFBasedModelLoader(IExecutionContext executionContext) {
 		this.executionContext = executionContext;
@@ -90,7 +90,7 @@ public class XMOFBasedModelLoader {
 
 		// Creates a resource for the configuration model, and fills it with configuration objects
 		// and persists the created resource into the execution-folder.
-		configurationModelResource=createConfigurationModelResource();
+		createConfigurationModelResource();
 
 		// Provides the map static->dynamic to the animation services, ie. to display execution data
 		// even in the sirius session of a static model.
@@ -268,7 +268,7 @@ public class XMOFBasedModelLoader {
 	 * This resource not made available, and is only reachable in the ResourceSet.
 	 */
 	private Resource createConfigurationModelResource() {
-		URI configurationModelURI = computeConfigurationModelURI();
+		 configurationModelURI = computeConfigurationModelURI();
 		Resource configurationResource = null;
 		for (EObject configurationObject : configurationMap.getConfigurationObjects()) {
 			if (configurationObject.eContainer() == null && configurationObject.eResource() == null) {
@@ -299,8 +299,8 @@ public class XMOFBasedModelLoader {
 		String modelFileExtension = getModelResource().getURI().fileExtension();
 		String configurationModelFileName = modelFileName.replace("." + modelFileExtension,"-configuration.xmi");
 		IPath configurationModelPath = executionPath.append(configurationModelFileName);
-		URI uri = URI.createPlatformResourceURI(configurationModelPath.toString(), true);
-		return uri;
+		configurationModelURI= URI.createPlatformResourceURI(configurationModelPath.toString(), true);
+		return configurationModelURI;
 	}
 
 	private Resource loadPlatformResource(String path) {
@@ -357,8 +357,8 @@ public class XMOFBasedModelLoader {
 		return TransactionUtil.getEditingDomain(resourceSet);
 	}
 	
-	public Resource getConfigurationModelResource(){
-		return configurationModelResource;
+	public URI getConfigurationModelURI(){
+		return configurationModelURI;
 	}
 
 }

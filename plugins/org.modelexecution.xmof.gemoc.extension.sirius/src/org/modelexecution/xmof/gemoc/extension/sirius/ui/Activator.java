@@ -1,4 +1,4 @@
-package org.modelexecution.xmof.gemoc.extension.sirius;
+package org.modelexecution.xmof.gemoc.extension.sirius.ui;
 
 import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.plugin.AbstractUIPlugin;

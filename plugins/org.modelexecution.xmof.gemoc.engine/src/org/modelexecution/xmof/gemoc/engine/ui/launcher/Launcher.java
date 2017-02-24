@@ -47,7 +47,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 		executionEngine.initialize(executioncontext);
 		if (executioncontext.getExecutionMode().equals(ExecutionMode.Animation)
 				&& executioncontext.getExecutionPlatform().getModelLoader() instanceof XMOFModelLoader) {
-			executionEngine.prepareAnimator(executioncontext);
+			executionEngine.intializeXMOFAnimator(executioncontext);
 		}
 
 		return executionEngine;

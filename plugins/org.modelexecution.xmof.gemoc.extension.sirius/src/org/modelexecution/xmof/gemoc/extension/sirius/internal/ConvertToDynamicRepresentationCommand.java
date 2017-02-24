@@ -8,7 +8,7 @@
  * Tobias Ortmayr - initial API and implementation
  */
 
-package org.modelexecution.xmof.gemoc.extension.sirius.converter;
+package org.modelexecution.xmof.gemoc.extension.sirius.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,6 +28,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DNodeContainer;
+import org.eclipse.sirius.diagram.business.internal.metamodel.helper.GetDefaultStyle;
 import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DSemanticDiagramSpec;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
@@ -39,31 +40,32 @@ import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 
 	private ConfigurationObjectMap configurationMap;
-	private Resource originalAirdResource;
+	private URI staticAirdURI;
 	private URI dynamicModelURI;
 	private TransactionalEditingDomain editingDomain;
-	private Resource dynamicAirdResource;
+	private ResourceSet resourceSet;
+	private URI dynamicAirdURI;
 
-	public ConvertToDynamicRepresentationCommand(TransactionalEditingDomain editingDomain,
-			ConfigurationObjectMap configurationObjectMap, Resource originalAirdResource, URI dynamicModelURI) {
-		super(editingDomain);
-		this.configurationMap = configurationObjectMap;
-		this.originalAirdResource = originalAirdResource;
+	public ConvertToDynamicRepresentationCommand(TransactionalEditingDomain editingDomain, ResourceSet resourceSet,
+			ConfigurationObjectMap configurationMap, URI staticAirdURI, URI dynamicModelURI) {
+		super(editingDomain, "Convert static aird to dynamic aird");
+		this.configurationMap = configurationMap;
+		this.staticAirdURI = staticAirdURI;
 		this.dynamicModelURI = dynamicModelURI;
 		this.editingDomain = editingDomain;
+		this.resourceSet = resourceSet;
 	}
 
 	@Override
 	protected void doExecute() {
-		if (originalAirdResource == null)
-			return;
+		Resource staticAird = resourceSet.getResource(staticAirdURI, true);
 
 		try {
-			dynamicAirdResource = createAndPersistCopy(originalAirdResource);
-			if (dynamicAirdResource == null)
+			Resource dynamicAird = createAndPersistCopy(staticAird);
+			if (dynamicAird == null)
 				return;
-			updateReferences(dynamicAirdResource);
-			dynamicAirdResource.save(Collections.EMPTY_MAP);
+			updateReferences(dynamicAird);
+			dynamicAird.save(Collections.EMPTY_MAP);
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -72,8 +74,8 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 
 	}
 
-	private void updateReferences(Resource dynamicAirdResource) {
-		for (EObject obj : dynamicAirdResource.getContents()) {
+	private void updateReferences(Resource airdResource) {
+		for (EObject obj : airdResource.getContents()) {
 			if (obj instanceof DAnalysis) {
 				updateAnalysis((DAnalysis) obj);
 			} else if (obj instanceof DSemanticDiagramSpec) {
@@ -83,20 +85,24 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 
 	}
 
-	private Resource createAndPersistCopy(Resource originalAirdResource) throws IOException {
+	private Resource createAndPersistCopy(Resource airdResource) throws IOException {
 		URI dynamicAirdURI = computeDynamicAirdURI();
-		Resource copyResource = createResource(originalAirdResource.getResourceSet(), editingDomain, dynamicAirdURI,
-				originalAirdResource.getContents());
+		Resource copyResource = createResource(airdResource.getResourceSet(), editingDomain, dynamicAirdURI,
+				airdResource.getContents());
 		copyResource.save(Collections.EMPTY_MAP);
 		return copyResource;
 	}
 
 	private URI computeDynamicAirdURI() {
-		String uriString = dynamicModelURI.toString();
-		String modelFileName = dynamicModelURI.lastSegment();
-		String aridFileName = originalAirdResource.getURI().lastSegment();
-		String dynamicAirdUriString = uriString.replace(modelFileName, aridFileName);
-		return URI.createURI(dynamicAirdUriString);
+		if (dynamicAirdURI == null) {
+			String uriString = dynamicModelURI.toString();
+			String modelFileName = dynamicModelURI.lastSegment();
+			String aridFileName = staticAirdURI.lastSegment();
+			String dynamicAirdUriString = uriString.replace(modelFileName, aridFileName);
+			dynamicAirdURI = URI.createURI(dynamicAirdUriString);
+		}
+		return dynamicAirdURI;
+
 	}
 
 	private void updateDiagramSpec(DSemanticDiagramSpec semanticDiagramSpec) {
@@ -168,8 +174,8 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 		return resource;
 	}
 
-	public Resource getDynamicAirdResourec() {
-		return dynamicAirdResource;
+	public URI getDynamicAirdURI() {
+		return computeDynamicAirdURI();
 	}
 
 }
