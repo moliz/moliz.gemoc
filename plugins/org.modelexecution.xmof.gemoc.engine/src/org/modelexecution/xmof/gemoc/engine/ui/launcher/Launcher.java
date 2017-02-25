@@ -24,7 +24,6 @@ import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 import org.modelexecution.xmof.gemoc.engine.ui.debug.XMOFMutableFieldExtractor;
-import org.modelexecution.xmof.gemoc.extension.sirius.modelloader.XMOFModelLoader;
 
 import fr.inria.diverse.commons.messagingsystem.api.MessagingSystem;
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
@@ -40,16 +39,11 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 	protected IExecutionEngine createExecutionEngine(
 			org.gemoc.executionframework.engine.ui.commons.RunConfiguration runConfiguration,
 			ExecutionMode executionMode) throws CoreException, EngineContextException {
-		XMOFExecutionEngine executionEngine = new XMOFExecutionEngine();
+		IExecutionEngine executionEngine = new XMOFExecutionEngine();
 		ModelExecutionContext executioncontext = new SequentialModelExecutionContext(runConfiguration, executionMode);
-		// new//new XMOFExecutionModelContext(runConfiguration, executionMode);
+		//new//new XMOFExecutionModelContext(runConfiguration, executionMode);
 		executioncontext.initializeResourceModel();
 		executionEngine.initialize(executioncontext);
-		if (executioncontext.getExecutionMode().equals(ExecutionMode.Animation)
-				&& executioncontext.getExecutionPlatform().getModelLoader() instanceof XMOFModelLoader) {
-			executionEngine.intializeXMOFAnimator(executioncontext);
-		}
-
 		return executionEngine;
 	}
 
@@ -68,9 +62,9 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 			// traceAddons.iterator().next());
 		}
 
-		ConfigurationObjectMap configurationMap = ((XMOFExecutionEngine) _executionEngine).getConfigurationMap();
+		ConfigurationObjectMap configurationMap = ((XMOFExecutionEngine)_executionEngine).getConfigurationMap();
 		debugger.setMutableFieldExtractors(Arrays.asList(new XMOFMutableFieldExtractor(configurationMap)));
-
+		
 		// If in the launch configuration it is asked to pause at the start,
 		// we add this dummy break
 		try {
@@ -89,7 +83,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 		_executionEngine.getExecutionContext().getExecutionPlatform().addEngineAddon(debugger);
 		return debugger;
 	}
-
+	
 	@Override
 	protected String getLaunchConfigurationTypeID() {
 		return TYPE_ID;

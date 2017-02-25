@@ -42,18 +42,20 @@ public class XMOFMutableFieldExtractor implements IMutableFieldExtractor {
 					break;
 				}
 			}
+			if (originalEClass!=null){
+				for (EStructuralFeature feature : configurationObject.eClass().getEAllStructuralFeatures()) {
 
-			for (EStructuralFeature feature : configurationObject.eClass().getEAllStructuralFeatures()) {
+					// We check whether the original class has the feature or not
+					boolean isInOriginal = originalEClass.getEAllStructuralFeatures().stream()
+							.anyMatch((f) -> f.getName().equals(feature.getName()));
 
-				// We check whether the original class has the feature or not
-				boolean isInOriginal = originalEClass.getEAllStructuralFeatures().stream()
-						.anyMatch((f) -> f.getName().equals(feature.getName()));
+					if (!isInOriginal) {
+						mutableFields.add(createMutableField(eObject, configurationObject, feature));
+					}
 
-				if (!isInOriginal) {
-					mutableFields.add(createMutableField(eObject, configurationObject, feature));
 				}
-
 			}
+			
 		}
 
 		// Case original objects available

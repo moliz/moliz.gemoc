@@ -1,11 +1,10 @@
 package org.modelexecution.xmof.gemoc.engine;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.uml2.common.util.CacheAdapter;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
+import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
 import org.modelexecution.fumldebug.core.NodeSelectionStrategy;
@@ -26,13 +25,13 @@ import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFVirtualMachine;
 import org.modelexecution.xmof.gemoc.engine.internal.SequentialNodeSelectionStrategy;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
+import org.modelexecution.xmof.gemoc.engine.modelloader.XMOFModelLoader;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
-import org.modelexecution.xmof.gemoc.extension.sirius.XMOFAnimator;
 import org.modelexecution.xmof.vm.IXMOFVirtualMachineListener;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.modelexecution.xmof.vm.XMOFBasedModelSynchronizer;
 import org.modelexecution.xmof.vm.XMOFInstanceMap;
-import org.modelexecution.xmof.vm.XMOFVirtualMachine;	
+import org.modelexecution.xmof.vm.XMOFVirtualMachine;
 import org.modelexecution.xmof.vm.XMOFVirtualMachineEvent;
 
 import fUML.Semantics.Classes.Kernel.Object_;
@@ -65,8 +64,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		ignoreSteps = ((IXMOFRunConfiguration) executionContext.getRunConfiguration()).getIgnoreSteps()
 				|| suspendForNodes;
 
-		loader = new XMOFBasedModelLoader(executionContext);
-		XMOFBasedModel model = loader.loadXMOFBasedModel();
+		XMOFBasedModel model = retrieveXMOFBasedModel(executionContext);
 
 		// If we are in basic run mode, we replace the static objects of the
 		// context model by dynamic configuration objects.
@@ -88,6 +86,21 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		configurationMap = loader.getConfigurationMap();
 
 		vm = setupVirtualMachine(model);
+	}
+
+	private XMOFBasedModel retrieveXMOFBasedModel(IExecutionContext executionContext) {
+		// If the executionModel has been loaded wiht an XMOFModelLoader in
+		// animation mode the xMOF-based model has already been loaded
+		// so we reuse these instances. Otherwise we create new oness
+		if (executionContext.getExecutionMode().equals(ExecutionMode.Animation)
+				&& executionContext.getExecutionPlatform().getModelLoader() instanceof XMOFModelLoader) {
+			XMOFModelLoader modelLoader = (XMOFModelLoader) executionContext.getExecutionPlatform().getModelLoader();
+			loader = modelLoader.getXMOFBasedModeLoader();
+			return modelLoader.getXMOFBasedModel();
+		} else {
+			loader = new XMOFBasedModelLoader(executionContext);
+			return loader.loadXMOFBasedModel();
+		}
 	}
 
 	private XMOFVirtualMachine setupVirtualMachine(XMOFBasedModel model) {
@@ -252,17 +265,4 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	public XMOFBasedModelLoader getModelLoader() {
 		return loader;
 	}
-
-	public void intializeXMOFAnimator(IExecutionContext executionContext) {
-		URI airdURI = executionContext.getRunConfiguration().getAnimatorURI();
-		URI configurationModelURI = loader.getConfigurationModelURI();
-		ResourceSet resourceSet = executionContext.getResourceModel().getResourceSet();
-		String debugModelId = executionContext.getRunConfiguration().getDebugModelID();
-
-		XMOFAnimator animator = new XMOFAnimator(resourceSet, airdURI, configurationModelURI,
-				configurationMap, debugModelId);
-		animator.startAnimationSession();
-
-	}
-
 }

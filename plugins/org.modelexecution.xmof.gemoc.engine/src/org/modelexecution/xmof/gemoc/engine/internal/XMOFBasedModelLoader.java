@@ -47,6 +47,8 @@ public class XMOFBasedModelLoader {
 
 	private Set<EPackage> xmofConfigurationMetamodelPackages = new HashSet<EPackage>();
 
+	private boolean isConfModel;
+
 	private URI configurationModelURI;
 
 	public XMOFBasedModelLoader(IExecutionContext executionContext) {
@@ -54,8 +56,9 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Two missions: - Creates and returns the xmof configuration model (ie configuration objects + parameter values) -
-	 * Also prepares the configuration map (later accessed using "getConfigurationMap")
+	 * Two missions: - Creates and returns the xmof configuration model (ie
+	 * configuration objects + parameter values) - Also prepares the
+	 * configuration map (later accessed using "getConfigurationMap")
 	 * 
 	 * @return The created xmof configuration model.
 	 */
@@ -75,28 +78,36 @@ public class XMOFBasedModelLoader {
 		inputElements.addAll(inputModelElements);
 		inputElements.addAll(inputParameterValueObjects);
 
-		// Loads the configuration metamodel (ie. the xmof model), possibly epackages already in the registry
+		// Loads the configuration metamodel (ie. the xmof model), possibly
+		// epackages already in the registry
 		Collection<EPackage> configurationPackages = loadConfigurationMetamodel();
 
-		// We try to find out whether the provided model is already a configuration model, or not
-		boolean isConfModel = isConfigurationModel(inputModelElements, configurationPackages);
+		// We try to find out whether the provided model is already a
+		// configuration model, or not
+		isConfModel = isConfigurationModel(inputModelElements, configurationPackages);
 
-		// Initializes the configuration (ie. dynamic) model using the static model.
-		// ie. for each static object, creates a configuration object using a configuration class.
+		// Initializes the configuration (ie. dynamic) model using the static
+		// model.
+		// ie. for each static object, creates a configuration object using a
+		// configuration class.
 		// And stores everything in a map static->dynamic.
-		// NOTE: If the provided model is dynamic, we create a dummy configuration map where each object o points to
+		// NOTE: If the provided model is dynamic, we create a dummy
+		// configuration map where each object o points to
 		// itself
 		configurationMap = new ConfigurationObjectMap(inputElements, configurationPackages, isConfModel);
 
-		// Creates a resource for the configuration model, and fills it with configuration objects
+		// Creates a resource for the configuration model, and fills it with
+		// configuration objects
 		// and persists the created resource into the execution-folder.
 		createConfigurationModelResource();
 
-		// Provides the map static->dynamic to the animation services, ie. to display execution data
+		// Provides the map static->dynamic to the animation services, ie. to
+		// display execution data
 		// even in the sirius session of a static model.
 		GenericXMOFAnimationServices.setConfigurationObjectMap(configurationMap);
 
-		// Creates an returns the xmof model, with the configuration objects and the parameters.
+		// Creates an returns the xmof model, with the configuration objects and
+		// the parameters.
 		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
 				getParameterValueConfiguration(inputParameterValues), getEditingDomain());
 
@@ -134,12 +145,14 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Finds all the (static) objects referenced by input parameters values, along with all the content of the resources
-	 * that contain such pointed objects.
+	 * Finds all the (static) objects referenced by input parameters values,
+	 * along with all the content of the resources that contain such pointed
+	 * objects.
 	 * 
 	 * @param inputParameterValues
 	 *            The (static) parameter values.
-	 * @return Objects referenced by parameter values + other objects in resources of pointed objects.
+	 * @return Objects referenced by parameter values + other objects in
+	 *         resources of pointed objects.
 	 */
 	private Collection<EObject> getParameterValueObjects(Collection<ParameterValue> inputParameterValues) {
 		Collection<EObject> parameterValueObjects = new BasicEList<EObject>();
@@ -211,7 +224,8 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Retrieves the xmof semantics URI (as a string) from the melange language definition.
+	 * Retrieves the xmof semantics URI (as a string) from the melange language
+	 * definition.
 	 * 
 	 * @return The URI of the xMOF semantics, as a String.
 	 */
@@ -234,10 +248,12 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Loads the xMOF semantics model (ie EPackages) in a resource. For each EPackage, if there is already a registered
-	 * EPackage in memory with the same NsURI, make sure use the existing one instead.
+	 * Loads the xMOF semantics model (ie EPackages) in a resource. For each
+	 * EPackage, if there is already a registered EPackage in memory with the
+	 * same NsURI, make sure use the existing one instead.
 	 * 
-	 * @return The set of EPackages of the configuration metamodel (possibly some that were already in registry)
+	 * @return The set of EPackages of the configuration metamodel (possibly
+	 *         some that were already in registry)
 	 */
 	private Collection<EPackage> loadConfigurationMetamodel() {
 		String confMetamodelPath = getXMOFModelFilePath();
@@ -262,13 +278,14 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Creates the resource for the configuration (ie. dynamic) model, and fills this resource with the configuration
-	 * objects.
+	 * Creates the resource for the configuration (ie. dynamic) model, and fills
+	 * this resource with the configuration objects.
 	 * 
-	 * This resource not made available, and is only reachable in the ResourceSet.
+	 * This resource not made available, and is only reachable in the
+	 * ResourceSet.
 	 */
 	private Resource createConfigurationModelResource() {
-		 configurationModelURI = computeConfigurationModelURI();
+		configurationModelURI = computeConfigurationModelURI();
 		Resource configurationResource = null;
 		for (EObject configurationObject : configurationMap.getConfigurationObjects()) {
 			if (configurationObject.eContainer() == null && configurationObject.eResource() == null) {
@@ -279,17 +296,21 @@ public class XMOFBasedModelLoader {
 				getEditingDomain().getCommandStack().execute(cmd);
 			}
 		}
-		
-		try {
-			configurationResource.save(Collections.EMPTY_MAP);
-		} catch (IOException e) {
-			Activator.error(e.getMessage(), e);
+
+		if (configurationResource != null) {
+			try {
+				configurationResource.save(Collections.EMPTY_MAP);
+			} catch (IOException e) {
+				Activator.error(e.getMessage(), e);
+			}
 		}
+
 		return configurationResource;
 	}
 
 	/**
-	 * Creates a URI for the configuration (ie. dynamic) model, inside the execution folder.
+	 * Creates a URI for the configuration (ie. dynamic) model, inside the
+	 * execution folder.
 	 * 
 	 * @return The URI of the configuration model, in the execution folder.
 	 */
@@ -297,9 +318,9 @@ public class XMOFBasedModelLoader {
 		IPath executionPath = getExecutionPath();
 		String modelFileName = getModelResource().getURI().lastSegment();
 		String modelFileExtension = getModelResource().getURI().fileExtension();
-		String configurationModelFileName = modelFileName.replace("." + modelFileExtension,"-configuration.xmi");
+		String configurationModelFileName = modelFileName.replace("." + modelFileExtension, "-configuration.xmi");
 		IPath configurationModelPath = executionPath.append(configurationModelFileName);
-		configurationModelURI= URI.createPlatformResourceURI(configurationModelPath.toString(), true);
+		configurationModelURI = URI.createPlatformResourceURI(configurationModelPath.toString(), true);
 		return configurationModelURI;
 	}
 
@@ -312,7 +333,8 @@ public class XMOFBasedModelLoader {
 	 * 
 	 * @param path
 	 *            The plugin path (given to "createPlatformPluginURI").
-	 * @return The new resource loaded from the path, contained in the current ResourceSet.
+	 * @return The new resource loaded from the path, contained in the current
+	 *         ResourceSet.
 	 */
 	private Resource loadPluginResource(String path) {
 		return getResourceSet().getResource(URI.createPlatformPluginURI(path, true), true);
@@ -327,7 +349,8 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Gets the resource of the input model (maybe provided by Sirius) ie. the model given in the launch configuration.
+	 * Gets the resource of the input model (maybe provided by Sirius) ie. the
+	 * model given in the launch configuration.
 	 * 
 	 * @return The resource of the loaded input model.
 	 */
@@ -344,7 +367,8 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Gets the execution folder path, where execution elements can be created (dynamic model, traces, etc.)
+	 * Gets the execution folder path, where execution elements can be created
+	 * (dynamic model, traces, etc.)
 	 * 
 	 * @return The execution folder path, in the project of the executed model.
 	 */
@@ -356,9 +380,15 @@ public class XMOFBasedModelLoader {
 		ResourceSet resourceSet = getResourceSet();
 		return TransactionUtil.getEditingDomain(resourceSet);
 	}
-	
-	public URI getConfigurationModelURI(){
+
+	public URI getConfigurationModelURI() {
 		return configurationModelURI;
 	}
+
+	public boolean isConfModel() {
+		return isConfModel;
+	}
+	
+	
 
 }
