@@ -49,8 +49,6 @@ public class XMOFBasedModelLoader {
 
 	private boolean isConfModel;
 
-	private URI configurationModelURI;
-
 	public XMOFBasedModelLoader(IExecutionContext executionContext) {
 		this.executionContext = executionContext;
 	}
@@ -285,7 +283,7 @@ public class XMOFBasedModelLoader {
 	 * ResourceSet.
 	 */
 	private Resource createConfigurationModelResource() {
-		configurationModelURI = computeConfigurationModelURI();
+		URI configurationModelURI = computeConfigurationModelURI();
 		Resource configurationResource = null;
 		for (EObject configurationObject : configurationMap.getConfigurationObjects()) {
 			if (configurationObject.eContainer() == null && configurationObject.eResource() == null) {
@@ -320,8 +318,8 @@ public class XMOFBasedModelLoader {
 		String modelFileExtension = getModelResource().getURI().fileExtension();
 		String configurationModelFileName = modelFileName.replace("." + modelFileExtension, "-configuration.xmi");
 		IPath configurationModelPath = executionPath.append(configurationModelFileName);
-		configurationModelURI = URI.createPlatformResourceURI(configurationModelPath.toString(), true);
-		return configurationModelURI;
+		return URI.createPlatformResourceURI(configurationModelPath.toString(), true);
+
 	}
 
 	private Resource loadPlatformResource(String path) {
@@ -381,14 +379,9 @@ public class XMOFBasedModelLoader {
 		return TransactionUtil.getEditingDomain(resourceSet);
 	}
 
-	public URI getConfigurationModelURI() {
-		return configurationModelURI;
-	}
 
-	public boolean isConfModel() {
+	public boolean inputIsConfigurationModel() {
 		return isConfModel;
 	}
-	
-	
 
 }

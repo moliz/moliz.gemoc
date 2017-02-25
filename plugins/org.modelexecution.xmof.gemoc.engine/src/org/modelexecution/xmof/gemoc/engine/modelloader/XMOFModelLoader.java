@@ -37,32 +37,40 @@ public class XMOFModelLoader extends DefaultModelLoader {
 
 	private XMOFBasedModel xmofBasedModel;
 	private XMOFBasedModelLoader modelLoader;
+	private MutableExectutionContext updatedContext;
 
 	@Override
 	public Resource loadModel(IExecutionContext context) throws RuntimeException {
 		Resource resource = super.loadModel(context);
 		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resource.getResourceSet());
+		createAndUpdateContext(context, resource);
+		modelLoader = new XMOFBasedModelLoader(updatedContext);
+		xmofBasedModel = modelLoader.loadXMOFBasedModel();
+		if (!modelLoader.inputIsConfigurationModel()) {
+			return xmofBasedModel.getModelResource();
+		}
 		return resource;
+	}
+
+	private void createAndUpdateContext(IExecutionContext context, Resource resourceModel) {
+		updatedContext = new MutableExectutionContext(context);
+		updatedContext.resourceModel = resourceModel;
+
 	}
 
 	@Override
 	public Resource loadModelForAnimation(IExecutionContext context) throws RuntimeException {
-		Resource resource = loadModel(context);
-		MutableExectutionContext executionContext = new MutableExectutionContext(context);
-		executionContext.resourceModel = resource;
-		modelLoader = new XMOFBasedModelLoader(executionContext);
-		xmofBasedModel = modelLoader.loadXMOFBasedModel();
-		if (modelLoader.isConfModel()) {
-			transformToDynamic(executionContext);
+		this.loadModel(context);
+
+		if (!modelLoader.inputIsConfigurationModel()) {
+			transformToDynamic(updatedContext);
 		}
 
-		return super.loadModelForAnimation(executionContext);
+		return super.loadModelForAnimation(updatedContext);
 	}
 
-	
-
 	private void transformToDynamic(MutableExectutionContext executionContext) {
-		URI dynamicModelURI = modelLoader.getConfigurationModelURI();
+		URI dynamicModelURI = xmofBasedModel.getModelResource().getURI();
 		ResourceSet resourceSet = executionContext.getResourceModel().getResourceSet();
 		ConfigurationObjectMap configurationMap = modelLoader.getConfigurationMap();
 		URI oldAirdURI = executionContext.getRunConfiguration().getAnimatorURI();
@@ -72,17 +80,15 @@ public class XMOFModelLoader extends DefaultModelLoader {
 				resourceSet, configurationMap, oldAirdURI, dynamicModelURI);
 		editingDomain.getCommandStack().execute(cmd);
 		URI newAirdURI = cmd.getDynamicAirdURI();
-		updateExecutionContext(executionContext, dynamicModelURI, newAirdURI);
-		// TODO: Maybe always transform executionModel to dynamic to avoid use of the dummy configurationMap?
-	
+		updateContext(dynamicModelURI, newAirdURI);
+
 	}
 
-	private void updateExecutionContext(MutableExectutionContext executionContext, URI executedModelURI,
-			URI animatorURI) {
-		MutableRunConfiguration runConfiguration = new MutableRunConfiguration(executionContext.getRunConfiguration());
+	private void updateContext(URI executedModelURI, URI animatorURI) {
+		MutableRunConfiguration runConfiguration = new MutableRunConfiguration(updatedContext.getRunConfiguration());
 		runConfiguration.executedModelURI = executedModelURI;
 		runConfiguration.animatorURI = animatorURI;
-		executionContext.runConfiguration = runConfiguration;
+		updatedContext.runConfiguration = runConfiguration;
 
 	}
 
