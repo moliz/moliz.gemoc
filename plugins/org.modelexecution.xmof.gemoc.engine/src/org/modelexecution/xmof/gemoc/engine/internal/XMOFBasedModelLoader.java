@@ -379,9 +379,13 @@ public class XMOFBasedModelLoader {
 		return TransactionUtil.getEditingDomain(resourceSet);
 	}
 
-
 	public boolean inputIsConfigurationModel() {
 		return isConfModel;
+	}
+
+	public void setConfigurationMap(ConfigurationObjectMap configurationMap){
+		this.configurationMap=configurationMap;
+		GenericXMOFAnimationServices.setConfigurationObjectMap(configurationMap);
 	}
 
 }

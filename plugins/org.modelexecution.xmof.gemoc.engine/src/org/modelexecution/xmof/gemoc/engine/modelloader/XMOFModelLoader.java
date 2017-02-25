@@ -41,6 +41,37 @@ public class XMOFModelLoader extends DefaultModelLoader {
 
 	@Override
 	public Resource loadModel(IExecutionContext context) throws RuntimeException {
+		Resource resource = loadInputModel(context);
+		//TODO: refactor usage of configurationMap to avoid this hack
+		updateConfigurationMap();
+
+		return resource;
+	}
+	
+	@Override
+	public Resource loadModelForAnimation(IExecutionContext context) throws RuntimeException {
+		Resource resource = loadInputModel(context);
+
+		if (!modelLoader.inputIsConfigurationModel()) {
+			transformToDynamic(updatedContext);
+			//TODO: refactor usage of configurationMap to avoid this hack
+			modelLoader.setConfigurationMap(new ConfigurationObjectMap(xmofBasedModel.getModelElements(),
+					xmofBasedModel.getMetamodelPackages(), true));
+		}
+
+		super.loadModelForAnimation(updatedContext);
+		return resource;
+	}
+
+	private void updateConfigurationMap() {
+		if (!modelLoader.inputIsConfigurationModel()) {
+			modelLoader.setConfigurationMap(new ConfigurationObjectMap(xmofBasedModel.getModelElements(),
+					xmofBasedModel.getMetamodelPackages(), true));
+		}
+
+	}
+
+	private Resource loadInputModel(IExecutionContext context) {
 		Resource resource = super.loadModel(context);
 		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resource.getResourceSet());
 		createAndUpdateContext(context, resource);
@@ -58,16 +89,7 @@ public class XMOFModelLoader extends DefaultModelLoader {
 
 	}
 
-	@Override
-	public Resource loadModelForAnimation(IExecutionContext context) throws RuntimeException {
-		this.loadModel(context);
-
-		if (!modelLoader.inputIsConfigurationModel()) {
-			transformToDynamic(updatedContext);
-		}
-
-		return super.loadModelForAnimation(updatedContext);
-	}
+	
 
 	private void transformToDynamic(MutableExectutionContext executionContext) {
 		URI dynamicModelURI = xmofBasedModel.getModelResource().getURI();
