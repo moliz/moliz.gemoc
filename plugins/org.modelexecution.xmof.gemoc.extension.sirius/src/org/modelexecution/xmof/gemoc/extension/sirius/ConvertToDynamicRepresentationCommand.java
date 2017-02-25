@@ -8,7 +8,7 @@
  * Tobias Ortmayr - initial API and implementation
  */
 
-package org.modelexecution.xmof.gemoc.extension.sirius.internal;
+package org.modelexecution.xmof.gemoc.extension.sirius;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +28,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DNodeContainer;
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.GetDefaultStyle;
 import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DSemanticDiagramSpec;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
@@ -61,7 +60,7 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 		Resource staticAird = resourceSet.getResource(staticAirdURI, true);
 
 		try {
-			Resource dynamicAird = createAndPersistCopy(staticAird);
+			Resource dynamicAird = copyAndPersist(staticAird);
 			if (dynamicAird == null)
 				return;
 			updateReferences(dynamicAird);
@@ -85,7 +84,7 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 
 	}
 
-	private Resource createAndPersistCopy(Resource airdResource) throws IOException {
+	private Resource copyAndPersist(Resource airdResource) throws IOException {
 		URI dynamicAirdURI = computeDynamicAirdURI();
 		Resource copyResource = createResource(airdResource.getResourceSet(), editingDomain, dynamicAirdURI,
 				airdResource.getContents());

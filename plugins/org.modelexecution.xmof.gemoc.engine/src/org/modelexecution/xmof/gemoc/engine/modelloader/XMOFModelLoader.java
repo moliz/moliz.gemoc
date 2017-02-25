@@ -27,7 +27,7 @@ import org.gemoc.xdsmlframework.api.extensions.engine_addon.EngineAddonSpecifica
 import org.gemoc.xdsmlframework.api.extensions.languages.LanguageDefinitionExtension;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
-import org.modelexecution.xmof.gemoc.extension.sirius.internal.ConvertToDynamicRepresentationCommand;
+import org.modelexecution.xmof.gemoc.extension.sirius.ConvertToDynamicRepresentationCommand;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 import org.osgi.framework.Bundle;
 

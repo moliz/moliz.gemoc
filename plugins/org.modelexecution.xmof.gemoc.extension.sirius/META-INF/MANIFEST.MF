@@ -5,25 +5,13 @@ Bundle-SymbolicName: org.modelexecution.xmof.gemoc.extension.sirius
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.modelexecution.xmof.gemoc.extension.sirius.ui.Activator
 Require-Bundle: org.eclipse.core.runtime,
- org.gemoc.executionframework.extensions.sirius,
- org.gemoc.xdsmlframework.api;bundle-version="2.3.0",
- org.eclipse.emf.ecore;bundle-version="2.12.0",
- org.eclipse.sirius,
- org.eclipse.sirius.ui,
- org.eclipse.emf.transaction;bundle-version="1.9.0",
  org.eclipse.ui.workbench,
- org.eclipse.ui.ide;bundle-version="3.12.2",
- org.eclipse.swt;bundle-version="3.105.2",
- org.eclipse.sirius.common;bundle-version="4.1.2",
- org.eclipse.sirius.common.ui;bundle-version="4.1.2",
- org.modelexecution.xmof.configuration,
- org.gemoc.executionframework.engine,
- org.eclipse.sirius.diagram,
- org.eclipse.sirius.diagram.ui,
  fr.inria.diverse.commons.eclipse.messagingsystem.api,
- org.eclipse.gmf.runtime.diagram.ui
+ org.eclipse.emf.transaction,
+ org.modelexecution.xmof.configuration,
+ org.eclipse.sirius,
+ org.eclipse.sirius.diagram
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.modelexecution.xmof.gemoc.extension.sirius,
- org.modelexecution.xmof.gemoc.extension.sirius.modelloader,
- org.modelexecution.xmof.gemoc.extension.sirius.util
+Export-Package: org.modelexecution.xmof.gemoc.extension.sirius
+
