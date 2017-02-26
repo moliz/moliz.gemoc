@@ -63,7 +63,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 		}
 
 		ConfigurationObjectMap configurationMap = ((XMOFExecutionEngine)_executionEngine).getConfigurationMap();
-		debugger.setMutableFieldExtractors(Arrays.asList(new XMOFMutableFieldExtractor(configurationMap)));
+		debugger.setMutableFieldExtractors(Arrays.asList(new XMOFMutableFieldExtractor()));
 		
 		// If in the launch configuration it is asked to pause at the start,
 		// we add this dummy break

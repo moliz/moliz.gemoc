@@ -13,71 +13,54 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.gemoc.executionframework.engine.ui.debug.IMutableFieldExtractor;
 import org.gemoc.executionframework.engine.ui.debug.MutableField;
-import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 
 public class XMOFMutableFieldExtractor implements IMutableFieldExtractor {
 
-	private ConfigurationObjectMap configurationObjectMap;
-
 	private Map<EClass, Integer> counters = new HashMap<EClass, Integer>();
 
-	public XMOFMutableFieldExtractor(ConfigurationObjectMap configurationObjectMap) {
-		this.configurationObjectMap = configurationObjectMap;
+	public XMOFMutableFieldExtractor() {
+
 	}
 
 	@Override
-	//TODO factorize
-	public List<MutableField> extractMutableField(EObject eObject) {
+	public List<MutableField> extractMutableField(EObject configurationObject) {
 		List<MutableField> mutableFields = new ArrayList<MutableField>();
-		EObject configurationObject = configurationObjectMap.getConfigurationObject(eObject);
 
-		// Case original objects not available
-		if (eObject == configurationObject) {
+		// We find the original class (i.e. class of the corresponding static object)
+		EClass originalEClass = retrieveOriginalEClass(configurationObject);
 
-			// We find the original class
-			EClass originalEClass = null;
-			for (EClass superType : configurationObject.eClass().getEAllSuperTypes()) {
-				if (configurationObject.eClass().getName().equals(superType.getName() + "Configuration")) {
-					originalEClass = superType;
-					break;
-				}
-			}
-			if (originalEClass!=null){
-				for (EStructuralFeature feature : configurationObject.eClass().getEAllStructuralFeatures()) {
-
-					// We check whether the original class has the feature or not
-					boolean isInOriginal = originalEClass.getEAllStructuralFeatures().stream()
-							.anyMatch((f) -> f.getName().equals(feature.getName()));
-
-					if (!isInOriginal) {
-						mutableFields.add(createMutableField(eObject, configurationObject, feature));
-					}
-
-				}
-			}
-			
-		}
-
-		// Case original objects available
-		else {
+		if (originalEClass != null) {
 			for (EStructuralFeature feature : configurationObject.eClass().getEAllStructuralFeatures()) {
-				EStructuralFeature originalFeature = eObject.eClass().getEStructuralFeature(feature.getName());
-				if (originalFeature == null) {
-					// We have found a mutable feature
-					mutableFields.add(createMutableField(eObject, configurationObject, feature));
+
+				// We check whether the original class has the feature or not
+				boolean isInOriginal = originalEClass.getEAllStructuralFeatures().stream()
+						.anyMatch((f) -> f.getName().equals(feature.getName()));
+
+				if (!isInOriginal) {
+					mutableFields.add(createMutableField(configurationObject, feature));
 				}
+
 			}
 		}
 
 		return mutableFields;
 	}
 
-	private MutableField createMutableField(EObject eObject, EObject configurationObject, EStructuralFeature feature) {
+	private EClass retrieveOriginalEClass(EObject configurationObject) {
+		for (EClass superType : configurationObject.eClass().getEAllSuperTypes()) {
+			if (configurationObject.eClass().getName().equals(superType.getName() + "Configuration")) {
+				return superType;
+			}
+		}
+		return null;
+	}
+
+	private MutableField createMutableField(EObject eObject, EStructuralFeature feature) {
 		String objectName = getObjectName(eObject);
 		String className = eObject.eClass().getName();
 		String fieldName = feature.getName() + " (" + objectName + " :" + className + ")";
 		Supplier<Object> getter = () -> {
-			return configurationObject.eGet(feature);
+			return eObject.eGet(feature);
 		};
 		Consumer<Object> setter = (Object t) -> {
 		};
