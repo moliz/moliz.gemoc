@@ -10,11 +10,18 @@
 
 package org.modelexecution.xmof.gemoc.engine.modelloader;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader;
@@ -25,6 +32,9 @@ import org.gemoc.xdsmlframework.api.core.IExecutionWorkspace;
 import org.gemoc.xdsmlframework.api.core.IRunConfiguration;
 import org.gemoc.xdsmlframework.api.extensions.engine_addon.EngineAddonSpecificationExtension;
 import org.gemoc.xdsmlframework.api.extensions.languages.LanguageDefinitionExtension;
+import org.modelexecution.xmof.Semantics.Classes.Kernel.ObjectValue;
+import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
+import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.internal.XMOFBasedModelLoader;
 import org.modelexecution.xmof.gemoc.extension.sirius.ConvertToDynamicRepresentationCommand;
@@ -43,31 +53,87 @@ public class XMOFModelLoader extends DefaultModelLoader {
 	public Resource loadModel(IExecutionContext context) throws RuntimeException {
 		Resource resource = super.loadModel(context);
 		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resource.getResourceSet());
-		// Manipulate the execution context instance so that we already can use
-		// the XMOFBasedModelLoader at this point
+		// We manipulate the execution context so we can reuse the existing
+		// implementation of the XMOFBasedModeLoader
 		createAndUpdateContext(context, resource);
 		modelLoader = new XMOFBasedModelLoader(updatedContext);
 		xmofBasedModel = modelLoader.loadXMOFBasedModel();
-		if (!modelLoader.inputIsConfigurationModel()) {
-			return xmofBasedModel.getModelResource();
-		}
-		return resource;
+
+		return xmofBasedModel.getModelResource();
 	}
 
 	@Override
 	public Resource loadModelForAnimation(IExecutionContext context) throws RuntimeException {
-		loadModel(context);
+		Resource oldResource = loadModel(context);
 
-		// if the orignally loaded input model was static we asume that the
-		// animator also references the static model and relink the references
-		// to the dynamic model
+		// if the originally loaded input model was static we relink the aird
+		// file used for animation to the dynamic model resource
 		if (!modelLoader.inputIsConfigurationModel()) {
 			adaptAirdForDynamicModel(updatedContext);
 		}
 
-		// Continue with default loading operation after the transformation and
-		// necessary context updates
-		return super.loadModelForAnimation(updatedContext);
+		// Reuse default super implementation for loading and initializing the
+		// animation session. Unfortunately a new ResourceSet is created which
+		// means we have to adapt some references later on to ensure correct
+		// functionality of animation and debugging
+		Resource newResource = super.loadModelForAnimation(updatedContext);
+
+		// Since we swapped the executionModel from static do dynamic we have to
+		// create a new XMOFBasedModel with the updated resource
+		createXMOFBasedModel(oldResource, newResource);
+
+		return newResource;
+	}
+
+	private void createXMOFBasedModel(Resource oldResource, Resource newResource) {
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(newResource);
+
+		// The parameter values from the xMOFBasedModel are referencing elements
+		// of a different ResourceSet
+		// so we have to update those references
+		List<ParameterValue> parameterValues = getUpdatedParameterValues(xmofBasedModel.getParameterValues(),
+				oldResource, newResource);
+
+		xmofBasedModel = new XMOFBasedModel(newResource.getContents(), parameterValues, editingDomain);
+
+	}
+
+	private Map<EObject, EObject> createObjectMap(Resource oldResource, Resource newResource) {
+		Map<EObject, EObject> map = new HashMap<EObject, EObject>();
+		List<EObject> keyList = oldResource.getContents();
+		List<EObject> valueList = newResource.getContents();
+		for (int i = 0; i < keyList.size(); i++) {
+			map.put(keyList.get(i), valueList.get(i));
+		}
+		return map;
+	}
+
+	private List<ParameterValue> getUpdatedParameterValues(List<ParameterValue> inputParameterValues,
+			Resource oldResource, Resource newResource) {
+
+		List<ParameterValue> parameterValueConfiguration = new ArrayList<ParameterValue>();
+		Map<EObject, EObject> objectMap = createObjectMap(oldResource, newResource);
+		Copier copier = new EcoreUtil.Copier(true, false);
+		copier.copyAll(inputParameterValues);
+		copier.copyReferences();
+
+		for (ParameterValue parameterValue : inputParameterValues) {
+			ParameterValue parameterValueConf = (ParameterValue) copier.get(parameterValue);
+			parameterValueConf.setParameter(parameterValue.getParameter());
+			for (Value value : parameterValue.getValues()) {
+				if (value instanceof ObjectValue) {
+					ObjectValue objectValue = (ObjectValue) value;
+					EObject referencedEObject = objectValue.getEObject();
+					if (referencedEObject != null) {
+						EObject referencedEObjectConf = objectMap.get(referencedEObject);
+						ObjectValue objectValueConf = (ObjectValue) copier.get(value);
+						objectValueConf.setEObject(referencedEObjectConf);
+					}
+				}
+			}
+			parameterValueConfiguration.add(parameterValueConf);
+		}
+		return parameterValueConfiguration;
 	}
 
 	private void createAndUpdateContext(IExecutionContext context, Resource resourceModel) {
@@ -85,8 +151,12 @@ public class XMOFModelLoader extends DefaultModelLoader {
 
 		ConvertToDynamicRepresentationCommand cmd = new ConvertToDynamicRepresentationCommand(editingDomain,
 				resourceSet, configurationMap, oldAirdURI, dynamicModelURI);
+
 		editingDomain.getCommandStack().execute(cmd);
 		URI newAirdURI = cmd.getDynamicAirdURI();
+		// Manipulate the execution context to point to new dynamic URIs.
+		// This enables the reuse of the super-class
+		// loadModelForAnimation-method
 		updateContext(dynamicModelURI, newAirdURI);
 
 	}

@@ -60,6 +60,8 @@ public class ConvertToDynamicRepresentationCommand extends RecordingCommand {
 		Resource staticAird = resourceSet.getResource(staticAirdURI, true);
 
 		try {
+			// Copy the aird to the execution folder use this resource for
+			// further manipulation
 			Resource dynamicAird = copyAndPersist(staticAird);
 			if (dynamicAird == null)
 				return;

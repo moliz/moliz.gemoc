@@ -71,15 +71,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private XMOFBasedModel retrieveXMOFBasedModel(IExecutionContext executionContext) {
 
 		if (executionContext.getExecutionPlatform().getModelLoader() instanceof XMOFModelLoader) {
-			// We build the XMOFBasedModel using the resource model (which contains a dynamic model at this point)
-			// -> we avoid loading the xMOFBasedModel another time
-			Resource resource = executionContext.getResourceModel();
-			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(resource);
-
-			// TODO: how to handle inputParameterValues?
-			XMOFBasedModel model = new XMOFBasedModel(resource.getContents(), editingDomain);
-		
-			return model;
+			return ((XMOFModelLoader) executionContext.getExecutionPlatform().getModelLoader()).getXMOFBasedModel();
 		}
 		// Fallback to default loading mechanism
 		else {
