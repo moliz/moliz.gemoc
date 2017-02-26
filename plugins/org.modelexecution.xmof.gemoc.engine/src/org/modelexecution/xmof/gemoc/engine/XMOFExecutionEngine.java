@@ -1,7 +1,13 @@
 package org.modelexecution.xmof.gemoc.engine;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.uml2.common.util.CacheAdapter;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
@@ -65,6 +71,9 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				|| suspendForNodes;
 
 		XMOFBasedModel model = retrieveXMOFBasedModel(executionContext);
+		//TODO: Fix animation for dynamic instances to avoid the use of the dummy configuration map
+		loader.setConfigurationMap(
+				new ConfigurationObjectMap(model.getModelElements(), model.getMetamodelPackages(), true));
 
 		// If we are in basic run mode, we replace the static objects of the
 		// context model by dynamic configuration objects.
@@ -89,14 +98,16 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	private XMOFBasedModel retrieveXMOFBasedModel(IExecutionContext executionContext) {
-		// If the executionModel has been loaded wiht an XMOFModelLoader in
-		// animation mode the xMOF-based model has already been loaded
-		// so we reuse these instances. Otherwise we create new oness
-		if (executionContext.getExecutionMode().equals(ExecutionMode.Animation)
-				&& executionContext.getExecutionPlatform().getModelLoader() instanceof XMOFModelLoader) {
+
+		if (executionContext.getExecutionPlatform().getModelLoader() instanceof XMOFModelLoader) {
 			XMOFModelLoader modelLoader = (XMOFModelLoader) executionContext.getExecutionPlatform().getModelLoader();
 			loader = modelLoader.getXMOFBasedModeLoader();
-			return modelLoader.getXMOFBasedModel();
+			// We build the XMOFBasedModel from the dynamic resource to avoid
+			// doing the expensive loading process another time
+			Resource resource = executionContext.getResourceModel();
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(resource);
+			// TODO: how to handle inputParameterValues?
+			return new XMOFBasedModel(resource.getContents(), editingDomain);
 		} else {
 			loader = new XMOFBasedModelLoader(executionContext);
 			return loader.loadXMOFBasedModel();

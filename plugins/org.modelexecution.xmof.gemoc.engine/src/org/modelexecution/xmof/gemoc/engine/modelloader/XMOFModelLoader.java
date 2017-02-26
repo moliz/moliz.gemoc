@@ -41,39 +41,10 @@ public class XMOFModelLoader extends DefaultModelLoader {
 
 	@Override
 	public Resource loadModel(IExecutionContext context) throws RuntimeException {
-		Resource resource = loadInputModel(context);
-		//TODO: refactor usage of configurationMap to avoid this hack
-		updateConfigurationMap();
-
-		return resource;
-	}
-	
-	@Override
-	public Resource loadModelForAnimation(IExecutionContext context) throws RuntimeException {
-		Resource resource = loadInputModel(context);
-
-		if (!modelLoader.inputIsConfigurationModel()) {
-			transformToDynamic(updatedContext);
-			//TODO: refactor usage of configurationMap to avoid this hack
-			modelLoader.setConfigurationMap(new ConfigurationObjectMap(xmofBasedModel.getModelElements(),
-					xmofBasedModel.getMetamodelPackages(), true));
-		}
-
-		super.loadModelForAnimation(updatedContext);
-		return resource;
-	}
-
-	private void updateConfigurationMap() {
-		if (!modelLoader.inputIsConfigurationModel()) {
-			modelLoader.setConfigurationMap(new ConfigurationObjectMap(xmofBasedModel.getModelElements(),
-					xmofBasedModel.getMetamodelPackages(), true));
-		}
-
-	}
-
-	private Resource loadInputModel(IExecutionContext context) {
 		Resource resource = super.loadModel(context);
 		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resource.getResourceSet());
+		// Manipulate the execution context instance so that we already can use
+		// the XMOFBasedModelLoader at this point
 		createAndUpdateContext(context, resource);
 		modelLoader = new XMOFBasedModelLoader(updatedContext);
 		xmofBasedModel = modelLoader.loadXMOFBasedModel();
@@ -83,15 +54,29 @@ public class XMOFModelLoader extends DefaultModelLoader {
 		return resource;
 	}
 
+	@Override
+	public Resource loadModelForAnimation(IExecutionContext context) throws RuntimeException {
+		loadModel(context);
+
+		// if the orignally loaded input model was static we asume that the
+		// animator also references the static model and relink the references
+		// to the dynamic model
+		if (!modelLoader.inputIsConfigurationModel()) {
+			adaptAirdForDynamicModel(updatedContext);
+		}
+
+		// Continue with default loading operation after the transformation and
+		// necessary context updates
+		return super.loadModelForAnimation(updatedContext);
+	}
+
 	private void createAndUpdateContext(IExecutionContext context, Resource resourceModel) {
 		updatedContext = new MutableExectutionContext(context);
 		updatedContext.resourceModel = resourceModel;
 
 	}
 
-	
-
-	private void transformToDynamic(MutableExectutionContext executionContext) {
+	private void adaptAirdForDynamicModel(MutableExectutionContext executionContext) {
 		URI dynamicModelURI = xmofBasedModel.getModelResource().getURI();
 		ResourceSet resourceSet = executionContext.getResourceModel().getResourceSet();
 		ConfigurationObjectMap configurationMap = modelLoader.getConfigurationMap();
@@ -111,6 +96,7 @@ public class XMOFModelLoader extends DefaultModelLoader {
 		runConfiguration.executedModelURI = executedModelURI;
 		runConfiguration.animatorURI = animatorURI;
 		updatedContext.runConfiguration = runConfiguration;
+		updatedContext.resourceModel = null;
 
 	}
 
