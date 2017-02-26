@@ -30,7 +30,6 @@ import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValueDefinition;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
-import org.modelexecution.xmof.gemoc.engine.GenericXMOFAnimationServices;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
@@ -98,11 +97,6 @@ public class XMOFBasedModelLoader {
 		// configuration objects
 		// and persists the created resource into the execution-folder.
 		createConfigurationModelResource();
-
-		// Provides the map static->dynamic to the animation services, ie. to
-		// display execution data
-		// even in the sirius session of a static model.
-		GenericXMOFAnimationServices.setConfigurationObjectMap(configurationMap);
 
 		// Creates an returns the xmof model, with the configuration objects and
 		// the parameters.
@@ -381,11 +375,6 @@ public class XMOFBasedModelLoader {
 
 	public boolean inputIsConfigurationModel() {
 		return isConfModel;
-	}
-
-	public void setConfigurationMap(ConfigurationObjectMap configurationMap){
-		this.configurationMap=configurationMap;
-		GenericXMOFAnimationServices.setConfigurationObjectMap(configurationMap);
 	}
 
 }

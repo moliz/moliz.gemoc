@@ -22,7 +22,6 @@ import org.modelexecution.fumldebug.core.trace.tracemodel.ValueSnapshot;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation;
-import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocModelSynchronizer;
 import org.modelexecution.xmof.gemoc.engine.internal.GemocXMOFVirtualMachine;
 import org.modelexecution.xmof.gemoc.engine.internal.SequentialNodeSelectionStrategy;
@@ -96,10 +95,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 			// TODO: how to handle inputParameterValues?
 			XMOFBasedModel model = new XMOFBasedModel(resource.getContents(), editingDomain);
-			// TODO: disable hack which is used for proper animation
-			((XMOFModelLoader) executionContext.getExecutionPlatform().getModelLoader()).getXMOFBasedModeLoader()
-					.setConfigurationMap(
-							new ConfigurationObjectMap(model.getModelElements(), model.getMetamodelPackages(), true));
+		
 			return model;
 		}
 		// Fallback loading mechanism
