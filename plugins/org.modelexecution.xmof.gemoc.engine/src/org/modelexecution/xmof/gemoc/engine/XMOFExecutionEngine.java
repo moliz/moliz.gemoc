@@ -1,8 +1,5 @@
 package org.modelexecution.xmof.gemoc.engine;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -10,7 +7,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.uml2.common.util.CacheAdapter;
 import org.gemoc.executionframework.engine.core.AbstractSequentialExecutionEngine;
-import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
 import org.modelexecution.fumldebug.core.ExecutionEventListener;
 import org.modelexecution.fumldebug.core.NodeSelectionStrategy;
@@ -48,7 +44,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private static String STEP_ANNOTATION_SOURCE = "http://www.modelexecution.org/xmof";
 	private static String STEP_ANNOTATION_KEY = "Step";
 
-	private ConfigurationObjectMap configurationMap;
+
 	private XMOFVirtualMachine vm;
 	private XMOFBasedModelLoader loader;
 
@@ -92,7 +88,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		// editingDomain.getCommandStack().execute(cmd);
 		// }
 
-		configurationMap = loader.getConfigurationMap();
 
 		vm = setupVirtualMachine(model);
 	}
@@ -238,10 +233,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		// there is nothing to do for xMOF
 	}
 
-	public ConfigurationObjectMap getConfigurationMap() {
-		return configurationMap;
-	}
-
+	
 	public XMOFBasedModel getXMOFBasedModel() {
 		return vm.getModel();
 	}
@@ -251,12 +243,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	}
 
 	public void cleanUp() {
-		for (EObject o : this.configurationMap.getConfigurationObjects()) {
-			o.eAdapters().clear();
-		}
-		for (EObject o : this.configurationMap.getOriginalObjects()) {
-			o.eAdapters().clear();
-		}
 		if (CacheAdapter.getInstance() != null) {
 			if (CacheAdapter.getInstance().getTarget() != null) {
 				CacheAdapter.getInstance().getTarget().eAdapters().clear();
@@ -264,12 +250,11 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			}
 			CacheAdapter.getInstance().clear();
 		}
-		configurationMap = null;
+	
 	}
 
 	@Override
 	public void finishDispose() {
-		this.configurationMap = null;
 		this.vm = null;
 	}
 

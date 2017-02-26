@@ -19,7 +19,6 @@ import org.gemoc.executionframework.engine.ui.launcher.AbstractSequentialGemocLa
 import org.gemoc.executionframework.ui.views.engine.EnginesStatusView;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionEngine;
-import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
@@ -62,7 +61,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 			// traceAddons.iterator().next());
 		}
 
-		ConfigurationObjectMap configurationMap = ((XMOFExecutionEngine)_executionEngine).getConfigurationMap();
+		
 		debugger.setMutableFieldExtractors(Arrays.asList(new XMOFMutableFieldExtractor()));
 		
 		// If in the launch configuration it is asked to pause at the start,
