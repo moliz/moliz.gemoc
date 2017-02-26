@@ -43,7 +43,6 @@
         </customization>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.gemoc.engine.GenericXMOFAnimationServices"/>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.examples.petrinet.design.services.PetrinetXMOFAnimatorServices"/>
   </ownedViewpoints>
 </description:Group>
