@@ -65,7 +65,6 @@ public class XMOFModelLoader extends DefaultModelLoader {
 	@Override
 	public Resource loadModelForAnimation(IExecutionContext context) throws RuntimeException {
 		Resource oldResource = loadModel(context);
-
 		// if the originally loaded input model was static we relink the aird
 		// file used for animation to the dynamic model resource
 		if (!modelLoader.inputIsConfigurationModel()) {
@@ -277,6 +276,7 @@ public class XMOFModelLoader extends DefaultModelLoader {
 		String debugModelID;
 		boolean breakStart;
 		IRunConfiguration delegate;
+		String executionEntryPoint;
 
 		public MutableRunConfiguration(IRunConfiguration delegate) {
 			this.delegate = delegate;
@@ -293,6 +293,7 @@ public class XMOFModelLoader extends DefaultModelLoader {
 			modelInitializationsMethod = delegate.getModelInitializationMethod();
 			debugModelID = delegate.getDebugModelID();
 			breakStart = delegate.getBreakStart();
+			executionEntryPoint= delegate.getExecutionEntryPoint();
 		}
 
 		@Override
@@ -337,8 +338,8 @@ public class XMOFModelLoader extends DefaultModelLoader {
 
 		@Override
 		public String getExecutionEntryPoint() {
-			// TODO Auto-generated method stub
-			return null;
+			return executionEntryPoint;
+			
 		}
 
 		@Override
