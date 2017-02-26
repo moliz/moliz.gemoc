@@ -65,31 +65,14 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 
 		XMOFBasedModel model = retrieveXMOFBasedModel(executionContext);
 
-		// If we are in basic run mode, we replace the static objects of the
-		// context model by dynamic configuration objects.
-		// This works because we don't need an aird in this case.
-		// Thereby, execution addons (e.g. trace addon) are correctly notified.
-		// if (executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
-		// TransactionalEditingDomain editingDomain = TransactionUtil
-		// .getEditingDomain(executionContext.getResourceModel());
-		// Command cmd = new RecordingCommand(editingDomain) {
-		// @Override
-		// protected void doExecute() {
-		// executionContext.getResourceModel().getContents().clear();
-		// executionContext.getResourceModel().getContents().addAll(model.getModelResource().getContents());
-		// }
-		// };
-		// editingDomain.getCommandStack().execute(cmd);
-		// }
-
 		vm = setupVirtualMachine(model);
 	}
 
 	private XMOFBasedModel retrieveXMOFBasedModel(IExecutionContext executionContext) {
 
 		if (executionContext.getExecutionPlatform().getModelLoader() instanceof XMOFModelLoader) {
-			// We build the XMOFBasedModel from the dynamic resource to avoid
-			// doing the expensive loading process another time
+			// We build the XMOFBasedModel using the resource model (which contains a dynamic model at this point)
+			// -> we avoid loading the xMOFBasedModel another time
 			Resource resource = executionContext.getResourceModel();
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(resource);
 
@@ -98,7 +81,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		
 			return model;
 		}
-		// Fallback loading mechanism
+		// Fallback to default loading mechanism
 		else {
 			XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
 			return loader.loadXMOFBasedModel();
