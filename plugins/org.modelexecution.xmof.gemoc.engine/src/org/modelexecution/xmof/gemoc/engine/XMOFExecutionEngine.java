@@ -44,9 +44,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 	private static String STEP_ANNOTATION_SOURCE = "http://www.modelexecution.org/xmof";
 	private static String STEP_ANNOTATION_KEY = "Step";
 
-
 	private XMOFVirtualMachine vm;
-	private XMOFBasedModelLoader loader;
 
 	private boolean suspendForNodes = false;
 	private boolean ignoreSteps = false;
@@ -67,9 +65,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 				|| suspendForNodes;
 
 		XMOFBasedModel model = retrieveXMOFBasedModel(executionContext);
-		//TODO: Fix animation for dynamic instances to avoid the use of the dummy configuration map
-		loader.setConfigurationMap(
-				new ConfigurationObjectMap(model.getModelElements(), model.getMetamodelPackages(), true));
 
 		// If we are in basic run mode, we replace the static objects of the
 		// context model by dynamic configuration objects.
@@ -88,23 +83,28 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		// editingDomain.getCommandStack().execute(cmd);
 		// }
 
-
 		vm = setupVirtualMachine(model);
 	}
 
 	private XMOFBasedModel retrieveXMOFBasedModel(IExecutionContext executionContext) {
 
 		if (executionContext.getExecutionPlatform().getModelLoader() instanceof XMOFModelLoader) {
-			XMOFModelLoader modelLoader = (XMOFModelLoader) executionContext.getExecutionPlatform().getModelLoader();
-			loader = modelLoader.getXMOFBasedModeLoader();
 			// We build the XMOFBasedModel from the dynamic resource to avoid
 			// doing the expensive loading process another time
 			Resource resource = executionContext.getResourceModel();
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(resource);
+
 			// TODO: how to handle inputParameterValues?
-			return new XMOFBasedModel(resource.getContents(), editingDomain);
-		} else {
-			loader = new XMOFBasedModelLoader(executionContext);
+			XMOFBasedModel model = new XMOFBasedModel(resource.getContents(), editingDomain);
+			// TODO: disable hack which is used for proper animation
+			((XMOFModelLoader) executionContext.getExecutionPlatform().getModelLoader()).getXMOFBasedModeLoader()
+					.setConfigurationMap(
+							new ConfigurationObjectMap(model.getModelElements(), model.getMetamodelPackages(), true));
+			return model;
+		}
+		// Fallback loading mechanism
+		else {
+			XMOFBasedModelLoader loader = new XMOFBasedModelLoader(executionContext);
 			return loader.loadXMOFBasedModel();
 		}
 	}
@@ -233,7 +233,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		// there is nothing to do for xMOF
 	}
 
-	
 	public XMOFBasedModel getXMOFBasedModel() {
 		return vm.getModel();
 	}
@@ -250,7 +249,7 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 			}
 			CacheAdapter.getInstance().clear();
 		}
-	
+
 	}
 
 	@Override
@@ -258,7 +257,4 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		this.vm = null;
 	}
 
-	public XMOFBasedModelLoader getModelLoader() {
-		return loader;
-	}
 }
