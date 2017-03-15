@@ -49,8 +49,9 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Two missions: - Creates and returns the xmof configuration model (ie configuration objects + parameter values) -
-	 * Also prepares the configuration map (later accessed using "getConfigurationMap")
+	 * Two missions: 
+	 * 1) Creates and returns the xmof configuration model (ie configuration objects + parameter values)
+	 * 2 Also prepares the configuration map (later accessed using "getConfigurationMap")
 	 * 
 	 * @return The created xmof configuration model.
 	 */
