@@ -49,8 +49,9 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Two missions: - Creates and returns the xmof configuration model (ie configuration objects + parameter values) -
-	 * Also prepares the configuration map (later accessed using "getConfigurationMap")
+	 * Two missions: 
+	 * 1) Creates and returns the xmof configuration model (ie configuration objects + parameter values)
+	 * 2 Also prepares the configuration map (later accessed using "getConfigurationMap")
 	 * 
 	 * @return The created xmof configuration model.
 	 */
@@ -74,7 +75,7 @@ public class XMOFBasedModelLoader {
 		Collection<EPackage> configurationPackages = loadConfigurationMetamodel();
 
 		// We try to find out whether the provided model is already a configuration model, or not
-		boolean isConfModel = isConfigurationModel(inputElements, configurationPackages);
+		boolean isConfModel = isConfigurationModel(inputModelElements, configurationPackages);
 
 		// Initializes the configuration (ie. dynamic) model using the static model.
 		// ie. for each static object, creates a configuration object using a configuration class.

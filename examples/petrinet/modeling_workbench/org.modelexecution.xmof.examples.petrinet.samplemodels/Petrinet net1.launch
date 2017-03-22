@@ -5,6 +5,7 @@
 <booleanAttribute key="GEMOC_LAUNCH_IGNORE_STEPS" value="false"/>
 <stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_MODEL" value=""/>
 <booleanAttribute key="GEMOC_LAUNCH_NODEWISE_STEP" value="true"/>
+<stringAttribute key="GEMOC_LAUNCH_MELANGE_QUERY" value="?lang=org.modelexecution.examples.petrinet.Petrinet"/>
 <stringAttribute key="GEMOC_LAUNCH_SELECTED_LANGUAGE" value="org.modelexecution.examples.petrinet.Petrinet"/>
 <stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value=""/>
 <stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value=""/>

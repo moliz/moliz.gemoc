@@ -4,9 +4,6 @@
   <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="net2.aird#_rsEfQA-TEeaDj5Y6akkjHg"/>
   <models xmi:type="petrinet:Net" href="net1.petrinet#/"/>
   <models xmi:type="petrinet:Net" href="net2.petrinet#/"/>
-  <models xmi:type="petrinet:Net" href="gemoc-gen/execution/execution-20160501_142810/net1.petrinet#/"/>
-  <models xmi:type="petrinet:Net" href="gemoc-gen/execution/execution-20160501_142837/net2.petrinet#/"/>
-  <models xmi:type="petrinet:Net" href="gemoc-gen/execution/execution-20160501_142907/net2.petrinet#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WMngEO9SEeWQio0NoAerxQ" initialized="true">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.modelexecution.xmof.examples.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']"/>
   </ownedViews>
