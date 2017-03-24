@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:gemoc_execution_trace="http://www.inira.fr/gemoc_execution_trace" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:petrinet="http://petrinet/1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_rsEfQA-TEeaDj5Y6akkjHg" selectedViews="_rsYBQA-TEeaDj5Y6akkjHg" version="8.1.1">
-  <models xmi:type="petrinet:Net" href="net1.petrinet#/"/>
   <models xmi:type="petrinet:Net" href="net2.petrinet#/"/>
-  <models xmi:type="petrinet:Net" href="gemoc-gen/execution/execution-20160501_135756/net2.petrinet#/"/>
-  <models xmi:type="gemoc_execution_trace:ExecutionTraceModel" href="gemoc-gen/execution/execution-20160501_135756/execution.trace#/0"/>
-  <models xmi:type="petrinet:Net" href="gemoc-gen/execution/execution-20160501_140046/net2.petrinet#/"/>
-  <models xmi:type="petrinet:Net" href="gemoc-gen/execution/execution-20160501_142810/net1.petrinet#/"/>
-  <models xmi:type="petrinet:Net" href="gemoc-gen/execution/execution-20160501_142837/net2.petrinet#/"/>
-  <models xmi:type="petrinet:Net" href="gemoc-gen/execution/execution-20160501_142907/net2.petrinet#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_rsYBQA-TEeaDj5Y6akkjHg" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_rhsGIA-REeaPh5U3mt9mRQ" name="petrinet net2">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_rh13IA-REeaPh5U3mt9mRQ" source="GMF_DIAGRAMS">
