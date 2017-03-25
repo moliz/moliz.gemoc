@@ -69,7 +69,7 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
   @Override
   public void addPages() {
     newProjectCreationPage = new NewXMOFProjectCreationPage("New xMOF GEMOC Language Project",
-        pluginData, (IStructuredSelection)selection);
+        pluginData, (IStructuredSelection) selection);
     newProjectCreationPage.setInitialProjectName(XMOFProjectConstants.DEFAULT_PROJECT_NAME);
 
     projectProvider = new IProjectProvider() {

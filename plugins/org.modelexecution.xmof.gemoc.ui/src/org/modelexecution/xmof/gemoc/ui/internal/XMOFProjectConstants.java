@@ -23,7 +23,6 @@ public class XMOFProjectConstants {
   public static final String PLUGIN_VENDOR = "%providerName";
   public static final String XMOF_FILE_FOLDER = "xmof";
   public static final String XMOF_FILE_EXTENSION = ".xmof";
-  public static final String PREFRENCES_FILE_NAME = "pref.properties";
   public static final String DEFAULT_XMOF_PROJECT_SUFFIX = ".xmof.dynamic";
   public static final String DEFAULT_XDSML_SUFFIX = ".xdsml";
   public static final String DEFAULT_PROJECT_NAME = "org.company.example"
@@ -39,6 +38,7 @@ public class XMOFProjectConstants {
   private XMOFProjectConstants() {
   }
 
+  //Strings which are keywords of the melange xtext grammar and therefore can cause errors when used in literals (e.g. package name)
   public static final Set<String> RESERVED_MELANGE_KEYWORDS = new HashSet<String>(
       Arrays.asList("package", "language", "inherits", "implements", "requires", "resource",
           "xtext", "sirius", "ecl", "xmof", "fileExtension", "uri", "exactType", "setup", "Melange",

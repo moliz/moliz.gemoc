@@ -66,14 +66,14 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
   public Object execute(ExecutionEvent event) throws ExecutionException {
     init(event);
 
-    final Job job = new Job("Generating xDSML project code for : " + languageName) {
+    final Job job = new Job("Generating xDSML project  for : " + languageName) {
 
       @Override
       protected IStatus run(IProgressMonitor monitor) {
         boolean success = createXDSMLProject(monitor);
         return new Status(success ? Status.OK : Status.ERROR, Activator.PLUGIN_ID,
             (success ? "xDSML project code generated for "
-                : "Error during xDSML project code generation for ") + languageName);
+                : "Error during xDSML project  generation for ") + languageName);
       }
     };
     job.schedule();
@@ -107,15 +107,11 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
       delegate.configureProject(project, monitor);
 
       // launch the template
-      try {
+   
         new ProjectTemplateApplicationOperation(context, project, templateWizard).run(monitor);
-      } catch (InvocationTargetException e) {
-        MelangeUiModule.logErrorMessage(e.getMessage(), e);
-      } catch (InterruptedException e) {
-        MelangeUiModule.logErrorMessage(e.getMessage(), e);
-      }
-      // setClassPath(project, monitor);
-
+    
+      //Easy workaround to ensure correct generation of all necessary extensions:
+      //Open and save the newly generated .melange file
       PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 
         @Override
@@ -126,15 +122,14 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
       });
 
       project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
-    } catch (Exception exception) {
-      MelangeUiModule.logErrorMessage(exception.getMessage(), exception);
+    } catch (InterruptedException | CoreException | InvocationTargetException | IOException ex) {
+      MelangeUiModule.logErrorMessage(ex.getMessage(), ex);
       return false;
     }
     return true;
 
   }
 
-  // Workaround to invoke plugin.xml generation: open melange file and save it again.
   private void generatePluginXML(IProject project, IProgressMonitor monitor) {
     IEditorPart part;
     try {

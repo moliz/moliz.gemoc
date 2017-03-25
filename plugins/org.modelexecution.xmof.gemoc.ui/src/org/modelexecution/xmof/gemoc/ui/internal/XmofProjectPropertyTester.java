@@ -16,6 +16,19 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 
+/**
+ * Custom Project to test if the current selection is within an xMOF project. At the moment there is
+ * no custom project nature for xMOF projects therefore other identifiers have to be used. A project
+ * is considered as an xMOF project if
+ * <ul>
+ * <li>An folder named "xmof" exists in the project root</li>
+ * <li>This folder contains at least one file with the ".xmof" file extension</li>
+ * <li>A properties file  named "xmof.properties" exists in the project root</li>
+ * </ul>
+ * 
+ * @author tortm
+ *
+ */
 public class XmofProjectPropertyTester extends PropertyTester {
   private static final String PROPERTY_IS_XMOF_PROJECT = "isXmofProject";
 
