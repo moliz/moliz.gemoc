@@ -32,6 +32,7 @@ import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.pde.internal.core.ICoreConstants;
 import org.eclipse.pde.internal.core.PDECore;
 import org.eclipse.pde.internal.core.util.VMUtil;
@@ -68,7 +69,7 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
   @Override
   public void addPages() {
     newProjectCreationPage = new NewXMOFProjectCreationPage("New xMOF GEMOC Language Project",
-        pluginData, selection);
+        pluginData, (IStructuredSelection)selection);
     newProjectCreationPage.setInitialProjectName(XMOFProjectConstants.DEFAULT_PROJECT_NAME);
 
     projectProvider = new IProjectProvider() {
