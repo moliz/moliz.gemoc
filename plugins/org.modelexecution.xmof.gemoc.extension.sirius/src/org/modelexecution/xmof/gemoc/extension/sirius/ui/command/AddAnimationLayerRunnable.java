@@ -56,8 +56,9 @@ import org.osgi.framework.BundleException;
 
 import fr.inria.diverse.commons.eclipse.pde.manifest.ManifestChanger;
 
-//TODO: Mostly redundant code which would be obsolete if the AddDebugLayerHandler class would be properly refactored;
 
+// TODO: Lots of code is duplicate or similar to the implementation of org.gemoc.xdsmlframework.extensions.sirius.command.AddDebugLayerHandler
+// -> refactoring
 public class AddAnimationLayerRunnable implements IRunnableWithProgress {
 
   private static final String PACKAGE_TAG = "PACKAGE";
@@ -65,10 +66,10 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
   private static final String LANGUAGE_NAME_TAG = "LANGUAGE_NAME";
   private static final String LAYER_NAME_TAG = "LAYER_NAME";
 
-  private static final String ANIMATION_SERVICE_TEMPLATE_PATH = "org/modelexecution/xmof/gemoc/extension/sirius/command/animation_services_template.txt";
-  private static final String XMOF_ANIMATION_SERVICES_QUALIFIED_NAME = "org.modelexecution.xmof.gemoc.engine.GenericXMOFAnimationServices";
+  private static final String ANIMATION_SERVICE_TEMPLATE_PATH = "org/modelexecution/xmof/gemoc/extension/sirius/ui/command/animation_services_template.txt";
+
   private static final String[] ADDITIONAL_PLUGIN_DEPENDENCIES = {
-      "org.gemoc.executionframework.extensions.sirius", "org.modelexecution.xmof.gemoc.engine",
+      "org.gemoc.executionframework.extensions.sirius",
       "org.gemoc.execution.sequential.javaengine.ui" };
 
   private static final String REGEX_ACTIVATOR_START_METHOD = "public\\s+void\\s+start\\s*\\"
@@ -216,16 +217,13 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
     return res;
   }
 
-  private static void emfModifications(IProgressMonitor monitor, String layerName,
+  private  void emfModifications(IProgressMonitor monitor, String layerName,
       DiagramDescription description, String languageName, String qualifiedServiceClassName) {
     AddDebugLayerHandler.getOrCreateImport(description, qualifiedServiceClassName, monitor);
-
-    AddDebugLayerHandler.getOrCreateImport(description, XMOF_ANIMATION_SERVICES_QUALIFIED_NAME,
-        monitor);
-    getOrCreateDebugLayer(description, layerName, monitor);
+    getOrCreateAnimationLayer(description, layerName, monitor);
   }
 
-  private static Layer getOrCreateDebugLayer(DiagramDescription description, String layerName,
+  private  Layer getOrCreateAnimationLayer(DiagramDescription description, String layerName,
       IProgressMonitor monitor) {
     final Layer res;
     Layer existingLayer = null;
