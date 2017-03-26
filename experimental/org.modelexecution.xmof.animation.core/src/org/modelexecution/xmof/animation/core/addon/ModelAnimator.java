@@ -159,7 +159,7 @@ public class ModelAnimator implements IEngineAddon {
 	@Override
 	public void aboutToExecuteStep(IExecutionEngine engine, Step stepToExecute) {
 		if (animationController != null) {
-			animationController.processMSE(stepToExecute.getMseoccurrence(), true);
+			animationController.processMSE(stepToExecute.getMseoccurrence(), false);
 		}
 
 	}

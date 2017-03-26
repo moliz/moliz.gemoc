@@ -15,10 +15,18 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditorWithFlyOutPalette;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DSemanticDiagramSpec;
+import org.eclipse.sirius.diagram.description.AdditionalLayer;
+import org.eclipse.sirius.diagram.ui.tools.api.editor.DDiagramEditor;
+import org.eclipse.sirius.diagram.ui.tools.api.graphical.edit.palette.ToolFilter;
 import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.session.IEditingSession;
@@ -27,6 +35,7 @@ import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DView;
+import org.eclipse.sirius.viewpoint.description.tool.AbstractToolDescription;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IWorkbenchPage;
@@ -34,12 +43,14 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.gemoc.executionframework.engine.core.CommandExecution;
 import org.gemoc.executionframework.extensions.sirius.modelloader.DebugPermissionProvider;
+import org.gemoc.executionframework.extensions.sirius.modelloader.PaletteUtils;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.core.handler.DiagramHandler;
 
 
 public class SiriusDiagramHandler extends DiagramHandler {
 
+	private static final String ANIMATION_LAYER_NAME = "Animation";
 	private Map<String, IEditorPart> diagramEditorMap = new HashMap<>();
 	private static String SIRIUS_SPECIFICATION_FILE = "representations.aird";
 	private URI airdURI;
@@ -133,7 +144,8 @@ public class SiriusDiagramHandler extends DiagramHandler {
 	private void openDiagramEditor(String key) {
 		Session siriusSession = SessionManager.INSTANCE.getExistingSession(airdURI);
 		if (siriusSession == null) {
-			siriusSession = SessionManager.INSTANCE.getSession(airdURI, new NullProgressMonitor());
+			siriusSession=SessionManager.INSTANCE.getSession(airdURI, new NullProgressMonitor());
+			
 		}
 		DAnalysis root = (DAnalysis) siriusSession.getSessionResource().getContents().get(0);
 		DView dView = root.getOwnedViews().get(0);
@@ -142,12 +154,32 @@ public class SiriusDiagramHandler extends DiagramHandler {
 			if (representation.getName().toUpperCase().contains(key)) {
 				IEditorPart editor = DialectUIManager.INSTANCE.openEditor(siriusSession, representation,
 						new NullProgressMonitor());
+				disableToolsAndPalette(editor);
 				diagramEditorMap.put(key, editor);
 				return;
 			}
 		}
 
 	}
+
+
+	private void disableToolsAndPalette(IEditorPart editorPart) {
+		if (editorPart instanceof DDiagramEditor) {
+			((DDiagramEditor) editorPart).getPaletteManager().addToolFilter(new ToolFilter() {
+				@Override
+				public boolean filter(DDiagram diagram, AbstractToolDescription tool) {
+					return true;
+				}
+			});
+		}
+		
+		if (editorPart instanceof DiagramEditorWithFlyOutPalette) {
+			PaletteUtils.colapsePalette((DiagramEditorWithFlyOutPalette) editorPart);
+		}
+		
+	}
+
+	
 
 	private void activateDiagramEditor(String key) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {

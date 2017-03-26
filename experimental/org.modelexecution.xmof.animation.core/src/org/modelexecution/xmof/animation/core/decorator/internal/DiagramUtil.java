@@ -71,4 +71,17 @@ public class DiagramUtil {
 
 		return null;
 	}
+	
+	public static String toEdgeID(ActivityEdge edge){
+		ActivityNode source = DiagramUtil.retreiveSourceNode(edge);
+		ActivityNode target = DiagramUtil.retreiveTargetNode(edge);
+		if (source != null && target!=null) {
+			return toEdgeID(source.getName(), target.getName());
+		}
+		return null;
+	}
+	
+	public static String toEdgeID(String sourceNodeName, String targetNodeName){
+		return String.format("[%s | %s]", sourceNodeName,targetNodeName);
+	}
 }

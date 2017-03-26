@@ -21,7 +21,7 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 public class SiriusAnimationController extends AnimationController {
 
 	public SiriusAnimationController(URI modelURI, XMOFBasedModel model) {
-		super(modelURI, model, new SiriusDiagramHandler(modelURI));
+		super(model, new SiriusDiagramHandler(modelURI));
 	}
 
 	@Override

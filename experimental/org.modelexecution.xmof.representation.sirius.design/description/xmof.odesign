@@ -766,9 +766,6 @@
             </tools>
           </ownedTools>
         </toolSections>
-      </defaultLayer>
-      <additionalLayers name="Animation" activeByDefault="true">
-        <decorationDescriptionsSet/>
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service: isActiveNode()">
             <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.5/@style //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.4/@style //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@style //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.1/@style //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@borderedNodeMappings[name='AD_ParameterNode']/@style //@ownedViewpoints[name='DesignViewPoint']/@ownedRepresentations[name='ActivityDiagramRepresentation']/@defaultLayer/@containerMappings[name='AD_Activity']/@subNodeMappings[name='AD_ControlNode']/@conditionnalStyles.2/@style" referenceName="color">
@@ -819,7 +816,7 @@
             </featureCustomizations>
           </vsmElementCustomizations>
         </customization>
-      </additionalLayers>
+      </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.animation.core.decorator.DecoratorService"/>
     <ownedJavaExtensions qualifiedClassName="org.modelexecution.xmof.representation.sirius.design.services.ActivityDiagramService"/>

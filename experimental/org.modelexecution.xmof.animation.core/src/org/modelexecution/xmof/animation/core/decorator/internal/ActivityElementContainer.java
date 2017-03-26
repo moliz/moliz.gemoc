@@ -17,9 +17,9 @@ import java.util.Set;
 public class ActivityElementContainer {
 
 	private Set<String> activeNodes = new HashSet<>();
-	private Set<EdgeID> activeEdges = new HashSet<>();
+	private Set<String> activeEdges = new HashSet<>();
 	private Set<String> traversedNodes = new HashSet<>();
-	private Set<EdgeID> traversedEdges = new HashSet<>();
+	private Set<String> traversedEdges = new HashSet<>();
 
 	public void addActiveNode(String nodeName) {
 		if (nodeName != null) {
@@ -29,7 +29,7 @@ public class ActivityElementContainer {
 
 	}
 
-	public void addActiveEdge(EdgeID edge) {
+	public void addActiveEdge(String edge) {
 		if (edge != null) {
 			activeEdges.add(edge);
 			traversedEdges.remove(edge);
@@ -37,7 +37,7 @@ public class ActivityElementContainer {
 
 	}
 
-	public void addTraversedEdge(EdgeID edge) {
+	public void addTraversedEdge(String edge) {
 		if (edge != null) {
 			traversedEdges.add(edge);
 		}
@@ -53,7 +53,7 @@ public class ActivityElementContainer {
 		return activeNodes;
 	}
 
-	public Set<EdgeID> getActiveEdges() {
+	public Set<String> getActiveEdges() {
 		return activeEdges;
 	}
 
@@ -62,7 +62,7 @@ public class ActivityElementContainer {
 
 	}
 
-	public Set<EdgeID> getTraversedEdges() {
+	public Set<String> getTraversedEdges() {
 		return Collections.unmodifiableSet(traversedEdges);
 	}
 

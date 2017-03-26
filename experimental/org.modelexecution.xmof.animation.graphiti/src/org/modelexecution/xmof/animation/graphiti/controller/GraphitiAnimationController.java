@@ -38,7 +38,7 @@ public class GraphitiAnimationController extends AnimationController {
 	private boolean editorOpend=true;
 
 	public GraphitiAnimationController(URI xmofModelURI, XMOFBasedModel model) {
-		super(xmofModelURI, model, new GraphitiDiagramHandler(xmofModelURI));
+		super(model, new GraphitiDiagramHandler(xmofModelURI));
 		this.xmofModelUri = xmofModelURI;
 		addPartListener();
 	}

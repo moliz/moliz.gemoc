@@ -27,12 +27,11 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode;
 import org.modelexecution.xmof.animation.core.decorator.internal.DiagramUtil;
-import org.modelexecution.xmof.animation.core.decorator.internal.EdgeID;
 
 public class DecoratorMap {
 
 	private Map<String, ActivityNode> activityNodeMap;
-	private Map<EdgeID, Set<ActivityEdge>> activityEdgeMap;
+	private Map<String, Set<ActivityEdge>> activityEdgeMap;
 	private Map<ActivityNode, Set<ActivityNode>> conncetedParameterNodeMap;
 	private Set<ActivityNode> entryPointNodes;
 
@@ -59,12 +58,12 @@ public class DecoratorMap {
 			edges.addAll(retrieveEdges(activeNode, conncetedParameterNodeMap.get(activeNode)));
 		}
 		if (previouslyActiveNode != null) {
-			EdgeID id = new EdgeID(previouslyActiveNode.getName(), activeNode.getName());
+			String id = DiagramUtil.toEdgeID(previouslyActiveNode.getName(), activeNode.getName());
 			if (activityEdgeMap.containsKey(id)) {
 				edges.addAll(activityEdgeMap.get(id));
 			}
 			for (ActivityNode entryPoint : entryPointNodes) {
-				id = new EdgeID(entryPoint.getName(), activeNode.getName());
+				id = DiagramUtil.toEdgeID(entryPoint.getName(), activeNode.getName());
 				if (activityEdgeMap.containsKey(id)) {
 					edges.addAll(activityEdgeMap.get(id));
 				}
@@ -100,7 +99,7 @@ public class DecoratorMap {
 	}
 
 	private void addToEdgeMap(ActivityEdge edge, ActivityNode source, ActivityNode target) {
-		EdgeID id = new EdgeID(source.getName(), target.getName());
+		String id = DiagramUtil.toEdgeID(source.getName(), target.getName());
 		Set<ActivityEdge> edges = activityEdgeMap.get(id);
 		if (edges == null) {
 			edges = new HashSet<>();
@@ -220,11 +219,11 @@ public class DecoratorMap {
 	}
 
 	private Set<ActivityEdge> extractEdge(ActivityNode activityNode, ActivityNode paramNode) {
-		EdgeID id = new EdgeID(activityNode.getName(), paramNode.getName());
+		String id = DiagramUtil.toEdgeID(activityNode.getName(), paramNode.getName());
 		if (activityEdgeMap.containsKey(id)) {
 			return activityEdgeMap.get(id);
 		} else {
-			id = new EdgeID(paramNode.getName(), activityNode.getName());
+			id = DiagramUtil.toEdgeID(paramNode.getName(), activityNode.getName());
 			if (activityEdgeMap.containsKey(id)) {
 				return activityEdgeMap.get(id);
 			}
@@ -248,7 +247,7 @@ public class DecoratorMap {
 		return Collections.unmodifiableMap(activityNodeMap);
 	}
 
-	public Map<EdgeID, Set<ActivityEdge>> getActivityEdgeMap() {
+	public Map<String, Set<ActivityEdge>> getActivityEdgeMap() {
 		return Collections.unmodifiableMap(activityEdgeMap);
 	}
 

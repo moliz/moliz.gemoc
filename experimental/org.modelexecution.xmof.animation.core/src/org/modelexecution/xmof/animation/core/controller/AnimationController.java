@@ -45,7 +45,7 @@ public abstract class AnimationController {
 	 * @param concreteHandler
 	 *            open or shows activity diagrams
 	 */
-	public AnimationController(URI modelURI, XMOFBasedModel model, DiagramHandler concreteHandler) {
+	public AnimationController( XMOFBasedModel model, DiagramHandler concreteHandler) {
 
 		controllerMap = new ControllerMap(model);
 		mappingService = new MappingService(controllerMap.getActivityNames());
