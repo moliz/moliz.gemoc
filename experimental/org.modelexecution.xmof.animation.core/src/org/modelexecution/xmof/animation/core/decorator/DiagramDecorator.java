@@ -1,10 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2016
+ * Copyright (c) 2016 Vienna University of Technology.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
+ * Contributors:
+ * Tobias Ortmayr - initial API and implementation
  *******************************************************************************/
 package org.modelexecution.xmof.animation.core.decorator;
 
@@ -20,15 +22,6 @@ import org.modelexecution.xmof.animation.core.decorator.internal.DiagramUtil;
 import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
 import org.modelexecution.xmof.animation.core.mapping.Match;
 
-/**
- * The DiagramDecorator is capable of manipulating the graphical representation
- * via decorating of diagram elements
- * 
- * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
- * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @version 1.0
- *
- */
 public abstract class DiagramDecorator {
 	private boolean activityFinished = false;
 	protected Activity activity;

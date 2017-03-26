@@ -1,10 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2016
+ * Copyright (c) 2016 Vienna University of Technology.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
+ * Contributors:
+ * Tobias Ortmayr - initial API and implementation
  *******************************************************************************/
 package org.modelexecution.xmof.animation.core.addon;
 
@@ -31,15 +33,7 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
 
-/**
- * ModelAnimator class which implements the AddonInterface for notifications of
- * debug events.
- * 
- * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
- * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @version 1.0
- *
- */
+
 public class ModelAnimator implements IEngineAddon {
 
 	private AnimationController animationController;
@@ -49,12 +43,6 @@ public class ModelAnimator implements IEngineAddon {
 
 	}
 
-	/**
-	 * After successfully starting the engine, the the animation plugin will be
-	 * initialized.s
-	 * 
-	 * @param executionEngine
-	 */
 	@Override
 	public void engineStarted(IExecutionEngine executionEngine) {
 		if (executionEngine instanceof XMOFExecutionEngine) {
@@ -68,7 +56,6 @@ public class ModelAnimator implements IEngineAddon {
 		PlatformUI.getWorkbench().getDisplay().syncExec((new Runnable() {
 			@Override
 			public void run() {
-
 				animationController = retrieveController(engine);
 			}
 		}));

@@ -37,14 +37,7 @@ import org.gemoc.executionframework.extensions.sirius.modelloader.DebugPermissio
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.core.handler.DiagramHandler;
 
-/**
- * Provider for Sirius animation service
- * 
- * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
- * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @version 1.0
- *
- */
+
 public class SiriusDiagramHandler extends DiagramHandler {
 
 	private Map<String, IEditorPart> diagramEditorMap = new HashMap<>();
