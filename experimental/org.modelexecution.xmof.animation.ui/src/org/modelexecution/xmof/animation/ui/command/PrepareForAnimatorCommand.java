@@ -8,7 +8,7 @@
  * Contributors:
  * Tobias Ortmayr - initial API and implementation
  *******************************************************************************/
-package org.modelexecution.xmof.animation.core.ui.command;
+package org.modelexecution.xmof.animation.ui.command;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -45,12 +45,11 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
-import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.DecisionNode;
-import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode;
-import org.modelexecution.xmof.animation.core.ui.Activator;
+import org.modelexecution.xmof.animation.ui.Activator;
+
 
 public class PrepareForAnimatorCommand extends AbstractHandler {
 

@@ -24,7 +24,7 @@ import org.gemoc.xdsmlframework.api.extensions.engine_addon_group.EngineAddonGro
 
 public class LaunchConfigurationBackendsTab extends LaunchConfigurationTab {
 
-	private Map<String, Button> extensionControls;
+	protected Map<String, Button> extensionControls;
 
 	@Override
 	public void createControl(Composite parent) {
@@ -34,7 +34,7 @@ public class LaunchConfigurationBackendsTab extends LaunchConfigurationTab {
 				mainControl);
 	}
 
-	private Composite createMainControl(Composite parent) {
+	protected Composite createMainControl(Composite parent) {
 		Composite content = new Composite(parent, SWT.NULL);
 		GridLayout gl = new GridLayout(1, false);
 		gl.marginHeight = 0;
@@ -44,7 +44,7 @@ public class LaunchConfigurationBackendsTab extends LaunchConfigurationTab {
 		return content;
 	}
 
-	private Map<String, Group> createExtensionGroups(Composite parent) {
+	protected Map<String, Group> createExtensionGroups(Composite parent) {
 		Collection<EngineAddonGroupSpecificationExtension> groupExtensionSpecifications = getGroupExtensionSpecifications();
 		Map<String, Group> extensionGroups = new HashMap<String, Group>();
 		for (EngineAddonGroupSpecificationExtension extension : groupExtensionSpecifications) {
@@ -54,7 +54,7 @@ public class LaunchConfigurationBackendsTab extends LaunchConfigurationTab {
 		return extensionGroups;
 	}
 
-	private Map<String, Button> createExtensionControls(
+	protected Map<String, Button> createExtensionControls(
 			Map<String, Group> extensionGroups, Composite parent) {
 		Group toplevelGroup = createGroup(parent, "");
 

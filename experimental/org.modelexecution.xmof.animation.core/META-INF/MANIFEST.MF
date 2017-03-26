@@ -12,11 +12,7 @@ Require-Bundle: org.modelexecution.xmof.vm;bundle-version="1.0.0",
  fr.inria.diverse.trace.commons.model,
  org.gemoc.xdsmlframework.api,
  org.modelexecution.xmof.gemoc.engine,
- org.gemoc.executionframework.engine;bundle-version="0.1.0",
- org.eclipse.jface,
- org.eclipse.ui.workbench,
- org.eclipse.graphiti.mm,
- org.eclipse.emf.transaction
+ org.gemoc.executionframework.engine;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.modelexecution.xmof.animation.core.controller;
   uses:="org.modelexecution.xmof.animation.handler,
@@ -36,4 +32,3 @@ Export-Package: org.modelexecution.xmof.animation.core.controller;
  org.modelexecution.xmof.animation.core.mapping;uses:="org.eclipse.emf.ecore,fr.inria.diverse.trace.commons.model.trace",
  org.modelexecution.xmof.animation.core.provider;uses:="org.eclipse.emf.ecore.resource"
 Bundle-ActivationPolicy: lazy
-Import-Package: org.eclipse.core.resources

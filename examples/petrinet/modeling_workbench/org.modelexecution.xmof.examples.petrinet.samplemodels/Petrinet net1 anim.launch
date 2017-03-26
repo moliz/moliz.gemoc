@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.modelexecution.xmof.animation.ui.launcher">
+<intAttribute key="GEMOC_ANIMATE_DELAY" value="0"/>
+<booleanAttribute key="GEMOC_LAUNCH_BREAK_START" value="true"/>
+<booleanAttribute key="GEMOC_LAUNCH_IGNORE_STEPS" value="false"/>
+<stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_MODEL" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_MELANGE_QUERY" value="?lang=org.modelexecution.examples.petrinet.Petrinet"/>
+<booleanAttribute key="GEMOC_LAUNCH_NODEWISE_STEP" value="true"/>
+<stringAttribute key="GEMOC_LAUNCH_SELECTED_LANGUAGE" value="org.modelexecution.examples.petrinet.Petrinet"/>
+<booleanAttribute key="Generic MultiDimensional Trace" value="false"/>
+<stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value=""/>
+<stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value=""/>
+<booleanAttribute key="MultiBranch Reflective Trace" value="false"/>
+<stringAttribute key="Resource" value="/org.modelexecution.xmof.examples.petrinet.samplemodels/net1.petrinet"/>
+<booleanAttribute key="VCD visualization" value="false"/>
+<stringAttribute key="airdResource" value="/org.modelexecution.xmof.examples.petrinet.samplemodels/net1.aird"/>
+<booleanAttribute key="org.modelexecution.xmof.animation.addon.AnimationAddon" value="true"/>
+</launchConfiguration>
