@@ -50,11 +50,11 @@ public class ActivityElementContainer {
 	}
 
 	public Set<String> getActiveNodes() {
-		return activeNodes;
+		return Collections.unmodifiableSet(activeNodes);
 	}
 
 	public Set<String> getActiveEdges() {
-		return activeEdges;
+		return Collections.unmodifiableSet(activeEdges);
 	}
 
 	public Set<String> getTraversedNodes() {

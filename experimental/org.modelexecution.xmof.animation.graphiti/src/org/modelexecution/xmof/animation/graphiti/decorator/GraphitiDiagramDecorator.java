@@ -28,15 +28,7 @@ import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
 
-/**
- * Specific DiagramDecorator for Graphiti
- * 
- * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
- * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @see org.modelexecution.xmof.animation.decorator.decorator.DiagramDecorator
- * @version 1.0
- *
- */
+
 public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	private KernelEditor kernelEditor;
@@ -64,7 +56,6 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	@Override
 	protected void decorateElement(EObject element, ElementState state) {
-
 		super.decorateElement(element, state);
 		refreshDecoration(element);
 

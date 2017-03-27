@@ -23,16 +23,7 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 
-/**
- * Animation controller for Graphiti implementation. It extends the Animation
- * Controller.
- * 
- * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
- * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @see org.modelexecution.xmof.animation.core.controller.AnimationController
- * @version 1.0
- *
- */
+
 public class GraphitiAnimationController extends AnimationController {
 	private URI xmofModelUri;
 	private boolean editorOpend=true;
@@ -58,6 +49,8 @@ public class GraphitiAnimationController extends AnimationController {
 		
 	}
 
+	// By adding a PartListener we can identify if an editor has been closed (e.g. on accident) during
+	// the debugging process and can reopen it again.
 	private void addPartListener() {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 

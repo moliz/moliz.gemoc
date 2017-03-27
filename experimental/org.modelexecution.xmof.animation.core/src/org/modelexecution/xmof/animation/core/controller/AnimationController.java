@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.core.controller;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.ui.PlatformUI;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.core.decorator.DecoratorService;
@@ -35,16 +34,6 @@ public abstract class AnimationController {
 	protected DiagramDecorator activeDecorator;
 	protected DiagramHandler diagramHandler;
 
-	/**
-	 * Constructor resets DecoratorService
-	 * 
-	 * @param model
-	 *            xMOF model that should be animated
-	 * @param modelURI
-	 *            that contains the configuration model
-	 * @param concreteHandler
-	 *            open or shows activity diagrams
-	 */
 	public AnimationController( XMOFBasedModel model, DiagramHandler concreteHandler) {
 
 		controllerMap = new ControllerMap(model);

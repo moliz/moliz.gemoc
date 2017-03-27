@@ -15,16 +15,12 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditorWithFlyOutPalette;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.DDiagram;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DSemanticDiagramSpec;
-import org.eclipse.sirius.diagram.description.AdditionalLayer;
 import org.eclipse.sirius.diagram.ui.tools.api.editor.DDiagramEditor;
 import org.eclipse.sirius.diagram.ui.tools.api.graphical.edit.palette.ToolFilter;
 import org.eclipse.sirius.ui.business.api.dialect.DialectEditor;
@@ -50,7 +46,6 @@ import org.modelexecution.xmof.animation.core.handler.DiagramHandler;
 
 public class SiriusDiagramHandler extends DiagramHandler {
 
-	private static final String ANIMATION_LAYER_NAME = "Animation";
 	private Map<String, IEditorPart> diagramEditorMap = new HashMap<>();
 	private static String SIRIUS_SPECIFICATION_FILE = "representations.aird";
 	private URI airdURI;

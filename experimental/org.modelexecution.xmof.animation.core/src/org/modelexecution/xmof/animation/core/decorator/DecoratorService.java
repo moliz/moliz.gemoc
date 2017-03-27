@@ -153,52 +153,34 @@ public class DecoratorService {
 		}
 	}
 
-	/**
-	 * Extracts name of node from the diagram
-	 * 
-	 * @param node
-	 *            Node of activity diagram
-	 * @return String name of node
-	 */
 	private static String getActivityName(ActivityNode node) {
-		if (node.getActivity() != null) {
-			return node.getActivity().getName();
-		} else if (node.getInStructuredNode() != null) {
-			if (node.getInStructuredNode().getActivity() != null) {
-				return node.getInStructuredNode().getActivity().getName();
-			}
+		ActivityNode parentNode = node;
+		while (parentNode.getInStructuredNode() != null) {
+			parentNode = parentNode.getInStructuredNode();
 		}
+		if (parentNode.getActivity() != null) {
+			return parentNode.getActivity().getName();
+		}
+
 		return "";
 	}
 
-	/**
-	 * Extracts name of edge from the diagram
-	 * 
-	 * @param edge
-	 *            Edge of activity diagram
-	 * @return String name of edge
-	 */
 	private static String getActivityName(ActivityEdge edge) {
 		if (edge.getActivity() != null) {
 			return edge.getActivity().getName();
-		} else if (edge.getInStructuredNode() != null) {
-			if (edge.getInStructuredNode().getActivity() != null) {
-				return edge.getInStructuredNode().getActivity().getName();
-			}
 		}
+		ActivityNode parentNode = edge.getInStructuredNode();
+		while (parentNode.getInStructuredNode() != null) {
+			parentNode = parentNode.getInStructuredNode();
+		}
+		if (parentNode.getActivity() != null) {
+			return parentNode.getActivity().getName();
+		}
+
 		return "";
 	}
 
-	/**
-	 * Sets the status of a node in a diagram to traversed or active
-	 * 
-	 * @param activity
-	 *            Activity diagram
-	 * @param node
-	 *            Node of activity diagram
-	 * @param state
-	 *            State of node
-	 */
+	
 	private static void setNode(Activity activity, ActivityNode node, ElementState state) {
 		if (state == ElementState.ACTIVE) {
 			setActiveNode(activity, node);
@@ -208,16 +190,6 @@ public class DecoratorService {
 
 	}
 
-	/**
-	 * Sets the status of a edge in a diagram to traversed or active
-	 * 
-	 * @param activity
-	 *            Activity diagram
-	 * @param edge
-	 *            Edge of activity diagram
-	 * @param state
-	 *            State of edge
-	 */
 	private static void setEdge(Activity activity, ActivityEdge edge, ElementState state) {
 		if (state == ElementState.ACTIVE) {
 			setActiveEdge(activity, edge);

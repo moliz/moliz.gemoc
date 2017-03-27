@@ -13,12 +13,8 @@ package org.modelexecution.xmof.animation.core.mapping;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * Container class for events with names and xMOF-types
+ * Container class used by the mappingservice to store the result of the mapping process 
  * 
- * @author Matthias Hoellthaler (e1025709@student.tuwien.ac.at)
- * @author Tobias Ortmayr (e1026279@student.tuwien.ac.at)
- * @version 1.0
- *
  */
 public class Match {
 
