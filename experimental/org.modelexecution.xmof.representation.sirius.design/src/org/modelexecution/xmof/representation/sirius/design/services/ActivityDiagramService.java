@@ -28,7 +28,6 @@ public class ActivityDiagramService {
 
 	}
 
-
 	public String generateLabel(ActivityNode node) {
 		if (node instanceof Pin) {
 			return LabelServices.INSTANCE.computeLabel((Pin) node);

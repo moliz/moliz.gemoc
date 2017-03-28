@@ -23,10 +23,9 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 
-
 public class GraphitiAnimationController extends AnimationController {
 	private URI xmofModelUri;
-	private boolean editorOpend=true;
+	private boolean editorOpend = true;
 
 	public GraphitiAnimationController(URI xmofModelURI, XMOFBasedModel model) {
 		super(model, new GraphitiDiagramHandler(xmofModelURI));
@@ -35,21 +34,23 @@ public class GraphitiAnimationController extends AnimationController {
 	}
 
 	@Override
-	public void processMSE(MSEOccurrence mseOccurrence, boolean verbose){
-		if (!editorOpend){
+	public void processMSE(MSEOccurrence mseOccurrence, boolean verbose) {
+		if (!editorOpend) {
 			reopenEditor();
 		}
 		super.processMSE(mseOccurrence, verbose);
 	}
+
 	private void reopenEditor() {
-		diagramHandler=new GraphitiDiagramHandler(xmofModelUri);
-		Activity activity= activeDecorator.getActivity();
+		diagramHandler = new GraphitiDiagramHandler(xmofModelUri);
+		Activity activity = activeDecorator.getActivity();
 		openOrShowDiagram(activity);
-		editorOpend=true;
-		
+		editorOpend = true;
+
 	}
 
-	// By adding a PartListener we can identify if an editor has been closed (e.g. on accident) during
+	// By adding a PartListener we can identify if an editor has been closed
+	// (e.g. on accident) during
 	// the debugging process and can reopen it again.
 	private void addPartListener() {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
@@ -73,7 +74,7 @@ public class GraphitiAnimationController extends AnimationController {
 					@Override
 					public void partClosed(IWorkbenchPart part) {
 						if (part instanceof KernelEditor) {
-							editorOpend=false;
+							editorOpend = false;
 						}
 
 					}
@@ -96,7 +97,6 @@ public class GraphitiAnimationController extends AnimationController {
 		});
 
 	}
-
 
 	@Override
 	protected void initializeDecorators() {

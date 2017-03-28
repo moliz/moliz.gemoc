@@ -15,16 +15,10 @@ public class LauncherTabGroup extends AbstractLaunchConfigurationTabGroup {
 
 	@Override
 	public void createTabs(ILaunchConfigurationDialog dialog, String mode) {
-		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] {
-				new LaunchConfigurationMainTab(),
-				new LaunchConfigurationAnimationTab(),
-				new LaunchConfigurationBackendsTab(), new CommonTab() };
+		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] { new LaunchConfigurationMainTab(),
+				new LaunchConfigurationAnimationTab(), new LaunchConfigurationBackendsTab(), new CommonTab() };
 		setTabs(tabs);
 
 	}
-	
 
 }
-
-
-	

@@ -120,7 +120,9 @@ public abstract class DiagramDecorator {
 			}
 		}
 	}
-	// TODO: Implement more sophisticated approach to get rid of this hacky solution
+
+	// TODO: Implement more sophisticated approach to get rid of this hacky
+	// solution
 	private void decorateLastEdgeOfExpansionRegion() {
 		if (previouslyActiveNode == null || previouslyActiveNode.getOutgoing().isEmpty())
 			return;

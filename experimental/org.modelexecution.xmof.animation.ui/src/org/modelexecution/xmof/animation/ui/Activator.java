@@ -19,6 +19,7 @@ public class Activator extends AbstractUIPlugin {
 	private static Activator plugin;
 
 	private MessagingSystem messaggingSystem;
+
 	/**
 	 * The constructor
 	 */
@@ -27,7 +28,9 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
+	 * 
+	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.
+	 * BundleContext)
 	 */
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
@@ -36,7 +39,9 @@ public class Activator extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
+	 * 
+	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.
+	 * BundleContext)
 	 */
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
@@ -53,19 +58,16 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	public static void error(String msg, Throwable e) {
-		Activator.getDefault().getLog()
-				.log(new Status(Status.ERROR, PLUGIN_ID, Status.OK, msg, e));
+		Activator.getDefault().getLog().log(new Status(Status.ERROR, PLUGIN_ID, Status.OK, msg, e));
 
 	}
 
 	public MessagingSystem getMessaggingSystem() {
 		if (messaggingSystem == null) {
 			MessagingSystemManager msm = new MessagingSystemManager();
-			messaggingSystem = msm.createBestPlatformMessagingSystem(PLUGIN_ID,
-					"Modeling workbench console");
+			messaggingSystem = msm.createBestPlatformMessagingSystem(PLUGIN_ID, "Modeling workbench console");
 		}
 		return messaggingSystem;
 	}
-
 
 }

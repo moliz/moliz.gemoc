@@ -180,7 +180,6 @@ public class DecoratorService {
 		return "";
 	}
 
-	
 	private static void setNode(Activity activity, ActivityNode node, ElementState state) {
 		if (state == ElementState.ACTIVE) {
 			setActiveNode(activity, node);

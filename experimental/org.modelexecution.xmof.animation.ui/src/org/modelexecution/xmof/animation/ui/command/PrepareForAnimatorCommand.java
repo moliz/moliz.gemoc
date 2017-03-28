@@ -50,7 +50,6 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.DecisionNode;
 import org.modelexecution.xmof.animation.ui.Activator;
 
-
 public class PrepareForAnimatorCommand extends AbstractHandler {
 
 	private Map<Activity, Set<String>> activityUniqueNameMap;
@@ -87,31 +86,30 @@ public class PrepareForAnimatorCommand extends AbstractHandler {
 						success = false;
 					}
 				}
-			
+
 				return new Status(success ? Status.OK : Status.ERROR, Activator.PLUGIN_ID,
 						(success ? "xMOF model has been prepared for modelanimator"
 								: "Error during model preparation for ") + xmofFile.getName());
 
 			}
 
-			
-
 		};
 		job.schedule();
 
 		return null;
 	}
-	
+
 	private void persistXMOFResource() throws IOException {
 		for (Activity activity : activityUniqueNameMap.keySet()) {
-			if (activity.eResource()!=null){
+			if (activity.eResource() != null) {
 				activity.eResource().save(Collections.EMPTY_MAP);
 				return;
 			}
-			
+
 		}
-		
+
 	}
+
 	private void processResource(IResource resource) throws IOException {
 		Resource graphitiResource = loadResource(resource);
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(graphitiResource);
@@ -129,7 +127,7 @@ public class PrepareForAnimatorCommand extends AbstractHandler {
 		editingDomain.getCommandStack().execute(cmd);
 
 		// persist changed resources
-		
+
 		graphitiResource.save(Collections.EMPTY_MAP);
 
 	}
@@ -162,7 +160,7 @@ public class PrepareForAnimatorCommand extends AbstractHandler {
 	}
 
 	private void convertNamesToID(ActivityNode activityNode) {
-		if (activityNode instanceof DecisionNode){
+		if (activityNode instanceof DecisionNode) {
 			System.out.println();
 		}
 		String id = nodeToIDMap.get(activityNode);

@@ -33,7 +33,6 @@ import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 import fr.inria.diverse.trace.commons.model.trace.Step;
 
-
 public class ModelAnimator implements IEngineAddon {
 
 	private AnimationController animationController;

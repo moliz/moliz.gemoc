@@ -36,17 +36,16 @@ import org.modelexecution.xmof.gemoc.engine.ui.launcher.tabs.LaunchConfiguration
 import fr.obeo.dsl.debug.ide.sirius.ui.launch.AbstractDSLLaunchConfigurationDelegateUI;
 
 public class LaunchConfigurationAnimationTab extends LaunchConfigurationTab {
-	private static String XMOF_ADDONGROUP_ID="org.modelexecution.xmof.addongroup";
+	private static String XMOF_ADDONGROUP_ID = "org.modelexecution.xmof.addongroup";
 	protected Composite parent;
 	protected Text siriusRepresentationLocationText;
 	protected Button animationFirstBreak;
-	protected Map<String,Button> extensionControls;
+	protected Map<String, Button> extensionControls;
 	protected Text delayText;
 
-	
 	public LaunchConfigurationAnimationTab() {
 		super();
-		extensionControls= new HashMap<>();
+		extensionControls = new HashMap<>();
 	}
 
 	@Override
@@ -61,22 +60,20 @@ public class LaunchConfigurationAnimationTab extends LaunchConfigurationTab {
 
 		Group debugArea = createGroup(area, "Syntax Animation:");
 		createAnimationLayout(debugArea, null);
-		
-		Group addonArea= createGroup(area, "xMOF Addons:");
-		createXMOFAddonLayout(addonArea,null);
-		
+
+		Group addonArea = createGroup(area, "xMOF Addons:");
+		createXMOFAddonLayout(addonArea, null);
 
 	}
 
 	private void createXMOFAddonLayout(Composite parent, Font font) {
-		for (EngineAddonSpecificationExtension extension:getXMOFAddons()){
-			createExtensionControls(extension,parent);
+		for (EngineAddonSpecificationExtension extension : getXMOFAddons()) {
+			createExtensionControls(extension, parent);
 		}
 	}
-	
+
 	private void createExtensionControls(EngineAddonSpecificationExtension extension, Composite parent2) {
-		Button checkbox = createCheckButton(parent2,
-				extension.getName());
+		Button checkbox = createCheckButton(parent2, extension.getName());
 		if (extension.getShortDescription() != null) {
 			checkbox.setToolTipText(extension.getShortDescription());
 		}
@@ -92,14 +89,14 @@ public class LaunchConfigurationAnimationTab extends LaunchConfigurationTab {
 			}
 		});
 		extensionControls.put(extension.getName(), checkbox);
-		
+
 	}
 
-	private Collection<EngineAddonSpecificationExtension> getXMOFAddons(){
-		Collection<EngineAddonSpecificationExtension> addons= new ArrayList<>();
-		for (EngineAddonSpecificationExtension addon:EngineAddonSpecificationExtensionPoint.getSpecifications()){
-			if (addon.getAddonGroupId().equals(XMOF_ADDONGROUP_ID)){
-				addons.add(addon); 
+	private Collection<EngineAddonSpecificationExtension> getXMOFAddons() {
+		Collection<EngineAddonSpecificationExtension> addons = new ArrayList<>();
+		for (EngineAddonSpecificationExtension addon : EngineAddonSpecificationExtensionPoint.getSpecifications()) {
+			if (addon.getAddonGroupId().equals(XMOF_ADDONGROUP_ID)) {
+				addons.add(addon);
 			}
 		}
 		return addons;
@@ -184,8 +181,7 @@ public class LaunchConfigurationAnimationTab extends LaunchConfigurationTab {
 
 			delayText.setText(Integer.toString(runConfiguration.getAnimationDelay()));
 			animationFirstBreak.setSelection(runConfiguration.getBreakStart());
-			for (String extension : extensionControls.keySet())
-			{
+			for (String extension : extensionControls.keySet()) {
 				try {
 					boolean value = configuration.getAttribute(extension, true);
 					Button checkbox = extensionControls.get(extension);
@@ -207,8 +203,7 @@ public class LaunchConfigurationAnimationTab extends LaunchConfigurationTab {
 		configuration.setAttribute(RunConfiguration.LAUNCH_DELAY, Integer.parseInt(delayText.getText()));
 		configuration.setAttribute(RunConfiguration.LAUNCH_BREAK_START, animationFirstBreak.getSelection());
 		for (Entry<String, Button> entry : extensionControls.entrySet()) {
-			configuration.setAttribute(entry.getKey(), entry.getValue()
-					.getSelection());
+			configuration.setAttribute(entry.getKey(), entry.getValue().getSelection());
 		}
 
 	}

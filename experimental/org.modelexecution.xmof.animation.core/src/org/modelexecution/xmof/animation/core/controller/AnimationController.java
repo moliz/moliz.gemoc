@@ -34,7 +34,7 @@ public abstract class AnimationController {
 	protected DiagramDecorator activeDecorator;
 	protected DiagramHandler diagramHandler;
 
-	public AnimationController( XMOFBasedModel model, DiagramHandler concreteHandler) {
+	public AnimationController(XMOFBasedModel model, DiagramHandler concreteHandler) {
 
 		controllerMap = new ControllerMap(model);
 		mappingService = new MappingService(controllerMap.getActivityNames());

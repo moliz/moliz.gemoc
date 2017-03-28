@@ -28,7 +28,6 @@ import org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditor;
 import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
 
-
 public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	private KernelEditor kernelEditor;

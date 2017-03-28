@@ -14,7 +14,6 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
 import org.modelexecution.xmof.animation.sirius.controller.SiriusAnimationController;
 
-
 public class SiriusDiagramDecorator extends DiagramDecorator {
 
 	private SiriusAnimationController controller;

@@ -43,7 +43,6 @@ import org.gemoc.executionframework.extensions.sirius.modelloader.PaletteUtils;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.core.handler.DiagramHandler;
 
-
 public class SiriusDiagramHandler extends DiagramHandler {
 
 	private Map<String, IEditorPart> diagramEditorMap = new HashMap<>();
@@ -139,13 +138,13 @@ public class SiriusDiagramHandler extends DiagramHandler {
 	private void openDiagramEditor(String key) {
 		Session siriusSession = SessionManager.INSTANCE.getExistingSession(airdURI);
 		if (siriusSession == null) {
-			siriusSession=SessionManager.INSTANCE.getSession(airdURI, new NullProgressMonitor());
-			
+			siriusSession = SessionManager.INSTANCE.getSession(airdURI, new NullProgressMonitor());
+
 		}
 		DAnalysis root = (DAnalysis) siriusSession.getSessionResource().getContents().get(0);
 		DView dView = root.getOwnedViews().get(0);
 		for (DRepresentationDescriptor representationDescriptor : dView.getOwnedRepresentationDescriptors()) {
-			DRepresentation representation=representationDescriptor.getRepresentation();
+			DRepresentation representation = representationDescriptor.getRepresentation();
 			if (representation.getName().toUpperCase().contains(key)) {
 				IEditorPart editor = DialectUIManager.INSTANCE.openEditor(siriusSession, representation,
 						new NullProgressMonitor());
@@ -157,7 +156,6 @@ public class SiriusDiagramHandler extends DiagramHandler {
 
 	}
 
-
 	private void disableToolsAndPalette(IEditorPart editorPart) {
 		if (editorPart instanceof DDiagramEditor) {
 			((DDiagramEditor) editorPart).getPaletteManager().addToolFilter(new ToolFilter() {
@@ -167,14 +165,12 @@ public class SiriusDiagramHandler extends DiagramHandler {
 				}
 			});
 		}
-		
+
 		if (editorPart instanceof DiagramEditorWithFlyOutPalette) {
 			PaletteUtils.colapsePalette((DiagramEditorWithFlyOutPalette) editorPart);
 		}
-		
-	}
 
-	
+	}
 
 	private void activateDiagramEditor(String key) {
 		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
