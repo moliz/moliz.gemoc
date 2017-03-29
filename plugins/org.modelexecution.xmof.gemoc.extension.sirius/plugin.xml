@@ -28,26 +28,6 @@
                id="xmof"
                label="xMOF">
             <command
-                  commandId="org.gemoc.gemoc_language_workbench.extensions.sirius.addDebugLayer"
-                  label="Add debug layer"
-                  style="push"
-                  tooltip="Add a debug layer to the selected diagram description">
-               <visibleWhen
-                     checkEnabled="false">
-                  <with
-                        variable="selection">
-                     <count
-                           value="1">
-                     </count>
-                     <iterate>
-                        <instanceof
-                              value="org.eclipse.sirius.diagram.description.DiagramDescription">
-                        </instanceof>
-                     </iterate>
-                  </with>
-               </visibleWhen>
-            </command>
-            <command
                   commandId="org.modelexecution.xmof.gemoc.extension.sirius.AddAnimationLayer"
                   label="Add animation layer"
                   style="push"
