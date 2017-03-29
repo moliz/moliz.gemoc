@@ -21,9 +21,9 @@ import org.gemoc.xdsmlframework.extensions.sirius.wizards.NewGemocDebugRepresent
 import org.gemoc.xdsmlframework.extensions.sirius.wizards.pages.DebugRepresentationSelectionPage;
 import org.modelexecution.xmof.gemoc.extension.sirius.ui.command.AddAnimationLayerRunnable;
 
-public class XMOFAnimatiorProjectWizard extends NewGemocDebugRepresentationWizard {
+public class XMOFAnimatorProjectWizard extends NewGemocDebugRepresentationWizard {
 
-  public XMOFAnimatiorProjectWizard() {
+  public XMOFAnimatorProjectWizard() {
     super();
     setWindowTitle("Create xMOF GEMOC debug/animation representation");
   }

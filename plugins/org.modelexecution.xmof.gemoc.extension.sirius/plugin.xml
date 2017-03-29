@@ -5,7 +5,7 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="org.modelexecution.xmof"
-            class="org.modelexecution.xmof.gemoc.extension.sirius.ui.wizards.XMOFAnimatiorProjectWizard"
+            class="org.modelexecution.xmof.gemoc.extension.sirius.ui.wizards.XMOFAnimatorProjectWizard"
             hasPages="true"
             icon="icons/xmof-16.png"
             id="org.modelexecution.xmof.gemoc.ui.XmofSiriusProjectWizard"

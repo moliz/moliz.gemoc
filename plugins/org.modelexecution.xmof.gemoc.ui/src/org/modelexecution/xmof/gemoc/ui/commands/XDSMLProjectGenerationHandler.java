@@ -107,11 +107,11 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
       delegate.configureProject(project, monitor);
 
       // launch the template
-   
-        new ProjectTemplateApplicationOperation(context, project, templateWizard).run(monitor);
-    
-      //Easy workaround to ensure correct generation of all necessary extensions:
-      //Open and save the newly generated .melange file
+
+      new ProjectTemplateApplicationOperation(context, project, templateWizard).run(monitor);
+
+      // Easy workaround to ensure correct generation of all necessary extensions:
+      // Open and save the newly generated .melange file
       PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 
         @Override

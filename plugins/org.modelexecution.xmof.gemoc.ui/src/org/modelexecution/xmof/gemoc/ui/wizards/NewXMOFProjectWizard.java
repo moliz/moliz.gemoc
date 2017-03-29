@@ -10,9 +10,6 @@
 
 package org.modelexecution.xmof.gemoc.ui.wizards;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 

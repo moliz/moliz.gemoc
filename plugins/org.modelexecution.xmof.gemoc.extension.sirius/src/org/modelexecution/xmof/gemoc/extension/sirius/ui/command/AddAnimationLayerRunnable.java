@@ -56,7 +56,6 @@ import org.osgi.framework.BundleException;
 
 import fr.inria.diverse.commons.eclipse.pde.manifest.ManifestChanger;
 
-
 // TODO: Lots of code is duplicate or similar to the implementation of org.gemoc.xdsmlframework.extensions.sirius.command.AddDebugLayerHandler
 // -> refactoring
 public class AddAnimationLayerRunnable implements IRunnableWithProgress {
@@ -217,13 +216,13 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
     return res;
   }
 
-  private  void emfModifications(IProgressMonitor monitor, String layerName,
+  private void emfModifications(IProgressMonitor monitor, String layerName,
       DiagramDescription description, String languageName, String qualifiedServiceClassName) {
     AddDebugLayerHandler.getOrCreateImport(description, qualifiedServiceClassName, monitor);
     getOrCreateAnimationLayer(description, layerName, monitor);
   }
 
-  private  Layer getOrCreateAnimationLayer(DiagramDescription description, String layerName,
+  private Layer getOrCreateAnimationLayer(DiagramDescription description, String layerName,
       IProgressMonitor monitor) {
     final Layer res;
     Layer existingLayer = null;

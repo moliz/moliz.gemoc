@@ -23,7 +23,7 @@ import org.eclipse.core.runtime.CoreException;
  * <ul>
  * <li>An folder named "xmof" exists in the project root</li>
  * <li>This folder contains at least one file with the ".xmof" file extension</li>
- * <li>A properties file  named "xmof.properties" exists in the project root</li>
+ * <li>A properties file named "xmof.properties" exists in the project root</li>
  * </ul>
  * 
  * @author tortm

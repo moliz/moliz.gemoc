@@ -38,7 +38,8 @@ public class XMOFProjectConstants {
   private XMOFProjectConstants() {
   }
 
-  //Strings which are keywords of the melange xtext grammar and therefore can cause errors when used in literals (e.g. package name)
+  // Strings which are keywords of the melange xtext grammar and therefore can cause errors when
+  // used in literals (e.g. package name)
   public static final Set<String> RESERVED_MELANGE_KEYWORDS = new HashSet<String>(
       Arrays.asList("package", "language", "inherits", "implements", "requires", "resource",
           "xtext", "sirius", "ecl", "xmof", "fileExtension", "uri", "exactType", "setup", "Melange",
