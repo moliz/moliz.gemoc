@@ -46,7 +46,7 @@ public class XMOFMutableFieldExtractor implements IMutableFieldExtractor {
 			for (EStructuralFeature feature : configurationObject.eClass().getEAllStructuralFeatures()) {
 
 				// We check whether the original class has the feature or not
-				boolean isInOriginal = originalEClass.getEAllStructuralFeatures().stream()
+				boolean isInOriginal = originalEClass!= null && originalEClass.getEAllStructuralFeatures().stream()
 						.anyMatch((f) -> f.getName().equals(feature.getName()));
 
 				if (!isInOriginal) {
