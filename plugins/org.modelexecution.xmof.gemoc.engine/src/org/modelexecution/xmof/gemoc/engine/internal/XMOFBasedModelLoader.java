@@ -28,7 +28,6 @@ import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValueDefinition;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
-import org.modelexecution.xmof.gemoc.engine.GenericXMOFAnimationServices;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
@@ -87,11 +86,6 @@ public class XMOFBasedModelLoader {
 		// Creates a resource for the configuration model, and fills it with configuration objects.
 		// (we never directly use this resource later on, it's just to have objects stored somewhere).
 		createConfigurationModelResource();
-
-		// Provides the map static->dynamic to the animation services, ie. to display execution data
-		// even in the sirius session of a static model.
-		// TODO remove now that Melange properly manages everything?
-		GenericXMOFAnimationServices.setConfigurationObjectMap(configurationMap);
 
 		// Creates and returns the xmof model, with the configuration objects and the parameters.
 		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
