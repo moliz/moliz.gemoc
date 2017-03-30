@@ -65,23 +65,6 @@ public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		loader = new XMOFBasedModelLoader(executionContext);
 		XMOFBasedModel model = loader.loadXMOFBasedModel();
 
-		// If we are in basic run mode, we replace the static objects of the
-		// context model by dynamic configuration objects.
-		// This works because we don't need an aird in this case.
-		// Thereby, execution addons (e.g. trace addon) are correctly notified.
-//		if (executionContext.getExecutionMode().equals(ExecutionMode.Run)) {
-//			TransactionalEditingDomain editingDomain = TransactionUtil
-//					.getEditingDomain(executionContext.getResourceModel());
-//			Command cmd = new RecordingCommand(editingDomain) {
-//				@Override
-//				protected void doExecute() {
-//					executionContext.getResourceModel().getContents().clear();
-//					executionContext.getResourceModel().getContents().addAll(model.getModelResource().getContents());
-//				}
-//			};
-//			editingDomain.getCommandStack().execute(cmd);
-//		}
-
 		configurationMap = loader.getConfigurationMap();
 
 		vm = setupVirtualMachine(model);
