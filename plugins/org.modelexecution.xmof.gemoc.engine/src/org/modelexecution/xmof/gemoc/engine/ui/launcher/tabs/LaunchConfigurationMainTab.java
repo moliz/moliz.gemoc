@@ -29,7 +29,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.gemoc.commons.eclipse.emf.URIHelper;
 import org.gemoc.commons.eclipse.ui.dialogs.SelectAnyIFileDialog;
-import org.gemoc.execution.sequential.javaengine.PlainK3ExecutionEngine;
 import org.gemoc.executionframework.engine.commons.MelangeHelper;
 import org.gemoc.xdsmlframework.ui.utils.dialogs.SelectAIRDIFileDialog;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEClass;

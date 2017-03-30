@@ -51,6 +51,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 	protected IDSLDebugger getDebugger(ILaunchConfiguration configuration, DSLDebugEventDispatcher dispatcher,
 			EObject firstInstruction, IProgressMonitor monitor) {
 		AbstractGemocDebugger debugger;
+		@SuppressWarnings("rawtypes")
 		Set<IMultiDimensionalTraceAddon> traceAddons = _executionEngine
 				.getAddonsTypedBy(IMultiDimensionalTraceAddon.class);
 		if (traceAddons.isEmpty()) {
