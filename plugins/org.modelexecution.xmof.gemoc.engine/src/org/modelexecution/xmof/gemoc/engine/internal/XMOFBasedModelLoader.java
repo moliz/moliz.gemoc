@@ -67,7 +67,7 @@ public class XMOFBasedModelLoader {
 		Collection<EObject> inputParameterValueObjects = getParameterValueObjects(inputParameterValues);
 
 		// Regroup in a collection all the provided stuff (model + parameters)
-		Collection<EObject> inputElements = new ArrayList<EObject>();
+		Collection<EObject> inputElements = new HashSet<EObject>();
 		inputElements.addAll(inputModelElements);
 		inputElements.addAll(inputParameterValueObjects);
 
@@ -90,9 +90,10 @@ public class XMOFBasedModelLoader {
 
 		// Provides the map static->dynamic to the animation services, ie. to display execution data
 		// even in the sirius session of a static model.
+		// TODO remove now that Melange properly manages everything?
 		GenericXMOFAnimationServices.setConfigurationObjectMap(configurationMap);
 
-		// Creates an returns the xmof model, with the configuration objects and the parameters.
+		// Creates and returns the xmof model, with the configuration objects and the parameters.
 		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
 				getParameterValueConfiguration(inputParameterValues), getEditingDomain());
 
@@ -114,7 +115,7 @@ public class XMOFBasedModelLoader {
 	}
 
 	private Collection<EObject> loadInputModelElements() {
-		EList<EObject> inputModelElements = new BasicEList<EObject>();
+		Set<EObject> inputModelElements = new HashSet<EObject>();
 		for (Resource resource : getInputModelResources()) {
 			inputModelElements.addAll(resource.getContents());
 		}
@@ -138,14 +139,18 @@ public class XMOFBasedModelLoader {
 	 * @return Objects referenced by parameter values + other objects in resources of pointed objects.
 	 */
 	private Collection<EObject> getParameterValueObjects(Collection<ParameterValue> inputParameterValues) {
-		Collection<EObject> parameterValueObjects = new BasicEList<EObject>();
+		Collection<EObject> parameterValueObjects = new HashSet<EObject>();
 		for (ParameterValue parameterValue : inputParameterValues) {
 			for (Value value : parameterValue.getValues()) {
 				if (value instanceof ObjectValue) {
 					ObjectValue objectValue = (ObjectValue) value;
 					EObject referencedEObject = objectValue.getEObject();
+					
 					if (referencedEObject != null) {
-						parameterValueObjects.add(referencedEObject);
+						for (EObject o : referencedEObject.eResource().getContents()) {
+							parameterValueObjects.add(o);
+						}
+						
 					}
 				}
 			}
@@ -157,7 +162,10 @@ public class XMOFBasedModelLoader {
 			Resource parameterValueObjectResource = parameterValueObject.eResource();
 			for (Resource relatedResource : EMFResource.getRelatedResources(parameterValueObjectResource)) {
 				if (relatedResource != null && relatedResource != parameterValueObjectResource)
-					parameterValueObjects.addAll(relatedResource.getContents());
+					for (EObject o : relatedResource.getContents()) {
+						if (!executionContext.getResourceModel().getContents().contains(o))
+							parameterValueObjects.add(o);
+					}
 			}
 		}
 
