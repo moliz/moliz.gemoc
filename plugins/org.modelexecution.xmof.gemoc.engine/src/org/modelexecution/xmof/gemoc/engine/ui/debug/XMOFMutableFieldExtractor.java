@@ -32,7 +32,7 @@ public class XMOFMutableFieldExtractor implements IMutableFieldExtractor {
 		EObject configurationObject = configurationObjectMap.getConfigurationObject(eObject);
 
 		// Case original objects not available
-		if (eObject == configurationObject) {
+		if (configurationObject == null || eObject == configurationObject) {
 
 			// We find the original class
 			EClass originalEClass = null;
