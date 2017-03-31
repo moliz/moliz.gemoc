@@ -11,9 +11,12 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -23,10 +26,12 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.gemoc.commons.eclipse.emf.EMFResource;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
+import org.gemoc.xdsmlframework.commons.DynamicAnnotationHelper;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.ObjectValue;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValueDefinition;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
@@ -50,7 +55,7 @@ public class XMOFBasedModelLoader {
 	/**
 	 * Two missions: 
 	 * 1) Creates and returns the xmof configuration model (ie configuration objects + parameter values)
-	 * 2 Also prepares the configuration map (later accessed using "getConfigurationMap")
+	 * 2) Also prepares the configuration map (later accessed using "getConfigurationMap")
 	 * 
 	 * @return The created xmof configuration model.
 	 */
@@ -139,12 +144,12 @@ public class XMOFBasedModelLoader {
 				if (value instanceof ObjectValue) {
 					ObjectValue objectValue = (ObjectValue) value;
 					EObject referencedEObject = objectValue.getEObject();
-					
+
 					if (referencedEObject != null) {
 						for (EObject o : referencedEObject.eResource().getContents()) {
 							parameterValueObjects.add(o);
 						}
-						
+
 					}
 				}
 			}
@@ -253,9 +258,25 @@ public class XMOFBasedModelLoader {
 				} else {
 					confMMPackages.add(ePackage);
 				}
-				xmofConfigurationMetamodelPackages.add(ePackage);
+
 			}
 		}
+
+		// Hack: we add the same annotations as melange so all dynamic parts of/ the metamodel
+		for (EPackage p : confMMPackages) {
+			p.eAllContents().forEachRemaining((o) -> {
+				if (o instanceof EStructuralFeature || (o instanceof EClass && !(o instanceof Activity)
+						&& !((EClass) o).getName().endsWith("Configuration"))) {
+					EModelElement o_cast = (EModelElement) o;
+					Command cmd = new AddCommand(getEditingDomain(), o_cast.getEAnnotations(),
+							DynamicAnnotationHelper.createDynamicAnnotation());
+					getEditingDomain().getCommandStack().execute(cmd);
+				}
+
+			});
+		}
+
+		xmofConfigurationMetamodelPackages.addAll(confMMPackages);
 		return confMMPackages;
 	}
 
