@@ -11,9 +11,12 @@ import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -23,12 +26,13 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.gemoc.commons.eclipse.emf.EMFResource;
 import org.gemoc.xdsmlframework.api.core.IExecutionContext;
+import org.gemoc.xdsmlframework.commons.DynamicAnnotationHelper;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.ObjectValue;
 import org.modelexecution.xmof.Semantics.Classes.Kernel.Value;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.modelexecution.xmof.Semantics.CommonBehaviors.BasicBehaviors.ParameterValueDefinition;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
-import org.modelexecution.xmof.gemoc.engine.GenericXMOFAnimationServices;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.IXMOFRunConfiguration;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
@@ -51,7 +55,7 @@ public class XMOFBasedModelLoader {
 	/**
 	 * Two missions: 
 	 * 1) Creates and returns the xmof configuration model (ie configuration objects + parameter values)
-	 * 2 Also prepares the configuration map (later accessed using "getConfigurationMap")
+	 * 2) Also prepares the configuration map (later accessed using "getConfigurationMap")
 	 * 
 	 * @return The created xmof configuration model.
 	 */
@@ -67,7 +71,7 @@ public class XMOFBasedModelLoader {
 		Collection<EObject> inputParameterValueObjects = getParameterValueObjects(inputParameterValues);
 
 		// Regroup in a collection all the provided stuff (model + parameters)
-		Collection<EObject> inputElements = new ArrayList<EObject>();
+		Collection<EObject> inputElements = new HashSet<EObject>();
 		inputElements.addAll(inputModelElements);
 		inputElements.addAll(inputParameterValueObjects);
 
@@ -88,11 +92,7 @@ public class XMOFBasedModelLoader {
 		// (we never directly use this resource later on, it's just to have objects stored somewhere).
 		createConfigurationModelResource();
 
-		// Provides the map static->dynamic to the animation services, ie. to display execution data
-		// even in the sirius session of a static model.
-		GenericXMOFAnimationServices.setConfigurationObjectMap(configurationMap);
-
-		// Creates an returns the xmof model, with the configuration objects and the parameters.
+		// Creates and returns the xmof model, with the configuration objects and the parameters.
 		return new XMOFBasedModel(configurationMap.getConfigurationObjects(),
 				getParameterValueConfiguration(inputParameterValues), getEditingDomain());
 
@@ -114,7 +114,7 @@ public class XMOFBasedModelLoader {
 	}
 
 	private Collection<EObject> loadInputModelElements() {
-		EList<EObject> inputModelElements = new BasicEList<EObject>();
+		Set<EObject> inputModelElements = new HashSet<EObject>();
 		for (Resource resource : getInputModelResources()) {
 			inputModelElements.addAll(resource.getContents());
 		}
@@ -138,14 +138,18 @@ public class XMOFBasedModelLoader {
 	 * @return Objects referenced by parameter values + other objects in resources of pointed objects.
 	 */
 	private Collection<EObject> getParameterValueObjects(Collection<ParameterValue> inputParameterValues) {
-		Collection<EObject> parameterValueObjects = new BasicEList<EObject>();
+		Collection<EObject> parameterValueObjects = new HashSet<EObject>();
 		for (ParameterValue parameterValue : inputParameterValues) {
 			for (Value value : parameterValue.getValues()) {
 				if (value instanceof ObjectValue) {
 					ObjectValue objectValue = (ObjectValue) value;
 					EObject referencedEObject = objectValue.getEObject();
+
 					if (referencedEObject != null) {
-						parameterValueObjects.add(referencedEObject);
+						for (EObject o : referencedEObject.eResource().getContents()) {
+							parameterValueObjects.add(o);
+						}
+
 					}
 				}
 			}
@@ -157,7 +161,10 @@ public class XMOFBasedModelLoader {
 			Resource parameterValueObjectResource = parameterValueObject.eResource();
 			for (Resource relatedResource : EMFResource.getRelatedResources(parameterValueObjectResource)) {
 				if (relatedResource != null && relatedResource != parameterValueObjectResource)
-					parameterValueObjects.addAll(relatedResource.getContents());
+					for (EObject o : relatedResource.getContents()) {
+						if (!executionContext.getResourceModel().getContents().contains(o))
+							parameterValueObjects.add(o);
+					}
 			}
 		}
 
@@ -251,9 +258,25 @@ public class XMOFBasedModelLoader {
 				} else {
 					confMMPackages.add(ePackage);
 				}
-				xmofConfigurationMetamodelPackages.add(ePackage);
+
 			}
 		}
+
+		// Hack: we add the same annotations as melange so all dynamic parts of/ the metamodel
+		for (EPackage p : confMMPackages) {
+			p.eAllContents().forEachRemaining((o) -> {
+				if (o instanceof EStructuralFeature || (o instanceof EClass && !(o instanceof Activity)
+						&& !((EClass) o).getName().endsWith("Configuration"))) {
+					EModelElement o_cast = (EModelElement) o;
+					Command cmd = new AddCommand(getEditingDomain(), o_cast.getEAnnotations(),
+							DynamicAnnotationHelper.createDynamicAnnotation());
+					getEditingDomain().getCommandStack().execute(cmd);
+				}
+
+			});
+		}
+
+		xmofConfigurationMetamodelPackages.addAll(confMMPackages);
 		return confMMPackages;
 	}
 

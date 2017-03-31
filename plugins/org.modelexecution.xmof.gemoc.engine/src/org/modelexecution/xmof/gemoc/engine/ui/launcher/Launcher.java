@@ -15,15 +15,14 @@ import org.gemoc.execution.sequential.javaengine.ui.debug.GenericSequentialModel
 import org.gemoc.executionframework.engine.commons.EngineContextException;
 import org.gemoc.executionframework.engine.commons.ModelExecutionContext;
 import org.gemoc.executionframework.engine.ui.debug.AbstractGemocDebugger;
+import org.gemoc.executionframework.engine.ui.debug.AnnotationMutableFieldExtractor;
 import org.gemoc.executionframework.engine.ui.launcher.AbstractSequentialGemocLauncher;
 import org.gemoc.executionframework.ui.views.engine.EnginesStatusView;
 import org.gemoc.xdsmlframework.api.core.ExecutionMode;
 import org.gemoc.xdsmlframework.api.core.IExecutionEngine;
-import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
-import org.modelexecution.xmof.gemoc.engine.ui.debug.XMOFMutableFieldExtractor;
 
 import fr.inria.diverse.commons.messagingsystem.api.MessagingSystem;
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
@@ -51,6 +50,7 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 	protected IDSLDebugger getDebugger(ILaunchConfiguration configuration, DSLDebugEventDispatcher dispatcher,
 			EObject firstInstruction, IProgressMonitor monitor) {
 		AbstractGemocDebugger debugger;
+		@SuppressWarnings("rawtypes")
 		Set<IMultiDimensionalTraceAddon> traceAddons = _executionEngine
 				.getAddonsTypedBy(IMultiDimensionalTraceAddon.class);
 		if (traceAddons.isEmpty()) {
@@ -62,8 +62,11 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 			// traceAddons.iterator().next());
 		}
 
-		ConfigurationObjectMap configurationMap = ((XMOFExecutionEngine)_executionEngine).getConfigurationMap();
-		debugger.setMutableFieldExtractors(Arrays.asList(new XMOFMutableFieldExtractor(configurationMap)));
+		//ConfigurationObjectMap configurationMap = ((XMOFExecutionEngine)_executionEngine).getConfigurationMap();
+		//debugger.setMutableFieldExtractors(Arrays.asList(new XMOFMutableFieldExtractor(configurationMap)));
+		debugger.setMutableFieldExtractors(Arrays.asList(new AnnotationMutableFieldExtractor()));
+		
+
 		
 		// If in the launch configuration it is asked to pause at the start,
 		// we add this dummy break
