@@ -20,7 +20,10 @@ public class LaunchConfigurationBackendsTab
 	public void createControl(Composite parent) {
 		Composite mainControl = createMainControl(parent);
 		Map<String, Group> extensionGroups = createExtensionGroups(mainControl);
-		extensionGroups.remove(XMOF_ADDONGROUP_ID).dispose();
+		Group xmofAddonGroup= extensionGroups.remove(XMOF_ADDONGROUP_ID);
+		if (xmofAddonGroup!=null){
+			xmofAddonGroup.dispose();
+		}
 		extensionControls = createExtensionControls(extensionGroups, mainControl);
 
 	}
