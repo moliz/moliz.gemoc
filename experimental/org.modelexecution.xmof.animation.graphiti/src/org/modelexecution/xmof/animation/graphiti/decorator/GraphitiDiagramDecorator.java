@@ -123,7 +123,8 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 	}
 
 	@Override
-	protected void refreshDiagram() {
+	public void refreshDiagram() {
+		if (decoratorMap==null) return;
 		for (ActivityNode node : super.decoratorMap.getActivityNodeMap().values()) {
 			refreshDecoration(node);
 		}

@@ -67,10 +67,5 @@ public class GraphitiDiagramHandler extends DiagramHandler {
 		return activeEditor;
 	}
 
-	@Override
-	public void dispose() {
-		// TODO Auto-generated method stub
-
-	}
 
 }

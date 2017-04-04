@@ -22,5 +22,4 @@ public abstract class DiagramHandler {
 
 	public abstract void openOrShowDiagram(Activity activity);
 
-	public abstract void dispose();
 }

@@ -11,6 +11,7 @@
 package org.modelexecution.xmof.animation.core.controller;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -104,7 +105,7 @@ public class ControllerMap {
 	}
 
 	public Set<String> getActivityNames() {
-		return new HashSet<>(activityMap.keySet());
+		return activityMap.keySet();
 	}
 
 	public Collection<Activity> getActivities() {
@@ -115,5 +116,10 @@ public class ControllerMap {
 		diagramDecoratorMap.put(key, decorator);
 
 	}
+	
+	public Collection<DiagramDecorator> getDecorators(){
+		return diagramDecoratorMap.values();
+	}
+	
 
 }

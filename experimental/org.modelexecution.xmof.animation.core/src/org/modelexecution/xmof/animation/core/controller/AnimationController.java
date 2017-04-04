@@ -39,7 +39,6 @@ public abstract class AnimationController {
 		controllerMap = new ControllerMap(model);
 		mappingService = new MappingService(controllerMap.getActivityNames());
 		this.diagramHandler = concreteHandler;
-		DecoratorService.reset();
 	}
 
 	/**
@@ -90,11 +89,21 @@ public abstract class AnimationController {
 	}
 
 	/**
-	 * Resets DecoratorService
+	 * Resets DecoratorService & refreshes Diagrams
 	 */
-	public void dispose() {
+	public void dispose(){
 		DecoratorService.reset();
-	}
+		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+			@Override
+			public void run() {
+				for (DiagramDecorator decorator:controllerMap.getDecorators()){
+					decorator.refreshDiagram();
+				}
+			}
+
+		});
+	};
+	
 
 	/**
 	 * 

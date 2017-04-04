@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.core.decorator;
 
+import java.util.HashMap;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
@@ -155,7 +156,7 @@ public abstract class DiagramDecorator {
 		refreshDiagram();
 	};
 
-	protected abstract void refreshDiagram();
+	public abstract void refreshDiagram();
 
 	protected void decorateElement(EObject element, ElementState state) {
 		DecoratorService.addDecoratedElement(activity, element, state);

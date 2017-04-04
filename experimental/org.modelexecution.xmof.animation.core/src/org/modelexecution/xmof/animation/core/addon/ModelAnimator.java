@@ -26,6 +26,7 @@ import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus;
 import org.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.modelexecution.xmof.animation.core.controller.AnimationController;
+import org.modelexecution.xmof.animation.core.decorator.DecoratorService;
 import org.modelexecution.xmof.animation.core.provider.AnimationProviderRegistry;
 import org.modelexecution.xmof.animation.core.provider.IAnimationProvider;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
@@ -117,21 +118,19 @@ public class ModelAnimator implements IEngineAddon {
 
 	@Override
 	public void engineAboutToStop(IExecutionEngine engine) {
-		if (animationController != null) {
-			animationController.dispose();
-			animationController = null;
-		}
+	
 	}
 
 	@Override
 	public void engineStopped(IExecutionEngine engine) {
-		// TODO Auto-generated method stub
+		if (animationController!=null){
+			animationController.dispose();
+		}
 
 	}
 
 	@Override
 	public void engineAboutToDispose(IExecutionEngine engine) {
-
 	}
 
 	@Override

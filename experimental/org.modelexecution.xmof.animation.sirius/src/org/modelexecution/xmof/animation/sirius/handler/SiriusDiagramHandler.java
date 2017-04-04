@@ -75,7 +75,6 @@ public class SiriusDiagramHandler extends DiagramHandler {
 
 			DebugPermissionProvider permProvider = new DebugPermissionProvider();
 			if (!permProvider.provides(session.getTransactionalEditingDomain().getResourceSet())) {
-				// this is a not debugSession (ie. a normal editing session)
 				if (uiSession != null) {
 					for (final DialectEditor editor : uiSession.getEditors()) {
 						final IEditorSite editorSite = editor.getEditorSite();
@@ -184,12 +183,6 @@ public class SiriusDiagramHandler extends DiagramHandler {
 
 			}
 		});
-
-	}
-
-	@Override
-	public void dispose() {
-		// TODO Auto-generated method stub
 
 	}
 
