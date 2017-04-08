@@ -26,7 +26,7 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode;
-import org.modelexecution.xmof.animation.core.decorator.internal.DiagramUtil;
+import org.modelexecution.xmof.animation.core.controller.XMOFAnimationUtil;
 
 public class DecoratorMap {
 
@@ -58,12 +58,12 @@ public class DecoratorMap {
 			edges.addAll(retrieveEdges(activeNode, conncetedParameterNodeMap.get(activeNode)));
 		}
 		if (previouslyActiveNode != null) {
-			String id = DiagramUtil.toEdgeID(previouslyActiveNode.getName(), activeNode.getName());
+			String id = XMOFAnimationUtil.toEdgeID(previouslyActiveNode.getName(), activeNode.getName());
 			if (activityEdgeMap.containsKey(id)) {
 				edges.addAll(activityEdgeMap.get(id));
 			}
 			for (ActivityNode entryPoint : entryPointNodes) {
-				id = DiagramUtil.toEdgeID(entryPoint.getName(), activeNode.getName());
+				id = XMOFAnimationUtil.toEdgeID(entryPoint.getName(), activeNode.getName());
 				if (activityEdgeMap.containsKey(id)) {
 					edges.addAll(activityEdgeMap.get(id));
 				}
@@ -83,8 +83,8 @@ public class DecoratorMap {
 	 *            Edge of an activity diagram
 	 */
 	private void processActivityEdge(ActivityEdge edge) {
-		ActivityNode source = DiagramUtil.retreiveSourceNode(edge);
-		ActivityNode target = DiagramUtil.retreiveTargetNode(edge);
+		ActivityNode source = XMOFAnimationUtil.retreiveSourceNode(edge);
+		ActivityNode target = XMOFAnimationUtil.retreiveTargetNode(edge);
 
 		if (source != null && target != null) {
 			addToEdgeMap(edge, source, target);
@@ -99,7 +99,7 @@ public class DecoratorMap {
 	}
 
 	private void addToEdgeMap(ActivityEdge edge, ActivityNode source, ActivityNode target) {
-		String id = DiagramUtil.toEdgeID(source.getName(), target.getName());
+		String id = XMOFAnimationUtil.toEdgeID(source.getName(), target.getName());
 		Set<ActivityEdge> edges = activityEdgeMap.get(id);
 		if (edges == null) {
 			edges = new HashSet<>();
@@ -169,7 +169,7 @@ public class DecoratorMap {
 
 	private void addTargetsToEntryPoints(ActivityParameterNode paramNode) {
 		for (ActivityEdge edge : paramNode.getOutgoing()) {
-			ActivityNode node = DiagramUtil.retreiveTargetNode(edge);
+			ActivityNode node = XMOFAnimationUtil.retreiveTargetNode(edge);
 			if (node != null) {
 				entryPointNodes.add(node);
 			}
@@ -219,11 +219,11 @@ public class DecoratorMap {
 	}
 
 	private Set<ActivityEdge> extractEdge(ActivityNode activityNode, ActivityNode paramNode) {
-		String id = DiagramUtil.toEdgeID(activityNode.getName(), paramNode.getName());
+		String id = XMOFAnimationUtil.toEdgeID(activityNode.getName(), paramNode.getName());
 		if (activityEdgeMap.containsKey(id)) {
 			return activityEdgeMap.get(id);
 		} else {
-			id = DiagramUtil.toEdgeID(paramNode.getName(), activityNode.getName());
+			id = XMOFAnimationUtil.toEdgeID(paramNode.getName(), activityNode.getName());
 			if (activityEdgeMap.containsKey(id)) {
 				return activityEdgeMap.get(id);
 			}

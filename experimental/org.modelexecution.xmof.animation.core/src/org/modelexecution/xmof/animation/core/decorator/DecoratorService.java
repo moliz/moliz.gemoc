@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
+import org.modelexecution.xmof.animation.core.controller.XMOFAnimationUtil;
 import org.modelexecution.xmof.animation.core.decorator.internal.ActivityElementContainer;
-import org.modelexecution.xmof.animation.core.decorator.internal.DiagramUtil;
 import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
 
 /**
@@ -86,7 +86,7 @@ public class DecoratorService {
 		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null && container.getActiveEdges() != null) {
 
-			return container.getActiveEdges().contains(DiagramUtil.toEdgeID(edge));
+			return container.getActiveEdges().contains(XMOFAnimationUtil.toEdgeID(edge));
 		}
 		return false;
 	}
@@ -103,7 +103,7 @@ public class DecoratorService {
 		ActivityElementContainer container = activityElementContainerMap.get(key);
 		if (container != null) {
 
-			return container.getTraversedEdges().contains(DiagramUtil.toEdgeID(edge));
+			return container.getTraversedEdges().contains(XMOFAnimationUtil.toEdgeID(edge));
 		}
 		return false;
 	}
@@ -142,14 +142,14 @@ public class DecoratorService {
 		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
 		if (container != null) {
 
-			container.addActiveEdge(DiagramUtil.toEdgeID(edge));
+			container.addActiveEdge(XMOFAnimationUtil.toEdgeID(edge));
 		}
 	}
 
 	private static void addTraversedEdge(Activity activity, ActivityEdge edge) {
 		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
 		if (container != null) {
-			container.addTraversedEdge(DiagramUtil.toEdgeID(edge));
+			container.addTraversedEdge(XMOFAnimationUtil.toEdgeID(edge));
 		}
 	}
 

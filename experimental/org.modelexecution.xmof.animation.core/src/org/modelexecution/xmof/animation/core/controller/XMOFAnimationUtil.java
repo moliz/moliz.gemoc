@@ -8,10 +8,11 @@
  * Contributors:
  * Tobias Ortmayr - initial API and implementation
  *******************************************************************************/
-package org.modelexecution.xmof.animation.core.decorator.internal;
+package org.modelexecution.xmof.animation.core.controller;
 
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
@@ -19,8 +20,8 @@ import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ControlF
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectFlow;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ObjectNode;
 
-public class DiagramUtil {
-	private DiagramUtil() {
+public class XMOFAnimationUtil {
+	private XMOFAnimationUtil() {
 	}
 
 	public static ActivityNode retreiveSourceNode(ActivityEdge edge) {
@@ -73,8 +74,8 @@ public class DiagramUtil {
 	}
 
 	public static String toEdgeID(ActivityEdge edge) {
-		ActivityNode source = DiagramUtil.retreiveSourceNode(edge);
-		ActivityNode target = DiagramUtil.retreiveTargetNode(edge);
+		ActivityNode source = XMOFAnimationUtil.retreiveSourceNode(edge);
+		ActivityNode target = XMOFAnimationUtil.retreiveTargetNode(edge);
 		if (source != null && target != null) {
 			return toEdgeID(source.getName(), target.getName());
 		}
@@ -83,5 +84,13 @@ public class DiagramUtil {
 
 	public static String toEdgeID(String sourceNodeName, String targetNodeName) {
 		return String.format("[%s | %s]", sourceNodeName, targetNodeName);
+	}
+	
+	public static String toActivityID(Activity activity){
+		String container="";
+		if (activity.eContainer()!=null){
+			container=activity.eContainer().getClass().getSimpleName();
+		}
+		return String.format("[%s_%s]", container,activity.getName());
 	}
 }

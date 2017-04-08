@@ -11,7 +11,6 @@
 package org.modelexecution.xmof.animation.core.controller;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -26,32 +25,17 @@ import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
 
 public class ControllerMap {
-	private Map<String, Activity> activityMap;
-	private Map<String, String> activityCallerMap;
-	private Map<String, DiagramDecorator> diagramDecoratorMap;
+	private Map<Activity, Activity> activityCallerMap;
+	private Map<Activity, DiagramDecorator> diagramDecoratorMap;
+	private Collection<Activity> activies;
 
 	public ControllerMap(XMOFBasedModel model) {
-
-		diagramDecoratorMap = new HashMap<String, DiagramDecorator>();
+		diagramDecoratorMap = new HashMap<Activity, DiagramDecorator>();
 		activityCallerMap = new HashMap<>();
-		prepareMap(model);
-	}
-
-	public Activity getActivityByName(String name) {
-		return activityMap.get(name);
-	}
-
-	private void prepareMap(XMOFBasedModel model) {
-		activityMap = new HashMap<>();
-		for (Activity activity : obtainActivities(obtainDistinctModelElements(model))) {
-			String name = activity.getName();
-			activityMap.put(name, activity);
-
-		}
-
-		return;
+		activies= new HashSet<>(obtainActivities(obtainDistinctModelElements(model)));
 
 	}
+	
 
 	private Collection<EObject> obtainDistinctModelElements(XMOFBasedModel model) {
 		Map<String, EObject> elementMap = new HashMap<>();
@@ -91,35 +75,32 @@ public class ControllerMap {
 		return null;
 	}
 
-	public DiagramDecorator getDecoratorByName(String name) {
-		return diagramDecoratorMap.get(name);
+	public DiagramDecorator getDecoratorByName(Activity activity) {
+		return diagramDecoratorMap.get(activity);
 	}
 
-	public void addCallingActivity(String child, String parent) {
-		activityCallerMap.put(child, parent);
+	public void addCallingActivity(Activity called, Activity calling) {
+		activityCallerMap.put(called,calling);
 
 	}
 
-	public String getCallingActivity(String key) {
-		return activityCallerMap.get(key);
-	}
-
-	public Set<String> getActivityNames() {
-		return activityMap.keySet();
+	public Activity getCallingActivity(Activity activity) {
+		return activityCallerMap.get(activity);
 	}
 
 	public Collection<Activity> getActivities() {
-		return activityMap.values();
+		return activies;
 	}
 
-	public void addDecorator(String key, DiagramDecorator decorator) {
+	public void addDecorator(Activity key, DiagramDecorator decorator) {
 		diagramDecoratorMap.put(key, decorator);
 
 	}
-	
-	public Collection<DiagramDecorator> getDecorators(){
+
+	public Collection<DiagramDecorator> getDecorators() {
 		return diagramDecoratorMap.values();
 	}
+
 	
 
 }

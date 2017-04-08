@@ -11,9 +11,9 @@
 package org.modelexecution.xmof.animation.sirius.controller;
 
 import org.eclipse.emf.common.util.URI;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.animation.core.controller.AnimationController;
 import org.modelexecution.xmof.animation.core.decorator.DiagramDecorator;
-import org.modelexecution.xmof.animation.core.mapping.Match;
 import org.modelexecution.xmof.animation.sirius.decorator.SiriusDiagramDecorator;
 import org.modelexecution.xmof.animation.sirius.handler.SiriusDiagramHandler;
 import org.modelexecution.xmof.vm.XMOFBasedModel;
@@ -26,16 +26,16 @@ public class SiriusAnimationController extends AnimationController {
 
 	@Override
 	protected void initializeDecorators() {
-		for (String activityName : controllerMap.getActivityNames()) {
-			controllerMap.addDecorator(activityName,
-					new SiriusDiagramDecorator(controllerMap.getActivityByName(activityName), this));
+		for (Activity activity : controllerMap.getActivities()) {
+			controllerMap.addDecorator(activity,
+					new SiriusDiagramDecorator(activity, this));
 		}
 
 	}
 
 	@Override
-	protected void decorateActivityNode(Match match) {
-		super.decorateActivityNode(match);
+	protected void decorateActivityNode(String nodeName) {
+		super.decorateActivityNode(nodeName);
 		refresh(activeDecorator);
 	}
 

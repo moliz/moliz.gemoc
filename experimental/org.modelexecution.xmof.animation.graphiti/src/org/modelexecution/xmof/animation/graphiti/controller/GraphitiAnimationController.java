@@ -101,7 +101,7 @@ public class GraphitiAnimationController extends AnimationController {
 	@Override
 	protected void initializeDecorators() {
 		for (Activity activity : controllerMap.getActivities()) {
-			controllerMap.addDecorator(activity.getName(), new GraphitiDiagramDecorator(activity,
+			controllerMap.addDecorator(activity, new GraphitiDiagramDecorator(activity,
 					((GraphitiDiagramHandler) diagramHandler).getKernelEditor()));
 		}
 	}

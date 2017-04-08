@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.core.decorator;
 
-import java.util.HashMap;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
@@ -19,9 +18,8 @@ import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.Expan
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.animation.core.decorator.internal.DiagramUtil;
+import org.modelexecution.xmof.animation.core.controller.XMOFAnimationUtil;
 import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
-import org.modelexecution.xmof.animation.core.mapping.Match;
 
 public abstract class DiagramDecorator {
 	private boolean activityFinished = false;
@@ -49,7 +47,7 @@ public abstract class DiagramDecorator {
 	 *            matched debug event
 	 * @return true if node has a xMOFName
 	 */
-	public boolean decorateActivityElement(Match match) {
+	public boolean decorateActivityElement(String activityNodeName ) {
 		if (decoratorMap == null) {
 			initializeMaps();
 		}
@@ -57,7 +55,7 @@ public abstract class DiagramDecorator {
 			resetDiagram();
 		}
 
-		activeNode = decoratorMap.getActivityNode(match.getXmofElementName());
+		activeNode = decoratorMap.getActivityNode(activityNodeName);
 
 		decoratePreviouslyActiveNodes();
 		decoratePreviouslyActiveEdges();
@@ -128,7 +126,7 @@ public abstract class DiagramDecorator {
 		if (previouslyActiveNode == null || previouslyActiveNode.getOutgoing().isEmpty())
 			return;
 		for (ActivityEdge edge : previouslyActiveNode.getOutgoing()) {
-			ActivityNode target = DiagramUtil.retreiveTargetNode(edge);
+			ActivityNode target = XMOFAnimationUtil.retreiveTargetNode(edge);
 			if (target instanceof ExpansionRegion) {
 				decorateElement(edge, ElementState.TRAVERSED);
 			}
