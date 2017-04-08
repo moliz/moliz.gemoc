@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.core.controller;
 
+import org.eclipse.emf.ecore.ENamedElement;
 import org.modelexecution.xmof.Syntax.Actions.BasicActions.Pin;
 import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
@@ -88,9 +89,36 @@ public class XMOFAnimationUtil {
 	
 	public static String toActivityID(Activity activity){
 		String container="";
-		if (activity.eContainer()!=null){
-			container=activity.eContainer().getClass().getSimpleName();
+		if (activity.eContainer()!=null && activity.eContainer() instanceof ENamedElement){
+			container=((ENamedElement)activity.eContainer()).getName();
 		}
 		return String.format("[%s_%s]", container,activity.getName());
+	}
+	
+	public static Activity getActivity(ActivityNode node) {
+		ActivityNode parentNode = node;
+		while (parentNode.getInStructuredNode() != null) {
+			parentNode = parentNode.getInStructuredNode();
+		}
+		if (parentNode.getActivity() != null) {
+			return parentNode.getActivity();
+		}
+
+		return null;
+	}
+
+	public static Activity getActivity(ActivityEdge edge) {
+		if (edge.getActivity() != null) {
+			return edge.getActivity();
+		}
+		ActivityNode parentNode = edge.getInStructuredNode();
+		while (parentNode.getInStructuredNode() != null) {
+			parentNode = parentNode.getInStructuredNode();
+		}
+		if (parentNode.getActivity() != null) {
+			return parentNode.getActivity();
+		}
+
+		return null;
 	}
 }

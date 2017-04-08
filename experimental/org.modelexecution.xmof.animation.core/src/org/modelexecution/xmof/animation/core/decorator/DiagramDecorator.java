@@ -150,7 +150,7 @@ public abstract class DiagramDecorator {
 	}
 
 	protected void resetDecorations() {
-		DecoratorService.clear(activity.getName());
+		DecoratorService.clear(activity);
 		refreshDiagram();
 	};
 

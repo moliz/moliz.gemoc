@@ -135,7 +135,7 @@ public abstract class AnimationController {
 
 		activeDecorator = controllerMap.getDecoratorByName(activity);
 		activeActivity = activity;
-		DecoratorService.intializeContainer(activity.getName());
+		DecoratorService.intializeContainer(activity);
 	}
 
 	protected abstract void initializeDecorators();

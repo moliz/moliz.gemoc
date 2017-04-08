@@ -30,6 +30,13 @@ public class DecoratorService {
 
 	private static Map<String, ActivityElementContainer> activityElementContainerMap = new HashMap<>();
 
+	private static ActivityElementContainer getContainer(Activity activity) {
+		if (activity != null) {
+			return activityElementContainerMap.get(XMOFAnimationUtil.toActivityID(activity));
+		}
+		return null;
+	}
+
 	public static void addDecoratedElement(Activity activity, EObject element, ElementState state) {
 		if (element instanceof ActivityNode) {
 			setNode(activity, (ActivityNode) element, state);
@@ -46,9 +53,7 @@ public class DecoratorService {
 	 * @return boolean active node or not
 	 */
 	public static boolean isActiveNode(ActivityNode node) {
-
-		String key = getActivityName(node);
-		ActivityElementContainer container = activityElementContainerMap.get(key);
+		ActivityElementContainer container = getContainer(XMOFAnimationUtil.getActivity(node));
 		if (container != null) {
 			return container.getActiveNodes().contains(node.getName());
 		}
@@ -65,9 +70,7 @@ public class DecoratorService {
 	 * @return boolean traversed node or not
 	 */
 	public static boolean isTraversedNode(ActivityNode node) {
-
-		String key = getActivityName(node);
-		ActivityElementContainer container = activityElementContainerMap.get(key);
+		ActivityElementContainer container = getContainer(XMOFAnimationUtil.getActivity(node));
 		if (container != null) {
 			return container.getTraversedNodes().contains(node.getName());
 		}
@@ -82,10 +85,8 @@ public class DecoratorService {
 	 * @return boolean active edge or not
 	 */
 	public static boolean isActiveEdge(ActivityEdge edge) {
-		String key = getActivityName(edge);
-		ActivityElementContainer container = activityElementContainerMap.get(key);
-		if (container != null && container.getActiveEdges() != null) {
-
+		ActivityElementContainer container = getContainer(XMOFAnimationUtil.getActivity(edge));
+		if (container != null) {
 			return container.getActiveEdges().contains(XMOFAnimationUtil.toEdgeID(edge));
 		}
 		return false;
@@ -99,85 +100,55 @@ public class DecoratorService {
 	 * @return boolean traversed edge or not
 	 */
 	public static boolean isTraversedEdge(ActivityEdge edge) {
-		String key = getActivityName(edge);
-		ActivityElementContainer container = activityElementContainerMap.get(key);
+		ActivityElementContainer container = getContainer(XMOFAnimationUtil.getActivity(edge));
 		if (container != null) {
-
 			return container.getTraversedEdges().contains(XMOFAnimationUtil.toEdgeID(edge));
 		}
 		return false;
 	}
 
-	public static void intializeContainer(String activityName) {
-		if (!activityElementContainerMap.containsKey(activityName)) {
-			activityElementContainerMap.put(activityName, new ActivityElementContainer());
+	public static void intializeContainer(Activity activity) {
+		String id = XMOFAnimationUtil.toActivityID(activity);
+		if (!activityElementContainerMap.containsKey(id)) {
+			activityElementContainerMap.put(id, new ActivityElementContainer());
 		}
 
 	}
 
 	public static void reset() {
 		activityElementContainerMap = new HashMap<>();
-
 	}
 
-	public static void clear(String activityName) {
-		activityElementContainerMap.put(activityName, new ActivityElementContainer());
+	public static void clear(Activity activity) {
+		activityElementContainerMap.put(XMOFAnimationUtil.toActivityID(activity), new ActivityElementContainer());
 	}
 
 	private static void setActiveNode(Activity activity, ActivityNode node) {
-		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
+		ActivityElementContainer container = getContainer(activity);
 		if (container != null) {
 			container.addActiveNode(node.getName());
 		}
 	}
 
 	private static void addTraversedNode(Activity activity, ActivityNode node) {
-		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
+		ActivityElementContainer container = getContainer(activity);
 		if (container != null) {
 			container.addTraversedNode(node.getName());
 		}
 	}
 
 	private static void setActiveEdge(Activity activity, ActivityEdge edge) {
-		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
+		ActivityElementContainer container = getContainer(activity);
 		if (container != null) {
-
 			container.addActiveEdge(XMOFAnimationUtil.toEdgeID(edge));
 		}
 	}
 
 	private static void addTraversedEdge(Activity activity, ActivityEdge edge) {
-		ActivityElementContainer container = activityElementContainerMap.get(activity.getName());
+		ActivityElementContainer container = getContainer(activity);
 		if (container != null) {
 			container.addTraversedEdge(XMOFAnimationUtil.toEdgeID(edge));
 		}
-	}
-
-	private static String getActivityName(ActivityNode node) {
-		ActivityNode parentNode = node;
-		while (parentNode.getInStructuredNode() != null) {
-			parentNode = parentNode.getInStructuredNode();
-		}
-		if (parentNode.getActivity() != null) {
-			return parentNode.getActivity().getName();
-		}
-
-		return "";
-	}
-
-	private static String getActivityName(ActivityEdge edge) {
-		if (edge.getActivity() != null) {
-			return edge.getActivity().getName();
-		}
-		ActivityNode parentNode = edge.getInStructuredNode();
-		while (parentNode.getInStructuredNode() != null) {
-			parentNode = parentNode.getInStructuredNode();
-		}
-		if (parentNode.getActivity() != null) {
-			return parentNode.getActivity().getName();
-		}
-
-		return "";
 	}
 
 	private static void setNode(Activity activity, ActivityNode node, ElementState state) {
