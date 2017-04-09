@@ -10,142 +10,106 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.core.decorator;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.Action;
+import org.modelexecution.xmof.Syntax.Actions.BasicActions.OutputPin;
 import org.modelexecution.xmof.Syntax.Activities.CompleteStructuredActivities.StructuredActivityNode;
-import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionRegion;
+import org.modelexecution.xmof.Syntax.Activities.ExtraStructuredActivities.ExpansionNode;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.Activity;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityEdge;
 import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityNode;
-import org.modelexecution.xmof.animation.core.controller.XMOFAnimationUtil;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ActivityParameterNode;
+import org.modelexecution.xmof.Syntax.Activities.IntermediateActivities.ForkNode;
+import org.modelexecution.xmof.animation.core.decorator.internal.DiagramState;
 import org.modelexecution.xmof.animation.core.decorator.internal.ElementState;
 
 public abstract class DiagramDecorator {
-	private boolean activityFinished = false;
+	protected boolean activityFinished = false;
 	protected Activity activity;
-	protected DecoratorMap decoratorMap;
-	protected ActivityNode activeNode;
-	protected ActivityNode previouslyActiveNode;
-	protected StructuredActivityNode inStructuredNode = null;
-	protected Set<ActivityEdge> activeEdges;
-	protected Set<ActivityEdge> previouslyActiveEdges;
+	protected DiagramState diagramState;
+	protected Map<String, ActivityNode> activityNodeMap;
 
 	public DiagramDecorator(Activity activity) {
 		this.activity = activity;
+		diagramState = new DiagramState();
+
 	}
 
 	public void initializeMaps() {
-		decoratorMap = new DecoratorMap(activity);
+		activityNodeMap = new HashMap<>();
+		for (ActivityNode node : activity.getNode()) {
+			addAllNodes(node);
+		}
+	}
+
+	private void addAllNodes(ActivityNode node) {
+		activityNodeMap.put(node.getName(), node);
+		if (node instanceof StructuredActivityNode) {
+			for (ActivityNode subNode : ((StructuredActivityNode) node).getNode()) {
+				addAllNodes(subNode);
+			}
+		}
 	}
 
 	/**
 	 * Decorates activity node in different nodes depending of the status
 	 * (traversed or active)
 	 * 
-	 * @param match
-	 *            matched debug event
 	 * @return true if node has a xMOFName
 	 */
-	public boolean decorateActivityElement(String activityNodeName ) {
-		if (decoratorMap == null) {
+	public boolean decorateActivityElement(String activityNodeName) {
+
+		if (activityNodeMap == null) {
 			initializeMaps();
 		}
 		if (isActivityFinished()) {
 			resetDiagram();
 		}
 
-		activeNode = decoratorMap.getActivityNode(activityNodeName);
+		ActivityNode activeNode = activityNodeMap.get(activityNodeName);
+		diagramState.setActiveNode(activeNode);
+		decoratePreviouslyActiveElements();
+		if (activeNode == null)
+			return false;
+		decorateActiveElements();
 
-		decoratePreviouslyActiveNodes();
-		decoratePreviouslyActiveEdges();
-		decorateActiveNode();
-		decorateActiveEdges();
-
-		previouslyActiveNode = activeNode;
-		previouslyActiveEdges = activeEdges;
-		return activeNode != null;
+		return true;
 
 	}
 
-	private void decorateActiveEdges() {
-		activeEdges = decoratorMap.retrieveActiveEdges(activeNode, previouslyActiveNode);
-		if (activeEdges != null) {
-			for (ActivityEdge edge : activeEdges) {
-				decorateElement(edge, ElementState.ACTIVE);
-			}
-
-		}
-	}
-
-	private void decorateActiveNode() {
-		if (activeNode != null) {
-			if (activeNode instanceof StructuredActivityNode) {
-				inStructuredNode = (StructuredActivityNode) activeNode;
-			}
-			for (ActivityNode node : decoratorMap.retrieveAllConnectedNodes(activeNode)) {
+	private void decorateActiveElements() {
+		for (ActivityNode node : diagramState.getActiveNodes()) {
+			if (!(node instanceof StructuredActivityNode)) {
 				decorateElement(node, ElementState.ACTIVE);
 			}
 		}
+		for (ActivityEdge edge : diagramState.getActiveEdges()) {
+			decorateElement(edge, ElementState.ACTIVE);
+		}
+
 	}
 
-	private void decoratePreviouslyActiveEdges() {
-		if (previouslyActiveEdges != null) {
-			for (ActivityEdge edge : previouslyActiveEdges) {
-				decorateElement(edge, ElementState.TRAVERSED);
-			}
-
-		}
-	}
-
-	private void decoratePreviouslyActiveNodes() {
-		if (previouslyActiveNode != null) {
-			for (ActivityNode node : decoratorMap.retrieveAllConnectedNodes(previouslyActiveNode)) {
-				if (!(previouslyActiveNode instanceof StructuredActivityNode)) {
-					decorateElement(node, ElementState.TRAVERSED);
-				}
-			}
-
-		}
-		if (inStructuredNode != null) {
-			if (executionOfStructuredNodeFinished()) {
-				decorateLastEdgeOfExpansionRegion();
-				previouslyActiveNode = inStructuredNode;
-				for (ActivityNode node : decoratorMap.retrieveAllConnectedNodes(previouslyActiveNode)) {
-					decorateElement(node, ElementState.TRAVERSED);
-				}
-
-				inStructuredNode = null;
+	private void decoratePreviouslyActiveElements() {
+		for (ActivityNode node : diagramState.getPreviouslyActiveNodes()) {
+			if (!(node instanceof StructuredActivityNode)) {
+				decorateElement(node, ElementState.TRAVERSED);
 			}
 		}
-	}
-
-	// TODO: Implement more sophisticated approach to get rid of this hacky
-	// solution
-	private void decorateLastEdgeOfExpansionRegion() {
-		if (previouslyActiveNode == null || previouslyActiveNode.getOutgoing().isEmpty())
-			return;
-		for (ActivityEdge edge : previouslyActiveNode.getOutgoing()) {
-			ActivityNode target = XMOFAnimationUtil.retreiveTargetNode(edge);
-			if (target instanceof ExpansionRegion) {
-				decorateElement(edge, ElementState.TRAVERSED);
-			}
+		for (ActivityEdge edge : diagramState.getPreviouslyActiveEdges()) {
+			decorateElement(edge, ElementState.TRAVERSED);
 		}
-	}
 
-	private boolean executionOfStructuredNodeFinished() {
-		return activeNode == null || activeNode.getInStructuredNode() == null
-				|| !activeNode.getInStructuredNode().equals(inStructuredNode);
 	}
 
 	private void resetDiagram() {
 		resetDecorations();
 		setActivityFinished(false);
-		activeEdges = null;
-		previouslyActiveEdges = null;
-		inStructuredNode = null;
-		activeNode = null;
-		previouslyActiveNode = null;
+		diagramState = new DiagramState();
 
 	}
 
@@ -158,7 +122,6 @@ public abstract class DiagramDecorator {
 
 	protected void decorateElement(EObject element, ElementState state) {
 		DecoratorService.addDecoratedElement(activity, element, state);
-
 	}
 
 	public boolean isActivityFinished() {

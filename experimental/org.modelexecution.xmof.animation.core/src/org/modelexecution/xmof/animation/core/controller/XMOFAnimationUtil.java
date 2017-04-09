@@ -66,7 +66,7 @@ public class XMOFAnimationUtil {
 			return expansionNode.getRegionAsOutput();
 	}
 
-	private static ActivityNode retrieveConnectedNode(Pin pin) {
+	public static ActivityNode retrieveConnectedNode(Pin pin) {
 		if (pin.eContainer() instanceof ActivityNode) {
 			return (ActivityNode) pin.eContainer();
 		}
@@ -86,15 +86,15 @@ public class XMOFAnimationUtil {
 	public static String toEdgeID(String sourceNodeName, String targetNodeName) {
 		return String.format("[%s | %s]", sourceNodeName, targetNodeName);
 	}
-	
-	public static String toActivityID(Activity activity){
-		String container="";
-		if (activity.eContainer()!=null && activity.eContainer() instanceof ENamedElement){
-			container=((ENamedElement)activity.eContainer()).getName();
+
+	public static String toActivityID(Activity activity) {
+		String container = "";
+		if (activity.eContainer() != null && activity.eContainer() instanceof ENamedElement) {
+			container = ((ENamedElement) activity.eContainer()).getName();
 		}
-		return String.format("[%s_%s]", container,activity.getName());
+		return String.format("[%s_%s]", container, activity.getName());
 	}
-	
+
 	public static Activity getActivity(ActivityNode node) {
 		ActivityNode parentNode = node;
 		while (parentNode.getInStructuredNode() != null) {

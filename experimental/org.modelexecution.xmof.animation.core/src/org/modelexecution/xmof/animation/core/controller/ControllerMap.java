@@ -32,10 +32,9 @@ public class ControllerMap {
 	public ControllerMap(XMOFBasedModel model) {
 		diagramDecoratorMap = new HashMap<Activity, DiagramDecorator>();
 		activityCallerMap = new HashMap<>();
-		activies= new HashSet<>(obtainActivities(obtainDistinctModelElements(model)));
+		activies = new HashSet<>(obtainActivities(obtainDistinctModelElements(model)));
 
 	}
-	
 
 	private Collection<EObject> obtainDistinctModelElements(XMOFBasedModel model) {
 		Map<String, EObject> elementMap = new HashMap<>();
@@ -80,7 +79,7 @@ public class ControllerMap {
 	}
 
 	public void addCallingActivity(Activity called, Activity calling) {
-		activityCallerMap.put(called,calling);
+		activityCallerMap.put(called, calling);
 
 	}
 
@@ -100,7 +99,5 @@ public class ControllerMap {
 	public Collection<DiagramDecorator> getDecorators() {
 		return diagramDecoratorMap.values();
 	}
-
-	
 
 }

@@ -10,8 +10,9 @@
  *******************************************************************************/
 package org.modelexecution.xmof.animation.graphiti.decorator;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
@@ -32,6 +33,7 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	private KernelEditor kernelEditor;
 	private DiagramEditor diagramEditor;
+	private Collection<ActivityEdge> allActivityEdges = new HashSet<>();
 
 	public GraphitiDiagramDecorator(Activity activity, KernelEditor kernelEditor) {
 		super(activity);
@@ -57,6 +59,9 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 	protected void decorateElement(EObject element, ElementState state) {
 		super.decorateElement(element, state);
 		refreshDecoration(element);
+		if (element instanceof ActivityEdge) {
+			allActivityEdges.add((ActivityEdge) element);
+		}
 
 	}
 
@@ -124,14 +129,14 @@ public class GraphitiDiagramDecorator extends DiagramDecorator {
 
 	@Override
 	public void refreshDiagram() {
-		if (decoratorMap==null) return;
-		for (ActivityNode node : super.decoratorMap.getActivityNodeMap().values()) {
+		if (activityNodeMap == null)
+			return;
+		for (ActivityNode node : super.activityNodeMap.values()) {
 			refreshDecoration(node);
 		}
-		for (Set<ActivityEdge> edges : super.decoratorMap.getActivityEdgeMap().values()) {
-			for (ActivityEdge edge : edges) {
-				refreshDecoration(edge);
-			}
+		for (ActivityEdge edge : allActivityEdges) {
+
+			refreshDecoration(edge);
 
 		}
 
