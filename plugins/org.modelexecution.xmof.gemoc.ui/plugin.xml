@@ -7,9 +7,9 @@
           class="org.modelexecution.xmof.gemoc.ui.wizards.NewXMOFProjectWizard"
           finalPerspective="org.eclipse.sirius.ui.tools.perspective.design"
           hasPages="true"
-          icon="icons/xmof-16.png"
+          icon="icons/xmof-moliz-16.png"
           id="org.modelexecution.xmof.gemoc.ui.wizards.NewGemocXmofProjectWizard"
-          name="xMOF GEMOC Language Project"
+          name="xMOF Project"
           project="true">
       <description>
             Create a new GEMOC xMOF project to specify an executable language that will run using the xMOF execution engine (which extends the GEMOC java sequential engine)
@@ -19,16 +19,10 @@
   <extension point="org.eclipse.ui.menus">
     <menuContribution allPopups="false" locationURI="popup:org.eclipse.ui.popup.any?after=xdsmlGroup">
       <menu
-            icon="icons/xmof-16.png"
+            icon="icons/xmof-moliz-16.png"
             id="xmof.menu"
             label="xMOF">
-        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll" id="0" label="Generate all" style="push">
-        </command>
-        <separator
-              name="org.modelexecution.xmof.gemoc.ui.separator1"
-              visible="true">
-        </separator>
-        <command commandId="org.modelexecution.xmof.gemoc.codegen.ui.GenerateXMOFCode" id="1" label="Generate code" style="push">
+        <command commandId="org.modelexecution.xmof.gemoc.codegen.ui.GenerateXMOFCode" id="0" label="Generate Code" style="push">
            <visibleWhen
                  checkEnabled="false">
               <with
@@ -51,7 +45,17 @@
               </with>
            </visibleWhen>
         </command>
-        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject" id="2" label="Generate xDSML project" style="push">
+        <command commandId="org.modelexecution.xmof.gemoc.ui.GenerateXDSMLProject" id="1" label="Generate xDSML Project" style="push">
+        </command>
+        <separator
+              name="org.modelexecution.xmof.gemoc.ui.separator1"
+              visible="true">
+        </separator>
+        <command
+              commandId="org.modelexecution.xmof.gemoc.ui.GenerateAll"
+              id="2"
+              label="Generate All"
+              style="push">
         </command>
         <visibleWhen
               checkEnabled="false">

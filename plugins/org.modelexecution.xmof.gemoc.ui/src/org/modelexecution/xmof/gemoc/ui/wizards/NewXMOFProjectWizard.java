@@ -65,7 +65,7 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
 
   @Override
   public void addPages() {
-    newProjectCreationPage = new NewXMOFProjectCreationPage("New xMOF GEMOC Language Project",
+    newProjectCreationPage = new NewXMOFProjectCreationPage("New xMOF Project",
         pluginData, (IStructuredSelection) selection);
     newProjectCreationPage.setInitialProjectName(XMOFProjectConstants.DEFAULT_PROJECT_NAME);
 
@@ -90,7 +90,6 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
     selectTargetFilePage = createTargeFilePageMock();
     addPage(newProjectCreationPage);
     addPage(selectEcoreModelFilePage);
-
   }
 
   private SelectEcoreModelFilePage createSelectEcoreModelFilePage() {
@@ -98,7 +97,6 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
 
       @Override
       public void createControl(Composite parent) {
-        // TODO Auto-generated method stub
         super.createControl(parent);
         browseEPackageRegistryButton.setVisible(false);
       }
@@ -122,8 +120,9 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
       @Override
       public IFile getModelFile() {
         if (projectCreationOperation == null
-            || projectCreationOperation.getGeneratedXmofFolder() == null)
+            || projectCreationOperation.getGeneratedXmofFolder() == null) {
           return null;
+        }
         return projectCreationOperation.getGeneratedXmofFolder()
             .getFile(Path.fromOSString(getXmofFileString()));
       }
@@ -140,7 +139,6 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
   @Override
   public boolean performFinish() {
     return createBasePluginProject() && super.performFinish() && storeXdsmlPreferences();
-
   }
 
   @Override
@@ -150,7 +148,6 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
 
   private boolean createBasePluginProject() {
     try {
-
       updatePluginData();
 
       // If the PDE models are not initialized, initialize with option to cancel
@@ -178,14 +175,15 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
       getContainer().run(false, true, projectCreationOperation);
 
       IWorkingSet[] workingSets = newProjectCreationPage.getSelectedWorkingSets();
-      if (workingSets.length > 0)
+      if (workingSets.length > 0) {
         PlatformUI.getWorkbench().getWorkingSetManager()
             .addToWorkingSets(projectProvider.getProject(), workingSets);
-
+      }
       return true;
     } catch (InvocationTargetException e) {
       PDEPlugin.logException(e);
     } catch (InterruptedException e) {
+      PDEPlugin.logException(e);
     }
     return false;
   }
@@ -210,7 +208,6 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
     pluginData.setRCPApplicationPlugin(false);
     pluginData.setEnableAPITooling(false);
     pluginData.setExecutionEnvironment(getDefaultExecutionEnvironment());
-
   }
 
   private String getDefaultExecutionEnvironment() {
@@ -220,7 +217,6 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
         return exeEnv.getId();
     }
     return PDEUIMessages.PluginContentPage_noEE;
-
   }
 
   private boolean storeXdsmlPreferences() {
@@ -233,11 +229,8 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
         } finally {
           monitor.done();
         }
-
       }
-
     };
-
     try {
       getContainer().run(true, false, op);
     } catch (InterruptedException e) {
@@ -266,9 +259,8 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
   private String getEcoreModelPath() {
     URI uri = selectEcoreModelFilePage.getMetamodelResource().getURI();
     if (uri.isHierarchical()) {
-      // TODO: implement resovlement of ns-uri to platform:// uri
+      // TODO: implement resolving of ns-uri to platform:// uri
     }
-
     return selectEcoreModelFilePage.getMetamodelResource().getURI().toString();
 
   }
@@ -281,7 +273,6 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
     public NewXMOFProjectCreationOperation(IFieldData data, IProjectProvider provider,
         IPluginContentWizard contentWizard) {
       super(data, provider, contentWizard);
-
     }
 
     @Override
@@ -295,7 +286,6 @@ public class NewXMOFProjectWizard extends NewConfigurationWizard {
         generatedXmofFolder.create(IResource.NONE, true, subMonitor);
       }
       subMonitor.setWorkRemaining(0);
-
     }
 
     public IFolder getGeneratedXmofFolder() {
