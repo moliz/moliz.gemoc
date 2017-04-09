@@ -25,7 +25,7 @@ public class XMOFAnimatorProjectWizard extends NewGemocDebugRepresentationWizard
 
   public XMOFAnimatorProjectWizard() {
     super();
-    setWindowTitle("Create xMOF GEMOC debug/animation representation");
+    setWindowTitle("Create xMOF GEMOC debug/animator representation");
   }
 
   @Override

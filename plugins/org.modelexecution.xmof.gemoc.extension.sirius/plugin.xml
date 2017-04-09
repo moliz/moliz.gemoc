@@ -7,9 +7,9 @@
             category="org.modelexecution.xmof"
             class="org.modelexecution.xmof.gemoc.extension.sirius.ui.wizards.XMOFAnimatorProjectWizard"
             hasPages="true"
-            icon="icons/xmof-16.png"
+            icon="icons/xmof-moliz-16.png"
             id="org.modelexecution.xmof.gemoc.ui.XmofSiriusProjectWizard"
-            name="xMOF Debug/Animation Viewpoint Specification"
+            name="xMOF Debug/Animator Project"
             project="false">
          <description>
             Create a debug/animation representation for a xMOF GEMOC language. May create a new project, or modify or extend an existing Viewpoint Specification.
