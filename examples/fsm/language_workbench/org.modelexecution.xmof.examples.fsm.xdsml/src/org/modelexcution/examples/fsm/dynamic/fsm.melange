@@ -1,0 +1,7 @@
+package org.modelexcution.examples.fsm.dynamic
+
+ language Fsm {
+	syntax "platform:/resource/org.modelexecution.xmof.examples.fsm/model/fsm.ecore"
+	
+	xmof "platform:/resource/org.modelexecution.xmof.examples.fsm.xmof.dynamic/xmof/fsm.xmof"
+}
