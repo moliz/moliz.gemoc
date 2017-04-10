@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.modelexecution</groupId>
-	<artifactId>org.modelexecution.xmof.gemoc.root</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<groupId>moliz.gemoc</groupId>
+	<artifactId>moliz.gemoc.parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<licenses>
+		<license>
+			<name>Eclipse Public License v1.0</name>
+			<comments>
+        All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.htm
+		       </comments>
+		</license>
+	</licenses>
 	<modules>
-		<module>plugins/fr.inria.diverse.trace.gemoc.generator.xmof</module>
-		<module>plugins/fr.inria.diverse.trace.xmof.tracematerialextractor</module>
+		<module>plugins/fr.inria.diverse.opsemanticsview.gen.xmof</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.codegen</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.codegen.ui</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.engine</module>
-
-
-		<module>releng/org.modelexecution.xmof.gemoc.feature</module>
-		<module>releng/org.modelexecution.xmof.gemoc.updatesite</module>
+		<module>plugins/org.modelexecution.xmof.gemoc.extension.sirius</module>
+		<module>plugins/org.modelexecution.xmof.gemoc.ui</module>
+		<module>releng/org.modelexecution.moliz.gemoc.feature</module>
+		<module>releng/org.modelexecution.moliz.gemoc.updatesite</module>
 	</modules>
 
 	<properties>
-		<tycho-version>0.25.0</tycho-version>
+		<tycho-version>0.26.0</tycho-version>
 		<project.build.sourceEncoding>UTF8</project.build.sourceEncoding>
 		<xtend.version>2.9.1</xtend.version>
 		<tycho.scmUrl>scm:git:https://github.com/moliz/moliz.gemoc.git</tycho.scmUrl>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.modelexecution.xmof.gemoc.feature"
+      id="org.modelexecution.moliz.gemoc.feature"
       label="xMOF GEMOC Integration"
-      version="0.1.0.qualifier">
+      version="1.0.0.qualifier"
+      provider-name="modelexecution.org">
 
    <description url="https://github.com/moliz/moliz.gemoc">
       Contains the xMOF engine for GEMOC, the code generator for xMOF models, and the trace addon generator for xMOF.
@@ -46,6 +47,13 @@
 
    <plugin
          id="fr.inria.diverse.trace.xmof.tracematerialextractor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.modelexecution.xmof.gemoc.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
