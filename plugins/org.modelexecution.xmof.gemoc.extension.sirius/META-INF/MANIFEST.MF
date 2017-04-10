@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XMOF Sirius Extension
+Bundle-SymbolicName: org.modelexecution.xmof.gemoc.extension.sirius;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.modelexecution.xmof.gemoc.extension.sirius.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui;bundle-version="3.108.1",
+ org.eclipse.sirius.diagram,
+ org.eclipse.emf.edit,
+ org.eclipse.core.resources,
+ org.gemoc.xdsmlframework.extensions.sirius,
+ fr.inria.diverse.commons.eclipse.messagingsystem.api,
+ org.eclipse.jface,
+ fr.inria.diverse.commons.eclipse.pde,
+ org.eclipse.ui.workbench
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui.part
