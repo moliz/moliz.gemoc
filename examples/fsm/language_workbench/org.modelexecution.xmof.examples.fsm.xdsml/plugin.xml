@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.modelexecution.examples.fsm.Fsm" xdsmlFilePath="/org.modelexecution.xmof.examples.fsm.xdsml/src/org/modelexecution/examples/fsm/fsm.melange" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.modelexecution.examples.fsm.FsmMT" uri="http://org.modelexecution.examples.fsm.fsmmt/" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="org.modelexecution.examples.fsm.FsmMT" id="org.modelexecution.examples.fsm.Fsm" uri="http://www.modelexecution.org/fsm" />
+  </extension>
+</plugin>

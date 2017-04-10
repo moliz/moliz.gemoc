@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fsm" nsURI="http://www.modelexecution.org/fsm" nsPrefix="fsm">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="FSM">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1" eType="//State" containment="true" eOpposite="//State/containingFSM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1" eType="//Transition" containment="true" eOpposite="//Transition/containingFSM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialState" lowerBound="1" eType="//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1" eType="//Transition" eOpposite="//Transition/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransitions" upperBound="-1" eType="//Transition" eOpposite="//Transition/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingFSM" lowerBound="1" eType="//FSM" eOpposite="//FSM/states"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="DeterminsticTransitionInput"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="DeterminsticTransitionInput" value="source.outgoingTransitions->select(t | t.input = input)->size() = 1"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//State" eOpposite="//State/incomingTransitions"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="output">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="//State" eOpposite="//State/outgoingTransitions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingFSM" eType="//FSM" eOpposite="//FSM/transitions"/>
+  </eClassifiers>
+</ecore:EPackage>
