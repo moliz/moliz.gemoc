@@ -46,6 +46,11 @@ public class FsmConfigurationTraceConstructor implements ITraceConstructor {
 				for (TreeIterator<EObject> i = r.getAllContents(); i.hasNext();) {
 					EObject o = i.next();
 
+					if (o instanceof fsmConfiguration.Input) {
+						fsmConfiguration.Input o_cast = (fsmConfiguration.Input) o;
+						addNewObjectToState(o_cast, lastState);
+					} else
+
 					if (o instanceof fsmConfiguration.FSMConfiguration) {
 						fsmConfiguration.FSMConfiguration o_cast = (fsmConfiguration.FSMConfiguration) o;
 						addNewObjectToState(o_cast, lastState);
@@ -53,11 +58,6 @@ public class FsmConfigurationTraceConstructor implements ITraceConstructor {
 
 					if (o instanceof fsm.FSM) {
 						fsm.FSM o_cast = (fsm.FSM) o;
-						addNewObjectToState(o_cast, lastState);
-					} else
-
-					if (o instanceof fsmConfiguration.Input) {
-						fsmConfiguration.Input o_cast = (fsmConfiguration.Input) o;
 						addNewObjectToState(o_cast, lastState);
 					}
 				}
@@ -116,8 +116,6 @@ public class FsmConfigurationTraceConstructor implements ITraceConstructor {
 					.createFSMConfiguration_currentState_Value();
 
 			if (o_cast.getCurrentState() != null) {
-				// TODO 
-//				addNewObjectToState((fsm.State) o_cast.getCurrentState(), newState);
 				firstValue_currentState.setCurrentState((fsm.State) o_cast.getCurrentState());
 			} else {
 				firstValue_currentState.setCurrentState((fsm.State) null);
@@ -241,12 +239,7 @@ public class FsmConfigurationTraceConstructor implements ITraceConstructor {
 							fsmConfigurationTrace.States.FSMConfiguration_currentState_Value newValue = fsmConfigurationTrace.States.StatesFactory.eINSTANCE
 									.createFSMConfiguration_currentState_Value();
 
-							fsm.State value = null;
-							if (o_cast.getCurrentState() != null) {
-								// TODO
-//								addNewObjectToState(o_cast.getCurrentState(), newState);
-								value = o_cast.getCurrentState();
-							}
+							fsm.State value = o_cast.getCurrentState();
 
 							newValue.setCurrentState((fsm.State) value);
 
@@ -261,6 +254,53 @@ public class FsmConfigurationTraceConstructor implements ITraceConstructor {
 				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) {
 					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.PotentialCollectionFieldModelChange) modelChange;
 					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
+					if (o instanceof fsmConfiguration.Input) {
+						fsmConfiguration.Input o_cast = (fsmConfiguration.Input) o;
+						fsmConfigurationTrace.States.fsmConfiguration.TracedInput tracedObject = (fsmConfigurationTrace.States.fsmConfiguration.TracedInput) exeToTraced
+								.get(o_cast);
+						if (p.getFeatureID() == fsmConfiguration.FsmConfigurationPackage.eINSTANCE.getInput_StringSeq()
+								.getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<fsmConfigurationTrace.States.Input_stringSeq_Value> valueSequence = tracedObject
+									.getInput_stringSeq_Dimension().getValues();
+							fsmConfigurationTrace.States.Input_stringSeq_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getStringSeq().size() == o_cast.getStringSeq().size()) {
+									java.util.Iterator<java.lang.String> it = o_cast.getStringSeq().iterator();
+									for (java.lang.String aPreviousValue : previousValue.getStringSeq()) {
+										java.lang.String aCurrentValue = it.next();
+										if (!aPreviousValue.equals(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								fsmConfigurationTrace.States.Input_stringSeq_Value lastValue = tracedObject
+										.getInput_stringSeq_Dimension().getValues()
+										.get(tracedObject.getInput_stringSeq_Dimension().getValues().size() - 1);
+								newState.getValues().remove(lastValue);
+								// And we create a proper new value
+								fsmConfigurationTrace.States.Input_stringSeq_Value newValue = fsmConfigurationTrace.States.StatesFactory.eINSTANCE
+										.createInput_stringSeq_Value();
+								newValue.getStringSeq()
+										.addAll((Collection<? extends java.lang.String>) o_cast.getStringSeq());
+								tracedObject.getInput_stringSeq_Dimension().getValues().add(newValue);
+								newState.getValues().add(newValue);
+							}
+						}
+					}
 					if (o instanceof fsmConfiguration.FSMConfiguration) {
 						fsmConfiguration.FSMConfiguration o_cast = (fsmConfiguration.FSMConfiguration) o;
 						fsmConfigurationTrace.States.fsmConfiguration.TracedFSMConfiguration tracedObject = (fsmConfigurationTrace.States.fsmConfiguration.TracedFSMConfiguration) exeToTraced
@@ -347,53 +387,6 @@ public class FsmConfigurationTraceConstructor implements ITraceConstructor {
 								newValue.getProducedSequence()
 										.addAll((Collection<? extends java.lang.String>) o_cast.getProducedSequence());
 								tracedObject.getFSMConfiguration_producedSequence_Dimension().getValues().add(newValue);
-								newState.getValues().add(newValue);
-							}
-						}
-					}
-					if (o instanceof fsmConfiguration.Input) {
-						fsmConfiguration.Input o_cast = (fsmConfiguration.Input) o;
-						fsmConfigurationTrace.States.fsmConfiguration.TracedInput tracedObject = (fsmConfigurationTrace.States.fsmConfiguration.TracedInput) exeToTraced
-								.get(o_cast);
-						if (p.getFeatureID() == fsmConfiguration.FsmConfigurationPackage.eINSTANCE.getInput_StringSeq()
-								.getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<fsmConfigurationTrace.States.Input_stringSeq_Value> valueSequence = tracedObject
-									.getInput_stringSeq_Dimension().getValues();
-							fsmConfigurationTrace.States.Input_stringSeq_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getStringSeq().size() == o_cast.getStringSeq().size()) {
-									java.util.Iterator<java.lang.String> it = o_cast.getStringSeq().iterator();
-									for (java.lang.String aPreviousValue : previousValue.getStringSeq()) {
-										java.lang.String aCurrentValue = it.next();
-										if (!aPreviousValue.equals(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								fsmConfigurationTrace.States.Input_stringSeq_Value lastValue = tracedObject
-										.getInput_stringSeq_Dimension().getValues()
-										.get(tracedObject.getInput_stringSeq_Dimension().getValues().size() - 1);
-								newState.getValues().remove(lastValue);
-								// And we create a proper new value
-								fsmConfigurationTrace.States.Input_stringSeq_Value newValue = fsmConfigurationTrace.States.StatesFactory.eINSTANCE
-										.createInput_stringSeq_Value();
-								newValue.getStringSeq()
-										.addAll((Collection<? extends java.lang.String>) o_cast.getStringSeq());
-								tracedObject.getInput_stringSeq_Dimension().getValues().add(newValue);
 								newState.getValues().add(newValue);
 							}
 						}
