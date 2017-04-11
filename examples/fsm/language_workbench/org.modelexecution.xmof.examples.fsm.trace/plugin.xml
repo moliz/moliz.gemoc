@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+-->
+<plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fsmConfigurationTrace -->
+    <package uri="fsmConfigurationTrace" class="fsmConfigurationTrace.FsmConfigurationTracePackage" genModel="model/fsmConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fsmConfigurationTrace -->
+    <package uri="fsmConfigurationTrace_Steps" class="fsmConfigurationTrace.Steps.StepsPackage" genModel="model/fsmConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fsmConfigurationTrace -->
+    <package uri="fsmConfigurationTrace_States" class="fsmConfigurationTrace.States.StatesPackage" genModel="model/fsmConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fsmConfigurationTrace -->
+    <package uri="fsmConfigurationTrace_fsm" class="fsmConfigurationTrace.States.fsm.FsmPackage" genModel="model/fsmConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated fsmConfigurationTrace -->
+    <package uri="fsmConfigurationTrace_fsmConfiguration" class="fsmConfigurationTrace.States.fsmConfiguration.FsmConfigurationPackage" genModel="model/fsmConfigurationTrace.genmodel" />
+  </extension>
+  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon Class="org.modelexecution.xmof.examples.fsm.trace.tracemanager.FsmConfigurationTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.fsm.trace" Name="fsmConfiguration MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to fsmConfiguration language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" AddonGroupId="Sequential.AddonGroup" />
+  </extension>
+</plugin>

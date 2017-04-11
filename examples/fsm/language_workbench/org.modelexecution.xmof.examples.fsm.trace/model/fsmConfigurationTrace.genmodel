@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.fsm.trace/src" modelPluginID="org.modelexecution.xmof.examples.fsm.trace" modelName="FsmConfigurationTrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="8.0" copyrightFields="false" importOrganizing="true">
+  <foreignModel>platform:/resource/org.modelexecution.xmof.examples.fsm.trace/model/fsmConfigurationTrace.ecore</foreignModel>
+  <genPackages prefix="FsmConfigurationTrace" disposableProviderFactory="true">
+    <ecorePackage href="fsmConfigurationTrace.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="fsmConfigurationTrace.ecore#//SpecificTrace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fsmConfigurationTrace.ecore#//SpecificTrace/FsmConfiguration_FSMConfiguration_Run_Sequence"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fsmConfigurationTrace.ecore#//SpecificTrace/FsmConfiguration_TransitionConfiguration_Fire_Sequence"/>
+      </genFeatures>
+    </genClasses>
+    <nestedGenPackages prefix="Steps" disposableProviderFactory="true">
+      <ecorePackage href="fsmConfigurationTrace.ecore#//Steps"/>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//Steps/FsmConfiguration_FSMConfiguration_Run"/>
+        <genOperations>
+          <ecoreOperation href="fsmConfigurationTrace.ecore#//Steps/FsmConfiguration_FSMConfiguration_Run/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fsmConfigurationTrace.ecore#//Steps/FsmConfiguration_FSMConfiguration_Run_AbstractSubStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//Steps/FsmConfiguration_FSMConfiguration_Run_ImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//Steps/FsmConfiguration_TransitionConfiguration_Fire"/>
+        <genOperations>
+          <ecoreOperation href="fsmConfigurationTrace.ecore#//Steps/FsmConfiguration_TransitionConfiguration_Fire/getCaller"/>
+        </genOperations>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//Steps/RootImplicitStep"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//Steps/SpecificRootStep"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fsmConfigurationTrace.ecore#//Steps/SpecificStep"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="States" disposableProviderFactory="true">
+      <ecorePackage href="fsmConfigurationTrace.ecore#//States"/>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/FSMConfiguration_acceptedSequence_Dimension"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/FSMConfiguration_acceptedSequence_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="fsmConfigurationTrace.ecore#//States/FSMConfiguration_acceptedSequence_Value/acceptedSequence"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/FSMConfiguration_currentState_Dimension"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/FSMConfiguration_currentState_Value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="fsmConfigurationTrace.ecore#//States/FSMConfiguration_currentState_Value/currentState"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/FSMConfiguration_producedSequence_Dimension"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/FSMConfiguration_producedSequence_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="fsmConfigurationTrace.ecore#//States/FSMConfiguration_producedSequence_Value/producedSequence"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/Input_stringSeq_Dimension"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/Input_stringSeq_Value"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="fsmConfigurationTrace.ecore#//States/Input_stringSeq_Value/stringSeq"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/SpecificAttributeValue"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="fsmConfigurationTrace.ecore#//States/SpecificDimension/ValueSubType"/>
+        </genTypeParameters>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/SpecificDimension"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="fsmConfigurationTrace.ecore#//States/SpecificReferenceValue/T"/>
+        </genTypeParameters>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/SpecificReferenceValue"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/SpecificState"/>
+      </genClasses>
+      <genClasses image="false">
+        <genTypeParameters>
+          <ecoreTypeParameter href="fsmConfigurationTrace.ecore#//States/SpecificTracedObject/DimensionSubType"/>
+        </genTypeParameters>
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/SpecificTracedObject"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="fsmConfigurationTrace.ecore#//States/SpecificValue"/>
+      </genClasses>
+      <nestedGenPackages prefix="Fsm" disposableProviderFactory="true">
+        <ecorePackage href="fsmConfigurationTrace.ecore#//States/fsm"/>
+        <genClasses>
+          <ecoreClass href="fsmConfigurationTrace.ecore#//States/fsm/TracedFSM"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="fsmConfigurationTrace.ecore#//States/fsm/TracedFSM/originalObject_FSM"/>
+          </genFeatures>
+          <genOperations>
+            <ecoreOperation href="fsmConfigurationTrace.ecore#//States/fsm/TracedFSM/getDimensionsInternal"/>
+          </genOperations>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="FsmConfiguration" disposableProviderFactory="true">
+        <ecorePackage href="fsmConfigurationTrace.ecore#//States/fsmConfiguration"/>
+        <genClasses>
+          <ecoreClass href="fsmConfigurationTrace.ecore#//States/fsmConfiguration/TracedFSMConfiguration"/>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="fsmConfigurationTrace.ecore#//States/fsmConfiguration/TracedFSMConfiguration/fSMConfiguration_acceptedSequence_Dimension"/>
+          </genFeatures>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="fsmConfigurationTrace.ecore#//States/fsmConfiguration/TracedFSMConfiguration/fSMConfiguration_currentState_Dimension"/>
+          </genFeatures>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="fsmConfigurationTrace.ecore#//States/fsmConfiguration/TracedFSMConfiguration/fSMConfiguration_producedSequence_Dimension"/>
+          </genFeatures>
+          <genOperations>
+            <ecoreOperation href="fsmConfigurationTrace.ecore#//States/fsmConfiguration/TracedFSMConfiguration/getDimensionsInternal"/>
+          </genOperations>
+        </genClasses>
+        <genClasses>
+          <ecoreClass href="fsmConfigurationTrace.ecore#//States/fsmConfiguration/TracedInput"/>
+          <genFeatures property="None" children="true" createChild="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="fsmConfigurationTrace.ecore#//States/fsmConfiguration/TracedInput/input_stringSeq_Dimension"/>
+          </genFeatures>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true">
+            <ecoreFeature xsi:type="ecore:EReference" href="fsmConfigurationTrace.ecore#//States/fsmConfiguration/TracedInput/originalObject"/>
+          </genFeatures>
+          <genOperations>
+            <ecoreOperation href="fsmConfigurationTrace.ecore#//States/fsmConfiguration/TracedInput/getDimensionsInternal"/>
+          </genOperations>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+  <usedGenPackages href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.genmodel#//trace"/>
+  <usedGenPackages href="../../org.modelexecution.xmof.examples.fsm.xmof.dynamic/model-gen/fsm.genmodel#//fsmConfiguration"/>
+  <usedGenPackages href="../../org.modelexecution.xmof.examples.fsm/model/fsm.genmodel#//fsm"/>
+</genmodel:GenModel>
