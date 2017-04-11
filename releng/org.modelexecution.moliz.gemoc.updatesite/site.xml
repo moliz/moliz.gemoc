@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/org.modelexecution.moliz.gemoc.feature_1.0.0.qualifier.jar" id="org.modelexecution.moliz.gemoc.feature" version="1.0.0.qualifier">
-      <category name="moliz.gemoc"/>
-   </feature>
-   <category-def name="moliz.gemoc" label="xMOF GEMOC Integration Feature"/>
-</site>

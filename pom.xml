@@ -14,12 +14,17 @@
 		</license>
 	</licenses>
 	<modules>
+		<!-- plugins -->
 		<module>plugins/fr.inria.diverse.opsemanticsview.gen.xmof</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.codegen</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.codegen.ui</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.engine</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.extension.sirius</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.ui</module>
+		<module>examples/deployers/org.modelexecution.xmof.examples.deployer</module>
+		<!-- releng -->
+		
+		<module>releng/molizgemoc-neon</module>
 		<module>releng/org.modelexecution.moliz.gemoc.feature</module>
 		<module>releng/org.modelexecution.moliz.gemoc.updatesite</module>
 	</modules>
@@ -32,21 +37,53 @@
 	</properties>
 
 	<repositories>
+		<!--  can be used in addition of the target definition -->
 		<repository>
-			<id>Mars release</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/mars/201602261000</url>
-		</repository>
+            <id>Neon release</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/releases/neon</url>
+        </repository>        
+		<repository>
+            <id>Sirius</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/sirius/updates/releases/4.1.2/neon/</url>
+        </repository>
 		<repository>
 			<id>diverse-commons</id>
 			<layout>p2</layout>
 			<url>https://ci.inria.fr/diverse-commons/job/diverse-commons.eclipse.root/lastSuccessfulBuild/artifact/commons-eclipse/fr.inria.diverse.commons.eclipse.root/p2updatesite/target/repository/</url>
 		</repository>
-		<repository>
-			<id>Sirius</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/sirius/updates/releases/3.1.4/mars</url>
-		</repository>
+        <repository>
+            <id>kermeta-3</id>
+            <layout>p2</layout>
+            <url>http://www.kermeta.org/k3/update/</url>
+        </repository>
+        <repository>
+            <id>melange</id>
+            <layout>p2</layout>
+            <url>http://melange-lang.org/updatesite/</url>
+        </repository>
+        <repository>
+            <id>gemoc-studio_commons on CI</id>
+            <layout>p2</layout>
+            <url>https://ci.inria.fr/gemoc/job/gemoc-studio_commons/lastSuccessfulBuild/artifact/commons/releng/org.gemoc.commons.repository/target/repository/</url>
+        </repository>
+        <repository>
+            <id>modelanimation_siriusmodelanimation on CI</id>
+            <layout>p2</layout>
+            <url>http://obeo-siriuslab-nightly.s3-website-eu-west-1.amazonaws.com/SiriusAnimator/master/repository/</url>
+        </repository>
+        <!-- Other moliz.* update sites used by this build -->
+        <repository>
+            <id>moliz.core</id>
+            <layout>p2</layout>
+            <url>http://moliz.github.io/moliz.core/updatesite/nightly/</url>
+        </repository>
+        <repository>
+            <id>moliz.xmof</id>
+            <layout>p2</layout>
+            <url>http://moliz.github.io/moliz.xmof/updatesite/nightly/</url>
+        </repository>
 	</repositories>
 
 	<build>
@@ -156,6 +193,13 @@
 							<arch>x86_64</arch>
 						</environment>
 					</environments>
+					<target>
+						<artifact>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>molizgemoc-neon</artifactId>
+							<version>${project.version}</version>
+						</artifact>
+					</target>
 				</configuration>
 			</plugin>
 			<!-- Java compiler plugin -->
