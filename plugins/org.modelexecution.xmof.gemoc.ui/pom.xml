@@ -13,8 +13,8 @@ Contributors:
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-  	<artifactId>org.modelexecution.xmof.gemoc.root</artifactId>
-  	<groupId>moliz.gemoc.parent</groupId>
+  	<artifactId>moliz.gemoc.parent</artifactId>
+  	<groupId>moliz.gemoc</groupId>
   	<version>1.0.0-SNAPSHOT</version>	
   	<relativePath>../../</relativePath>
   </parent>
