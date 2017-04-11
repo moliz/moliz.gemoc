@@ -14,5 +14,6 @@
 <stringAttribute key="Resource" value="/org.modelexecution.xmof.examples.fsm.samplemodels/HelloWorld.fsm"/>
 <booleanAttribute key="VCD visualization" value="false"/>
 <stringAttribute key="airdResource" value="/org.modelexecution.xmof.examples.fsm.samplemodels/HelloWorld.aird"/>
+<booleanAttribute key="fsmConfiguration MultiDimensional Trace" value="true"/>
 <booleanAttribute key="xMOF Semantic ModelAnimator" value="false"/>
 </launchConfiguration>
