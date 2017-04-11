@@ -21,6 +21,10 @@ http://www.eclipse.org/legal/epl-v10.html
       EPL 1.0
    </license>
 
+   <includes
+         id="org.modelexecution.moliz.xmof.feature"
+         version="0.0.0"/>
+         
    <plugin
          id="org.modelexecution.xmof.gemoc.codegen"
          download-size="0"
