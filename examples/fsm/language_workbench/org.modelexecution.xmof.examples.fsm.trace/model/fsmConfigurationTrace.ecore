@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:kernel="http://www.modelexecution.org/xmof/syntax/classes/mykernel" name="fsmConfigurationTrace" nsURI="fsmConfigurationTrace" nsPrefix="fsmConfigurationTrace">
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificTrace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FsmConfiguration_FSMConfiguration_Run_Sequence" upperBound="-1" eType="//Steps/FsmConfiguration_FSMConfiguration_Run"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FsmConfiguration_TransitionConfiguration_Fire_Sequence" upperBound="-1" eType="//Steps/FsmConfiguration_TransitionConfiguration_Fire"/>
+    <eGenericSuperTypes>
+      <eTypeArguments>
+        <eTypeArguments>
+          <eUpperBound eClassifier="//Steps/SpecificStep"/>
+        </eTypeArguments>
+        <eTypeArguments>
+          <eUpperBound eClassifier="//States/SpecificState"/>
+        </eTypeArguments>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+      </eTypeArguments>
+      <eTypeArguments eClassifier="//States/SpecificTracedObject">
+        <eTypeArguments>
+          <eUpperBound eClassifier="//States/SpecificDimension">
+            <eTypeArguments>
+              <eUpperBound eClassifier="//States/SpecificValue"/>
+            </eTypeArguments>
+          </eUpperBound>
+        </eTypeArguments>
+      </eTypeArguments>
+      <eTypeArguments eClassifier="//States/SpecificState"/>
+      <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//Trace"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eSubpackages name="Steps" nsURI="fsmConfigurationTrace_Steps" nsPrefix="events">
+    <eClassifiers xsi:type="ecore:EClass" name="FsmConfiguration_FSMConfiguration_Run">
+      <eOperations name="getCaller" lowerBound="1" eType="//States/fsmConfiguration/TracedFSMConfiguration">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (fsmConfigurationTrace.States.fsmConfiguration.TracedFSMConfiguration) this.getMseoccurrence().getMse().getCaller();"/>
+        </eAnnotations>
+      </eOperations>
+      <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//Steps/FsmConfiguration_FSMConfiguration_Run_AbstractSubStep"/>
+        <eTypeArguments eClassifier="//States/SpecificState"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FsmConfiguration_FSMConfiguration_Run_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FsmConfiguration_FSMConfiguration_Run_ImplicitStep">
+      <eGenericSuperTypes eClassifier="//Steps/FsmConfiguration_FSMConfiguration_Run_AbstractSubStep"/>
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//States/SpecificState"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FsmConfiguration_TransitionConfiguration_Fire">
+      <eOperations name="getCaller" lowerBound="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (fsmConfiguration.TransitionConfiguration) this.getMseoccurrence().getMse().getCaller();"/>
+        </eAnnotations>
+        <eType xsi:type="kernel:BehavioredEClass" href="../../org.modelexecution.xmof.examples.fsm.xmof.dynamic/xmof/fsm.xmof#//TransitionConfiguration"/>
+      </eOperations>
+      <eGenericSuperTypes eClassifier="//Steps/FsmConfiguration_FSMConfiguration_Run_AbstractSubStep"/>
+      <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//States/SpecificState"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RootImplicitStep">
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//States/SpecificState"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SpecificRootStep">
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//Steps/SpecificStep"/>
+        <eTypeArguments eClassifier="//States/SpecificState"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+      </eGenericSuperTypes>
+      <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SpecificStep" abstract="true">
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//States/SpecificState"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//Step"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="States" nsURI="fsmConfigurationTrace_States" nsPrefix="tracedclasses">
+    <eClassifiers xsi:type="ecore:EClass" name="FSMConfiguration_acceptedSequence_Dimension">
+      <eGenericSuperTypes eClassifier="//States/SpecificDimension">
+        <eTypeArguments eClassifier="//States/FSMConfiguration_acceptedSequence_Value"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FSMConfiguration_acceptedSequence_Value" eSuperTypes="//States/SpecificAttributeValue">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="acceptedSequence" unique="false" upperBound="-1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FSMConfiguration_currentState_Dimension">
+      <eGenericSuperTypes eClassifier="//States/SpecificDimension">
+        <eTypeArguments eClassifier="//States/FSMConfiguration_currentState_Value"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FSMConfiguration_currentState_Value">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="currentState">
+        <eType xsi:type="ecore:EClass" href="../../org.modelexecution.xmof.examples.fsm/model/fsm.ecore#//State"/>
+      </eStructuralFeatures>
+      <eGenericSuperTypes eClassifier="//States/SpecificReferenceValue">
+        <eTypeArguments>
+          <eClassifier xsi:type="ecore:EClass" href="../../org.modelexecution.xmof.examples.fsm/model/fsm.ecore#//State"/>
+        </eTypeArguments>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FSMConfiguration_producedSequence_Dimension">
+      <eGenericSuperTypes eClassifier="//States/SpecificDimension">
+        <eTypeArguments eClassifier="//States/FSMConfiguration_producedSequence_Value"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FSMConfiguration_producedSequence_Value" eSuperTypes="//States/SpecificAttributeValue">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="producedSequence" unique="false" upperBound="-1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Input_stringSeq_Dimension">
+      <eGenericSuperTypes eClassifier="//States/SpecificDimension">
+        <eTypeArguments eClassifier="//States/Input_stringSeq_Value"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Input_stringSeq_Value" eSuperTypes="//States/SpecificAttributeValue">
+      <eAnnotations source="http://www.modelexecution.org/trace/XMOF">
+        <details key="executionMetamodelElement"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringSeq" unique="false" upperBound="-1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SpecificAttributeValue" abstract="true" interface="true" eSuperTypes="//States/SpecificValue"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SpecificDimension" abstract="true">
+      <eTypeParameters name="ValueSubType">
+        <eBounds eClassifier="//States/SpecificValue"/>
+      </eTypeParameters>
+      <eGenericSuperTypes>
+        <eTypeArguments eTypeParameter="//States/SpecificDimension/ValueSubType"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//Dimension"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SpecificReferenceValue" abstract="true" interface="true" eSuperTypes="//States/SpecificValue">
+      <eTypeParameters name="T"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SpecificState">
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//Steps/SpecificStep"/>
+        <eTypeArguments eClassifier="//States/SpecificValue"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//State"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SpecificTracedObject" abstract="true">
+      <eTypeParameters name="DimensionSubType">
+        <eBounds eClassifier="//States/SpecificDimension">
+          <eTypeArguments>
+            <eUpperBound eClassifier="//States/SpecificValue"/>
+          </eTypeArguments>
+        </eBounds>
+      </eTypeParameters>
+      <eGenericSuperTypes>
+        <eTypeArguments eTypeParameter="//States/SpecificTracedObject/DimensionSubType"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//TracedObject"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SpecificValue" abstract="true">
+      <eGenericSuperTypes>
+        <eTypeArguments eClassifier="//States/SpecificState"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//Value"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eSubpackages name="fsm" nsURI="fsmConfigurationTrace_fsm" nsPrefix="">
+      <eClassifiers xsi:type="ecore:EClass" name="TracedFSM">
+        <eOperations name="getDimensionsInternal" upperBound="-1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="body" value="final EList&lt;SpecificDimension&lt;?>> result = new org.eclipse.emf.ecore.util.BasicInternalEList&lt;SpecificDimension&lt;?>>(Object.class);&#xD;&#xA;result.addAll(super.getDimensionsInternal());&#xD;&#xA;return result;&#xD;&#xA;"/>
+          </eAnnotations>
+          <eGenericType eClassifier="//States/SpecificDimension">
+            <eTypeArguments/>
+          </eGenericType>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject_FSM">
+          <eType xsi:type="ecore:EClass" href="../../org.modelexecution.xmof.examples.fsm/model/fsm.ecore#//FSM"/>
+        </eStructuralFeatures>
+        <eGenericSuperTypes eClassifier="//States/SpecificTracedObject">
+          <eTypeArguments eClassifier="//States/SpecificDimension">
+            <eTypeArguments/>
+          </eTypeArguments>
+        </eGenericSuperTypes>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="fsmConfiguration" nsURI="fsmConfigurationTrace_fsmConfiguration" nsPrefix="">
+      <eClassifiers xsi:type="ecore:EClass" name="TracedFSMConfiguration" eSuperTypes="//States/fsm/TracedFSM">
+        <eOperations name="getDimensionsInternal" upperBound="-1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="body" value="final EList&lt;SpecificDimension&lt;?>> result = new org.eclipse.emf.ecore.util.BasicInternalEList&lt;SpecificDimension&lt;?>>(Object.class);&#xD;&#xA;result.addAll(super.getDimensionsInternal());&#xD;&#xA;result.add(getFSMConfiguration_currentState_Dimension());&#xD;&#xA;result.add(getFSMConfiguration_acceptedSequence_Dimension());&#xD;&#xA;result.add(getFSMConfiguration_producedSequence_Dimension());&#xD;&#xA;return result;&#xD;&#xA;"/>
+          </eAnnotations>
+          <eGenericType eClassifier="//States/SpecificDimension">
+            <eTypeArguments/>
+          </eGenericType>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="fSMConfiguration_acceptedSequence_Dimension" eType="//States/FSMConfiguration_acceptedSequence_Dimension" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="fSMConfiguration_currentState_Dimension" eType="//States/FSMConfiguration_currentState_Dimension" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="fSMConfiguration_producedSequence_Dimension" eType="//States/FSMConfiguration_producedSequence_Dimension" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TracedInput">
+        <eOperations name="getDimensionsInternal" upperBound="-1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="body" value="final EList&lt;SpecificDimension&lt;?>> result = new org.eclipse.emf.ecore.util.BasicInternalEList&lt;SpecificDimension&lt;?>>(Object.class);&#xD;&#xA;result.addAll(super.getDimensionsInternal());&#xD;&#xA;result.add(getInput_stringSeq_Dimension());&#xD;&#xA;return result;&#xD;&#xA;"/>
+          </eAnnotations>
+          <eGenericType eClassifier="//States/SpecificDimension">
+            <eTypeArguments/>
+          </eGenericType>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="input_stringSeq_Dimension" eType="//States/Input_stringSeq_Dimension" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="originalObject">
+          <eType xsi:type="ecore:EClass" href="../../org.modelexecution.xmof.examples.fsm.xmof.dynamic/xmof/fsm.xmof#//Input"/>
+        </eStructuralFeatures>
+        <eGenericSuperTypes eClassifier="//States/SpecificTracedObject">
+          <eTypeArguments eClassifier="//States/SpecificDimension">
+            <eTypeArguments/>
+          </eTypeArguments>
+        </eGenericSuperTypes>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>
