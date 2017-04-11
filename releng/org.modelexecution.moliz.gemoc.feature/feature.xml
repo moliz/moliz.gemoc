@@ -24,7 +24,11 @@ http://www.eclipse.org/legal/epl-v10.html
    <includes
          id="org.modelexecution.moliz.xmof.feature"
          version="0.0.0"/>
-         
+
+   <includes
+         id="org.modelexecution.moliz.xmof.editor.feature"
+         version="0.0.0"/>
+
    <plugin
          id="org.modelexecution.xmof.gemoc.codegen"
          download-size="0"
