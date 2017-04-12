@@ -15,6 +15,7 @@ script:
 # Prepare local dirs to deploy: copy repository
 - chmod a+x prepare-deploy-local-dir.sh get-previous-releases.sh
 - ./prepare-deploy-local-dir.sh $TRAVIS_BUILD_DIR/moliz.gemoc.updatesites/updatesite/nightly
+- ./get-previous-releases.sh $TRAVIS_BUILD_DIR/moliz.gemoc.updatesites/updatesite
 deploy:
 # copy working update sites to github pages 
   - provider: pages
