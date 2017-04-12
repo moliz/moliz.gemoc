@@ -153,7 +153,8 @@ public class XMOFBasedModelLoader {
 					EObject referencedEObject = objectValue.getEObject();
 
 					if (referencedEObject != null) {
-						allRelatedResources.addAll(getRelatedResources(referencedEObject.eResource()));
+						Collection<Resource> relatedResources = getRelatedResources(referencedEObject.eResource());
+						allRelatedResources.addAll(relatedResources);
 					}
 				}
 			}
@@ -163,6 +164,13 @@ public class XMOFBasedModelLoader {
 				if (!executionContext.getResourceModel().getContents().contains(o))
 					parameterValueObjects.add(o);
 			});
+
+			// We put all other required resources in the executed model resource
+			// Eg. in fUML, the "executionenvironment"
+			for (EObject o : new HashSet<EObject>(r.getContents())) {
+				addWithTransaction(getModelResource().getContents(), o);
+			}
+
 		}
 
 		return parameterValueObjects;
@@ -259,7 +267,7 @@ public class XMOFBasedModelLoader {
 			}
 		}
 
-		// Hack: we add the same annotations as melange so all dynamic parts of/ the metamodel
+		// Hack: we add the same annotations as melange so all dynamic parts of the metamodel
 		for (EPackage p : confMMPackages) {
 			p.eAllContents().forEachRemaining((o) -> {
 				if (o instanceof EStructuralFeature || (o instanceof EClass && !(o instanceof Activity)
@@ -365,6 +373,11 @@ public class XMOFBasedModelLoader {
 	private EditingDomain getEditingDomain() {
 		ResourceSet resourceSet = getResourceSet();
 		return TransactionUtil.getEditingDomain(resourceSet);
+	}
+
+	private void addWithTransaction(EList<?> list, Object o) {
+		Command cmd = new AddCommand(getEditingDomain(), list, o);
+		getEditingDomain().getCommandStack().execute(cmd);
 	}
 
 }
