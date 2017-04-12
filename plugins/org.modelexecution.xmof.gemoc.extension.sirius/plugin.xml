@@ -24,12 +24,12 @@
             allPopups="false"
             locationURI="popup:org.eclipse.sirius.editor.editorPlugin.SiriusEditorID">
          <menu
-               icon="icons/xmof-16.png"
+               icon="icons/xmof-moliz-16.png"
                id="xmof"
                label="xMOF">
             <command
                   commandId="org.modelexecution.xmof.gemoc.extension.sirius.AddAnimationLayer"
-                  label="Add animation layer"
+                  label="Add Animation Layer"
                   style="push"
                   tooltip="Add an xMOF animation layer to the selected diagram description">
                <visibleWhen
