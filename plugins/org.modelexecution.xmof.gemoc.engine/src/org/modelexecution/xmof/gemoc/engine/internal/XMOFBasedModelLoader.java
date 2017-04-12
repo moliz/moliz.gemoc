@@ -128,10 +128,9 @@ public class XMOFBasedModelLoader {
 		Set<Resource> relatedModelResources = new HashSet<Resource>();
 		if (resource != null) {
 			Set<Resource> relatedResources = EMFResource.getRelatedResources(resource);
-			relatedResources.removeIf(r -> r.getContents().get(0) == resource.getContents().get(0));
+			relatedResources.removeIf(r -> r == null || r.getContents().get(0) == resource.getContents().get(0));
 			relatedModelResources.add(resource);
 			relatedModelResources.addAll(relatedResources);
-			relatedModelResources.removeIf(r -> r == null);
 		}
 		return relatedModelResources;
 	}
