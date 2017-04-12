@@ -13,17 +13,26 @@ before_install: echo "MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'" > ~/.mavenrc
 script:
 - mvn clean verify
 # Prepare local dirs to deploy: copy repository
-- chmod a+x prepare-deploy-local-dir.sh
+- chmod a+x prepare-deploy-local-dir.sh get-previous-releases.sh
 - ./prepare-deploy-local-dir.sh $TRAVIS_BUILD_DIR/moliz.gemoc.updatesites/updatesite/nightly
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: 
-    secure: UJtJgXSrTHgnRp036qfYAT99RDaDJp+HyYqzdgcXqE6HlA/tv6MoEmnGFA5ocyy0EIM+EZEkbxC3MEnFBNSTWXpjC/44ixBKaAkrRWrLv0irLhkUnOx+2JRvcO5KiOY3gkhwdZiv6WV5Vk8LGeU2y7OV2UCYboNFD3CtAWqMgLcXdLJUkcV+Cy/SVszZp/cFINoIXYg5tfNMX9GWHL6weKmWG85am8MUB2QpxoeQm8fBbpxxIQfborwxCY0SiHwxBlU0v/hJRRex+X+Qow8GGUAzJ/wQGGvh9qS09E7VTBdk2fSZ91w+6r9U78/iBsCqwCfjw/w7ObLhMSjTJ10sRJ7b37ZhGHKRTpHrJFjzGSUiBQiK3bUvKOgjXcrkDk8ezhyNo+cz4WOlgnbCCcgLDt+n+CoG5lsm9li1BQS672uCYpPO/+jxJyC3mlaIdfrMbAp2nkL+uOFudNoTXeGgIbmpWmu1cO/J6sM4GQUimBdEQJZO1WbZNXmeK7z0GyzAFIScP+VKFvis1o+6Sy01eC9ng/kdwSy57OHW0EkXkoo8R5FvPUysQD176r3YyQPQMPhw+maLP46BUO4BsY/MSvAL9Xmxn/BvbhnLcFOfQgjHj46oEIdCzZ4ey32hN0QmYeWMtWNz58N8sgPg/UBWYmnP3UW7znVzTczJ5smpDYQ=
-  repo: moliz/moliz.gemoc
-  target_branch: gh-pages
-  local-dir: "${TRAVIS_BUILD_DIR}/moliz.gemoc.updatesites"  
-  skip_cleanup: true
-  on:
-    branch: master
-
+# copy working update sites to github pages 
+  - provider: pages
+    skip_cleanup: true
+    github_token:   
+      secure: UJtJgXSrTHgnRp036qfYAT99RDaDJp+HyYqzdgcXqE6HlA/tv6MoEmnGFA5ocyy0EIM+EZEkbxC3MEnFBNSTWXpjC/44ixBKaAkrRWrLv0irLhkUnOx+2JRvcO5KiOY3gkhwdZiv6WV5Vk8LGeU2y7OV2UCYboNFD3CtAWqMgLcXdLJUkcV+Cy/SVszZp/cFINoIXYg5tfNMX9GWHL6weKmWG85am8MUB2QpxoeQm8fBbpxxIQfborwxCY0SiHwxBlU0v/hJRRex+X+Qow8GGUAzJ/wQGGvh9qS09E7VTBdk2fSZ91w+6r9U78/iBsCqwCfjw/w7ObLhMSjTJ10sRJ7b37ZhGHKRTpHrJFjzGSUiBQiK3bUvKOgjXcrkDk8ezhyNo+cz4WOlgnbCCcgLDt+n+CoG5lsm9li1BQS672uCYpPO/+jxJyC3mlaIdfrMbAp2nkL+uOFudNoTXeGgIbmpWmu1cO/J6sM4GQUimBdEQJZO1WbZNXmeK7z0GyzAFIScP+VKFvis1o+6Sy01eC9ng/kdwSy57OHW0EkXkoo8R5FvPUysQD176r3YyQPQMPhw+maLP46BUO4BsY/MSvAL9Xmxn/BvbhnLcFOfQgjHj46oEIdCzZ4ey32hN0QmYeWMtWNz58N8sgPg/UBWYmnP3UW7znVzTczJ5smpDYQ=  
+    repo: moliz/moliz.gemoc
+    target_branch: gh-pages
+    local-dir: "${TRAVIS_BUILD_DIR}/moliz.gemoc.updatesites"
+    on:
+      branch: master
+# copy the zip to github release on tags with the release pattern
+  - provider: releases
+    skip_cleanup: true
+    api_key:   
+      secure: UJtJgXSrTHgnRp036qfYAT99RDaDJp+HyYqzdgcXqE6HlA/tv6MoEmnGFA5ocyy0EIM+EZEkbxC3MEnFBNSTWXpjC/44ixBKaAkrRWrLv0irLhkUnOx+2JRvcO5KiOY3gkhwdZiv6WV5Vk8LGeU2y7OV2UCYboNFD3CtAWqMgLcXdLJUkcV+Cy/SVszZp/cFINoIXYg5tfNMX9GWHL6weKmWG85am8MUB2QpxoeQm8fBbpxxIQfborwxCY0SiHwxBlU0v/hJRRex+X+Qow8GGUAzJ/wQGGvh9qS09E7VTBdk2fSZ91w+6r9U78/iBsCqwCfjw/w7ObLhMSjTJ10sRJ7b37ZhGHKRTpHrJFjzGSUiBQiK3bUvKOgjXcrkDk8ezhyNo+cz4WOlgnbCCcgLDt+n+CoG5lsm9li1BQS672uCYpPO/+jxJyC3mlaIdfrMbAp2nkL+uOFudNoTXeGgIbmpWmu1cO/J6sM4GQUimBdEQJZO1WbZNXmeK7z0GyzAFIScP+VKFvis1o+6Sy01eC9ng/kdwSy57OHW0EkXkoo8R5FvPUysQD176r3YyQPQMPhw+maLP46BUO4BsY/MSvAL9Xmxn/BvbhnLcFOfQgjHj46oEIdCzZ4ey32hN0QmYeWMtWNz58N8sgPg/UBWYmnP3UW7znVzTczJ5smpDYQ=    
+    file_glob: true
+    file: releng/org.modelexecution.moliz.gemoc.updatesite/target/*.zip
+    on:  
+      tags: true
+      condition: "$TRAVIS_TAG =~ ^release.*$"
