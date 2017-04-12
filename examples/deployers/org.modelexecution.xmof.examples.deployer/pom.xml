@@ -21,7 +21,7 @@ Contributors:
 		<relativePath>../../..</relativePath>
 		<groupId>moliz.gemoc</groupId>
 		<artifactId>moliz.gemoc.parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>org.modelexecution.xmof.examples.deployer</artifactId>
@@ -76,6 +76,6 @@ Contributors:
 	</build>
 	
 	<groupId>moliz.gemoc</groupId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 </project> 
 
