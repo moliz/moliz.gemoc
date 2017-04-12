@@ -1,6 +1,6 @@
 Bundle-SymbolicName: org.modelexecution.xmof.examples.fsm.design;singleton:=true
 Bundle-Name: %pluginName
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,

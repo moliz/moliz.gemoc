@@ -15,11 +15,11 @@ Contributors:
   <parent>
   	<artifactId>moliz.gemoc.parent</artifactId>
   	<groupId>moliz.gemoc</groupId>
-  	<version>1.0.0-SNAPSHOT</version>	
+  	<version>1.0.1-SNAPSHOT</version>	
   	<relativePath>../../</relativePath>
   </parent>
   <groupId>moliz.gemoc</groupId>
   <artifactId>org.modelexecution.xmof.gemoc.codegen.ui</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>
