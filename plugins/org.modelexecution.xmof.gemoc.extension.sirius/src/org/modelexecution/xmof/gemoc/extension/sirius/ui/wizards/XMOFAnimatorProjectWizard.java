@@ -38,7 +38,7 @@ public class XMOFAnimatorProjectWizard extends NewGemocDebugRepresentationWizard
     String diagramName = getDiagramName();
 
     final AddAnimationLayerRunnable finisher = new AddAnimationLayerRunnable(odesignFile,
-        diagramName);
+        diagramName,getDebugRepresentationSelectionPage().getSelected());
     try {
       getContainer().run(false, true, finisher);
     } catch (InvocationTargetException e) {

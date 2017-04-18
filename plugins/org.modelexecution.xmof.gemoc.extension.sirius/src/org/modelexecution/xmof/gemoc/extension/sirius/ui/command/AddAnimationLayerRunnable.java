@@ -37,12 +37,14 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sirius.diagram.description.AdditionalLayer;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
+import org.eclipse.sirius.diagram.description.DiagramExtensionDescription;
 import org.eclipse.sirius.diagram.description.Layer;
 import org.eclipse.sirius.viewpoint.description.Customization;
 import org.eclipse.sirius.viewpoint.description.DecorationDescriptionsSet;
 import org.eclipse.sirius.viewpoint.description.DescriptionPackage;
 import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
+import org.eclipse.sirius.viewpoint.description.RepresentationExtensionDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -52,6 +54,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.part.FileEditorInput;
 import org.gemoc.xdsmlframework.extensions.sirius.Activator;
 import org.gemoc.xdsmlframework.extensions.sirius.command.AddDebugLayerHandler;
+import org.gemoc.xdsmlframework.extensions.sirius.wizards.pages.DebugRepresentationSelectionPage;
 import org.osgi.framework.BundleException;
 
 import fr.inria.diverse.commons.eclipse.pde.manifest.ManifestChanger;
@@ -76,17 +79,25 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
   private static final String REGEX_IMPORT_BLOCK = "import.*;";
 
   private IFile diagramDescriptionFile;
-  private String diagramDescriptionName;
+  private String diagramName;
   private ExecutionEvent event;
+  private int wizardOption = -1;
 
-  public AddAnimationLayerRunnable(IFile diagramDescriptionFile, String diagramDescriptionName) {
-    super();
-    this.diagramDescriptionFile = diagramDescriptionFile;
-    this.diagramDescriptionName = diagramDescriptionName;
-  }
-
+  /**
+   * Constructor which is used from the AddAnimationLayerHandler.
+   */
   public AddAnimationLayerRunnable(ExecutionEvent event) {
     this.event = event;
+  }
+
+  /**
+   * Construtor which used from the XMOFAnimatorProjectWizard
+   */
+  public AddAnimationLayerRunnable(IFile diagramFile, String diagramName, int wizardOption) {
+    super();
+    this.wizardOption = wizardOption;
+    this.diagramDescriptionFile = diagramFile;
+    this.diagramName = diagramName;
   }
 
   private boolean result = true;
@@ -101,31 +112,55 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
   public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 
     try {
-      DiagramDescription diagramDescription = getDiagramDescription();
-      if (diagramDescription == null) {
-        result = false;
-        return;
+      final DiagramDescription diagramDescription;
+      final DiagramExtensionDescription extensionDescription;
+      if (event != null
+          || wizardOption != DebugRepresentationSelectionPage.CREATE_VIEWPOINT_EXTENSION) {
+        diagramDescription = getDiagramDescription();
+        extensionDescription = null;
+        if (diagramDescription == null) {
+          result = false;
+          return;
+        }
+
+      } else {
+        diagramDescription = null;
+        extensionDescription = getDiagramExtensionDescriptionFromFile();
+        if (extensionDescription == null) {
+          result = false;
+          return;
+        }
+
       }
 
       final String layerName = "Animation";
 
       final IProject project = diagramDescriptionFile.getProject();
+      final Resource resource = diagramDescription == null ? extensionDescription.eResource()
+          : diagramDescription.eResource();
       final String projectName = project.getName();
+      final String languageName = diagramDescription == null ? extensionDescription.getName()
+          : diagramDescription.getName();
       final IFolder srcFolder = project
           .getFolder(new Path("src/" + projectName.replaceAll("\\.", "/").toLowerCase()));
 
-      final String languageName = diagramDescription.getName();
       final String qualifiedServiceClassName = getOrCreateAnimationServiceClass(srcFolder,
           projectName, languageName, layerName, monitor);
 
-      EditingDomain editingDomain = ((IEditingDomainProvider) diagramDescription.eResource()
-          .getResourceSet()).getEditingDomain();
-      editingDomain.getCommandStack().execute(new ChangeCommand(diagramDescription.eResource()) {
+      EditingDomain editingDomain = ((IEditingDomainProvider) resource.getResourceSet())
+          .getEditingDomain();
+      editingDomain.getCommandStack().execute(new ChangeCommand(resource) {
 
         @Override
         protected void doExecute() {
-          emfModifications(monitor, layerName, diagramDescription, languageName,
-              qualifiedServiceClassName);
+          if (extensionDescription != null) {
+            emfModifications(monitor, layerName, extensionDescription, languageName,
+                qualifiedServiceClassName);
+          } else {
+            emfModifications(monitor, layerName, diagramDescription, languageName,
+                qualifiedServiceClassName);
+          }
+
         }
 
       });
@@ -169,9 +204,26 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
     final Group group = getGroup();
     for (Viewpoint viewpoint : group.getOwnedViewpoints()) {
       for (RepresentationDescription representation : viewpoint.getOwnedRepresentations()) {
-        if (diagramDescriptionName.equals(representation.getName())) {
+        if (diagramName.equals(representation.getName())) {
           return (DiagramDescription) representation;
 
+        }
+      }
+    }
+    return null;
+  }
+
+  private DiagramExtensionDescription getDiagramExtensionDescriptionFromFile()
+      throws PartInitException {
+    PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+        .openEditor(new FileEditorInput(diagramDescriptionFile), PlatformUI.getWorkbench()
+            .getEditorRegistry().getDefaultEditor(diagramDescriptionFile.getName()).getId());
+    final Group group = getGroup();
+    for (Viewpoint viewpoint : group.getOwnedViewpoints()) {
+      for (RepresentationExtensionDescription representationExtension : viewpoint
+          .getOwnedRepresentationExtensions()) {
+        if (diagramName.equals(representationExtension.getName())) {
+          return (DiagramExtensionDescription) representationExtension;
         }
       }
     }
@@ -222,12 +274,20 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
     getOrCreateAnimationLayer(description, layerName, monitor);
   }
 
+  private void emfModifications(IProgressMonitor monitor, String layerName,
+      DiagramExtensionDescription extensionDescription, String languageName,
+      String qualifiedServiceClassName) {
+    AddDebugLayerHandler.getOrCreateImport(extensionDescription, qualifiedServiceClassName,
+        monitor);
+    getOrCreateAnimationLayer(extensionDescription, layerName, monitor);
+  }
+
   private Layer getOrCreateAnimationLayer(DiagramDescription description, String layerName,
       IProgressMonitor monitor) {
     final Layer res;
     Layer existingLayer = null;
     for (Layer layer : description.getAdditionalLayers()) {
-      if ("Animation".equals(layer.getName())) {
+      if (layerName.equals(layer.getName())) {
         existingLayer = layer;
         break;
       }
@@ -242,13 +302,47 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
     return res;
   }
 
-  private static Layer createLayer(DiagramDescription description, String layerName,
+  private Layer getOrCreateAnimationLayer(DiagramExtensionDescription descriptionExtension,
+      String layerName, IProgressMonitor monitor) {
+    final Layer res;
+    Layer existingLayer = null;
+    for (Layer layer : descriptionExtension.getLayers()) {
+      if (layerName.equals(layer.getName())) {
+        existingLayer = layer;
+        break;
+      }
+    }
+
+    if (existingLayer != null) {
+      res = existingLayer;
+    } else {
+      res = createLayer(descriptionExtension, layerName, monitor);
+    }
+
+    return res;
+  }
+
+  private Layer createLayer(DiagramExtensionDescription extensionDescription, String layerName,
+      IProgressMonitor monitor) {
+    AdditionalLayer res = createNewLayer(layerName, monitor);
+    extensionDescription.getLayers().add(res);
+    return res;
+  }
+
+  private Layer createLayer(DiagramDescription description, String layerName,
       IProgressMonitor monitor) {
 
+    AdditionalLayer res = createNewLayer(layerName, monitor);
+
+    description.getAdditionalLayers().add(res);
+    return res;
+  }
+
+  private AdditionalLayer createNewLayer(String layerName, IProgressMonitor monitor) {
     // Create Layer
     final AdditionalLayer res = org.eclipse.sirius.diagram.description.DescriptionPackage.eINSTANCE
         .getDescriptionFactory().createAdditionalLayer();
-    res.setName("Animation");
+    res.setName(layerName);
     res.setActiveByDefault(true);
 
     // Add decoration set
@@ -259,12 +353,10 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
     Customization customization = DescriptionPackage.eINSTANCE.getDescriptionFactory()
         .createCustomization();
     res.setCustomization(customization);
-
-    description.getAdditionalLayers().add(res);
     return res;
   }
 
-  private static String getOrCreateAnimationServiceClass(IFolder srcFolder, String projectName,
+  private String getOrCreateAnimationServiceClass(IFolder srcFolder, String projectName,
       String languageName, String layerName, IProgressMonitor monitor)
       throws CoreException, IOException {
     final String className = AddDebugLayerHandler.toCamelCase(languageName.replaceAll("\\W", ""))
