@@ -15,6 +15,8 @@ public class Activator extends AbstractUIPlugin {
 	// The plug-in ID
 	public static final String PLUGIN_ID = "org.modelexecution.xmof.gemoc.engine"; //$NON-NLS-1$
 
+  public static final String DEBUG_MODEL_ID = org.gemoc.execution.sequential.javaengine.ui.Activator.DEBUG_MODEL_ID;
+
 	// The shared instance
 	private static Activator plugin;
 

@@ -7,7 +7,8 @@
             delegate="org.modelexecution.xmof.gemoc.engine.ui.launcher.Launcher"
             id="org.modelexecution.xmof.execution.engine.ui.launcher"
             modes="run, debug"
-            name="xMOF Executable Model">
+            name="xMOF Executable Model"
+            sourceLocatorId="org.gemoc.execution.sequential.javaengine.ui.sourceLocator">
       </launchConfigurationType>
    </extension>
    <extension

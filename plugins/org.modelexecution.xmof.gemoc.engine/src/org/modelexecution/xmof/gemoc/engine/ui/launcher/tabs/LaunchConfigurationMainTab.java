@@ -88,6 +88,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 		configuration.setAttribute(RunConfiguration.LAUNCH_MODEL_ENTRY_POINT, "");
 		configuration.setAttribute(RunConfiguration.LAUNCH_METHOD_ENTRY_POINT, "");
 		configuration.setAttribute(RunConfiguration.LAUNCH_SELECTED_LANGUAGE, "");
+		configuration.setAttribute(RunConfiguration.DEBUG_MODEL_ID,Activator.DEBUG_MODEL_ID);
 
 	}
 
