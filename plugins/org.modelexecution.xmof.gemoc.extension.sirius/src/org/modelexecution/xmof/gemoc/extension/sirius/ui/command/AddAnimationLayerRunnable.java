@@ -380,7 +380,7 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
 
   }
 
-  private static void updateAndSaveActivatorClass(IFolder srcFolder, String className, String res,
+  private void updateAndSaveActivatorClass(IFolder srcFolder, String className, String res,
       IProgressMonitor monitor) throws IOException, CoreException {
     IFile activatorClassFile = srcFolder.getFile("Activator.java");
     if (activatorClassFile.exists()) {
@@ -395,7 +395,7 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
 
   }
 
-  private static String addImportToClass(String activatorClass, String res) {
+  private String addImportToClass(String activatorClass, String res) {
     Pattern pattern = Pattern.compile(REGEX_IMPORT_BLOCK);
     Matcher matcher = pattern.matcher(activatorClass);
     String insertPoint = null;
@@ -415,7 +415,7 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
 
   }
 
-  private static String updateStartMethod(String activatorClass, String className) {
+  private String updateStartMethod(String activatorClass, String className) {
     Pattern pattern = Pattern.compile(REGEX_ACTIVATOR_START_METHOD);
     Matcher matcher = pattern.matcher(activatorClass);
     if (matcher.find()) {
@@ -428,8 +428,8 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
     return null;
   }
 
-  private static void createAnimationServiceClass(IFile classFile, String packageName,
-      String className, String languageName, String layerName, IProgressMonitor monitor)
+  private void createAnimationServiceClass(IFile classFile, String packageName, String className,
+      String languageName, String layerName, IProgressMonitor monitor)
       throws IOException, CoreException {
 
     String content = AddDebugLayerHandler.getContent(AddAnimationLayerRunnable.class
