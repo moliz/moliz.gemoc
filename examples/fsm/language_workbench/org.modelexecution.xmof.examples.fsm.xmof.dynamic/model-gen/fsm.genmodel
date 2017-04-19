@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.modelexecution.xmof.examples.fsm.xmof.dynamic/src" modelPluginID="org.modelexecution.xmof.examples.fsm.xmof.dynamic" modelName="Fsm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="8.0" copyrightFields="false" importOrganizing="true">
+  <foreignModel>platform:/resource/org.modelexecution.xmof.examples.fsm.xmof.dynamic/xmof/fsm.xmof</foreignModel>
+  <genPackages prefix="FsmConfiguration" disposableProviderFactory="true" loadInitialization="true">
+    <ecorePackage href="../xmof/fsm.xmof#/"/>
+    <genClasses>
+      <ecoreClass href="../xmof/fsm.xmof#//FSMConfiguration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="../xmof/fsm.xmof#//FSMConfiguration/currentState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="../xmof/fsm.xmof#//FSMConfiguration/producedSequence"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="../xmof/fsm.xmof#//FSMConfiguration/acceptedSequence"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="../xmof/fsm.xmof#//FSMConfiguration/main"/>
+        <genParameters>
+          <ecoreParameter href="../xmof/fsm.xmof#//FSMConfiguration/main/input"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="../xmof/fsm.xmof#//FSMConfiguration/run"/>
+        <genParameters>
+          <ecoreParameter href="../xmof/fsm.xmof#//FSMConfiguration/run/input"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="../xmof/fsm.xmof#//StateConfiguration"/>
+      <genOperations>
+        <ecoreOperation href="../xmof/fsm.xmof#//StateConfiguration/process"/>
+        <genParameters>
+          <ecoreParameter href="../xmof/fsm.xmof#//StateConfiguration/process/currentInputElement"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="../xmof/fsm.xmof#//TransitionConfiguration"/>
+      <genOperations>
+        <ecoreOperation href="../xmof/fsm.xmof#//TransitionConfiguration/fire"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="../xmof/fsm.xmof#//Input"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="../xmof/fsm.xmof#//Input/stringSeq"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../../plugin/org.modelexecution.xmof.examples.fsm/model/fsm.genmodel#//fsm"/>
+</genmodel:GenModel>

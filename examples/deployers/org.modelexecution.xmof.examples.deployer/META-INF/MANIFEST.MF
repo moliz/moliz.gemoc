@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xMOF GEMOC Example Deployer
+Bundle-SymbolicName: org.modelexecution.xmof.examples.deployer;singleton:=true
+Bundle-Version: 1.0.1.qualifier
+Bundle-Activator: org.modelexecution.xmof.examples.deployer.Activator
+Bundle-Vendor: modelexecution.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Export-Package: org.modelexecution.xmof.examples.deployer,
+ org.modelexecution.xmof.examples.deployer.wizards

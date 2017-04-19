@@ -7,11 +7,12 @@
             allPopups="false"
             locationURI="popup:org.eclipse.ui.popup.any?after=xdsmlGroup">
          <menu
+               icon="icons/xmof-moliz-16.png"
                id="xmof.menu"
                label="xMOF">
             <command
                   commandId="org.modelexecution.xmof.gemoc.codegen.ui.GenerateXMOFCode"
-                  label="Generate code"
+                  label="Generate Code"
                   style="push">
                <visibleWhen
                      checkEnabled="false">

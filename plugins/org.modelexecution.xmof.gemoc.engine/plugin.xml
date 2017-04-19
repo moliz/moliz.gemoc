@@ -5,18 +5,26 @@
          point="org.eclipse.debug.core.launchConfigurationTypes">
       <launchConfigurationType
             delegate="org.modelexecution.xmof.gemoc.engine.ui.launcher.Launcher"
-            id="org.xmof.execution.engine.ui.launcher"
+            id="org.modelexecution.xmof.execution.engine.ui.launcher"
             modes="run, debug"
-            name="Gemoc XMOF eXecutable Model">
+            name="xMOF Executable Model">
       </launchConfigurationType>
    </extension>
    <extension
          point="org.eclipse.debug.ui.launchConfigurationTabGroups">
       <launchConfigurationTabGroup
             class="org.modelexecution.xmof.gemoc.engine.ui.launcher.LauncherTabGroup"
-            id="org.xmof.execution.engine.ui.launcher.tabGroup"
-            type="org.xmof.execution.engine.ui.launcher">
+            id="org.modelexecution.xmof.execution.engine.ui.launcher.tabGroup"
+            type="org.modelexecution.xmof.execution.engine.ui.launcher">
       </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="org.modelexecution.xmof.execution.engine.ui.launcher"
+            icon="icons/xmof-moliz-16.png"
+            id="org.xmof.execution.engine.ui.launcher.launchConfigurationTypeImage">
+      </launchConfigurationTypeImage>
    </extension>
 
 </plugin>

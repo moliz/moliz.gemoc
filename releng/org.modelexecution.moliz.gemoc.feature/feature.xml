@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.modelexecution.moliz.gemoc.feature"
+      label="xMOF GEMOC Integration"
+      version="1.0.1.qualifier"
+      provider-name="modelexecution.org">
+
+   <description url="https://github.com/moliz/moliz.gemoc">
+      Contains the xMOF engine for GEMOC, the code generator for xMOF models, and the trace addon generator for xMOF.
+   </description>
+
+   <copyright url="http://www.eclipse.org/legal/epl-v10.html">
+      Copyright (c) 2017 Vienna University of Technology.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License
+v1.0 which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      EPL 1.0
+   </license>
+
+   <includes
+         id="org.modelexecution.moliz.xmof.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.modelexecution.moliz.xmof.editor.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.modelexecution.xmof.gemoc.codegen"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.modelexecution.xmof.gemoc.codegen.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.modelexecution.xmof.gemoc.engine"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.modelexecution.xmof.gemoc.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.modelexecution.xmof.examples.deployer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="fr.inria.diverse.opsemanticsview.gen.xmof"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.modelexecution.xmof.gemoc.extension.sirius"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

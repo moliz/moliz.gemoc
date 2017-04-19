@@ -133,23 +133,6 @@ public class ModelAnimator implements IEngineAddon {
 	public void engineAboutToDispose(IExecutionEngine engine) {
 	}
 
-	@Override
-	public void aboutToSelectStep(IExecutionEngine engine, Collection<Step> steps) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void proposedStepsChanged(IExecutionEngine engine, Collection<Step> steps) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void stepSelected(IExecutionEngine engine, Step selectedStep) {
-		// TODO Auto-generated method stub
-
-	}
 
 	/**
 	 * MSE occurrence is passed to controller to animate step
@@ -179,4 +162,22 @@ public class ModelAnimator implements IEngineAddon {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+  @Override
+  public void aboutToSelectStep(IExecutionEngine engine, Collection<Step<?>> steps) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void proposedStepsChanged(IExecutionEngine engine, Collection<Step<?>> steps) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void stepSelected(IExecutionEngine engine, Step<?> selectedStep) {
+    // TODO Auto-generated method stub
+    
+  }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fsmConf:Input
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:fsmConf="http://www.modelexecution.org/fsm/configuration">
+  <stringSeq>H</stringSeq>
+  <stringSeq>E</stringSeq>
+  <stringSeq>L</stringSeq>
+  <stringSeq>L</stringSeq>
+  <stringSeq>O</stringSeq>
+  <stringSeq>!</stringSeq>
+</fsmConf:Input>

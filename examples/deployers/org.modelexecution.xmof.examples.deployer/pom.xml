@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2017 Vienna University of Technology.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+   Tanja Mayerhofer - initial API and implementation
+-->
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <fsm_sample_language_root>${basedir}/../../fsm/language_workbench</fsm_sample_language_root>
+        <fsm_sample_modeling_root>${basedir}/../../fsm/modeling_workbench</fsm_sample_modeling_root>
+    </properties>
+    
+	<parent>
+		<relativePath>../../..</relativePath>
+		<groupId>moliz.gemoc</groupId>
+		<artifactId>moliz.gemoc.parent</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>org.modelexecution.xmof.examples.deployer</artifactId>
+	<packaging>eclipse-plugin</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<mkdir dir="${basedir}/zips" />
+
+								<!-- FSM -->
+								<zip destfile="${basedir}/zips/org.modelexecution.xmof.examples.fsm.zip">
+									<fileset dir="${fsm_sample_language_root}/org.modelexecution.xmof.examples.fsm/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.modelexecution.xmof.examples.fsm.design.zip">
+									<fileset dir="${fsm_sample_language_root}/org.modelexecution.xmof.examples.fsm.design/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.modelexecution.xmof.examples.fsm.edit.zip">
+									<fileset dir="${fsm_sample_language_root}/org.modelexecution.xmof.examples.fsm.edit/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.modelexecution.xmof.examples.fsm.editor.zip">
+									<fileset dir="${fsm_sample_language_root}/org.modelexecution.xmof.examples.fsm.editor/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.modelexecution.xmof.examples.fsm.trace.zip">
+									<fileset dir="${fsm_sample_language_root}/org.modelexecution.xmof.examples.fsm.trace/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.modelexecution.xmof.examples.fsm.xdsml.zip">
+									<fileset dir="${fsm_sample_language_root}/org.modelexecution.xmof.examples.fsm.xdsml/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.modelexecution.xmof.examples.fsm.xmof.dynamic.zip">
+									<fileset dir="${fsm_sample_language_root}/org.modelexecution.xmof.examples.fsm.xmof.dynamic/" />
+								</zip>
+								<zip destfile="${basedir}/zips/org.modelexecution.xmof.examples.fsm.samplemodels.zip">
+									<fileset dir="${fsm_sample_modeling_root}/org.modelexecution.xmof.examples.fsm.samplemodels/" />
+								</zip>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<groupId>moliz.gemoc</groupId>
+	<version>1.0.1-SNAPSHOT</version>
+</project> 
+

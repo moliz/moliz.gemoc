@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.modelexecution.xmof.examples.fsm.design.Activator"
+               id="org.modelexecution.xmof.examples.fsm.design"
+	       name="fsm">
+    </component>
+  </extension>
+</plugin>

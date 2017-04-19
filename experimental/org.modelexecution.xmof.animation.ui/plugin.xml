@@ -73,5 +73,13 @@
             type="org.modelexecution.xmof.animation.ui.launcher">
       </launchConfigurationTabGroup>
    </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="org.modelexecution.xmof.animation.ui.launcher"
+            icon="icons/xmof-moliz-16.png"
+            id="org.modelexecution.xmof,engine.ui.launcher.launchConfigurationTypeImage">
+      </launchConfigurationTypeImage>
+   </extension>
 
 </plugin>

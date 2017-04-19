@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pi:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" visible="true" gridUnit="10" diagramTypeId="xMOF Diagram" name="run" snapToGrid="true" pictogramLinks="//@children.0/@link //@children.0/@children.0/@link //@children.1/@link //@children.1/@children.0/@link //@children.0/@children.1/@link //@children.0/@children.1/@children.0/@link //@children.0/@children.1/@children.1/@link //@children.0/@children.2/@link //@children.0/@children.2/@children.0/@link //@children.0/@children.3/@link //@children.0/@children.3/@children.0/@link //@children.0/@children.4/@link //@children.0/@children.5/@link //@connections.0/@link //@children.0/@children.4/@children.0/@link //@children.0/@children.4/@children.0/@children.0/@link //@children.0/@children.4/@children.0/@children.1/@link //@children.0/@children.4/@children.1/@link //@children.0/@children.4/@children.1/@children.0/@link //@children.0/@children.4/@children.2/@link //@children.0/@children.4/@children.2/@children.0/@link //@children.0/@children.4/@children.2/@children.1/@link //@children.0/@children.4/@children.3/@link //@children.0/@children.4/@children.3/@children.0/@link //@children.0/@children.4/@children.4/@link //@children.0/@children.4/@children.4/@children.0/@link //@children.0/@children.4/@children.5/@link //@children.0/@children.4/@children.5/@children.0/@link //@children.0/@children.4/@children.5/@children.1/@link //@children.0/@children.4/@children.6/@link //@children.0/@children.4/@children.6/@children.0/@link //@children.0/@children.4/@children.7/@link //@children.0/@children.4/@children.7/@children.0/@link //@connections.1/@link //@connections.2/@link //@connections.3/@link //@connections.4/@link" version="0.13.0">
+  <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.1" foreground="//@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
+  <children xsi:type="pi:ContainerShape" visible="true" active="true">
+    <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="3" transparency="0.0" width="508" height="316" x="73" y="5" cornerHeight="20" cornerWidth="20"/>
+    <link>
+      <businessObjects href="fsm.xmof#//FSMConfiguration/run.1"/>
+    </link>
+    <anchors xsi:type="pi:ChopboxAnchor"/>
+    <children visible="true">
+      <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="488" height="316" x="10" font="//@fonts.1" verticalAlignment="ALIGNMENT_TOP" value="run"/>
+      <link>
+        <businessObjects href="fsm.xmof#//FSMConfiguration/run.1"/>
+      </link>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="150" height="50" x="87" y="25" cornerHeight="15" cornerWidth="15"/>
+      <link>
+        <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/read%20stringSeq"/>
+      </link>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+      <children visible="true">
+        <properties key="textkind" value="type"/>
+        <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="140" height="20" x="5" font="//@fonts.0" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="ALIGNMENT_MIDDLE" value="ReadStructuralFeatureAction"/>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/read%20stringSeq"/>
+        </link>
+      </children>
+      <children visible="true">
+        <properties key="textkind" value="name"/>
+        <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="140" height="50" x="5" font="//@fonts.1" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_MIDDLE" value="read stringSeq"/>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/read%20stringSeq"/>
+        </link>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="30" x="235" y="30">
+        <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="42" height="15" x="15" font="//@fonts.0" value="result"/>
+      </graphicsAlgorithm>
+      <link>
+        <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/read%20stringSeq/result"/>
+      </link>
+      <children visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="15" y="15"/>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/read%20stringSeq/result"/>
+        </link>
+        <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.4"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="59" height="30" x="45" y="30">
+        <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="44" height="15" x="-15" font="//@fonts.0" horizontalAlignment="ALIGNMENT_RIGHT" value="object"/>
+      </graphicsAlgorithm>
+      <link>
+        <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/read%20stringSeq/object"/>
+      </link>
+      <children visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="15" x="29" y="15"/>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/read%20stringSeq/object"/>
+        </link>
+        <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="//@connections.0"/>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" lineStyle="DASH" transparency="0.0" width="424" height="181" x="57" y="105" cornerHeight="15" cornerWidth="15"/>
+      <link>
+        <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process"/>
+      </link>
+      <anchors xsi:type="pi:ChopboxAnchor"/>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="85" height="50" x="10" y="51" cornerHeight="15" cornerWidth="15"/>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20fsm"/>
+        </link>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <children visible="true">
+          <properties key="textkind" value="type"/>
+          <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="75" height="20" x="5" font="//@fonts.0" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="ALIGNMENT_MIDDLE" value="ReadSelfAction"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20fsm"/>
+          </link>
+        </children>
+        <children visible="true">
+          <properties key="textkind" value="name"/>
+          <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="75" height="50" x="5" font="//@fonts.1" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_MIDDLE" value="read fsm"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20fsm"/>
+          </link>
+        </children>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="30" x="93" y="56">
+          <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="42" height="15" x="15" font="//@fonts.0" value="result"/>
+        </graphicsAlgorithm>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20fsm/result"/>
+        </link>
+        <children visible="true" active="true">
+          <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="15" y="15"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20fsm/result"/>
+          </link>
+          <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.3"/>
+        </children>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="150" height="50" x="155" y="115" cornerHeight="15" cornerWidth="15"/>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20currentState"/>
+        </link>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <children visible="true">
+          <properties key="textkind" value="type"/>
+          <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="140" height="20" x="5" font="//@fonts.0" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="ALIGNMENT_MIDDLE" value="ReadStructuralFeatureAction"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20currentState"/>
+          </link>
+        </children>
+        <children visible="true">
+          <properties key="textkind" value="name"/>
+          <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="140" height="50" x="5" font="//@fonts.1" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_MIDDLE" value="read currentState"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20currentState"/>
+          </link>
+        </children>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="42" height="30" x="303" y="120">
+          <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="42" height="15" x="15" font="//@fonts.0" value="result"/>
+        </graphicsAlgorithm>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20currentState/result"/>
+        </link>
+        <children visible="true" active="true">
+          <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="15" y="15"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20currentState/result"/>
+          </link>
+          <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.2"/>
+        </children>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="59" height="30" x="113" y="120">
+          <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="44" height="15" x="-15" font="//@fonts.0" horizontalAlignment="ALIGNMENT_RIGHT" value="object"/>
+        </graphicsAlgorithm>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20currentState/object"/>
+        </link>
+        <children visible="true" active="true">
+          <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="15" x="29" y="15"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/read%20currentState/object"/>
+          </link>
+          <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="//@connections.3"/>
+        </children>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <properties key="operation" value="process"/>
+        <graphicsAlgorithm xsi:type="al:RoundedRectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="105" height="80" x="263" y="11" cornerHeight="15" cornerWidth="15"/>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/call%20process"/>
+        </link>
+        <anchors xsi:type="pi:ChopboxAnchor"/>
+        <children visible="true">
+          <properties key="textkind" value="type"/>
+          <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="95" height="20" x="5" font="//@fonts.0" horizontalAlignment="ALIGNMENT_RIGHT" verticalAlignment="ALIGNMENT_MIDDLE" value="CallOperationAction"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/call%20process"/>
+          </link>
+        </children>
+        <children visible="true">
+          <properties key="textkind" value="name"/>
+          <graphicsAlgorithm xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="95" height="80" x="5" font="//@fonts.1" horizontalAlignment="ALIGNMENT_CENTER" verticalAlignment="ALIGNMENT_MIDDLE" value="call process"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/call%20process"/>
+          </link>
+        </children>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="125" height="30" x="155" y="16">
+          <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="110" height="15" x="-15" font="//@fonts.0" horizontalAlignment="ALIGNMENT_RIGHT" value="currentInputElement"/>
+        </graphicsAlgorithm>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/call%20process/currentInputElement"/>
+        </link>
+        <children visible="true" active="true">
+          <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="15" x="95" y="15"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/call%20process/currentInputElement"/>
+          </link>
+          <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="//@connections.1"/>
+        </children>
+      </children>
+      <children xsi:type="pi:ContainerShape" visible="true" active="true">
+        <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="125" height="30" x="155" y="56">
+          <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="110" height="15" x="-15" font="//@fonts.0" horizontalAlignment="ALIGNMENT_RIGHT" value="target"/>
+        </graphicsAlgorithm>
+        <link>
+          <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/call%20process/target"/>
+        </link>
+        <children visible="true" active="true">
+          <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="15" x="95" y="15"/>
+          <link>
+            <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/call%20process/target"/>
+          </link>
+          <anchors xsi:type="pi:ChopboxAnchor" incomingConnections="//@connections.2"/>
+        </children>
+      </children>
+    </children>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="15" height="45" x="50" y="110"/>
+      <link>
+        <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/e1"/>
+      </link>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.1" incomingConnections="//@connections.4"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0">
+          <points y="15"/>
+          <points x="15" y="15"/>
+        </graphicsAlgorithm>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0">
+          <points y="30"/>
+          <points x="15" y="30"/>
+        </graphicsAlgorithm>
+      </children>
+    </children>
+  </children>
+  <children xsi:type="pi:ContainerShape" visible="true" active="true">
+    <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" filled="false" lineVisible="false" transparency="0.0" width="68" height="30" x="37" y="20">
+      <graphicsAlgorithmChildren xsi:type="al:Text" foreground="//@colors.4" lineWidth="1" filled="false" transparency="0.0" width="53" height="15" x="-30" font="//@fonts.0" horizontalAlignment="ALIGNMENT_RIGHT" value="input"/>
+    </graphicsAlgorithm>
+    <link>
+      <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/input.1"/>
+    </link>
+    <children visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" background="//@colors.3" foreground="//@colors.2" lineWidth="2" transparency="0.0" width="30" height="15" x="23" y="15"/>
+      <link>
+        <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/input.1"/>
+      </link>
+      <anchors xsi:type="pi:ChopboxAnchor" outgoingConnections="//@connections.0"/>
+    </children>
+  </children>
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.1/@children.0/@anchors.0" end="//@children.0/@children.3/@children.0/@anchors.0">
+    <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+    <link>
+      <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/%"/>
+    </link>
+    <connectionDecorators visible="true" locationRelative="true" location="1.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0">
+        <points x="-10" y="5"/>
+        <points/>
+        <points x="-10" y="-5"/>
+      </graphicsAlgorithm>
+    </connectionDecorators>
+  </connections>
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.5/@anchors.0" end="//@children.0/@children.4/@children.6/@children.0/@anchors.0">
+    <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+    <link>
+      <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/%"/>
+    </link>
+    <connectionDecorators visible="true" locationRelative="true" location="1.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0">
+        <points x="-10" y="5"/>
+        <points/>
+        <points x="-10" y="-5"/>
+      </graphicsAlgorithm>
+    </connectionDecorators>
+  </connections>
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.4/@children.3/@children.0/@anchors.0" end="//@children.0/@children.4/@children.7/@children.0/@anchors.0">
+    <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+    <link>
+      <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/%.1"/>
+    </link>
+    <connectionDecorators visible="true" locationRelative="true" location="1.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0">
+        <points x="-10" y="5"/>
+        <points/>
+        <points x="-10" y="-5"/>
+      </graphicsAlgorithm>
+    </connectionDecorators>
+    <bendpoints x="497" y="252"/>
+    <bendpoints x="497" y="212"/>
+    <bendpoints x="409" y="212"/>
+    <bendpoints x="335" y="212"/>
+    <bendpoints x="335" y="188"/>
+  </connections>
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.4/@children.1/@children.0/@anchors.0" end="//@children.0/@children.4/@children.4/@children.0/@anchors.0">
+    <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+    <link>
+      <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/process/%.2"/>
+    </link>
+    <connectionDecorators visible="true" locationRelative="true" location="1.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0">
+        <points x="-10" y="5"/>
+        <points/>
+        <points x="-10" y="-5"/>
+      </graphicsAlgorithm>
+    </connectionDecorators>
+    <bendpoints x="258" y="188"/>
+    <bendpoints x="258" y="206"/>
+    <bendpoints x="229" y="230"/>
+    <bendpoints x="229" y="252"/>
+  </connections>
+  <connections xsi:type="pi:FreeFormConnection" visible="true" active="true" start="//@children.0/@children.2/@children.0/@anchors.0" end="//@children.0/@children.5/@anchors.0">
+    <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0"/>
+    <link>
+      <businessObjects href="fsm.xmof#//FSMConfiguration/run.1/%.1"/>
+    </link>
+    <connectionDecorators visible="true" locationRelative="true" location="1.0">
+      <graphicsAlgorithm xsi:type="al:Polyline" foreground="//@colors.2" lineWidth="2" filled="false" transparency="0.0">
+        <points x="-10" y="5"/>
+        <points/>
+        <points x="-10" y="-5"/>
+      </graphicsAlgorithm>
+    </connectionDecorators>
+    <bendpoints x="346" y="57"/>
+    <bendpoints x="346" y="85"/>
+    <bendpoints x="102" y="102"/>
+    <bendpoints x="102" y="137"/>
+  </connections>
+  <colors red="227" green="238" blue="249"/>
+  <colors red="255" green="255" blue="255"/>
+  <colors red="98" green="131" blue="167"/>
+  <colors red="187" green="218" blue="247"/>
+  <colors/>
+  <fonts name="Arial" size="8"/>
+  <fonts name="Arial" size="8" bold="true"/>
+</pi:Diagram>

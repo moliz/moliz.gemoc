@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:fsm="http://www.modelexecution.org/fsm" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_nlEoAB2-EeeCr6yQJ6IhlQ" selectedViews="_oW01EB2-EeeCr6yQJ6IhlQ" version="11.1.0.201608251200">
+    <semanticResources>HelloWorld.fsm</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_oW01EB2-EeeCr6yQJ6IhlQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_oXN2oB2-EeeCr6yQJ6IhlQ" name="FSMDiagram" representation="_oXN2oR2-EeeCr6yQJ6IhlQ">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']"/>
+        <target xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_oXN2oR2-EeeCr6yQJ6IhlQ" name="FSMDiagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_oXN2oh2-EeeCr6yQJ6IhlQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_oXN2ox2-EeeCr6yQJ6IhlQ"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_oXQS4B2-EeeCr6yQJ6IhlQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_oXQS4R2-EeeCr6yQJ6IhlQ" type="Sirius" element="_oXN2oR2-EeeCr6yQJ6IhlQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_Su8RMB2_Eee5jYpW02o6og" type="2002" element="_StijAB2_Eee5jYpW02o6og">
+          <children xmi:type="notation:Node" xmi:id="_Su_UgB2_Eee5jYpW02o6og" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_Su_7kB2_Eee5jYpW02o6og" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_SvBwwB2_Eee5jYpW02o6og" type="3007" element="_StsUAB2_Eee5jYpW02o6og">
+              <children xmi:type="notation:Node" xmi:id="_SvCX0B2_Eee5jYpW02o6og" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SvCX0R2_Eee5jYpW02o6og" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_SvHQUB2_Eee5jYpW02o6og" type="3016" element="_SuUmIB2_Eee5jYpW02o6og">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_SvHQUR2_Eee5jYpW02o6og" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvHQUh2_Eee5jYpW02o6og"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_SvBwwR2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvBwwh2_Eee5jYpW02o6og" x="67" y="210" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_SvC-4B2_Eee5jYpW02o6og" type="3007" element="_SuVNMB2_Eee5jYpW02o6og">
+              <children xmi:type="notation:Node" xmi:id="_SvDl8B2_Eee5jYpW02o6og" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SvDl8R2_Eee5jYpW02o6og" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_SvH3YB2_Eee5jYpW02o6og" type="3016" element="_SuV0QB2_Eee5jYpW02o6og">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_SvH3YR2_Eee5jYpW02o6og" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvH3Yh2_Eee5jYpW02o6og"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_SvC-4R2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvC-4h2_Eee5jYpW02o6og" x="11" y="168" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_SvDl8h2_Eee5jYpW02o6og" type="3007" element="_SuXCYB2_Eee5jYpW02o6og">
+              <children xmi:type="notation:Node" xmi:id="_SvENAB2_Eee5jYpW02o6og" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SvENAR2_Eee5jYpW02o6og" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_SvH3Yx2_Eee5jYpW02o6og" type="3016" element="_SuXpcB2_Eee5jYpW02o6og">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_SvH3ZB2_Eee5jYpW02o6og" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvH3ZR2_Eee5jYpW02o6og"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_SvDl8x2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvDl9B2_Eee5jYpW02o6og" x="11" y="78" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_SvENAh2_Eee5jYpW02o6og" type="3007" element="_SuYQgB2_Eee5jYpW02o6og">
+              <children xmi:type="notation:Node" xmi:id="_SvE0EB2_Eee5jYpW02o6og" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SvE0ER2_Eee5jYpW02o6og" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_SvIecB2_Eee5jYpW02o6og" type="3016" element="_SuY3kB2_Eee5jYpW02o6og">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_SvIecR2_Eee5jYpW02o6og" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvIech2_Eee5jYpW02o6og"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_SvENAx2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvENBB2_Eee5jYpW02o6og" x="67" y="30" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_SvE0Eh2_Eee5jYpW02o6og" type="3007" element="_SuZeoB2_Eee5jYpW02o6og">
+              <children xmi:type="notation:Node" xmi:id="_SvFbIB2_Eee5jYpW02o6og" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SvFbIR2_Eee5jYpW02o6og" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_SvJFgB2_Eee5jYpW02o6og" type="3016" element="_SuaFsB2_Eee5jYpW02o6og">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_SvJFgR2_Eee5jYpW02o6og" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvJFgh2_Eee5jYpW02o6og"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_SvE0Ex2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvE0FB2_Eee5jYpW02o6og" x="120" y="78" width="30" height="30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_SvGCMB2_Eee5jYpW02o6og" type="3007" element="_SuaswB2_Eee5jYpW02o6og">
+              <children xmi:type="notation:Node" xmi:id="_SvGpQB2_Eee5jYpW02o6og" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_SvGpQR2_Eee5jYpW02o6og" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_SvK6sB2_Eee5jYpW02o6og" type="3016" element="_SubT0B2_Eee5jYpW02o6og">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_SvK6sR2_Eee5jYpW02o6og" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvK6sh2_Eee5jYpW02o6og"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_SvGCMR2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvGCMh2_Eee5jYpW02o6og" x="120" y="168" width="30" height="30"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_Su_7kR2_Eee5jYpW02o6og"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_Su_7kh2_Eee5jYpW02o6og"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Su8RMR2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Su8RMh2_Eee5jYpW02o6og" width="171"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_TYIYIB2_Eee5jYpW02o6og" visible="false" type="2003" element="_TW63MB2_Eee5jYpW02o6og">
+          <children xmi:type="notation:Node" xmi:id="_TYI_MB2_Eee5jYpW02o6og" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_TYJmQB2_Eee5jYpW02o6og" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_TYKNUB2_Eee5jYpW02o6og" visible="false" type="3010" element="_TXQ1cB2_Eee5jYpW02o6og">
+              <styles xmi:type="notation:FontStyle" xmi:id="_TYKNUR2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_TYKNUh2_Eee5jYpW02o6og"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_TYK0YB2_Eee5jYpW02o6og" visible="false" type="3010" element="_TXiiQB2_Eee5jYpW02o6og">
+              <styles xmi:type="notation:FontStyle" xmi:id="_TYK0YR2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_TYK0Yh2_Eee5jYpW02o6og"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_TYJmQR2_Eee5jYpW02o6og"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_TYJmQh2_Eee5jYpW02o6og"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_TYIYIR2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TYIYIh2_Eee5jYpW02o6og" x="200" y="56"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_oXQS4h2-EeeCr6yQJ6IhlQ"/>
+        <edges xmi:type="notation:Edge" xmi:id="_SvdOkB2_Eee5jYpW02o6og" type="4001" element="_SuiBgB2_Eee5jYpW02o6og" source="_SvBwwB2_Eee5jYpW02o6og" target="_SvC-4B2_Eee5jYpW02o6og">
+          <children xmi:type="notation:Node" xmi:id="_Svd1oB2_Eee5jYpW02o6og" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Svd1oR2_Eee5jYpW02o6og" x="-16" y="19"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvecsB2_Eee5jYpW02o6og" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvecsR2_Eee5jYpW02o6og" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvfDwB2_Eee5jYpW02o6og" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvfDwR2_Eee5jYpW02o6og" x="-10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_SvdOkR2_Eee5jYpW02o6og" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_SvdOkh2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SvdOkx2_Eee5jYpW02o6og" points="[-15, 12, 41, 24]$[-56, 12, 0, 24]$[-56, -12, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Svr4EB2_Eee5jYpW02o6og" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Svr4ER2_Eee5jYpW02o6og" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Svr4Eh2_Eee5jYpW02o6og" type="4001" element="_Suvc4B2_Eee5jYpW02o6og" source="_SvC-4B2_Eee5jYpW02o6og" target="_SvDl8h2_Eee5jYpW02o6og">
+          <children xmi:type="notation:Node" xmi:id="_SvsfIB2_Eee5jYpW02o6og" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvsfIR2_Eee5jYpW02o6og" x="-2" y="22" width="25" height="13"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvsfIh2_Eee5jYpW02o6og" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvsfIx2_Eee5jYpW02o6og" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvsfJB2_Eee5jYpW02o6og" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvsfJR2_Eee5jYpW02o6og" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Svr4Ex2_Eee5jYpW02o6og" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Svr4FB2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Svr4FR2_Eee5jYpW02o6og" points="[0, -15, 0, 75]$[0, -75, 0, 15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvtGMB2_Eee5jYpW02o6og" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvtGMR2_Eee5jYpW02o6og" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_SvtGMh2_Eee5jYpW02o6og" type="4001" element="_SuxSEB2_Eee5jYpW02o6og" source="_SvDl8h2_Eee5jYpW02o6og" target="_SvENAh2_Eee5jYpW02o6og">
+          <children xmi:type="notation:Node" xmi:id="_SvttQB2_Eee5jYpW02o6og" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvttQR2_Eee5jYpW02o6og" x="18" y="14"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvttQh2_Eee5jYpW02o6og" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvttQx2_Eee5jYpW02o6og" x="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvttRB2_Eee5jYpW02o6og" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvttRR2_Eee5jYpW02o6og" x="-1" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_SvtGMx2_Eee5jYpW02o6og" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_SvtGNB2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SvtGNR2_Eee5jYpW02o6og" points="[0, 0, -56, 18]$[0, -36, -56, -18]$[41, -36, -15, -18]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvuUUB2_Eee5jYpW02o6og" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvuUUR2_Eee5jYpW02o6og" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_SvuUUh2_Eee5jYpW02o6og" type="4001" element="_SuygMB2_Eee5jYpW02o6og" source="_SvENAh2_Eee5jYpW02o6og" target="_SvE0Eh2_Eee5jYpW02o6og">
+          <children xmi:type="notation:Node" xmi:id="_SvuUVh2_Eee5jYpW02o6og" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvuUVx2_Eee5jYpW02o6og" x="-16" y="11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvuUWB2_Eee5jYpW02o6og" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvuUWR2_Eee5jYpW02o6og" x="2" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvuUWh2_Eee5jYpW02o6og" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvuUWx2_Eee5jYpW02o6og" x="-15" y="35"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_SvuUUx2_Eee5jYpW02o6og" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_SvuUVB2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SvuUVR2_Eee5jYpW02o6og" points="[15, 12, -38, -66]$[53, 12, 0, -66]$[53, 48, 0, -30]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Svu7YB2_Eee5jYpW02o6og" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Svu7YR2_Eee5jYpW02o6og" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Svu7Yh2_Eee5jYpW02o6og" type="4001" element="_SuzHQB2_Eee5jYpW02o6og" source="_SvE0Eh2_Eee5jYpW02o6og" target="_SvGCMB2_Eee5jYpW02o6og">
+          <children xmi:type="notation:Node" xmi:id="_Svu7Zh2_Eee5jYpW02o6og" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Svu7Zx2_Eee5jYpW02o6og" x="6" y="26"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvvicB2_Eee5jYpW02o6og" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvvicR2_Eee5jYpW02o6og" x="34" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Svvich2_Eee5jYpW02o6og" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Svvicx2_Eee5jYpW02o6og" x="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Svu7Yx2_Eee5jYpW02o6og" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Svu7ZB2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Svu7ZR2_Eee5jYpW02o6og" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvvidB2_Eee5jYpW02o6og" id="(0.5,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvvidR2_Eee5jYpW02o6og" id="(0.5,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_SvwJgB2_Eee5jYpW02o6og" type="4001" element="_Su0VYB2_Eee5jYpW02o6og" source="_SvGCMB2_Eee5jYpW02o6og" target="_SvBwwB2_Eee5jYpW02o6og">
+          <children xmi:type="notation:Node" xmi:id="_SvwJhB2_Eee5jYpW02o6og" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvwJhR2_Eee5jYpW02o6og" x="12" y="18"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvwJhh2_Eee5jYpW02o6og" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvwJhx2_Eee5jYpW02o6og" x="4" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SvwJiB2_Eee5jYpW02o6og" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SvwJiR2_Eee5jYpW02o6og" y="-10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_SvwJgR2_Eee5jYpW02o6og" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_SvwJgh2_Eee5jYpW02o6og" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_SvwJgx2_Eee5jYpW02o6og" points="[0, 30, 53, -42]$[0, 54, 53, -18]$[-38, 54, 15, -18]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvwwkB2_Eee5jYpW02o6og" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SvwwkR2_Eee5jYpW02o6og" id="(0.5,1.0)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_StijAB2_Eee5jYpW02o6og" name="HelloWorld">
+      <target xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+      <semanticElements xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_StnbgB2_Eee5jYpW02o6og" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="253,206,137" foregroundColor="253,206,137">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_StsUAB2_Eee5jYpW02o6og" name="S1" outgoingEdges="_SuiBgB2_Eee5jYpW02o6og" incomingEdges="_Su0VYB2_Eee5jYpW02o6og" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="fsm:State" href="HelloWorld.fsm#//@states.0"/>
+        <semanticElements xmi:type="fsm:State" href="HelloWorld.fsm#//@states.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_SuUmIB2_Eee5jYpW02o6og" showIcon="false" borderSize="2" borderSizeComputationExpression="2" borderLineStyle="dash" labelPosition="node" color="114,159,207">
+          <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_SuVNMB2_Eee5jYpW02o6og" name="S2" outgoingEdges="_Suvc4B2_Eee5jYpW02o6og" incomingEdges="_SuiBgB2_Eee5jYpW02o6og" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="fsm:State" href="HelloWorld.fsm#//@states.1"/>
+        <semanticElements xmi:type="fsm:State" href="HelloWorld.fsm#//@states.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_SuV0QB2_Eee5jYpW02o6og" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
+          <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_SuXCYB2_Eee5jYpW02o6og" name="S3" outgoingEdges="_SuxSEB2_Eee5jYpW02o6og" incomingEdges="_Suvc4B2_Eee5jYpW02o6og" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="fsm:State" href="HelloWorld.fsm#//@states.2"/>
+        <semanticElements xmi:type="fsm:State" href="HelloWorld.fsm#//@states.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_SuXpcB2_Eee5jYpW02o6og" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
+          <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_SuYQgB2_Eee5jYpW02o6og" name="S4" outgoingEdges="_SuygMB2_Eee5jYpW02o6og" incomingEdges="_SuxSEB2_Eee5jYpW02o6og" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="fsm:State" href="HelloWorld.fsm#//@states.3"/>
+        <semanticElements xmi:type="fsm:State" href="HelloWorld.fsm#//@states.3"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_SuY3kB2_Eee5jYpW02o6og" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
+          <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_SuZeoB2_Eee5jYpW02o6og" name="S5" outgoingEdges="_SuzHQB2_Eee5jYpW02o6og" incomingEdges="_SuygMB2_Eee5jYpW02o6og" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="fsm:State" href="HelloWorld.fsm#//@states.4"/>
+        <semanticElements xmi:type="fsm:State" href="HelloWorld.fsm#//@states.4"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_SuaFsB2_Eee5jYpW02o6og" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
+          <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_SuaswB2_Eee5jYpW02o6og" name="S6" outgoingEdges="_Su0VYB2_Eee5jYpW02o6og" incomingEdges="_SuzHQB2_Eee5jYpW02o6og" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="fsm:State" href="HelloWorld.fsm#//@states.5"/>
+        <semanticElements xmi:type="fsm:State" href="HelloWorld.fsm#//@states.5"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_SubT0B2_Eee5jYpW02o6og" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node">
+          <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@containerMappings[name='FSM']/@subNodeMappings[name='State']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_SuiBgB2_Eee5jYpW02o6og" name="H / W" sourceNode="_StsUAB2_Eee5jYpW02o6og" targetNode="_SuVNMB2_Eee5jYpW02o6og">
+      <target xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.0"/>
+      <semanticElements xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_SujPoB2_Eee5jYpW02o6og" size="2" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_SujPoR2_Eee5jYpW02o6og" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Suvc4B2_Eee5jYpW02o6og" name="E / O" sourceNode="_SuVNMB2_Eee5jYpW02o6og" targetNode="_SuXCYB2_Eee5jYpW02o6og">
+      <target xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.1"/>
+      <semanticElements xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_SuwD8B2_Eee5jYpW02o6og" size="2" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_SuwD8R2_Eee5jYpW02o6og" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_SuxSEB2_Eee5jYpW02o6og" name="L / R" sourceNode="_SuXCYB2_Eee5jYpW02o6og" targetNode="_SuYQgB2_Eee5jYpW02o6og">
+      <target xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.2"/>
+      <semanticElements xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_SuxSER2_Eee5jYpW02o6og" size="2" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_SuxSEh2_Eee5jYpW02o6og" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_SuygMB2_Eee5jYpW02o6og" name="L / L" sourceNode="_SuYQgB2_Eee5jYpW02o6og" targetNode="_SuZeoB2_Eee5jYpW02o6og">
+      <target xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.3"/>
+      <semanticElements xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.3"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_SuygMR2_Eee5jYpW02o6og" size="2" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_SuygMh2_Eee5jYpW02o6og" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_SuzHQB2_Eee5jYpW02o6og" name="O / D" sourceNode="_SuZeoB2_Eee5jYpW02o6og" targetNode="_SuaswB2_Eee5jYpW02o6og">
+      <target xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.4"/>
+      <semanticElements xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.4"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_SuzuUB2_Eee5jYpW02o6og" size="2" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_SuzuUR2_Eee5jYpW02o6og" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Su0VYB2_Eee5jYpW02o6og" name="! / !" sourceNode="_SuaswB2_Eee5jYpW02o6og" targetNode="_StsUAB2_Eee5jYpW02o6og">
+      <target xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.5"/>
+      <semanticElements xmi:type="fsm:Transition" href="HelloWorld.fsm#//@transitions.5"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Su0VYR2_Eee5jYpW02o6og" size="2" routingStyle="manhattan" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Su0VYh2_Eee5jYpW02o6og" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer/@edgeMappings[name='']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_TW63MB2_Eee5jYpW02o6og" name="HelloWorldexecution status" visible="false">
+      <target xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+      <semanticElements xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_TXGdYB2_Eee5jYpW02o6og" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='ExecutionInfo']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='ExecutionInfo']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_TXQ1cB2_Eee5jYpW02o6og" name="Accepted String: " visible="false">
+        <target xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+        <semanticElements xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_TXhUIB2_Eee5jYpW02o6og" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='ExecutionInfo']/@subNodeMappings[name='AcceptedString']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='ExecutionInfo']/@subNodeMappings[name='AcceptedString']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_TXiiQB2_Eee5jYpW02o6og" name="Accepted String: " visible="false">
+        <target xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+        <semanticElements xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_TXrFIB2_Eee5jYpW02o6og" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='ExecutionInfo']/@subNodeMappings[name='ProducedString']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@additionalLayers[name='Animation']/@containerMappings[name='ExecutionInfo']/@subNodeMappings[name='ProducedString']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_oXN2pB2-EeeCr6yQJ6IhlQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.modelexecution.xmof.examples.fsm.design/description/fsm.odesign#//@ownedViewpoints[name='fsm']/@ownedRepresentations[name='FSMDiagram']/@defaultLayer"/>
+    <target xmi:type="fsm:FSM" href="HelloWorld.fsm#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

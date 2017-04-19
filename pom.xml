@@ -1,65 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.modelexecution</groupId>
-	<artifactId>org.modelexecution.xmof.gemoc.root</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<groupId>moliz.gemoc</groupId>
+	<artifactId>moliz.gemoc.parent</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<licenses>
+		<license>
+			<name>Eclipse Public License v1.0</name>
+			<comments>
+        All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.htm
+		       </comments>
+		</license>
+	</licenses>
 	<modules>
-		<module>plugins/fr.inria.diverse.trace.gemoc.generator.xmof</module>
-		<module>plugins/fr.inria.diverse.trace.xmof.tracematerialextractor</module>
+		<!-- plugins -->
+		<module>plugins/fr.inria.diverse.opsemanticsview.gen.xmof</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.codegen</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.codegen.ui</module>
 		<module>plugins/org.modelexecution.xmof.gemoc.engine</module>
-
-
-		<module>releng/org.modelexecution.xmof.gemoc.feature</module>
-		<module>releng/org.modelexecution.xmof.gemoc.updatesite</module>
+		<module>plugins/org.modelexecution.xmof.gemoc.extension.sirius</module>
+		<module>plugins/org.modelexecution.xmof.gemoc.ui</module>
+		<module>examples/deployers/org.modelexecution.xmof.examples.deployer</module>
+		<!-- releng -->
+		
+		<module>releng/molizgemoc-neon</module>
+		<module>releng/org.modelexecution.moliz.gemoc.feature</module>
+		<module>releng/org.modelexecution.moliz.gemoc.updatesite</module>
 	</modules>
 
 	<properties>
-		<tycho-version>0.25.0</tycho-version>
+		<tycho-version>0.26.0</tycho-version>
 		<project.build.sourceEncoding>UTF8</project.build.sourceEncoding>
 		<xtend.version>2.9.1</xtend.version>
 		<tycho.scmUrl>scm:git:https://github.com/moliz/moliz.gemoc.git</tycho.scmUrl>
 	</properties>
 
 	<repositories>
+		<!--  can be used in addition of the target definition -->
 		<repository>
-			<id>Mars release</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/mars/201602261000</url>
-		</repository>
+            <id>Neon release</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/releases/neon</url>
+        </repository>        
 		<repository>
-			<id>timesquare</id>
-			<layout>p2</layout>
-			<url>http://timesquare.inria.fr/update_site/experimental</url>
-		</repository>
-		<repository>
-			<id>timesquare-ecl</id>
-			<layout>p2</layout>
-			<url>http://timesquare.inria.fr/ecl/update_site/experimental</url>
-		</repository>
+            <id>Sirius</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/sirius/updates/releases/4.1.2/neon/</url>
+        </repository>
 		<repository>
 			<id>diverse-commons</id>
 			<layout>p2</layout>
 			<url>https://ci.inria.fr/diverse-commons/job/diverse-commons.eclipse.root/lastSuccessfulBuild/artifact/commons-eclipse/fr.inria.diverse.commons.eclipse.root/p2updatesite/target/repository/</url>
 		</repository>
-		<repository>
-			<id>kermeta-3</id>
-			<layout>p2</layout>
-			<url>http://www.kermeta.org/k3/update/</url>
-		</repository>
-		<repository>
-			<id>melange</id>
-			<layout>p2</layout>
-			<url>http://melange-lang.org/updatesite/</url>
-		</repository>
-		<repository>
-			<id>Sirius</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/sirius/updates/releases/3.1.4/mars</url>
-		</repository>
+        <repository>
+            <id>kermeta-3</id>
+            <layout>p2</layout>
+            <url>http://www.kermeta.org/k3/update/</url>
+        </repository>
+        <repository>
+            <id>melange</id>
+            <layout>p2</layout>
+            <url>http://melange-lang.org/updatesite/</url>
+        </repository>
+        <repository>
+            <id>gemoc-studio_commons on CI</id>
+            <layout>p2</layout>
+            <url>https://ci.inria.fr/gemoc/job/gemoc-studio_commons/lastSuccessfulBuild/artifact/commons/releng/org.gemoc.commons.repository/target/repository/</url>
+        </repository>
+        <repository>
+            <id>modelanimation_siriusmodelanimation on CI</id>
+            <layout>p2</layout>
+            <url>http://obeo-siriuslab-nightly.s3-website-eu-west-1.amazonaws.com/SiriusAnimator/master/repository/</url>
+        </repository>
+        <!-- Other moliz.* update sites used by this build -->
+        <repository>
+            <id>moliz.core</id>
+            <layout>p2</layout>
+            <url>http://moliz.github.io/moliz.core/updatesite/nightly/</url>
+        </repository>
+        <repository>
+            <id>moliz.xmof</id>
+            <layout>p2</layout>
+            <url>http://moliz.github.io/moliz.xmof/updatesite/nightly/</url>
+        </repository>
 	</repositories>
 
 	<build>
@@ -169,6 +193,13 @@
 							<arch>x86_64</arch>
 						</environment>
 					</environments>
+					<target>
+						<artifact>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>molizgemoc-neon</artifactId>
+							<version>${project.version}</version>
+						</artifact>
+					</target>
 				</configuration>
 			</plugin>
 			<!-- Java compiler plugin -->
@@ -181,6 +212,21 @@
 					<target>1.8</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>${xtend.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>xtend-gen</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

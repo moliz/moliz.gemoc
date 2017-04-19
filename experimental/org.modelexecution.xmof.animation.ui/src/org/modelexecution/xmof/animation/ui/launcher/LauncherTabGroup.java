@@ -5,8 +5,8 @@ import org.eclipse.debug.ui.CommonTab;
 import org.eclipse.debug.ui.ILaunchConfigurationDialog;
 import org.eclipse.debug.ui.ILaunchConfigurationTab;
 import org.modelexecution.xmof.animation.ui.launcher.tabs.LaunchConfigurationAnimationTab;
-import org.modelexecution.xmof.animation.ui.launcher.tabs.LaunchConfigurationBackendsTab;
 import org.modelexecution.xmof.animation.ui.launcher.tabs.LaunchConfigurationMainTab;
+import org.modelexecution.xmof.gemoc.engine.ui.launcher.tabs.LaunchConfigurationBackendsTab;
 
 public class LauncherTabGroup extends AbstractLaunchConfigurationTabGroup {
 

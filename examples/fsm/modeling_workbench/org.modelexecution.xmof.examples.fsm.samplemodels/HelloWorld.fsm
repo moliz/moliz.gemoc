@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fsm:FSM xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fsm="http://www.modelexecution.org/fsm" name="HelloWorld" initialState="//@states.0">
+  <states name="S1" outgoingTransitions="//@transitions.0" incomingTransitions="//@transitions.5"/>
+  <states name="S2" outgoingTransitions="//@transitions.1" incomingTransitions="//@transitions.0"/>
+  <states name="S3" outgoingTransitions="//@transitions.2" incomingTransitions="//@transitions.1"/>
+  <states name="S4" outgoingTransitions="//@transitions.3" incomingTransitions="//@transitions.2"/>
+  <states name="S5" outgoingTransitions="//@transitions.4" incomingTransitions="//@transitions.3"/>
+  <states name="S6" outgoingTransitions="//@transitions.5" incomingTransitions="//@transitions.4"/>
+  <transitions input="H" target="//@states.1" output="W" source="//@states.0"/>
+  <transitions input="E" target="//@states.2" output="O" source="//@states.1"/>
+  <transitions input="L" target="//@states.3" output="R" source="//@states.2"/>
+  <transitions input="L" target="//@states.4" output="L" source="//@states.3"/>
+  <transitions input="O" target="//@states.5" output="D" source="//@states.4"/>
+  <transitions input="!" target="//@states.0" output="!" source="//@states.5"/>
+</fsm:FSM>

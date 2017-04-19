@@ -53,8 +53,7 @@ public class XMOFBasedModelLoader {
 	}
 
 	/**
-	 * Two missions: 
-	 * 1) Creates and returns the xmof configuration model (ie configuration objects + parameter values)
+	 * Two missions: 1) Creates and returns the xmof configuration model (ie configuration objects + parameter values)
 	 * 2) Also prepares the configuration map (later accessed using "getConfigurationMap")
 	 * 
 	 * @return The created xmof configuration model.
@@ -122,11 +121,19 @@ public class XMOFBasedModelLoader {
 	}
 
 	private Collection<Resource> getInputModelResources() {
-		Set<Resource> inputModelResources = new HashSet<Resource>();
-		Resource modelResource = getModelResource();
-		inputModelResources.add(modelResource);
-		inputModelResources.addAll(EMFResource.getRelatedResources(modelResource));
-		return inputModelResources;
+		return getRelatedResources(getModelResource());
+	}
+
+	private static Collection<Resource> getRelatedResources(Resource resource) {
+		Set<Resource> relatedModelResources = new HashSet<Resource>();
+		if (resource != null) {
+			Set<Resource> relatedResources = EMFResource.getRelatedResources(resource);
+			relatedResources.removeIf(r -> r.getContents().get(0) == resource.getContents().get(0));
+			relatedModelResources.add(resource);
+			relatedModelResources.addAll(relatedResources);
+			relatedModelResources.removeIf(r -> r == null);
+		}
+		return relatedModelResources;
 	}
 
 	/**
@@ -139,6 +146,7 @@ public class XMOFBasedModelLoader {
 	 */
 	private Collection<EObject> getParameterValueObjects(Collection<ParameterValue> inputParameterValues) {
 		Collection<EObject> parameterValueObjects = new HashSet<EObject>();
+		Collection<Resource> allRelatedResources = new HashSet<Resource>();
 		for (ParameterValue parameterValue : inputParameterValues) {
 			for (Value value : parameterValue.getValues()) {
 				if (value instanceof ObjectValue) {
@@ -146,26 +154,16 @@ public class XMOFBasedModelLoader {
 					EObject referencedEObject = objectValue.getEObject();
 
 					if (referencedEObject != null) {
-						for (EObject o : referencedEObject.eResource().getContents()) {
-							parameterValueObjects.add(o);
-						}
-
+						allRelatedResources.addAll(getRelatedResources(referencedEObject.eResource()));
 					}
 				}
 			}
 		}
-
-		// add referenced objects that reside in different resources
-		if (parameterValueObjects.size() > 0) {
-			EObject parameterValueObject = parameterValueObjects.iterator().next();
-			Resource parameterValueObjectResource = parameterValueObject.eResource();
-			for (Resource relatedResource : EMFResource.getRelatedResources(parameterValueObjectResource)) {
-				if (relatedResource != null && relatedResource != parameterValueObjectResource)
-					for (EObject o : relatedResource.getContents()) {
-						if (!executionContext.getResourceModel().getContents().contains(o))
-							parameterValueObjects.add(o);
-					}
-			}
+		for (Resource r : allRelatedResources) {
+			r.getAllContents().forEachRemaining(o -> {
+				if (!executionContext.getResourceModel().getContents().contains(o))
+					parameterValueObjects.add(o);
+			});
 		}
 
 		return parameterValueObjects;
