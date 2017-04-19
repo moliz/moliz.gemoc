@@ -11,7 +11,6 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.emf.ecore.EObject;
 import org.gemoc.commons.eclipse.ui.ViewHelper;
 import org.gemoc.execution.sequential.javaengine.SequentialModelExecutionContext;
-import org.gemoc.execution.sequential.javaengine.ui.debug.GenericSequentialModelDebugger;
 import org.gemoc.executionframework.engine.commons.EngineContextException;
 import org.gemoc.executionframework.engine.commons.ModelExecutionContext;
 import org.gemoc.executionframework.engine.ui.debug.AbstractGemocDebugger;
@@ -23,6 +22,7 @@ import org.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
+import org.modelexecution.xmof.gemoc.engine.ui.debug.XMOFSequentialModelDebugger;
 
 import fr.inria.diverse.commons.messagingsystem.api.MessagingSystem;
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
@@ -46,7 +46,8 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 		return executionEngine;
 	}
 
-	@Override
+
+  @Override
 	protected IDSLDebugger getDebugger(ILaunchConfiguration configuration, DSLDebugEventDispatcher dispatcher,
 			EObject firstInstruction, IProgressMonitor monitor) {
 		AbstractGemocDebugger debugger;
@@ -54,9 +55,9 @@ public class Launcher extends AbstractSequentialGemocLauncher {
 		Set<IMultiDimensionalTraceAddon> traceAddons = _executionEngine
 				.getAddonsTypedBy(IMultiDimensionalTraceAddon.class);
 		if (traceAddons.isEmpty()) {
-			debugger = new GenericSequentialModelDebugger(dispatcher, _executionEngine);
+			debugger = new XMOFSequentialModelDebugger(dispatcher, _executionEngine);
 		} else {
-			debugger = new GenericSequentialModelDebugger(dispatcher, _executionEngine);
+			debugger = new XMOFSequentialModelDebugger(dispatcher, _executionEngine);
 			// res = new OmniscientGenericSequentialModelDebugger(dispatcher,
 			// (ISequentialExecutionEngine) executionEngine,
 			// traceAddons.iterator().next());
