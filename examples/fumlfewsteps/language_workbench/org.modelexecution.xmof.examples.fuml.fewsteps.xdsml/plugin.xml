@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.modelexecution.examples.FumlFewSteps" xdsmlFilePath="/org.modelexecution.xmof.examples.fuml.fewsteps.xdsml/src/org/modelexecution/xmof/examples/fuml.melange"/>
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.modelexecution.examples.Fuml" xdsmlFilePath="/org.modelexecution.xmof.examples.fuml.xdsml/src/org/modelexecution/xmof/examples/fuml.melange"/>
+  </extension>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.modelexecution.examples.FumlFewStepsMT" uri="http://org.modelexecution.examples.fumlfewstepsmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="org.modelexecution.examples.FumlFewStepsMT" id="org.modelexecution.examples.FumlFewSteps" uri="http://www.eclipse.org/uml2/5.0.0/UML"/>
+  </extension>
+</plugin>
