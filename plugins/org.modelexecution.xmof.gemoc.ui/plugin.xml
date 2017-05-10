@@ -93,4 +93,45 @@
   <extension point="org.eclipse.core.expressions.propertyTesters">
     <propertyTester class="org.modelexecution.xmof.gemoc.ui.internal.XmofProjectPropertyTester" id="org.modelexecution.xmof.gemoc.ui.XMOFProjectPropertyTester" namespace="org.modelexecution.xmof.gemoc.ui" properties="isXmofProject" type="org.eclipse.core.resources.IResource"/>
   </extension>
+  <extension
+        point="org.eclipse.ui.menus">
+     <menuContribution
+           allPopups="false"
+           locationURI="popup:org.modelexecution.xmof.Syntax.Classes.Kernel.presentation.KernelEditorID">
+        <menu
+              icon="icons/xmof-moliz-16.png"
+              id="xmof.menu"
+              label="xMOF">
+           <command
+                 commandId="org.modelexecution.xmof.gemoc.ui.AddStepAnnotation"
+                 label="Add Step Annotation"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                 <with
+                       variable="selection">
+                    <count
+                          value="1">
+                    </count>
+                    <iterate ifEmpty="false">
+                       <instanceof
+                             value="org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEOperation">
+                       </instanceof>
+                    </iterate>
+                 </with>
+              </visibleWhen>
+           </command>
+        </menu>
+     </menuContribution>
+  </extension>
+  <extension
+        point="org.eclipse.ui.commands">
+     <command
+           categoryId="org.modelexecution.xmof.gemoc.ui.commands"
+           defaultHandler="org.modelexecution.xmof.gemoc.ui.commands.AddStepAnnotationHandler"
+           description="Adds an xMOF Step annotation to the selected BehavioredEOperation"
+           id="org.modelexecution.xmof.gemoc.ui.AddStepAnnotation"
+           name="Add Step Annotation">
+     </command>
+  </extension>
 </plugin>
