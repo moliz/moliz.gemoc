@@ -2,7 +2,7 @@
 <feature
       id="org.modelexecution.moliz.gemoc.feature"
       label="xMOF GEMOC Integration"
-      version="1.0.0.qualifier"
+      version="1.0.1.qualifier"
       provider-name="modelexecution.org">
 
    <description url="https://github.com/moliz/moliz.gemoc">
