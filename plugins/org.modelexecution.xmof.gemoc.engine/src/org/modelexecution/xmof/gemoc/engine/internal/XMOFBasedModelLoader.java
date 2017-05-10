@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.gemoc.commons.eclipse.emf.EMFResource;
@@ -246,6 +247,7 @@ public class XMOFBasedModelLoader {
 
 		Collection<EPackage> confMMPackages = new HashSet<EPackage>();
 
+		boolean canBeUnloaded = true;
 		// TODO what about subpackages?
 		for (EObject eObject : confMetamodelResource.getContents()) {
 			if (eObject instanceof EPackage) {
@@ -255,9 +257,14 @@ public class XMOFBasedModelLoader {
 					confMMPackages.add(registeredPackage);
 				} else {
 					confMMPackages.add(ePackage);
+					canBeUnloaded = false;
 				}
 
 			}
+		}
+
+		if (canBeUnloaded) {
+			removeWithTransaction(confMetamodelResource.getResourceSet().getResources(), confMetamodelResource);
 		}
 
 		// Hack: we add the same annotations as melange so all dynamic parts of/ the metamodel
@@ -366,6 +373,11 @@ public class XMOFBasedModelLoader {
 	private EditingDomain getEditingDomain() {
 		ResourceSet resourceSet = getResourceSet();
 		return TransactionUtil.getEditingDomain(resourceSet);
+	}
+
+	private void removeWithTransaction(EList<?> list, Object o) {
+		RemoveCommand cmd = new RemoveCommand(getEditingDomain(), list, o);
+		getEditingDomain().getCommandStack().execute(cmd);
 	}
 
 }
