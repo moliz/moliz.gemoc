@@ -18,7 +18,7 @@ import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialTemplate;
 
 public class XMOFProjectConstants {
 
-  public static final String PLUGIN_VERSION = "1.0.0.qualifer";
+  public static final String PLUGIN_VERSION = "1.0.1.qualifer";
   public static final String PLUGIN_NAME = "%pluginName";
   public static final String PLUGIN_VENDOR = "%providerName";
   public static final String XMOF_FILE_FOLDER = "xmof";

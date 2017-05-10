@@ -8,7 +8,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.emf.ecore,
- org.modelexecution.xmof.gemoc.codegen;bundle-version="1.0.0"
+ org.modelexecution.xmof.gemoc.codegen
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.modelexecution.xmof.gemoc.codegen.ui.commands
