@@ -1,0 +1,6 @@
+package org.modelexecution.examples
+
+external language FumlFewSteps {
+ 	syntax "platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"
+	xmof "platform:/resource/org.modelexecution.xmof.examples.fuml.xmof.dynamic.fewsteps/xmof/fuml.xmof"
+ }
