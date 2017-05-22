@@ -43,4 +43,5 @@ Require-Bundle: org.gemoc.executionframework.engine,
  fr.obeo.dsl.debug.ide.ui,
  org.gemoc.xdsmlframework.commons,
  fr.inria.diverse.melange.metamodel,
- fr.inria.diverse.melange.resource
+ fr.inria.diverse.melange.resource,
+ org.gemoc.executionframework.debugger
