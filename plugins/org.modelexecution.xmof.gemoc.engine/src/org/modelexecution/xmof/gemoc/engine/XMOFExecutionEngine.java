@@ -37,8 +37,8 @@ import fUML.Semantics.Classes.Kernel.Object_;
 public class XMOFExecutionEngine extends AbstractSequentialExecutionEngine
 		implements ExecutionEventListener, IXMOFVirtualMachineListener {
 
-	private static String STEP_ANNOTATION_SOURCE = "http://www.modelexecution.org/xmof";
-	private static String STEP_ANNOTATION_KEY = "Step";
+	public static final String STEP_ANNOTATION_SOURCE = "http://www.modelexecution.org/xmof";
+	public static final String STEP_ANNOTATION_KEY = "Step";
 
 	private ConfigurationObjectMap configurationMap;
 	private XMOFVirtualMachine vm;
