@@ -9,7 +9,7 @@
             hasPages="true"
             icon="icons/xmof-moliz-16.png"
             id="org.modelexecution.xmof.gemoc.ui.XmofSiriusProjectWizard"
-            name="xMOF Debug/Animator Project"
+            name="xMOF Animator Project"
             project="false">
          <description>
             Create a debug/animation representation for a xMOF GEMOC language. May create a new project, or modify or extend an existing Viewpoint Specification.
@@ -32,21 +32,27 @@
                   label="Add Animation Layer"
                   style="push"
                   tooltip="Add an xMOF animation layer to the selected diagram description">
-               <visibleWhen
-                     checkEnabled="false">
-                  <with
-                        variable="selection">
-                     <count
-                           value="1">
-                     </count>
-                     <iterate>
-                        <instanceof
-                              value="org.eclipse.sirius.diagram.description.DiagramDescription">
-                        </instanceof>
-                     </iterate>
-                  </with>
-               </visibleWhen>
             </command>
+            <command
+                  commandId="org.gemoc.gemoc_language_workbench.extensions.sirius.addDebugLayer"
+                  label="Add Debug Layer"
+                  style="push"
+                  tooltip="Add a GEMOC debug layer to the selected diagram description">
+            </command>
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate>
+                     <instanceof
+                           value="org.eclipse.sirius.diagram.description.DiagramDescription">
+                     </instanceof>
+                  </iterate>
+               </with>
+            </visibleWhen>
          </menu>
       </menuContribution>
    </extension>
