@@ -10,7 +10,7 @@
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.xtext.sdk.feature.group" version="2.10.0.v201605250459"/>
 <unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.10.0.201606071959"/>
-<repository location="http://download.eclipse.org/releases/neon/201610111000"/>
+<repository location="http://download.eclipse.org/releases/neon/201612211000"/>
 </location>
 </locations>
 </target>
