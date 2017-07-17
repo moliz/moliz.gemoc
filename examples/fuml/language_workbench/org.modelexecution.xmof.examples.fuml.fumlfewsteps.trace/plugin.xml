@@ -27,7 +27,7 @@
     <!-- @generated fumlConfigurationFewStepsTrace -->
     <package uri="fumlConfigurationFewStepsTrace_BasicActionsFewSteps" class="fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.BasicActionsFewStepsPackage" genModel="model/fumlConfigurationFewStepsTrace.genmodel" />
   </extension>
-  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
-    <Addon Class="org.modelexecution.xmof.examples.fuml.fumlfewsteps.trace.tracemanager.FumlConfigurationFewStepsTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.fuml.fumlfewsteps.trace" Name="fumlConfigurationFewSteps MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to fumlConfigurationFewSteps language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" />
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon Class="org.modelexecution.xmof.examples.fuml.fumlfewsteps.trace.tracemanager.FumlConfigurationFewStepsTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.fuml.fumlfewsteps.trace" Name="fumlConfigurationFewSteps MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to fumlConfigurationFewSteps language" openViewIds="org.eclipse.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" />
   </extension>
 </plugin>

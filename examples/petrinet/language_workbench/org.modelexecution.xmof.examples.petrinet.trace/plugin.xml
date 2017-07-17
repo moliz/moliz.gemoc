@@ -19,7 +19,7 @@
     <!-- @generated petrinetConfigurationTrace -->
     <package uri="petrinetConfigurationTrace_petrinetConfiguration" class="petrinetConfigurationTrace.States.petrinetConfiguration.PetrinetConfigurationPackage" genModel="model/petrinetConfigurationTrace.genmodel" />
   </extension>
-  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
-    <Addon Class="org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetConfigurationTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.petrinet.trace" Name="petrinetConfiguration MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to petrinetConfiguration language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" AddonGroupId="Sequential.AddonGroup" />
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon Class="org.modelexecution.xmof.examples.petrinet.trace.tracemanager.PetrinetConfigurationTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.petrinet.trace" Name="petrinetConfiguration MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to petrinetConfiguration language" openViewIds="org.eclipse.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" AddonGroupId="Sequential.AddonGroup" />
   </extension>
 </plugin>

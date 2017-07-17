@@ -2,7 +2,7 @@
  */
 package imlTrace.impl;
 
-import fr.inria.diverse.trace.commons.model.trace.TracePackage;
+import org.eclipse.gemoc.trace.commons.model.trace.TracePackage;
 
 import imlTrace.ImlTraceFactory;
 import imlTrace.ImlTracePackage;

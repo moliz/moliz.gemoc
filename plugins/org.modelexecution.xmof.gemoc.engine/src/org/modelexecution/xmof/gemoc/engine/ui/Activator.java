@@ -1,11 +1,11 @@
 package org.modelexecution.xmof.gemoc.engine.ui;
 
 import org.eclipse.core.runtime.Status;
+import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystem;
+import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystemManager;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import fr.inria.diverse.commons.eclipse.messagingsystem.api.MessagingSystemManager;
-import fr.inria.diverse.commons.messagingsystem.api.MessagingSystem;
 
 /**
  * The activator class controls the plug-in life cycle

@@ -1,6 +1,6 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases
 
-import fr.inria.diverse.trace.commons.testutil.Investigation
+import org.eclipse.gemoc.trace.commons.testutil.Investigation
 import java.io.File
 import java.util.HashSet
 import org.eclipse.emf.common.command.Command

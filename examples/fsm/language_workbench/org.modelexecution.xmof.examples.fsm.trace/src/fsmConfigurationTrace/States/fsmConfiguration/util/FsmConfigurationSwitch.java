@@ -2,8 +2,8 @@
  */
 package fsmConfigurationTrace.States.fsmConfiguration.util;
 
-import fr.inria.diverse.trace.commons.model.trace.Dimension;
-import fr.inria.diverse.trace.commons.model.trace.TracedObject;
+import org.eclipse.gemoc.trace.commons.model.trace.Dimension;
+import org.eclipse.gemoc.trace.commons.model.trace.TracedObject;
 
 import fsmConfigurationTrace.States.SpecificDimension;
 import fsmConfigurationTrace.States.SpecificTracedObject;

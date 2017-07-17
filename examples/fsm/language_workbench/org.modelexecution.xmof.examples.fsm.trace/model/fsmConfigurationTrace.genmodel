@@ -151,7 +151,7 @@
       </nestedGenPackages>
     </nestedGenPackages>
   </genPackages>
-  <usedGenPackages href="../../../plugin/fr.inria.diverse.trace.commons.model/model/GenericTrace.genmodel#//trace"/>
+  <usedGenPackages href="../../../plugin/org.eclipse.gemoc.trace.commons.model/model/GenericTrace.genmodel#//trace"/>
   <usedGenPackages href="../../org.modelexecution.xmof.examples.fsm.xmof.dynamic/model-gen/fsm.genmodel#//fsmConfiguration"/>
   <usedGenPackages href="../../org.modelexecution.xmof.examples.fsm/model/fsm.genmodel#//fsm"/>
 </genmodel:GenModel>

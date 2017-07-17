@@ -2,7 +2,7 @@
  */
 package fumlConfigurationTrace.States.fumlConfiguration.Input.impl;
 
-import fr.inria.diverse.trace.commons.model.trace.TracePackage;
+import org.eclipse.gemoc.trace.commons.model.trace.TracePackage;
 
 import fumlConfiguration.FumlConfigurationPackage;
 
