@@ -2,9 +2,9 @@
  */
 package fsmConfigurationTrace.impl;
 
-import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import org.eclipse.gemoc.trace.commons.model.trace.SequentialStep;
 
-import fr.inria.diverse.trace.commons.model.trace.impl.TraceImpl;
+import org.eclipse.gemoc.trace.commons.model.trace.impl.TraceImpl;
 
 import fsmConfigurationTrace.FsmConfigurationTracePackage;
 import fsmConfigurationTrace.SpecificTrace;

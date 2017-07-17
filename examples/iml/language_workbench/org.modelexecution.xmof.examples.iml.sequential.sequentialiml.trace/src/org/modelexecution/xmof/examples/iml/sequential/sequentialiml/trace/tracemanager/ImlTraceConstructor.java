@@ -12,10 +12,10 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import fr.inria.diverse.trace.commons.model.trace.LaunchConfiguration;
-import fr.inria.diverse.trace.commons.model.trace.MSEModel;
-import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
-import fr.inria.diverse.trace.gemoc.api.ITraceConstructor;
+import org.eclipse.gemoc.trace.commons.model.trace.LaunchConfiguration;
+import org.eclipse.gemoc.trace.commons.model.trace.MSEModel;
+import org.eclipse.gemoc.trace.commons.model.trace.SequentialStep;
+import org.eclipse.gemoc.trace.gemoc.api.ITraceConstructor;
 
 public class ImlTraceConstructor implements ITraceConstructor {
 	private imlTrace.SpecificTrace traceRoot;
@@ -395,7 +395,7 @@ public class ImlTraceConstructor implements ITraceConstructor {
 	}
 
 	@Override
-	public void addState(List<org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange> changes) {
+	public void addState(List<org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange> changes) {
 		if (lastState == null) {
 			addInitialState();
 		}
@@ -404,15 +404,15 @@ public class ImlTraceConstructor implements ITraceConstructor {
 			// We start by a (shallow) copy of the last state
 			// But we will have to rollback a little by replacing values that changed
 			imlTrace.States.State newState = copyState(lastState);
-			for (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange modelChange : changes) {
+			for (org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange modelChange : changes) {
 				EObject o = modelChange.getChangedObject();
 				// Here we must look at non-collection mutable fields
 				// We must rollback the last values from the copied state, and add new values as well
 				// ie. mix of remove and new
-				if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) {
+				if (modelChange instanceof org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) {
 					stateChanged = true;
 
-					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) modelChange;
+					org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange modelChange_cast = (org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) modelChange;
 					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
 
 					if (o instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.State) {
@@ -522,7 +522,7 @@ public class ImlTraceConstructor implements ITraceConstructor {
 			}
 			if (stateChanged) {
 				final imlTrace.Steps.SpecificStep currentStep = context.peekFirst();
-				if (currentStep != null && currentStep instanceof fr.inria.diverse.trace.commons.model.trace.BigStep) {
+				if (currentStep != null && currentStep instanceof org.eclipse.gemoc.trace.commons.model.trace.BigStep) {
 					final imlTrace.States.State startingState = lastState;
 					final imlTrace.States.State endingState = newState;
 					addImplicitStep(currentStep, startingState, endingState);
@@ -535,12 +535,12 @@ public class ImlTraceConstructor implements ITraceConstructor {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void addStep(fr.inria.diverse.trace.commons.model.trace.Step step) {
+	public void addStep(org.eclipse.gemoc.trace.commons.model.trace.Step step) {
 		imlTrace.Steps.SpecificStep step_cast = null;
 		if (step != null && step instanceof imlTrace.Steps.SpecificStep) {
 			step_cast = (imlTrace.Steps.SpecificStep) step;
 			if (mseModel == null) {
-				mseModel = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE.createMSEModel();
+				mseModel = org.eclipse.gemoc.trace.commons.model.trace.TraceFactory.eINSTANCE.createMSEModel();
 				traceResource.getContents().add(mseModel);
 			}
 			mseModel.getOwnedMSEs().add(step_cast.getMseoccurrence().getMse());
@@ -624,7 +624,7 @@ public class ImlTraceConstructor implements ITraceConstructor {
 	}
 
 	@Override
-	public void endStep(fr.inria.diverse.trace.commons.model.trace.Step step) {
+	public void endStep(org.eclipse.gemoc.trace.commons.model.trace.Step step) {
 		imlTrace.Steps.SpecificStep popped = context.pop();
 		if (popped != null)
 			popped.setEndingState(lastState);
@@ -637,7 +637,7 @@ public class ImlTraceConstructor implements ITraceConstructor {
 		traceRoot.setLaunchconfiguration(launchConfiguration);
 
 		// Create root sequential step
-		fr.inria.diverse.trace.commons.model.trace.SequentialStep<imlTrace.Steps.SpecificStep> rootStep = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE
+		org.eclipse.gemoc.trace.commons.model.trace.SequentialStep<imlTrace.Steps.SpecificStep> rootStep = org.eclipse.gemoc.trace.commons.model.trace.TraceFactory.eINSTANCE
 				.createSequentialStep();
 		traceRoot.setRootStep(rootStep);
 
@@ -669,7 +669,7 @@ public class ImlTraceConstructor implements ITraceConstructor {
 	private Set<Resource> getAllExecutedModelResources() {
 		Set<Resource> allResources = new HashSet<>();
 		allResources.add(executedModel);
-		allResources.addAll(org.gemoc.commons.eclipse.emf.EMFResource.getRelatedResources(executedModel));
+		allResources.addAll(org.eclipse.gemoc.commons.eclipse.emf.EMFResource.getRelatedResources(executedModel));
 		return allResources;
 	}
 

@@ -3,7 +3,7 @@ package org.modelexecution.xmof.examples.iml.design.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
+import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
 
 public class IMLAnimationServices extends AbstractGemocAnimatorServices{
 

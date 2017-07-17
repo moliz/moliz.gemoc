@@ -2,8 +2,8 @@ package org.modelexecution.xmof.examples.iml.sequentialiml.aspects;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
-import fr.inria.diverse.k3.al.annotationprocessor.Abstract;
-import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Abstract;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Aspect;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.Conversions;

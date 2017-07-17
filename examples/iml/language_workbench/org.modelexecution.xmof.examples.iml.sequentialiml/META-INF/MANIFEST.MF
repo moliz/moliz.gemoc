@@ -8,7 +8,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- fr.inria.diverse.k3.al.annotationprocessor.plugin,
+ org.eclipse.gemoc.k3.al.annotationprocessor.plugin,
  org.eclipse.xtext.xbase.lib
 Bundle-ActivationPolicy: lazy
 Export-Package: org.modelexecution.xmof.examples.iml.sequentialiml.aspects,

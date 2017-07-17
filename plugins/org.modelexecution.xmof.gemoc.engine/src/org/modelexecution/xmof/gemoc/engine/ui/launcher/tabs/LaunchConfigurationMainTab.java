@@ -27,16 +27,16 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.gemoc.commons.eclipse.emf.URIHelper;
-import org.gemoc.commons.eclipse.ui.dialogs.SelectAnyIFileDialog;
-import org.gemoc.executionframework.engine.commons.MelangeHelper;
-import org.gemoc.xdsmlframework.ui.utils.dialogs.SelectAIRDIFileDialog;
+import org.eclipse.gemoc.commons.eclipse.emf.URIHelper;
+import org.eclipse.gemoc.commons.eclipse.ui.dialogs.SelectAnyIFileDialog;
+import org.eclipse.gemoc.executionframework.engine.commons.MelangeHelper;
+import org.eclipse.gemoc.xdsmlframework.ui.utils.dialogs.SelectAIRDIFileDialog;
 import org.modelexecution.xmof.Syntax.Classes.Kernel.BehavioredEClass;
 import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 
-import fr.obeo.dsl.debug.ide.launch.AbstractDSLLaunchConfigurationDelegate;
-import fr.obeo.dsl.debug.ide.sirius.ui.launch.AbstractDSLLaunchConfigurationDelegateUI;
+import org.eclipse.gemoc.dsl.debug.ide.launch.AbstractDSLLaunchConfigurationDelegate;
+import org.eclipse.gemoc.dsl.debug.ide.sirius.ui.launch.AbstractDSLLaunchConfigurationDelegateUI;
 
 public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 

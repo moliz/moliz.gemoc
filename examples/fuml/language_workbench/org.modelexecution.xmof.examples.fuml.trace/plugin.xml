@@ -51,7 +51,7 @@
     <!-- @generated fumlConfigurationTrace -->
     <package uri="fumlConfigurationTrace_IntegerFunctions" class="fumlConfigurationTrace.States.fumlConfiguration.PrimitiveBehaviors.IntegerFunctions.IntegerFunctionsPackage" genModel="model/fumlConfigurationTrace.genmodel" />
   </extension>
-  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
-    <Addon Class="org.modelexecution.xmof.examples.fuml.trace.tracemanager.FumlConfigurationTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.fuml.trace" Name="fumlConfiguration MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to fumlConfiguration language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" />
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon Class="org.modelexecution.xmof.examples.fuml.trace.tracemanager.FumlConfigurationTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.fuml.trace" Name="fumlConfiguration MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to fumlConfiguration language" openViewIds="org.eclipse.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" />
   </extension>
 </plugin>

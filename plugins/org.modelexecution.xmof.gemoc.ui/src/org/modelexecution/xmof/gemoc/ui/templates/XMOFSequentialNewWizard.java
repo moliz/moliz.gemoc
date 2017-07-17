@@ -11,9 +11,9 @@ package org.modelexecution.xmof.gemoc.ui.templates;
 
 import java.util.Properties;
 
-import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialNewWizard;
+import org.eclipse.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialNewWizard;
 
-import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.templates.ITemplateSection;
+import org.eclipse.gemoc.commons.eclipse.pde.wizards.pages.pde.ui.templates.ITemplateSection;
 
 public class XMOFSequentialNewWizard extends SequentialNewWizard {
   @Override

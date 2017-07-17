@@ -2,8 +2,8 @@
  */
 package fsmConfigurationTrace.States.fsmConfiguration.util;
 
-import fr.inria.diverse.trace.commons.model.trace.Dimension;
-import fr.inria.diverse.trace.commons.model.trace.TracedObject;
+import org.eclipse.gemoc.trace.commons.model.trace.Dimension;
+import org.eclipse.gemoc.trace.commons.model.trace.TracedObject;
 
 import fsmConfigurationTrace.States.SpecificDimension;
 import fsmConfigurationTrace.States.SpecificTracedObject;
@@ -145,13 +145,13 @@ public class FsmConfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.inria.diverse.trace.commons.model.trace.TracedObject <em>Traced Object</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.commons.model.trace.TracedObject <em>Traced Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.inria.diverse.trace.commons.model.trace.TracedObject
+	 * @see org.eclipse.gemoc.trace.commons.model.trace.TracedObject
 	 * @generated
 	 */
 	public Adapter createTracedObjectAdapter() {

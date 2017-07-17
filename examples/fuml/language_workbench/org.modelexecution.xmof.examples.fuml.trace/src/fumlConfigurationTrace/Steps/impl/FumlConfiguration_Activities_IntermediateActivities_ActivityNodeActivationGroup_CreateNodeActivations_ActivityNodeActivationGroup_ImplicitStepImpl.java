@@ -2,7 +2,7 @@
  */
 package fumlConfigurationTrace.Steps.impl;
 
-import fr.inria.diverse.trace.commons.model.trace.impl.StepImpl;
+import org.eclipse.gemoc.trace.commons.model.trace.impl.StepImpl;
 
 import fumlConfigurationTrace.States.State;
 import fumlConfigurationTrace.States.StatesPackage;

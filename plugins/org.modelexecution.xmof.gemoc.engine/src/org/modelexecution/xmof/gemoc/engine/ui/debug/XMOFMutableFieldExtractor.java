@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.gemoc.executionframework.engine.ui.debug.IMutableFieldExtractor;
-import org.gemoc.executionframework.engine.ui.debug.MutableField;
+import org.eclipse.gemoc.executionframework.debugger.IMutableFieldExtractor;
+import org.eclipse.gemoc.executionframework.debugger.MutableField;
 import org.modelexecution.xmof.configuration.ConfigurationObjectMap;
 
 public class XMOFMutableFieldExtractor implements IMutableFieldExtractor {

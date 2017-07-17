@@ -4,7 +4,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 
 public class RunConfiguration extends
-		org.gemoc.executionframework.engine.ui.commons.RunConfiguration
+		org.eclipse.gemoc.executionframework.engine.ui.commons.RunConfiguration
 		implements IXMOFRunConfiguration {
 
 	// main launch parameters

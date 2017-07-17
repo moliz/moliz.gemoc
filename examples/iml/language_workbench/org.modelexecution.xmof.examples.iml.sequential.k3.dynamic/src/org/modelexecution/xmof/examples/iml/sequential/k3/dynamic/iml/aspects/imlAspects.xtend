@@ -1,6 +1,6 @@
 package org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects
 
-import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import org.eclipse.gemoc.k3.al.annotationprocessor.Aspect
 import org.modelexecution.xmof.examples.iml.IdentifyableElement
 import org.modelexecution.xmof.examples.iml.Header
 import org.modelexecution.xmof.examples.iml.Element
@@ -23,10 +23,10 @@ import static extension org.modelexecution.xmof.examples.iml.sequential.k3.dynam
 import static extension org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.StateTransitionAspect.*
 import static extension org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.ActivityAspect.*
 import static extension org.modelexecution.xmof.examples.iml.sequential.k3.dynamic.iml.aspects.ConnectionPointAspect.*
-import fr.inria.diverse.k3.al.annotationprocessor.Main
-import fr.inria.diverse.k3.al.annotationprocessor.Step
-import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
-import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
+import org.eclipse.gemoc.k3.al.annotationprocessor.Main
+import org.eclipse.gemoc.k3.al.annotationprocessor.Step
+import org.eclipse.gemoc.k3.al.annotationprocessor.OverrideAspectMethod
+import org.eclipse.gemoc.k3.al.annotationprocessor.InitializeModel
 import java.util.List
 
 @Aspect(className=Header)

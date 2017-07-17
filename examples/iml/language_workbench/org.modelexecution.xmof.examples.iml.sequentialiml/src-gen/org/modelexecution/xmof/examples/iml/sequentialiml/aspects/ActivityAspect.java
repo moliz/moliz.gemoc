@@ -1,7 +1,7 @@
 package org.modelexecution.xmof.examples.iml.sequentialiml.aspects;
 
-import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Aspect;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Step;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity;
 import org.modelexecution.xmof.examples.iml.sequentialiml.aspects.ActivityAspectActivityAspectProperties;
 import org.modelexecution.xmof.examples.iml.sequentialiml.aspects.IdentifyableElementAspect;
@@ -17,13 +17,13 @@ public class ActivityAspect extends IdentifyableElementAspect {
   @Step
   public static void doExecute(final Activity _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.ActivityAspectActivityAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.ActivityAspectActivityAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand command = new org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand() {
     	@Override
     	public void execute() {
     		_privk3_doExecute(_self_, _self);
     	}
     };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.IStepManager manager = org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     if (manager != null) {
     	manager.executeStep(_self,command,"Activity","doExecute");
     } else {

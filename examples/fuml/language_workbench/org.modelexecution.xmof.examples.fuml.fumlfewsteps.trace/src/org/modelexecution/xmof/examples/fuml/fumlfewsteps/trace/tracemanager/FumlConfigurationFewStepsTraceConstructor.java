@@ -16,11 +16,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.modelexecution.xmof.gemoc.tracebenchmark.api.BenchmarkTraceConstructor;
 
-import fr.inria.diverse.trace.commons.model.trace.LaunchConfiguration;
-import fr.inria.diverse.trace.commons.model.trace.MSEModel;
-import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
+import org.eclipse.gemoc.trace.commons.model.trace.LaunchConfiguration;
+import org.eclipse.gemoc.trace.commons.model.trace.MSEModel;
+import org.eclipse.gemoc.trace.commons.model.trace.SequentialStep;
 
-import fr.inria.diverse.trace.gemoc.api.ITraceConstructor;
+import org.eclipse.gemoc.trace.gemoc.api.ITraceConstructor;
 
 public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstructor, BenchmarkTraceConstructor {
 	private fumlConfigurationFewStepsTrace.SpecificTrace traceRoot;
@@ -444,7 +444,7 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void addState(List<org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange> changes) {
+	public void addState(List<org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange> changes) {
 		if (lastState == null) {
 			addInitialState();
 		}
@@ -454,12 +454,12 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 			// But we will have to rollback a little by replacing values that
 			// changed
 			fumlConfigurationFewStepsTrace.States.State newState = copyState(lastState);
-			for (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange modelChange : changes) {
+			for (org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange modelChange : changes) {
 				EObject o = modelChange.getChangedObject();
 				// We only look at constructable objects that have mutable
 				// fields
 				// Here we have nothing to rollback, just a new object to add
-				if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NewObjectModelChange) {
+				if (modelChange instanceof org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NewObjectModelChange) {
 					stateChanged = true;
 					if (o instanceof fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor) {
 						fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor o_cast = (fumlConfigurationFewSteps.LociFewSteps.SemanticVisitor) o;
@@ -470,7 +470,7 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 				// fields
 				// Here we must rollback to remove the values of the removed
 				// object from the copied state
-				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.RemovedObjectModelChange) {
+				else if (modelChange instanceof org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.RemovedObjectModelChange) {
 					stateChanged = true;
 					if (o instanceof fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.ActionActivation) {
 						fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.ActionActivation o_cast = (fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.ActionActivation) o;
@@ -492,10 +492,10 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 				// We must rollback the last values from the copied state, and
 				// add new values as well
 				// ie. mix of remove and new
-				else if (modelChange instanceof org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) {
+				else if (modelChange instanceof org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) {
 					stateChanged = true;
 
-					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) modelChange;
+					org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange modelChange_cast = (org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) modelChange;
 					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
 
 					if (o instanceof fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.ActionActivation) {
@@ -559,7 +559,7 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 			}
 			if (stateChanged) {
 				final fumlConfigurationFewStepsTrace.Steps.SpecificStep currentStep = context.peekFirst();
-				if (currentStep != null && currentStep instanceof fr.inria.diverse.trace.commons.model.trace.BigStep) {
+				if (currentStep != null && currentStep instanceof org.eclipse.gemoc.trace.commons.model.trace.BigStep) {
 					final fumlConfigurationFewStepsTrace.States.State startingState = lastState;
 					final fumlConfigurationFewStepsTrace.States.State endingState = newState;
 					addImplicitStep(currentStep, startingState, endingState);
@@ -572,12 +572,12 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void addStep(fr.inria.diverse.trace.commons.model.trace.Step step) {
+	public void addStep(org.eclipse.gemoc.trace.commons.model.trace.Step step) {
 		fumlConfigurationFewStepsTrace.Steps.SpecificStep step_cast = null;
 		if (step != null && step instanceof fumlConfigurationFewStepsTrace.Steps.SpecificStep) {
 			step_cast = (fumlConfigurationFewStepsTrace.Steps.SpecificStep) step;
 			if (mseModel == null) {
-				mseModel = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE.createMSEModel();
+				mseModel = org.eclipse.gemoc.trace.commons.model.trace.TraceFactory.eINSTANCE.createMSEModel();
 				traceResource.getContents().add(mseModel);
 			}
 			mseModel.getOwnedMSEs().add(step_cast.getMseoccurrence().getMse());
@@ -742,7 +742,7 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 	}
 
 	@Override
-	public void endStep(fr.inria.diverse.trace.commons.model.trace.Step step) {
+	public void endStep(org.eclipse.gemoc.trace.commons.model.trace.Step step) {
 		fumlConfigurationFewStepsTrace.Steps.SpecificStep popped = context.pop();
 		if (popped != null)
 			popped.setEndingState(lastState);
@@ -756,7 +756,7 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 		traceRoot.setLaunchconfiguration(launchConfiguration);
 
 		// Create root sequential step
-		fr.inria.diverse.trace.commons.model.trace.SequentialStep<fumlConfigurationFewStepsTrace.Steps.SpecificStep> rootStep = fr.inria.diverse.trace.commons.model.trace.TraceFactory.eINSTANCE
+		org.eclipse.gemoc.trace.commons.model.trace.SequentialStep<fumlConfigurationFewStepsTrace.Steps.SpecificStep> rootStep = org.eclipse.gemoc.trace.commons.model.trace.TraceFactory.eINSTANCE
 				.createSequentialStep();
 		traceRoot.setRootStep(rootStep);
 
@@ -788,7 +788,7 @@ public class FumlConfigurationFewStepsTraceConstructor implements ITraceConstruc
 	private Set<Resource> getAllExecutedModelResources() {
 		Set<Resource> allResources = new HashSet<>();
 		allResources.add(executedModel);
-		allResources.addAll(org.gemoc.commons.eclipse.emf.EMFResource.getRelatedResources(executedModel));
+		allResources.addAll(org.eclipse.gemoc.commons.eclipse.emf.EMFResource.getRelatedResources(executedModel));
 		return allResources;
 	}
 

@@ -1,6 +1,6 @@
 package org.modelexecution.xmof.gemoc.engine.test
 
-import fr.inria.diverse.trace.commons.testutil.EclipseTestUtil
+import org.eclipse.gemoc.trace.commons.testutil.EclipseTestUtil
 import org.eclipse.core.resources.IProject
 import org.eclipse.core.resources.IProjectDescription
 import org.eclipse.core.resources.IWorkspace
@@ -8,10 +8,10 @@ import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.runtime.Status
 import org.eclipse.core.runtime.jobs.Job
-import org.gemoc.execution.sequential.javaengine.SequentialModelExecutionContext
-import org.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus
-import org.gemoc.xdsmlframework.api.core.ExecutionMode
-import org.gemoc.xdsmlframework.api.core.IRunConfiguration
+import org.eclipse.gemoc.execution.sequential.javaengine.SequentialModelExecutionContext
+import org.eclipse.gemoc.xdsmlframework.api.core.EngineStatus.RunStatus
+import org.eclipse.gemoc.xdsmlframework.api.core.ExecutionMode
+import org.eclipse.gemoc.xdsmlframework.api.core.IRunConfiguration
 import org.junit.AfterClass
 import org.junit.Test
 import org.modelexecution.xmof.gemoc.engine.XMOFExecutionEngine

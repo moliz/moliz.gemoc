@@ -1,13 +1,13 @@
 package fr.inria.diverse.opsemanticsview.gen.xmof
 
 import fr.inria.diverse.melange.metamodel.melange.Language
-import fr.inria.diverse.opsemanticsview.gen.OperationalSemanticsViewGenerator
 import opsemanticsview.OpsemanticsviewFactory
 import org.eclipse.core.resources.IProject
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.gemoc.opsemanticsview.gen.OperationalSemanticsViewGenerator
 
 class XMOFOperationalSemanticsViewGenerator implements OperationalSemanticsViewGenerator {
 

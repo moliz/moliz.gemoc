@@ -36,14 +36,14 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
-import org.gemoc.execution.sequential.javaxdsml.ide.ui.wizards.CreateNewGemocSequentialLanguageProject;
+import org.eclipse.gemoc.execution.sequential.javaxdsml.ide.ui.wizards.CreateNewGemocSequentialLanguageProject;
 import org.modelexecution.xmof.gemoc.ui.Activator;
 import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectConstants;
 import org.modelexecution.xmof.gemoc.ui.internal.XMOFProjectUtil;
 import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialNewWizard;
 import org.modelexecution.xmof.gemoc.ui.templates.XMOFSequentialTemplate;
 
-import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.ProjectTemplateApplicationOperation;
+import org.eclipse.gemoc.commons.eclipse.pde.wizards.pages.pde.ui.ProjectTemplateApplicationOperation;
 import fr.inria.diverse.melange.ui.MelangeUiModule;
 import fr.inria.diverse.melange.ui.wizards.pages.NewMelangeProjectWizardFields;
 

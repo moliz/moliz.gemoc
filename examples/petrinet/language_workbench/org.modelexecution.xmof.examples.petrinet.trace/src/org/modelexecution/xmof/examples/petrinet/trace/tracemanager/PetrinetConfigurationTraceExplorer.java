@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.gemoc.executionframework.engine.core.CommandExecution;
+import org.eclipse.gemoc.executionframework.engine.core.CommandExecution;
 
-import fr.inria.diverse.trace.commons.model.trace.SequentialStep;
-import fr.inria.diverse.trace.commons.model.trace.Step;
-import fr.inria.diverse.trace.gemoc.api.ITraceExplorer;
-import fr.inria.diverse.trace.gemoc.api.ITraceListener;
+import org.eclipse.gemoc.trace.commons.model.trace.SequentialStep;
+import org.eclipse.gemoc.trace.commons.model.trace.Step;
+import org.eclipse.gemoc.trace.gemoc.api.ITraceExplorer;
+import org.eclipse.gemoc.trace.gemoc.api.ITraceListener;
 
 public class PetrinetConfigurationTraceExplorer implements ITraceExplorer {
 	private petrinetConfigurationTrace.SpecificTrace traceRoot;
