@@ -50,13 +50,13 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.part.FileEditorInput;
-import org.gemoc.xdsmlframework.extensions.sirius.Activator;
-import org.gemoc.xdsmlframework.extensions.sirius.command.AddDebugLayerHandler;
+import org.eclipse.gemoc.xdsmlframework.extensions.sirius.Activator;
+import org.eclipse.gemoc.xdsmlframework.extensions.sirius.command.AddDebugLayerHandler;
 import org.osgi.framework.BundleException;
 
-import fr.inria.diverse.commons.eclipse.pde.manifest.ManifestChanger;
+import org.eclipse.gemoc.commons.eclipse.pde.manifest.ManifestChanger;
 
-// TODO: Lots of code is duplicate or similar to the implementation of org.gemoc.xdsmlframework.extensions.sirius.command.AddDebugLayerHandler
+// TODO: Lots of code is duplicate or similar to the implementation of org.eclipse.gemoc.xdsmlframework.extensions.sirius.command.AddDebugLayerHandler
 // -> refactoring
 public class AddAnimationLayerRunnable implements IRunnableWithProgress {
 
@@ -68,8 +68,8 @@ public class AddAnimationLayerRunnable implements IRunnableWithProgress {
   private static final String ANIMATION_SERVICE_TEMPLATE_PATH = "org/modelexecution/xmof/gemoc/extension/sirius/ui/command/animation_services_template.txt";
 
   private static final String[] ADDITIONAL_PLUGIN_DEPENDENCIES = {
-      "org.gemoc.executionframework.extensions.sirius",
-      "org.gemoc.execution.sequential.javaengine.ui" };
+      "org.eclipse.gemoc.executionframework.extensions.sirius",
+      "org.eclipse.gemoc.execution.sequential.javaengine.ui" };
 
   private static final String REGEX_ACTIVATOR_START_METHOD = "public\\s+void\\s+start\\s*\\"
       + "(\\s*BundleContext\\s+context\\s*\\)\\s*throws\\s+Exception\\s*[^}]*}";

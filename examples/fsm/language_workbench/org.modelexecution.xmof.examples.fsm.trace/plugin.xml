@@ -23,7 +23,7 @@
     <!-- @generated fsmConfigurationTrace -->
     <package uri="fsmConfigurationTrace_fsmConfiguration" class="fsmConfigurationTrace.States.fsmConfiguration.FsmConfigurationPackage" genModel="model/fsmConfigurationTrace.genmodel" />
   </extension>
-  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
-    <Addon Class="org.modelexecution.xmof.examples.fsm.trace.tracemanager.FsmConfigurationTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.fsm.trace" Name="fsmConfiguration MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to fsmConfiguration language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" AddonGroupId="Sequential.AddonGroup" />
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon Class="org.modelexecution.xmof.examples.fsm.trace.tracemanager.FsmConfigurationTraceEngineAddon" Default="false" id="org.modelexecution.xmof.examples.fsm.trace" Name="fsmConfiguration MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to fsmConfiguration language" openViewIds="org.eclipse.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" AddonGroupId="Sequential.AddonGroup" />
   </extension>
 </plugin>

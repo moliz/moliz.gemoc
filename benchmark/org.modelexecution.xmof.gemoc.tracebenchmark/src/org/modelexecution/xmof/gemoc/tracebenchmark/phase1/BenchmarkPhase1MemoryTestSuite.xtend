@@ -1,7 +1,7 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1
 
-import fr.inria.diverse.trace.commons.testutil.EclipseTestUtil
-import fr.inria.diverse.trace.commons.testutil.Investigation
+import org.eclipse.gemoc.trace.commons.testutil.EclipseTestUtil
+import org.eclipse.gemoc.trace.commons.testutil.Investigation
 import java.io.File
 import java.io.FileOutputStream
 import java.io.PrintWriter

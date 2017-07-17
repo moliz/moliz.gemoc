@@ -2,7 +2,7 @@
  */
 package petrinetConfigurationTrace.Steps;
 
-import fr.inria.diverse.trace.commons.model.trace.Step;
+import org.eclipse.gemoc.trace.commons.model.trace.Step;
 
 import petrinetConfigurationTrace.States.State;
 

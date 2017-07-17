@@ -32,9 +32,9 @@
     <eGenericSuperTypes>
       <eTypeArguments>
         <eTypeArguments eClassifier="//Steps/SpecificStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eTypeArguments>
-      <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//Trace"/>
+      <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//Trace"/>
     </eGenericSuperTypes>
   </eClassifiers>
   <eSubpackages name="Steps" nsURI="fumlConfigurationFewStepsTrace_Steps" nsPrefix="events">
@@ -49,7 +49,7 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_AbstractSubStep"/>
@@ -60,7 +60,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation">
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActionsFewSteps/BasicActionsFewSteps/TracedActionActivation">
@@ -72,13 +72,13 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation">
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActionsFewSteps/BasicActionsFewSteps/TracedActionActivation">
@@ -90,7 +90,7 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep"/>
@@ -103,7 +103,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_Fire_PinActivation">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_AbstractSubStep"/>
@@ -114,7 +114,7 @@
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/SpecificStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActionsFewSteps/BasicActionsFewSteps/TracedPinActivation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.TracedPinActivation) this.getMseoccurrence().getMse().getCaller();"/>
@@ -132,7 +132,7 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_AbstractSubStep"/>
@@ -144,7 +144,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityEdgeInstance_TakeOfferedTokens_ActivityEdgeInstance">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_AbstractSubStep"/>
@@ -158,7 +158,7 @@
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/SpecificStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_ShouldFireAgain_ActionActivation_AbstractSubStep"/>
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedActivityEdgeInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -169,7 +169,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityEdgeInstance_TakeOfferedTokens_int_ActivityEdgeInstance">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_PinActivation_TakeOfferedTokens_PinActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/SpecificStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedActivityEdgeInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityEdgeInstance) this.getMseoccurrence().getMse().getCaller();"/>
@@ -185,7 +185,7 @@
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/SpecificStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedActivityFinalNodeActivation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return (fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActivitiesFewSteps.IntermediateActivitiesFewSteps.TracedActivityFinalNodeActivation) this.getMseoccurrence().getMse().getCaller();"/>
@@ -196,7 +196,7 @@
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/SpecificStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_AbstractSubStep"/>
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_AbstractSubStep"/>
@@ -218,7 +218,7 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep"/>
@@ -231,7 +231,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityNodeActivation_TakeOfferedTokens_ActivityNodeActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation">
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedActivityParameterNodeActivation">
@@ -242,7 +242,7 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_TakeOfferedTokens_ActionActivation_AbstractSubStep"/>
@@ -255,7 +255,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ActivityParameterNodeActivation_Fire_ActivityParameterNodeActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation">
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedControlNodeActivation">
@@ -271,7 +271,7 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_AbstractSubStep"/>
@@ -279,7 +279,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation">
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedDecisionNodeActivation">
@@ -296,14 +296,14 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_AbstractSubStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_Fire_DecisionNodeActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation">
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedDecisionNodeActivation">
@@ -316,7 +316,7 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActionsFewSteps_BasicActionsFewSteps_ActionActivation_Fire_ActionActivation_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_AbstractSubStep"/>
@@ -328,7 +328,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_DecisionNodeActivation_TakeOfferedTokens_DecisionNodeActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation">
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedForkNodeActivation">
@@ -343,7 +343,7 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ControlNodeActivation_Fire_ControlNodeActivation_AbstractSubStep"/>
@@ -352,7 +352,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation">
       <eOperations name="getCaller" lowerBound="1" eType="//States/fumlConfigurationFewSteps/ActivitiesFewSteps/IntermediateActivitiesFewSteps/TracedInitialNodeActivation">
@@ -366,7 +366,7 @@
       <eGenericSuperTypes eClassifier="//Steps/SpecificStep"/>
       <eGenericSuperTypes>
         <eTypeArguments eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_AbstractSubStep"/>
-        <eClassifier xsi:type="ecore:EClass" href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
+        <eClassifier xsi:type="ecore:EClass" href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SequentialStep"/>
       </eGenericSuperTypes>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_AbstractSubStep"/>
       <eGenericSuperTypes eClassifier="//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_ForkNodeActivation_Fire_ForkNodeActivation_AbstractSubStep"/>
@@ -376,13 +376,13 @@
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_AbstractSubStep" abstract="true" interface="true" eSuperTypes="//Steps/SpecificStep"/>
     <eClassifiers xsi:type="ecore:EClass" name="FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_ImplicitStep">
       <eSuperTypes href="#//Steps/FumlConfigurationFewSteps_ActivitiesFewSteps_IntermediateActivitiesFewSteps_InitialNodeActivation_Fire_InitialNodeActivation_AbstractSubStep"/>
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RootImplicitStep">
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//SmallStep"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SpecificStep" abstract="true" interface="true">
-      <eSuperTypes href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.ecore#//Step"/>
+      <eSuperTypes href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.ecore#//Step"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="endingState" eType="//States/State" eOpposite="//States/State/endedSteps"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="startingState" lowerBound="1" eType="//States/State" eOpposite="//States/State/startedSteps"/>
     </eClassifiers>
