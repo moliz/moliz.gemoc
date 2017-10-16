@@ -108,7 +108,7 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
 
       // launch the template
 
-      new ProjectTemplateApplicationOperation(context, project, templateWizard).run(monitor);
+      new ProjectTemplateApplicationOperation( context, project, templateWizard).run(monitor);
 
       // Easy workaround to ensure correct generation of all necessary extensions:
       // Open and save the newly generated .melange file
@@ -159,7 +159,7 @@ public class XDSMLProjectGenerationHandler extends AbstractHandler {
   private Properties loadTemplateSettings() throws IOException, CoreException {
     Properties props = XMOFProjectUtil.loadXmofProperties(xmofFile.getProject());
     if (props != null) {
-      props.put(XMOFSequentialTemplate.KEY_METAMODEL_NAME, getMetamodelname());
+      props.put(XMOFSequentialTemplate.METAMODEL_NAME, getMetamodelname());
       props.put(XMOFSequentialTemplate.KEY_MELANGE_FILE_NAME, getMelangeFileName());
       props.put(XMOFSequentialTemplate.KEY_PACKAGE_NAME, getPackageName());
       props.put(XMOFSequentialTemplate.KEY_XMOFFILE_PATH, getXMOFModelFilePath());

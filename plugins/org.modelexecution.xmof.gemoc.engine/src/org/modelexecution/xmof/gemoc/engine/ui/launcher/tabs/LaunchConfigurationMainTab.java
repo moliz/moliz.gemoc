@@ -36,7 +36,7 @@ import org.modelexecution.xmof.gemoc.engine.ui.Activator;
 import org.modelexecution.xmof.gemoc.engine.ui.commons.RunConfiguration;
 
 import org.eclipse.gemoc.dsl.debug.ide.launch.AbstractDSLLaunchConfigurationDelegate;
-import org.eclipse.gemoc.dsl.debug.ide.sirius.ui.launch.AbstractDSLLaunchConfigurationDelegateUI;
+import org.eclipse.gemoc.dsl.debug.ide.sirius.ui.launch.AbstractDSLLaunchConfigurationDelegateSiriusUI;
 
 public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 
@@ -124,7 +124,7 @@ public class LaunchConfigurationMainTab extends LaunchConfigurationTab {
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(AbstractDSLLaunchConfigurationDelegate.RESOURCE_URI,
 				this.modelLocationText.getText());
-		configuration.setAttribute(AbstractDSLLaunchConfigurationDelegateUI.SIRIUS_RESOURCE_URI,
+		configuration.setAttribute(AbstractDSLLaunchConfigurationDelegateSiriusUI.SIRIUS_RESOURCE_URI,
 				this.siriusRepresentationLocationText.getText());
 		configuration.setAttribute(RunConfiguration.LAUNCH_DELAY, Integer.parseInt(delayText.getText()));
 		configuration.setAttribute(RunConfiguration.LAUNCH_SELECTED_LANGUAGE, languageCombo.getText());

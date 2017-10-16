@@ -11,11 +11,10 @@ package org.modelexecution.xmof.gemoc.ui.templates;
 
 import java.util.Properties;
 
-import org.eclipse.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialNewWizard;
-
+import org.eclipse.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialSingleLanguageNewWizard;
 import org.eclipse.gemoc.commons.eclipse.pde.wizards.pages.pde.ui.templates.ITemplateSection;
 
-public class XMOFSequentialNewWizard extends SequentialNewWizard {
+public class XMOFSequentialNewWizard extends SequentialSingleLanguageNewWizard {
   @Override
   public ITemplateSection[] createTemplateSections() {
     return new ITemplateSection[] { new XMOFSequentialTemplate() };
