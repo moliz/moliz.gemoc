@@ -10,4 +10,7 @@
   <extension point="fr.inria.diverse.melange.language">
     <language aspects="" entryPoints="" exactType="org.modelexecution.examples.petrinet.PetrinetMT" id="org.modelexecution.examples.petrinet.Petrinet" uri="http://petrinet/1.0" />
   </extension>
+  <extension point="org.eclipse.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition name="org.modelexecution.examples.petrinet.Petrinet" xdsmlFilePath="/org.modelexecution.xmof.examples.petrinet.xdsml/bin/org/modelexecution/xmof/examples/petrinet/petrinet.melange" modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" />
+  </extension>
 </plugin>
