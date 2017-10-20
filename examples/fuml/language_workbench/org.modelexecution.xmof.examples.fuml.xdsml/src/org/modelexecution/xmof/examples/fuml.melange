@@ -1,15 +1,15 @@
 package org.modelexecution.examples
 
-language Fuml {
+external language Fuml {
 		
 	syntax "platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"
 	xmof "platform:/resource/org.modelexecution.xmof.examples.fuml.xmof.dynamic/xmof/fuml.xmof"
 
-
 }
-language FumlFewSteps {
- 		
- 	syntax "platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"
-	xmof "platform:/resource/org.modelexecution.xmof.examples.fuml.xmof.dynamic.fewsteps/xmof/fuml.xmof"
-	exactType FumlFewStepsMT
- }
+//language FumlFewSteps {
+// 		
+// 	syntax "platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"
+//	xmof "platform:/resource/org.modelexecution.xmof.examples.fuml.xmof.dynamic.fewsteps/xmof/fuml.xmof"
+//	exactType FumlFewStepsMT
+// }
+ 

@@ -9,10 +9,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.sirius.diagram,
  org.eclipse.emf.edit,
  org.eclipse.core.resources,
- org.gemoc.xdsmlframework.extensions.sirius,
- fr.inria.diverse.commons.eclipse.messagingsystem.api,
+ org.eclipse.gemoc.xdsmlframework.extensions.sirius,
+ org.eclipse.gemoc.commons.eclipse.messagingsystem.api,
  org.eclipse.jface,
- fr.inria.diverse.commons.eclipse.pde,
+ org.eclipse.gemoc.commons.eclipse.pde,
  org.eclipse.ui.workbench
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

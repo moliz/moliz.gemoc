@@ -1,8 +1,8 @@
 package org.modelexecution.xmof.examples.iml.sequentialiml.aspects;
 
-import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Aspect;
+import org.eclipse.gemoc.k3.al.annotationprocessor.OverrideAspectMethod;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Step;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.SimultaneousConvergence;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.State;
@@ -43,13 +43,13 @@ public class StateTransitionAspect extends ConnectionPointAspect {
   public static void doFire(final StateTransition _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateTransitionAspectStateTransitionAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateTransitionAspectStateTransitionAspectContext.getSelf(_self);
      if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition){
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    					org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand command = new org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand() {
     						@Override
     						public void execute() {
     							org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateTransitionAspect._privk3_doFire(_self_, (org.modelexecution.xmof.examples.iml.sequentialiml.iml.StateTransition)_self);
     						}
     					};
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    					org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.IStepManager manager = org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     					if (manager != null) {
     						manager.executeStep(_self,command,"StateTransition","doFire");
     					} else {

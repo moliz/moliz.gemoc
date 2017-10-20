@@ -2,7 +2,7 @@
  */
 package fsmConfigurationTrace.Steps;
 
-import fr.inria.diverse.trace.commons.model.trace.SmallStep;
+import org.eclipse.gemoc.trace.commons.model.trace.SmallStep;
 
 import fsmConfigurationTrace.States.SpecificState;
 

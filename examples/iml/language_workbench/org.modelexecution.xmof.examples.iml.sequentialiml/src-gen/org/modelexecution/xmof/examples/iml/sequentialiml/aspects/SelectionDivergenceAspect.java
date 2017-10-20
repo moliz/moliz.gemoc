@@ -2,9 +2,9 @@ package org.modelexecution.xmof.examples.iml.sequentialiml.aspects;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
-import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Aspect;
+import org.eclipse.gemoc.k3.al.annotationprocessor.OverrideAspectMethod;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Step;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.ConnectionPoint;
@@ -42,13 +42,13 @@ public class SelectionDivergenceAspect extends ConnectionPointAspect {
   public static void doFire(final SelectionDivergence _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SelectionDivergenceAspectSelectionDivergenceAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SelectionDivergenceAspectSelectionDivergenceAspectContext.getSelf(_self);
      if (_self instanceof org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence){
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    					org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand command = new org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand() {
     						@Override
     						public void execute() {
     							org.modelexecution.xmof.examples.iml.sequentialiml.aspects.SelectionDivergenceAspect._privk3_doFire(_self_, (org.modelexecution.xmof.examples.iml.sequentialiml.iml.SelectionDivergence)_self);
     						}
     					};
-    					fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    					org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.IStepManager manager = org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     					if (manager != null) {
     						manager.executeStep(_self,command,"SelectionDivergence","doFire");
     					} else {

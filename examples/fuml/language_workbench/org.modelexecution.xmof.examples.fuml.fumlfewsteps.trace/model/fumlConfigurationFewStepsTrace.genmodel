@@ -384,7 +384,7 @@
   </genPackages>
   <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
   <usedGenPackages href="../../org.modelexecution.xmof.examples.fuml.xmof.dynamic.fewsteps/model-gen/fuml.xmof.genmodel#//fumlConfigurationFewSteps"/>
-  <usedGenPackages href="../../fr.inria.diverse.trace.commons.model/model/GenericTrace.genmodel#//trace"/>
+  <usedGenPackages href="../../org.eclipse.gemoc.trace.commons.model/model/GenericTrace.genmodel#//trace"/>
   <usedGenPackages href="../../org.eclipse.uml2.types/model/Types.genmodel#//types"/>
   <usedGenPackages href="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"/>
 </genmodel:GenModel>

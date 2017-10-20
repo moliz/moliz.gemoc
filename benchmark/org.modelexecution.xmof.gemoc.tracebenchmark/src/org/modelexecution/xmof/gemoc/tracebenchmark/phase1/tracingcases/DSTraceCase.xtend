@@ -1,8 +1,8 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.tracingcases
 
-import fr.inria.diverse.trace.commons.model.trace.GenericMSE
-import fr.inria.diverse.trace.commons.testutil.Investigation
-import fr.inria.diverse.trace.gemoc.traceaddon.AbstractTraceAddon
+import org.eclipse.gemoc.trace.commons.model.trace.GenericMSE
+import org.eclipse.gemoc.trace.commons.testutil.Investigation
+import org.eclipse.gemoc.trace.gemoc.traceaddon.AbstractTraceAddon
 import java.util.HashSet
 import java.util.function.Consumer
 import org.eclipse.emf.common.util.URI
@@ -40,7 +40,7 @@ class DSTraceCase extends AbstractWithTraceCase{
 	}
 
 
-	static val String msePackageName = "fr.inria.diverse.trace.commons.model"
+	static val String msePackageName = "org.eclipse.gemoc.trace.commons.model"
 
 
 	override setLanguage(BenchmarkLanguage language) {

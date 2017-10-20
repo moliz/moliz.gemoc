@@ -1,6 +1,6 @@
 package org.modelexecution.xmof.gemoc.tracebenchmark.phase1.languages
 
-import fr.inria.diverse.trace.gemoc.traceaddon.AbstractTraceAddon
+import org.eclipse.gemoc.trace.gemoc.traceaddon.AbstractTraceAddon
 import java.util.List
 import java.util.Map
 

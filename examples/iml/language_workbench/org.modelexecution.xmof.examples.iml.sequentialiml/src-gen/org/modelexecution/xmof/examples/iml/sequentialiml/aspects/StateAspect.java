@@ -1,7 +1,7 @@
 package org.modelexecution.xmof.examples.iml.sequentialiml.aspects;
 
-import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Aspect;
+import org.eclipse.gemoc.k3.al.annotationprocessor.Step;
 import org.eclipse.emf.common.util.EList;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.Activity;
 import org.modelexecution.xmof.examples.iml.sequentialiml.iml.State;
@@ -15,13 +15,13 @@ public class StateAspect extends ConnectionPointAspect {
   @Step
   public static void activate(final State _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand command = new org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand() {
     	@Override
     	public void execute() {
     		_privk3_activate(_self_, _self);
     	}
     };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.IStepManager manager = org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     if (manager != null) {
     	manager.executeStep(_self,command,"State","activate");
     } else {
@@ -33,13 +33,13 @@ public class StateAspect extends ConnectionPointAspect {
   @Step
   public static void deactivate(final State _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand command = new org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand() {
     	@Override
     	public void execute() {
     		_privk3_deactivate(_self_, _self);
     	}
     };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.IStepManager manager = org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     if (manager != null) {
     	manager.executeStep(_self,command,"State","deactivate");
     } else {
@@ -51,13 +51,13 @@ public class StateAspect extends ConnectionPointAspect {
   @Step
   public static void executeActivities(final State _self) {
     final org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectProperties _self_ = org.modelexecution.xmof.examples.iml.sequentialiml.aspects.StateAspectStateAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand command = new org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepCommand() {
     	@Override
     	public void execute() {
     		_privk3_executeActivities(_self_, _self);
     	}
     };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.IStepManager manager = org.eclipse.gemoc.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     if (manager != null) {
     	manager.executeStep(_self,command,"State","executeActivities");
     } else {

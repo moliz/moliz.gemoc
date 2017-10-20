@@ -2,7 +2,7 @@
  */
 package fumlConfigurationFewStepsTrace.States.fumlConfigurationFewSteps.ActionsFewSteps.BasicActionsFewSteps.impl;
 
-import fr.inria.diverse.trace.commons.model.trace.TracePackage;
+import org.eclipse.gemoc.trace.commons.model.trace.TracePackage;
 
 import fumlConfigurationFewSteps.FumlConfigurationFewStepsPackage;
 

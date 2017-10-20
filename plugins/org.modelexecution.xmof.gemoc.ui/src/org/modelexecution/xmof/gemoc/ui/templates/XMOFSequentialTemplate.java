@@ -13,12 +13,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
-import org.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialTemplate;
+import org.eclipse.gemoc.execution.sequential.javaxdsml.ide.ui.templates.SequentialSingleLanguageTemplate;
 import org.modelexecution.xmof.gemoc.ui.Activator;
 
-import fr.inria.diverse.commons.eclipse.pde.wizards.pages.pde.ui.templates.TemplateOption;
+import org.eclipse.gemoc.commons.eclipse.pde.wizards.pages.pde.ui.templates.TemplateOption;
 
-public class XMOFSequentialTemplate extends SequentialTemplate {
+public class XMOFSequentialTemplate extends SequentialSingleLanguageTemplate {
   public static final String KEY_XMOFFILE_PATH = "xmofFilePath"; //$NON-NLS-1$
 
   public XMOFSequentialTemplate() {

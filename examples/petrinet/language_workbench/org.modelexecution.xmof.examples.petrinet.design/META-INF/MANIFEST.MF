@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.mtl,
  org.modelexecution.xmof.examples.petrinet,
- org.gemoc.executionframework.extensions.sirius,
+ org.eclipse.gemoc.executionframework.extensions.sirius,
  org.modelexecution.xmof.gemoc.engine
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

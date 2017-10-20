@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="fr.inria.diverse.opsemanticsview.gen">
+         point="org.eclipse.gemoc.opsemanticsview.gen">
       <fr.inria.diverse.opsemanticsview.gen
             class="fr.inria.diverse.opsemanticsview.gen.xmof.XMOFOperationalSemanticsViewGenerator">
       </fr.inria.diverse.opsemanticsview.gen>
