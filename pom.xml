@@ -24,7 +24,7 @@
 		<module>examples/deployers/org.modelexecution.xmof.examples.deployer</module>
 		<!-- releng -->
 		
-		<module>releng/molizgemoc-neon</module>
+		<module>releng/molizgemoc-oxygen</module>
 		<module>releng/org.modelexecution.moliz.gemoc.feature</module>
 		<module>releng/org.modelexecution.moliz.gemoc.updatesite</module>
 	</modules>
@@ -39,14 +39,14 @@
 	<repositories>
 		<!--  can be used in addition of the target definition -->
 		<repository>
-            <id>Neon release</id>
+            <id>oxygen release</id>
             <layout>p2</layout>
-            <url>http://download.eclipse.org/releases/neon</url>
+            <url>http://download.eclipse.org/releases/oxygen</url>
         </repository>        
 		<repository>
             <id>Sirius</id>
             <layout>p2</layout>
-            <url>http://download.eclipse.org/sirius/updates/releases/4.1.2/neon/</url>
+            <url>http://download.eclipse.org/sirius/updates/releases/5.0.2/oxygen</url>
         </repository>
         <repository>
             <id>kermeta-3</id>
@@ -61,7 +61,7 @@
         <repository>
             <id>gemoc-eclipse</id>
             <layout>p2</layout>
-            <url>https://ci.eclipse.org/gemoc/job/gemoc-studio_master/lastSuccessfulBuild/artifact/gemoc-studio/gemoc_studio/releng/org.eclipse.gemoc.gemoc_studio.updatesite/target/repository/</url>
+            <url>https://ci.eclipse.org/gemoc/job/gemoc-studio/job/master/lastSuccessfulBuild/artifact/gemoc-studio/gemoc_studio/releng/org.eclipse.gemoc.gemoc_studio.updatesite/target/repository/</url>
         </repository>
 
         <!-- Other moliz.* update sites used by this build -->
@@ -187,7 +187,7 @@
 					<target>
 						<artifact>
 							<groupId>${project.groupId}</groupId>
-							<artifactId>molizgemoc-neon</artifactId>
+							<artifactId>molizgemoc-oxygen</artifactId>
 							<version>${project.version}</version>
 						</artifact>
 					</target>
