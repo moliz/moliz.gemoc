@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="fumldebug_oxygen" sequenceNumber="1441958327">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.sirius.runtime.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.sirius.runtime.acceleo.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.sirius.runtime.ide.ui.feature.group" version="0.0.0"/>
+<repository location="http://download.eclipse.org/sirius/updates/releases/5.0.2/oxygen"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.xtext.sdk.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="0.0.0"/>
+<repository location="http://download.eclipse.org/releases/oxygen"/>
+</location>
+</locations>
+</target>
